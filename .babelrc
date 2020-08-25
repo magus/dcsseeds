@@ -1,0 +1,26 @@
+{
+  "presets": [
+    [
+      "next/babel",
+      {
+        "preset-env": {
+          "targets": ">1% in US and not ie 11",
+          "modules": false
+        }
+      }
+    ]
+  ],
+
+  "plugins": [
+    ["styled-components", { "ssr": true, "displayName": true }]
+  ],
+
+  "env": {
+    "production": {
+      "plugins": [
+        ["styled-components", { "ssr": true, "displayName": false }],
+        ["transform-remove-console"]
+      ]
+    }
+  }
+}
