@@ -100,10 +100,17 @@ module.exports = async (req, res) => {
       },
     });
   } catch (err) {
-    return send(res, 500, {
+    const data = {
       error: true,
-      message: err.stack,
-    });
+    };
+
+    if (err && err.stack) {
+      data.stack = err.stack.split('\n');
+    } else if (err) {
+      data.rawError = err;
+    }
+
+    return send(res, 500, data);
   }
 };
 
