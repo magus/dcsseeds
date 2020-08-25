@@ -24,7 +24,20 @@ export default function Home(props) {
             <SeedRow key={Math.random()}>
               <Timestamp>{seedRow.created}</Timestamp>
               <CopyButton>{seedRow.value}</CopyButton>
-              <Username>magusnn</Username>
+              <div>
+                {seedRow.players.map((player, i) => {
+                  const joiner = i === seedRow.players.length - 1 ? '' : <PlayerSpacer />;
+
+                  return (
+                    <React.Fragment>
+                      <Username inline key={player.name} url={player.morgue}>
+                        {player.name} ({player.score})
+                      </Username>
+                      {joiner}
+                    </React.Fragment>
+                  );
+                })}
+              </div>
             </SeedRow>
           );
         })}
@@ -43,6 +56,12 @@ const RECENT_SEEDS_GQL = gql`
       id
       value
       created
+      version
+      players(limit: 5, order_by: { score: desc }) {
+        name
+        score
+        morgue
+      }
     }
   }
 `;
@@ -76,4 +95,9 @@ const SeedRow = styled.div`
 
 const TimestampText = styled.div`
   font-size: 14px;
+`;
+
+const PlayerSpacer = styled.span`
+  width: 4px;
+  display: inline-block;
 `;
