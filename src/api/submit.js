@@ -2,10 +2,29 @@ const { query } = require('graphqurl');
 const fetch = require('src/server/utils/fetch');
 const send = require('src/server/utils/zeitSend');
 const Species = require('src/utils/Species');
+const { reject, first } = require('lodash');
 
 const { HASURA_ADMIN_SECRET } = process.env;
 
 if (!HASURA_ADMIN_SECRET) throw new Error('HASURA_ADMIN_SECRET is required!');
+
+async function regexAsync(id, content, regex) {
+  return new Promise((resolve, _reject) => {
+    const reject = (field) => _reject(['regexAsync', id, field].join(' '));
+
+    const match = content.match(regex);
+    if (!match) {
+      return reject('match');
+    }
+
+    const [, firstGroup] = match;
+    if (!firstGroup) {
+      return reject('group');
+    }
+
+    return resolve(match);
+  });
+}
 
 // submit a morgue with a seed
 // e.g.
@@ -29,12 +48,20 @@ module.exports = async (req, res) => {
     const morgueResponse = await fetch(morgue);
     const morgueText = await morgueResponse.text();
 
-    const [, name] = morgue.match(/rawdata\/(.*?)\//);
-    const [, fullVersion, version] = morgueText.match(/version ((\d+\.\d+)\..*?)\s.*?character file./);
-    const [, seed] = morgueText.match(/Game seed: (\d+)/);
-    const [, score] = morgueText.match(new RegExp(`Game seed: \\d+[^\\d]*?(\\d+) ${name}`));
-    const [, speciesBackground] = morgueText.match(new RegExp(`${name}.*?\\((.*?)\\)\\s+Turns:`));
-    const [, species] = speciesBackground.match(Species.Regex);
+    const [, name] = await regexAsync('name', morgue, /rawdata\/(.*?)\//);
+    const [, fullVersion, version] = await regexAsync(
+      'version',
+      morgueText,
+      /version ((\d+\.\d+)\..*?)\s.*?character file./,
+    );
+    const [, seed] = await regexAsync('seed', morgueText, /Game seed: (\d+)/);
+    const [, score] = await regexAsync('score', morgueText, new RegExp(`Game seed: \\d+[^\\d]*?(\\d+) ${name}`));
+    const [, speciesBackground] = await regexAsync(
+      'speciesBackground',
+      morgueText,
+      new RegExp(`${name}.*?\\((.*?)\\)\\s+Turns:`),
+    );
+    const [, species] = await regexAsync('species', speciesBackground, Species.Regex);
     const background = speciesBackground.replace(species, '').trim();
 
     // mutate to create seed player
