@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-export default function CopyButton({ children }) {
+export default function CopyButton({ children: text }) {
   const instance = React.useRef({
     ref: React.createRef(),
     width: null,
@@ -10,7 +10,7 @@ export default function CopyButton({ children }) {
 
   function handleClick() {
     if (navigator.clipboard) {
-      navigator.clipboard.writeText(children);
+      navigator.clipboard.writeText(text);
 
       instance.current.width = instance.current.ref.current.offsetWidth;
       set_copied(true);
@@ -29,7 +29,7 @@ export default function CopyButton({ children }) {
 
   return (
     <Button ref={instance.current.ref} onClick={handleClick} style={{ width }}>
-      {copied ? 'Copied!' : children}
+      {copied ? 'Copied!' : text}
     </Button>
   );
 }
