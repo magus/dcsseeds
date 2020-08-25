@@ -1,7 +1,20 @@
 import * as React from 'react';
 import styled from 'styled-components';
-
 import CopyButton from 'src/components/CopyButton';
+
+export default function New(props) {
+  return (
+    <Container>
+      <CopyButton>{props.seed}</CopyButton>
+    </Container>
+  );
+}
+
+New.getInitialProps = async () => {
+  const seed = generateSeed();
+
+  return { seed };
+};
 
 const randomInt = (max = 9, min = 0) => Math.floor(Math.random() * (max - min + 1)) + min;
 
@@ -12,20 +25,6 @@ function generateSeed() {
   }
   return digits.join('');
 }
-
-export default function Home(props) {
-  return (
-    <Container>
-      <CopyButton>{props.seed}</CopyButton>
-    </Container>
-  );
-}
-
-Home.getInitialProps = async () => {
-  const seed = generateSeed();
-
-  return { seed };
-};
 
 const Container = styled.div`
   height: 100%;
