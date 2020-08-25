@@ -1,22 +1,35 @@
 import * as React from 'react';
+import styled from 'styled-components';
 
-// const random = (min, max) => Math.random() * max
-// let digits = [];
-// for (let i = 0; i< 20; i++) {
-//   digits.push()
-// }
+import CopyButton from 'src/components/CopyButton';
 
-export default function Home() {
+const randomInt = (max = 9, min = 0) => Math.floor(Math.random() * (max - min + 1)) + min;
+
+function generateSeed() {
+  let digits = [];
+  for (let i = 0; i < 20; i++) {
+    digits.push(randomInt());
+  }
+  return digits.join('');
+}
+
+export default function Home(props) {
   return (
-    <div>
-      Homeee
-      <button
-        onClick={() => {
-          throw new Error('purposeful error');
-        }}
-      >
-        Break the world
-      </button>
-    </div>
+    <Container>
+      <CopyButton>{props.seed}</CopyButton>
+    </Container>
   );
 }
+
+Home.getInitialProps = async () => {
+  const seed = generateSeed();
+
+  return { seed };
+};
+
+const Container = styled.div`
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;

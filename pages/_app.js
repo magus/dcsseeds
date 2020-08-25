@@ -210,6 +210,10 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 700;
     color: var(--button-text);
   }
+
+  #__next {
+    height: 100%;
+  }
 `;
 
 const Container = styled.div`
