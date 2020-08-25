@@ -10,7 +10,11 @@ if (!HASURA_ADMIN_SECRET) throw new Error('HASURA_ADMIN_SECRET is required!');
 
 async function regexAsync(id, content, regex) {
   return new Promise((resolve, _reject) => {
-    const reject = (field) => _reject(['regexAsync', id, field].join(' '));
+    const reject = (field) => {
+      const message = ['regexAsync', id, field].join(' ');
+      // _reject(message);
+      throw new Error(message);
+    };
 
     const match = content.match(regex);
     if (!match) {
