@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { gql } from '@apollo/client';
 import { useQuery } from '@apollo/client';
 import CopyButton from 'src/components/CopyButton';
+import Username from 'src/components/Username';
 
 export default function Home(props) {
   const { loading, error, data } = useQuery(RECENT_SEEDS_GQL);
@@ -23,6 +24,7 @@ export default function Home(props) {
             <SeedRow key={Math.random()}>
               <Timestamp>{seedRow.created}</Timestamp>
               <CopyButton>{seedRow.value}</CopyButton>
+              <Username>magusnn</Username>
             </SeedRow>
           );
         })}
