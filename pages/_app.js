@@ -17,7 +17,7 @@ if (process.browser) {
 // https://nextjs.org/blog/next-9-4#integrated-web-vitals-reporting
 export function reportWebVitals(metric) {
   // These metrics can be sent to any analytics service
-  console.debug(metric);
+  // console.debug(metric);
 
   // Assumes the global `gtag()` function exists, see:
   // https://developers.google.com/analytics/devguides/collection/gtagjs

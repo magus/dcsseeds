@@ -28,8 +28,8 @@ export default function Home(props) {
   const handleSubmit = () => {
     fetch(SUBMIT_API(inputValue))
       .then((resp) => resp.text())
-      .then((text) => console.warn('SUBMIT_API', { text }))
-      .then(() => {
+      .then((text) => {
+        // console.debug('SUBMIT_API', { text });
         set_inputValue('');
         refetch();
       });
