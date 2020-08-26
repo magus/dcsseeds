@@ -23,7 +23,7 @@ export default function ComparePage(props) {
   }
 
   const headTagProps = { title, description };
-  const InternalComparePage = Page({ Component: Compare, headTagProps, withApollo: true });
+  const InternalComparePage = Page(Compare, { headTagProps, withApollo: true });
 
   // console.warn({ headTagProps });
 

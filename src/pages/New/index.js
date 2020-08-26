@@ -1,7 +1,7 @@
 import New from './New';
 import Page from 'src/components/Page';
 
-const NewPage = Page({ Component: New, withApollo: false });
+const NewPage = Page(New, { withApollo: false });
 
 NewPage.getInitialProps = async () => {
   const seed = generateSeed();
