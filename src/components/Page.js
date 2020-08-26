@@ -2,7 +2,7 @@ import * as React from 'react';
 import SEOHeadTags from 'src/components/SEOHeadTags';
 import withApolloClient from 'src/components/withApolloClient';
 
-export default function Page({ Component, headTagProps, forwardProps, withApollo = false }) {
+export default function Page({ Component, headTagProps, withApollo = false }) {
   if (!Component) {
     throw new Error('[Component] must be provided.');
   }
@@ -11,7 +11,7 @@ export default function Page({ Component, headTagProps, forwardProps, withApollo
     return (
       <React.Fragment>
         <SEOHeadTags {...headTagProps} />
-        <Component {...props} {...forwardProps} />
+        <Component {...props} />
       </React.Fragment>
     );
   }
