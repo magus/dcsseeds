@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import styled from 'styled-components';
 
 import CopyButton from 'src/components/CopyButton';
+import StyledLink from 'src/components/StyledLink';
 
 import Species from 'src/utils/Species';
 import Backgrounds from 'src/utils/Backgrounds';

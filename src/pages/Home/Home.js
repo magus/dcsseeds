@@ -4,6 +4,7 @@ import { useQuery } from '@apollo/client';
 
 import CopyButton from 'src/components/CopyButton';
 import Loading from 'src/components/Loading';
+import StyledLink from 'src/components/StyledLink';
 import Username from 'src/components/Username';
 
 import GraphqlSeed from 'src/graphql/seed';
@@ -77,6 +78,8 @@ export default function Home(props) {
         />
         <button onClick={handleSubmit}>Submit</button>
       </SubmitForm>
+
+      <StyledLink href="/new">New Seed</StyledLink>
 
       <RecentSeeds>
         {data.recentSeeds.map((seedRow) => {
