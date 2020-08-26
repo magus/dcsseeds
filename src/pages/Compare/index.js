@@ -23,7 +23,16 @@ export default function ComparePage(props) {
   }
 
   const headTagProps = { title, description };
+  const InternalComparePage = Page({ Component: Compare, headTagProps, withApollo: true });
 
-  const InternalComparePage = Page({ Component: Compare, headTagProps, forwardProps, withApollo: true });
-  return <InternalComparePage />;
+  // console.warn({ headTagProps });
+
+  return <InternalComparePage {...props} {...forwardProps} />;
 }
+
+// Defining getInitialProps will force SSR for metatags
+// If removed, router.query is `{}` and we never populate description meta tag
+ComparePage.getInitialProps = async (ctx) => {
+  // console.warn({ ctx });
+  return {};
+};
