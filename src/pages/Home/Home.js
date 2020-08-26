@@ -1,9 +1,11 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { gql } from '@apollo/client';
 import { useQuery } from '@apollo/client';
+
 import CopyButton from 'src/components/CopyButton';
 import Username from 'src/components/Username';
+
+import GraphqlSeed from 'src/graphql/seed';
 
 const SUBMIT_API = (morgue) => `/api/submit?morgue=${morgue}`;
 
@@ -12,7 +14,7 @@ export default function Home(props) {
     input: React.createRef(),
   });
   const [inputValue, set_inputValue] = React.useState('');
-  const { loading, error, data } = useQuery(RECENT_SEEDS_GQL);
+  const { loading, error, data } = useQuery(GraphqlSeed.RECENT_SEEDS_GQL);
 
   if (loading) {
     return (
@@ -97,24 +99,6 @@ export default function Home(props) {
 function Timestamp({ children: timestamp }) {
   return <TimestampText>{new Date(timestamp).toLocaleString()}</TimestampText>;
 }
-
-const RECENT_SEEDS_GQL = gql`
-  {
-    recentSeeds: seed(limit: 5, order_by: { created: desc }) {
-      id
-      value
-      created
-      version
-      species
-      background
-      players(limit: 5, order_by: { score: desc }) {
-        name
-        score
-        morgue
-      }
-    }
-  }
-`;
 
 const Container = styled.div`
   max-width: 640px;
