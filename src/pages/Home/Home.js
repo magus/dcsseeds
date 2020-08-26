@@ -17,6 +17,12 @@ export default function Home(props) {
   const [inputValue, set_inputValue] = React.useState('');
   const { loading, error, data, refetch } = useQuery(GraphqlSeed.RECENT_SEEDS_GQL);
 
+  // refetch on mount
+  React.useEffect(() => {
+    // console.debug('Home', 'refetch on mount');
+    refetch();
+  }, []);
+
   if (loading) {
     return (
       <Container>
