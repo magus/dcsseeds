@@ -19,6 +19,7 @@
     "@sentry/tracing": "^5.21.4",
     "@zeit/fetch": "^6.0.0",
     "cookie-parser": "^1.4.5",
+    "crypto": "^1.0.1",
     "express": "^4.17.1",
     "graphql": "^15.3.0",
     "graphqurl": "^0.3.3",
