@@ -1,6 +1,6 @@
 const keyMirror = require('src/utils/keyMirror');
 
-const Species = keyMirror({
+const Names = keyMirror({
   Barachi: true,
   Centaur: true,
   'Deep Dwarf': true,
@@ -61,7 +61,7 @@ const Abbreviations = {
 };
 
 module.exports = {
-  ...Species,
+  Names,
   Abbreviations,
-  Regex: new RegExp(`(${Object.keys(Species).join('|')})`),
+  Regex: new RegExp(`(${Object.keys(Names).join('|')})`),
 };
