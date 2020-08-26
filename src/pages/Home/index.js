@@ -1,15 +1,5 @@
-import * as React from 'react';
 import Home from './Home';
-import SEOHeadTags from 'src/components/SEOHeadTags';
-import withApolloClient from 'src/components/withApolloClient';
+import Page from 'src/components/Page';
 
-function HomePage(props) {
-  return (
-    <React.Fragment>
-      <SEOHeadTags />
-      <Home {...props} />
-    </React.Fragment>
-  );
-}
-
-export default withApolloClient(HomePage);
+const HomePage = Page({ Component: Home, withApollo: true });
+export default HomePage;

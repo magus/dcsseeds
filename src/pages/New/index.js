@@ -1,16 +1,13 @@
-import * as React from 'react';
 import New from './New';
-import SEOHeadTags from 'src/components/SEOHeadTags';
-import withApolloClient from 'src/components/withApolloClient';
+import Page from 'src/components/Page';
 
-function NewPage(props) {
-  return (
-    <React.Fragment>
-      <SEOHeadTags />
-      <New {...props} />
-    </React.Fragment>
-  );
-}
+const NewPage = Page({ Component: New, withApollo: false });
+
+NewPage.getInitialProps = async () => {
+  const seed = generateSeed();
+
+  return { seed };
+};
 
 const randomInt = (max = 9, min = 0) => Math.floor(Math.random() * (max - min + 1)) + min;
 
@@ -22,12 +19,4 @@ function generateSeed() {
   return digits.join('');
 }
 
-const NewPageWithApollo = withApolloClient(NewPage);
-
-NewPageWithApollo.getInitialProps = async () => {
-  const seed = generateSeed();
-
-  return { seed };
-};
-
-export default NewPageWithApollo;
+export default NewPage;
