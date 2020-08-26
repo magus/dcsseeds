@@ -144,7 +144,7 @@ const CREATE_SEED_PLAYER = `
             value: $value
             version: $version
           }
-          on_conflict: { constraint: seed_pkey1, update_columns: value }
+          on_conflict: { constraint: seed_pkey1, update_columns: fullVersion }
         }
       }
     ) {
