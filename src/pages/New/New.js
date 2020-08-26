@@ -63,38 +63,47 @@ export default function New(props) {
   return (
     <Container>
       <FlexColumns>
+        <Instructions>
+          Here, have this random seed.
+          <Instructions>
+            Clicking <b>Save Seed</b> below will publish this seed to the Home page.
+          </Instructions>
+          <StyledLink href="/">Back to Home</StyledLink>
+        </Instructions>
+
         <Select onChange={handleSpecies} options={Object.values(Species.Names)} selected={species} />
         <Select onChange={handleBackground} options={Object.values(Backgrounds.Names)} selected={background} />
         <Select onChange={handleVersion} options={Versions} selected={version} />
+        <input disabled value={value} />
 
-        <CopyButton>{value}</CopyButton>
-
-        <button onClick={handleSubmitSeed}>Submit Seed</button>
-
-        <ConsoleLink href="/admin" target="_blank">
-          <button>Open Console</button>
-        </ConsoleLink>
+        <button onClick={handleSubmitSeed}>Save Seed</button>
       </FlexColumns>
     </Container>
   );
 }
 
 const Container = styled.div`
-  height: 100%;
+  max-width: 640px;
+  min-height: 100%;
+  margin: 0 auto;
+  padding: 24px;
+
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
-const FlexColumns = styled.div`
+const Instructions = styled.div`
+  text-align: center;
+  margin: 32px 0;
+  font-size: 24px;
   display: flex;
   flex-direction: column;
 `;
 
-const ConsoleLink = styled.a`
-  margin: 16px 0;
-  font-size: 24px;
-  font-weight: 400;
+const FlexColumns = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
 
 const CurrentVersion = '0.25';
