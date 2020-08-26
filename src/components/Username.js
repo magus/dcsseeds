@@ -6,7 +6,7 @@ export default function Username({ inline, url, children: username }) {
   const usernameUrl = url || USER_RAW_DATA_URL(username);
 
   return (
-    <UsernameText inline={inline} href={usernameUrl} target="_blank">
+    <UsernameText inline={inline} href={usernameUrl} rel="noopener" target="_blank">
       {username}
     </UsernameText>
   );
