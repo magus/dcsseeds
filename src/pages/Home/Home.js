@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { useQuery } from '@apollo/client';
 
 import CopyButton from 'src/components/CopyButton';
+import Loading from 'src/components/Loading';
 import Username from 'src/components/Username';
 
 import GraphqlSeed from 'src/graphql/seed';
@@ -19,7 +20,7 @@ export default function Home(props) {
   if (loading) {
     return (
       <Container>
-        <LoadingText>Loading...</LoadingText>
+        <Loading />
       </Container>
     );
   }
@@ -121,11 +122,6 @@ const SubmitForm = styled.form`
 const SubmitInput = styled.input`
   line-height: 36px;
   width: 100%;
-`;
-
-const LoadingText = styled.div`
-  font-size: 48px;
-  font-weight: 800;
 `;
 
 const RecentSeeds = styled.div`
