@@ -2,6 +2,10 @@
 # dcss-seeds
 track random seeds in dcss
 
+## TODO
+
+- Design and styling
+
 ## Resources
 
 - [Google Analytics](https://analytics.google.com/analytics/web/#/a106090287w244212901p227276709/admin)
