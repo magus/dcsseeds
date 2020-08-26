@@ -121,11 +121,36 @@ module.exports = async (req, res) => {
 const GRAPHQL_ENDPOINT = 'https://dcsseeds.herokuapp.com/v1/graphql';
 
 const CREATE_SEED_PLAYER = `
-mutation MyMutation($morgue: String = "", $name: String = "", $score: Int = 10, $version: String = "", $value: String = "", $species: String = "", $fullVersion: String = "", $background: String = "") {
-  insert_seed_player(objects: {morgue: $morgue, name: $name, score: $score, seed: {data: {background: $background, fullVersion: $fullVersion, species: $species, value: $value, version: $version}, on_conflict: {constraint: seed_pkey1, update_columns: value}}}) {
-    returning {
-      id
+  mutation MyMutation(
+    $morgue: String = ""
+    $name: String = ""
+    $score: Int = 10
+    $version: String = ""
+    $value: String = ""
+    $species: String = ""
+    $fullVersion: String = ""
+    $background: String = ""
+  ) {
+    insert_seed_player(
+      objects: {
+        morgue: $morgue
+        name: $name
+        score: $score
+        seed: {
+          data: {
+            background: $background
+            fullVersion: $fullVersion
+            species: $species
+            value: $value
+            version: $version
+          }
+          on_conflict: { constraint: seed_pkey1, update_columns: value }
+        }
+      }
+    ) {
+      returning {
+        id
+      }
     }
   }
-}
 `;
