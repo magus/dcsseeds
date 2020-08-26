@@ -15,7 +15,7 @@ export default function Home(props) {
     input: React.createRef(),
   });
   const [inputValue, set_inputValue] = React.useState('');
-  const { loading, error, data } = useQuery(GraphqlSeed.RECENT_SEEDS_GQL);
+  const { loading, error, data, refetch } = useQuery(GraphqlSeed.RECENT_SEEDS_GQL);
 
   if (loading) {
     return (
@@ -28,7 +28,11 @@ export default function Home(props) {
   const handleSubmit = () => {
     fetch(SUBMIT_API(inputValue))
       .then((resp) => resp.text())
-      .then((text) => console.warn('SUBMIT_API', { text }));
+      .then((text) => console.warn('SUBMIT_API', { text }))
+      .then(() => {
+        set_inputValue('');
+        refetch();
+      });
   };
 
   const handleKeyDown = (e) => {
