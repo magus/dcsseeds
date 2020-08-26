@@ -2,14 +2,6 @@ import React from 'react';
 import Document, { Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 
-const { APP_NAME, HOSTNAME } = process.env;
-
-const OG = {
-  Title: APP_NAME,
-  AppName: APP_NAME,
-  Description: 'Generate and track DCSS seeds',
-};
-
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
     // Render app and page and get the context of the page with collected side effects
@@ -71,20 +63,6 @@ export default class MyDocument extends Document {
           />
           */}
           <meta name="theme-color" content="#ffffff" />
-
-          {/* seo & open graph tags */}
-          <meta property="og:title" content={OG.Title} />
-          <meta property="og:description" content={OG.Description} />
-          <meta property="og:type" content="website" />
-          <meta property="og:url" content={`https://${HOSTNAME}`} />
-          <meta property="og:image" content={`https://${HOSTNAME}/images/demo.54cb5b.png`} />
-          <meta property="twitter:card" content="summary_large_image" />
-          <meta property="twitter:creator" content="magusnn" />
-          <meta property="twitter:creator:id" content="23604692" />
-
-          <meta property="og:locale" content="en_US" />
-          <meta name="description" content={OG.Description} />
-          <meta name="keywords" content="DCSS, Seeds, Roguelike, Dungeon Crawler Stone Soup" />
 
           {/* iOS */}
           <meta name="apple-mobile-web-app-status-bar-style" content="default" />

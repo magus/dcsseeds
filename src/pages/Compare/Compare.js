@@ -1,24 +1,14 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { useQuery } from '@apollo/client';
-import { useRouter } from 'next/router';
 
 import Loading from 'src/components/Loading';
 import ErrorPage from 'src/components/ErrorPage';
 
 import GraphqlSeed from 'src/graphql/seed';
 
-const COMPARE_TOKEN = '..';
-
 export default function Compare(props) {
-  const router = useRouter();
-  const { compareSyntax } = router.query;
-
-  if (!compareSyntax) {
-    return <ErrorPage header="Error" message="Oops" />;
-  }
-
-  const [playerA, playerB] = compareSyntax.split(COMPARE_TOKEN);
+  const { playerA, playerB } = props;
 
   if (!playerA || !playerB) {
     return <ErrorPage header="Error" message="Oops" />;

@@ -15,22 +15,6 @@ export default function New(props) {
   );
 }
 
-New.getInitialProps = async () => {
-  const seed = generateSeed();
-
-  return { seed };
-};
-
-const randomInt = (max = 9, min = 0) => Math.floor(Math.random() * (max - min + 1)) + min;
-
-function generateSeed() {
-  let digits = [];
-  for (let i = 0; i < 20; i++) {
-    digits.push(randomInt());
-  }
-  return digits.join('');
-}
-
 const Container = styled.div`
   height: 100%;
   display: flex;
