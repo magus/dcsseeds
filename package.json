@@ -23,6 +23,7 @@
     "express": "^4.17.1",
     "framer-motion": "^2.6.2",
     "graphql": "^15.3.0",
+    "graphql-request": "^3.0.0",
     "graphqurl": "^0.3.3",
     "lodash": "^4.17.20",
     "micro": "^9.3.4",
