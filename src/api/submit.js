@@ -30,8 +30,6 @@ async function regexAsync(id, content, regex) {
 }
 
 // submit a morgue with a seed
-// e.g.
-// http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20200825-111643.txt
 // Example API Request
 // http://localhost:3000/api/submit?morgue=http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20200825-111643.txt
 

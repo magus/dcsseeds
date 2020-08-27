@@ -1,8 +1,5 @@
 const { query } = require('graphqurl');
-const fetch = require('src/server/utils/fetch');
 const send = require('src/server/utils/zeitSend');
-const Species = require('src/utils/Species');
-
 const GraphqlSeed = require('src/graphql/seed');
 
 const { HASURA_ADMIN_SECRET } = process.env;
@@ -10,7 +7,6 @@ const { HASURA_ADMIN_SECRET } = process.env;
 if (!HASURA_ADMIN_SECRET) throw new Error('HASURA_ADMIN_SECRET is required!');
 
 // submit a new seed
-// e.g.
 // Example API Request
 // http://localhost:3000/api/newSeed?background=Ice%20Elementalist&species=Ogre&version=0.25&value=06394256146285325279
 
