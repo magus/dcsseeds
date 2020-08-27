@@ -21,6 +21,7 @@
     "cookie-parser": "^1.4.5",
     "crypto": "^1.0.1",
     "express": "^4.17.1",
+    "framer-motion": "^2.6.2",
     "graphql": "^15.3.0",
     "graphqurl": "^0.3.3",
     "lodash": "^4.17.20",

@@ -4,10 +4,6 @@ track random seeds in dcss
 
 ## TODO
 
-- loading flash
-  only show loading if taking > 500ms
-  fade it in from 0 to 1 opacity
-
 - Design and styling
 
 ## Resources
