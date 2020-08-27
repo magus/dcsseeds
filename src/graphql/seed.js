@@ -84,6 +84,19 @@ export const RECENT_SEEDS = {
   parse: safeParser((query) => query.data.recentSeeds),
 };
 
+export const HISTORY_SEEDS = {
+  query: gql`
+    ${SEED_FRAGMENT}
+
+    query HistorySeeds {
+      historySeeds: seed(where: { hidden: { _eq: true } }, order_by: { created: desc }) {
+        ...SeedFragment
+      }
+    }
+  `,
+  parse: safeParser((query) => query.data.historySeeds),
+};
+
 export const COMPARE_PLAYERS = gql`
   query CompareSeeds($playerA: String = "", $playerB: String = "") {
     playerA: seed_player_aggregate(
