@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { useQuery } from '@apollo/client';
+import { useMutation, useQuery } from '@apollo/client';
 
 import CopyButton from 'src/components/CopyButton';
 import Loading from 'src/components/Loading';
@@ -17,6 +17,8 @@ export default function Home(props) {
   });
 
   const [inputValue, set_inputValue] = React.useState('');
+
+  const [hideMutation, hideSeedMutation] = useMutation(GraphqlSeed.HIDE_SEED.query);
 
   const { loading, error, data } = useQuery(GraphqlSeed.RECENT_SEEDS_GQL, {
     // use cache but always refetch on mount
@@ -60,6 +62,8 @@ export default function Home(props) {
     }
   };
 
+  const handleDelete = (id) => () => hideMutation({ variables: { id } });
+
   return (
     <Container>
       <SubmitForm action="#">
@@ -82,13 +86,16 @@ export default function Home(props) {
 
       <RecentSeeds>
         {data.recentSeeds.map((seedRow) => {
+          const players = seedRow.players;
+
           return (
             <SeedRow key={seedRow.id}>
+              {players < 2 ? null : <button onClick={handleDelete(seedRow.id)}>Delete</button>}
               <Timestamp>{seedRow.created}</Timestamp>
               {seedRow.species} {seedRow.background} v{seedRow.version}
               <CopyButton>{seedRow.value}</CopyButton>
               <div>
-                {seedRow.players.map((player, i) => {
+                {players.map((player, i) => {
                   const joiner = i === seedRow.players.length - 1 ? '' : <PlayerSpacer />;
 
                   return (
