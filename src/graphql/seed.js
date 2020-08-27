@@ -5,6 +5,8 @@ function safeParser(parser) {
     if (!query) return query;
 
     if (typeof parser === 'function') {
+      // safely return immediately if data is unavailable
+      if (!query.data) return query.data;
       return parser(query);
     }
 
@@ -43,8 +45,6 @@ export const ACTIVE_SEEDS = {
     }
   `,
   parse: safeParser((query) => {
-    if (!query.data) return true;
-
     const {
       data: {
         activeSeeds: {
@@ -71,15 +71,18 @@ export const HIDE_SEED = {
   `,
 };
 
-export const RECENT_SEEDS_GQL = gql`
-  ${SEED_FRAGMENT}
+export const RECENT_SEEDS = {
+  query: gql`
+    ${SEED_FRAGMENT}
 
-  query RecentSeeds {
-    recentSeeds: seed(limit: 5, where: { hidden: { _eq: false } }, order_by: { created: desc }) {
-      ...SeedFragment
+    query RecentSeeds {
+      recentSeeds: seed(limit: 5, where: { hidden: { _eq: false } }, order_by: { created: desc }) {
+        ...SeedFragment
+      }
     }
-  }
-`;
+  `,
+  parse: safeParser((query) => query.data.recentSeeds),
+};
 
 export const COMPARE_PLAYERS = gql`
   query CompareSeeds($playerA: String = "", $playerB: String = "") {

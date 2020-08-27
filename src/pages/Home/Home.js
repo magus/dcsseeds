@@ -20,12 +20,14 @@ export default function Home(props) {
 
   const [hideMutation, hideSeedMutation] = useMutation(GraphqlSeed.HIDE_SEED.query);
 
-  const { loading, error, data } = useQuery(GraphqlSeed.RECENT_SEEDS_GQL, {
+  const recentSeedsQuery = useQuery(GraphqlSeed.RECENT_SEEDS.query, {
     // use cache but always refetch on mount
     fetchPolicy: 'cache-and-network',
   });
 
-  if (loading && !data) {
+  const data = GraphqlSeed.RECENT_SEEDS.parse(recentSeedsQuery);
+
+  if (recentSeedsQuery.loading && !data) {
     return (
       <Container>
         <Loading />
@@ -85,7 +87,7 @@ export default function Home(props) {
       <StyledLink href="/new">New Seed</StyledLink>
 
       <RecentSeeds>
-        {data.recentSeeds.map((seedRow) => {
+        {data.map((seedRow) => {
           const players = seedRow.players;
 
           return (
