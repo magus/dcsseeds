@@ -4,7 +4,17 @@ track random seeds in dcss
 
 ## TODO
 
+- Race + Background icons
+  https://github.com/crawl/crawl/tree/master/crawl-ref/source/rltiles/player/base
+  https://github.com/crawl/crawl/tree/master/crawl-ref/source/rltiles/gui/backgrounds
+
 - Design and styling
+
+- Randomize based on % against seed value
+  Male vs Female? seed % 2!
+  e.g. 8 draconian colors? seed % 8 will select both a color for you
+  Use this to wear random set of armors for certain backgrounds
+  e.g. random robes for casters, random dragon scales for stabbers, random plate/leather/etc for melee classes, etc.
 
 ## Resources
 
