@@ -13,8 +13,6 @@ track random seeds in dcss
   only show hide button when more than 2 players have submitted
   force players to play the active seeds
 
-- show version next to race and background as well
-
 - reroll button on new seed page (refresh)
 
 - Design and styling

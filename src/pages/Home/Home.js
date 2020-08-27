@@ -86,7 +86,7 @@ export default function Home(props) {
           return (
             <SeedRow key={seedRow.id}>
               <Timestamp>{seedRow.created}</Timestamp>
-              {seedRow.species} {seedRow.background}
+              {seedRow.species} {seedRow.background} v{seedRow.version}
               <CopyButton>{seedRow.value}</CopyButton>
               <div>
                 {seedRow.players.map((player, i) => {
