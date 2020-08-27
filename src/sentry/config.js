@@ -5,11 +5,14 @@ const { Integrations } = require('@sentry/tracing');
 const SentryIntegrations = require('@sentry/integrations');
 const Cookie = require('js-cookie');
 
+const DEBUG = false;
+
 module.exports = (release = process.env.SENTRY_RELEASE) => {
   const sentryOptions = {
     dsn: process.env.SENTRY_DSN,
     release,
 
+    // https://github.com/getsentry/sentry-javascript/blob/master/packages/tracing/src/browser/browsertracing.ts
     integrations: [new Integrations.BrowserTracing()],
     tracesSampleRate: 1.0,
 
@@ -21,20 +24,27 @@ module.exports = (release = process.env.SENTRY_RELEASE) => {
   if (process.env.NODE_ENV !== 'production') {
     // Don't actually send the errors to Sentry
     // Instead, dump the errors to the console
-    sentryOptions.beforeSend = () => null;
+    sentryOptions.beforeSend = (...args) => {
+      console.debug('sentry', 'beforeSend', args);
+      return null;
+    };
 
     // (ensure sentryOptions.integrations array)
     if (!sentryOptions.integrations) {
       sentryOptions.integrations = [];
     }
 
-    // Instead, dump the errors to the console
-    sentryOptions.integrations.push(
-      new SentryIntegrations.Debug({
-        // Trigger DevTools debugger instead of using console.log
-        debugger: false,
-      }),
-    );
+    // if DEBUG show all Sentry events in console
+    if (DEBUG) {
+      // debugger set to true will pause in devtools debugger for every event
+      // https://docs.sentry.io/platforms/node/integrations/pluggable-integrations/#debug
+      sentryOptions.integrations.push(
+        new SentryIntegrations.Debug({
+          // Trigger DevTools debugger instead of using console.log
+          debugger: false,
+        }),
+      );
+    }
   }
 
   Sentry.init(sentryOptions);
