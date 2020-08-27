@@ -18,12 +18,10 @@ export default function Home(props) {
 
   const [inputValue, set_inputValue] = React.useState('');
 
-  const recentSeedsQuery = useQuery(GraphqlSeed.RECENT_SEEDS_GQL, {
+  const { loading, error, data } = useQuery(GraphqlSeed.RECENT_SEEDS_GQL, {
     // use cache but always refetch on mount
     fetchPolicy: 'cache-and-network',
   });
-
-  const { loading, error, data } = recentSeedsQuery;
 
   if (loading && !data) {
     return (

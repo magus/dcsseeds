@@ -4,7 +4,7 @@ import Page from 'src/components/Page';
 import Species from 'src/utils/Species';
 import Backgrounds from 'src/utils/Backgrounds';
 
-const NewPage = Page(New, { withApollo: false });
+const NewPage = Page(New, { withApollo: true });
 
 NewPage.getInitialProps = async () => {
   const seed = generateSeed();

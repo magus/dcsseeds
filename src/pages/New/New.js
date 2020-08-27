@@ -1,12 +1,15 @@
 import * as React from 'react';
 import { useRouter } from 'next/router';
+import { useQuery } from '@apollo/client';
 import styled from 'styled-components';
 
 import CopyButton from 'src/components/CopyButton';
+import Loading from 'src/components/Loading';
 import StyledLink from 'src/components/StyledLink';
 
 import Species from 'src/utils/Species';
 import Backgrounds from 'src/utils/Backgrounds';
+import GraphqlSeed from 'src/graphql/seed';
 
 function Select({ selected, onChange, options }) {
   return (
@@ -27,9 +30,15 @@ function Select({ selected, onChange, options }) {
 export default function New(props) {
   const router = useRouter();
   const value = props.seed;
+  const [saving, set_saving] = React.useState(false);
   const [species, set_species] = React.useState(props.species);
   const [background, set_background] = React.useState(props.background);
   const [version, set_version] = React.useState(CurrentVersion);
+
+  const activeSeedsQuery = useQuery(GraphqlSeed.ACTIVE_SEEDS.query, {
+    // use cache but always refetch on mount
+    fetchPolicy: 'cache-and-network',
+  });
 
   const handleSpecies = (e) => {
     set_species(e.target.value);
@@ -44,6 +53,8 @@ export default function New(props) {
   };
 
   const handleSubmitSeed = async () => {
+    set_saving(true);
+
     // http://localhost:3000/api/newSeed?background=Ice%20Elementalist&species=Ogre&version=0.25&value=06394256146285325279
     const query = { background, species, version, value };
     const queryString = Object.keys(query)
@@ -57,18 +68,38 @@ export default function New(props) {
     const resp = await fetch(url);
     const respJson = await resp.json();
 
-    router.push('/');
+    set_saving(false);
+    activeSeedsQuery.refetch();
+    // router.push('/');
   };
+
+  if (activeSeedsQuery.loading) {
+    return (
+      <Container>
+        <Loading />
+      </Container>
+    );
+  }
+
+  const tooManyActiveSeeds = GraphqlSeed.ACTIVE_SEEDS.parse(activeSeedsQuery);
+
+  if (tooManyActiveSeeds) {
+    return (
+      <Container>
+        <FlexColumns>
+          <Instructions>There are too many active seeds, try completing some active seeds!</Instructions>
+          <StyledLink href="/">Back to Home</StyledLink>
+        </FlexColumns>
+      </Container>
+    );
+  }
 
   return (
     <Container>
       <FlexColumns>
         <Instructions>
-          Here, have this random seed.
-          <Instructions>
-            Clicking <b>Save Seed</b> below will publish this seed to the Home page.
-          </Instructions>
           <StyledLink href="/">Back to Home</StyledLink>
+          Here, have this random seed.
         </Instructions>
 
         <Select onChange={handleSpecies} options={Object.values(Species.Names)} selected={species} />
@@ -76,7 +107,13 @@ export default function New(props) {
         <Select onChange={handleVersion} options={Versions} selected={version} />
         <input disabled value={value} />
 
-        <button onClick={handleSubmitSeed}>Save Seed</button>
+        <Instructions>
+          Clicking <b>Save Seed</b> below will publish this seed to the Home page.
+        </Instructions>
+
+        <button disabled={saving} onClick={handleSubmitSeed}>
+          {saving ? 'Saving...' : 'Save Seed'}
+        </button>
       </FlexColumns>
     </Container>
   );

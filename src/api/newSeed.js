@@ -2,33 +2,12 @@ const { query } = require('graphqurl');
 const fetch = require('src/server/utils/fetch');
 const send = require('src/server/utils/zeitSend');
 const Species = require('src/utils/Species');
-const { reject, first } = require('lodash');
+
+const GraphqlSeed = require('src/graphql/seed').default;
 
 const { HASURA_ADMIN_SECRET } = process.env;
 
 if (!HASURA_ADMIN_SECRET) throw new Error('HASURA_ADMIN_SECRET is required!');
-
-async function regexAsync(id, content, regex) {
-  return new Promise((resolve, _reject) => {
-    const reject = (field) => {
-      const message = ['regexAsync', id, field].join(' ');
-      // _reject(message);
-      throw new Error(message);
-    };
-
-    const match = content.match(regex);
-    if (!match) {
-      return reject('match');
-    }
-
-    const [, firstGroup] = match;
-    if (!firstGroup) {
-      return reject('group');
-    }
-
-    return resolve(match);
-  });
-}
 
 // submit a new seed
 // e.g.
@@ -44,6 +23,26 @@ module.exports = async (req, res) => {
         error: true,
         data: {
           message: 'Must provide [background], [species], [version] and [value]',
+        },
+      });
+    }
+
+    // mutate to create seed player
+    const activeSeedsQuery = await query({
+      query: GraphqlSeed.ACTIVE_SEEDS.query,
+      endpoint: GRAPHQL_ENDPOINT,
+      headers: {
+        'x-hasura-admin-secret': HASURA_ADMIN_SECRET,
+      },
+    });
+
+    const tooManyActiveSeeds = GraphqlSeed.ACTIVE_SEEDS.parse(activeSeedsQuery);
+
+    if (tooManyActiveSeeds) {
+      return send(res, 500, {
+        error: true,
+        data: {
+          message: 'Too many active seeds',
         },
       });
     }

@@ -8,10 +8,7 @@ track random seeds in dcss
   add boolean for hiding seeds
   do not return hidden or use in calculation
   safer than deleting
-
-- limit non hidden seeds to 5 max
   only show hide button when more than 2 players have submitted
-  force players to play the active seeds
 
 - reroll button on new seed page (refresh)
 
