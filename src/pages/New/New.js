@@ -9,7 +9,7 @@ import StyledLink from 'src/components/StyledLink';
 
 import Species from 'src/utils/Species';
 import Backgrounds from 'src/utils/Backgrounds';
-import GraphqlSeed from 'src/graphql/seed';
+import * as GraphqlSeed from 'src/graphql/seed';
 
 function Select({ selected, onChange, options }) {
   return (

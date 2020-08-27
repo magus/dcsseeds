@@ -29,7 +29,7 @@ export const SEED_FRAGMENT = gql`
   }
 `;
 
-const ACTIVE_SEEDS = {
+export const ACTIVE_SEEDS = {
   query: gql`
     query ActiveSeeds {
       activeSeeds: seed_aggregate(where: { hidden: { _eq: false } }) {
@@ -58,7 +58,20 @@ const ACTIVE_SEEDS = {
   }),
 };
 
-const RECENT_SEEDS_GQL = gql`
+export const HIDE_SEED = {
+  query: gql`
+    mutation HideSeed($id: Int!) {
+      update_seed(where: { id: { _eq: $id } }, _set: { hidden: true }) {
+        returning {
+          id
+          hidden
+        }
+      }
+    }
+  `,
+};
+
+export const RECENT_SEEDS_GQL = gql`
   ${SEED_FRAGMENT}
 
   query RecentSeeds {
@@ -68,7 +81,7 @@ const RECENT_SEEDS_GQL = gql`
   }
 `;
 
-const COMPARE_PLAYERS = gql`
+export const COMPARE_PLAYERS = gql`
   query CompareSeeds($playerA: String = "", $playerB: String = "") {
     playerA: seed_player_aggregate(
       where: {
@@ -118,9 +131,3 @@ const COMPARE_PLAYERS = gql`
     }
   }
 `;
-
-export default {
-  RECENT_SEEDS_GQL,
-  ACTIVE_SEEDS,
-  COMPARE_PLAYERS,
-};

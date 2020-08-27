@@ -7,7 +7,7 @@ import Loading from 'src/components/Loading';
 import StyledLink from 'src/components/StyledLink';
 import Username from 'src/components/Username';
 
-import GraphqlSeed from 'src/graphql/seed';
+import * as GraphqlSeed from 'src/graphql/seed';
 
 const SUBMIT_API = (morgue) => `/api/submit?morgue=${morgue}`;
 

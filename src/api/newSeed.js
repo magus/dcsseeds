@@ -3,7 +3,7 @@ const fetch = require('src/server/utils/fetch');
 const send = require('src/server/utils/zeitSend');
 const Species = require('src/utils/Species');
 
-const GraphqlSeed = require('src/graphql/seed').default;
+const GraphqlSeed = require('src/graphql/seed');
 
 const { HASURA_ADMIN_SECRET } = process.env;
 

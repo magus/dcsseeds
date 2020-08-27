@@ -5,7 +5,7 @@ import { useQuery } from '@apollo/client';
 import Loading from 'src/components/Loading';
 import ErrorPage from 'src/components/ErrorPage';
 
-import GraphqlSeed from 'src/graphql/seed';
+import * as GraphqlSeed from 'src/graphql/seed';
 
 export default function Compare(props) {
   const { playerA, playerB } = props;
