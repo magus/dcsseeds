@@ -86,6 +86,8 @@ export default function Home(props) {
       <StyledLink href="/new">New Seed</StyledLink>
 
       <SeedList seeds={data} />
+
+      <StyledLink href="/history">History</StyledLink>
     </Container>
   );
 }
