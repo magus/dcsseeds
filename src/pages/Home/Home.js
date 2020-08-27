@@ -25,7 +25,7 @@ export default function Home(props) {
 
   const { loading, error, data } = recentSeedsQuery;
 
-  if (loading) {
+  if (loading && !data) {
     return (
       <Container>
         <Loading />
