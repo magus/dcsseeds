@@ -2,7 +2,6 @@ const { query } = require('graphqurl');
 const fetch = require('src/server/utils/fetch');
 const send = require('src/server/utils/zeitSend');
 const Species = require('src/utils/Species');
-const { reject, first } = require('lodash');
 
 const { HASURA_ADMIN_SECRET } = process.env;
 
