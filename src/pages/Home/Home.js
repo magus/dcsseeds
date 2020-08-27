@@ -2,10 +2,9 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { useMutation, useQuery } from '@apollo/client';
 
-import CopyButton from 'src/components/CopyButton';
 import Loading from 'src/components/Loading';
+import SeedList from 'src/components/SeedList';
 import StyledLink from 'src/components/StyledLink';
-import Username from 'src/components/Username';
 
 import * as GraphqlSeed from 'src/graphql/seed';
 
@@ -86,40 +85,9 @@ export default function Home(props) {
 
       <StyledLink href="/new">New Seed</StyledLink>
 
-      <RecentSeeds>
-        {data.map((seedRow) => {
-          const players = seedRow.players;
-
-          return (
-            <SeedRow key={seedRow.id}>
-              {players < 2 ? null : <button onClick={handleDelete(seedRow.id)}>Delete</button>}
-              <Timestamp>{seedRow.created}</Timestamp>
-              {seedRow.species} {seedRow.background} v{seedRow.version}
-              <CopyButton>{seedRow.value}</CopyButton>
-              <div>
-                {players.map((player, i) => {
-                  const joiner = i === seedRow.players.length - 1 ? '' : <PlayerSpacer />;
-
-                  return (
-                    <React.Fragment key={player.name}>
-                      <Username inline url={player.morgue}>
-                        {player.name} ({player.score})
-                      </Username>
-                      {joiner}
-                    </React.Fragment>
-                  );
-                })}
-              </div>
-            </SeedRow>
-          );
-        })}
-      </RecentSeeds>
+      <SeedList seeds={data} />
     </Container>
   );
-}
-
-function Timestamp({ children: timestamp }) {
-  return <TimestampText>{new Date(timestamp).toLocaleString()}</TimestampText>;
 }
 
 const Container = styled.div`
@@ -143,27 +111,4 @@ const SubmitForm = styled.form`
 const SubmitInput = styled.input`
   line-height: 36px;
   width: 100%;
-`;
-
-const RecentSeeds = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-const SeedRow = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: 24px 0;
-  > * {
-    margin: 8px 0;
-  }
-`;
-
-const TimestampText = styled.div`
-  font-size: 14px;
-`;
-
-const PlayerSpacer = styled.span`
-  width: 4px;
-  display: inline-block;
 `;
