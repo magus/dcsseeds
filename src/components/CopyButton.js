@@ -18,11 +18,20 @@ export default function CopyButton({ children: text }) {
   }
 
   React.useEffect(() => {
+    let timeoutId;
+
+    function cleanup() {
+      clearTimeout(timeoutId);
+    }
+
     if (copied) {
-      setTimeout(() => {
+      cleanup();
+      timeoutId = setTimeout(() => {
         set_copied(false);
       }, 2000);
     }
+
+    return cleanup;
   }, [copied]);
 
   const { width } = instance.current;
