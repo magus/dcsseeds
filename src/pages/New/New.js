@@ -52,6 +52,8 @@ export default function New(props) {
     set_version(e.target.value);
   };
 
+  const handleReroll = () => router.reload();
+
   const handleSubmitSeed = async () => {
     set_saving(true);
 
@@ -99,6 +101,7 @@ export default function New(props) {
       <FlexColumns>
         <Instructions>
           <StyledLink href="/">Back to Home</StyledLink>
+          <button onClick={handleReroll}> Reroll</button>
           Here, have this random seed.
         </Instructions>
 

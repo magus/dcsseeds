@@ -10,8 +10,6 @@ track random seeds in dcss
   safer than deleting
   only show hide button when more than 2 players have submitted
 
-- reroll button on new seed page (refresh)
-
 - Design and styling
 
 ## Resources
