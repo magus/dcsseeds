@@ -1,12 +1,19 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import { useMutation } from '@apollo/client';
 
 import CopyButton from 'src/components/CopyButton';
+import StyledLink from 'src/components/StyledLink';
 import Timestamp from 'src/components/Timestamp';
 import Username from 'src/components/Username';
 
+import * as GraphqlSeed from 'src/graphql/seed';
+
 export default function SeedList(props) {
-  const { seeds } = props;
+  const { seeds, withHomeStyle } = props;
+
+  const [hideMutation, hideSeedMutation] = useMutation(GraphqlSeed.HIDE_SEED.query);
+  const handleDelete = (id) => () => hideMutation({ variables: { id } });
 
   return (
     <RecentSeeds>
@@ -20,18 +27,22 @@ export default function SeedList(props) {
             <CopyButton>{seedRow.value}</CopyButton>
             <div>
               {players.map((player, i) => {
-                const joiner = i === seedRow.players.length - 1 ? '' : <PlayerSpacer />;
+                const content = withHomeStyle ? (
+                  player.name
+                ) : (
+                  <Username inline url={player.morgue}>
+                    {player.name} ({player.score})
+                  </Username>
+                );
 
                 return (
                   <React.Fragment key={player.name}>
-                    <Username inline url={player.morgue}>
-                      {player.name} ({player.score})
-                    </Username>
-                    {joiner}
+                    <PlayerName>{content}</PlayerName>
                   </React.Fragment>
                 );
               })}
             </div>
+            {players.length < 2 || !withHomeStyle ? null : <button onClick={handleDelete(seedRow.id)}>Complete</button>}
           </SeedRow>
         );
       })}
@@ -45,6 +56,8 @@ const RecentSeeds = styled.div`
 `;
 
 const SeedRow = styled.div`
+  border: 1px solid var(--button-border-color);
+  padding: 12px 24px;
   display: flex;
   flex-direction: column;
   margin: 24px 0;
@@ -53,7 +66,7 @@ const SeedRow = styled.div`
   }
 `;
 
-const PlayerSpacer = styled.span`
-  width: 4px;
+const PlayerName = styled.span`
+  margin: 0 4px 0 0;
   display: inline-block;
 `;

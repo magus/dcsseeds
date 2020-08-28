@@ -23,11 +23,6 @@ export const SEED_FRAGMENT = gql`
     version
     species
     background
-    players(limit: 5, order_by: { score: desc }) {
-      name
-      score
-      morgue
-    }
   }
 `;
 
@@ -78,6 +73,9 @@ export const RECENT_SEEDS = {
     query RecentSeeds {
       recentSeeds: seed(limit: 5, where: { hidden: { _eq: false } }, order_by: { created: desc }) {
         ...SeedFragment
+        players(order_by: { name: asc, score: desc }, distinct_on: name) {
+          name
+        }
       }
     }
   `,
@@ -91,6 +89,11 @@ export const HISTORY_SEEDS = {
     query HistorySeeds {
       historySeeds: seed(where: { hidden: { _eq: true } }, order_by: { created: desc }) {
         ...SeedFragment
+        players(limit: 10, order_by: { score: desc, name: asc }) {
+          name
+          score
+          morgue
+        }
       }
     }
   `,

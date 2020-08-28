@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { useMutation, useQuery } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 
 import Loading from 'src/components/Loading';
 import SeedList from 'src/components/SeedList';
@@ -16,8 +16,6 @@ export default function Home(props) {
   });
 
   const [inputValue, set_inputValue] = React.useState('');
-
-  const [hideMutation, hideSeedMutation] = useMutation(GraphqlSeed.HIDE_SEED.query);
 
   const recentSeedsQuery = useQuery(GraphqlSeed.RECENT_SEEDS.query, {
     // use cache but always refetch on mount
@@ -63,8 +61,6 @@ export default function Home(props) {
     }
   };
 
-  const handleDelete = (id) => () => hideMutation({ variables: { id } });
-
   return (
     <Container>
       <SubmitForm action="#">
@@ -85,7 +81,7 @@ export default function Home(props) {
 
       <StyledLink href="/new">New Seed</StyledLink>
 
-      <SeedList seeds={data} />
+      <SeedList seeds={data} withHomeStyle />
 
       <StyledLink href="/history">History</StyledLink>
     </Container>
