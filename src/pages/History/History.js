@@ -11,6 +11,14 @@ import * as GraphqlSeed from 'src/graphql/seed';
 const SUBMIT_API = (morgue) => `/api/submit?morgue=${morgue}`;
 
 export default function History(props) {
+  const [mounted, set_mounted] = React.useState(false);
+
+  React.useEffect(() => {
+    if (process.browser) {
+      set_mounted(true);
+    }
+  }, []);
+
   const historySeedsQuery = useQuery(GraphqlSeed.HISTORY_SEEDS.query, {
     // use cache but always refetch on mount
     fetchPolicy: 'cache-and-network',
@@ -18,7 +26,7 @@ export default function History(props) {
 
   const data = GraphqlSeed.HISTORY_SEEDS.parse(historySeedsQuery);
 
-  if (historySeedsQuery.loading && !data) {
+  if (!mounted || (historySeedsQuery.loading && !data)) {
     return (
       <Container>
         <Loading />
