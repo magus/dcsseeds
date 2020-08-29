@@ -4,6 +4,12 @@ track random seeds in dcss
 
 ## TODO
 
+- Query for all unique players to populate two selects on Compare page
+  Populate both select elements with the users
+  Select the users from the compare url if available
+  Use same Compare page component on both compare/index and compare/compareSyntax
+  both /compare and compare/playerA..playerB should work fine, the first will select two random players
+
 - Race + Background icons
   https://github.com/crawl/crawl/tree/master/crawl-ref/source/rltiles/player/base
   https://github.com/crawl/crawl/tree/master/crawl-ref/source/rltiles/gui/backgrounds
