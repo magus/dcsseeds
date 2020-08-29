@@ -22,9 +22,16 @@ const random = () => {
 const randomInt = (max = 9, min = 0) => Math.floor(random() * (max - min + 1)) + min;
 const randomElement = (array) => array[randomInt(array.length - 1)];
 
+// DCSS seeds are 64 bit integers
+// This means that the highest possible value for a seed is 2^64
+// with sign this goes down to 2^63 ~ 9,223,372,036,854,775,807
+// This is 19 digits long, so if we generate a value with 18
+// digits we should always be within the valid range for seeds
+const MAX_DIGITS = 18;
+
 function generateSeed() {
   let digits = [];
-  for (let i = 0; i < 20; i++) {
+  for (let i = 0; i < MAX_DIGITS; i++) {
     digits.push(randomInt());
   }
 
