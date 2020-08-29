@@ -27,7 +27,13 @@ function generateSeed() {
   for (let i = 0; i < 20; i++) {
     digits.push(randomInt());
   }
-  return digits.join('');
+
+  const joinedDigits = digits.join('');
+  // remove preceding zeros to make it a valid integer
+  const seed = joinedDigits.replace(LEADING_ZEROES_REGEX, '');
+  return seed;
 }
+
+const LEADING_ZEROES_REGEX = /^(0+)/;
 
 export default NewPage;
