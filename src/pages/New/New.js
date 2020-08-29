@@ -72,7 +72,7 @@ export default function New(props) {
 
     set_saving(false);
     activeSeedsQuery.refetch();
-    // router.push('/');
+    router.push('/');
   };
 
   if (activeSeedsQuery.loading) {
