@@ -38,12 +38,7 @@ module.exports = async (req, res) => {
     const { morgue } = req.query;
 
     if (!morgue) {
-      return send(res, 500, {
-        error: true,
-        data: {
-          message: 'Must provide [morgue]',
-        },
-      });
+      return send(res, 500, new Error('Must provide [morgue]'));
     }
 
     const morgueResponse = await fetch(morgue);
@@ -87,31 +82,15 @@ module.exports = async (req, res) => {
     const [newSeedPlayer] = result.data.insert_seed_player.returning;
 
     if (newSeedPlayer) {
-      return send(res, 200, {
-        error: false,
-        data: newSeedPlayer,
-      });
+      return send(res, 200, newSeedPlayer);
     }
 
     return send(res, 500, {
-      error: true,
-      data: {
-        message: 'Unable to create seed player',
-        result,
-      },
+      message: 'Unable to create seed player',
+      result,
     });
   } catch (err) {
-    const data = {
-      error: true,
-    };
-
-    if (err && err.stack) {
-      data.stack = err.stack.split('\n');
-    } else if (err) {
-      data.rawError = err;
-    }
-
-    return send(res, 500, data);
+    return send(res, 500, err);
   }
 };
 

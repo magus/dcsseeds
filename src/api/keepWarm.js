@@ -21,19 +21,9 @@ module.exports = async (req, res) => {
 
     await graphQLClient.request(GraphqlSeed.RECENT_SEEDS.query);
 
-    return send(res, 200, { error: false });
+    return send(res, 200);
   } catch (err) {
-    const data = {
-      error: true,
-    };
-
-    if (err && err.stack) {
-      data.stack = err.stack.split('\n');
-    } else if (err) {
-      data.rawError = err;
-    }
-
-    return send(res, 500, data);
+    return send(res, 500, err);
   }
 };
 

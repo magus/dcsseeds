@@ -1,23 +1,28 @@
 const { send } = require('micro');
 
-module.exports = function zeitSend(res, statusCode, data, err) {
-  console.debug('[zeitSend]', statusCode, JSON.stringify({ data, err: err && err.message }));
+module.exports = function zeitSend(res, statusCode, data) {
+  const isError = statusCode === 500 || data instanceof Error;
 
-  if (!data || typeof data !== 'object') {
-    data = { __originalData: data };
-  }
+  console.debug('[zeitSend]', statusCode, isError ? data.message : JSON.stringify({ data }));
 
-  if (!err) {
-    data.error = false;
+  const responseJson = {};
+
+  if (!isError) {
+    responseJson.error = false;
+    responseJson.data = data;
   } else {
-    data.error = true;
+    responseJson.error = true;
 
+    // save error data into err
+    const err = data;
+
+    // add stack if available, etc.
     if (err.stack) {
-      data.stack = err.stack.split('\n');
+      responseJson.stack = err.stack.split('\n');
     } else {
-      data.rawError = err;
+      responseJson.rawError = data;
     }
   }
 
-  return send(res, statusCode, data);
+  return send(res, statusCode, responseJson);
 };

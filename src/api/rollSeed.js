@@ -14,10 +14,8 @@ module.exports = async (req, res) => {
     const species = randomElement(Object.values(Species.Names));
     const background = randomElement(Object.values(Backgrounds.Names));
 
-    const data = { background, species, seed };
-
-    return send(res, 200, { data });
+    return send(res, 200, { background, species, seed });
   } catch (err) {
-    return send(res, 500, null, err);
+    return send(res, 500, err);
   }
 };

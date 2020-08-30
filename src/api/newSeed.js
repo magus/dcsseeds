@@ -15,12 +15,7 @@ module.exports = async (req, res) => {
     const { background, species, version, value } = req.query;
 
     if (!(background && species && version && value)) {
-      return send(res, 500, {
-        error: true,
-        data: {
-          message: 'Must provide [background], [species], [version] and [value]',
-        },
-      });
+      return send(res, 500, new Error('Must provide [background], [species], [version] and [value]'));
     }
 
     // get number of active seeds to ensure we are not going over max active seeds config
@@ -35,12 +30,7 @@ module.exports = async (req, res) => {
     const tooManyActiveSeeds = GraphqlSeed.ACTIVE_SEEDS.parse(activeSeedsQuery);
 
     if (tooManyActiveSeeds) {
-      return send(res, 500, {
-        error: true,
-        data: {
-          message: 'Too many active seeds',
-        },
-      });
+      return send(res, 500, new Error('Too many active seeds'));
     }
 
     // mutate to create seed player
@@ -61,31 +51,15 @@ module.exports = async (req, res) => {
     const [newSeed] = result.data.insert_seed.returning;
 
     if (newSeed) {
-      return send(res, 200, {
-        error: false,
-        data: newSeed,
-      });
+      return send(res, 200, newSeed);
     }
 
     return send(res, 500, {
-      error: true,
-      data: {
-        message: 'Unable to create seed',
-        result,
-      },
+      message: 'Unable to create seed',
+      result,
     });
   } catch (err) {
-    const data = {
-      error: true,
-    };
-
-    if (err && err.stack) {
-      data.stack = err.stack.split('\n');
-    } else if (err) {
-      data.rawError = err;
-    }
-
-    return send(res, 500, data);
+    return send(res, 500, err);
   }
 };
 
