@@ -11,6 +11,8 @@ import Species from 'src/utils/Species';
 import Backgrounds from 'src/utils/Backgrounds';
 import * as GraphqlSeed from 'src/graphql/seed';
 
+import getInitialProps from './getInitialProps';
+
 function Select({ selected, onChange, options }) {
   return (
     <select onChange={onChange} value={selected}>
@@ -29,10 +31,10 @@ function Select({ selected, onChange, options }) {
 
 export default function New(props) {
   const router = useRouter();
-  const value = props.seed;
   const [saving, set_saving] = React.useState(false);
   const [species, set_species] = React.useState(props.species);
   const [background, set_background] = React.useState(props.background);
+  const [value, set_value] = React.useState(props.seed);
   const [version, set_version] = React.useState(CurrentVersion);
 
   const activeSeedsQuery = useQuery(GraphqlSeed.ACTIVE_SEEDS.query, {
@@ -52,7 +54,12 @@ export default function New(props) {
     set_version(e.target.value);
   };
 
-  const handleReroll = () => router.reload();
+  const handleReroll = async () => {
+    const newProps = await getInitialProps();
+    set_value(newProps.seed);
+    set_background(newProps.background);
+    set_species(newProps.species);
+  };
 
   const handleSubmitSeed = async () => {
     set_saving(true);
