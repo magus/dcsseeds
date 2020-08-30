@@ -44,9 +44,12 @@ export default function Home(props) {
 
   const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
+      // submit
+      handleSubmit();
+
+      // ensure input loses focus on search click
       const input = instance.current.input.current;
       if (input) {
-        // ensure input loses focus on search click
         input.blur();
       }
     }
