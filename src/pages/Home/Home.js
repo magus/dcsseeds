@@ -34,11 +34,11 @@ export default function Home(props) {
 
   const handleSubmit = () => {
     fetch(SUBMIT_API(inputValue))
-      .then((resp) => resp.text())
-      .then((text) => {
-        // console.debug('SUBMIT_API', { text });
+      .then((resp) => resp.json())
+      .then((json) => {
+        // console.debug('SUBMIT_API', { json });
         set_inputValue('');
-        refetch();
+        recentSeedsQuery.refetch();
       });
   };
 
@@ -66,7 +66,7 @@ export default function Home(props) {
       <SubmitForm action="#">
         <SubmitInput
           value={inputValue}
-          placeholder="http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20200825-111643.txt"
+          placeholder="Morgue file url e.g. http://crawl..."
           ref={instance.current.input}
           onChange={handleInputChange}
           onKeyDown={handleKeyDown}
