@@ -1,5 +1,5 @@
 const { query } = require('graphqurl');
-const fetch = require('src/server/utils/fetch');
+const fetch = require('src/utils/fetch');
 const send = require('src/server/utils/zeitSend');
 const Species = require('src/utils/Species');
 
