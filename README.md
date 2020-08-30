@@ -4,6 +4,8 @@ track random seeds in dcss
 
 ## TODO
 
+- Extract Turns from morgue, use to prevent duplicate seed submissions
+
 - Query for all unique players to populate two selects on Compare page
   Populate both select elements with the users
   Select the users from the compare url if available
