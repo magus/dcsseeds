@@ -3,23 +3,19 @@
 const webpack = require('webpack');
 const withSourceMaps = require('@zeit/next-source-maps');
 
-const env = require('./src/config/env');
+const EnvConfig = require('./src/config/env');
 
 // Forward server environmental variables to client config
 const { SENTRY_TOKEN_HEADER } = process.env;
-const { APP_NAME, HOSTNAME, SENTRY_DSN, GOOGLE_ANALYTICS_UA } = env;
 
 module.exports = withSourceMaps({
   // --------------------------------------------------
   // withSourceMaps: source maps + sentry configuration
   env: {
-    // non-secret config constants
-    APP_NAME,
-    HOSTNAME,
-    SENTRY_DSN,
-    GOOGLE_ANALYTICS_UA,
+    // include all non-secret config constants
+    ...EnvConfig,
 
-    // .env environmental variables
+    // include secret .env environmental variables (now env ls)
     SENTRY_TOKEN_HEADER,
   },
 
