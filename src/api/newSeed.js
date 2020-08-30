@@ -23,7 +23,7 @@ module.exports = async (req, res) => {
       });
     }
 
-    // mutate to create seed player
+    // get number of active seeds to ensure we are not going over max active seeds config
     const activeSeedsQuery = await query({
       query: GraphqlSeed.ACTIVE_SEEDS.query,
       endpoint: GRAPHQL_ENDPOINT,
