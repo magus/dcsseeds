@@ -23,6 +23,7 @@ export const SEED_FRAGMENT = gql`
     version
     species
     background
+    notes
   }
 `;
 
