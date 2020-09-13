@@ -72,7 +72,7 @@ export const RECENT_SEEDS = {
     ${SEED_FRAGMENT}
 
     query RecentSeeds {
-      recentSeeds: seed(limit: 5, where: { hidden: { _eq: false } }, order_by: { created: desc }) {
+      recentSeeds: seed(where: { hidden: { _eq: false } }, order_by: { created: desc }) {
         ...SeedFragment
         players(order_by: { name: asc, score: desc }, distinct_on: name) {
           name
