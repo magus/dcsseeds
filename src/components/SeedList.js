@@ -42,7 +42,7 @@ export default function SeedList(props) {
                 );
               })}
             </div>
-            <pre>{seedRow.note?.value}</pre>
+            <SeedNotes>{seedRow.note?.value}</SeedNotes>
             {players.length < 2 || !withHomeStyle ? null : <button onClick={handleDelete(seedRow.id)}>Complete</button>}
           </SeedRow>
         );
@@ -57,6 +57,7 @@ const RecentSeeds = styled.div`
 `;
 
 const SeedRow = styled.div`
+  max-width: 640px;
   border: 1px solid var(--button-border-color);
   padding: 12px 24px;
   display: flex;
@@ -65,6 +66,10 @@ const SeedRow = styled.div`
   > * {
     margin: 8px 0;
   }
+`;
+
+const SeedNotes = styled.div`
+  white-space: pre-line;
 `;
 
 const PlayerName = styled.span`
