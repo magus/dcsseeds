@@ -42,7 +42,7 @@ export default function SeedList(props) {
                 );
               })}
             </div>
-            {seedRow.notes}
+            <pre>{seedRow.notes}</pre>
             {players.length < 2 || !withHomeStyle ? null : <button onClick={handleDelete(seedRow.id)}>Complete</button>}
           </SeedRow>
         );
