@@ -51,6 +51,9 @@ export default function Compare(props) {
     winCounts[seed.winner.name] += 1;
   });
 
+  const maxScore = Math.max(data.playerA.aggregate.sum.score, data.playerB.aggregate.sum.score);
+  const isWinner = (score) => maxScore === score;
+
   return (
     <Container>
       <CompareTitle>{gameCount} Games</CompareTitle>
@@ -59,14 +62,14 @@ export default function Compare(props) {
         <Total>Total</Total>
         {/* aggregate */}
         <CompareSeedsRow>
-          <CompareSeedsPlayer isNormal isBold={false} color={playerColors[0]}>
-            <PlayerColumn>{playerA}</PlayerColumn>
+          <CompareSeedsPlayer color={playerColors[0]}>
+            <PlayerColumn isBold={isWinner(data.playerA.aggregate.sum.score)}>{playerA}</PlayerColumn>
             <ScoreColumn>
               <Score>{data.playerA.aggregate.sum.score}</Score>
             </ScoreColumn>
           </CompareSeedsPlayer>
-          <CompareSeedsPlayer isNormal isBold={false} color={playerColors[1]}>
-            <PlayerColumn>{playerB}</PlayerColumn>
+          <CompareSeedsPlayer color={playerColors[1]}>
+            <PlayerColumn isBold={isWinner(data.playerB.aggregate.sum.score)}>{playerB}</PlayerColumn>
             <ScoreColumn>
               <Score>{data.playerB.aggregate.sum.score}</Score>
             </ScoreColumn>
@@ -87,20 +90,29 @@ export default function Compare(props) {
 function CompareSeed({ seed }) {
   const { players, maxScore } = seed;
 
-  return (
-    <CompareSeedsRow>
-      {players.map((player, i) => {
-        const isWinner = maxScore === player.score;
+  const [hover, set_hover] = React.useState(false);
 
-        return (
-          <CompareSeedsPlayer key={player.name} color={isWinner ? playerColors[i] : loserColor}>
-            <PlayerColumn>{player.name}</PlayerColumn>
-            <ScoreColumn>
-              <Score>{player.score}</Score>
-            </ScoreColumn>
-          </CompareSeedsPlayer>
-        );
-      })}
+  return (
+    <CompareSeedsRow onMouseEnter={() => set_hover(true)} onMouseLeave={() => set_hover(false)}>
+      {hover ? (
+        <React.Fragment>
+          <PlayerColumn></PlayerColumn>
+          <ScoreColumn>{`${seed.species} ${seed.background}`}</ScoreColumn>
+        </React.Fragment>
+      ) : (
+        players.map((player, i) => {
+          const isWinner = maxScore === player.score;
+
+          return (
+            <CompareSeedsPlayer key={player.name} color={isWinner ? playerColors[i] : loserColor}>
+              <PlayerColumn>{player.name}</PlayerColumn>
+              <ScoreColumn>
+                <Score>{player.score}</Score>
+              </ScoreColumn>
+            </CompareSeedsPlayer>
+          );
+        })
+      )}
     </CompareSeedsRow>
   );
 }
@@ -132,9 +144,13 @@ const CompareSeeds = styled.div`
 `;
 
 const CompareSeedsRow = styled.div`
-  margin: 8px 0;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 0 16px;
+  margin: 16px 0;
+  height: 64px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 `;
 
 const CompareSeedsPlayer = styled.div`
@@ -146,7 +162,7 @@ const CompareSeedsPlayer = styled.div`
 
 const PlayerColumn = styled.div`
   flex: 0.3;
-  font-weight: ${(props) => (props.isBold ? 800 : 200)};
+  font-weight: ${(props) => (props.isNormal ? 'inherit' : props.isBold ? 800 : 200)};
 `;
 
 const ScoreColumn = styled.div`
