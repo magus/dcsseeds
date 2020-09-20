@@ -139,8 +139,7 @@ function TableLayoutRow({ data, widths }) {
 const CompareSeeds = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 640px;
-  min-width: 320px;
+  width: 100%;
 `;
 
 const CompareSeedsRow = styled.div`
