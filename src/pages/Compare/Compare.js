@@ -99,14 +99,12 @@ function CompareSeed({ seed }) {
         const isWinner = maxScore === player.score;
 
         return (
-          <Link key={player.name} href={player.morgue} rel="noopener" target="_blank">
-            <CompareSeedsPlayer color={isWinner ? playerColors[i] : loserColor}>
-              <PlayerColumn>{player.name}</PlayerColumn>
-              <ScoreColumn>
-                <Score href={player.morgue}>{player.score}</Score>
-              </ScoreColumn>
-            </CompareSeedsPlayer>
-          </Link>
+          <CompareSeedsPlayer key={player.name} color={isWinner ? playerColors[i] : loserColor}>
+            <PlayerColumn>{player.name}</PlayerColumn>
+            <ScoreColumn>
+              <Score href={player.morgue}>{player.score}</Score>
+            </ScoreColumn>
+          </CompareSeedsPlayer>
         );
       })}
 
@@ -130,7 +128,11 @@ const loserColor = 'rgba(255, 255, 255, 0.40)';
 const scoreFormatter = new Intl.NumberFormat('en');
 
 function Score(props) {
-  return scoreFormatter.format(props.children);
+  return (
+    <Link href={props.href} rel="noopener" target="_blank">
+      {scoreFormatter.format(props.children)}
+    </Link>
+  );
 }
 
 function TableLayoutRow({ data, widths }) {
