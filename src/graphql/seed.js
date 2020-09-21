@@ -152,6 +152,8 @@ export const COMPARE_PLAYERS = gql`
         morgue
         turns
         timeSeconds
+        runeCount
+        runes
       }
     }
   }

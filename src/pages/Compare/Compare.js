@@ -65,6 +65,7 @@ export default function Compare(props) {
           <PlayerColumn>Player</PlayerColumn>
           <TurnsColumn>Turns</TurnsColumn>
           <TimeColumn>Time</TimeColumn>
+          <RuneColumn>Runes</RuneColumn>
           <ScoreColumn>Score</ScoreColumn>
         </CompareSeedsPlayer>
 
@@ -74,6 +75,7 @@ export default function Compare(props) {
             <PlayerColumn isBold={isWinner(data.playerA.aggregate.sum.score)}>{playerA}</PlayerColumn>
             <TurnsColumn></TurnsColumn>
             <TimeColumn></TimeColumn>
+            <RuneColumn></RuneColumn>
             <ScoreColumn>
               <Score>{data.playerA.aggregate.sum.score}</Score>
             </ScoreColumn>
@@ -82,6 +84,7 @@ export default function Compare(props) {
             <PlayerColumn isBold={isWinner(data.playerB.aggregate.sum.score)}>{playerB}</PlayerColumn>
             <TurnsColumn></TurnsColumn>
             <TimeColumn></TimeColumn>
+            <RuneColumn></RuneColumn>
             <ScoreColumn>
               <Score>{data.playerB.aggregate.sum.score}</Score>
             </ScoreColumn>
@@ -116,6 +119,7 @@ function CompareSeed({ seed }) {
             <TimeColumn>
               <Time>{player.timeSeconds}</Time>
             </TimeColumn>
+            <RuneColumn>{player.runeCount}</RuneColumn>
             <ScoreColumn>
               <Score href={player.morgue}>{player.score}</Score>
             </ScoreColumn>
@@ -227,8 +231,13 @@ const TimeColumn = styled.div`
   font-variant: tabular-nums;
 `;
 
+const RuneColumn = styled.div`
+  flex: 0.1;
+  font-variant: tabular-nums;
+`;
+
 const ScoreColumn = styled.div`
-  flex: 0.3;
+  flex: 0.2;
   text-align: right;
   font-variant: tabular-nums;
 `;
