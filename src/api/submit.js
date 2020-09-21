@@ -51,20 +51,24 @@ const GRAPHQL_ENDPOINT = 'https://dcsseeds.herokuapp.com/v1/graphql';
 
 const CREATE_SEED_PLAYER = `
   mutation MyMutation(
-    $morgue: String = ""
-    $name: String = ""
-    $score: Int = 10
-    $version: String = ""
-    $value: String = ""
-    $species: String = ""
-    $fullVersion: String = ""
-    $background: String = ""
+    $morgue: String!
+    $name: String!
+    $score: Int!
+    $version: String!
+    $value: String!
+    $species: String!
+    $fullVersion: String!
+    $background: String!
+    $turns: Int!
+    $timeSeconds: Int!
   ) {
     insert_seed_player(
       objects: {
         morgue: $morgue
         name: $name
         score: $score
+        turns: $turns,
+        timeSeconds: $timeSeconds,
         seed: {
           data: {
             background: $background

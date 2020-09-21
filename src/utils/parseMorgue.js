@@ -24,8 +24,8 @@ async function parseMorgueText(name, morgueText) {
     ...(await MORGUE_REGEX[MORGUE_FIELD.Seed](args)), // value
     ...(await MORGUE_REGEX[MORGUE_FIELD.Score](args)),
     ...(await MORGUE_REGEX[MORGUE_FIELD.SpeciesBackground](args)),
-    // ...(await MORGUE_REGEX[MORGUE_FIELD.Turns](args)),
-    // ...(await MORGUE_REGEX[MORGUE_FIELD.Time](args)),
+    ...(await MORGUE_REGEX[MORGUE_FIELD.Turns](args)),
+    ...(await MORGUE_REGEX[MORGUE_FIELD.Time](args)),
   };
 }
 
