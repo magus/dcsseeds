@@ -150,6 +150,8 @@ export const COMPARE_PLAYERS = gql`
         name
         score
         morgue
+        turns
+        timeSeconds
       }
     }
   }

@@ -60,17 +60,28 @@ export default function Compare(props) {
       <CompareTitle>{gameCount} Games</CompareTitle>
 
       <CompareSeeds>
-        <Total>Total</Total>
+        {/* headers */}
+        <CompareSeedsPlayer>
+          <PlayerColumn>Player</PlayerColumn>
+          <TurnsColumn>Turns</TurnsColumn>
+          <TimeColumn>Time</TimeColumn>
+          <ScoreColumn>Score</ScoreColumn>
+        </CompareSeedsPlayer>
+
         {/* aggregate */}
         <CompareSeedsRow>
           <CompareSeedsPlayer color={playerColors[0]}>
             <PlayerColumn isBold={isWinner(data.playerA.aggregate.sum.score)}>{playerA}</PlayerColumn>
+            <TurnsColumn></TurnsColumn>
+            <TimeColumn></TimeColumn>
             <ScoreColumn>
               <Score>{data.playerA.aggregate.sum.score}</Score>
             </ScoreColumn>
           </CompareSeedsPlayer>
           <CompareSeedsPlayer color={playerColors[1]}>
             <PlayerColumn isBold={isWinner(data.playerB.aggregate.sum.score)}>{playerB}</PlayerColumn>
+            <TurnsColumn></TurnsColumn>
+            <TimeColumn></TimeColumn>
             <ScoreColumn>
               <Score>{data.playerB.aggregate.sum.score}</Score>
             </ScoreColumn>
@@ -101,6 +112,10 @@ function CompareSeed({ seed }) {
         return (
           <CompareSeedsPlayer key={player.name} color={isWinner ? playerColors[i] : loserColor}>
             <PlayerColumn>{player.name}</PlayerColumn>
+            <TurnsColumn>{player.turns}</TurnsColumn>
+            <TimeColumn>
+              <Time>{player.timeSeconds}</Time>
+            </TimeColumn>
             <ScoreColumn>
               <Score href={player.morgue}>{player.score}</Score>
             </ScoreColumn>
@@ -133,6 +148,10 @@ function Score(props) {
       {scoreFormatter.format(props.children)}
     </Link>
   );
+}
+
+function Time(props) {
+  return new Date(props.children * 1000).toISOString().substr(11, 8);
 }
 
 function TableLayoutRow({ data, widths }) {
@@ -177,7 +196,6 @@ const CompareSeeds = styled.div`
 
 const CompareSeedsRow = styled.div`
   border: 1px solid rgba(255, 255, 255, 0.05);
-  padding: 0 16px;
   margin: 16px 0;
   min-height: 64px;
   display: flex;
@@ -187,6 +205,7 @@ const CompareSeedsRow = styled.div`
 `;
 
 const CompareSeedsPlayer = styled.div`
+  padding: 0 16px;
   display: flex;
   flex-direction: row;
   color: ${(props) => props.color || 'inherit'};
@@ -198,8 +217,18 @@ const PlayerColumn = styled.div`
   font-weight: ${(props) => (props.isNormal ? 'inherit' : props.isBold ? 800 : 200)};
 `;
 
+const TurnsColumn = styled.div`
+  flex: 0.2;
+  font-variant: tabular-nums;
+`;
+
+const TimeColumn = styled.div`
+  flex: 0.2;
+  font-variant: tabular-nums;
+`;
+
 const ScoreColumn = styled.div`
-  flex: 0.7;
+  flex: 0.3;
   text-align: right;
   font-variant: tabular-nums;
 `;
