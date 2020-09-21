@@ -6,6 +6,7 @@ import Loading from 'src/components/Loading';
 import ErrorPage from 'src/components/ErrorPage';
 
 import * as GraphqlSeed from 'src/graphql/seed';
+import seed from 'src/utils/seed';
 
 export default function Compare(props) {
   const { playerA, playerB } = props;
@@ -94,26 +95,32 @@ function CompareSeed({ seed }) {
 
   return (
     <CompareSeedsRow onMouseEnter={() => set_hover(true)} onMouseLeave={() => set_hover(false)}>
-      {hover ? (
-        <React.Fragment>
-          <PlayerColumn></PlayerColumn>
-          <ScoreColumn>{`${seed.species} ${seed.background}`}</ScoreColumn>
-        </React.Fragment>
-      ) : (
-        players.map((player, i) => {
-          const isWinner = maxScore === player.score;
+      {players.map((player, i) => {
+        const isWinner = maxScore === player.score;
 
-          return (
-            <CompareSeedsPlayer key={player.name} color={isWinner ? playerColors[i] : loserColor}>
+        return (
+          <Link key={player.name} href={player.morgue} rel="noopener" target="_blank">
+            <CompareSeedsPlayer color={isWinner ? playerColors[i] : loserColor}>
               <PlayerColumn>{player.name}</PlayerColumn>
               <ScoreColumn>
-                <Score>{player.score}</Score>
+                <Score href={player.morgue}>{player.score}</Score>
               </ScoreColumn>
             </CompareSeedsPlayer>
-          );
-        })
-      )}
+          </Link>
+        );
+      })}
+
+      {!hover ? null : <SeedInfo seed={seed} />}
     </CompareSeedsRow>
+  );
+}
+
+function SeedInfo({ seed }) {
+  return (
+    <SeedInfoContainer>
+      <div>{seed.species}</div>
+      <div>{seed.background}</div>
+    </SeedInfoContainer>
   );
 }
 
@@ -136,6 +143,30 @@ function TableLayoutRow({ data, widths }) {
   );
 }
 
+const Layers = {
+  SeedInfoHover: 1,
+};
+
+const Link = styled.a`
+  color: inherit;
+  text-decoration: none;
+`;
+
+const SeedInfoContainer = styled.div`
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: ${Layers.SeedInfoHover};
+  background-color: black;
+  border: 1px solid white;
+  padding: 16px;
+  width: 100%;
+  pointer-events: none;
+`;
+
 const CompareSeeds = styled.div`
   display: flex;
   flex-direction: column;
@@ -146,10 +177,11 @@ const CompareSeedsRow = styled.div`
   border: 1px solid rgba(255, 255, 255, 0.05);
   padding: 0 16px;
   margin: 16px 0;
-  height: 64px;
+  min-height: 64px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
 `;
 
 const CompareSeedsPlayer = styled.div`

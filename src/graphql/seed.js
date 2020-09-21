@@ -149,6 +149,7 @@ export const COMPARE_PLAYERS = gql`
       players(order_by: { name: desc, score: desc }, distinct_on: name) {
         name
         score
+        morgue
       }
     }
   }
