@@ -59,8 +59,8 @@ const QUERY_ALL_MORGUES = `
 const gqlUpdateSeedPlayer = (id, parsedMorgue) => {
   // pull out just the seed player fields (omit seed fields)
   // i.e. value, species, background, etc. will be excluded
-  const { name, score, timeSeconds, turns } = parsedMorgue;
-  const parsedFieldsToUpdate = { name, score, timeSeconds, turns };
+  // parsedFieldsToUpdate will be the fields left to update
+  const { value, fullVersion, version, seed, morgue, species, background, ...parsedFieldsToUpdate } = parsedMorgue;
 
   // build update fields, similar to json but no quotes around field names
   const allFieldValues = Object.keys(parsedFieldsToUpdate).map((field) => {
@@ -71,6 +71,8 @@ const gqlUpdateSeedPlayer = (id, parsedMorgue) => {
       case 'string':
         fieldValue = `"${fieldValue}"`;
         break;
+      case 'object':
+        fieldValue = `"${JSON.stringify(fieldValue).replace(/"/g, '\\"')}"`;
       case 'number':
       default:
         break;
@@ -81,7 +83,7 @@ const gqlUpdateSeedPlayer = (id, parsedMorgue) => {
 
   const updateFields = allFieldValues.join(', ');
 
-  // console.warn({ updateFields });
+  console.warn({ updateFields });
 
   return `
     mutation UpdateSeedPlayerParsedMorgue {

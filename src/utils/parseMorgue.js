@@ -26,6 +26,7 @@ async function parseMorgueText(name, morgueText) {
     ...(await MORGUE_REGEX[MORGUE_FIELD.SpeciesBackground](args)),
     ...(await MORGUE_REGEX[MORGUE_FIELD.Turns](args)),
     ...(await MORGUE_REGEX[MORGUE_FIELD.Time](args)),
+    ...(await MORGUE_REGEX[MORGUE_FIELD.Runes](args)),
   };
 }
 
@@ -36,6 +37,7 @@ const MORGUE_FIELD = keyMirror({
   SpeciesBackground: true,
   Turns: true,
   Time: true,
+  Runes: true,
 });
 
 const MORGUE_REGEX = {
@@ -80,8 +82,29 @@ const MORGUE_REGEX = {
 
   [MORGUE_FIELD.Time]: async ({ morgueText }) => {
     const [, timeString] = await runRegex(MORGUE_FIELD.Time, morgueText, /Time: ([\d:]+)/);
-    const [hours, minutes, seconds] = timeString.split(':').map((_) => parseInt(_, 10));
+    const [hours, minutes, seconds] = timeString.split(':').map(toNumber);
     const timeSeconds = hours * 60 * 60 + minutes * 60 + seconds;
     return { timeSeconds };
   },
+
+  [MORGUE_FIELD.Runes]: async ({ morgueText }) => {
+    try {
+      const [match, runeCountString, runeTotalString, runesString] = await runRegex(
+        MORGUE_FIELD.Runes,
+        morgueText,
+        /}: (\d)\/(\d+) runes: ([a-z\, ]+)/,
+      );
+
+      const runes = runesString.split(', ');
+      const runeCount = toNumber(runeCountString);
+
+      return { runes, runeCount };
+    } catch (err) {
+      // no runes match, return empty
+      // seed_player will default to `runeCount: 0, runes: []`
+      return {};
+    }
+  },
 };
+
+const toNumber = (value) => parseInt(value, 10);
