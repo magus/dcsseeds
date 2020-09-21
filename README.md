@@ -4,9 +4,7 @@ track random seeds in dcss
 
 ## TODO
 
-- System to update all seed_player rows, i.e. parse out values and update row with new values
-  - Extract Turns from morgue
-  - Extract Time from morgue
+- api/reparseMorgue
   - other fields? God, Death location, XL, Health, Magic, Gold, AC, EV, etc.
 
 - Use turns to prevent duplicate seed submissions?
