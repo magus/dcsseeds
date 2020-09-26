@@ -14,6 +14,10 @@ if (!HASURA_ADMIN_SECRET) throw new Error('HASURA_ADMIN_SECRET is required!');
 
 module.exports = async (req, res) => {
   try {
+    if (!__DEV__) {
+      return send(res, 500, new Error('reparseMorgues not available outside local dev!'));
+    }
+
     // get all morgues
     const result = await query({
       query: QUERY_ALL_MORGUES,
