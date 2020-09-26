@@ -22,6 +22,7 @@ module.exports = withSourceMaps({
   webpack: (config, { isServer, buildId }) => {
     config.plugins.push(
       new webpack.DefinePlugin({
+        __DEV__: JSON.stringify(EnvConfig.DEV),
         'process.env.SENTRY_RELEASE': JSON.stringify(buildId),
       }),
     );

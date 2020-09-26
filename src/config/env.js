@@ -1,4 +1,5 @@
 const EnvConfig = {
+  DEV: process.env.NODE_ENV !== 'production',
   APP_NAME: 'dcsseeds',
   PROTOCOL: 'https',
   HOSTNAME: 'dcss.now.sh',
@@ -6,8 +7,7 @@ const EnvConfig = {
   GOOGLE_ANALYTICS_UA: 'UA-106090287-2',
 };
 
-const dev = process.env.NODE_ENV !== 'production';
-if (dev) {
+if (EnvConfig.DEV) {
   EnvConfig.PROTOCOL = 'http';
   EnvConfig.HOSTNAME = 'localhost:3000';
 }
