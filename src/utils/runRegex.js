@@ -1,7 +1,7 @@
 module.exports = async function regexAsync(id, content, regex) {
   return new Promise((resolve, _reject) => {
     const reject = (field) => {
-      const message = ['regexAsync', id, field].join(' ');
+      const message = ['runRegex', id, field].join(' ');
       // _reject(message);
       throw new Error(message);
     };
