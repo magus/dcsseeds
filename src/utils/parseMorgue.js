@@ -65,11 +65,8 @@ const MORGUE_REGEX = {
   },
 
   [MORGUE_FIELD.SpeciesBackground]: async ({ name, morgueText }) => {
-    const [, speciesBackground] = await runRegex(
-      MORGUE_FIELD.SpeciesBackground,
-      morgueText,
-      new RegExp(`${name}.*?\\((.*?)\\)\\s+Turns:`),
-    );
+    const [, speciesBackground] = await runRegex(MORGUE_FIELD.SpeciesBackground, morgueText, /Began as a (.*?) on/);
+
     const [, species] = await runRegex('species', speciesBackground, Species.Regex);
     const background = speciesBackground.replace(species, '').trim();
     return { species, background };
