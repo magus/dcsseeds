@@ -33,7 +33,12 @@ module.exports = async (req, res) => {
       runeCount,
 
       items,
+      isMorgue,
     } = await parseMorgue(morgue);
+
+    if (!isMorgue) {
+      return send(res, 500, new Error('not a morgue!'));
+    }
 
     const variables = {
       morgue,
