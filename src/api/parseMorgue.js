@@ -22,7 +22,7 @@ module.exports = async (req, res) => {
 
     const data = { morgueParsed };
     // console.debug({ morgueParsed });
-    return send(res, 200, data);
+    return send(res, 200, data, { prettyPrint: true });
   } catch (err) {
     return send(res, 500, err);
   }
