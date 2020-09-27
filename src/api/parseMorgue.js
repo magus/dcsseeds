@@ -1,7 +1,6 @@
 const { query } = require('graphqurl');
 const parseMorgue = require('src/utils/parseMorgue');
 const send = require('src/server/utils/zeitSend');
-const { parse } = require('graphql');
 
 const { HASURA_ADMIN_SECRET } = process.env;
 

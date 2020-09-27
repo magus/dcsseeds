@@ -1,7 +1,7 @@
 const { query } = require('graphqurl');
 const parseMorgue = require('src/utils/parseMorgue');
+const updateSeedNotes = require('src/utils/updateSeedNotes');
 const send = require('src/server/utils/zeitSend');
-const { parse } = require('graphql');
 
 const { HASURA_ADMIN_SECRET } = process.env;
 
@@ -30,14 +30,42 @@ module.exports = async (req, res) => {
     const { allMorgues } = result.data;
 
     const updateAllMorgues = allMorgues.map(async (seedPlayer) => {
-      const parsedMorgue = await parseMorgue(seedPlayer.morgue);
-      const updatedMorgueResult = await query({
-        query: gqlUpdateSeedPlayer(seedPlayer.id, parsedMorgue),
-        endpoint: GRAPHQL_ENDPOINT,
-        headers: {
-          'x-hasura-admin-secret': HASURA_ADMIN_SECRET,
-        },
+      // submit each morgue again?
+      // return fetch(`http://localhost:3000/api/submit?morgue=${seedPlayer.morgue}`)
+
+      const { items, ...remainingParsedMorgueFields } = await parseMorgue(seedPlayer.morgue);
+
+      // update seed notes
+      const updateSeedNotesResults = await updateSeedNotes({
+        seed: remainingParsedMorgueFields.value,
+        version: remainingParsedMorgueFields.version,
+        items,
       });
+
+      // update morgue with remaining parsed morgue fields
+      const updateSeedPlayerQuery = gqlUpdateSeedPlayer(seedPlayer.id, {
+        ...remainingParsedMorgueFields,
+        // force updated column to be now
+        updated: 'now()',
+      });
+
+      try {
+        const updatedMorgueResult = await query({
+          query: updateSeedPlayerQuery,
+          endpoint: GRAPHQL_ENDPOINT,
+          headers: {
+            'x-hasura-admin-secret': HASURA_ADMIN_SECRET,
+          },
+        });
+      } catch (updateMorgueResultErr) {
+        console.error('reparseMorgues', {
+          updateMorgueResultErr,
+          updateSeedPlayerQuery,
+          seedPlayer,
+          remainingParsedMorgueFields,
+          locations: updateMorgueResultErr.locations,
+        });
+      }
     });
 
     // wait for all updates to complete
@@ -76,7 +104,7 @@ const gqlUpdateSeedPlayer = (id, parsedMorgue) => {
         fieldValue = `"${fieldValue}"`;
         break;
       case 'object':
-        fieldValue = `"${JSON.stringify(fieldValue).replace(/"/g, '\\"')}"`;
+        fieldValue = `${JSON.stringify(fieldValue)}`;
       case 'number':
       default:
         break;
@@ -86,16 +114,17 @@ const gqlUpdateSeedPlayer = (id, parsedMorgue) => {
   });
 
   const updateFields = allFieldValues.join(', ');
-
-  console.warn({ updateFields });
-
-  return `
-    mutation UpdateSeedPlayerParsedMorgue {
-      update_seed_player(where: {id: {_eq: ${id}}}, _set: { ${updateFields} }) {
-        returning {
-          id
-        }
+  const query = `
+  mutation UpdateSeedPlayerParsedMorgue {
+    update_seed_player(where: {id: {_eq: ${id}}}, _set: { ${updateFields} }) {
+      returning {
+        id
       }
     }
-  `;
+  }
+`;
+
+  // console.warn({ updateFields, query });
+
+  return query;
 };

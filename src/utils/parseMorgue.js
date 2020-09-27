@@ -67,11 +67,15 @@ const MORGUE_REGEX = {
   },
 
   [MORGUE_FIELD.SpeciesBackground]: async ({ name, morgueText }) => {
-    const [, speciesBackground] = await runRegex(MORGUE_FIELD.SpeciesBackground, morgueText, /Began as a (.*?) on/);
+    try {
+      const [, speciesBackground] = await runRegex(MORGUE_FIELD.SpeciesBackground, morgueText, /Began as an? (.*?) on/);
 
-    const [, species] = await runRegex('species', speciesBackground, Species.Regex);
-    const background = speciesBackground.replace(species, '').trim();
-    return { species, background };
+      const [, species] = await runRegex('species', speciesBackground, Species.Regex);
+      const background = speciesBackground.replace(species, '').trim();
+      return { species, background };
+    } catch (err) {
+      console.error(err, name, morgueText);
+    }
   },
 
   [MORGUE_FIELD.Turns]: async ({ morgueText }) => {
@@ -96,14 +100,14 @@ const MORGUE_REGEX = {
         /}: (\d)\/(\d+) runes: ([a-z\, ]+)/,
       );
 
-      const runes = JSON.stringify(runesString.split(', '));
+      const runes = runesString.split(', ');
       const runeCount = toNumber(runeCountString);
 
       return { runes, runeCount };
     } catch (err) {
-      // no runes match, return empty
-      // seed_player will default to `runeCount: 0, runes: []`
-      return {};
+      // no runes match, return empties
+      // seed_player will also default these fields in admin console
+      return { runes: [], runeCount: 0 };
     }
   },
 
