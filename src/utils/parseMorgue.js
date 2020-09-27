@@ -58,8 +58,13 @@ const MORGUE_REGEX = {
   },
 
   [MORGUE_FIELD.Seed]: async ({ morgueText }) => {
-    const [, value] = await runRegex(MORGUE_FIELD.Seed, morgueText, /Game seed: (\d+)/);
-    return { value };
+    try {
+      const [, value] = await runRegex(MORGUE_FIELD.Seed, morgueText, /Game seed: (\d+)/);
+      return { value };
+    } catch (err) {
+      // unable to parse seed, most likely not a morgue
+      return { value: null };
+    }
   },
 
   [MORGUE_FIELD.Score]: async ({ name, morgueText }) => {
