@@ -27,6 +27,7 @@ async function parseMorgueText(name, morgueText) {
     ...(await MORGUE_REGEX[MORGUE_FIELD.Turns](args)),
     ...(await MORGUE_REGEX[MORGUE_FIELD.Time](args)),
     ...(await MORGUE_REGEX[MORGUE_FIELD.Runes](args)),
+    ...(await MORGUE_REGEX[MORGUE_FIELD.Items](args)),
   };
 }
 
@@ -38,6 +39,7 @@ const MORGUE_FIELD = keyMirror({
   Turns: true,
   Time: true,
   Runes: true,
+  Items: true,
 });
 
 const MORGUE_REGEX = {
@@ -104,6 +106,141 @@ const MORGUE_REGEX = {
       return {};
     }
   },
+
+  [MORGUE_FIELD.Items]: async ({ morgueText }) => {
+    try {
+      const morgueNotes = getAllMorgueNotes(morgueText);
+      const items = getAllMorgueItems(morgueNotes);
+
+      return { items };
+    } catch (err) {
+      // return empty
+      return {};
+    }
+  },
 };
+
+function getAllMorgueNotes(morgueText) {
+  const NOTE_SEPARATOR = '|';
+  const morgueLines = morgueText.split('\n');
+
+  // add 3 to skip the turn place note header lines
+  const startLine =
+    morgueLines.findIndex((line) => {
+      const notesStart = line.match(/^Notes$/m);
+      // console.warn('checking line', line);
+      if (notesStart) {
+        // console.warn('notes start found');
+        return true;
+      }
+    }) + 3;
+
+  // start searching after start line and go back a line to capture last valid
+  // note line instad of the line that failed to match note separator
+  const endLine =
+    morgueLines.slice(startLine).findIndex((line) => {
+      const hasNoteSeparator = !!~line.indexOf(NOTE_SEPARATOR);
+      // console.warn('checking line', line);
+      if (!hasNoteSeparator) {
+        // console.warn('notes end found');
+        return true;
+      }
+    }) +
+    (startLine - 1);
+
+  // console.warn({ startLine: morgueLines[startLine], endLine: morgueLines[endLine] });
+
+  // go through for each line and regroup separated lines into
+  // a better shape for iteration and parsing
+  //
+  // Example
+  // 56910 | Crypt:3  | Got a slimy hand crossbow {crossbow}
+  // 56913 | Crypt:3  | Identified the +10 great sword of the Common Good {vorpal,
+  //                  | *Contam rPois Str+4 Dex+2, long} (You found it on level 3
+  //                  | of the Crypt)
+  // 56914 | Crypt:3  | Identified the +10 hand crossbow "Afaehaar" {elec, Str+4,
+  //                  | crossbow} (You found it on level 3 of the Crypt)
+  // 57138 | Tomb:1   | Entered Level 1 of the Tomb of the Ancients
+  //
+  // ...becomes...
+  //
+  const notes = [];
+  let currentNote = null;
+
+  function parseNoteLine(line) {
+    return line.split(NOTE_SEPARATOR).map((_) => _.trim());
+  }
+
+  for (let i = startLine; i <= endLine; i++) {
+    const thisLine = morgueLines[i];
+    // console.warn('checking', i, thisLine);
+
+    const countSeparators = thisLine.match(new RegExp(`\\${NOTE_SEPARATOR}`, 'g')).length;
+    switch (countSeparators) {
+      case 1:
+        {
+          // continue currentNote, append to note field
+          const [, note] = parseNoteLine(thisLine);
+          // console.warn('continue note', { currentNote, note });
+          currentNote.note = `${currentNote.note} ${note}`;
+        }
+        break;
+      case 2:
+      default: {
+        // new note found
+        // if there is a currentNote, its finished
+        // push it onto notes
+        if (currentNote) {
+          notes.push(currentNote);
+        }
+        // start new note for thisLine
+        const [turn, loc, note] = parseNoteLine(thisLine);
+        currentNote = { turn, loc, note };
+      }
+    }
+
+    // console.warn({ thisLine, countSeparators, currentNote });
+  }
+
+  // add last note to notes
+  notes.push(currentNote);
+
+  return notes;
+}
+
+function getAllMorgueItems(morgueNotes) {
+  const items = [];
+
+  function createItem(name, location) {
+    return items.push({ name, location });
+  }
+
+  morgueNotes.forEach((morgueNote) => {
+    // check in this order to ensure we find most specific first
+    // Regex Tests
+    // Idenfitied: https://regexr.com/5csa7
+    // Found: https://regexr.com/5csaa
+    const found = morgueNote.note.match(/Found the (.*)?/);
+    const gift = morgueNote.note.match(/gifted it to you/);
+    const identWithLoc = morgueNote.note.match(/Identified the (.*) \(You found it on level (.*) of the (.*)\)/);
+    const ident = morgueNote.note.match(/Identified the (.*)/);
+
+    if (gift) {
+      // skip gifts
+      return;
+    } else if (found) {
+      const [, item] = found;
+      createItem(item, morgueNote.loc);
+    } else if (identWithLoc) {
+      const [, item, level, loc] = identWithLoc;
+      createItem(item, `${loc}:${level}`);
+    } else if (ident) {
+      const [, item] = ident;
+      createItem(item, morgueNote.loc);
+    }
+  });
+
+  return items;
+}
 
 const toNumber = (value) => parseInt(value, 10);
