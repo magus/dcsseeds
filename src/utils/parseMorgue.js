@@ -254,7 +254,7 @@ function getAllMorgueItems(morgueNotes) {
       return;
     } else if (trove) {
       const [, item] = trove;
-      createItem(item, morgueNote.loc);
+      createItem(`Treasure Trove (${item})`, morgueNote.loc);
     } else if (spells) {
       const [, item] = spells;
       createItem(item, morgueNote.loc);
