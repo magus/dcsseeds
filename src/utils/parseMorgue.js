@@ -73,7 +73,9 @@ const MORGUE_REGEX = {
   },
 
   [MORGUE_FIELD.Turns]: async ({ morgueText }) => {
-    const [, turns] = await runRegex(MORGUE_FIELD.Turns, morgueText, /Turns: (\d+)/);
+    const [, turnsString] = await runRegex(MORGUE_FIELD.Turns, morgueText, /Turns: (\d+)/);
+    const turns = toNumber(turnsString);
+
     return { turns };
   },
 
