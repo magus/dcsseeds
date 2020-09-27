@@ -1,6 +1,6 @@
 const { send } = require('micro');
 
-module.exports = function zeitSend(res, statusCode, data) {
+module.exports = function zeitSend(res, statusCode, data, { prettyPrint } = {}) {
   const isError = statusCode === 500 || data instanceof Error;
 
   // JIT ERROR is created if error and data is missing
@@ -29,5 +29,7 @@ module.exports = function zeitSend(res, statusCode, data) {
     }
   }
 
-  return send(res, statusCode, responseJson);
+  const formattedResponseJson = !prettyPrint ? responseJson : JSON.stringify(responseJson, null, 2);
+
+  return send(res, statusCode, formattedResponseJson);
 };
