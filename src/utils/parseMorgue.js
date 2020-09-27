@@ -73,14 +73,25 @@ const MORGUE_REGEX = {
   },
 
   [MORGUE_FIELD.SpeciesBackground]: async ({ name, morgueText }) => {
-    try {
-      const [, speciesBackground] = await runRegex(MORGUE_FIELD.SpeciesBackground, morgueText, /Began as an? (.*?) on/);
-
+    async function parseSpeciesBackground(speciesBackground) {
       const [, species] = await runRegex('species', speciesBackground, Species.Regex);
       const background = speciesBackground.replace(species, '').trim();
       return { species, background };
+    }
+
+    try {
+      const [, speciesBackground] = await runRegex(MORGUE_FIELD.SpeciesBackground, morgueText, /Began as an? (.*?) on/);
+      return await parseSpeciesBackground(speciesBackground);
     } catch (err) {
-      console.error(err, name, morgueText);
+      // try alternate format
+      const [, speciesBackground] = await runRegex(
+        MORGUE_FIELD.SpeciesBackground,
+        morgueText,
+        new RegExp(`${name}.*?\\((.*?)\\)`),
+      );
+      return await parseSpeciesBackground(speciesBackground);
+    } finally {
+      console.error('both species background parsing failed');
     }
   },
 
