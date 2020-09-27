@@ -20,11 +20,8 @@ module.exports = async (req, res) => {
 
     const morgueParsed = await parseMorgue(morgue);
 
-    console.log(morgueParsed.items.map((_) => `[${_.location}] ${_.name}`).join('\n'));
-
     const data = { morgueParsed };
-    console.debug({ morgueParsed });
-
+    // console.debug({ morgueParsed });
     return send(res, 200, data);
   } catch (err) {
     return send(res, 500, err);
