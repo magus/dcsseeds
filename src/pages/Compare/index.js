@@ -2,15 +2,16 @@ import { useRouter } from 'next/router';
 import Compare from './Compare';
 import Page from 'src/components/Page';
 
-const COMPARE_TOKEN = '..';
+// https://regexr.com/5cs4j
+const COMPARE_TOKEN_REGEX = /^([^\.]*?)\.{2,3}([^\.]*)$/;
 
 function getPlayers(router) {
   const { playerA, playerB } = router.query;
 
-  // console.warn({ playerA, playerB });
+  const tokenMatch = playerA.match(COMPARE_TOKEN_REGEX);
 
-  if (!!~playerA.indexOf(COMPARE_TOKEN)) {
-    const [_pA, _pB] = playerA.split(COMPARE_TOKEN);
+  if (tokenMatch) {
+    const [, _pA, _pB] = tokenMatch;
     return [_pA, _pB];
   } else {
     return [playerA, playerB];
