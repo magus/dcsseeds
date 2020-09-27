@@ -7,8 +7,6 @@ track random seeds in dcss
 - api/reparseMorgue
   - other fields? God, Death location, XL, Health, Magic, Gold, AC, EV, etc.
 
-- Use turns to prevent duplicate seed submissions?
-
 - Query for all unique players to populate two selects on Compare page
   Populate both select elements with the users
   Select the users from the compare url if available

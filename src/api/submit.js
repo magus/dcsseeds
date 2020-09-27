@@ -18,15 +18,45 @@ module.exports = async (req, res) => {
       return send(res, 500, new Error('Must provide [morgue]'));
     }
 
-    const morgueParsed = await parseMorgue(morgue);
+    const {
+      name,
+      score,
+      version,
+      value,
+      species,
+      fullVersion,
+      background,
+      turns,
+      timeSeconds,
+      runes,
+      runeCount,
+
+      items,
+    } = await parseMorgue(morgue);
+
+    const variables = {
+      morgue,
+      name,
+      score,
+      version,
+      value,
+      species,
+      fullVersion,
+      background,
+      turns,
+      timeSeconds,
+      runes,
+      runeCount,
+    };
+
+    // get seed notes, create + update if necessary
+    const autoSeedNotes = items.map((_) => `[${_.location}] ${_.name}`).join('\n');
 
     // mutate to create seed player
     const result = await query({
       query: CREATE_SEED_PLAYER,
       endpoint: GRAPHQL_ENDPOINT,
-      variables: {
-        ...morgueParsed,
-      },
+      variables,
       headers: {
         'x-hasura-admin-secret': HASURA_ADMIN_SECRET,
       },
@@ -50,7 +80,7 @@ module.exports = async (req, res) => {
 const GRAPHQL_ENDPOINT = 'https://dcsseeds.herokuapp.com/v1/graphql';
 
 const CREATE_SEED_PLAYER = `
-  mutation MyMutation(
+  mutation InsertSeedPlayer(
     $morgue: String!
     $name: String!
     $score: Int!
@@ -69,10 +99,10 @@ const CREATE_SEED_PLAYER = `
         morgue: $morgue
         name: $name
         score: $score
-        turns: $turns,
-        timeSeconds: $timeSeconds,
-        runes: $runes,
-        runeCount: $runeCount,
+        turns: $turns
+        timeSeconds: $timeSeconds
+        runes: $runes
+        runeCount: $runeCount
         seed: {
           data: {
             background: $background
@@ -84,6 +114,7 @@ const CREATE_SEED_PLAYER = `
           on_conflict: { constraint: seed_pkey1, update_columns: fullVersion }
         }
       }
+      on_conflict: { constraint: seed_player_pkey, update_columns: updated }
     ) {
       returning {
         id
