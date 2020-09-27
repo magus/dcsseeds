@@ -229,10 +229,15 @@ function getAllMorgueItems(morgueNotes) {
     const identSpecialLoc = morgueNote.note.match(/Identified the (.*) \(You found it in a (.*)\)/);
     const identWithLoc = morgueNote.note.match(/Identified the (.*) \(You found it on level (.*) of the (.*)\)/);
     const ident = morgueNote.note.match(/Identified the (.*)/);
+    const trove = morgueNote.note.match(/This trove needs (.*) to function/);
+    //
 
     if (gift) {
       // skip gifts
       return;
+    } else if (trove) {
+      const [, item] = trove;
+      createItem(item, morgueNote.loc);
     } else if (found) {
       const [, item] = found;
       createItem(item, morgueNote.loc);
