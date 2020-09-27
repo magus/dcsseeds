@@ -119,7 +119,7 @@ const CREATE_SEED_PLAYER = `
           on_conflict: { constraint: seed_pkey1, update_columns: fullVersion }
         }
       }
-      on_conflict: { constraint: seed_player_pkey, update_columns: updated }
+      on_conflict: { constraint: seed_player_pkey, update_columns: [runes, runeCount, updated] }
     ) {
       returning {
         id

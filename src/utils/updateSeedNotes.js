@@ -35,7 +35,8 @@ async function getSeedNote({ seed, version, items }) {
   });
   // break apart by new lines
   const [existingSeedNote] = existingSeedNotesQuery.data.seed_note;
-  const existingSeedNoteLines = existingSeedNote ? existingSeedNote.value.split('\n') : [];
+  const hasExistingNotes = existingSeedNote && existingSeedNote.value.trim();
+  const existingSeedNoteLines = hasExistingNotes ? hasExistingNotes.split('\n') : [];
 
   // combine by looking at each row in both notes
   // keep unique entries to ensure no overwriting
@@ -50,6 +51,8 @@ async function getSeedNote({ seed, version, items }) {
   // parse lines of both existing seed notes and autoSeedNotes
   existingSeedNoteLines.forEach(parseNoteLine);
   autoSeedNotes.forEach(parseNoteLine);
+
+  // console.log({ combinedNotes, autoSeedNotes, existingSeedNoteLines });
 
   return combinedNotes.join('\n');
 }
