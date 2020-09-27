@@ -222,6 +222,7 @@ function getAllMorgueItems(morgueNotes) {
     // Found: https://regexr.com/5csaa
     const found = morgueNote.note.match(/Found the (.*)?/);
     const gift = morgueNote.note.match(/gifted it to you/);
+    const identSpecialLoc = morgueNote.note.match(/Identified the (.*) \(You found it in a (.*)\)/);
     const identWithLoc = morgueNote.note.match(/Identified the (.*) \(You found it on level (.*) of the (.*)\)/);
     const ident = morgueNote.note.match(/Identified the (.*)/);
 
@@ -231,6 +232,9 @@ function getAllMorgueItems(morgueNotes) {
     } else if (found) {
       const [, item] = found;
       createItem(item, morgueNote.loc);
+    } else if (identSpecialLoc) {
+      const [, item, loc] = identSpecialLoc;
+      createItem(item, loc);
     } else if (identWithLoc) {
       const [, item, level, loc] = identWithLoc;
       createItem(item, `${loc}:${level}`);
