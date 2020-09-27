@@ -7,11 +7,16 @@ module.exports = async function parseMorgue(morgue) {
   const morgueText = await morgueResponse.text();
 
   const [, name] = await runRegex('name', morgue, /rawdata\/(.*?)\//);
+
+  // detect morgues to throw out/ignore in submit but still allow parseMorgue api to work
+  const isMorgue = !!morgue.match(new RegExp(`morgue-${name}-\\d{8}-\\d{6}.txt`));
+
   const morgueParsed = await parseMorgueText(name, morgueText);
 
   return {
     name,
     morgue,
+    isMorgue,
     ...morgueParsed,
   };
 };
