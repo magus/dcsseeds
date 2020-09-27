@@ -61,6 +61,8 @@ const CREATE_SEED_PLAYER = `
     $background: String!
     $turns: Int!
     $timeSeconds: Int!
+    $runes: jsonb!
+    $runeCount: Int!
   ) {
     insert_seed_player(
       objects: {
@@ -69,6 +71,8 @@ const CREATE_SEED_PLAYER = `
         score: $score
         turns: $turns,
         timeSeconds: $timeSeconds,
+        runes: $runes,
+        runeCount: $runeCount,
         seed: {
           data: {
             background: $background

@@ -92,7 +92,7 @@ const MORGUE_REGEX = {
         /}: (\d)\/(\d+) runes: ([a-z\, ]+)/,
       );
 
-      const runes = runesString.split(', ');
+      const runes = JSON.stringify(runesString.split(', '));
       const runeCount = toNumber(runeCountString);
 
       return { runes, runeCount };
