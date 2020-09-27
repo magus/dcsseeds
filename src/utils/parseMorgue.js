@@ -58,12 +58,18 @@ const MORGUE_REGEX = {
   },
 
   [MORGUE_FIELD.Score]: async ({ name, morgueText }) => {
-    const [, score] = await runRegex(
-      MORGUE_FIELD.Score,
-      morgueText,
-      new RegExp(`Game seed: \\d+[^\\d]*?(\\d+) ${name}`),
-    );
-    return { score };
+    try {
+      const [, score] = await runRegex(
+        MORGUE_FIELD.Score,
+        morgueText,
+        new RegExp(`Game seed: \\d+[^\\d]*?(\\d+) ${name}`),
+      );
+
+      return { score };
+    } catch (err) {
+      // no score, unfinished run maybe?
+      return { score: 0 };
+    }
   },
 
   [MORGUE_FIELD.SpeciesBackground]: async ({ name, morgueText }) => {
