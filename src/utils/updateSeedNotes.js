@@ -23,8 +23,6 @@ module.exports = async function updateSeedNotes({ seed, version, items }) {
 };
 
 async function getSeedNote({ seed, version, items }) {
-  // get seed notes, create + update if necessary
-  const autoSeedNotes = items.map((_) => `[${_.location}] ${_.name}`);
   const existingSeedNotesQuery = await query({
     query: GET_SEED_NOTES,
     endpoint: GRAPHQL_ENDPOINT,
@@ -33,26 +31,31 @@ async function getSeedNote({ seed, version, items }) {
       'x-hasura-admin-secret': HASURA_ADMIN_SECRET,
     },
   });
+
   // break apart by new lines
   const [existingSeedNote] = existingSeedNotesQuery.data.seed_note;
-  const hasExistingNotes = existingSeedNote && existingSeedNote.value.trim();
-  const existingSeedNoteLines = hasExistingNotes ? hasExistingNotes.split('\n') : [];
+  const existingSeedNoteTrimmed = existingSeedNote && existingSeedNote.value.trim();
+  const existingSeedNoteLines = existingSeedNoteTrimmed ? existingSeedNoteTrimmed.split('\n') : [];
 
-  // combine by looking at each row in both notes
-  // keep unique entries to ensure no overwriting
-  const combinedNotes = [];
-  const combinedNoteLookup = {};
-  function parseNoteLine(line) {
-    if (!combinedNoteLookup[line]) {
-      combinedNoteLookup[line] = true;
-      combinedNotes.push(line);
+  // key on `[location] name`
+  const getItemNoteKey = (_) => `[${_.location}] ${_.name}`;
+
+  // start with existing seed note lines
+  // only add if item key (getItemNoteKey) not found
+  const combinedNotes = [...existingSeedNoteLines];
+
+  items.forEach((item) => {
+    const key = getItemNoteKey(item);
+    if (!!~existingSeedNoteTrimmed.indexOf(key)) {
+      // skip, item already accounted for
+      // this will preserve rows where we add extra information, e.g. shop price, monster, etc.
+    } else {
+      // add this item row
+      combinedNotes.push(key);
     }
-  }
-  // parse lines of both existing seed notes and autoSeedNotes
-  existingSeedNoteLines.forEach(parseNoteLine);
-  autoSeedNotes.forEach(parseNoteLine);
+  });
 
-  // console.log({ combinedNotes, autoSeedNotes, existingSeedNoteLines });
+  // console.log({ combinedNotes });
 
   return combinedNotes.join('\n');
 }
