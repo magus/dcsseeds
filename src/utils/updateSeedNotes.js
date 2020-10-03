@@ -34,7 +34,7 @@ async function getSeedNote({ seed, version, items }) {
 
   // break apart by new lines
   const [existingSeedNote] = existingSeedNotesQuery.data.seed_note;
-  const existingSeedNoteTrimmed = existingSeedNote && existingSeedNote.value.trim();
+  const existingSeedNoteTrimmed = !existingSeedNote ? '' : existingSeedNote.value.trim();
   const existingSeedNoteLines = existingSeedNoteTrimmed ? existingSeedNoteTrimmed.split('\n') : [];
 
   // key on `[location] name`
