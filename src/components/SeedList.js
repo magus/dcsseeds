@@ -42,7 +42,7 @@ export default function SeedList(props) {
                 );
               })}
             </div>
-            <SeedNotes>{seedRow.note?.value}</SeedNotes>
+            {withHomeStyle ? null : <SeedNotes>{seedRow.note?.value}</SeedNotes>}
             {players.length < 2 || !withHomeStyle ? null : <button onClick={handleDelete(seedRow.id)}>Complete</button>}
           </SeedRow>
         );
@@ -58,6 +58,7 @@ const RecentSeeds = styled.div`
 
 const SeedRow = styled.div`
   max-width: 640px;
+  min-width: 480px;
   border: 1px solid var(--button-border-color);
   padding: 12px 24px;
   display: flex;
