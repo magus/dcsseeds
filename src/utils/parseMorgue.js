@@ -262,13 +262,18 @@ function getAllMorgueItems(morgueNotes) {
     const spells = morgueNote.note.match(/You add the spells? (.*) to your library/);
     const playerNotes = morgueNote.note.match(/^(>>.*)/);
     const ziggurat = morgueNote.note.match(/Found a gateway to a ziggurat/);
-    // Found a gateway to a ziggurat.
+    const bought = morgueNote.note.match(/Bought the (.*?) for (\d+) gold pieces/);
 
     if (gift) {
       // skip gifts
       return;
-    }
-    if (ziggurat) {
+    } else if (bought) {
+      const [, item, gold] = bought;
+      const artefactMatch = item.match(/{.*?}/);
+      if (artefactMatch) {
+        createItem(`${item} (${gold} gold)`, morgueNote.loc);
+      }
+    } else if (ziggurat) {
       createItem('Ziggurat', morgueNote.loc);
     } else if (playerNotes) {
       const [, note] = playerNotes;
