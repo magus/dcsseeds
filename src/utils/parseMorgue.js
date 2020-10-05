@@ -261,10 +261,15 @@ function getAllMorgueItems(morgueNotes) {
     const trove = morgueNote.note.match(/This trove needs (.*) to function/);
     const spells = morgueNote.note.match(/You add the spells? (.*) to your library/);
     const playerNotes = morgueNote.note.match(/^(>>.*)/);
+    const ziggurat = morgueNote.note.match(/Found a gateway to a ziggurat/);
+    // Found a gateway to a ziggurat.
 
     if (gift) {
       // skip gifts
       return;
+    }
+    if (ziggurat) {
+      createItem('Ziggurat', morgueNote.loc);
     } else if (playerNotes) {
       const [, note] = playerNotes;
       createItem(`${note} (Player Note)`, morgueNote.loc);
