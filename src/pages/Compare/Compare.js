@@ -63,7 +63,7 @@ export default function Compare(props) {
         {/* headers */}
         <CompareSeedsPlayer>
           <PlayerColumn>Player</PlayerColumn>
-          <TurnsColumn>Turns</TurnsColumn>
+          <TurnsColumn>Turns/sec</TurnsColumn>
           <TimeColumn>Time</TimeColumn>
           <RuneColumn>Runes</RuneColumn>
           <ScoreColumn>Score</ScoreColumn>
@@ -112,10 +112,12 @@ function CompareSeed({ seed }) {
       {players.map((player, i) => {
         const isWinner = maxScore === player.score;
 
+        const turnsPerSecond = player.timeSeconds ? player.turns / player.timeSeconds : 0;
+
         return (
           <CompareSeedsPlayer key={player.name} color={isWinner ? playerColors[i] : loserColor}>
             <PlayerColumn>{player.name}</PlayerColumn>
-            <TurnsColumn>{player.turns}</TurnsColumn>
+            <TurnsColumn>{turnsPerSecond.toFixed(2)}</TurnsColumn>
             <TimeColumn>
               <Time>{player.timeSeconds}</Time>
             </TimeColumn>
