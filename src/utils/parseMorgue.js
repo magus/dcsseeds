@@ -263,10 +263,14 @@ function getAllMorgueItems(morgueNotes) {
     const playerNotes = morgueNote.note.match(/^(>>.*)/);
     const ziggurat = morgueNote.note.match(/Found a gateway to a ziggurat/);
     const bought = morgueNote.note.match(/Bought the (.*?) for (\d+) gold pieces/);
+    const weilding = morgueNote.note.match(/(.*?) is wielding the (.*)/);
 
     if (gift) {
       // skip gifts
       return;
+    } else if (weilding) {
+      const [, who, item] = weilding;
+      createItem(`(${who}) ${item}`, morgueNote.loc);
     } else if (bought) {
       const [, item, gold] = bought;
       const artefactMatch = item.match(/{.*?}/);
