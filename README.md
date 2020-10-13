@@ -4,6 +4,9 @@ track random seeds in dcss
 
 ## TODO
 
+- Identified unrands do not correctly write notes
+  https://github.com/crawl/crawl/issues/1580
+
 - api/reparseMorgue
   - other fields? God, Death location, XL, Health, Magic, Gold, AC, EV, etc.
 
