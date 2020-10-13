@@ -147,6 +147,7 @@ const MORGUE_REGEX = {
 
       return { items };
     } catch (err) {
+      console.error('MORGUE_FIELD.Items', err);
       // return empty
       return {};
     }
@@ -248,60 +249,84 @@ function getAllMorgueItems(morgueNotes) {
     return items.push({ name, location });
   }
 
-  morgueNotes.forEach((morgueNote) => {
-    // check in this order to ensure we find most specific first
-    // Regex Tests
-    // Idenfitied: https://regexr.com/5csa7
-    // Found: https://regexr.com/5csaa
-    const found = morgueNote.note.match(/Found the (.*)?/);
-    const gift = morgueNote.note.match(/gifted it to you/);
-    const identSpecialLoc = morgueNote.note.match(/Identified the (.*) \(You found it in a (.*)\)/);
-    const identWithLoc = morgueNote.note.match(/Identified the (.*) \(You found it on level (.*) of the (.*)\)/);
-    const ident = morgueNote.note.match(/Identified the (.*)/);
-    const trove = morgueNote.note.match(/This trove needs (.*) to function/);
-    const spells = morgueNote.note.match(/You add the spells? (.*) to your library/);
-    const playerNotes = morgueNote.note.match(/^(>>.*)/);
-    const ziggurat = morgueNote.note.match(/Found a gateway to a ziggurat/);
-    const bought = morgueNote.note.match(/Bought the (.*?) for (\d+) gold pieces/);
-    const weilding = morgueNote.note.match(/(.*?) is wielding the (.*)/);
+  function parseNote(morgueNote) {
+    try {
+      // check in this order to ensure we find most specific first
+      // Regex Tests
+      // Idenfitied: https://regexr.com/5csa7
+      // Found: https://regexr.com/5csaa
+      const found = morgueNote.note.match(/Found the (.*)?/);
+      const gift = morgueNote.note.match(/gifted it to you/);
+      const identSpecialLoc = morgueNote.note.match(/Identified the (.*) \(You found it in a (.*)\)/);
+      const identWithLoc = morgueNote.note.match(/Identified the (.*) \(You found it on level (.*) of the (.*)\)/);
+      const ident = morgueNote.note.match(/Identified the (.*)/);
+      const trove = morgueNote.note.match(/This trove needs (.*) to function/);
+      const spells = morgueNote.note.match(/You add the spells? (.*) to your library/);
+      const playerNotes = morgueNote.note.match(/^(>>.*)/);
+      const ziggurat = morgueNote.note.match(/Found a gateway to a ziggurat/);
+      const bought = morgueNote.note.match(/Bought the (.*?) for (\d+) gold pieces/);
+      const weildingWearing = morgueNote.note.match(/(wielding|wearing) the (.*?)(\.|and )/);
 
-    if (gift) {
-      // skip gifts
-      return;
-    } else if (weilding) {
-      const [, who, item] = weilding;
-      createItem(`(${who}) ${item}`, morgueNote.loc);
-    } else if (bought) {
-      const [, item, gold] = bought;
-      const artefactMatch = item.match(/{.*?}/);
-      if (artefactMatch) {
-        createItem(`${item} (${gold} gold)`, morgueNote.loc);
+      if (gift) {
+        // skip gifts
+        return;
+      } else if (weildingWearing) {
+        // What https://regexr.com/5e13q
+        // Who  https://regexr.com/5e14f
+
+        // pull out the 'who'
+        const matchWho = morgueNote.note.match(/((a )?(.*) comes into view)|(^.*?) is/);
+        const [, , , who1, who2] = matchWho;
+        const who = who1 || who2;
+
+        // match each wielding or wearing in the note
+        const reWieldingWearing = /(wielding|wearing) the (.*?)(\.|and )/g;
+        let match = reWieldingWearing.exec(morgueNote.note);
+        while (match) {
+          const [, , item] = match;
+          createItem(`(${who}) ${item}`, morgueNote.loc);
+
+          // next match
+          match = reWieldingWearing.exec(morgueNote.note);
+        }
+      } else if (bought) {
+        const [, item, gold] = bought;
+        const artefactMatch = item.match(/{.*?}/);
+        if (artefactMatch) {
+          createItem(`${item} (${gold} gold)`, morgueNote.loc);
+        }
+      } else if (ziggurat) {
+        createItem('Ziggurat', morgueNote.loc);
+      } else if (playerNotes) {
+        const [, note] = playerNotes;
+        createItem(`${note} (Player Note)`, morgueNote.loc);
+      } else if (trove) {
+        const [, item] = trove;
+        createItem(`Treasure Trove (${item})`, morgueNote.loc);
+      } else if (spells) {
+        const [, item] = spells;
+        createItem(item, morgueNote.loc);
+      } else if (found) {
+        const [, item] = found;
+        createItem(item, morgueNote.loc);
+      } else if (identSpecialLoc) {
+        const [, item, loc] = identSpecialLoc;
+        createItem(item, loc);
+      } else if (identWithLoc) {
+        const [, item, level, loc] = identWithLoc;
+        createItem(item, `${loc}:${level}`);
+      } else if (ident) {
+        const [, item] = ident;
+        createItem(item, morgueNote.loc);
       }
-    } else if (ziggurat) {
-      createItem('Ziggurat', morgueNote.loc);
-    } else if (playerNotes) {
-      const [, note] = playerNotes;
-      createItem(`${note} (Player Note)`, morgueNote.loc);
-    } else if (trove) {
-      const [, item] = trove;
-      createItem(`Treasure Trove (${item})`, morgueNote.loc);
-    } else if (spells) {
-      const [, item] = spells;
-      createItem(item, morgueNote.loc);
-    } else if (found) {
-      const [, item] = found;
-      createItem(item, morgueNote.loc);
-    } else if (identSpecialLoc) {
-      const [, item, loc] = identSpecialLoc;
-      createItem(item, loc);
-    } else if (identWithLoc) {
-      const [, item, level, loc] = identWithLoc;
-      createItem(item, `${loc}:${level}`);
-    } else if (ident) {
-      const [, item] = ident;
-      createItem(item, morgueNote.loc);
+    } catch (err) {
+      console.error(`ERROR; SKIPPING NOTE [${JSON.stringify(morgueNote, null, 2)}]`);
+      console.error('MORGUE_FIELD.Items', 'parseNote', err);
     }
-  });
+  }
+
+  // run parseNote over each morgue note entry
+  morgueNotes.forEach(parseNote);
 
   return items;
 }
