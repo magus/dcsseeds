@@ -54,11 +54,11 @@ export default function SeedList(props) {
 const RecentSeeds = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
 `;
 
 const SeedRow = styled.div`
   max-width: 640px;
-  min-width: 480px;
   border: 1px solid var(--button-border-color);
   padding: 12px 24px;
   display: flex;
