@@ -274,9 +274,15 @@ function getAllMorgueItems(morgueNotes) {
       } else if (weildingWearing) {
         // What https://regexr.com/5e13q
         // Who  https://regexr.com/5e14f
+        // Maggie is wielding the +9 lance "Wyrmbane" {slay drac, rPois rF+ rC+ AC+3}.
+        // a deep elf elementalist comes into view. It is wielding a +1 scythe of protection and wearing the cursed +1 leather armour "Gaoloj" {*Corrode rN++ SInv}.
+        // a deep elf annihilator comes into view. It is wielding a +0 short sword and wearing the amulet of the Four Winds {rN+ MR+++ Clar}.
+        // Gastronok the Ponderous comes into view. He is wielding the +9 lance "Wyrmbane" {slay drac, rPois rF+ rC+ AC+3} and wearing the cursed +1 leather armour "Gaoloj" {*Corrode rN++ SInv}.
+        // a vault guard opens the door. It is wielding the +7 mace of Variability {chain chaos}.
+        // The vault guard is wielding the +7 mace of Variability {chain chaos}.
 
         // pull out the 'who'
-        const matchWho = morgueNote.note.match(/((a )?(.*) comes into view)|(^.*?) is/);
+        const matchWho = morgueNote.note.match(/^((a|the )?(.*?) (is|opens the door|comes into view))/i);
         const [, , , who1, who2] = matchWho;
         const who = who1 || who2;
 
