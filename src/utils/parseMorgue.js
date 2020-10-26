@@ -282,19 +282,20 @@ function getAllMorgueItems(morgueNotes) {
         // The vault guard is wielding the +7 mace of Variability {chain chaos}.
 
         // pull out the 'who'
-        const matchWho = morgueNote.note.match(/^((a|the )?(.*?) (is|opens the door|comes into view))/i);
-        const [, , , who1, who2] = matchWho;
-        const who = who1 || who2;
+        const matchWho = morgueNote.note.match(/^((a |the )?(.*?) (is|opens the door|comes into view))/i);
+        if (matchWho) {
+          const [, , , who] = matchWho;
 
-        // match each wielding or wearing in the note
-        const reWieldingWearing = /(wielding|wearing) the (.*?)(\.|and )/g;
-        let match = reWieldingWearing.exec(morgueNote.note);
-        while (match) {
-          const [, , item] = match;
-          createItem(`(${who}) ${item}`, morgueNote.loc);
+          // match each wielding or wearing in the note
+          const reWieldingWearing = /(wielding|wearing) the (.*?)(\.|and )/g;
+          let match = reWieldingWearing.exec(morgueNote.note);
+          while (match) {
+            const [, , item] = match;
+            createItem(`(${who}) ${item}`, morgueNote.loc);
 
-          // next match
-          match = reWieldingWearing.exec(morgueNote.note);
+            // next match
+            match = reWieldingWearing.exec(morgueNote.note);
+          }
         }
       } else if (bought) {
         const [, item, gold] = bought;
