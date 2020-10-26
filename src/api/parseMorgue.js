@@ -24,6 +24,6 @@ module.exports = async (req, res) => {
     // console.debug({ morgueParsed });
     return send(res, 200, data, { prettyPrint: true });
   } catch (err) {
-    return send(res, 500, err);
+    return send(res, 500, err, { prettyPrint: true });
   }
 };
