@@ -206,7 +206,7 @@ const ScoreRatioVisualContainer = styled.div`
 const scoreFormatter = new Intl.NumberFormat('en');
 
 function abbreviateNumber(value) {
-  const suffixes = ['', 'k', 'm', 'b', 't'];
+  const suffixes = ['', 'K', 'M', 'B', 'T'];
   const suffixNum = Math.floor((('' + value).length - 1) / 3);
   const shortValue = parseFloat(value / Math.pow(1000, suffixNum)).toFixed(0);
   return scoreFormatter.format(shortValue) + suffixes[suffixNum];
