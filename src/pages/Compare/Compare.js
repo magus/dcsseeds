@@ -232,7 +232,8 @@ function Time(props) {
   const time = new Date(props.children * 1000);
   const hours = time.getUTCHours();
   const minutes = time.getUTCMinutes();
-  return `${hours ? `${hours}h` : ''}${minutes}m`;
+  const paddedMinutes = hours && minutes < 10 ? `0${minutes}` : minutes;
+  return `${hours ? `${hours}h` : ''}${paddedMinutes}m`;
 }
 
 function TableLayoutRow({ data, widths }) {
