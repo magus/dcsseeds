@@ -2,11 +2,12 @@ import styled from 'styled-components';
 import Link from 'next/link';
 
 export default function StyledLink(props) {
-  const { children, ...restProps } = props;
+  const { children, className, ...restProps } = props;
+  const buttonProps = { className };
 
   return (
     <Link {...restProps} passHref>
-      <StyledButton>{children}</StyledButton>
+      <StyledButton {...buttonProps}>{children}</StyledButton>
     </Link>
   );
 }
