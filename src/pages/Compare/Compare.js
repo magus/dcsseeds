@@ -4,6 +4,7 @@ import { useQuery } from '@apollo/client';
 
 import Loading from 'src/components/Loading';
 import ErrorPage from 'src/components/ErrorPage';
+import useTouch from 'src/hooks/useTouch';
 
 import * as GraphqlSeed from 'src/graphql/seed';
 import seed from 'src/utils/seed';
@@ -14,6 +15,9 @@ export default function Compare(props) {
   if (!playerA || !playerB) {
     return <ErrorPage header="Error" message="Oops" />;
   }
+
+  const [details, set_details] = React.useState(null);
+  const isTouch = useTouch();
 
   const { loading, error, data } = useQuery(GraphqlSeed.COMPARE_PLAYERS, {
     variables: {
@@ -102,22 +106,33 @@ export default function Compare(props) {
 
         {/* for each seed */}
         {comparedSeeds.map((seed) => {
-          return <CompareSeed key={seed.id} seed={seed} playersOrder={playersOrder} />;
+          const eventHandlers = isTouch
+            ? {
+                onClick: () => set_details(seed.id),
+              }
+            : {
+                onMouseEnter: () => set_details(seed.id),
+                onMouseLeave: () => set_details(null),
+              };
+
+          return (
+            <div key={seed.id} {...eventHandlers}>
+              <CompareSeed seed={seed} simple={seed.id !== details} />
+            </div>
+          );
         })}
       </CompareSeeds>
     </Container>
   );
 }
 
-function CompareSeed({ seed }) {
+function CompareSeed({ simple, seed }) {
   const { players, maxScore } = seed;
 
-  const [hover, set_hover] = React.useState(false);
-
   return (
-    <CompareSeedsRow onMouseEnter={() => set_hover(true)} onMouseLeave={() => set_hover(false)}>
+    <CompareSeedsRow>
       <CompareSeedsRowContent>
-        {!hover ? null : (
+        {simple ? null : (
           <div>
             {seed.species} {seed.background}
           </div>
@@ -128,30 +143,28 @@ function CompareSeed({ seed }) {
 
           const turnsPerSecond = player.timeSeconds ? player.turns / player.timeSeconds : 0;
 
+          if (simple) {
+            return <ScoreRatioVisual key={player.name} ratio={scoreRatio} color={playerColors[i]} />;
+          }
+
           return (
-            <Link href={player.morgue} rel="noopener" target="_blank">
+            <Link key={player.name} href={player.morgue} rel="noopener" target="_blank">
               <CompareSeedsPlayer key={player.name} color={isWinner ? playerColors[i] : loserColor}>
-                {!hover ? (
-                  <ScoreRatioVisual ratio={scoreRatio} color={playerColors[i]} />
-                ) : (
-                  <React.Fragment>
-                    <PlayerColumn>{player.name}</PlayerColumn>
-                    <TurnsColumn>{turnsPerSecond.toFixed(2)}</TurnsColumn>
-                    <TimeColumn>
-                      <Time>{player.timeSeconds}</Time>
-                    </TimeColumn>
-                    <RuneColumn>{player.runeCount}</RuneColumn>
-                    <ScoreColumn>
-                      <Score>{player.score}</Score>
-                    </ScoreColumn>
-                  </React.Fragment>
-                )}
+                <PlayerColumn>{player.name}</PlayerColumn>
+                <TurnsColumn>{turnsPerSecond.toFixed(2)}</TurnsColumn>
+                <TimeColumn>
+                  <Time>{player.timeSeconds}</Time>
+                </TimeColumn>
+                <RuneColumn>{player.runeCount}</RuneColumn>
+                <ScoreColumn>
+                  <Score>{player.score}</Score>
+                </ScoreColumn>
               </CompareSeedsPlayer>
             </Link>
           );
         })}
 
-        {/* {!hover ? null : <SeedInfo seed={seed} />} */}
+        {/* {simple ? null : <SeedInfo seed={seed} />} */}
       </CompareSeedsRowContent>
     </CompareSeedsRow>
   );
@@ -182,11 +195,7 @@ const ScoreRatioVisualContainer = styled.div`
 const scoreFormatter = new Intl.NumberFormat('en');
 
 function Score(props) {
-  return (
-    <Link href={props.href} rel="noopener" target="_blank">
-      {scoreFormatter.format(props.children)}
-    </Link>
-  );
+  return scoreFormatter.format(props.children);
 }
 
 function Time(props) {
