@@ -135,10 +135,22 @@ function CompareSeed({ simple, seed }) {
         {simple ? null : (
           <CompareSeedsPlayer>
             <PlayerColumn style={{ fontSize: 12 }}></PlayerColumn>
-            <TurnsColumn style={{ fontSize: 8 }}>🏃🏻‍♀️</TurnsColumn>
-            <TimeColumn style={{ fontSize: 6 }}>⏱</TimeColumn>
-            <RuneColumn style={{ fontSize: 6 }}>💎</RuneColumn>
-            <ScoreColumn></ScoreColumn>
+            <TurnsColumn style={{ fontSize: 8 }}>
+              <span style={{ fontSize: 12 }}>🏃🏻‍♀️</span>
+              <br />
+              turns/s
+            </TurnsColumn>
+            <TimeColumn style={{ fontSize: 8 }}>
+              <span style={{ fontSize: 12 }}>⏱</span>
+              <br />
+              Time
+            </TimeColumn>
+            <RuneColumn style={{ fontSize: 8 }}>
+              <span style={{ fontSize: 12 }}>💎</span>
+              <br />
+              Runes
+            </RuneColumn>
+            <ScoreColumn style={{ fontSize: 8 }}>Score</ScoreColumn>
           </CompareSeedsPlayer>
         )}
 
@@ -264,7 +276,6 @@ const CompareSeeds = styled.div`
 `;
 
 const CompareSeedsRow = styled.table`
-  border: 1px solid rgba(255, 255, 255, 0.05);
   margin: 16px 0;
   min-height: 64px;
   display: flex;
@@ -273,9 +284,7 @@ const CompareSeedsRow = styled.table`
   position: relative;
 `;
 
-const CompareSeedsRowContent = styled.tbody`
-  padding: 0 16px;
-`;
+const CompareSeedsRowContent = styled.tbody``;
 
 const CompareSeedsPlayer = styled.tr`
   display: table;
@@ -285,6 +294,7 @@ const CompareSeedsPlayer = styled.tr`
 `;
 
 const Column = styled.td`
+  vertical-align: bottom;
   border: 1px solid ${(props) => (props.hideBorder ? 'transparent' : 'rgba(255, 255, 255, 0.05)')};
 `;
 
