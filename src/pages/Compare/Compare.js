@@ -61,34 +61,41 @@ export default function Compare(props) {
 
       <CompareSeeds>
         {/* headers */}
-        <CompareSeedsPlayer>
-          <PlayerColumn>Player</PlayerColumn>
-          <TurnsColumn>Turns/sec</TurnsColumn>
-          <TimeColumn>Time</TimeColumn>
-          <RuneColumn>Runes</RuneColumn>
-          <ScoreColumn>Score</ScoreColumn>
-        </CompareSeedsPlayer>
+        <CompareSeedsRowContent>
+          <CompareSeedsPlayer>
+            <PlayerColumn>Player</PlayerColumn>
+            <TurnsColumn>Turns/sec</TurnsColumn>
+            <TimeColumn>Time</TimeColumn>
+            <RuneColumn>Runes</RuneColumn>
+            <ScoreColumn>Score</ScoreColumn>
+          </CompareSeedsPlayer>
+        </CompareSeedsRowContent>
 
         {/* aggregate */}
         <CompareSeedsRow>
-          <CompareSeedsPlayer color={playerColors[0]}>
-            <PlayerColumn isBold={isWinner(data.playerA.aggregate.sum.score)}>{playerA}</PlayerColumn>
-            <TurnsColumn></TurnsColumn>
-            <TimeColumn></TimeColumn>
-            <RuneColumn></RuneColumn>
-            <ScoreColumn>
-              <Score>{data.playerA.aggregate.sum.score}</Score>
-            </ScoreColumn>
-          </CompareSeedsPlayer>
-          <CompareSeedsPlayer color={playerColors[1]}>
-            <PlayerColumn isBold={isWinner(data.playerB.aggregate.sum.score)}>{playerB}</PlayerColumn>
-            <TurnsColumn></TurnsColumn>
-            <TimeColumn></TimeColumn>
-            <RuneColumn></RuneColumn>
-            <ScoreColumn>
-              <Score>{data.playerB.aggregate.sum.score}</Score>
-            </ScoreColumn>
-          </CompareSeedsPlayer>
+          <CompareSeedsRowContent>
+            <CompareSeedsPlayer color={playerColors[0]}>
+              <PlayerColumn isBold={isWinner(data.playerA.aggregate.sum.score)}>{playerA}</PlayerColumn>
+              <TurnsColumn></TurnsColumn>
+              <TimeColumn></TimeColumn>
+              <RuneColumn></RuneColumn>
+              <ScoreColumn>
+                <Score>{data.playerA.aggregate.sum.score}</Score>
+              </ScoreColumn>
+            </CompareSeedsPlayer>
+            <ScoreRatioVisual ratio={data.playerA.aggregate.sum.score / maxScore} color={playerColors[0]} />
+
+            <CompareSeedsPlayer color={playerColors[1]}>
+              <PlayerColumn isBold={isWinner(data.playerB.aggregate.sum.score)}>{playerB}</PlayerColumn>
+              <TurnsColumn></TurnsColumn>
+              <TimeColumn></TimeColumn>
+              <RuneColumn></RuneColumn>
+              <ScoreColumn>
+                <Score>{data.playerB.aggregate.sum.score}</Score>
+              </ScoreColumn>
+            </CompareSeedsPlayer>
+            <ScoreRatioVisual ratio={data.playerB.aggregate.sum.score / maxScore} color={playerColors[1]} />
+          </CompareSeedsRowContent>
         </CompareSeedsRow>
 
         <TotalDivider />
@@ -109,27 +116,43 @@ function CompareSeed({ seed }) {
 
   return (
     <CompareSeedsRow onMouseEnter={() => set_hover(true)} onMouseLeave={() => set_hover(false)}>
-      {players.map((player, i) => {
-        const isWinner = maxScore === player.score;
+      <CompareSeedsRowContent>
+        {!hover ? null : (
+          <div>
+            {seed.species} {seed.background}
+          </div>
+        )}
+        {players.map((player, i) => {
+          const isWinner = maxScore === player.score;
+          const scoreRatio = maxScore >= 0 ? player.score / maxScore : 0;
 
-        const turnsPerSecond = player.timeSeconds ? player.turns / player.timeSeconds : 0;
+          const turnsPerSecond = player.timeSeconds ? player.turns / player.timeSeconds : 0;
 
-        return (
-          <CompareSeedsPlayer key={player.name} color={isWinner ? playerColors[i] : loserColor}>
-            <PlayerColumn>{player.name}</PlayerColumn>
-            <TurnsColumn>{turnsPerSecond.toFixed(2)}</TurnsColumn>
-            <TimeColumn>
-              <Time>{player.timeSeconds}</Time>
-            </TimeColumn>
-            <RuneColumn>{player.runeCount}</RuneColumn>
-            <ScoreColumn>
-              <Score href={player.morgue}>{player.score}</Score>
-            </ScoreColumn>
-          </CompareSeedsPlayer>
-        );
-      })}
+          return (
+            <Link href={player.morgue} rel="noopener" target="_blank">
+              <CompareSeedsPlayer key={player.name} color={isWinner ? playerColors[i] : loserColor}>
+                {!hover ? (
+                  <ScoreRatioVisual ratio={scoreRatio} color={playerColors[i]} />
+                ) : (
+                  <React.Fragment>
+                    <PlayerColumn>{player.name}</PlayerColumn>
+                    <TurnsColumn>{turnsPerSecond.toFixed(2)}</TurnsColumn>
+                    <TimeColumn>
+                      <Time>{player.timeSeconds}</Time>
+                    </TimeColumn>
+                    <RuneColumn>{player.runeCount}</RuneColumn>
+                    <ScoreColumn>
+                      <Score>{player.score}</Score>
+                    </ScoreColumn>
+                  </React.Fragment>
+                )}
+              </CompareSeedsPlayer>
+            </Link>
+          );
+        })}
 
-      {!hover ? null : <SeedInfo seed={seed} />}
+        {/* {!hover ? null : <SeedInfo seed={seed} />} */}
+      </CompareSeedsRowContent>
     </CompareSeedsRow>
   );
 }
@@ -145,6 +168,16 @@ function SeedInfo({ seed }) {
 
 const playerColors = ['#F6AD55', '#81E6D9'];
 const loserColor = 'rgba(255, 255, 255, 0.40)';
+
+function ScoreRatioVisual({ ratio, color }) {
+  return <ScoreRatioVisualContainer width={ratio * 100} color={color}></ScoreRatioVisualContainer>;
+}
+
+const ScoreRatioVisualContainer = styled.div`
+  width: ${(props) => props.width}%;
+  height: 8px;
+  background-color: ${(props) => props.color};
+`;
 
 const scoreFormatter = new Intl.NumberFormat('en');
 
@@ -210,8 +243,11 @@ const CompareSeedsRow = styled.div`
   position: relative;
 `;
 
-const CompareSeedsPlayer = styled.div`
+const CompareSeedsRowContent = styled.div`
   padding: 0 16px;
+`;
+
+const CompareSeedsPlayer = styled.div`
   display: flex;
   flex-direction: row;
   color: ${(props) => props.color || 'inherit'};
