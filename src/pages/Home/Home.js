@@ -82,11 +82,13 @@ export default function Home(props) {
         <button onClick={handleSubmit}>Submit</button>
       </SubmitForm>
 
-      <StyledLink href="/new">New Seed</StyledLink>
-
       <SeedList seeds={data} withHomeStyle />
 
-      <StyledLink href="/history">History</StyledLink>
+      <LinkBar>
+        <LinkBarLink href="/new">New Seed</LinkBarLink>
+        <LinkBarLink href="/history">History</LinkBarLink>
+        <LinkBarLink href="/compare/magusnn..xoxohorses">Compare magusnn vs xoxohorses</LinkBarLink>
+      </LinkBar>
     </Container>
   );
 }
@@ -112,4 +114,16 @@ const SubmitForm = styled.form`
 const SubmitInput = styled.input`
   line-height: 36px;
   width: 100%;
+`;
+
+const LinkBarLink = styled(StyledLink)`
+  margin: 0 8px 8px 0;
+`;
+
+const LinkBar = styled.div`
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+  width: 100%;
+  flex-wrap: wrap;
 `;
