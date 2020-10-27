@@ -42,12 +42,27 @@ export default function SeedList(props) {
                 );
               })}
             </div>
-            {withHomeStyle ? null : <SeedNotes>{seedRow.note?.value}</SeedNotes>}
+            {withHomeStyle ? null : <SeedNote note={seedRow.note?.value} />}
             {players.length < 2 || !withHomeStyle ? null : <button onClick={handleDelete(seedRow.id)}>Complete</button>}
           </SeedRow>
         );
       })}
     </RecentSeeds>
+  );
+}
+
+function SeedNote({ note }) {
+  const [showNotes, set_showNotes] = React.useState(false);
+
+  if (!showNotes) {
+    return <button onClick={() => set_showNotes(true)}>📝 Show Notes</button>;
+  }
+
+  return (
+    <React.Fragment>
+      <button onClick={() => set_showNotes(false)}>📝 Hide Notes</button>
+      <SeedNoteContainer>{note}</SeedNoteContainer>
+    </React.Fragment>
   );
 }
 
@@ -69,7 +84,7 @@ const SeedRow = styled.div`
   }
 `;
 
-const SeedNotes = styled.div`
+const SeedNoteContainer = styled.div`
   white-space: pre-line;
 `;
 
