@@ -176,7 +176,7 @@ const GlobalStyle = createGlobalStyle`
 
     --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue',
       sans-serif;
-    --font-size: 18px;
+    --font-size: 16px;
   }
 
   html,
