@@ -194,8 +194,15 @@ const ScoreRatioVisualContainer = styled.div`
 
 const scoreFormatter = new Intl.NumberFormat('en');
 
+function abbreviateNumber(value) {
+  const suffixes = ['', 'k', 'm', 'b', 't'];
+  const suffixNum = Math.floor((('' + value).length - 1) / 3);
+  const shortValue = parseFloat(value / Math.pow(1000, suffixNum)).toFixed(1);
+  return scoreFormatter.format(shortValue) + suffixes[suffixNum];
+}
+
 function Score(props) {
-  return scoreFormatter.format(props.children);
+  return <ScoreColumnValue>{abbreviateNumber(props.children)}</ScoreColumnValue>;
 }
 
 function Time(props) {
@@ -283,10 +290,15 @@ const RuneColumn = styled.div`
   font-variant: tabular-nums;
 `;
 
+const ScoreColumnValue = styled.div`
+  font-variant: tabular-nums;
+  font-family: monospace;
+  font-size: var(--font-size);
+`;
+
 const ScoreColumn = styled.div`
   flex: 0.2;
   text-align: right;
-  font-variant: tabular-nums;
 `;
 
 const CompareTitle = styled.div`
