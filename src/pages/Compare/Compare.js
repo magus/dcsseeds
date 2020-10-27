@@ -64,41 +64,28 @@ export default function Compare(props) {
       <CompareTitle>{gameCount} Games</CompareTitle>
 
       <CompareSeeds>
-        {/* headers */}
-        <CompareSeedsRowContent>
-          <CompareSeedsPlayer>
-            <PlayerColumn>Player</PlayerColumn>
-            <TurnsColumn>Turns/sec</TurnsColumn>
-            <TimeColumn>Time</TimeColumn>
-            <RuneColumn>Runes</RuneColumn>
-            <ScoreColumn>Score</ScoreColumn>
-          </CompareSeedsPlayer>
-        </CompareSeedsRowContent>
-
         {/* aggregate */}
         <CompareSeedsRow>
           <CompareSeedsRowContent>
             <CompareSeedsPlayer color={playerColors[0]}>
               <PlayerColumn isBold={isWinner(data.playerA.aggregate.sum.score)}>{playerA}</PlayerColumn>
-              <TurnsColumn></TurnsColumn>
-              <TimeColumn></TimeColumn>
-              <RuneColumn></RuneColumn>
+              <td>
+                <ScoreRatioVisual ratio={data.playerA.aggregate.sum.score / maxScore} color={playerColors[0]} />
+              </td>
               <ScoreColumn>
                 <Score>{data.playerA.aggregate.sum.score}</Score>
               </ScoreColumn>
             </CompareSeedsPlayer>
-            <ScoreRatioVisual ratio={data.playerA.aggregate.sum.score / maxScore} color={playerColors[0]} />
 
             <CompareSeedsPlayer color={playerColors[1]}>
               <PlayerColumn isBold={isWinner(data.playerB.aggregate.sum.score)}>{playerB}</PlayerColumn>
-              <TurnsColumn></TurnsColumn>
-              <TimeColumn></TimeColumn>
-              <RuneColumn></RuneColumn>
+              <td>
+                <ScoreRatioVisual ratio={data.playerB.aggregate.sum.score / maxScore} color={playerColors[1]} />
+              </td>
               <ScoreColumn>
                 <Score>{data.playerB.aggregate.sum.score}</Score>
               </ScoreColumn>
             </CompareSeedsPlayer>
-            <ScoreRatioVisual ratio={data.playerB.aggregate.sum.score / maxScore} color={playerColors[1]} />
           </CompareSeedsRowContent>
         </CompareSeedsRow>
 
@@ -133,10 +120,24 @@ function CompareSeed({ simple, seed }) {
     <CompareSeedsRow>
       <CompareSeedsRowContent>
         {simple ? null : (
-          <div>
-            {seed.species} {seed.background}
-          </div>
+          <tr>
+            <td>
+              {seed.species} {seed.background}
+            </td>
+          </tr>
         )}
+
+        {/* headers */}
+        {simple ? null : (
+          <CompareSeedsPlayer>
+            <PlayerColumn>Player</PlayerColumn>
+            <TurnsColumn>🏃🏻‍♀️</TurnsColumn>
+            <TimeColumn>⏱</TimeColumn>
+            <RuneColumn>💎</RuneColumn>
+            <ScoreColumn></ScoreColumn>
+          </CompareSeedsPlayer>
+        )}
+
         {players.map((player, i) => {
           const isWinner = maxScore === player.score;
           const scoreRatio = maxScore >= 0 ? player.score / maxScore : 0;
@@ -144,23 +145,29 @@ function CompareSeed({ simple, seed }) {
           const turnsPerSecond = player.timeSeconds ? player.turns / player.timeSeconds : 0;
 
           if (simple) {
-            return <ScoreRatioVisual key={player.name} ratio={scoreRatio} color={playerColors[i]} />;
+            return (
+              <CompareSeedsPlayer key={player.name}>
+                <td>
+                  <ScoreRatioVisual ratio={scoreRatio} color={playerColors[i]} />
+                </td>
+              </CompareSeedsPlayer>
+            );
           }
 
           return (
-            <Link key={player.name} href={player.morgue} rel="noopener" target="_blank">
-              <CompareSeedsPlayer key={player.name} color={isWinner ? playerColors[i] : loserColor}>
-                <PlayerColumn>{player.name}</PlayerColumn>
-                <TurnsColumn>{turnsPerSecond.toFixed(2)}</TurnsColumn>
-                <TimeColumn>
-                  <Time>{player.timeSeconds}</Time>
-                </TimeColumn>
-                <RuneColumn>{player.runeCount}</RuneColumn>
-                <ScoreColumn>
+            <CompareSeedsPlayer key={player.name} color={isWinner ? playerColors[i] : loserColor}>
+              <PlayerColumn>{player.name}</PlayerColumn>
+              <TurnsColumn>{turnsPerSecond.toFixed(1)}</TurnsColumn>
+              <TimeColumn>
+                <Time>{player.timeSeconds}</Time>
+              </TimeColumn>
+              <RuneColumn>{player.runeCount}</RuneColumn>
+              <ScoreColumn>
+                <Link key={player.name} href={player.morgue} rel="noopener" target="_blank">
                   <Score>{player.score}</Score>
-                </ScoreColumn>
-              </CompareSeedsPlayer>
-            </Link>
+                </Link>
+              </ScoreColumn>
+            </CompareSeedsPlayer>
           );
         })}
 
@@ -197,7 +204,7 @@ const scoreFormatter = new Intl.NumberFormat('en');
 function abbreviateNumber(value) {
   const suffixes = ['', 'k', 'm', 'b', 't'];
   const suffixNum = Math.floor((('' + value).length - 1) / 3);
-  const shortValue = parseFloat(value / Math.pow(1000, suffixNum)).toFixed(1);
+  const shortValue = parseFloat(value / Math.pow(1000, suffixNum)).toFixed(0);
   return scoreFormatter.format(shortValue) + suffixes[suffixNum];
 }
 
@@ -252,7 +259,7 @@ const CompareSeeds = styled.div`
   width: 100%;
 `;
 
-const CompareSeedsRow = styled.div`
+const CompareSeedsRow = styled.table`
   border: 1px solid rgba(255, 255, 255, 0.05);
   margin: 16px 0;
   min-height: 64px;
@@ -262,35 +269,41 @@ const CompareSeedsRow = styled.div`
   position: relative;
 `;
 
-const CompareSeedsRowContent = styled.div`
+const CompareSeedsRowContent = styled.tbody`
   padding: 0 16px;
 `;
 
-const CompareSeedsPlayer = styled.div`
-  display: flex;
-  flex-direction: row;
+const CompareSeedsPlayer = styled.tr`
+  display: table;
+  width: 100%;
   color: ${(props) => props.color || 'inherit'};
   font-weight: ${(props) => (props.isNormal ? 'inherit' : props.isBold ? 800 : 200)};
 `;
 
-const PlayerColumn = styled.div`
-  flex: 0.3;
+const Column = styled.td``;
+
+const PlayerColumn = styled(Column)`
+  width: 35%;
   font-weight: ${(props) => (props.isNormal ? 'inherit' : props.isBold ? 800 : 200)};
+  text-align: left;
 `;
 
-const TurnsColumn = styled.div`
-  flex: 0.2;
+const TurnsColumn = styled(Column)`
+  width: 10%;
   font-variant: tabular-nums;
+  text-align: right;
 `;
 
-const TimeColumn = styled.div`
-  flex: 0.2;
+const TimeColumn = styled(Column)`
+  width: 25%;
   font-variant: tabular-nums;
+  text-align: right;
 `;
 
-const RuneColumn = styled.div`
-  flex: 0.1;
+const RuneColumn = styled(Column)`
+  width: 10%;
   font-variant: tabular-nums;
+  text-align: right;
 `;
 
 const ScoreColumnValue = styled.div`
@@ -299,8 +312,8 @@ const ScoreColumnValue = styled.div`
   font-size: var(--font-size);
 `;
 
-const ScoreColumn = styled.div`
-  flex: 0.2;
+const ScoreColumn = styled(Column)`
+  width: 20%;
   text-align: right;
 `;
 
