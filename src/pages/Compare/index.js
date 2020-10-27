@@ -22,14 +22,13 @@ export default function ComparePage(props) {
   const router = useRouter();
   const [playerA, playerB] = getPlayers(router);
 
-  const title = 'dcsseeds compare';
-  let description = 'Compare seed games of players';
+  let title = 'Compare DCSS seed games of players';
 
   if (playerA && playerB) {
-    description = `Compare seed games of ${playerA} vs ${playerB}`;
+    title = `Compare DCSS seed games of ${playerA} vs ${playerB}`;
   }
 
-  const headTagProps = { title, description };
+  const headTagProps = { title, description: title };
   const InternalComparePage = Page(Compare, { headTagProps, withApollo: true });
 
   // console.warn({ headTagProps });
