@@ -206,7 +206,10 @@ function Score(props) {
 }
 
 function Time(props) {
-  return new Date(props.children * 1000).toISOString().substr(11, 8);
+  const time = new Date(props.children * 1000);
+  const hours = time.getUTCHours();
+  const minutes = time.getUTCMinutes();
+  return `${hours ? `${hours}h` : ''}${minutes}m`;
 }
 
 function TableLayoutRow({ data, widths }) {
