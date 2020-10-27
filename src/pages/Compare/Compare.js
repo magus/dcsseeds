@@ -68,21 +68,25 @@ export default function Compare(props) {
         <CompareSeedsRow>
           <CompareSeedsRowContent>
             <CompareSeedsPlayer color={playerColors[0]}>
-              <PlayerColumn isBold={isWinner(data.playerA.aggregate.sum.score)}>{playerA}</PlayerColumn>
+              <PlayerColumn hideBorder isBold={isWinner(data.playerA.aggregate.sum.score)}>
+                {playerA}
+              </PlayerColumn>
               <td>
                 <ScoreRatioVisual ratio={data.playerA.aggregate.sum.score / maxScore} color={playerColors[0]} />
               </td>
-              <ScoreColumn>
+              <ScoreColumn hideBorder>
                 <Score>{data.playerA.aggregate.sum.score}</Score>
               </ScoreColumn>
             </CompareSeedsPlayer>
 
             <CompareSeedsPlayer color={playerColors[1]}>
-              <PlayerColumn isBold={isWinner(data.playerB.aggregate.sum.score)}>{playerB}</PlayerColumn>
+              <PlayerColumn hideBorder isBold={isWinner(data.playerB.aggregate.sum.score)}>
+                {playerB}
+              </PlayerColumn>
               <td>
                 <ScoreRatioVisual ratio={data.playerB.aggregate.sum.score / maxScore} color={playerColors[1]} />
               </td>
-              <ScoreColumn>
+              <ScoreColumn hideBorder>
                 <Score>{data.playerB.aggregate.sum.score}</Score>
               </ScoreColumn>
             </CompareSeedsPlayer>
@@ -130,10 +134,10 @@ function CompareSeed({ simple, seed }) {
         {/* headers */}
         {simple ? null : (
           <CompareSeedsPlayer>
-            <PlayerColumn>Player</PlayerColumn>
-            <TurnsColumn>🏃🏻‍♀️</TurnsColumn>
-            <TimeColumn>⏱</TimeColumn>
-            <RuneColumn>💎</RuneColumn>
+            <PlayerColumn style={{ fontSize: 12 }}></PlayerColumn>
+            <TurnsColumn style={{ fontSize: 8 }}>🏃🏻‍♀️</TurnsColumn>
+            <TimeColumn style={{ fontSize: 6 }}>⏱</TimeColumn>
+            <RuneColumn style={{ fontSize: 6 }}>💎</RuneColumn>
             <ScoreColumn></ScoreColumn>
           </CompareSeedsPlayer>
         )}
@@ -280,7 +284,9 @@ const CompareSeedsPlayer = styled.tr`
   font-weight: ${(props) => (props.isNormal ? 'inherit' : props.isBold ? 800 : 200)};
 `;
 
-const Column = styled.td``;
+const Column = styled.td`
+  border: 1px solid ${(props) => (props.hideBorder ? 'transparent' : 'rgba(255, 255, 255, 0.05)')};
+`;
 
 const PlayerColumn = styled(Column)`
   width: 35%;
