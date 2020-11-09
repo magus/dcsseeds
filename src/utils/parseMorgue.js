@@ -261,7 +261,10 @@ function getAllMorgueItems(morgueNotes) {
       const identSpecialLoc = morgueNote.note.match(/Identified the (.*) \(You found it in a (.*)\)/);
       const identWithLoc = morgueNote.note.match(/Identified the (.*) \(You found it on level (.*) of the (.*)\)/);
       const ident = morgueNote.note.match(/Identified the (.*)/);
-      const trove = morgueNote.note.match(/This trove needs (.*) to function/);
+
+      // https://regexr.com/5fqgo
+      const trove = morgueNote.note.match(/This trove (?:needs|requires) (.*) to function/);
+
       const spells = morgueNote.note.match(/You add the spells? (.*) to your library/);
       const playerNotes = morgueNote.note.match(/^(>>.*)/);
       const ziggurat = morgueNote.note.match(/Found a gateway to a ziggurat/);
