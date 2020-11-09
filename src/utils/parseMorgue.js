@@ -2,6 +2,8 @@ const keyMirror = require('src/utils/keyMirror');
 const runRegex = require('src/utils/runRegex');
 const Species = require('src/utils/Species');
 
+const { uniqBy } = require('lodash');
+
 module.exports = async function parseMorgue(morgue) {
   const morgueResponse = await fetch(morgue);
   const morgueText = await morgueResponse.text();
@@ -339,7 +341,10 @@ function getAllMorgueItems(morgueNotes) {
   // run parseNote over each morgue note entry
   morgueNotes.forEach(parseNote);
 
-  return items;
+  // remove duplicates
+  const dedupedItems = uniqBy(items, (i) => `__N${i.name}____L${i.location}__`);
+
+  return dedupedItems;
 }
 
 const toNumber = (value) => parseInt(value, 10);
