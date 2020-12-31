@@ -266,6 +266,7 @@ function getAllMorgueItems(morgueNotes) {
 
       // https://regexr.com/5fqgo
       const trove = morgueNote.note.match(/This trove (?:needs|requires) (.*) to function/);
+      const pietyTrove = morgueNote.note.match(/This portal proclaims the superiority of the material over the divine/);
 
       const spells = morgueNote.note.match(/You add the spells? (.*) to your library/);
       const playerNotes = morgueNote.note.match(/^(>>.*)/);
@@ -313,6 +314,8 @@ function getAllMorgueItems(morgueNotes) {
       } else if (playerNotes) {
         const [, note] = playerNotes;
         createItem(`${note} (Player Note)`, morgueNote.loc);
+      } else if (pietyTrove) {
+        createItem(`Treasure Trove (lose all piety)`, morgueNote.loc);
       } else if (trove) {
         const [, item] = trove;
         createItem(`Treasure Trove (${item})`, morgueNote.loc);
