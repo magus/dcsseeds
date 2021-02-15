@@ -9,6 +9,7 @@ import StyledLink from 'src/components/StyledLink';
 
 import Species from 'src/utils/Species';
 import Backgrounds from 'src/utils/Backgrounds';
+import Versions from 'src/utils/Versions';
 import * as GraphqlSeed from 'src/graphql/seed';
 
 import getInitialProps from './getInitialProps';
@@ -35,7 +36,7 @@ export default function New(props) {
   const [species, set_species] = React.useState(props.species);
   const [background, set_background] = React.useState(props.background);
   const [value, set_value] = React.useState(props.seed);
-  const [version, set_version] = React.useState(CurrentVersion);
+  const [version, set_version] = React.useState(DEFAULT_VERSION);
 
   const activeSeedsQuery = useQuery(GraphqlSeed.ACTIVE_SEEDS.query, {
     // use cache but always refetch on mount
@@ -103,6 +104,9 @@ export default function New(props) {
     );
   }
 
+  const speciesOptions = Versions.Species[version].map((s) => Species.Names[s]);
+  const backgroundsOptions = Versions.Backgrounds[version].map((s) => Backgrounds.Names[s]);
+
   return (
     <Container>
       <FlexColumns>
@@ -112,9 +116,9 @@ export default function New(props) {
           Here, have this random seed.
         </Instructions>
 
-        <Select onChange={handleSpecies} options={Object.values(Species.Names)} selected={species} />
-        <Select onChange={handleBackground} options={Object.values(Backgrounds.Names)} selected={background} />
-        <Select onChange={handleVersion} options={Versions} selected={version} />
+        <Select onChange={handleSpecies} options={speciesOptions} selected={species} />
+        <Select onChange={handleBackground} options={backgroundsOptions} selected={background} />
+        <Select onChange={handleVersion} options={VERSION_CHOICES} selected={version} />
         <input disabled value={value} />
 
         <Instructions>
@@ -153,23 +157,5 @@ const FlexColumns = styled.div`
   flex-direction: column;
 `;
 
-const CurrentVersion = '0.26';
-const Versions = [
-  '0.26',
-  '0.25',
-  '0.24',
-  '0.23',
-  '0.22',
-  '0.21',
-  '0.20',
-  '0.19',
-  '0.18',
-  '0.17',
-  '0.16',
-  '0.15',
-  '0.14',
-  '0.13',
-  '0.12',
-  '0.11',
-  '0.10',
-];
+const DEFAULT_VERSION = Versions.v26;
+const VERSION_CHOICES = [Versions.v26, Versions.v25, Versions.v24];
