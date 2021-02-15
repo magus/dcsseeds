@@ -153,7 +153,7 @@ const FlexColumns = styled.div`
   flex-direction: column;
 `;
 
-const CurrentVersion = '0.25';
+const CurrentVersion = '0.26';
 const Versions = [
   '0.26',
   '0.25',
