@@ -1,5 +1,6 @@
 const keyMirror = require('src/utils/keyMirror');
 const runRegex = require('src/utils/runRegex');
+const Backgrounds = require('src/utils/Backgrounds');
 const Species = require('src/utils/Species');
 
 const { uniqBy } = require('lodash');
@@ -88,7 +89,7 @@ const MORGUE_REGEX = {
   [MORGUE_FIELD.SpeciesBackground]: async ({ name, morgueText }) => {
     async function parseSpeciesBackground(speciesBackground) {
       const [, species] = await runRegex('species', speciesBackground, Species.Regex);
-      const background = speciesBackground.replace(species, '').trim();
+      const [, background] = await runRegex('background', speciesBackground, Backgrounds.Regex);
       return { species, background };
     }
 
