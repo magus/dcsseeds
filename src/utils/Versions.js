@@ -130,7 +130,6 @@ const VersionBackgrounds = {
     Jobs.IE,
     Jobs.Mo,
     Jobs.Ne,
-    Jobs.Sk,
     Jobs.Su,
     Jobs.Tm,
     Jobs.VM,
@@ -192,48 +191,7 @@ const VersionBackgrounds = {
   ],
 };
 
-// See _banned_combination
-// https://github.com/crawl/crawl/blob/master/crawl-ref/source/ng-restr.cc
-const VersionBannedCombosBackgrounds = {
-  [Versions.v26]: {
-    [Species.Fe]: { [Jobs.Gl]: true, [Jobs.Br]: true, [Jobs.Hu]: true, [Jobs.AM]: true },
-    [Species.Dg]: { [Jobs.Be]: true, [Jobs.CK]: true, [Jobs.AK]: true, [Jobs.Mo]: true },
-  },
-  [Versions.v25]: {
-    [Species.Fe]: { [Jobs.Gl]: true, [Jobs.As]: true, [Jobs.Hu]: true, [Jobs.AM]: true },
-    [Species.Dg]: { [Jobs.Be]: true, [Jobs.CK]: true, [Jobs.AK]: true, [Jobs.Mo]: true },
-  },
-  [Versions.v24]: {
-    [Species.Fe]: { [Jobs.Gl]: true, [Jobs.As]: true, [Jobs.Hu]: true, [Jobs.AM]: true },
-    [Species.Dg]: { [Jobs.Be]: true, [Jobs.CK]: true, [Jobs.AK]: true, [Jobs.Mo]: true },
-  },
-};
-
-// Generate lookup for consistent lookup behavior with VersionBannedCombosBackgrounds
-const VersionBannedCombosSpecies = Object.keys(VersionBannedCombosBackgrounds).reduce((vbcb, version) => {
-  // Species => Backgrounds
-  const vbcsp = VersionBannedCombosBackgrounds[version];
-
-  // Species => Backgrounds lookup (what we are building)
-  const bgSpLookup = {};
-
-  // For each species in Species => Backgrounds
-  Object.keys(vbcsp).forEach((sp) => {
-    const bgs = Object.keys(vbcsp[sp]);
-    bgs.forEach((bg) => {
-      if (!bgSpLookup[bg]) bgSpLookup[bg] = {};
-      bgSpLookup[bg][sp] = true;
-    });
-  });
-
-  // Initialize dictionary for this version
-  vbcb[version] = bgSpLookup;
-
-  // return the entire VersionRecommendedBackgrounds lookup
-  return vbcb;
-}, {});
-
-const BaseVersionRecommendedBackgrounds = {
+const VersionRecommendedBackgrounds = buildConvertedLookup({
   [Versions.v26]: {
     [Species.Ba]: [Jobs.Fi, Jobs.Be, Jobs.Su, Jobs.IE],
     [Species.DD]: [Jobs.Fi, Jobs.Hu, Jobs.Be, Jobs.Ne, Jobs.EE],
@@ -321,64 +279,132 @@ const BaseVersionRecommendedBackgrounds = {
     [Species.Vp]: [Jobs.Gl, Jobs.As, Jobs.En, Jobs.Ne, Jobs.EE, Jobs.IE],
     [Species.VS]: [Jobs.Fi, Jobs.As, Jobs.Be, Jobs.En, Jobs.Cj, Jobs.Ne, Jobs.IE],
   },
+});
+
+// Job data defining recommended species for backgrounds (jobs)
+const VersionRecommendedSpecies = buildConvertedLookup({
+  // https://github.com/crawl/crawl/blob/0.26.1/crawl-ref/source/job-data.h
+  [Versions.v26]: {
+    [Jobs.AE]: [Species.DE, Species.Te, Species.Dr, Species.Na, Species.VS],
+    [Jobs.AK]: [Species.HO, Species.Pa, Species.Tr, Species.Mf, Species.Dr, Species.Ds],
+    [Jobs.AM]: [Species.Fo, Species.DE, Species.Ko, Species.Sp, Species.Tr],
+    [Jobs.Ar]: [Species.DD, Species.Ha, Species.Ko, Species.Sp, Species.Dr, Species.Ds],
+    [Jobs.Be]: [Species.HO, Species.Ha, Species.Og, Species.Mf, Species.Mi, Species.Gr, Species.Pa],
+    [Jobs.Br]: [Species.Tr, Species.Ha, Species.Sp, Species.Ds, Species.Vp, Species.VS],
+    [Jobs.Cj]: [Species.DE, Species.Na, Species.Te, Species.Dr, Species.Dg],
+    [Jobs.CK]: [Species.HO, Species.Tr, Species.Gn, Species.Mf, Species.Mi, Species.Dr, Species.Ds],
+    [Jobs.De]: [Species.Fe, Species.Sp, Species.Ko, Species.Vp],
+    [Jobs.EE]: [Species.DE, Species.DD, Species.Sp, Species.Gr, Species.Dg, Species.Gh, Species.Op],
+    [Jobs.En]: [Species.DE, Species.Fe, Species.Ko, Species.Sp, Species.Na, Species.Vp],
+    [Jobs.FE]: [Species.DE, Species.HO, Species.Na, Species.Te, Species.Dg, Species.Gr],
+    [Jobs.Fi]: [Species.DD, Species.HO, Species.Tr, Species.Mi, Species.Gr, Species.Pa],
+    [Jobs.Gl]: [Species.DD, Species.HO, Species.Mf, Species.Mi, Species.Gr, Species.Gn],
+    [Jobs.Hu]: [Species.HO, Species.Ha, Species.Ko, Species.Og, Species.Tr],
+    [Jobs.IE]: [Species.DE, Species.Mf, Species.Na, Species.Dr, Species.Dg, Species.Gr],
+    [Jobs.Mo]: [Species.DD, Species.HO, Species.Tr, Species.Pa, Species.Mf, Species.Gr, Species.Ds],
+    [Jobs.Ne]: [Species.DE, Species.DD, Species.HO, Species.Ds, Species.Mu, Species.Vp],
+    [Jobs.Su]: [Species.DE, Species.HO, Species.VS, Species.Mf, Species.Te, Species.Vp],
+    [Jobs.Tm]: [Species.Na, Species.Mf, Species.Dr, Species.Dg, Species.Ds, Species.Tr],
+    [Jobs.VM]: [Species.DE, Species.Sp, Species.Na, Species.Mf, Species.Te, Species.Fe, Species.Ds],
+    [Jobs.Wn]: [Species.HO, Species.Sp, Species.Gn, Species.Mf, Species.Dr, Species.Hu, Species.Ds],
+    [Jobs.Wr]: [Species.Fe, Species.Ha, Species.DD, Species.Sp, Species.Pa, Species.Dr],
+    [Jobs.Wz]: [Species.DE, Species.Na, Species.Dr, Species.Op, Species.Hu, Species.Mu],
+  },
+  // https://github.com/crawl/crawl/blob/0.25.1/crawl-ref/source/job-data.h
+  [Versions.v25]: {
+    [Jobs.AE]: [Species.DE, Species.Te, Species.Dr, Species.Na, Species.VS],
+    [Jobs.AK]: [Species.HO, Species.Sp, Species.Tr, Species.Mf, Species.Dr, Species.Ds],
+    [Jobs.AM]: [Species.Fo, Species.DE, Species.Ko, Species.Sp, Species.Tr, Species.Ce],
+    [Jobs.Ar]: [Species.DD, Species.Ha, Species.Ko, Species.Sp, Species.Dr, Species.Ds],
+    [Jobs.As]: [Species.Tr, Species.Ha, Species.Sp, Species.Ds, Species.Vp, Species.VS],
+    [Jobs.Be]: [Species.HO, Species.Ha, Species.Og, Species.Mf, Species.Mi, Species.Gr, Species.Ds],
+    [Jobs.Cj]: [Species.DE, Species.Na, Species.Te, Species.Dr, Species.Dg],
+    [Jobs.CK]: [Species.HO, Species.Tr, Species.Ce, Species.Mf, Species.Mi, Species.Dr, Species.Ds],
+    [Jobs.EE]: [Species.DE, Species.DD, Species.Sp, Species.Gr, Species.Dg, Species.Gh, Species.Op],
+    [Jobs.En]: [Species.DE, Species.Fe, Species.Ko, Species.Sp, Species.Na, Species.Vp],
+    [Jobs.FE]: [Species.DE, Species.HO, Species.Na, Species.Te, Species.Dg, Species.Gr],
+    [Jobs.Fi]: [Species.DD, Species.HO, Species.Tr, Species.Mi, Species.Gr, Species.Ce],
+    [Jobs.Gl]: [Species.DD, Species.HO, Species.Mf, Species.Mi, Species.Gr, Species.Ce],
+    [Jobs.Hu]: [Species.HO, Species.Ha, Species.Ko, Species.Og, Species.Tr, Species.Ce],
+    [Jobs.IE]: [Species.DE, Species.Mf, Species.Na, Species.Dr, Species.Dg, Species.Gr],
+    [Jobs.Mo]: [Species.DD, Species.HO, Species.Tr, Species.Ce, Species.Mf, Species.Gr, Species.Ds],
+    [Jobs.Ne]: [Species.DE, Species.DD, Species.HO, Species.Ds, Species.Mu, Species.Vp],
+    [Jobs.Sk]: [Species.Ha, Species.Ce, Species.Mf, Species.Dr, Species.Vp],
+    [Jobs.Su]: [Species.DE, Species.HO, Species.VS, Species.Mf, Species.Te, Species.Vp],
+    [Jobs.Tm]: [Species.Na, Species.Mf, Species.Dr, Species.Dg, Species.Ds, Species.Tr],
+    [Jobs.VM]: [Species.DE, Species.Sp, Species.Na, Species.Mf, Species.Te, Species.Fe, Species.Ds],
+    [Jobs.Wn]: [Species.HO, Species.Sp, Species.Ce, Species.Mf, Species.Dr, Species.Hu, Species.Ds],
+    [Jobs.Wr]: [Species.Fe, Species.Ha, Species.DD, Species.Sp, Species.Ce, Species.Dr],
+    [Jobs.Wz]: [Species.DE, Species.Na, Species.Dr, Species.Op, Species.Hu, Species.Mu],
+  },
+  // https://github.com/crawl/crawl/blob/0.24.1/crawl-ref/source/job-data.h
+  [Versions.v24]: {
+    [Jobs.AE]: [Species.DE, Species.Te, Species.Dr, Species.Na, Species.VS],
+    [Jobs.AK]: [Species.HO, Species.Sp, Species.Tr, Species.Mf, Species.Dr, Species.Ds],
+    [Jobs.AM]: [Species.Fo, Species.DE, Species.Ko, Species.Sp, Species.Tr, Species.Ce],
+    [Jobs.Ar]: [Species.DD, Species.Ha, Species.Ko, Species.Sp, Species.Dr, Species.Ds],
+    [Jobs.As]: [Species.Tr, Species.Ha, Species.Sp, Species.Ds, Species.Vp, Species.VS],
+    [Jobs.Be]: [Species.HO, Species.Ha, Species.Og, Species.Mf, Species.Mi, Species.Gr, Species.Ds],
+    [Jobs.Cj]: [Species.DE, Species.Na, Species.Te, Species.Dr, Species.Dg],
+    [Jobs.CK]: [Species.HO, Species.Tr, Species.Ce, Species.Mf, Species.Mi, Species.Dr, Species.Ds],
+    [Jobs.EE]: [Species.DE, Species.DD, Species.Sp, Species.Gr, Species.Dg, Species.Gh, Species.Op],
+    [Jobs.En]: [Species.DE, Species.Fe, Species.Ko, Species.Sp, Species.Na, Species.Vp],
+    [Jobs.FE]: [Species.DE, Species.HO, Species.Na, Species.Te, Species.Dg, Species.Gr],
+    [Jobs.Fi]: [Species.DD, Species.HO, Species.Tr, Species.Mi, Species.Gr, Species.Ce],
+    [Jobs.Gl]: [Species.DD, Species.HO, Species.Mf, Species.Mi, Species.Gr, Species.Ce],
+    [Jobs.Hu]: [Species.HO, Species.Ha, Species.Ko, Species.Og, Species.Tr, Species.Ce],
+    [Jobs.IE]: [Species.DE, Species.Mf, Species.Na, Species.Dr, Species.Dg, Species.Gr],
+    [Jobs.Mo]: [Species.DD, Species.HO, Species.Tr, Species.Ce, Species.Mf, Species.Gr, Species.Ds],
+    [Jobs.Ne]: [Species.DE, Species.DD, Species.HO, Species.Ds, Species.Mu, Species.Vp],
+    [Jobs.Sk]: [Species.Ha, Species.Ce, Species.Mf, Species.Dr, Species.Vp],
+    [Jobs.Su]: [Species.DE, Species.HO, Species.VS, Species.Mf, Species.Te, Species.Vp],
+    [Jobs.Tm]: [Species.Na, Species.Mf, Species.Dr, Species.Dg, Species.Ds, Species.Tr],
+    [Jobs.VM]: [Species.DE, Species.Sp, Species.Na, Species.Mf, Species.Te, Species.Fe, Species.Ds],
+    [Jobs.Wn]: [Species.HO, Species.Sp, Species.Ce, Species.Mf, Species.Dr, Species.Hu, Species.Ds],
+    [Jobs.Wr]: [Species.Fe, Species.Ha, Species.DD, Species.Sp, Species.Ce, Species.Dr],
+    [Jobs.Wz]: [Species.DE, Species.Na, Species.Dr, Species.Op, Species.Hu, Species.Mu],
+  },
+});
+
+// See _banned_combination
+// https://github.com/crawl/crawl/blob/master/crawl-ref/source/ng-restr.cc
+const VersionBannedCombosBackgrounds = {
+  [Versions.v26]: {
+    [Species.Fe]: { [Jobs.Gl]: true, [Jobs.Br]: true, [Jobs.Hu]: true, [Jobs.AM]: true },
+    [Species.Dg]: { [Jobs.Be]: true, [Jobs.CK]: true, [Jobs.AK]: true, [Jobs.Mo]: true },
+  },
+  [Versions.v25]: {
+    [Species.Fe]: { [Jobs.Gl]: true, [Jobs.As]: true, [Jobs.Hu]: true, [Jobs.AM]: true },
+    [Species.Dg]: { [Jobs.Be]: true, [Jobs.CK]: true, [Jobs.AK]: true, [Jobs.Mo]: true },
+  },
+  [Versions.v24]: {
+    [Species.Fe]: { [Jobs.Gl]: true, [Jobs.As]: true, [Jobs.Hu]: true, [Jobs.AM]: true },
+    [Species.Dg]: { [Jobs.Be]: true, [Jobs.CK]: true, [Jobs.AK]: true, [Jobs.Mo]: true },
+  },
 };
 
-// Generate lookup from BaseVersionRecommendedBackgrounds
-// Basically converts array into dictionary for consistent lookup behavior with VersionRecommendedSpecies
-const VersionRecommendedBackgrounds = Object.keys(BaseVersionRecommendedBackgrounds).reduce((vrb, version) => {
+// Generate lookup for consistent lookup behavior with VersionBannedCombosBackgrounds
+const VersionBannedCombosSpecies = Object.keys(VersionBannedCombosBackgrounds).reduce((vbcb, version) => {
   // Species => Backgrounds
-  const spBgs = BaseVersionRecommendedBackgrounds[version];
+  const vbcsp = VersionBannedCombosBackgrounds[version];
 
   // Species => Backgrounds lookup (what we are building)
-  const spBgsLookup = {};
-
-  // Ensure every species exists in lookup
-  VersionSpecies[version].forEach((sp) => {
-    if (!spBgsLookup[sp]) spBgsLookup[sp] = {};
-  });
+  const bgSpLookup = {};
 
   // For each species in Species => Backgrounds
-  Object.keys(spBgs).forEach((sp) => {
-    const bgs = spBgs[sp];
+  Object.keys(vbcsp).forEach((sp) => {
+    const bgs = Object.keys(vbcsp[sp]);
     bgs.forEach((bg) => {
-      spBgsLookup[sp][bg] = true;
+      if (!bgSpLookup[bg]) bgSpLookup[bg] = {};
+      bgSpLookup[bg][sp] = true;
     });
   });
 
   // Initialize dictionary for this version
-  vrb[version] = spBgsLookup;
+  vbcb[version] = bgSpLookup;
 
   // return the entire VersionRecommendedBackgrounds lookup
-  return vrb;
-}, {});
-
-// Build Recommended Background => Species from Species => Backgrounds
-const VersionRecommendedSpecies = Object.keys(BaseVersionRecommendedBackgrounds).reduce((vrs, version) => {
-  // Species => Backgrounds
-  const spBgs = BaseVersionRecommendedBackgrounds[version];
-
-  // Backgrounds => Species lookup (what we are building)
-  const bgSps = {};
-
-  // Ensure every background exists in lookup
-  VersionBackgrounds[version].forEach((bg) => {
-    if (!bgSps[bg]) bgSps[bg] = {};
-  });
-
-  // For each species in Species => Backgrounds
-  Object.keys(spBgs).forEach((sp) => {
-    const bgs = spBgs[sp];
-    bgs.forEach((bg) => {
-      if (!bgSps[bg]) bgSps[bg] = {};
-      bgSps[bg][sp] = true;
-    });
-  });
-
-  // Initialize dictionary for this version
-  vrs[version] = bgSps;
-
-  // return the entire VersionRecommendedSpecies lookup
-  return vrs;
+  return vbcb;
 }, {});
 
 const SpeciesBackgrounds = {
@@ -423,4 +449,28 @@ function getType(type, version, other) {
   }
 
   return values;
+}
+
+// Generate lookup from [value]: ['a', 'b']
+// e.g. [value]: {a: true, b: true, };
+// Basically converts array into dictionary for consistent lookup behavior
+function buildConvertedLookup(versionLookups) {
+  return Object.keys(versionLookups).reduce((convertedVersionLookup, version) => {
+    const baseLookup = versionLookups[version];
+    const convertedLookup = {};
+
+    Object.keys(baseLookup).forEach((key) => {
+      if (!convertedLookup[key]) convertedLookup[key] = {};
+      const values = baseLookup[key];
+      values.forEach((value) => {
+        convertedLookup[key][value] = true;
+      });
+    });
+
+    // Initialize dictionary for this version
+    convertedVersionLookup[version] = convertedLookup;
+
+    // return the entire converted version lookup (reduce)
+    return convertedVersionLookup;
+  }, {});
 }

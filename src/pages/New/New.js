@@ -106,22 +106,25 @@ export default function New(props) {
     );
   }
 
-  const recommendedSpecies = Versions.Recommended.Species[version][background];
-  const recommendedBackgrounds = Versions.Recommended.Backgrounds[version][species];
-
   const speciesOptions = Versions.getSpecies({ version, background }).map((sp) => {
+    const recommendedSpecies = !!Versions.Recommended.Species[version][background][sp];
+    const recommendedBackground = !!Versions.Recommended.Backgrounds[version][sp][background];
     return {
       value: sp,
       name: Species.Names[sp],
-      recommended: !!recommendedSpecies[sp],
+      recommended: recommendedSpecies,
+      flag: recommendedSpecies && recommendedBackground,
     };
   });
 
   const backgroundsOptions = Versions.getBackgrounds({ version, species }).map((bg) => {
+    const recommendedSpecies = !!Versions.Recommended.Species[version][bg][species];
+    const recommendedBackground = !!Versions.Recommended.Backgrounds[version][species][bg];
     return {
       value: bg,
       name: Backgrounds.Names[bg],
-      recommended: !!recommendedBackgrounds[bg],
+      recommended: recommendedBackground,
+      flag: recommendedSpecies && recommendedBackground,
     };
   });
 
@@ -179,11 +182,12 @@ function Lock(props) {
 function Select({ selected, onChange, options, lookup }) {
   return (
     <select onChange={onChange} value={selected}>
-      {options.map(({ value, name, recommended }) => {
+      {options.map(({ value, name, recommended, flag }) => {
         const isSelected = selected === value;
 
         return (
           <option key={value} value={value}>
+            {flag ? '⭐️' : ''}
             {recommended ? '⭐️' : ''}
             {name || value}
           </option>
