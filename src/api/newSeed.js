@@ -2,6 +2,9 @@ const { query } = require('graphqurl');
 const send = require('src/server/utils/zeitSend');
 const GraphqlSeed = require('src/graphql/seed');
 
+const Species = require('src/utils/Species');
+const Backgrounds = require('src/utils/Backgrounds');
+
 const { HASURA_ADMIN_SECRET } = process.env;
 
 if (!HASURA_ADMIN_SECRET) throw new Error('HASURA_ADMIN_SECRET is required!');
@@ -12,7 +15,9 @@ if (!HASURA_ADMIN_SECRET) throw new Error('HASURA_ADMIN_SECRET is required!');
 
 module.exports = async (req, res) => {
   try {
-    const { background, species, version, value } = req.query;
+    const { version, value } = req.query;
+    const background = Backgrounds.Names[req.query.background];
+    const species = Species.Names[req.query.species];
 
     if (!(background && species && version && value)) {
       return send(res, 500, new Error('Must provide [background], [species], [version] and [value]'));
