@@ -7,7 +7,7 @@ const META_REFRESH = `0;${DB_ADMIN_CONSOLE}`;
 export default function Admin() {
   return (
     <Head>
-      <meta http-equiv="refresh" content={META_REFRESH} />
+      <meta httpEquiv="refresh" content={META_REFRESH} />
     </Head>
   );
 }
