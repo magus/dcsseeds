@@ -14,22 +14,6 @@ import * as GraphqlSeed from 'src/graphql/seed';
 
 import getInitialProps from './getInitialProps';
 
-function Select({ selected, onChange, options }) {
-  return (
-    <select onChange={onChange} value={selected}>
-      {options.map((species) => {
-        const isSelected = selected === species;
-
-        return (
-          <option key={species} value={species}>
-            {species}
-          </option>
-        );
-      })}
-    </select>
-  );
-}
-
 export default function New(props) {
   const router = useRouter();
   const [saving, set_saving] = React.useState(false);
@@ -37,6 +21,7 @@ export default function New(props) {
   const [background, set_background] = React.useState(props.background);
   const [value, set_value] = React.useState(props.seed);
   const [version, set_version] = React.useState(DEFAULT_VERSION);
+  const [locks, set_locks] = React.useState({});
 
   const activeSeedsQuery = useQuery(GraphqlSeed.ACTIVE_SEEDS.query, {
     // use cache but always refetch on mount
@@ -58,8 +43,8 @@ export default function New(props) {
   const handleReroll = async () => {
     const newProps = await getInitialProps();
     set_value(newProps.seed);
-    set_background(newProps.background);
-    set_species(newProps.species);
+    if (!locks.background) set_background(newProps.background);
+    if (!locks.species) set_species(newProps.species);
   };
 
   const handleSubmitSeed = async () => {
@@ -83,6 +68,16 @@ export default function New(props) {
     router.push('/');
   };
 
+  function handleLockChange(type) {
+    return (locked) => {
+      set_locks((_) => {
+        const newLocks = { ..._ };
+        newLocks[type] = locked;
+        return newLocks;
+      });
+    };
+  }
+
   if (activeSeedsQuery.loading) {
     return (
       <Container>
@@ -104,8 +99,33 @@ export default function New(props) {
     );
   }
 
-  const speciesOptions = Versions.Species[version].map((s) => Species.Names[s]);
-  const backgroundsOptions = Versions.Backgrounds[version].map((s) => Backgrounds.Names[s]);
+  const recommendedSpecies = Versions.RecommendedSpecies[version][background];
+  const recommendedBackgrounds = Versions.RecommendedBackgrounds[version][species];
+
+  const speciesOptions = Versions.Species[version].map((sp) => {
+    if (!sp) debugger;
+    return {
+      value: sp,
+      name: Species.Names[sp],
+      recommended: !!recommendedSpecies[sp],
+    };
+  });
+
+  const backgroundsOptions = Versions.Backgrounds[version]
+    .filter(
+      // filter out banned combos
+      // e.g. felid weapon backgrounds like gladiator, hunter, etc.
+      // e.g. demigod god backgrounds like chaos knight, monk, etc.
+      (bg) => !Versions.BannedCombos[version][species] || !Versions.BannedCombos[version][species][bg],
+    )
+    .map((bg) => {
+      if (!bg) debugger;
+      return {
+        value: bg,
+        name: Backgrounds.Names[bg],
+        recommended: !!recommendedBackgrounds[bg],
+      };
+    });
 
   return (
     <Container>
@@ -116,9 +136,18 @@ export default function New(props) {
           Here, have this random seed.
         </Instructions>
 
-        <Select onChange={handleSpecies} options={speciesOptions} selected={species} />
-        <Select onChange={handleBackground} options={backgroundsOptions} selected={background} />
+        <LockSelectionGroup>
+          <Lock onChange={handleLockChange('species')} locked={!!locks.species} />
+          <Select onChange={handleSpecies} options={speciesOptions} selected={species} />
+        </LockSelectionGroup>
+
+        <LockSelectionGroup>
+          <Lock onChange={handleLockChange('background')} locked={!!locks.background} />
+          <Select onChange={handleBackground} options={backgroundsOptions} selected={background} />
+        </LockSelectionGroup>
+
         <Select onChange={handleVersion} options={VERSION_CHOICES} selected={version} />
+
         <input disabled value={value} />
 
         <Instructions>
@@ -130,6 +159,39 @@ export default function New(props) {
         </button>
       </FlexColumns>
     </Container>
+  );
+}
+
+function Lock(props) {
+  function handleCheckboxChange(event) {
+    const { checked } = event.target;
+    props.onChange(checked);
+  }
+
+  return (
+    <LockContainer title={props.locked ? 'Locked' : 'Unlocked'}>
+      <LockContent>
+        {props.locked ? '🔒' : '🔓'}
+        <LockInput type="checkbox" onChange={handleCheckboxChange} />
+      </LockContent>
+    </LockContainer>
+  );
+}
+
+function Select({ selected, onChange, options, lookup }) {
+  return (
+    <select onChange={onChange} value={selected}>
+      {options.map(({ value, name, recommended }) => {
+        const isSelected = selected === value;
+
+        return (
+          <option key={'a' + value} value={value}>
+            {recommended ? '✨' : ''}
+            {name || value}
+          </option>
+        );
+      })}
+    </select>
   );
 }
 
@@ -157,5 +219,36 @@ const FlexColumns = styled.div`
   flex-direction: column;
 `;
 
+const LockSelectionGroup = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
+
+const LockContainer = styled.div`
+  padding: 8px;
+`;
+
+const LockContent = styled.div`
+  position: relative;
+  line-height: 24px;
+  font-size: 24px;
+`;
+
+const LockInput = styled.input`
+  cursor: pointer;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  width: 24px;
+  height: 24px;
+`;
+
 const DEFAULT_VERSION = Versions.v26;
-const VERSION_CHOICES = [Versions.v26, Versions.v25, Versions.v24];
+const VERSION_CHOICES = [
+  { value: Versions.v26, recommended: true },
+  { value: Versions.v25, recommended: false },
+  { value: Versions.v24, recommended: false },
+];

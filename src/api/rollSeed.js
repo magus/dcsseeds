@@ -11,8 +11,8 @@ const Backgrounds = require('src/utils/Backgrounds');
 module.exports = async (req, res) => {
   try {
     const seed = generateSeed();
-    const species = randomElement(Object.values(Species.Names));
-    const background = randomElement(Object.values(Backgrounds.Names));
+    const species = randomElement(Object.values(Species.Keys));
+    const background = randomElement(Object.values(Backgrounds.Keys));
 
     return send(res, 200, { background, species, seed });
   } catch (err) {

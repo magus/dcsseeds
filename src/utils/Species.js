@@ -64,6 +64,7 @@ const Names = {
 
 module.exports = {
   ...Species,
+  Keys: Species,
   Names,
   Regex: new RegExp(`(${Object.values(Names).join('|')})`),
 };

@@ -7,6 +7,7 @@ const Backgrounds = keyMirror({
   Ar: true,
   As: true,
   Be: true,
+  Br: true,
   Cj: true,
   CK: true,
   De: true,
@@ -28,6 +29,8 @@ const Backgrounds = keyMirror({
   Fi: true,
 });
 
+// See GUI for background abbreviations and names
+// https://github.com/crawl/crawl/blob/master/crawl-ref/source/rltiles/dc-gui.txt
 const Names = {
   [Backgrounds.AE]: 'Air Elementalist',
   [Backgrounds.AK]: 'Abyssal Knight',
@@ -35,6 +38,7 @@ const Names = {
   [Backgrounds.Ar]: 'Artificer',
   [Backgrounds.As]: 'Assassin',
   [Backgrounds.Be]: 'Berserker',
+  [Backgrounds.Br]: 'Brigand',
   [Backgrounds.Cj]: 'Conjurer',
   [Backgrounds.CK]: 'Chaos Knight',
   [Backgrounds.De]: 'Delver',
@@ -58,6 +62,7 @@ const Names = {
 
 module.exports = {
   ...Backgrounds,
+  Keys: Backgrounds,
   Names,
   Regex: new RegExp(`(${Object.values(Names).join('|')})`),
 };
