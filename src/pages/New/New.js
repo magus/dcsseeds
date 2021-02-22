@@ -20,7 +20,7 @@ export default function New(props) {
   const [species, set_species] = React.useState(props.species);
   const [background, set_background] = React.useState(props.background);
   const [value, set_value] = React.useState(props.seed);
-  const [version, set_version] = React.useState(DEFAULT_VERSION);
+  const [version, set_version] = React.useState(props.version);
   const [locks, set_locks] = React.useState({});
 
   const activeSeedsQuery = useQuery(GraphqlSeed.ACTIVE_SEEDS.query, {
@@ -41,10 +41,17 @@ export default function New(props) {
   };
 
   const handleReroll = async () => {
-    const newProps = await getInitialProps();
+    const lockedProps = { version };
+    if (locks.species) lockedProps.species = species;
+    if (locks.background) lockedProps.background = background;
+
+    // get new props from rollApi endpoint response
+    const newProps = await getInitialProps(lockedProps);
+
+    // set new props in local state
     set_value(newProps.seed);
-    if (!locks.background) set_background(newProps.background);
     if (!locks.species) set_species(newProps.species);
+    if (!locks.background) set_background(newProps.background);
   };
 
   const handleSubmitSeed = async () => {
@@ -99,11 +106,10 @@ export default function New(props) {
     );
   }
 
-  const recommendedSpecies = Versions.RecommendedSpecies[version][background];
-  const recommendedBackgrounds = Versions.RecommendedBackgrounds[version][species];
+  const recommendedSpecies = Versions.Recommended.Species[version][background];
+  const recommendedBackgrounds = Versions.Recommended.Backgrounds[version][species];
 
-  const speciesOptions = Versions.Species[version].map((sp) => {
-    if (!sp) debugger;
+  const speciesOptions = Versions.getSpecies({ version, background }).map((sp) => {
     return {
       value: sp,
       name: Species.Names[sp],
@@ -111,21 +117,13 @@ export default function New(props) {
     };
   });
 
-  const backgroundsOptions = Versions.Backgrounds[version]
-    .filter(
-      // filter out banned combos
-      // e.g. felid weapon backgrounds like gladiator, hunter, etc.
-      // e.g. demigod god backgrounds like chaos knight, monk, etc.
-      (bg) => !Versions.BannedCombos[version][species] || !Versions.BannedCombos[version][species][bg],
-    )
-    .map((bg) => {
-      if (!bg) debugger;
-      return {
-        value: bg,
-        name: Backgrounds.Names[bg],
-        recommended: !!recommendedBackgrounds[bg],
-      };
-    });
+  const backgroundsOptions = Versions.getBackgrounds({ version, species }).map((bg) => {
+    return {
+      value: bg,
+      name: Backgrounds.Names[bg],
+      recommended: !!recommendedBackgrounds[bg],
+    };
+  });
 
   return (
     <Container>
@@ -185,8 +183,8 @@ function Select({ selected, onChange, options, lookup }) {
         const isSelected = selected === value;
 
         return (
-          <option key={'a' + value} value={value}>
-            {recommended ? '✨' : ''}
+          <option key={value} value={value}>
+            {recommended ? '⭐️' : ''}
             {name || value}
           </option>
         );
@@ -246,7 +244,6 @@ const LockInput = styled.input`
   height: 24px;
 `;
 
-const DEFAULT_VERSION = Versions.v26;
 const VERSION_CHOICES = [
   { value: Versions.v26, recommended: true },
   { value: Versions.v25, recommended: false },

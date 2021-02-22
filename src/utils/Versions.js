@@ -194,7 +194,7 @@ const VersionBackgrounds = {
 
 // See _banned_combination
 // https://github.com/crawl/crawl/blob/master/crawl-ref/source/ng-restr.cc
-const VersionBannedCombos = {
+const VersionBannedCombosBackgrounds = {
   [Versions.v26]: {
     [Species.Fe]: { [Jobs.Gl]: true, [Jobs.Br]: true, [Jobs.Hu]: true, [Jobs.AM]: true },
     [Species.Dg]: { [Jobs.Be]: true, [Jobs.CK]: true, [Jobs.AK]: true, [Jobs.Mo]: true },
@@ -208,6 +208,30 @@ const VersionBannedCombos = {
     [Species.Dg]: { [Jobs.Be]: true, [Jobs.CK]: true, [Jobs.AK]: true, [Jobs.Mo]: true },
   },
 };
+
+// Generate lookup for consistent lookup behavior with VersionBannedCombosBackgrounds
+const VersionBannedCombosSpecies = Object.keys(VersionBannedCombosBackgrounds).reduce((vbcb, version) => {
+  // Species => Backgrounds
+  const vbcsp = VersionBannedCombosBackgrounds[version];
+
+  // Species => Backgrounds lookup (what we are building)
+  const bgSpLookup = {};
+
+  // For each species in Species => Backgrounds
+  Object.keys(vbcsp).forEach((sp) => {
+    const bgs = Object.keys(vbcsp[sp]);
+    bgs.forEach((bg) => {
+      if (!bgSpLookup[bg]) bgSpLookup[bg] = {};
+      bgSpLookup[bg][sp] = true;
+    });
+  });
+
+  // Initialize dictionary for this version
+  vbcb[version] = bgSpLookup;
+
+  // return the entire VersionRecommendedBackgrounds lookup
+  return vbcb;
+}, {});
 
 const BaseVersionRecommendedBackgrounds = {
   [Versions.v26]: {
@@ -308,10 +332,13 @@ const VersionRecommendedBackgrounds = Object.keys(BaseVersionRecommendedBackgrou
   // Species => Backgrounds lookup (what we are building)
   const spBgsLookup = {};
 
+  // Ensure every species exists in lookup
+  VersionSpecies[version].forEach((sp) => {
+    if (!spBgsLookup[sp]) spBgsLookup[sp] = {};
+  });
+
   // For each species in Species => Backgrounds
   Object.keys(spBgs).forEach((sp) => {
-    if (!spBgsLookup[sp]) spBgsLookup[sp] = {};
-
     const bgs = spBgs[sp];
     bgs.forEach((bg) => {
       spBgsLookup[sp][bg] = true;
@@ -333,6 +360,11 @@ const VersionRecommendedSpecies = Object.keys(BaseVersionRecommendedBackgrounds)
   // Backgrounds => Species lookup (what we are building)
   const bgSps = {};
 
+  // Ensure every background exists in lookup
+  VersionBackgrounds[version].forEach((bg) => {
+    if (!bgSps[bg]) bgSps[bg] = {};
+  });
+
   // For each species in Species => Backgrounds
   Object.keys(spBgs).forEach((sp) => {
     const bgs = spBgs[sp];
@@ -349,12 +381,46 @@ const VersionRecommendedSpecies = Object.keys(BaseVersionRecommendedBackgrounds)
   return vrs;
 }, {});
 
+const SpeciesBackgrounds = {
+  Species: VersionSpecies,
+  Backgrounds: VersionBackgrounds,
+};
+
+const Recommended = {
+  Species: VersionRecommendedSpecies,
+  Backgrounds: VersionRecommendedBackgrounds,
+};
+
+const BannedCombos = {
+  Species: VersionBannedCombosSpecies,
+  Backgrounds: VersionBannedCombosBackgrounds,
+};
+
 module.exports = {
   ...Versions,
   Keys: Versions,
-  Species: VersionSpecies,
-  Backgrounds: VersionBackgrounds,
-  RecommendedSpecies: VersionRecommendedSpecies,
-  RecommendedBackgrounds: VersionRecommendedBackgrounds,
-  BannedCombos: VersionBannedCombos,
+  Recommended,
+  getSpecies: ({ version, background }) => getType('Species', version, background),
+  getBackgrounds: ({ version, species }) => getType('Backgrounds', version, species),
 };
+
+function getType(type, version, other) {
+  const values = Object.values(SpeciesBackgrounds[type][version]);
+
+  if (other) {
+    // do banned combos exist for the other selection?
+    // e.g. when `type` is 'Background', `other` should be the species, e.g. 'Dg'
+    // e.g. when `type` is 'Species', `other` should be the background, e.g. 'CK'
+    const bannedCombos = BannedCombos[type][version][other];
+
+    if (bannedCombos) {
+      // yes? filter out banned combos
+      // e.g. felid weapon backgrounds like gladiator, hunter, etc.
+      // e.g. demigod god backgrounds like chaos knight, monk, etc.
+      const filteredValues = values.filter((v) => !bannedCombos[v]);
+      return filteredValues;
+    }
+  }
+
+  return values;
+}
