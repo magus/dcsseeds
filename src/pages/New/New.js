@@ -218,7 +218,7 @@ function Select({ title, animated, locked, onLock, selected, onChange, options }
           {title} {onLock && <Lock onChange={onLock} locked={locked} />}
         </GroupTitle>
 
-        <SelectOptions layout>
+        <SelectOptions>
           {options.map(({ value, name, tier, disabled }) => {
             const isSelected = selected === value;
 
@@ -256,7 +256,7 @@ const GroupTitle = styled.div`
   align-items: center;
 `;
 
-const SelectOptions = styled(motion.div)`
+const SelectOptions = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
