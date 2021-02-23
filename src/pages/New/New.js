@@ -28,17 +28,18 @@ export default function New(props) {
     fetchPolicy: 'cache-and-network',
   });
 
-  const handleSpecies = (e) => {
-    set_species(e.target.value);
-  };
+  function handleVersion(version) {
+    const versionSpecies = Versions.getSpecies({ version });
+    // if species not available in version, reset to first species
+    if (!~versionSpecies.indexOf(species)) set_species(versionSpecies[0]);
 
-  const handleBackground = (e) => {
-    set_background(e.target.value);
-  };
+    const versionBackgrounds = Versions.getBackgrounds({ version });
+    // if background not available in version, reset to first background
+    if (!~versionBackgrounds.indexOf(background)) set_background(versionBackgrounds[0]);
 
-  const handleVersion = (e) => {
-    set_version(e.target.value);
-  };
+    // finally set version
+    set_version(version);
+  }
 
   const handleReroll = async () => {
     const lockedProps = { version };
@@ -109,46 +110,71 @@ export default function New(props) {
   const speciesOptions = Versions.getSpecies({ version, background }).map((sp) => {
     const recommendedSpecies = !!Versions.Recommended.Species[version][background][sp];
     const recommendedBackground = !!Versions.Recommended.Backgrounds[version][sp][background];
+
+    let tier;
+    if (recommendedSpecies && recommendedBackground) {
+      tier = 0;
+    } else if (recommendedSpecies) {
+      tier = 1;
+    } else {
+      tier = 2;
+    }
+
     return {
       value: sp,
       name: Species.Names[sp],
-      recommended: recommendedSpecies,
-      flag: recommendedSpecies && recommendedBackground,
+      tier,
     };
   });
 
   const backgroundsOptions = Versions.getBackgrounds({ version, species }).map((bg) => {
     const recommendedSpecies = !!Versions.Recommended.Species[version][bg][species];
     const recommendedBackground = !!Versions.Recommended.Backgrounds[version][species][bg];
+
+    let tier;
+    if (recommendedSpecies && recommendedBackground) {
+      tier = 0;
+    } else if (recommendedBackground) {
+      tier = 1;
+    } else {
+      tier = 2;
+    }
+
     return {
       value: bg,
       name: Backgrounds.Names[bg],
-      recommended: recommendedBackground,
-      flag: recommendedSpecies && recommendedBackground,
+      tier,
     };
   });
 
   return (
     <Container>
       <FlexColumns>
-        <Instructions>
-          <StyledLink href="/">Back to Home</StyledLink>
-          <button onClick={handleReroll}> Reroll</button>
-          Here, have this random seed.
-        </Instructions>
+        <StyledLink href="/">Back to Home</StyledLink>
+        <button onClick={handleReroll}> Reroll</button>
+        <Instructions>Here, have this random seed.</Instructions>
 
-        <LockSelectionGroup>
-          <Lock onChange={handleLockChange('species')} locked={!!locks.species} />
-          <Select onChange={handleSpecies} options={speciesOptions} selected={species} />
-        </LockSelectionGroup>
+        <Select
+          title="Species"
+          onChange={set_species}
+          options={speciesOptions}
+          selected={species}
+          onLock={handleLockChange('species')}
+          locked={!!locks.species}
+        />
 
-        <LockSelectionGroup>
-          <Lock onChange={handleLockChange('background')} locked={!!locks.background} />
-          <Select onChange={handleBackground} options={backgroundsOptions} selected={background} />
-        </LockSelectionGroup>
+        <Select
+          title="Background"
+          onChange={set_background}
+          options={backgroundsOptions}
+          selected={background}
+          onLock={handleLockChange('background')}
+          locked={!!locks.background}
+        />
 
-        <Select onChange={handleVersion} options={VERSION_CHOICES} selected={version} />
+        <Select title="Version" onChange={handleVersion} options={VERSION_CHOICES} selected={version} />
 
+        <GroupTitle>Seed</GroupTitle>
         <input disabled value={value} />
 
         <Instructions>
@@ -179,23 +205,90 @@ function Lock(props) {
   );
 }
 
-function Select({ selected, onChange, options, lookup }) {
+function Select({ title, locked, onLock, selected, onChange, options }) {
   return (
-    <select onChange={onChange} value={selected}>
-      {options.map(({ value, name, recommended, flag }) => {
-        const isSelected = selected === value;
+    <SelectContainer>
+      <GroupTitle>
+        {title} {onLock && <Lock onChange={onLock} locked={locked} />}
+      </GroupTitle>
 
-        return (
-          <option key={value} value={value}>
-            {flag ? '⭐️' : ''}
-            {recommended ? '⭐️' : ''}
-            {name || value}
-          </option>
-        );
-      })}
-    </select>
+      <SelectOptions>
+        {options.map(({ value, name, tier }) => {
+          const isSelected = selected === value;
+
+          if (locked && !isSelected) return null;
+
+          function handleClick() {
+            onChange(value);
+          }
+
+          return (
+            <SelectOption key={value} {...{ isSelected, tier }} onClick={handleClick}>
+              {name || value}
+            </SelectOption>
+          );
+        })}
+      </SelectOptions>
+    </SelectContainer>
   );
 }
+
+const SelectContainer = styled.div`
+  margin: 16px 0;
+  display: flex;
+  flex-direction: column;
+`;
+
+const GroupTitle = styled.div`
+  margin: 8px 0 4px 0;
+  font-weight: 400;
+  font-size: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
+
+const SelectOptions = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+`;
+
+const SelectOption = styled.button`
+  margin: 0 8px 8px 0;
+  border: 1px solid transparent;
+  background: transparent;
+
+  ${({ tier }) =>
+    tier === 0 &&
+    `
+    color: #059669;
+    border: 1px solid rgba(var(--gray-color-rgb), 0.4);
+  `}
+
+  ${({ tier }) =>
+    tier === 1 &&
+    `
+    color: #A7F3D0;
+    border: 1px solid rgba(var(--gray-color-rgb), 0.4);
+  `}
+
+  ${({ tier, isSelected }) =>
+    tier === 2 &&
+    !isSelected &&
+    `
+    color: rgba(var(--gray-color-rgb), 0.4);
+  `}
+
+  ${({ isSelected }) =>
+    !isSelected
+      ? `
+    opacity: 0.4;
+  `
+      : `
+    border: 1px solid var(--font-color);
+  `}
+`;
 
 const Container = styled.div`
   max-width: 640px;
@@ -212,19 +305,11 @@ const Instructions = styled.div`
   text-align: center;
   margin: 32px 0;
   font-size: 24px;
-  display: flex;
-  flex-direction: column;
 `;
 
 const FlexColumns = styled.div`
   display: flex;
   flex-direction: column;
-`;
-
-const LockSelectionGroup = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
 `;
 
 const LockContainer = styled.div`

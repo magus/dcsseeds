@@ -155,7 +155,7 @@ const GlobalStyle = createGlobalStyle`
     --app-color: rgb(25, 174, 94);
     --app-color-light: rgb(227, 252, 236);
     --error-color: rgb(227, 52, 47);
-    --gray-color: rgb(135, 149, 161);
+    --gray-color-rgb: 135, 149, 161;
     --blue-color: rgb(52,144,220);
 
     --bg-color: #fff;
