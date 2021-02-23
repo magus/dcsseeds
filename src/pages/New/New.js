@@ -334,7 +334,8 @@ const LockInput = styled.input`
 `;
 
 const VERSION_CHOICES = [
-  { value: Versions.v26, recommended: true },
-  { value: Versions.v25, recommended: false },
-  { value: Versions.v24, recommended: false },
+  // <Select> options
+  { value: Versions.v26 },
+  { value: Versions.v25 },
+  { value: Versions.v24 },
 ];
