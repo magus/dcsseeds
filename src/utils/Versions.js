@@ -426,29 +426,28 @@ module.exports = {
   ...Versions,
   Keys: Versions,
   Recommended,
-  getSpecies: ({ version, background }) => getType('Species', version, background),
-  getBackgrounds: ({ version, species }) => getType('Backgrounds', version, species),
+  getSpecies: ({ version, background }, options) => getType('Species', version, background, options),
+  getBackgrounds: ({ version, species }, options) => getType('Backgrounds', version, species, options),
 };
 
-function getType(type, version, other) {
+function getType(type, version, other, options = {}) {
   const values = Object.values(SpeciesBackgrounds[type][version]);
 
-  if (other) {
-    // do banned combos exist for the other selection?
-    // e.g. when `type` is 'Background', `other` should be the species, e.g. 'Dg'
-    // e.g. when `type` is 'Species', `other` should be the background, e.g. 'CK'
-    const bannedCombos = BannedCombos[type][version][other];
+  return values.map((value) => {
+    let banned;
 
-    if (bannedCombos) {
-      // yes? filter out banned combos
-      // e.g. felid weapon backgrounds like gladiator, hunter, etc.
-      // e.g. demigod god backgrounds like chaos knight, monk, etc.
-      const filteredValues = values.filter((v) => !bannedCombos[v]);
-      return filteredValues;
+    if (other) {
+      // do banned combos exist for the other selection?
+      // e.g. when `type` is 'Background', `other` should be the species, e.g. 'Dg'
+      // e.g. when `type` is 'Species', `other` should be the background, e.g. 'CK'
+      const bannedCombos = BannedCombos[type][version][other];
+      if (bannedCombos) {
+        banned = bannedCombos[value];
+      }
     }
-  }
 
-  return values;
+    return { value, banned };
+  });
 }
 
 // Generate lookup from [value]: ['a', 'b']

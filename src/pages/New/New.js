@@ -30,11 +30,11 @@ export default function New(props) {
   });
 
   function handleVersion(version) {
-    const versionSpecies = Versions.getSpecies({ version });
+    const versionSpecies = Versions.getSpecies({ version }).map((_) => _.value);
     // if species not available in version, reset to first species
     if (!~versionSpecies.indexOf(species)) set_species(versionSpecies[0]);
 
-    const versionBackgrounds = Versions.getBackgrounds({ version });
+    const versionBackgrounds = Versions.getBackgrounds({ version }).map((_) => _.value);
     // if background not available in version, reset to first background
     if (!~versionBackgrounds.indexOf(background)) set_background(versionBackgrounds[0]);
 
@@ -109,8 +109,8 @@ export default function New(props) {
   }
 
   const speciesOptions = Versions.getSpecies({ version, background }).map((sp) => {
-    const recommendedSpecies = !!Versions.Recommended.Species[version][background][sp];
-    const recommendedBackground = !!Versions.Recommended.Backgrounds[version][sp][background];
+    const recommendedSpecies = !!Versions.Recommended.Species[version][background][sp.value];
+    const recommendedBackground = !!Versions.Recommended.Backgrounds[version][sp.value][background];
 
     let tier;
     if (recommendedSpecies && recommendedBackground) {
@@ -122,15 +122,16 @@ export default function New(props) {
     }
 
     return {
-      value: sp,
-      name: Species.Names[sp],
+      value: sp.value,
+      name: Species.Names[sp.value],
       tier,
+      disabled: sp.banned,
     };
   });
 
   const backgroundsOptions = Versions.getBackgrounds({ version, species }).map((bg) => {
-    const recommendedSpecies = !!Versions.Recommended.Species[version][bg][species];
-    const recommendedBackground = !!Versions.Recommended.Backgrounds[version][species][bg];
+    const recommendedSpecies = !!Versions.Recommended.Species[version][bg.value][species];
+    const recommendedBackground = !!Versions.Recommended.Backgrounds[version][species][bg.value];
 
     let tier;
     if (recommendedSpecies && recommendedBackground) {
@@ -142,9 +143,10 @@ export default function New(props) {
     }
 
     return {
-      value: bg,
-      name: Backgrounds.Names[bg],
+      value: bg.value,
+      name: Backgrounds.Names[bg.value],
       tier,
+      disabled: bg.banned,
     };
   });
 
@@ -217,7 +219,7 @@ function Select({ title, animated, locked, onLock, selected, onChange, options }
         </GroupTitle>
 
         <SelectOptions layout>
-          {options.map(({ value, name, tier }) => {
+          {options.map(({ value, name, tier, disabled }) => {
             const isSelected = selected === value;
 
             if (locked && !isSelected) return null;
@@ -227,7 +229,7 @@ function Select({ title, animated, locked, onLock, selected, onChange, options }
             }
 
             return (
-              <SelectOption key={value} {...{ isSelected, tier }} onClick={handleClick}>
+              <SelectOption key={value} {...{ isSelected, disabled, tier }} onClick={handleClick}>
                 {name || value}
                 {isSelected && <SelectedBox layoutId={animated ? 'selected' : undefined} />}
               </SelectOption>
@@ -295,6 +297,12 @@ const SelectOption = styled.button`
     !isSelected &&
     `
     color: rgba(var(--gray-color-rgb), 0.4);
+  `}
+
+  ${({ disabled }) =>
+    disabled &&
+    `
+    color: #F87171;
   `}
 
   ${({ isSelected }) =>

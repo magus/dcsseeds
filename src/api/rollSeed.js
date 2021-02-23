@@ -19,12 +19,17 @@ module.exports = async (req, res) => {
 
     // choose random species
     if (!species) {
-      species = randomElement(Versions.getSpecies({ version, background }));
+      // filter out banned combos
+      // e.g. felid weapon backgrounds like gladiator, hunter, etc.
+      // e.g. demigod god backgrounds like chaos knight, monk, etc.
+      const speciesOptions = Versions.getSpecies({ version, background }).filter((_) => !_.banned);
+      species = randomElement(speciesOptions).value;
     }
 
     // choose random background
     if (!background) {
-      background = randomElement(Versions.getBackgrounds({ version, species }));
+      const backgroundOptions = Versions.getBackgrounds({ version, species }).filter((_) => !_.banned);
+      background = randomElement(backgroundOptions).value;
     }
 
     // api response used by getInitialProps of pages/New
