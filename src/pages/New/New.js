@@ -2,6 +2,7 @@ import * as React from 'react';
 import { useRouter } from 'next/router';
 import { useQuery } from '@apollo/client';
 import styled from 'styled-components';
+import { AnimateSharedLayout, motion } from 'framer-motion';
 
 import CopyButton from 'src/components/CopyButton';
 import Loading from 'src/components/Loading';
@@ -156,6 +157,7 @@ export default function New(props) {
 
         <Select
           title="Species"
+          animated
           onChange={set_species}
           options={speciesOptions}
           selected={species}
@@ -165,6 +167,7 @@ export default function New(props) {
 
         <Select
           title="Background"
+          animated
           onChange={set_background}
           options={backgroundsOptions}
           selected={background}
@@ -205,31 +208,34 @@ function Lock(props) {
   );
 }
 
-function Select({ title, locked, onLock, selected, onChange, options }) {
+function Select({ title, animated, locked, onLock, selected, onChange, options }) {
   return (
-    <SelectContainer>
-      <GroupTitle>
-        {title} {onLock && <Lock onChange={onLock} locked={locked} />}
-      </GroupTitle>
+    <AnimateSharedLayout>
+      <SelectContainer>
+        <GroupTitle>
+          {title} {onLock && <Lock onChange={onLock} locked={locked} />}
+        </GroupTitle>
 
-      <SelectOptions>
-        {options.map(({ value, name, tier }) => {
-          const isSelected = selected === value;
+        <SelectOptions layout>
+          {options.map(({ value, name, tier }) => {
+            const isSelected = selected === value;
 
-          if (locked && !isSelected) return null;
+            if (locked && !isSelected) return null;
 
-          function handleClick() {
-            onChange(value);
-          }
+            function handleClick() {
+              onChange(value);
+            }
 
-          return (
-            <SelectOption key={value} {...{ isSelected, tier }} onClick={handleClick}>
-              {name || value}
-            </SelectOption>
-          );
-        })}
-      </SelectOptions>
-    </SelectContainer>
+            return (
+              <SelectOption key={value} {...{ isSelected, tier }} onClick={handleClick}>
+                {name || value}
+                {isSelected && <SelectedBox layoutId={animated ? 'selected' : undefined} />}
+              </SelectOption>
+            );
+          })}
+        </SelectOptions>
+      </SelectContainer>
+    </AnimateSharedLayout>
   );
 }
 
@@ -248,16 +254,27 @@ const GroupTitle = styled.div`
   align-items: center;
 `;
 
-const SelectOptions = styled.div`
+const SelectOptions = styled(motion.div)`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 `;
 
+const SelectedBox = styled(motion.div)`
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border: 4px solid var(--font-color);
+  border-radius: 0.25rem;
+`;
 const SelectOption = styled.button`
+  position: relative;
   margin: 0 8px 8px 0;
   border: 1px solid transparent;
-  background: transparent;
 
   ${({ tier }) =>
     tier === 0 &&
@@ -283,10 +300,10 @@ const SelectOption = styled.button`
   ${({ isSelected }) =>
     !isSelected
       ? `
+    background: transparent;
     opacity: 0.4;
   `
       : `
-    border: 1px solid var(--font-color);
   `}
 `;
 
