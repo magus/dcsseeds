@@ -49,11 +49,13 @@ export default function Compare(props) {
 
   const winCounts = {};
   comparedSeeds.forEach((seed) => {
-    if (!winCounts[seed.winner.name]) {
-      winCounts[seed.winner.name] = 0;
-    }
+    if (seed.winner) {
+      if (!winCounts[seed.winner.name]) {
+        winCounts[seed.winner.name] = 0;
+      }
 
-    winCounts[seed.winner.name] += 1;
+      winCounts[seed.winner.name] += 1;
+    }
   });
 
   const maxScore = Math.max(data.playerA.aggregate.sum.score, data.playerB.aggregate.sum.score);
