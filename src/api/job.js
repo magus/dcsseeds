@@ -8,9 +8,6 @@ import { sleep } from 'src/utils/sleep';
 // Example API Request
 // http://localhost:3000/api/job?i=203&id=12058c0b-216e-4644-9960-7bd032081223
 
-// table schema
-// job [id active i lastRun interval endpoint created updated]
-
 module.exports = async (req, res) => {
   try {
     const startTimeMs = Date.now();
