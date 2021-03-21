@@ -249,8 +249,8 @@ function getAllMorgueNotes(morgueText) {
 function getAllMorgueItems(morgueNotes) {
   const items = [];
 
-  function createItem(name, location) {
-    return items.push({ name, location });
+  function createItem(type, name, location) {
+    return items.push({ type, name, location });
   }
 
   function parseNote(morgueNote) {
@@ -261,7 +261,7 @@ function getAllMorgueItems(morgueNotes) {
       // Found: https://regexr.com/5csaa
       const found = morgueNote.note.match(/Found the (.*)?/);
       const gift = morgueNote.note.match(/gifted it to you/);
-      const identSpecialLoc = morgueNote.note.match(/Identified the (.*) \(You found it in a (.*)\)/);
+      const identPortal = morgueNote.note.match(/Identified the (.*) \(You found it in a (.*)\)/);
       const identWithLoc = morgueNote.note.match(/Identified the (.*) \(You found it on level (.*) of the (.*)\)/);
       const ident = morgueNote.note.match(/Identified the (.*)/);
 
@@ -298,7 +298,8 @@ function getAllMorgueItems(morgueNotes) {
           let match = reWieldingWearing.exec(morgueNote.note);
           while (match) {
             const [, , item] = match;
-            createItem(`(${who}) ${item}`, morgueNote.loc);
+            createItem('wearingWho', `(${who}) ${item}`, morgueNote.loc);
+            createItem('item', item, morgueNote.loc);
 
             // next match
             match = reWieldingWearing.exec(morgueNote.note);
@@ -308,33 +309,38 @@ function getAllMorgueItems(morgueNotes) {
         const [, item, gold] = bought;
         const artefactMatch = item.match(/{.*?}/);
         if (artefactMatch) {
-          createItem(`${item} (${gold} gold)`, morgueNote.loc);
+          createItem('bought', `${item} (${gold} gold)`, morgueNote.loc);
+          createItem('item', item, morgueNote.loc);
         }
       } else if (ziggurat) {
-        createItem('Ziggurat', morgueNote.loc);
+        createItem('ziggurat', 'Ziggurat', morgueNote.loc);
       } else if (playerNotes) {
         const [, note] = playerNotes;
-        createItem(`${note} (Player Note)`, morgueNote.loc);
+        createItem('note', `${note} (Player Note)`, morgueNote.loc);
       } else if (pietyTrove) {
-        createItem(`Treasure Trove (lose all piety)`, morgueNote.loc);
+        createItem('trovePiety', `Treasure Trove (lose all piety)`, morgueNote.loc);
       } else if (trove) {
         const [, item] = trove;
-        createItem(`Treasure Trove (${item})`, morgueNote.loc);
+        createItem('troveItem', `Treasure Trove (${item})`, morgueNote.loc);
       } else if (spells) {
         const [, item] = spells;
-        createItem(item, morgueNote.loc);
+        createItem('spells', item, morgueNote.loc);
       } else if (found) {
         const [, item] = found;
-        createItem(item, morgueNote.loc);
-      } else if (identSpecialLoc) {
-        const [, item, loc] = identSpecialLoc;
-        createItem(item, loc);
+        createItem('found', item, morgueNote.loc);
+        createItem('item', item, morgueNote.loc);
+      } else if (identPortal) {
+        const [, item, loc] = identPortal;
+        createItem('identPortal', item, loc);
+        createItem('item', item, loc);
       } else if (identWithLoc) {
         const [, item, level, loc] = identWithLoc;
-        createItem(item, `${loc}:${level}`);
+        createItem('identLoc', item, `${loc}:${level}`);
+        createItem('item', item, `${loc}:${level}`);
       } else if (ident) {
         const [, item] = ident;
-        createItem(item, morgueNote.loc);
+        createItem('ident', item, morgueNote.loc);
+        createItem('item', item, morgueNote.loc);
       }
     } catch (err) {
       console.error(`ERROR; SKIPPING NOTE [${JSON.stringify(morgueNote, null, 2)}]`);
@@ -346,7 +352,7 @@ function getAllMorgueItems(morgueNotes) {
   morgueNotes.forEach(parseNote);
 
   // remove duplicates
-  const dedupedItems = uniqBy(items, (i) => `__N${i.name}____L${i.location}__`);
+  const dedupedItems = uniqBy(items, (i) => `__T${i.type}____N${i.name}____L${i.location}__`);
 
   return dedupedItems;
 }
