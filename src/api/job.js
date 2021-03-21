@@ -65,7 +65,8 @@ module.exports = async (req, res) => {
     }
 
     // kickoff the recursive call for next job i
-    // this may not work if done async on vercel
+    // this MUST be await'd to ensure it completes
+    // if we make it async vercel will not execute it
     await fetch(`${process.env.PROTOCOL}://${process.env.HOSTNAME}/api/job?id=${id}&i=${i + 1}`);
 
     console.debug('job', 'end', { id, i });
