@@ -13,7 +13,7 @@ module.exports = async (req, res) => {
   try {
     const { id, i } = req.query;
 
-    console.log('scrapePlayers', 'start');
+    console.debug('scrapePlayers', 'start');
 
     // for one player
     // gather all morgue files
@@ -36,7 +36,7 @@ module.exports = async (req, res) => {
     // eg
     // http://crawl.akrasiac.org/scoring/overview.html
 
-    console.log('scrapePlayers', 'end');
+    console.debug('scrapePlayers', 'end');
 
     return send(res, 200);
   } catch (err) {

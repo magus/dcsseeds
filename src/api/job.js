@@ -18,7 +18,7 @@ module.exports = async (req, res) => {
     const { id } = req.query;
     const i = parseInt(req.query.i, 10);
 
-    console.log('job', 'start', { id, i });
+    console.debug('job', 'start', { id, i });
 
     const job = await GQL_JOB.run({ id });
 
@@ -28,11 +28,11 @@ module.exports = async (req, res) => {
 
     const lastRunMs = new Date(job.lastRun).getTime();
     const secondsSinceLastRun = (Date.now() - lastRunMs) / 1000;
-    console.log({ secondsSinceLastRun });
+    console.debug({ secondsSinceLastRun });
 
     // check seconds since lastRun against job.interval
     if (secondsSinceLastRun > job.interval) {
-      console.log('job', 'run', { id: job.id, endpoint: job.endpoint });
+      console.debug('job', 'run', { id: job.id, endpoint: job.endpoint });
       // update job i immediately for sync and prevent duplicate request chains
       // send now() to capture current time as lastRun
       GQL_UPDATE_JOB.run({ id, lastRun: 'now()' });
@@ -43,7 +43,7 @@ module.exports = async (req, res) => {
         fetch(`${process.env.PROTOCOL}://${process.env.HOSTNAME}/api/job/${job.endpoint}`);
       }
     } else {
-      console.log('job', 'skip');
+      console.debug('job', 'skip');
       // update job i immediately for sync and prevent duplicate request chains
       GQL_UPDATE_JOB.run({ id, lastRun: job.lastRun });
     }
@@ -68,7 +68,7 @@ module.exports = async (req, res) => {
     // do NOT await because we want this to be async
     fetch(`${process.env.PROTOCOL}://${process.env.HOSTNAME}/api/job?id=${id}&i=${i + 1}`);
 
-    console.log('job', 'end', { id, i });
+    console.debug('job', 'end', { id, i });
 
     return send(res, 200);
   } catch (err) {
