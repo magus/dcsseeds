@@ -7,21 +7,24 @@ import { sleep } from 'src/utils/sleep';
 
 // Example API Request
 // http://localhost:3000/api/job?i=203&id=12058c0b-216e-4644-9960-7bd032081223
+// http://localhost:3000/api/job?id=12058c0b-216e-4644-9960-7bd032081223&i=123&force
 
 module.exports = async (req, res) => {
   try {
     const startTimeMs = Date.now();
 
     const { id } = req.query;
-    const i = parseInt(req.query.i, 10);
+    const force = req.query.force !== undefined;
 
-    console.debug('job', 'start', { id, i });
+    console.debug('job', 'start', req.query, { force });
 
     const job = await GQL_JOB.run({ id });
 
     if (!job) return send(res, 500, new Error('job does not exist'));
     if (!job.active) return send(res, 500, new Error('job not active'));
-    if (job.i !== i) return send(res, 500, new Error('job request i out of sync'));
+    if (!force && job.i !== req.query.i) return send(res, 500, new Error('job request i out of sync'));
+
+    const { i } = job;
 
     const lastRunMs = new Date(job.lastRun).getTime();
     const secondsSinceLastRun = (Date.now() - lastRunMs) / 1000;
@@ -29,7 +32,7 @@ module.exports = async (req, res) => {
 
     // check seconds since lastRun against job.interval
     if (secondsSinceLastRun > job.interval) {
-      console.debug('job', 'run', { id: job.id, endpoint: job.endpoint });
+      console.debug('job', 'run', { id, endpoint: job.endpoint });
       // update job i immediately for sync and prevent duplicate request chains
       // send now() to capture current time as lastRun
       GQL_UPDATE_JOB.run({ id, lastRun: 'now()' });
@@ -64,7 +67,9 @@ module.exports = async (req, res) => {
     // kickoff the recursive call for next job i
     // this MUST be await'd to ensure it completes
     // if we make it async vercel will not execute it
-    await fetch(`${process.env.PROTOCOL}://${process.env.HOSTNAME}/api/job?id=${id}&i=${i + 1}`);
+    await fetch(
+      `${process.env.PROTOCOL}://${process.env.HOSTNAME}/api/job?id=${id}&i=${i + 1}${force ? '&force' : ''}`,
+    );
 
     console.debug('job', 'end', { id, i });
 
