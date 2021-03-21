@@ -4,8 +4,25 @@ import { gql } from '@apollo/client';
 import { createQuery } from 'src/graphql/createQuery';
 import parseMorgue from 'src/utils/parseMorgue';
 
+// DCSS score overview with player morgues
+// http://crawl.akrasiac.org/scoring/overview.html
+
 // Example API Request
 // http://localhost:3000/api/job/scrapePlayers
+
+// query MyQuery {
+//   scrapePlayers_items(where: {name: {_ilike: "% clar%"}}) {
+//     name
+//     locations {
+//       branch
+//       level
+//       seed {
+//         value
+//         version
+//       }
+//     }
+//   }
+// }
 
 const SERVER_CONFIG = {
   akrasiac: {
@@ -64,8 +81,9 @@ async function scrapePlayer(player) {
   }
 
   const asyncAddMorgues = [];
-  // for (let i = 0; i < 1; i++) {
   for (let i = 0; i < morgues.length; i++) {
+    // for (let i = 0; i < morgues.length; i++) {
+    // for (let i = 0; i < 1; i++) {
     const morgue = morgues[i];
     const newMorgue = !morgueLookup[morgue.timestamp.getTime()];
     if (newMorgue) {
@@ -74,6 +92,7 @@ async function scrapePlayer(player) {
   }
 
   await Promise.all(asyncAddMorgues);
+  await GQL_LAST_RUN_PLAYER.run({ playerId: player.id });
   console.debug('[scrapePlayer]', 'asyncAddMorgues', asyncAddMorgues.length);
 }
 
@@ -95,9 +114,16 @@ async function addMorgue(playerId, morgue) {
     // console.debug('[scrapePlayer]', timestamp, { item });
     const [branch, level] = item.location.split(':');
     const addItemVariables = {
+      // morgue
+      playerId,
+      url,
+      timestamp,
+      // item
       name: item.name,
+      // itemLocation
       location: item.location,
       branch,
+      // seed
       seed,
       version,
     };
@@ -108,45 +134,33 @@ async function addMorgue(playerId, morgue) {
   });
 
   // wait for all items to be added
-  await Promise.all(asyncAddItems);
+  const resolvedLocations = await Promise.all(asyncAddItems);
+
+  // pull off first result to get location.morgue.id or matching morgue
+  const [locations] = resolvedLocations;
+  let morgueId;
+  for (let i = 0; i < locations.length; i++) {
+    const location = locations[i];
+    if (location.morgue.url === url) {
+      morgueId = location.morgue.id;
+      break;
+    }
+  }
 
   // add morgue to indicate it has been parsed
-  await GQL_ADD_MORGUE.run({ playerId, url, timestamp });
+  await GQL_PARSED_MORGUE.run({ morgueId });
 }
 
 module.exports = async (req, res) => {
   try {
     // console.debug('[scrapePlayers]', 'start');
-
     const scrapePlayers = await GQL_SCRAPEPLAYERS.run();
 
     for (let i = 0; i < scrapePlayers.length; i++) {
       await scrapePlayer(scrapePlayers[i]);
     }
 
-    // for one player
-    // gather all morgue files
-    // parse for particular version say 0.26 and 0.27 to start
-    // run parseMorgue util or some variant to collect metadata
-    // create a note row for every line in parsed metadata
-    // id seed note location level
-    // then we can search and discover seeds with interesting items
-
-    // make recursive endpoint on dcsseeds dcss.now.sh
-    // eg scrapePlayers
-    // this will do below and keep things up to date and skip duplicates, can even store the last parsed entry date so we can only add new entries
-    // this can constantly call itself every 30s or so to keep database warm and entries automatically up to date
-
-    // can start with set of players and servers and expand
-    // we can set a row for each player eg
-    // id name server last updated active
-    // active indicates whether to include them in the scrapePlayers recursive task
-    // given a player name and server we should be able to discover all morgues
-    // eg
-    // http://crawl.akrasiac.org/scoring/overview.html
-
     // console.debug('[scrapePlayers]', 'end');
-
     return send(res, 200);
   } catch (err) {
     return send(res, 500, err);
@@ -161,7 +175,7 @@ const GQL_SCRAPEPLAYERS = createQuery(
         lastRun
         name
         server
-        morgues {
+        morgues(where: { parsed: { _eq: true } }) {
           timestamp
         }
       }
@@ -170,47 +184,86 @@ const GQL_SCRAPEPLAYERS = createQuery(
   (data) => data.scrapePlayers,
 );
 
-const GQL_ADD_MORGUE = createQuery(
+const GQL_LAST_RUN_PLAYER = createQuery(gql`
+  mutation LastRunPlayer($playerId: uuid!) {
+    update_scrapePlayers_by_pk(pk_columns: { id: $playerId }, _set: { lastRun: "now()" }) {
+      id
+    }
+  }
+`);
+
+const GQL_PARSED_MORGUE = createQuery(
   gql`
-    mutation AddMorgue($playerId: uuid!, $url: String!, $timestamp: timestamptz!) {
-      insert_scrapePlayers_morgues(
-        objects: { player: $playerId, url: $url, timestamp: $timestamp }
-        on_conflict: { constraint: scrapePlayers_morgues_url_key, update_columns: updated }
-      ) {
-        affected_rows
+    mutation ParsedMorgue($morgueId: uuid!) {
+      update_scrapePlayers_morgues_by_pk(pk_columns: { id: $morgueId }, _set: { parsed: true }) {
+        id
       }
     }
   `,
 );
 
-const GQL_ADD_ITEM = createQuery(gql`
-  mutation AddItem(
-    $name: String!
-    $location: String!
-    $branch: String!
-    $level: Int
-    $seed: String!
-    $version: String!
-  ) {
-    insert_scrapePlayers_items(
-      objects: {
-        name: $name
-        locations: {
-          data: {
-            branch: $branch
-            level: $level
-            location: $location
-            seed: {
-              data: { value: $seed, version: $version }
-              on_conflict: { constraint: scrapePlayers_seeds_version_value_key, update_columns: updated }
+const GQL_ADD_ITEM = createQuery(
+  gql`
+    mutation AddItem(
+      $playerId: uuid!
+      $url: String!
+      $timestamp: timestamptz!
+      $name: String!
+      $location: String!
+      $branch: String!
+      $level: Int
+      $seed: String!
+      $version: String!
+    ) {
+      item: insert_scrapePlayers_items(
+        objects: {
+          name: $name
+          locations: {
+            data: {
+              branch: $branch
+              level: $level
+              location: $location
+              morgue: {
+                data: { playerId: $playerId, url: $url, timestamp: $timestamp }
+                on_conflict: { constraint: scrapePlayers_morgues_url_key, update_columns: updated }
+              }
+              seed: {
+                data: { value: $seed, version: $version }
+                on_conflict: { constraint: scrapePlayers_seeds_version_value_key, update_columns: updated }
+              }
+            }
+            on_conflict: {
+              constraint: scrapePlayers_itemLocations_itemId_seedId_morgueId_location_key
+              update_columns: updated
             }
           }
-          on_conflict: { constraint: scrapePlayers_itemLocations_itemId_seedId_location_key, update_columns: updated }
+        }
+        on_conflict: { constraint: scrapePlayers_items_item_key, update_columns: updated }
+      ) {
+        returning {
+          locations {
+            morgue {
+              id
+              url
+            }
+          }
         }
       }
-      on_conflict: { constraint: scrapePlayers_items_item_key, update_columns: updated }
-    ) {
-      affected_rows
     }
-  }
-`);
+  `,
+  // {
+  //   "data": {
+  //     "item": {
+  //       "returning": [
+  //         {
+  //           "locations": [{ id: 'abc', url: 'http://blah.com' }]
+  //         }
+  //       ]
+  //     }
+  //   }
+  // }
+  (data) => {
+    const [item] = data.item.returning;
+    return item.locations;
+  },
+);
