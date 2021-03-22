@@ -15,6 +15,9 @@ import parseMorgue from 'src/utils/parseMorgue';
 //   delete_scrapePlayers_morgues(where: {url: {_neq: ""}}) {
 //     affected_rows
 //   }
+//   delete_scrapePlayers_items(where: {name: {_neq: ""}}) {
+//     affected_rows
+//   }
 // }
 
 // Distinct branch names (audit parseMorgues BRANCH_NAMES getBranch logic)
@@ -26,7 +29,7 @@ import parseMorgue from 'src/utils/parseMorgue';
 
 // Search example
 // query MyQuery {
-//   scrapePlayers_items(where: {name: {_ilike: "% clar%"}}) {
+//   scrapePlayers_items(where: {_or: [{name: {_ilike: "% clar%"}}, {name: {_ilike: "clar%"}}]}) {
 //     name
 //     locations {
 //       branch
