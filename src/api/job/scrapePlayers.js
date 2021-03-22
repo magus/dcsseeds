@@ -10,6 +10,21 @@ import parseMorgue from 'src/utils/parseMorgue';
 // Example API Request
 // http://localhost:3000/api/job/scrapePlayers
 
+// Delete all morgues (reparse)
+// mutation MyMutation {
+//   delete_scrapePlayers_morgues(where: {url: {_neq: ""}}) {
+//     affected_rows
+//   }
+// }
+
+// Distinct branch names (audit parseMorgues BRANCH_NAMES getBranch logic)
+// query MyQuery {
+//   scrapePlayers_itemLocations(distinct_on: branch) {
+//     branch
+//   }
+// }
+
+// Search example
 // query MyQuery {
 //   scrapePlayers_items(where: {name: {_ilike: "% clar%"}}) {
 //     name
@@ -40,6 +55,9 @@ const SERVER_CONFIG = {
 const PARSE_MORGUE_ITEM_TYPES = {
   item: true,
 };
+
+// Adjust this if you want to parse more morgues per request
+const MAX_MORGUES_PER_PLAYER = 25;
 
 function playerMorgueLookup(playerMorgues) {
   const lookup = {};
@@ -84,6 +102,10 @@ async function scrapePlayer(player) {
   for (let i = 0; i < morgues.length; i++) {
     // for (let i = 0; i < morgues.length; i++) {
     // for (let i = 0; i < 1; i++) {
+
+    // skip if we have reached max morgues to parse per player
+    if (asyncAddMorgues.length >= MAX_MORGUES_PER_PLAYER) break;
+
     const morgue = morgues[i];
     const newMorgue = !morgueLookup[morgue.timestamp.getTime()];
     if (newMorgue) {
@@ -105,6 +127,7 @@ async function addMorgue(playerId, morgue) {
   // console.debug('addMorge', { data });
 
   if (data instanceof Error) {
+    console.error('[addMorgue]', 'error', { data });
     return data;
   }
 
