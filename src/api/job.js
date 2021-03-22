@@ -4,6 +4,7 @@ import { gql } from '@apollo/client';
 import { createQuery } from 'src/graphql/createQuery';
 import fetch from 'src/utils/fetch';
 import { sleep } from 'src/utils/sleep';
+import { toNumber } from 'src/utils/toNumber';
 
 // Example API Request
 // http://localhost:3000/api/job?i=203&id=12058c0b-216e-4644-9960-7bd032081223
@@ -20,9 +21,11 @@ module.exports = async (req, res) => {
 
     const job = await GQL_JOB.run({ id });
 
+    req.query.i;
+
     if (!job) return send(res, 500, new Error('job does not exist'));
     if (!job.active) return send(res, 500, new Error('job not active'));
-    if (!force && job.i !== req.query.i) return send(res, 500, new Error('job request i out of sync'));
+    if (!force && job.i !== toNumber(req.query.i)) return send(res, 500, new Error('job request i out of sync'));
 
     const { i } = job;
 
