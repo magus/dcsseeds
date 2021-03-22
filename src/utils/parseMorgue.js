@@ -1,4 +1,5 @@
 const keyMirror = require('src/utils/keyMirror');
+const { toNumber } = require('src/utils/toNumber');
 const runRegex = require('src/utils/runRegex');
 const Backgrounds = require('src/utils/Backgrounds');
 const Species = require('src/utils/Species');
@@ -393,8 +394,6 @@ function getAllMorgueItems(morgueNotes) {
 
   return dedupedItems;
 }
-
-const toNumber = (value) => parseInt(value, 10);
 
 function getBranch(branch) {
   return BRANCH_NAMES[branch.toLowerCase()] || branch;
