@@ -48,14 +48,6 @@ module.exports = async (req, res) => {
       GQL_UPDATE_JOB.run({ id, lastRun: job.lastRun });
     }
 
-    // > endif
-
-    // > check if now - updated > interval
-    // > if we are good to run
-    // > log(job, id, job.endpoint)
-    // > fetch(job.endpoint)
-    // > endif
-
     // > await sleep(30) (wait a bit to make sure we don’t fire these off too rapidly)
     const sleepTimeMs = MAX_REQUEST_DURATION - (Date.now() - startTimeMs);
     const sleepSeconds = Math.floor(sleepTimeMs / 1000);
