@@ -101,6 +101,13 @@ async function addMorgue(playerId, morgue) {
 
   // parse morgue
   const data = await parseMorgue(url);
+
+  // console.debug('addMorge', { data });
+
+  if (data instanceof Error) {
+    return data;
+  }
+
   const { items, version, value: seed } = data;
 
   // async mutations to add items
@@ -133,22 +140,32 @@ async function addMorgue(playerId, morgue) {
     asyncAddItems.push(GQL_ADD_ITEM.run(addItemVariables));
   });
 
-  // wait for all items to be added
-  const resolvedLocations = await Promise.all(asyncAddItems);
+  if (asyncAddItems.length) {
+    // wait for all items to be added
+    const resolvedLocations = await Promise.all(asyncAddItems);
 
-  // pull off first result to get location.morgue.id or matching morgue
-  const [locations] = resolvedLocations;
-  let morgueId;
-  for (let i = 0; i < locations.length; i++) {
-    const location = locations[i];
-    if (location.morgue.url === url) {
-      morgueId = location.morgue.id;
-      break;
+    // pull off first result to get location.morgue.id or matching morgue
+    const [locations] = resolvedLocations;
+    let morgueId;
+    for (let i = 0; i < locations.length; i++) {
+      const location = locations[i];
+      if (location.morgue.url === url) {
+        morgueId = location.morgue.id;
+        break;
+      }
     }
-  }
 
-  // add morgue to indicate it has been parsed
-  await GQL_PARSED_MORGUE.run({ morgueId });
+    // add morgue to indicate it has been parsed
+    await GQL_PARSED_MORGUE.run({ morgueId });
+  } else {
+    // no items in this run, create a morgue so we do not search it again
+    console.debug('[addMorgue]', 'no items, creating morgue to skip in future');
+    await GQL_ADD_MORGUE.run({
+      playerId,
+      url,
+      timestamp,
+    });
+  }
 }
 
 module.exports = async (req, res) => {
@@ -191,6 +208,16 @@ const GQL_LAST_RUN_PLAYER = createQuery(gql`
     }
   }
 `);
+
+const GQL_ADD_MORGUE = createQuery(
+  gql`
+    mutation AddMorgue($playerId: uuid!, $url: String!, $timestamp: timestamptz!) {
+      insert_scrapePlayers_morgues(objects: { playerId: $playerId, url: $url, timestamp: $timestamp, parsed: true }) {
+        affected_rows
+      }
+    }
+  `,
+);
 
 const GQL_PARSED_MORGUE = createQuery(
   gql`
