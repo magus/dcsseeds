@@ -6,23 +6,28 @@ const Species = require('src/utils/Species');
 const { uniqBy } = require('lodash');
 
 module.exports = async function parseMorgue(morgue) {
-  const morgueResponse = await fetch(morgue);
-  const morgueText = await morgueResponse.text();
+  try {
+    const morgueResponse = await fetch(morgue);
+    const morgueText = await morgueResponse.text();
 
-  // https://regexr.com/5ed8a
-  const [, name] = await runRegex('name', morgue, /\/([^/]*?)\/[^\/]*?.txt/);
+    // https://regexr.com/5ed8a
+    const [, name] = await runRegex('name', morgue, /\/([^/]*?)\/[^\/]*?.txt/);
 
-  // detect morgues to throw out/ignore in submit but still allow parseMorgue api to work
-  const isMorgue = !!morgue.match(new RegExp(`morgue-${name}-\\d{8}-\\d{6}.txt`));
+    // detect morgues to throw out/ignore in submit but still allow parseMorgue api to work
+    const isMorgue = !!morgue.match(new RegExp(`morgue-${name}-\\d{8}-\\d{6}.txt`));
 
-  const morgueParsed = await parseMorgueText(name, morgueText);
+    const morgueParsed = await parseMorgueText(name, morgueText);
 
-  return {
-    name,
-    morgue,
-    isMorgue,
-    ...morgueParsed,
-  };
+    return {
+      name,
+      morgue,
+      isMorgue,
+      ...morgueParsed,
+    };
+  } catch (error) {
+    // console.error('[parseMorgue]', { error });
+    return error;
+  }
 };
 
 async function parseMorgueText(name, morgueText) {
