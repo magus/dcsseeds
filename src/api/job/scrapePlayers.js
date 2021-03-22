@@ -27,21 +27,6 @@ import parseMorgue from 'src/utils/parseMorgue';
 //   }
 // }
 
-// Search example
-// query MyQuery {
-//   scrapePlayers_items(where: {_or: [{name: {_ilike: "% clar%"}}, {name: {_ilike: "clar%"}}]}) {
-//     name
-//     locations {
-//       branch
-//       level
-//       seed {
-//         value
-//         version
-//       }
-//     }
-//   }
-// }
-
 const SERVER_CONFIG = {
   akrasiac: {
     rawdataUrl: (name) => `http://crawl.akrasiac.org/rawdata/${name}`,
@@ -60,7 +45,7 @@ const PARSE_MORGUE_ITEM_TYPES = {
 };
 
 // Adjust this if you want to parse more morgues per request
-const MAX_MORGUES_PER_PLAYER = 25;
+const MAX_MORGUES_PER_PLAYER = 250;
 
 function playerMorgueLookup(playerMorgues) {
   const lookup = {};
