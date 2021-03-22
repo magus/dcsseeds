@@ -294,6 +294,11 @@ function getAllMorgueItems(morgueNotes) {
 
       // normal ident
       const ident = morgueNote.note.match(/Identified the (.*)/);
+      // use randbook details to match generated book names
+      // https://github.com/crawl/crawl/tree/master/crawl-ref/source/dat/database/randbook.txt
+      const identIgnore = morgueNote.note.match(
+        /Identified the ((Tome|Grimoire|Almanac|Volume|Compendium|Handbook|Incunabulum|Papyrus|Catalogue|Guide|Collected Works|Disquisition|Reference Book) of (.*))/,
+      );
 
       // https://regexr.com/5fqgo
       const trove = morgueNote.note.match(/This trove (?:needs|requires) (.*) to function/);
@@ -353,8 +358,14 @@ function getAllMorgueItems(morgueNotes) {
         const [, item] = trove;
         createItem('troveItem', `Treasure Trove (${item})`, morgueNote.loc);
       } else if (spells) {
-        const [, item] = spells;
-        createItem('spells', item, morgueNote.loc);
+        // Parse out the spells into individual parseMorgue entries
+        // https://regexr.com/5p55t
+        const [, spellList] = spells;
+        const [, commaSpells, lastSpell] = spellList.match(/(?:(.*) and )?(.*?)$/);
+        commaSpells.split(', ').forEach((spell, i) => {
+          createItem('spell', spell, morgueNote.loc);
+        });
+        createItem('spell', lastSpell, morgueNote.loc);
       } else if (found) {
         const [, item] = found;
         createItem('found', item, morgueNote.loc);
@@ -375,6 +386,9 @@ function getAllMorgueItems(morgueNotes) {
         const [, item, level, loc] = identBoughtWithLoc;
         createItem('identBoughtLoc', item, `${loc}:${level}`);
         createItem('item', item, `${loc}:${level}`);
+      } else if (identIgnore) {
+        const [, item] = identIgnore;
+        console.warn('identIgnore', { item });
       } else if (ident) {
         const [, item] = ident;
         createItem('ident', item, morgueNote.loc);
