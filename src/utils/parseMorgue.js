@@ -254,8 +254,20 @@ function getAllMorgueNotes(morgueText) {
 function getAllMorgueItems(morgueNotes) {
   const items = [];
 
-  function createItem(type, name, location) {
-    return items.push({ type, name, location });
+  function createItem(type, name, _location, _level) {
+    let branch;
+    let level;
+
+    if (!!~_location.indexOf(':')) {
+      const locationSplit = _location.split(':');
+      branch = getBranch(locationSplit[0]);
+      level = locationSplit[1];
+    } else {
+      branch = getBranch(_location);
+    }
+
+    const location = level ? `${branch}:${level}` : branch;
+    return items.push({ type, name, location, branch, level });
   }
 
   function parseNote(morgueNote) {
@@ -266,8 +278,20 @@ function getAllMorgueItems(morgueNotes) {
       // Found: https://regexr.com/5csaa
       const found = morgueNote.note.match(/Found the (.*)?/);
       const gift = morgueNote.note.match(/gifted it to you/);
-      const identPortal = morgueNote.note.match(/Identified the (.*) \(You found it in a (.*)\)/);
+
+      // idents
+      const identPortal = morgueNote.note.match(/Identified the (.*) \(You found it in (?:the|a|an) (.*)\)/);
       const identWithLoc = morgueNote.note.match(/Identified the (.*) \(You found it on level (.*) of the (.*)\)/);
+
+      // boughts
+      const identBoughtPortal = morgueNote.note.match(
+        /Identified the (.*) \(You bought it in a shop in (?:the|a|an) (.*)\)/,
+      );
+      const identBoughtWithLoc = morgueNote.note.match(
+        /Identified the (.*) \(You bought it in a shop on level (.*) of the (.*)\)/,
+      );
+
+      // normal ident
       const ident = morgueNote.note.match(/Identified the (.*)/);
 
       // https://regexr.com/5fqgo
@@ -342,6 +366,14 @@ function getAllMorgueItems(morgueNotes) {
         const [, item, level, loc] = identWithLoc;
         createItem('identLoc', item, `${loc}:${level}`);
         createItem('item', item, `${loc}:${level}`);
+      } else if (identBoughtPortal) {
+        const [, item, loc] = identBoughtPortal;
+        createItem('identBoughtPortal', item, loc);
+        createItem('item', item, loc);
+      } else if (identBoughtWithLoc) {
+        const [, item, level, loc] = identBoughtWithLoc;
+        createItem('identBoughtLoc', item, `${loc}:${level}`);
+        createItem('item', item, `${loc}:${level}`);
       } else if (ident) {
         const [, item] = ident;
         createItem('ident', item, morgueNote.loc);
@@ -363,3 +395,73 @@ function getAllMorgueItems(morgueNotes) {
 }
 
 const toNumber = (value) => parseInt(value, 10);
+
+function getBranch(branch) {
+  return BRANCH_NAMES[branch.toLowerCase()] || branch;
+}
+// Branch name data
+// https://github.com/crawl/crawl/tree/master/crawl-ref/source/branch-data.h
+const BRANCH_NAMES = {
+  abyss: 'Abyss',
+  bailey: 'Bailey',
+  bazaar: 'Bazaar',
+  blade: 'Blade',
+  'hall of blades': 'Blade',
+  coc: 'Cocytus',
+  cocytus: 'Cocytus',
+  crypt: 'Crypt',
+  depths: 'Depths',
+  desolati: 'Desolation',
+  desolation: 'Desolation',
+  'desolation of salt': 'Desolation',
+  dis: 'Dis',
+  'iron city of dis': 'Dis',
+  d: 'Dungeon',
+  dungeon: 'Dungeon',
+  dwarf: 'Dwarf',
+  'dwarven hall': 'Dwarf',
+  elf: 'Elf',
+  'elven halls': 'Elf',
+  forest: 'Forest',
+  'enchanted forest': 'Forest',
+  gauntlet: 'Gauntlet',
+  geh: 'Gehenna',
+  gehenna: 'Gehenna',
+  'vestibule of hell': 'Hell',
+  hell: 'Hell',
+  icecv: 'IceCave',
+  'ice cave': 'IceCave',
+  lab: 'Labyrinth',
+  labyrinth: 'Labyrinth',
+  lair: 'Lair',
+  'lair of beasts': 'Lair',
+  orc: 'Orc',
+  'orcish mines': 'Orc',
+  ossuary: 'Ossuary',
+  pan: 'Pandemonium',
+  pandemonium: 'Pandemonium',
+  'pits of slime': 'Slime',
+  slime: 'Slime',
+  'slime pits': 'Slime',
+  'realm of zot': 'Zot',
+  zot: 'Zot',
+  sewer: 'Sewer',
+  shoals: 'Shoals',
+  snake: 'Snake',
+  'snake pit': 'Snake',
+  spider: 'Spider',
+  'spider nest': 'Spider',
+  swamp: 'Swamp',
+  tar: 'Tartarus',
+  tartarus: 'Tartarus',
+  tomb: 'Tomb',
+  'tomb of the ancients': 'Tomb',
+  'treasure trove': 'Trove',
+  trove: 'Trove',
+  vaults: 'Vaults',
+  volcano: 'Volcano',
+  wizlab: 'WizLab',
+  "wizard's laboratory": 'WizLab',
+  zig: 'Ziggurat',
+  ziggurat: 'Ziggurat',
+};
