@@ -52,6 +52,7 @@ function _SearchField(props, ref) {
           onKeyDown={handleKeyDown}
         />
         <SearchIcon>🔎</SearchIcon>
+        {!props.value ? null : <ClearIcon onClick={props.onClear}>❌</ClearIcon>}
       </SearchBar>
     </SearchContainer>
   );
@@ -79,13 +80,33 @@ const SearchIcon = styled.span`
   padding: 0 0 0 var(--spacer-2);
   display: flex;
   align-items: center;
+  justify-content: flex-start;
+  font-size: var(--font-large);
+`;
+
+const ClearIcon = styled.button`
+  background-color: transparent;
+  border: none;
+  :hover {
+    background-color: transparent;
+    border: none;
+  }
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: var(--spacer-6);
+  padding: 0 var(--spacer-2) 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
   font-size: var(--font-large);
 `;
 
 const Input = styled.input`
   width: 100%;
   height: 100%;
-  padding: var(--spacer-1) var(--spacer-2) var(--spacer-1) var(--spacer-6);
+  padding: var(--spacer-1) var(--spacer-6);
   border-radius: var(--spacer-3);
 
   font-size: var(--font-normal);
@@ -112,5 +133,9 @@ const Input = styled.input`
 
   :focus {
     outline: none;
+  }
+
+  ::-webkit-search-cancel-button {
+    display: none;
   }
 `;
