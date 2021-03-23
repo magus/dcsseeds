@@ -1,11 +1,16 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
+import CopyButton from 'src/components/CopyButton';
+import { TimeAgo } from 'src/components/TimeAgo';
+
 export function SearchResult({ search, result }) {
   const otherItemCount = result.morgue.items.aggregate.count - 1;
 
   return (
     <SearchResultContainer>
+      <Small>{result.location}</Small>
+      <SpacerSmall />
       <Item>
         <Highlight match={search}>{result.item.name}</Highlight>
       </Item>
@@ -14,7 +19,9 @@ export function SearchResult({ search, result }) {
 
       <BottomRow>
         <BottomLeft>
-          <Small>{result.location}</Small>
+          <CopyButton tooltip copy={result.seed.value}>
+            🌱
+          </CopyButton>
         </BottomLeft>
 
         <BottomRight>
@@ -115,6 +122,11 @@ const SearchResultContainer = styled.div`
 const Item = styled.div`
   font-size: var(--font-large);
   text-align: left;
+`;
+
+const SpacerSmall = styled.div`
+  height: var(--spacer-d2);
+  width: 100%;
 `;
 
 const Spacer = styled.div`

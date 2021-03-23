@@ -64,10 +64,10 @@ const SearchResultFragment = gql`
     location
     seed {
       version
+      value
     }
     morgue {
       url
-      timestamp
       player {
         name
       }
