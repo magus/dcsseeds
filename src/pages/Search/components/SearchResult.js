@@ -19,7 +19,7 @@ export function SearchResult({ search, result }) {
 
       <BottomRow>
         <BottomLeft>
-          <CopyButton tooltip copy={result.seed.value}>
+          <CopyButton tooltip copy={result.seed.value} title="Click to copy seed" copyMessage="Seed copied!">
             🌱
           </CopyButton>
         </BottomLeft>

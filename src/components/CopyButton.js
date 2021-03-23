@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 export default function CopyButton(props) {
   const text = props.children;
   const copy = props.copy || text;
+  const copyMessage = props.copyMessage || COPIED;
+  const title = props.title || 'Click to copy';
 
   const instance = React.useRef({
     ref: React.createRef(),
@@ -39,10 +41,10 @@ export default function CopyButton(props) {
   }, [copied]);
 
   const { width } = instance.current;
-  const displayText = !props.tooltip && copied ? COPIED : text;
+  const displayText = !props.tooltip && copied ? copyMessage : text;
 
   return (
-    <Button ref={instance.current.ref} onClick={handleClick} style={{ width }}>
+    <Button ref={instance.current.ref} title={title} onClick={handleClick} style={{ width }}>
       {displayText}
 
       {!props.tooltip ? null : (
@@ -54,7 +56,7 @@ export default function CopyButton(props) {
                 animate={{ x: 0, opacity: 1 }}
                 exit={{ x: -1 * (width / 2), opacity: 0 }}
               >
-                {COPIED}
+                {copyMessage}
               </TooltipContent>
             )}
           </AnimatePresence>
