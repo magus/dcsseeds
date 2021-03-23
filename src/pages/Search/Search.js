@@ -1,18 +1,32 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import { useRouter } from 'next/router';
 
 import { SearchField } from './components/SearchField';
 import { SearchResults } from './components/SearchResults';
 import * as ScrapePlayers from 'src/graphql/scrapePlayers';
 
 export default function Search(props) {
+  const router = useRouter();
+  const { q } = router.query;
   const searchFieldRef = React.useRef();
-  const [search, set_search] = React.useState('');
+  const [search, set_search] = React.useState(q || '');
   const itemSearch = ScrapePlayers.useItemSearch();
 
   React.useEffect(() => {
     itemSearch.search(search);
   }, []);
+
+  React.useEffect(() => {
+    window.router = router;
+    const url = {
+      pathname: router.pathname,
+    };
+    if (search) {
+      url.query = { q: search };
+    }
+    router.replace(url);
+  }, [search]);
 
   function handleSubmit() {
     console.debug('[Search]', 'handleSubmit', { search });
