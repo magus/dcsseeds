@@ -68,7 +68,6 @@ const SearchBar = styled.div`
   position: relative;
   width: 100%;
   height: var(--spacer-6);
-  max-width: 584px;
 `;
 
 const SearchIcon = styled.span`

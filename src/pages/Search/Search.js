@@ -34,6 +34,7 @@ export default function Search(props) {
 
   return (
     <Container>
+      <Spacer />
       <SearchField
         ref={searchFieldRef}
         label="Search"
@@ -51,7 +52,9 @@ export default function Search(props) {
 
 const Container = styled.div`
   min-height: 100%;
-  padding: var(--spacer-2) var(--spacer-4);
+  max-width: 720px;
+  margin: 0 auto;
+  padding: var(--spacer-1) var(--spacer-2);
 `;
 
 const Spacer = styled.div`
