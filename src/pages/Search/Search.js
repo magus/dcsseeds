@@ -18,7 +18,12 @@ export default function Search(props) {
   }, []);
 
   React.useEffect(() => {
-    window.router = router;
+    // fire off search query
+    if (search) {
+      itemSearch.search(search);
+    }
+
+    // sync url q= with search term
     const url = {
       pathname: router.pathname,
     };
@@ -36,14 +41,16 @@ export default function Search(props) {
   function handleChange(text) {
     console.debug('[Search]', 'handleChange', { text });
     set_search(text);
-    if (text) {
-      itemSearch.search(text);
-    }
   }
 
   function handleClear() {
     console.debug('[Search]', 'handleClear');
     set_search('');
+  }
+
+  function handleTrySearch() {
+    console.debug('[Search]', 'handleTrySearch');
+    set_search(props.placeholder);
   }
 
   return (
@@ -59,7 +66,12 @@ export default function Search(props) {
         onChange={handleChange}
       />
       <Spacer />
-      <SearchResults loading={itemSearch.loading} search={search} results={itemSearch.latestResults(search)} />
+      <SearchResults
+        loading={itemSearch.loading}
+        search={search}
+        results={itemSearch.latestResults(search)}
+        onTrySearch={handleTrySearch}
+      />
     </Container>
   );
 }

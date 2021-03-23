@@ -13,7 +13,7 @@ import { SearchResult } from './SearchResult';
 
 function SearchResultsInternal(props) {
   if (!props.search) {
-    return null;
+    return <IconMessage icon="👋" message="Click here for a random search..." onMessageClick={props.onTrySearch} />;
   }
 
   if (props.loading || !props.results) {
