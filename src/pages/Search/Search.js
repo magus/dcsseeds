@@ -7,7 +7,7 @@ import * as ScrapePlayers from 'src/graphql/scrapePlayers';
 
 export default function Search(props) {
   const searchFieldRef = React.useRef();
-  const [search, set_search] = React.useState(props.placeholder);
+  const [search, set_search] = React.useState('');
   const itemSearch = ScrapePlayers.useItemSearch();
 
   React.useEffect(() => {
