@@ -26,7 +26,7 @@ const Container = styled.div`
 
 const H1 = styled.h1`
   display: inline-block;
-  border-right: 1px solid rgba(var(--font-color-rgb), 0.3);
+  border-right: 1px solid rgba(var(--text-color-rgb), 0.3);
   margin: 0;
   margin-right: 20px;
   padding: 10px 23px 10px 0;

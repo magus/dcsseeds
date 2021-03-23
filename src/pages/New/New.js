@@ -270,7 +270,7 @@ const SelectedBox = styled(motion.div)`
   width: 100%;
   height: 100%;
   margin: 0;
-  border: 4px solid var(--font-color);
+  border: 4px solid var(--text-color);
   border-radius: 0.25rem;
 `;
 const SelectOption = styled.button`

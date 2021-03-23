@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { useMutation } from '@apollo/client';
 
 import CopyButton from 'src/components/CopyButton';
-import StyledLink from 'src/components/StyledLink';
 import Timestamp from 'src/components/Timestamp';
 import Username from 'src/components/Username';
 
@@ -74,7 +73,7 @@ const RecentSeeds = styled.div`
 
 const SeedRow = styled.div`
   max-width: 640px;
-  border: 1px solid var(--button-border-color);
+  border: 1px solid var(--divider-color);
   padding: 12px 24px;
   display: flex;
   flex-direction: column;

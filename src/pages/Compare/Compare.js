@@ -204,7 +204,11 @@ function SeedInfo({ seed }) {
   );
 }
 
-const playerColors = ['#F6AD55', '#81E6D9'];
+const playerColors = [
+  // #F6AD55
+  'var(--orange-color)',
+  '#81E6D9',
+];
 const loserColor = 'rgba(255, 255, 255, 0.40)';
 
 function ScoreRatioVisual({ ratio, color }) {

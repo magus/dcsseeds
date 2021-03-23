@@ -1,42 +1,53 @@
-// highlight text inside search result
-// e.g. <SearchResult /> that parses children string and adds element wrapping search result substring
+import * as React from 'react';
+import styled from 'styled-components';
 
-// search results animation
-// framer-motion initial random position with layout prop
-// should simulate results flying in from random direction as if pulling from various sources
-// unmount fly out to bottom
+import { SearchField } from './components/SearchField';
+import { SearchResults } from './components/SearchResults';
+import * as ScrapePlayers from 'src/graphql/scrapePlayers';
 
-export default function Search() {
-  return <div>Search</div>;
+export default function Search(props) {
+  const searchFieldRef = React.useRef();
+  const [search, set_search] = React.useState(props.placeholder);
+  const itemSearch = ScrapePlayers.useItemSearch();
+
+  React.useEffect(() => {
+    itemSearch.search(search);
+  }, []);
+
+  function handleSubmit() {
+    console.debug('[Search]', 'handleSubmit', { search });
+    searchFieldRef.current.blur();
+  }
+
+  function handleChange(text) {
+    console.debug('[Search]', 'handleChange', { text });
+    set_search(text);
+    if (text) {
+      itemSearch.search(text);
+    }
+  }
+
+  function handleClear() {
+    console.debug('[Search]', 'handleClear');
+    set_search('');
+  }
+
+  return (
+    <Container>
+      <SearchField
+        ref={searchFieldRef}
+        label="Search"
+        placeholder={props.placeholder}
+        value={search}
+        onSubmit={handleSubmit}
+        onClear={handleClear}
+        onChange={handleChange}
+      />
+      <SearchResults loading={itemSearch.loading} search={search} results={itemSearch.latestResults(search)} />
+    </Container>
+  );
 }
 
-// fragment SearchResult on scrapePlayers_itemLocations {
-//   item {
-//     name
-//   }
-//   branch
-//   level
-//   seed {
-//     version
-//     value
-//   }
-//   morgue {
-//     timestamp
-//     url
-//     player {
-//       name
-//     }
-//   }
-// }
-
-// query MyQuery {
-//   front: scrapePlayers_itemLocations(where: {item: {name: {_ilike: "rag%"}}}, order_by: {morgue: {timestamp: desc}, seed: {version: desc}}) {
-//     ...SearchResult
-//   }
-//   startWord: scrapePlayers_itemLocations(where: {item: {name: {_ilike: "% rag%"}}}, order_by: {morgue: {timestamp: desc}, seed: {version: desc}}) {
-//     ...SearchResult
-//   }
-//   middle: scrapePlayers_itemLocations(where: {item: {name: {_ilike: "%rag%"}}}, order_by: {morgue: {timestamp: desc}, seed: {version: desc}}) {
-//     ...SearchResult
-//   }
-// }
+const Container = styled.div`
+  padding: var(--spacer-2) var(--spacer-4);
+`;

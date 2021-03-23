@@ -152,31 +152,68 @@ export default class MyApp extends App {
 
 const GlobalStyle = createGlobalStyle`
   :root {
+    --spacer: 8px;
+    --spacer-d4: calc(var(--spacer) / 4);
+    --spacer-d2: calc(var(--spacer) / 2);
+    --spacer-1: var(--spacer);
+    --spacer-2: calc(var(--spacer) * 2);
+    --spacer-3: calc(var(--spacer) * 3);
+    --spacer-4: calc(var(--spacer) * 4);
+    --spacer-5: calc(var(--spacer) * 5);
+    --spacer-6: calc(var(--spacer) * 6);
+
+    --font-small: 14px;
+    --font-normal: 16px;
+    --font-large: 20px;
+
     --app-color: rgb(25, 174, 94);
     --app-color-light: rgb(227, 252, 236);
     --error-color: rgb(227, 52, 47);
     --gray-color-rgb: 135, 149, 161;
     --blue-color: rgb(52,144,220);
+    --orange-color: rgb(246,173,85);
+    --orange-color-light: rgb(254,246,236);
 
-    --bg-color: #fff;
-    --font-color-rgb: 26, 32, 44;
-    --font-color: rgb(26, 32, 44);
-    --button-color: rgb(226, 232, 240);
-    --button-border-color: rgb(226, 232, 240);
-    --button-text: rgb(45, 55, 72);
+    --white: #fff;
+    --white-rgb: 255, 255, 255;
+    --gray200: rgb(248, 249, 250);
+    --gray400: rgb(218,220,224);
+    --gray600: rgb(88, 87, 92);
+    --gray700: rgb(60, 64, 67);
+    --gray800: rgb(49, 48, 53);
+    --gray900: rgb(32, 33, 36);
+    --gray900-rgb: 32, 33, 36;
+    --black: #000;
+    --black-rgb: 0, 0, 0;
+
+    --bg-color: var(--white);
+    --bg-color-rgb: var(--white-rgb);
+    --divider-color: var(--gray400);
+    --text-color: var(--black);
+    --text-color-rgb: var(--black-rgb);
+    --button-bg: var(--gray200);
+    --button-border: var(--gray200);
+    --button-text: var(--gray700);
+    --button-hover-shadow: var(--black-rgb);
+    --button-hover-border: var(--gray400);
 
     @media (prefers-color-scheme: dark) {
-      --bg-color: #000;
-      --font-color-rgb: 255, 255, 255;
-      --font-color: rgb(255, 255, 255);
-      --button-color: rgb(34,41,47);
-      --button-border-color: rgb(226, 232, 240);
-      --button-text: #fff;
+      --bg-color: var(--black);
+      --bg-color-rgb: var(--black-rgb);
+      --divider-color: var(--gray800);
+      --text-color: var(--white);
+      --text-color-rgb: var(--white-rgb);
+      --button-bg: var(--gray800);
+      --button-border: var(--gray800);
+      --button-text: var(--black);
+      --button-text: var(--white);
+      --button-hover-shadow: var(--white-rgb);
+      --button-hover-border: var(--gray600);
     }
 
     --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue',
       sans-serif;
-    --font-size: 16px;
+    --font-size: var(--font-normal);
   }
 
   html,
@@ -184,7 +221,7 @@ const GlobalStyle = createGlobalStyle`
     height: 100%;
     padding: 0;
     margin: 0;
-    color: var(--font-color);
+    color: var(--text-color);
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
       Droid Sans, Helvetica Neue, sans-serif;
     background-color: var(--bg-color);
@@ -196,13 +233,13 @@ const GlobalStyle = createGlobalStyle`
 
   button {
     margin: 0;
-    padding: 0.5rem 1rem;
-    height: 46px;
+    padding: var(--spacer-1) var(--spacer-2);
+    height: var(--spacer-6);
     vertical-align: middle;
     border: 1px solid transparent;
-    border-color: var(--button-border-color);
+    border-color: var(--button-border);
     border-radius: 0.25rem;
-    background-color: var(--button-color);
+    background-color: var(--button-bg);
     cursor: pointer;
 
     font-family: var(--font-family);
@@ -210,6 +247,18 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 700;
     color: var(--button-text);
   }
+
+  button:hover {
+    box-shadow: 0 1px 1px rgba(var(--button-hover-shadow), 0.1);
+    border: 1px solid var(--button-hover-border);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    button:hover {
+      box-shadow: none;
+    }
+  }
+
 
   #__next {
     height: 100%;
