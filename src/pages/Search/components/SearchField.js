@@ -85,12 +85,14 @@ const SearchIcon = styled.span`
 `;
 
 const ClearIcon = styled.button`
+  /* reset button styles */
   background-color: transparent;
   border: none;
   :hover {
     background-color: transparent;
     border: none;
   }
+
   position: absolute;
   top: 0;
   right: 0;
