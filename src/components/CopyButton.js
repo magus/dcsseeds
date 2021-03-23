@@ -1,7 +1,11 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import { motion, AnimatePresence } from 'framer-motion';
 
-export default function CopyButton({ children: text }) {
+export default function CopyButton(props) {
+  const text = props.children;
+  const copy = props.copy || text;
+
   const instance = React.useRef({
     ref: React.createRef(),
     width: null,
@@ -10,7 +14,7 @@ export default function CopyButton({ children: text }) {
 
   function handleClick() {
     if (navigator.clipboard) {
-      navigator.clipboard.writeText(text);
+      navigator.clipboard.writeText(copy);
 
       instance.current.width = instance.current.ref.current.offsetWidth;
       set_copied(true);
@@ -35,14 +39,48 @@ export default function CopyButton({ children: text }) {
   }, [copied]);
 
   const { width } = instance.current;
+  const displayText = !props.tooltip && copied ? COPIED : text;
 
   return (
     <Button ref={instance.current.ref} onClick={handleClick} style={{ width }}>
-      {copied ? 'Copied!' : text}
+      {displayText}
+
+      {!props.tooltip ? null : (
+        <Tooltip>
+          <AnimatePresence>
+            {!copied ? null : (
+              <TooltipContent
+                initial={{ x: -1 * width, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: -1 * (width / 2), opacity: 0 }}
+              >
+                {COPIED}
+              </TooltipContent>
+            )}
+          </AnimatePresence>
+        </Tooltip>
+      )}
     </Button>
   );
 }
 
+const COPIED = '📋 Copied!';
+
 const Button = styled.button`
+  position: relative;
   font-variant: tabular-nums;
+`;
+
+const Tooltip = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+`;
+
+const TooltipContent = styled(motion.div)`
+  position: relative;
+  background-color: var(--gray900);
+  padding: var(--spacer-1);
+  white-space: nowrap;
 `;
