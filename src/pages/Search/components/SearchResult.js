@@ -44,7 +44,11 @@ function Highlight(props) {
     return text;
   }
 
-  const re = new RegExp(props.match, 'ig');
+  // replace certain characters with escaped versions for regex
+  // e.g. AC+3 would not match because + is a regex char that will look for ACC..3 instead
+  // escaping the + as \+ ensures it matches the character literal intead
+  // other characters may need to be added to this as well
+  const re = new RegExp(props.match.replace(/(\+|\.)/g, '\\$1'), 'ig');
 
   // split text into parts for displaying highlights
   const parts = [];
