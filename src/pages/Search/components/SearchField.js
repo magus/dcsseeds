@@ -76,13 +76,15 @@ const Input = styled.input`
   border: 1px solid rgba(var(--text-color-rgb), 0.28);
   box-shadow: none;
 
-  :hover {
+  :hover,
+  :focus {
     border: 1px solid transparent;
     box-shadow: 0 1px 6px rgba(var(--text-color-rgb), 0.28);
   }
 
   @media (prefers-color-scheme: dark) {
-    :hover {
+    :hover,
+    :focus {
       border: 1px solid var(--gray400);
       box-shadow: none;
     }
