@@ -112,7 +112,7 @@ function Highlight(props) {
 const SearchResultContainer = styled.div`
   width: 100%;
   margin: var(--spacer-1) 0;
-  padding: var(--spacer-4);
+  padding: var(--spacer-3) var(--spacer-3);
   border-radius: var(--spacer-1);
   background-color: var(--button-bg);
   display: flex;
@@ -160,6 +160,8 @@ const BottomRow = styled.div`
 
 const BottomLeft = styled.div`
   align-self: flex-end;
+  /* pull left to compensate for button margins */
+  margin: calc(-1 * var(--spacer-2));
 
   display: flex;
   flex-direction: column;
