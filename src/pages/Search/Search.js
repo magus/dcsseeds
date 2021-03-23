@@ -43,11 +43,17 @@ export default function Search(props) {
         onClear={handleClear}
         onChange={handleChange}
       />
+      <Spacer />
       <SearchResults loading={itemSearch.loading} search={search} results={itemSearch.latestResults(search)} />
     </Container>
   );
 }
 
 const Container = styled.div`
+  min-height: 100%;
   padding: var(--spacer-2) var(--spacer-4);
+`;
+
+const Spacer = styled.div`
+  height: var(--spacer-2);
 `;

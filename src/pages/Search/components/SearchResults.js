@@ -1,6 +1,8 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
+import { IconMessage } from 'src/components/IconMessage';
+
 import { Loading } from './Loading';
 import { SearchResult } from './SearchResult';
 

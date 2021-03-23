@@ -2,6 +2,8 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
+import { IconMessage } from 'src/components/IconMessage';
+
 const LOADING_THRESHOLD = 1000;
 
 export function Loading() {
@@ -32,12 +34,7 @@ export function Loading() {
       animate={{ scale: 1, opacity: 1 }}
       transition={{ ease: 'easeOut', duration: 0.5 }}
     >
-      <LoadingText>⏳ Loading...</LoadingText>
+      <IconMessage icon="⏳" message="Loading..." />
     </motion.div>
   );
 }
-
-const LoadingText = styled.div`
-  font-size: var(--font-large);
-  font-weight: 800;
-`;
