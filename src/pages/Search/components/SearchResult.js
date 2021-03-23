@@ -127,7 +127,7 @@ const Player = styled(Small)`
 `;
 
 const Match = styled.span`
-  font-weight: 800;
+  font-weight: var(--font-heavy);
   color: var(--orange-color);
   background-color: var(--orange-color-light);
 `;

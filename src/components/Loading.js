@@ -39,5 +39,5 @@ export default function Loading() {
 
 const LoadingText = styled.div`
   font-size: 48px;
-  font-weight: 800;
+  font-weight: var(--font-heavy);
 `;

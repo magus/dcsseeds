@@ -166,6 +166,8 @@ const GlobalStyle = createGlobalStyle`
     --font-normal: 16px;
     --font-large: 20px;
 
+    --font-heavy: 800;
+
     --app-color: rgb(25, 174, 94);
     --app-color-light: rgb(227, 252, 236);
     --error-color: rgb(227, 52, 47);
