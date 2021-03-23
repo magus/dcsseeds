@@ -36,20 +36,23 @@ function _SearchField(props, ref) {
 
   return (
     <SearchContainer>
-      <Input
-        ref={ref}
-        aria-label={props.label}
-        autoCapitalize="off"
-        autoComplete="off"
-        autoCorrect="off"
-        type="search"
-        name="search"
-        id="search"
-        placeholder={props.placeholder}
-        value={props.value}
-        onChange={handleChange}
-        onKeyDown={handleKeyDown}
-      />
+      <SearchBar>
+        <Input
+          ref={ref}
+          aria-label={props.label}
+          autoCapitalize="off"
+          autoComplete="off"
+          autoCorrect="off"
+          type="search"
+          name="search"
+          id="search"
+          placeholder={props.placeholder}
+          value={props.value}
+          onChange={handleChange}
+          onKeyDown={handleKeyDown}
+        />
+        <SearchIcon>🔎</SearchIcon>
+      </SearchBar>
     </SearchContainer>
   );
 }
@@ -61,11 +64,29 @@ const SearchContainer = styled.div`
   align-items: center;
 `;
 
-const Input = styled.input`
+const SearchBar = styled.div`
+  position: relative;
   width: 100%;
   height: var(--spacer-6);
   max-width: 584px;
-  padding: var(--spacer-1) var(--spacer-2);
+`;
+
+const SearchIcon = styled.span`
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: var(--spacer-6);
+  padding: 0 0 0 var(--spacer-2);
+  display: flex;
+  align-items: center;
+  font-size: var(--font-large);
+`;
+
+const Input = styled.input`
+  width: 100%;
+  height: 100%;
+  padding: var(--spacer-1) var(--spacer-2) var(--spacer-1) var(--spacer-6);
   border-radius: var(--spacer-3);
 
   font-size: var(--font-normal);
