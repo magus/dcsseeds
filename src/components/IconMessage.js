@@ -6,7 +6,7 @@ export function IconMessage(props) {
   return (
     <Container>
       <Icon>{props.icon}</Icon>
-      <Message>{props.message}</Message>
+      <Message onClick={props.onMessageClick}>{props.message}</Message>
     </Container>
   );
 }
@@ -25,4 +25,6 @@ const Icon = styled.div`
 const Message = styled.div`
   font-size: var(--font-large);
   font-weight: var(--font-heavy);
+  text-align: center;
+  ${(props) => (!props.onClick ? '' : 'color: var(--blue-color);')}
 `;
