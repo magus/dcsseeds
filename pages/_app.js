@@ -161,6 +161,8 @@ const GlobalStyle = createGlobalStyle`
     --spacer-4: calc(var(--spacer) * 4);
     --spacer-5: calc(var(--spacer) * 5);
     --spacer-6: calc(var(--spacer) * 6);
+    --spacer-7: calc(var(--spacer) * 7);
+    --spacer-8: calc(var(--spacer) * 8);
 
     --font-small: 14px;
     --font-normal: 16px;
