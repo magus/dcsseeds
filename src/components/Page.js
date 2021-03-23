@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { IntlProvider } from 'react-intl';
+
 import SEOHeadTags from 'src/components/SEOHeadTags';
 import withApolloClient from 'src/components/withApolloClient';
 
@@ -9,10 +11,10 @@ export default function Page(Component, { headTagProps, withApollo = false }) {
 
   function InternalPage(props) {
     return (
-      <React.Fragment>
+      <IntlProvider locale="en" defaultLocale="en">
         <SEOHeadTags {...headTagProps} />
         <Component {...props} />
-      </React.Fragment>
+      </IntlProvider>
     );
   }
 
