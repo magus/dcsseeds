@@ -12,6 +12,10 @@ import { SearchResult } from './SearchResult';
 // unmount fly out to bottom
 
 function SearchResultsInternal(props) {
+  if (!props.search) {
+    return null;
+  }
+
   if (props.loading || !props.results) {
     return <Loading />;
   }
