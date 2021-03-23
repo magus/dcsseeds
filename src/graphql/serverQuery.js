@@ -4,7 +4,7 @@ const { HASURA_ADMIN_SECRET } = process.env;
 
 if (!HASURA_ADMIN_SECRET) throw new Error('HASURA_ADMIN_SECRET is required!');
 
-export function createQuery(query, parse) {
+export function serverQuery(query, parse) {
   async function run(variables) {
     const data = await graphQLClient.request(query, variables);
 

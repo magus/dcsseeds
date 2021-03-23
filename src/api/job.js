@@ -1,7 +1,7 @@
 import send from 'src/server/utils/zeitSend';
 
 import { gql } from '@apollo/client';
-import { createQuery } from 'src/graphql/createQuery';
+import { serverQuery } from 'src/graphql/serverQuery';
 import fetch from 'src/utils/fetch';
 import { sleep } from 'src/utils/sleep';
 import { toNumber } from 'src/utils/toNumber';
@@ -72,7 +72,7 @@ module.exports = async (req, res) => {
   }
 };
 
-const GQL_JOB = createQuery(
+const GQL_JOB = serverQuery(
   gql`
     query JobByPK($id: uuid!) {
       job: job_by_pk(id: $id) {
@@ -89,7 +89,7 @@ const GQL_JOB = createQuery(
   (data) => data.job,
 );
 
-const GQL_UPDATE_JOB = createQuery(gql`
+const GQL_UPDATE_JOB = serverQuery(gql`
   mutation UpdateJobByPK($id: uuid!, $lastRun: timestamptz!) {
     update_job_by_pk(pk_columns: { id: $id }, _set: { lastRun: $lastRun }, _inc: { i: 1 }) {
       id

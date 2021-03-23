@@ -1,7 +1,7 @@
 const send = require('src/server/utils/zeitSend');
 
 import { gql } from '@apollo/client';
-import { createQuery } from 'src/graphql/createQuery';
+import { serverQuery } from 'src/graphql/serverQuery';
 import parseMorgue from 'src/utils/parseMorgue';
 
 // DCSS score overview with player morgues
@@ -195,7 +195,7 @@ module.exports = async (req, res) => {
   }
 };
 
-const GQL_SCRAPEPLAYERS = createQuery(
+const GQL_SCRAPEPLAYERS = serverQuery(
   gql`
     query ListScrapePlayers {
       scrapePlayers(order_by: { lastRun: asc_nulls_first }) {
@@ -212,7 +212,7 @@ const GQL_SCRAPEPLAYERS = createQuery(
   (data) => data.scrapePlayers,
 );
 
-const GQL_LAST_RUN_PLAYER = createQuery(gql`
+const GQL_LAST_RUN_PLAYER = serverQuery(gql`
   mutation LastRunPlayer($playerId: uuid!) {
     update_scrapePlayers_by_pk(pk_columns: { id: $playerId }, _set: { lastRun: "now()" }) {
       id
@@ -220,7 +220,7 @@ const GQL_LAST_RUN_PLAYER = createQuery(gql`
   }
 `);
 
-const GQL_ADD_MORGUE = createQuery(
+const GQL_ADD_MORGUE = serverQuery(
   gql`
     mutation AddMorgue($playerId: uuid!, $url: String!, $timestamp: timestamptz!) {
       insert_scrapePlayers_morgues(objects: { playerId: $playerId, url: $url, timestamp: $timestamp, parsed: true }) {
@@ -230,7 +230,7 @@ const GQL_ADD_MORGUE = createQuery(
   `,
 );
 
-const GQL_PARSED_MORGUE = createQuery(
+const GQL_PARSED_MORGUE = serverQuery(
   gql`
     mutation ParsedMorgue($morgueId: uuid!) {
       update_scrapePlayers_morgues_by_pk(pk_columns: { id: $morgueId }, _set: { parsed: true }) {
@@ -240,7 +240,7 @@ const GQL_PARSED_MORGUE = createQuery(
   `,
 );
 
-const GQL_ADD_ITEM = createQuery(
+const GQL_ADD_ITEM = serverQuery(
   gql`
     mutation AddItem(
       $playerId: uuid!
