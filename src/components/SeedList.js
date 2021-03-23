@@ -74,6 +74,7 @@ const RecentSeeds = styled.div`
 const SeedRow = styled.div`
   max-width: 640px;
   border: 1px solid var(--divider-color);
+  border-radius: var(--spacer-1);
   padding: 12px 24px;
   display: flex;
   flex-direction: column;
