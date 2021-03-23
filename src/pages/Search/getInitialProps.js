@@ -38,7 +38,7 @@ const BRANDS = [
   'rN+',
   'rPois',
   'shadows',
-  'sInv',
+  'SInv',
   'Slay',
   'Spirit',
   'Stlth+',
