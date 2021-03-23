@@ -297,7 +297,7 @@ function getAllMorgueItems(morgueNotes) {
       // use randbook details to match generated book names
       // https://github.com/crawl/crawl/tree/master/crawl-ref/source/dat/database/randbook.txt
       const identIgnore = morgueNote.note.match(
-        /Identified the ((Tome|Grimoire|Almanac|Volume|Compendium|Handbook|Incunabulum|Papyrus|Catalogue|Guide|Collected Works|Disquisition|Reference Book) of (.*))/,
+        /Identified the ((Tome|Grimoire|Almanac|Volume|Compendium|Handbook|Incunabulum|Papyrus|Catalogue|Guide|Collected Works|Disquisition|Reference Book)(.*))/,
       );
 
       // https://regexr.com/5fqgo
