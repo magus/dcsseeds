@@ -24,11 +24,11 @@ export function useItemSearch({ limit = 10, delayMs = 250 } = {}) {
     error,
     results,
     latestResults: (search) => {
-      if (variables && variables.front === getSearchVariables(search).front) {
+      if (!loading && variables && variables.front === getSearchVariables(search).front) {
         return results;
       }
 
-      return [];
+      return null;
     },
     search: (text) => {
       const orderBy = {
