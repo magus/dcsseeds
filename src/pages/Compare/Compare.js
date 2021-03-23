@@ -7,7 +7,6 @@ import ErrorPage from 'src/components/ErrorPage';
 import useTouch from 'src/hooks/useTouch';
 
 import * as GraphqlSeed from 'src/graphql/seed';
-import seed from 'src/utils/seed';
 
 export default function Compare(props) {
   const { playerA, playerB } = props;

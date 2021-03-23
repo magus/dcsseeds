@@ -1,6 +1,6 @@
 const send = require('src/server/utils/zeitSend');
-const { randomElement } = require('src/utils/random');
-const { generateSeed } = require('src/utils/seed');
+const { randomElement } = require('src/server/utils/random');
+const { generateSeed } = require('src/server/utils/seed');
 const Species = require('src/utils/Species');
 const Backgrounds = require('src/utils/Backgrounds');
 const Versions = require('src/utils/Versions');

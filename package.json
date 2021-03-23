@@ -6,7 +6,7 @@
     "dev": "node src/server",
     "build": "next build",
     "start": "NODE_ENV=production node src/server",
-    "test": "NODE_PATH=. node src/utils/__tests__/seed.test.js",
+    "test": "NODE_PATH=. node src/server/utils/__tests__/seed.test.js",
     "deploy": "now",
     "deploy:prod": "now --prod",
     "deploy:purge": "now rm dcsseeds --safe"
