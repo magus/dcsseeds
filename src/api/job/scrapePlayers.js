@@ -123,6 +123,16 @@ async function addMorgue({ player, morgue }) {
     return { status, morgue: url, ...extra };
   }
 
+  async function skip(reason) {
+    // no items in this run, create a morgue so we do not search it again
+    await GQL_ADD_MORGUE.run({
+      playerId,
+      url,
+      timestamp,
+    });
+    return response(`skip (${reason})`);
+  }
+
   console.debug('[addMorgue]', url);
 
   try {
@@ -134,7 +144,7 @@ async function addMorgue({ player, morgue }) {
 
     // skip if not allowed version
     if (!ALLOWED_VERSIONS[fullVersion]) {
-      throw new Error(`skip not allowed version [${fullVersion}]`);
+      return skip(`not allowed version [${fullVersion}]`);
     }
 
     // collect items to send in a single mutation call
@@ -187,13 +197,7 @@ async function addMorgue({ player, morgue }) {
       return response('done (items)');
     }
 
-    // no items in this run, create a morgue so we do not search it again
-    await GQL_ADD_MORGUE.run({
-      playerId,
-      url,
-      timestamp,
-    });
-    return response('done (skip)');
+    return skip('empty');
   } catch (error) {
     return response('error', { error: error.message });
   }
