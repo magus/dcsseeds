@@ -119,7 +119,7 @@ async function addMorgue(playerId, morgue) {
     return data;
   }
 
-  const { items, version, value: seed } = data;
+  const { items, version, fullVersion, value: seed } = data;
 
   // async mutations to add items
   const asyncAddItems = [];
@@ -144,6 +144,7 @@ async function addMorgue(playerId, morgue) {
       // seed
       seed,
       version,
+      fullVersion,
     };
     if (level) {
       addItemVariables.level = parseInt(level, 10);
@@ -252,6 +253,7 @@ const GQL_ADD_ITEM = serverQuery(
       $level: Int
       $seed: String!
       $version: String!
+      $fullVersion: String!
     ) {
       item: insert_scrapePlayers_items(
         objects: {
@@ -266,7 +268,7 @@ const GQL_ADD_ITEM = serverQuery(
                 on_conflict: { constraint: scrapePlayers_morgues_url_key, update_columns: updated }
               }
               seed: {
-                data: { value: $seed, version: $version }
+                data: { value: $seed, version: $version, fullVersion: $fullVersion }
                 on_conflict: { constraint: scrapePlayers_seeds_version_value_key, update_columns: updated }
               }
             }
