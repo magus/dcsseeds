@@ -45,7 +45,7 @@ const PARSE_MORGUE_ITEM_TYPES = {
 };
 
 // Adjust this if you want to parse more morgues per request
-const MAX_MORGUES_PER_PLAYER = 100;
+const MAX_MORGUES_PER_PLAYER = 1;
 
 function playerMorgueLookup(playerMorgues) {
   const lookup = {};
