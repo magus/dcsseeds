@@ -7,6 +7,8 @@ import { TimeAgo } from 'src/components/TimeAgo';
 export function SearchResult({ search, result }) {
   const otherItemCount = result.morgue.items.aggregate.count - 1;
 
+  const parseMorgueUrl = `/api/parseMorgue?morgue=${result.morgue.url}`;
+
   return (
     <SearchResultContainer>
       <Small>{result.location}</Small>
@@ -25,7 +27,7 @@ export function SearchResult({ search, result }) {
         </BottomLeft>
 
         <BottomRight>
-          <MorgueLink href={result.morgue.url} rel="noopener" target="_blank">
+          <MorgueLink href={parseMorgueUrl} rel="noopener" target="_blank">
             <OtherItems>
               {!otherItemCount ? null : (
                 <Small>
