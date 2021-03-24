@@ -27,6 +27,10 @@ import parseMorgue from 'src/utils/parseMorgue';
 //   }
 // }
 
+const ALLOWED_VERSIONS = {
+  '0.26.1': true,
+};
+
 const SERVER_CONFIG = {
   akrasiac: {
     rawdataUrl: (name) => `http://crawl.akrasiac.org/rawdata/${name}`,
@@ -127,6 +131,11 @@ async function addMorgue({ player, morgue }) {
 
     const { version, fullVersion, value } = data;
 
+    // skip if not allowed version
+    if (!ALLOWED_VERSIONS[fullVersion]) {
+      throw new Error(`skip not allowed version [${fullVersion}]`);
+    }
+
     // collect items to send in a single mutation call
     const items = [];
 
@@ -185,8 +194,7 @@ async function addMorgue({ player, morgue }) {
     });
     return response('done (skip)');
   } catch (error) {
-    console.error('[addMorgue]', 'error', { error });
-    return response('error (morgue-url)', { error });
+    return response('error', { error: error.message });
   }
 }
 
