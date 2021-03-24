@@ -7,28 +7,23 @@ const Species = require('src/utils/Species');
 const { uniqBy } = require('lodash');
 
 module.exports = async function parseMorgue(morgue) {
-  try {
-    const morgueResponse = await fetch(morgue);
-    const morgueText = await morgueResponse.text();
+  const morgueResponse = await fetch(morgue);
+  const morgueText = await morgueResponse.text();
 
-    // https://regexr.com/5ed8a
-    const [, name] = await runRegex('name', morgue, /\/([^/]*?)\/[^\/]*?.txt/);
+  // https://regexr.com/5ed8a
+  const [, name] = await runRegex('name', morgue, /\/([^/]*?)\/[^\/]*?.txt/);
 
-    // detect morgues to throw out/ignore in submit but still allow parseMorgue api to work
-    const isMorgue = !!morgue.match(new RegExp(`morgue-${name}-\\d{8}-\\d{6}.txt`));
+  // detect morgues to throw out/ignore in submit but still allow parseMorgue api to work
+  const isMorgue = !!morgue.match(new RegExp(`morgue-${name}-\\d{8}-\\d{6}.txt`));
 
-    const morgueParsed = await parseMorgueText(name, morgueText);
+  const morgueParsed = await parseMorgueText(name, morgueText);
 
-    return {
-      name,
-      morgue,
-      isMorgue,
-      ...morgueParsed,
-    };
-  } catch (error) {
-    // console.error('[parseMorgue]', { error });
-    return error;
-  }
+  return {
+    name,
+    morgue,
+    isMorgue,
+    ...morgueParsed,
+  };
 };
 
 async function parseMorgueText(name, morgueText) {
@@ -298,6 +293,8 @@ function getAllMorgueItems(morgueNotes) {
       const ident = morgueNote.note.match(/Identified the (.*)/);
       // use randbook details to match generated book names
       // https://github.com/crawl/crawl/tree/master/crawl-ref/source/dat/database/randbook.txt
+      // Examples
+      // Tome of Congealing Earth (You acquired it on level 1 of the Vaults)
       const identIgnore = morgueNote.note.match(
         /Identified the ((Tome|Grimoire|Almanac|Volume|Compendium|Handbook|Incunabulum|Papyrus|Catalogue|Guide|Collected Works|Disquisition|Reference Book)(.*))/,
       );
@@ -394,8 +391,8 @@ function getAllMorgueItems(morgueNotes) {
         createItem('identBoughtLoc', item, `${loc}:${level}`);
         createItem('item', item, `${loc}:${level}`);
       } else if (identIgnore) {
-        const [, item] = identIgnore;
-        console.warn('identIgnore', { item });
+        // const [, item] = identIgnore;
+        // console.warn('identIgnore', { item });
       } else if (ident) {
         const [, item] = ident;
         createItem('ident', item, morgueNote.loc);
