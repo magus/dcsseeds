@@ -1,5 +1,19 @@
 # hasura
 
+## count rows in tables
+
+```sql
+SELECT schemaname,relname,n_live_tup
+FROM pg_stat_user_tables
+ORDER BY n_live_tup DESC;
+```
+
+## delete rows from table
+
+```sql
+DELETE FROM hdb_catalog.hdb_cron_event_invocation_logs
+```
+
 ## Hasura Console
 
 To interact with the database use the Hasura Console
