@@ -33,7 +33,6 @@ const BRANDS = [
   'rCorr',
   'reflect',
   'Regen',
-  'repulsion',
   'rF+',
   'rN+',
   'rPois',
