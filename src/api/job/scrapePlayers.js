@@ -7,15 +7,15 @@ import parseMorgue from 'src/utils/parseMorgue';
 // DCSS score overview with player morgues
 // http://crawl.akrasiac.org/scoring/overview.html
 
-// Example API Request
-// http://localhost:3000/api/job/scrapePlayers
-
-// Delete all morgues (reparse)
+// Delete everything to reparse
 // mutation MyMutation {
 //   delete_scrapePlayers_morgues(where: {url: {_neq: ""}}) {
 //     affected_rows
 //   }
 //   delete_scrapePlayers_items(where: {name: {_neq: ""}}) {
+//     affected_rows
+//   }
+//   delete_scrapePlayers_seeds(where: {version: {_neq: ""}}) {
 //     affected_rows
 //   }
 // }
