@@ -281,15 +281,17 @@ function getAllMorgueItems(morgueNotes) {
       const gift = morgueNote.note.match(/gifted it to you/);
 
       // idents
-      const identPortal = morgueNote.note.match(/Identified the (.*) \(You found it in (?:the|a|an) (.*)\)/);
-      const identWithLoc = morgueNote.note.match(/Identified the (.*) \(You found it on level (.*) of the (.*)\)/);
+      const identPortal = morgueNote.note.match(/Identified the (.*) \(You found it in (?:the |a |an )?(.*)\)/);
+      const identWithLoc = morgueNote.note.match(
+        /Identified the (.*) \(You found it on level (.*) of (?:the |a |an )?(.*)\)/,
+      );
 
       // boughts
       const identBoughtPortal = morgueNote.note.match(
-        /Identified the (.*) \(You bought it in a shop in (?:the|a|an) (.*)\)/,
+        /Identified the (.*) \(You bought it in a shop in (?:the |a |an )?(.*)\)/,
       );
       const identBoughtWithLoc = morgueNote.note.match(
-        /Identified the (.*) \(You bought it in a shop on level (.*) of the (.*)\)/,
+        /Identified the (.*) \(You bought it in a shop on level (.*) of (?:the |a |an )?(.*)\)/,
       );
 
       // normal ident
@@ -307,7 +309,12 @@ function getAllMorgueItems(morgueNotes) {
       const spells = morgueNote.note.match(/You add the spells? (.*) to your library/);
       const playerNotes = morgueNote.note.match(/^(>>.*)/);
       const ziggurat = morgueNote.note.match(/Found a gateway to a ziggurat/);
-      const bought = morgueNote.note.match(/Bought the (.*?) for (\d+) gold pieces/);
+
+      // Bought a +1 buckler of cold resistance for 181 gold pieces
+      // Bought the amulet of the Manifold Knives {Acrobat rElec rF+} for 816 gold pieces
+      // Bought an uncursed ring of resist corrosion for 320 gold pieces
+      const bought = morgueNote.note.match(/Bought (?:the |a |an )?(.*?) for (\d+) gold pieces/);
+
       const weildingWearing = morgueNote.note.match(/(wielding|wearing) the (.*?)(\.|and )/);
 
       if (gift) {
@@ -324,7 +331,7 @@ function getAllMorgueItems(morgueNotes) {
         // The vault guard is wielding the +7 mace of Variability {chain chaos}.
 
         // pull out the 'who'
-        const matchWho = morgueNote.note.match(/^((a |the )?(.*?) (is|opens the door|comes into view))/i);
+        const matchWho = morgueNote.note.match(/^((the |a |an )?(.*?) (is|opens the door|comes into view))/i);
         if (matchWho) {
           const [, , , who] = matchWho;
 
