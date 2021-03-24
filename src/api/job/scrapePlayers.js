@@ -31,6 +31,14 @@ const ALLOWED_VERSIONS = {
   '0.26.1': true,
 };
 
+// Adjust this if you want to parse more morgues per request
+const MAX_MORGUES_PER_PLAYER = 1;
+
+// utils/parseMorgue item types (first string arg to createItem)
+const PARSE_MORGUE_ITEM_TYPES = {
+  item: true,
+};
+
 const SERVER_CONFIG = {
   akrasiac: {
     rawdataUrl: (name) => `http://crawl.akrasiac.org/rawdata/${name}`,
@@ -44,18 +52,11 @@ const SERVER_CONFIG = {
   },
 };
 
-const PARSE_MORGUE_ITEM_TYPES = {
-  item: true,
-};
-
-// Adjust this if you want to parse more morgues per request
-const MAX_MORGUES_PER_PLAYER = 1;
-
 async function scrapePlayer(player) {
   const morgues = await parsePlayer(player);
-  await parsePlayerMorgues({ player, morgues, limit: 1 });
+  const result = await parsePlayerMorgues({ player, morgues, limit: 1 });
 
-  return { morgues };
+  return { morgues, result };
 }
 
 async function parsePlayer(player) {
@@ -116,11 +117,11 @@ async function addMorgue({ player, morgue }) {
   const playerId = player.id;
   const { url, timestamp } = morgue;
 
-  const response = (status, extra) => {
+  function response(status, extra) {
     // mark morgue as visited
-    player.morgues[morgue.timestamp.getTime()] = true;
+    player.morgues[morgueLookupKey(morgue.timestamp)] = true;
     return { status, morgue: url, ...extra };
-  };
+  }
 
   console.debug('[addMorgue]', url);
 
@@ -229,13 +230,14 @@ module.exports = async function scrapePlayers(req, res) {
       scrapePlayerResults.push(scrapePlayer(player));
     }
 
-    const results = await Promise.all(scrapePlayerResults);
-    const playerMorgues = results.map(({ morgues }) => morgues);
+    const awaitedScrapePlayerResults = await Promise.all(scrapePlayerResults);
+    const scrapeResults = awaitedScrapePlayerResults.map(({ result }) => result);
+    const playerMorgues = awaitedScrapePlayerResults.map(({ morgues }) => morgues);
 
     const loopResult = await loopPlayerMorgues({ players, playerMorgues });
 
     // console.debug('[scrapePlayers]', 'end');
-    return send(res, 200, { loopResult });
+    return send(res, 200, { scrapeResults, loopResult });
   } catch (err) {
     return send(res, 500, err);
   }
