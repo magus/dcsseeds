@@ -114,3 +114,15 @@ Hosted on [Zeit](https://zeit.co/docs) running now v2 serverless lamba functions
 GraphQL databse backend provided by [Hasura](https://hasura.io/), hosted on [Heroku Postgres](https://www.heroku.com/postgres).
 
 [StatusCake](https://app.statuscake.com/) is used to monitor availability and simultaneously keep the Hasura Heroku dyno warm with a periodic query (every 5 min).
+
+- [parseUser](#parseUser)
+
+## scripts
+
+### parseUser
+
+```sh
+yarn search magusnn by Sigmund
+```
+
+![Demo GIF of parseUser for user "magusnn" for term "by sigmund"](https://raw.githubusercontent.com/magus/dcsseeds/master/static/parseuser-demo-4x.766b70.gif)

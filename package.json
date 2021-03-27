@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "search": "node ./scripts/parseUser",
     "dev": "node src/server",
     "build": "next build",
     "start": "NODE_ENV=production node src/server",
@@ -40,8 +41,10 @@
     "@zeit/next-source-maps": "^0.0.3",
     "babel-plugin-styled-components": "^1.11.1",
     "babel-plugin-transform-remove-console": "^6.9.4",
+    "chalk": "^4.1.0",
     "js-cookie": "^2.2.1",
     "now": "^20.0.0",
+    "ora": "^5.4.0",
     "prettier": "^2.1.0"
   }
 }

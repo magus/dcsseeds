@@ -40,3 +40,6 @@ public/service-worker.js
 # now generates files, ignore them
 .now
 .vercel
+
+# ignore scripts cache
+scripts/.cache
