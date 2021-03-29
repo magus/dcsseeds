@@ -26,6 +26,7 @@ async function parseMorgueText({ name, morgue, morgueText }) {
   const args = { name, morgue, morgueText };
 
   return {
+    ...(await MORGUE_REGEX[MORGUE_FIELD.God](args)),
     ...(await MORGUE_REGEX[MORGUE_FIELD.Filename](args)),
     ...(await MORGUE_REGEX[MORGUE_FIELD.Version](args)),
     ...(await MORGUE_REGEX[MORGUE_FIELD.Seed](args)), // value
@@ -39,6 +40,7 @@ async function parseMorgueText({ name, morgue, morgueText }) {
 }
 
 const MORGUE_FIELD = keyMirror({
+  God: true,
   Filename: true,
   Version: true,
   Seed: true,
@@ -51,6 +53,19 @@ const MORGUE_FIELD = keyMirror({
 });
 
 export const MORGUE_REGEX = {
+  [MORGUE_FIELD.God]: async function ({ morgueText }) {
+    let god = null;
+    try {
+      // God:    the Shining One
+      const [, parsedGod] = await runRegex(MORGUE_FIELD.God, morgueText, /God:\s+([a-z\s]*?) \[/i);
+      god = parsedGod;
+    } catch (err) {
+      // god unable to be parsed
+    }
+
+    return { god };
+  },
+
   [MORGUE_FIELD.Filename]: async function ({ name, morgue }) {
     let datetime = null;
     let isMorgue = false;
