@@ -13,23 +13,20 @@ module.exports = async function parseMorgue(morgue) {
   // https://regexr.com/5ed8a
   const [, name] = await runRegex('name', morgue, /\/([^/]*?)\/[^\/]*?.txt/);
 
-  // detect morgues to throw out/ignore in submit but still allow parseMorgue api to work
-  const isMorgue = !!morgue.match(new RegExp(`morgue-${name}-\\d{8}-\\d{6}.txt`));
-
-  const morgueParsed = await parseMorgueText(name, morgueText);
+  const morgueParsed = await parseMorgueText({ name, morgue, morgueText });
 
   return {
     name,
     morgue,
-    isMorgue,
     ...morgueParsed,
   };
 };
 
-async function parseMorgueText(name, morgueText) {
-  const args = { name, morgueText };
+async function parseMorgueText({ name, morgue, morgueText }) {
+  const args = { name, morgue, morgueText };
 
   return {
+    ...(await MORGUE_REGEX[MORGUE_FIELD.Filename](args)),
     ...(await MORGUE_REGEX[MORGUE_FIELD.Version](args)),
     ...(await MORGUE_REGEX[MORGUE_FIELD.Seed](args)), // value
     ...(await MORGUE_REGEX[MORGUE_FIELD.Score](args)),
@@ -42,6 +39,7 @@ async function parseMorgueText(name, morgueText) {
 }
 
 const MORGUE_FIELD = keyMirror({
+  Filename: true,
   Version: true,
   Seed: true,
   Score: true,
@@ -52,7 +50,36 @@ const MORGUE_FIELD = keyMirror({
   Items: true,
 });
 
-const MORGUE_REGEX = {
+export const MORGUE_REGEX = {
+  [MORGUE_FIELD.Filename]: async function ({ name, morgue }) {
+    let datetime = null;
+    let isMorgue = false;
+
+    // detect morgues to throw out/ignore in submit but still allow parseMorgue api to work
+    // if this regex doesn't match it isn't a morgue, if it does it is
+    try {
+      const match = await runRegex(
+        MORGUE_FIELD.Filename,
+        morgue,
+        // regex
+        new RegExp(`morgue-${name}-(\\d{8}-\\d{6})\.txt`),
+      );
+
+      if (match) {
+        isMorgue = true;
+
+        const [, timestampString] = match;
+        const [, Y, M, D, h, m, s] = /(\d{4})(\d{2})(\d{2})-(\d{2})(\d{2})(\d{2})/.exec(timestampString);
+        const dateString = `${Y}-${M}-${D}T${h}:${m}:${s}.000Z`;
+        datetime = new Date(dateString);
+      }
+    } catch (err) {
+      // unable to parse so defaults to isMorgue = false and undefined datetime
+    }
+
+    return { isMorgue, datetime };
+  },
+
   [MORGUE_FIELD.Version]: async ({ morgueText }) => {
     const [, fullVersion, version] = await runRegex(
       MORGUE_FIELD.Version,
@@ -416,6 +443,7 @@ function getAllMorgueItems(morgueNotes) {
 function getBranch(branch) {
   return BRANCH_NAMES[branch.toLowerCase()] || branch;
 }
+
 // Branch name data
 // https://github.com/crawl/crawl/tree/master/crawl-ref/source/branch-data.h
 const BRANCH_NAMES = {
