@@ -320,7 +320,7 @@ function getAllMorgueItems(morgueNotes) {
       // idents
       const identPortal = morgueNote.note.match(/Identified the (.*) \(You found it in (?:the |a |an )?(.*)\)/);
       const identWithLoc = morgueNote.note.match(
-        /Identified the (.*) \(You found it on level (.*) of (?:the |a |an )?(.*)\)/,
+        /Identified the (.*) \(You found it on level (\d{1,2}) of (?:the |a |an )?(.*)\)/,
       );
 
       // boughts
@@ -328,7 +328,7 @@ function getAllMorgueItems(morgueNotes) {
         /Identified the (.*) \(You bought it in a shop in (?:the |a |an )?(.*)\)/,
       );
       const identBoughtWithLoc = morgueNote.note.match(
-        /Identified the (.*) \(You bought it in a shop on level (.*) of (?:the |a |an )?(.*)\)/,
+        /Identified the (.*) \(You bought it in a shop on level (\d{1,2}) of (?:the |a |an )?(.*)\)/,
       );
 
       // normal ident
