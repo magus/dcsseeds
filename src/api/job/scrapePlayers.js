@@ -39,6 +39,15 @@ const PARSE_MORGUE_ITEM_TYPES = {
   item: true,
 };
 
+// Link to all servers
+// https://crawl.develz.org/play.htm
+// Australia: https://crawl.project357.org/morgue/xoxohorses/morgue-xoxohorses-20210321-232315.txt
+// Ohio: https://cbro.berotato.org/morgue/xoxohorses/morgue-xoxohorses-20210321-233134.txt
+// - France (reference seed): no custom seed option
+// - Germany: no custom seed option either
+// - Korea: no custom seed option either
+// - Japan: didn't load
+// - New York: no custom seed option either
 const SERVER_CONFIG = {
   akrasiac: {
     rawdataUrl: (name) => `http://crawl.akrasiac.org/rawdata/${name}`,
