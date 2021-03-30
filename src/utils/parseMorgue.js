@@ -11,7 +11,7 @@ module.exports = async function parseMorgue(morgue) {
   const morgueText = await morgueResponse.text();
 
   // https://regexr.com/5ed8a
-  const [, name] = await runRegex('name', morgue, /\/([^/]*?)\/[^\/]*?.txt/);
+  const [, name] = await runRegex('name', morgue, /\/([^\/]+)\/+([^\/]+)\.txt(?:\.gz)?$/);
 
   const morgueParsed = await parseMorgueText({ name, morgue, morgueText });
 
