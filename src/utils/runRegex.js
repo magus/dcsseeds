@@ -8,12 +8,13 @@ module.exports = async function regexAsync(id, content, regex) {
 
     const match = content.match(regex);
     if (!match) {
-      return reject('match');
+      // console.error({ content, regex, match });
+      return reject(`match[${JSON.stringify(match)}]`);
     }
 
     const [, firstGroup] = match;
     if (!firstGroup) {
-      return reject('group');
+      return reject(`group[${JSON.stringify(match)}]`);
     }
 
     return resolve(match);
