@@ -47,12 +47,20 @@ const PARSE_MORGUE_ITEM_TYPES = {
 // - Germany: no custom seed option either
 // - Korea: no custom seed option either
 // - Japan: didn't load
-// - New York: no custom seed option either
+// - New York: https://crawl.kelbi.org/crawl/morgue/MalcolmRose/morgue-MalcolmRose-20210116-054957.txt
 const SERVER_CONFIG = {
   akrasiac: {
     rawdataUrl: (name) => `http://crawl.akrasiac.org/rawdata/${name}`,
-    // /href=\"(morgue-magusnn-[0-9\-]*\.txt)\"/g
-    morgueRegex: (name) => `href=\"(morgue-${name}-([0-9\-]*)\.txt)\"`,
+    morgueRegex: (name) => new RegExp(`href=(?:\"|\').*?(morgue-${name}-([0-9\-]*?)\.txt(?:\.gz)?)(?:\"|\')`, 'g'),
+    morgueTimestampRegex: (timestamp) => {
+      const [, Y, M, D, h, m, s] = /(\d{4})(\d{2})(\d{2})-(\d{2})(\d{2})(\d{2})/.exec(timestamp);
+      const dateString = `${Y}-${M}-${D}T${h}:${m}:${s}.000Z`;
+      return new Date(dateString);
+    },
+  },
+  kelbi: {
+    rawdataUrl: (name) => `https://crawl.kelbi.org/crawl/morgue/${name}`,
+    morgueRegex: (name) => new RegExp(`href=(?:\"|\').*?(morgue-${name}-([0-9\-]*?)\.txt(?:\.gz)?)(?:\"|\')`, 'g'),
     morgueTimestampRegex: (timestamp) => {
       const [, Y, M, D, h, m, s] = /(\d{4})(\d{2})(\d{2})-(\d{2})(\d{2})(\d{2})/.exec(timestamp);
       const dateString = `${Y}-${M}-${D}T${h}:${m}:${s}.000Z`;
@@ -63,6 +71,7 @@ const SERVER_CONFIG = {
 
 async function scrapePlayer(player) {
   const morgues = await parsePlayer(player);
+  // console.debug({ morgues });
   const result = await parsePlayerMorgues({ player, morgues, limit: 1 });
 
   return { morgues, result };
@@ -86,8 +95,12 @@ async function parsePlayer(player) {
 
   const rawdataMorgueHtml = await resp.text();
 
+  // if (player.name === 'MalcolmRose') {
+  //   console.debug({ rawdataMorgueHtml });
+  // }
+
   const morgues = [];
-  const regex = new RegExp(serverConfig.morgueRegex(name), 'g');
+  const regex = serverConfig.morgueRegex(name);
   let match = regex.exec(rawdataMorgueHtml);
   while (match) {
     const [, filename, timeString] = match;
