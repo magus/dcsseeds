@@ -56,8 +56,9 @@ export const MORGUE_REGEX = {
   [MORGUE_FIELD.God]: async function ({ morgueText }) {
     let god = null;
     try {
-      // God:    the Shining One
-      const [, parsedGod] = await runRegex(MORGUE_FIELD.God, morgueText, /God:\s+([a-z\s]*?) \[/i);
+      // e.g. God:    the Shining One
+      // https://regexr.com/5plrt
+      const [, parsedGod] = await runRegex(MORGUE_FIELD.God, morgueText, /God:\s+([a-z\s]*?)(?:\[.*)?$/im);
       god = parsedGod;
     } catch (err) {
       // god unable to be parsed
