@@ -27,8 +27,9 @@ import parseMorgue from 'src/utils/parseMorgue';
 //   }
 // }
 
+// prettier-ignore
 const ALLOWED_VERSIONS = {
-  '0.26.1': true,
+  '0.26': true,
 };
 
 // Adjust this if you want to parse more morgues per request
@@ -165,8 +166,8 @@ async function addMorgue({ player, morgue }) {
     const { version, fullVersion, value } = data;
 
     // skip if not allowed version
-    if (!ALLOWED_VERSIONS[fullVersion]) {
-      return skip(`not allowed version [${fullVersion}]`);
+    if (!ALLOWED_VERSIONS[version]) {
+      return skip(`not allowed version [${version}]`);
     }
 
     // collect items to send in a single mutation call
