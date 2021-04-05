@@ -7,7 +7,9 @@ export default function StyledLink(props) {
 
   return (
     <Link {...restProps} passHref>
-      <StyledButton {...buttonProps}>{children}</StyledButton>
+      <a>
+        <StyledButton {...buttonProps}>{children}</StyledButton>
+      </a>
     </Link>
   );
 }
