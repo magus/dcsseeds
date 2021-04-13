@@ -11,7 +11,8 @@ ORDER BY n_live_tup DESC;
 ## delete rows from table
 
 ```sql
-DELETE FROM hdb_catalog.hdb_cron_event_invocation_logs
+DELETE FROM hdb_catalog.hdb_cron_event_invocation_logs;
+DELETE FROM hdb_catalog.hdb_cron_events;
 ```
 
 ## Hasura Console
