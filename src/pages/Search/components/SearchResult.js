@@ -5,39 +5,35 @@ import CopyButton from 'src/components/CopyButton';
 import { TimeAgo } from 'src/components/TimeAgo';
 
 export function SearchResult({ search, result }) {
-  const otherItemCount = result.morgue.items.aggregate.count - 1;
-
-  const parseMorgueUrl = `/api/parseMorgue?morgue=${result.morgue.url}`;
+  const parseMorgueUrl = `/api/parseMorgue?morgue=${result.morgue}`;
 
   return (
     <SearchResultContainer>
       <Small>{result.location}</Small>
       <SpacerSmall />
       <Item>
-        <Highlight match={search}>{result.item.name}</Highlight>
+        <Highlight match={search}>{result.name}</Highlight>
       </Item>
 
       <Spacer />
 
       <BottomRow>
         <BottomLeft>
-          <CopyButton tooltip copy={result.seed.value} title="Click to copy seed" copyMessage="Seed copied!">
+          <CopyButton tooltip copy={result.seed} title="Click to copy seed" copyMessage="Seed copied!">
             🌱
           </CopyButton>
         </BottomLeft>
 
         <BottomRight>
           <MorgueLink href={parseMorgueUrl} rel="noopener" target="_blank">
-            <OtherItems>
-              {!otherItemCount ? null : (
-                <Small>
-                  +{otherItemCount} other item{otherItemCount === 1 ? '' : 's'}
-                </Small>
-              )}
-            </OtherItems>
-            <Player>{result.morgue.player.name}</Player>
+            <AlignRight>
+              <Small>
+                <TimeAgo date={result.timestamp} />
+              </Small>
+            </AlignRight>
+            <Player>{result.player.name}</Player>
             {' · '}
-            <Small>{result.seed.version}</Small>
+            <Small>{result.version}</Small>
           </MorgueLink>
         </BottomRight>
       </BottomRow>
@@ -186,6 +182,6 @@ const MorgueLink = styled.a`
   }
 `;
 
-const OtherItems = styled.div`
+const AlignRight = styled.div`
   text-align: right;
 `;

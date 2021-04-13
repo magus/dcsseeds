@@ -9,20 +9,17 @@ import parseMorgue from 'src/utils/parseMorgue';
 
 // Delete everything to reparse
 // mutation MyMutation {
-//   delete_scrapePlayers_morgues(where: {url: {_neq: ""}}) {
+//   update_scrapePlayers(where: {name: {_neq: ""}}, _set: {morgues: {}}) {
 //     affected_rows
 //   }
-//   delete_scrapePlayers_items(where: {name: {_neq: ""}}) {
-//     affected_rows
-//   }
-//   delete_scrapePlayers_seeds(where: {version: {_neq: ""}}) {
+//   delete_scrapePlayers_item(where: {name: {_neq: ""}}) {
 //     affected_rows
 //   }
 // }
 
 // Distinct branch names (audit parseMorgues BRANCH_NAMES getBranch logic)
 // query MyQuery {
-//   scrapePlayers_itemLocations(distinct_on: branch) {
+//   scrapePlayers_item(distinct_on: branch) {
 //     branch
 //   }
 // }
@@ -150,8 +147,7 @@ async function addMorgue({ player, morgue }) {
     // no items in this run, create a morgue so we do not search it again
     await GQL_ADD_MORGUE.run({
       playerId,
-      url,
-      timestamp,
+      data: { [morgueLookupKey(morgue.timestamp)]: true },
     });
     return response(`skip (${reason})`);
   }
@@ -163,7 +159,7 @@ async function addMorgue({ player, morgue }) {
     const data = await parseMorgue(url);
     // console.debug('addMorge', { data });
 
-    const { version, fullVersion, value } = data;
+    const { version, fullVersion, value: seed } = data;
 
     // skip if not allowed version
     if (!ALLOWED_VERSIONS[version]) {
@@ -182,41 +178,30 @@ async function addMorgue({ player, morgue }) {
 
       const insertItem = {
         name,
-        locations: {
-          data: {
-            branch,
-            location,
-            morgue: {
-              data: {
-                playerId,
-                url,
-                timestamp,
-                parsed: true,
-              },
-              on_conflict: { constraint: 'scrapePlayers_morgues_url_key', update_columns: 'updated' },
-            },
-            seed: {
-              data: { value, version, fullVersion },
-              on_conflict: { constraint: 'scrapePlayers_seeds_version_value_key', update_columns: 'updated' },
-            },
-          },
-          on_conflict: {
-            constraint: 'scrapePlayers_itemLocations_itemId_seedId_morgueId_location_key',
-            update_columns: 'updated',
-          },
-        },
+        branch,
+        location,
+        morgue: url,
+        playerId,
+        timestamp,
+        seed,
+        version,
+        fullVersion,
       };
 
       // optionally include level
       if (level) {
-        insertItem.locations.data.level = parseInt(level, 10);
+        insertItem.level = parseInt(level, 10);
       }
 
       items.push(insertItem);
     });
 
     if (items.length) {
-      await GQL_ADD_ITEM.run({ items });
+      await GQL_ADD_ITEM.run({
+        items,
+        playerId,
+        data: { [morgueLookupKey(morgue.timestamp)]: true },
+      });
       return response('done (items)');
     }
 
@@ -244,11 +229,7 @@ async function loopPlayerMorgues({ players, playerMorgues, iteration }) {
 module.exports = async function scrapePlayers(req, res) {
   try {
     // console.debug('[scrapePlayers]', 'start');
-    const players = (await GQL_SCRAPEPLAYERS.run()).map((player) => {
-      // rewrite morgues as a lookup for fast checks
-      player.morgues = playerMorgueLookup(player.morgues);
-      return player;
-    });
+    const players = await GQL_SCRAPEPLAYERS.run();
 
     const scrapePlayerResults = [];
     for (let i = 0; i < players.length; i++) {
@@ -278,9 +259,7 @@ const GQL_SCRAPEPLAYERS = serverQuery(
         lastRun
         name
         server
-        morgues(where: { parsed: { _eq: true } }) {
-          timestamp
-        }
+        morgues
       }
     }
   `,
@@ -297,11 +276,8 @@ const GQL_LAST_RUN_PLAYER = serverQuery(gql`
 
 const GQL_ADD_MORGUE = serverQuery(
   gql`
-    mutation AddMorgue($playerId: uuid!, $url: String!, $timestamp: timestamptz!) {
-      insert_scrapePlayers_morgues(
-        objects: { playerId: $playerId, url: $url, timestamp: $timestamp, parsed: true }
-        on_conflict: { constraint: scrapePlayers_morgues_url_key, update_columns: updated }
-      ) {
+    mutation AddMorgue($playerId: uuid!, $data: jsonb!) {
+      update_scrapePlayers(_append: { morgues: $data }, where: { id: { _eq: $playerId } }) {
         affected_rows
       }
     }
@@ -310,11 +286,12 @@ const GQL_ADD_MORGUE = serverQuery(
 
 const GQL_ADD_ITEM = serverQuery(
   gql`
-    mutation AddItem($items: [scrapePlayers_items_insert_input!]!) {
-      item: insert_scrapePlayers_items(
-        objects: $items
-        on_conflict: { constraint: scrapePlayers_items_item_key, update_columns: updated }
-      ) {
+    mutation AddItem($playerId: uuid!, $data: jsonb!, $items: [scrapePlayers_item_insert_input!]!) {
+      update_scrapePlayers(_append: { morgues: $data }, where: { id: { _eq: $playerId } }) {
+        affected_rows
+      }
+
+      items: insert_scrapePlayers_item(objects: $items) {
         affected_rows
       }
     }

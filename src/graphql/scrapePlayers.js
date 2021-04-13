@@ -32,8 +32,8 @@ export function useItemSearch({ limit = 10, delayMs = 250 } = {}) {
     },
     search: (text) => {
       const orderBy = {
-        morgue: { timestamp: 'desc' },
-        seed: { version: 'desc' },
+        timestamp: 'desc',
+        version: 'desc',
       };
 
       const variables = {
@@ -56,27 +56,17 @@ function getSearchVariables(text) {
 }
 
 const SearchResultFragment = gql`
-  fragment SearchResult on scrapePlayers_itemLocations {
+  fragment SearchResult on scrapePlayers_item {
     id
-    item {
+    name
+    location
+    seed
+    version
+    morgue
+    player {
       name
     }
-    location
-    seed {
-      version
-      value
-    }
-    morgue {
-      url
-      player {
-        name
-      }
-      items: items_aggregate {
-        aggregate {
-          count
-        }
-      }
-    }
+    timestamp
   }
 `;
 
@@ -87,28 +77,16 @@ const SEARCH_ITEM_LOCATIONS = gql`
     $front: String!
     $startWord: String!
     $middle: String!
-    $orderBy: scrapePlayers_itemLocations_order_by!
+    $orderBy: scrapePlayers_item_order_by!
     $limit: Int!
   ) {
-    front: scrapePlayers_itemLocations(
-      where: { item: { name: { _ilike: $front } } }
-      order_by: [$orderBy]
-      limit: $limit
-    ) {
+    front: scrapePlayers_item(where: { name: { _ilike: $front } }, order_by: [$orderBy], limit: $limit) {
       ...SearchResult
     }
-    startWord: scrapePlayers_itemLocations(
-      where: { item: { name: { _ilike: $startWord } } }
-      order_by: [$orderBy]
-      limit: $limit
-    ) {
+    startWord: scrapePlayers_item(where: { name: { _ilike: $startWord } }, order_by: [$orderBy], limit: $limit) {
       ...SearchResult
     }
-    middle: scrapePlayers_itemLocations(
-      where: { item: { name: { _ilike: $middle } } }
-      order_by: [$orderBy]
-      limit: $limit
-    ) {
+    middle: scrapePlayers_item(where: { name: { _ilike: $middle } }, order_by: [$orderBy], limit: $limit) {
       ...SearchResult
     }
   }
