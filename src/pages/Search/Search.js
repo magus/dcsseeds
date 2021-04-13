@@ -27,10 +27,15 @@ export default function Search(props) {
     const url = {
       pathname: router.pathname,
     };
+
     if (search) {
       url.query = { q: search };
     }
-    router.replace(url);
+
+    // Shallow routing allows you to change the URL without running data fetching methods again,
+    // that includes getServerSideProps, getStaticProps, and getInitialProps.
+    // https://nextjs.org/docs/routing/shallow-routing
+    router.replace(url, undefined, { shallow: true });
   }, [search]);
 
   function handleSubmit() {
