@@ -16,17 +16,17 @@ function SearchResultsInternal(props) {
     return <IconMessage icon="👋" message="Click here for a random search..." onMessageClick={props.onTrySearch} />;
   }
 
+  if (props.results && props.results.length) {
+    return props.results.map((result) => {
+      return <SearchResult key={result.id} search={props.search} result={result} />;
+    });
+  }
+
   if (props.loading || !props.results) {
     return <Loading />;
   }
 
-  if (props.results.length < 1) {
-    return <IconMessage icon="🤷🏻‍♀️" message="No results" />;
-  }
-
-  return props.results.map((result) => {
-    return <SearchResult key={result.id} search={props.search} result={result} />;
-  });
+  return <IconMessage icon="🤷🏻‍♀️" message="No results" />;
 }
 
 export function SearchResults(props) {

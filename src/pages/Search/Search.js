@@ -34,26 +34,28 @@ export default function Search(props) {
   }, [search]);
 
   function handleSubmit() {
-    console.debug('[Search]', 'handleSubmit', { search });
+    // console.debug('[Search]', 'handleSubmit', { search });
     searchFieldRef.current.blur();
   }
 
   function handleChange(text) {
-    console.debug('[Search]', 'handleChange', { text });
+    // console.debug('[Search]', 'handleChange', { text });
     set_search(text);
   }
 
   function handleClear() {
-    console.debug('[Search]', 'handleClear');
+    // console.debug('[Search]', 'handleClear');
     set_search('');
   }
 
   function handleTrySearch() {
-    console.debug('[Search]', 'handleTrySearch');
     set_search(props.placeholder);
   }
 
   const formattedTotalItemCount = new Intl.NumberFormat().format(props.totalItemCount);
+  const results = itemSearch.latestResults(search);
+
+  // console.debug('[Search]', { results, itemSearch });
 
   return (
     <Container>
@@ -73,12 +75,7 @@ export default function Search(props) {
         onChange={handleChange}
       />
       <Spacer />
-      <SearchResults
-        loading={itemSearch.loading}
-        search={search}
-        results={itemSearch.latestResults(search)}
-        onTrySearch={handleTrySearch}
-      />
+      <SearchResults loading={itemSearch.loading} search={search} results={results} onTrySearch={handleTrySearch} />
     </Container>
   );
 }
