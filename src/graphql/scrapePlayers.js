@@ -31,6 +31,8 @@ export function useItemSearch({ limit = 10, delayMs = 250 } = {}) {
       return null;
     },
     search: (text) => {
+      if (!text) return;
+
       const orderBy = {
         timestamp: 'desc',
         version: 'desc',

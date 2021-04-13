@@ -53,9 +53,16 @@ export default function Search(props) {
     set_search(props.placeholder);
   }
 
+  const formattedTotalItemCount = new Intl.NumberFormat().format(props.totalItemCount);
+
   return (
     <Container>
       <Spacer />
+
+      <TotalItems>
+        Search over <strong>{formattedTotalItemCount}</strong> items...
+      </TotalItems>
+
       <SearchField
         ref={searchFieldRef}
         label="Search"
@@ -85,4 +92,9 @@ const Container = styled.div`
 
 const Spacer = styled.div`
   height: var(--spacer-2);
+`;
+
+const TotalItems = styled.div`
+  font-size: var(--font-small);
+  padding: var(--spacer-1) 0;
 `;

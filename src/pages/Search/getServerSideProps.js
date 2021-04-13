@@ -1,11 +1,17 @@
+import { gql } from '@apollo/client';
+
 import fetch from 'src/utils/fetch';
+import { serverQuery } from 'src/graphql/serverQuery';
 import { random, randomElement } from 'src/utils/random';
 
-export default async function getInitialProps(props = {}) {
+export default async function getServerSideProps(context) {
   const fork = random() > 0.5;
   const list = fork ? BRANDS : UNRANDS;
   const placeholder = randomElement(list);
-  return { placeholder };
+
+  const totalItemCount = await GQL_TOTAL_ITEMS.run();
+  const props = { placeholder, totalItemCount };
+  return { props };
 }
 
 // Item brands
@@ -150,3 +156,16 @@ const UNRANDS = [
   `Wrath of Trog`,
   `zealot's sword`,
 ];
+
+const GQL_TOTAL_ITEMS = serverQuery(
+  gql`
+    query TotalItems {
+      items: scrapePlayers_item_aggregate {
+        aggregate {
+          count(columns: id)
+        }
+      }
+    }
+  `,
+  (data) => data.items.aggregate.count,
+);
