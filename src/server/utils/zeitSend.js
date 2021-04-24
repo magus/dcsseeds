@@ -29,6 +29,8 @@ module.exports = function zeitSend(res, statusCode, data, { prettyPrint } = {}) 
     }
   }
 
+  res.setHeader('Content-Type', 'application/json');
+
   const formattedResponseJson = !prettyPrint ? responseJson : JSON.stringify(responseJson, null, 2);
 
   return send(res, statusCode, formattedResponseJson);
