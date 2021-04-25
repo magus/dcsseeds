@@ -3,6 +3,7 @@ const { toNumber } = require('src/utils/toNumber');
 const runRegex = require('src/utils/runRegex');
 const Backgrounds = require('src/utils/Backgrounds');
 const Species = require('src/utils/Species');
+const Uniques = require('src/utils/Uniques');
 
 const { uniqBy } = require('lodash');
 
@@ -357,9 +358,23 @@ function getAllMorgueItems(morgueNotes) {
 
       const weildingWearing = morgueNote.note.match(/(wielding|wearing) the (.*?)(\.|and )/);
 
+      const noticed = morgueNote.note.match(/Noticed (.*)$/);
+      const killed = morgueNote.note.match(/Killed (.*)$/);
+
       if (gift) {
         // skip gifts
         return;
+      } else if (noticed) {
+        // Parse uniques encountered and defeated (if defeated or avoided if not)
+        const [, who] = noticed;
+        if (Uniques.Lookup[who]) {
+          createItem('unique-noticed', who, morgueNote.loc);
+        }
+      } else if (killed) {
+        const [, who] = killed;
+        if (Uniques.Lookup[who]) {
+          createItem('unique-killed', who, morgueNote.loc);
+        }
       } else if (weildingWearing) {
         // What https://regexr.com/5e13q
         // Who  https://regexr.com/5e14f
