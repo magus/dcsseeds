@@ -4,6 +4,27 @@ track random seeds in dcss
 
 ## TODO
 
+
+### parse morgue visualization
+
+Display a rich page with summary of morgue
+
+Level, title, God etc.
+
+Equipment (tiles for unrands, otherwise tiles for general items)
+
+Skills
+Bars with highest skills sorted to top showing relative investment
+
+(can include tile images for uniques)
+Slayer of (Uniques killed)
+Fled from (Uniques noticed but not killed)
+
+Artefacts
+Unrands found (can include tile image)
+Randarts found (can include tile image for type)
+
+
 ### scrapePlayers
 
 - strategy to make scraping more fair across players
