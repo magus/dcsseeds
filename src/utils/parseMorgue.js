@@ -363,8 +363,9 @@ function getAllMorgueNoteEvents(morgueNotes) {
       const noticed = morgueNote.note.match(/Noticed (.*)$/);
       const killed = morgueNote.note.match(/Killed (.*)$/);
 
-      // gods joined and abandoned
+      // gods joined and left
       const joinGod = morgueNote.note.match(/Became a worshipper of (.*)$/);
+      const leaveGod = morgueNote.note.match(/Fell from the grace of (.*)$/);
 
       if (gift) {
         // skip gifts
@@ -386,6 +387,13 @@ function getAllMorgueNoteEvents(morgueNotes) {
         if (match) {
           const [, god] = match;
           createEvent('join-god', god, morgueNote.loc, { god });
+        }
+      } else if (leaveGod) {
+        const [, godFullName] = leaveGod;
+        const match = godFullName.match(Gods.Regex);
+        if (match) {
+          const [, god] = match;
+          createEvent('leave-god', god, morgueNote.loc, { god });
         }
       } else if (weildingWearing) {
         // What https://regexr.com/5e13q
