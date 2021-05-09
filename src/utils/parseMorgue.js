@@ -483,7 +483,18 @@ function getAllMorgueNoteEvents(morgueNotes) {
   }
 
   // run parseNote over each morgue note entry
-  morgueNotes.forEach(parseNote);
+  morgueNotes.forEach((morgueNote, i) => {
+    parseNote(morgueNote);
+
+    // first note
+    if (i === 0) {
+      createEvent('first-event', morgueNote.note, morgueNote.loc);
+    }
+    // last note
+    if (i === morgueNotes.length - 1) {
+      createEvent('last-event', morgueNote.note, morgueNote.loc);
+    }
+  });
 
   // remove duplicates
   const uniqueEvents = uniqBy(events, (i) => `__T${i.type}____N${i.name}____L${i.location}__`);
