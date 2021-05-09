@@ -11,6 +11,8 @@ Display a rich page with summary of morgue
 
 Level, title, God etc.
 
+Gods you joined, abandoned and final god you won with
+
 Equipment (tiles for unrands, otherwise tiles for general items)
 
 Skills

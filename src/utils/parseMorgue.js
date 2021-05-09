@@ -4,6 +4,7 @@ const runRegex = require('src/utils/runRegex');
 const Backgrounds = require('src/utils/Backgrounds');
 const Species = require('src/utils/Species');
 const Uniques = require('src/utils/Uniques');
+const Gods = require('src/utils/Gods');
 
 const { uniqBy } = require('lodash');
 
@@ -294,7 +295,7 @@ function getAllMorgueNotes(morgueText) {
 function getAllMorgueItems(morgueNotes) {
   const items = [];
 
-  function createItem(type, name, _location, _level) {
+  function createItem(type, name, _location, extra) {
     let branch;
     let level;
 
@@ -307,7 +308,7 @@ function getAllMorgueItems(morgueNotes) {
     }
 
     const location = level ? `${branch}:${level}` : branch;
-    return items.push({ type, name, location, branch, level });
+    return items.push({ type, name, location, branch, level, ...extra });
   }
 
   function parseNote(morgueNote) {
@@ -358,8 +359,12 @@ function getAllMorgueItems(morgueNotes) {
 
       const weildingWearing = morgueNote.note.match(/(wielding|wearing) the (.*?)(\.|and )/);
 
+      // uniques noticed and killed
       const noticed = morgueNote.note.match(/Noticed (.*)$/);
       const killed = morgueNote.note.match(/Killed (.*)$/);
+
+      // gods joined and abandoned
+      const joinGod = morgueNote.note.match(/Became a worshipper of (.*)$/);
 
       if (gift) {
         // skip gifts
@@ -374,6 +379,13 @@ function getAllMorgueItems(morgueNotes) {
         const [, who] = killed;
         if (Uniques.Lookup[who]) {
           createItem('unique-killed', who, morgueNote.loc);
+        }
+      } else if (joinGod) {
+        const [, godFullName] = joinGod;
+        const match = godFullName.match(Gods.Regex);
+        if (match) {
+          const [, god] = match;
+          createItem('join-god', god, morgueNote.loc, { god });
         }
       } else if (weildingWearing) {
         // What https://regexr.com/5e13q
