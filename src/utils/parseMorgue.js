@@ -37,7 +37,7 @@ async function parseMorgueText({ name, morgue, morgueText }) {
     ...(await MORGUE_REGEX[MORGUE_FIELD.Turns](args)),
     ...(await MORGUE_REGEX[MORGUE_FIELD.Time](args)),
     ...(await MORGUE_REGEX[MORGUE_FIELD.Runes](args)),
-    ...(await MORGUE_REGEX[MORGUE_FIELD.Items](args)),
+    ...(await MORGUE_REGEX[MORGUE_FIELD.Notes](args)),
   };
 }
 
@@ -51,7 +51,7 @@ const MORGUE_FIELD = keyMirror({
   Turns: true,
   Time: true,
   Runes: true,
-  Items: true,
+  Notes: true,
 });
 
 export const MORGUE_REGEX = {
@@ -190,14 +190,14 @@ export const MORGUE_REGEX = {
     }
   },
 
-  [MORGUE_FIELD.Items]: async ({ morgueText }) => {
+  [MORGUE_FIELD.Notes]: async ({ morgueText }) => {
     try {
       const morgueNotes = getAllMorgueNotes(morgueText);
-      const items = getAllMorgueItems(morgueNotes);
+      const events = getAllMorgueNoteEvents(morgueNotes);
 
-      return { items };
+      return { events };
     } catch (err) {
-      console.error('MORGUE_FIELD.Items', err);
+      console.error('MORGUE_FIELD.Notes', err);
       // return empty
       return {};
     }
@@ -292,10 +292,10 @@ function getAllMorgueNotes(morgueText) {
   return notes;
 }
 
-function getAllMorgueItems(morgueNotes) {
-  const items = [];
+function getAllMorgueNoteEvents(morgueNotes) {
+  const events = [];
 
-  function createItem(type, name, _location, extra) {
+  function createEvent(type, name, _location, extra) {
     let branch;
     let level;
 
@@ -308,7 +308,7 @@ function getAllMorgueItems(morgueNotes) {
     }
 
     const location = level ? `${branch}:${level}` : branch;
-    return items.push({ type, name, location, branch, level, ...extra });
+    return events.push({ type, name, location, branch, level, ...extra });
   }
 
   function parseNote(morgueNote) {
@@ -373,19 +373,19 @@ function getAllMorgueItems(morgueNotes) {
         // Parse uniques encountered and defeated (if defeated or avoided if not)
         const [, who] = noticed;
         if (Uniques.Lookup[who]) {
-          createItem('unique-noticed', who, morgueNote.loc);
+          createEvent('unique-noticed', who, morgueNote.loc);
         }
       } else if (killed) {
         const [, who] = killed;
         if (Uniques.Lookup[who]) {
-          createItem('unique-killed', who, morgueNote.loc);
+          createEvent('unique-killed', who, morgueNote.loc);
         }
       } else if (joinGod) {
         const [, godFullName] = joinGod;
         const match = godFullName.match(Gods.Regex);
         if (match) {
           const [, god] = match;
-          createItem('join-god', god, morgueNote.loc, { god });
+          createEvent('join-god', god, morgueNote.loc, { god });
         }
       } else if (weildingWearing) {
         // What https://regexr.com/5e13q
@@ -407,8 +407,8 @@ function getAllMorgueItems(morgueNotes) {
           let match = reWieldingWearing.exec(morgueNote.note);
           while (match) {
             const [, , item] = match;
-            createItem('wearingWho', `(${who}) ${item}`, morgueNote.loc);
-            createItem('item', item, morgueNote.loc);
+            createEvent('wearingWho', `(${who}) ${item}`, morgueNote.loc);
+            createEvent('item', item, morgueNote.loc);
 
             // next match
             match = reWieldingWearing.exec(morgueNote.note);
@@ -418,55 +418,55 @@ function getAllMorgueItems(morgueNotes) {
         const [, item, gold] = bought;
         const artefactMatch = item.match(/{.*?}/);
         if (artefactMatch) {
-          createItem('bought', `${item} (${gold} gold)`, morgueNote.loc);
-          createItem('item', item, morgueNote.loc);
+          createEvent('bought', `${item} (${gold} gold)`, morgueNote.loc);
+          createEvent('item', item, morgueNote.loc);
         }
       } else if (ziggurat) {
-        createItem('ziggurat', 'Ziggurat', morgueNote.loc);
+        createEvent('ziggurat', 'Ziggurat', morgueNote.loc);
       } else if (playerNotes) {
         const [, note] = playerNotes;
-        createItem('note', `${note} (Player Note)`, morgueNote.loc);
+        createEvent('note', `${note} (Player Note)`, morgueNote.loc);
       } else if (pietyTrove) {
-        createItem('trovePiety', `Treasure Trove (lose all piety)`, morgueNote.loc);
+        createEvent('trovePiety', `Treasure Trove (lose all piety)`, morgueNote.loc);
       } else if (trove) {
         const [, item] = trove;
-        createItem('troveItem', `Treasure Trove (${item})`, morgueNote.loc);
+        createEvent('troveItem', `Treasure Trove (${item})`, morgueNote.loc);
       } else if (spells) {
         // Parse out the spells into individual parseMorgue entries
         // https://regexr.com/5p55t
         const [, spellList] = spells;
         const [, commaSpells, lastSpell] = spellList.match(/(?:(.*) and )?(.*?)$/);
         commaSpells.split(', ').forEach((spell, i) => {
-          createItem('spell', spell, morgueNote.loc);
+          createEvent('spell', spell, morgueNote.loc);
         });
-        createItem('spell', lastSpell, morgueNote.loc);
+        createEvent('spell', lastSpell, morgueNote.loc);
       } else if (found) {
         const [, item] = found;
-        createItem('found', item, morgueNote.loc);
-        createItem('item', item, morgueNote.loc);
+        createEvent('found', item, morgueNote.loc);
+        createEvent('item', item, morgueNote.loc);
       } else if (identPortal) {
         const [, item, loc] = identPortal;
-        createItem('identPortal', item, loc);
-        createItem('item', item, loc);
+        createEvent('identPortal', item, loc);
+        createEvent('item', item, loc);
       } else if (identWithLoc) {
         const [, item, level, loc] = identWithLoc;
-        createItem('identLoc', item, `${loc}:${level}`);
-        createItem('item', item, `${loc}:${level}`);
+        createEvent('identLoc', item, `${loc}:${level}`);
+        createEvent('item', item, `${loc}:${level}`);
       } else if (identBoughtPortal) {
         const [, item, loc] = identBoughtPortal;
-        createItem('identBoughtPortal', item, loc);
-        createItem('item', item, loc);
+        createEvent('identBoughtPortal', item, loc);
+        createEvent('item', item, loc);
       } else if (identBoughtWithLoc) {
         const [, item, level, loc] = identBoughtWithLoc;
-        createItem('identBoughtLoc', item, `${loc}:${level}`);
-        createItem('item', item, `${loc}:${level}`);
+        createEvent('identBoughtLoc', item, `${loc}:${level}`);
+        createEvent('item', item, `${loc}:${level}`);
       } else if (identIgnore) {
         // const [, item] = identIgnore;
         // console.warn('identIgnore', { item });
       } else if (ident) {
         const [, item] = ident;
-        createItem('ident', item, morgueNote.loc);
-        createItem('item', item, morgueNote.loc);
+        createEvent('ident', item, morgueNote.loc);
+        createEvent('item', item, morgueNote.loc);
       }
     } catch (err) {
       console.error(`ERROR; SKIPPING NOTE [${JSON.stringify(morgueNote, null, 2)}]`);
@@ -478,9 +478,9 @@ function getAllMorgueItems(morgueNotes) {
   morgueNotes.forEach(parseNote);
 
   // remove duplicates
-  const dedupedItems = uniqBy(items, (i) => `__T${i.type}____N${i.name}____L${i.location}__`);
+  const uniqueEvents = uniqBy(events, (i) => `__T${i.type}____N${i.name}____L${i.location}__`);
 
-  return dedupedItems;
+  return uniqueEvents;
 }
 
 function getBranch(branch) {
