@@ -3,9 +3,17 @@
 ## count rows in tables
 
 ```sql
-SELECT schemaname,relname,n_live_tup
-FROM pg_stat_user_tables
-ORDER BY n_live_tup DESC;
+SELECT
+  pgClass.relname   AS tableName,
+  pgClass.reltuples AS rowCount
+FROM
+  pg_class pgClass
+INNER JOIN
+  pg_namespace pgNamespace ON (pgNamespace.oid = pgClass.relnamespace)
+WHERE
+  pgNamespace.nspname NOT IN ('pg_catalog', 'information_schema') AND
+  pgClass.relkind='r'
+ORDER BY rowCount DESC
 ```
 
 ## delete rows from table
