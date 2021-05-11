@@ -4,9 +4,9 @@ const { HASURA_ADMIN_SECRET } = process.env;
 
 if (!HASURA_ADMIN_SECRET) throw new Error('HASURA_ADMIN_SECRET is required!');
 
-module.exports = async function updateSeedNotes({ seed, version, items }) {
+module.exports = async function updateSeedNotes({ seed, version, events }) {
   // mutate to create seed notes
-  const seedNote = await getSeedNote({ seed, version, items });
+  const seedNote = await getSeedNote({ seed, version, events });
 
   // console.log('updateSeedNotes', { seed, seedNote });
 
@@ -22,7 +22,7 @@ module.exports = async function updateSeedNotes({ seed, version, items }) {
   return createSeedNoteResult;
 };
 
-async function getSeedNote({ seed, version, items }) {
+async function getSeedNote({ seed, version, events }) {
   const existingSeedNotesQuery = await query({
     query: GET_SEED_NOTES,
     endpoint: GRAPHQL_ENDPOINT,
@@ -37,21 +37,24 @@ async function getSeedNote({ seed, version, items }) {
   const existingSeedNoteTrimmed = !existingSeedNote ? '' : existingSeedNote.value.trim();
   const existingSeedNoteLines = existingSeedNoteTrimmed ? existingSeedNoteTrimmed.split('\n') : [];
 
-  // key on `[location] name`
-  const getItemNoteKey = (_) => `[${_.location}] ${_.name}`;
+  // unique entry to include in notes based on event object
+  const getEventEntry = (_) => `[${_.location}] ${_.name} (${_.type})`;
 
   // start with existing seed note lines
   // only add if item key (getItemNoteKey) not found
   const combinedNotes = [...existingSeedNoteLines];
 
-  items.forEach((item) => {
-    const key = getItemNoteKey(item);
-    if (!!~existingSeedNoteTrimmed.indexOf(key)) {
+  events.forEach((event) => {
+    // skip event types that aren't to be included in notes
+    if (!NOTE_EVENT_TYPES[event.type]) return;
+
+    const entry = getEventEntry(event);
+    if (!!~existingSeedNoteTrimmed.indexOf(entry)) {
       // skip, item already accounted for
       // this will preserve rows where we add extra information, e.g. shop price, monster, etc.
     } else {
       // add this item row
-      combinedNotes.push(key);
+      combinedNotes.push(entry);
     }
   });
 
@@ -59,6 +62,12 @@ async function getSeedNote({ seed, version, items }) {
 
   return combinedNotes.join('\n');
 }
+
+const NOTE_EVENT_TYPES = {
+  item: true,
+  spell: true,
+  'unique-noticed': true,
+};
 
 const GRAPHQL_ENDPOINT = 'https://dcsseeds.herokuapp.com/v1/graphql';
 

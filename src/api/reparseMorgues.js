@@ -33,13 +33,13 @@ module.exports = async (req, res) => {
       // submit each morgue again?
       // return fetch(`http://localhost:3000/api/submit?morgue=${seedPlayer.morgue}`)
 
-      const { items, ...remainingParsedMorgueFields } = await parseMorgue(seedPlayer.morgue);
+      const { events, ...remainingParsedMorgueFields } = await parseMorgue(seedPlayer.morgue);
 
       // update seed notes
       const updateSeedNotesResults = await updateSeedNotes({
         seed: remainingParsedMorgueFields.value,
         version: remainingParsedMorgueFields.version,
-        items,
+        events,
       });
 
       // update morgue with remaining parsed morgue fields

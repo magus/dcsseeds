@@ -169,7 +169,7 @@ async function addMorgue({ player, morgue }) {
     // collect items to send in a single mutation call
     const items = [];
 
-    data.items.forEach((item) => {
+    data.events.forEach((item) => {
       // only allow certain parse morgue item types
       // e.g. type: 'item'
       if (!PARSE_MORGUE_ITEM_TYPES[item.type]) return;

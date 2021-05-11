@@ -32,7 +32,7 @@ module.exports = async (req, res) => {
       runes,
       runeCount,
 
-      items,
+      events,
       isMorgue,
     } = await parseMorgue(morgue);
 
@@ -68,7 +68,7 @@ module.exports = async (req, res) => {
     });
 
     // mutate to create seed notes
-    const updateSeedNotesResults = await updateSeedNotes({ seed: value, version, items });
+    const updateSeedNotesResults = await updateSeedNotes({ seed: value, version, events });
 
     const [resultSeedPlayer] = createSeedPlayerResult.data.insert_seed_player.returning;
     const [resultSeedNote] = updateSeedNotesResults.data.insert_seed_note.returning;
