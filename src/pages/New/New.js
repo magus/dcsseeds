@@ -87,6 +87,10 @@ export default function New(props) {
     };
   }
 
+  function handleInputChange(event) {
+    set_value(event.target.value);
+  }
+
   if (activeSeedsQuery.loading) {
     return (
       <Container>
@@ -180,7 +184,8 @@ export default function New(props) {
         <Select title="Version" onChange={handleVersion} options={VERSION_CHOICES} selected={version} />
 
         <GroupTitle>Seed</GroupTitle>
-        <input disabled value={value} />
+
+        <input value={value} onChange={handleInputChange} />
 
         <Instructions>
           Clicking <b>Save Seed</b> below will publish this seed to the Home page.
