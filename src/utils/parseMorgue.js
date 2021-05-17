@@ -318,6 +318,7 @@ function getAllMorgueNoteEvents(morgueNotes) {
       // Idenfitied: https://regexr.com/5csa7
       // Found: https://regexr.com/5csaa
       const found = morgueNote.note.match(/Found the (.*)?/);
+      const acquirement = morgueNote.note.match(/Acquired the (.*)?/);
       const gift = morgueNote.note.match(/gifted it to you/);
 
       // idents
@@ -448,6 +449,10 @@ function getAllMorgueNoteEvents(morgueNotes) {
           createEvent('spell', spell, morgueNote.loc);
         });
         createEvent('spell', lastSpell, morgueNote.loc);
+      } else if (acquirement) {
+        const [, item] = acquirement;
+        createEvent('acquirement', item, morgueNote.loc);
+        createEvent('item', item, morgueNote.loc);
       } else if (found) {
         const [, item] = found;
         createEvent('found', item, morgueNote.loc);
