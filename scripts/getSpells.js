@@ -16,14 +16,13 @@ const fs = require('fs').promises;
 })();
 
 function tokenize(code) {
-  let result = [];
-
-  let row = 1;
-  let col = 1;
-
-  let c = 0;
+  const result = [];
 
   const currentToken = () => result[result.length - 1];
+
+  let c = 0;
+  let row = 1;
+  let col = 1;
 
   function peek(i = 1) {
     return code.substr(c, i);
@@ -67,6 +66,19 @@ function tokenize(code) {
   }
 
   while (peek()) {
+    // keywords
+    for (let i = 0; i < KYWRDS.length; i++) {
+      let keyword = KYWRDS[i];
+      if (isTokenNext(keyword)) {
+        addToken(keyword);
+      }
+    }
+
+    while (TKNS.Number.re.test(peek())) {
+      continueToken(TKNS.Number);
+    }
+
+    // single line characters
     switch (peek()) {
       // new line special case; increment row and reset col
       case TKNS.NewLine.value:
@@ -88,11 +100,26 @@ function tokenize(code) {
 
           // eat characters for comment until we hit a new line
           while (!isTokenNext(TKNS.NewLine)) {
-            continueToken(TKNS.Comment);
+            currentToken().value += next();
           }
         } else {
           addToken(TKNS.Divide);
         }
+        break;
+      }
+
+      case TKNS.Quote.value: {
+        // eat the quote character that starts the string
+        addToken(TKNS.StringLiteral);
+
+        // eat characters inside quotes until we hit closing quote
+        while (!isTokenNext(TKNS.Quote)) {
+          console.debug(peek());
+          continueToken(TKNS.StringLiteral);
+        }
+
+        // add closing quote to prevent infinite loop
+        continueToken(TKNS.StringLiteral);
         break;
       }
 
@@ -131,13 +158,17 @@ const TKNS = buildTokenKinds({
   Identifier: { value: null },
   Whitespace: { value: null },
   Comment: { value: null },
+  StringLiteral: { value: null },
+  Number: { value: null, re: /[0-9\.]/ },
 
   // keywords
-  Pragma: { value: '#pragma' },
-  IncludeLib: { value: '#include' },
-  IfDef: { value: '#if' },
-  IfDefEnd: { value: '#endif' },
+  Static: { value: 'static' },
+  Const: { value: 'const' },
   Using: { value: 'using' },
+  DefPragma: { value: '#pragma' },
+  DefInclude: { value: '#include' },
+  DefIfStart: { value: '#if' },
+  DefIfEnd: { value: '#endif' },
 
   // single characters
   NewLine: { value: '\n' },
@@ -159,6 +190,13 @@ const TKNS = buildTokenKinds({
   BooleanEquals: { value: '==' },
   SingleLineComment: { value: '//' },
 });
+
+const KYWRDS = [
+  // force
+  TKNS.Static,
+  TKNS.Const,
+  TKNS.Using,
+];
 
 function buildTokenKinds(object) {
   Object.keys(object).forEach((key) => {
