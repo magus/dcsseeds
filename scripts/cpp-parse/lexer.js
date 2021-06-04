@@ -106,15 +106,15 @@ exports.lexer = function lexer(code) {
 
       case TKNS.Quote.value: {
         // eat the quote character that starts the string
+        next();
+        // begin string
         addToken(TKNS.String);
-
         // eat characters inside quotes until we hit closing quote
         while (!isTokenNext(TKNS.Quote)) {
           continueToken(TKNS.String);
         }
-
-        // add closing quote to prevent infinite loop
-        continueToken(TKNS.String);
+        // eat closing quote to prevent infinite loop
+        next();
         break;
       }
 
@@ -159,6 +159,16 @@ exports.lexer = function lexer(code) {
 
   // insert EOF token at end
   createToken(TKNS.EOF);
+
+  // convert any token values from strings (e.g. numbers)
+  result.forEach((token) => {
+    switch (token.type) {
+      case TKNS.Number.type:
+        token.value = Number(token.value);
+      default:
+      // do nothing
+    }
+  });
 
   return result;
 };
