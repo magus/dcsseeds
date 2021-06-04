@@ -29,8 +29,8 @@ exports.lexer = function lexer(code) {
   }
 
   function createToken(tkn) {
-    let kind = tkn.kind;
-    let token = { kind, value: '', row, col };
+    let type = tkn.type;
+    let token = { type, value: '', row, col };
     result.push(token);
   }
 
@@ -45,7 +45,7 @@ exports.lexer = function lexer(code) {
   }
 
   function continueToken(tkn) {
-    if (!currentToken() || currentToken().kind !== tkn.kind) {
+    if (!currentToken() || currentToken().type !== tkn.type) {
       createToken(tkn);
     }
 

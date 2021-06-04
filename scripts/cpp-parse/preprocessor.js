@@ -26,13 +26,13 @@ exports.preprocessor = function preprocessor(tokens) {
   }
 
   function isTokenNext(tkn) {
-    return peek().kind === tkn.kind;
+    return peek().type === tkn.type;
   }
 
   while (current < tokens.length) {
     let peekToken = peek();
-    switch (peekToken.kind) {
-      case TKNS.PreprocessIfStart.kind: {
+    switch (peekToken.type) {
+      case TKNS.PreprocessIfStart.type: {
         // read and process the if preprocessor and the tokens it wraps
         const include = false;
         while (!isTokenNext(TKNS.PreprocessIfEnd)) {
@@ -46,7 +46,7 @@ exports.preprocessor = function preprocessor(tokens) {
         break;
       }
 
-      case TKNS.PreprocessInclude.kind: {
+      case TKNS.PreprocessInclude.type: {
         // read and process the include preprocessor up until end of line
         next();
         while (!isTokenNext(TKNS.NewLine)) {
@@ -57,7 +57,7 @@ exports.preprocessor = function preprocessor(tokens) {
         break;
       }
 
-      case TKNS.PreprocessPragma.kind: {
+      case TKNS.PreprocessPragma.type: {
         // read and process the pragma preprocessor up until end of line
         next();
         while (!isTokenNext(TKNS.NewLine)) {
@@ -78,11 +78,11 @@ exports.preprocessor = function preprocessor(tokens) {
 };
 
 function filterTokens(tokens) {
-  return tokens.filter((t) => !DISCARD_TOKENS[t.kind]);
+  return tokens.filter((t) => !DISCARD_TOKENS[t.type]);
 }
 
 const DISCARD_TOKENS = {
-  [TKNS.Whitespace.kind]: true,
-  [TKNS.MultiLineComment.kind]: true,
-  [TKNS.SingleLineComment.kind]: true,
+  [TKNS.Whitespace.type]: true,
+  [TKNS.MultiLineComment.type]: true,
+  [TKNS.SingleLineComment.type]: true,
 };

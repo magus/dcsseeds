@@ -4,10 +4,6 @@ const { TKNS } = require('./TKNS');
 const { AST } = require('./AST');
 
 exports.parser = function parser(tokens) {
-  const ast = AST.Program({
-    body: [],
-  });
-
   let current = 0;
 
   function peek(i = 1) {
@@ -25,19 +21,19 @@ exports.parser = function parser(tokens) {
   }
 
   function isTokenNext(tkn) {
-    return peek() && peek().kind === tkn.kind;
+    return peek() && peek().type === tkn.type;
   }
 
   function parse() {
     let peekToken = peek();
 
     function parseObjectValue() {
-      const node = AST.ObjectValue({
+      const node = AST.ObjectValue.build({
         values: [],
       });
 
       while (!isTokenNext(TKNS.Comma)) {
-        if (peek().kind === TKNS.CurlyBracketEnd.kind) {
+        if (peek().type === TKNS.CurlyBracketEnd.type) {
           // kick out back to object
           return node;
         }
@@ -52,7 +48,7 @@ exports.parser = function parser(tokens) {
     }
 
     function parseObject() {
-      const node = AST.Object({
+      const node = AST.Object.build({
         fields: [],
       });
 
@@ -60,29 +56,29 @@ exports.parser = function parser(tokens) {
       next();
 
       while (!isTokenNext(TKNS.CurlyBracketEnd)) {
-        switch (peek().kind) {
-          case TKNS.CurlyBracketStart.kind:
+        switch (peek().type) {
+          case TKNS.CurlyBracketStart.type:
             node.fields.push(parseObject());
             break;
 
-          case TKNS.Identifier.kind:
-          case TKNS.String.kind:
-          case TKNS.Number.kind: {
+          case TKNS.Identifier.type:
+          case TKNS.String.type:
+          case TKNS.Number.type: {
             node.fields.push(parseObjectValue());
             break;
           }
 
           // skip commas between elements
-          case TKNS.Comma.kind:
+          case TKNS.Comma.type:
             next();
             break;
           // skip new lines so we can parse objects that start on next line
-          case TKNS.NewLine.kind:
+          case TKNS.NewLine.type:
             next();
             break;
 
           default:
-            throw new ParserError('Unexpected token during parseObject', peek().kind);
+            throw new ParserError('Unexpected token during parseObject', peek().type);
         }
       }
 
@@ -92,35 +88,54 @@ exports.parser = function parser(tokens) {
       return node;
     }
 
-    function parseAssignmentName() {
-      const node = AST.AssignmentName({
+    function parseAssignment() {
+      // gather left of assignment token (keywords, types, etc.)
+      const types = parseAssignmentLHS();
+      // pull off identifier just before assignment token
+      const [name] = types.tokens.splice(-1);
+      next(); // eat assignment equal symbol
+      const value = parseAssignmentRHS();
+
+      return AST.Assignment.build({ types, name, value });
+    }
+
+    function parseAssignmentLHS() {
+      const node = AST.AssignmentName.build({
         tokens: [],
       });
 
       while (!isTokenNext(TKNS.Assignment)) {
-        node.tokens.push(next());
+        switch (peek().type) {
+          // skip new lines
+          case TKNS.NewLine.type:
+            next();
+            break;
+
+          default:
+            node.tokens.push(next());
+        }
       }
 
       return node;
     }
 
-    function parseAssignmentValue() {
-      const node = AST.AssignmentValue({
+    function parseAssignmentRHS() {
+      const node = AST.AssignmentValue.build({
         value: null,
       });
 
       while (!isTokenNext(TKNS.Semicolon)) {
-        switch (peek().kind) {
-          case TKNS.CurlyBracketStart.kind:
+        switch (peek().type) {
+          case TKNS.CurlyBracketStart.type:
             node.value = parseObject();
             break;
           // skip new lines so we can parse objects that start on next line
-          case TKNS.NewLine.kind:
+          case TKNS.NewLine.type:
             next();
             break;
 
           default:
-            throw new ParserError('Unexpected token during parseAssignmentValue', peek());
+            throw new ParserError('Unexpected token during parseAssignmentRHS', peek());
         }
       }
 
@@ -128,7 +143,7 @@ exports.parser = function parser(tokens) {
     }
 
     function parseCallExpression() {
-      const node = AST.CallExpression({
+      const node = AST.CallExpression.build({
         name: next(), // eat the identifier as the name
         params: [],
       });
@@ -147,7 +162,7 @@ exports.parser = function parser(tokens) {
     }
 
     function parseExpression() {
-      const node = AST.Expression({
+      const node = AST.Expression.build({
         params: [],
       });
 
@@ -158,9 +173,9 @@ exports.parser = function parser(tokens) {
           continue;
         }
 
-        switch (peek().kind) {
-          case TKNS.Identifier.kind: {
-            const parenAfterNext = peek(2)[1].kind === TKNS.ParenStart.kind;
+        switch (peek().type) {
+          case TKNS.Identifier.type: {
+            const parenAfterNext = peek(2)[1].type === TKNS.ParenStart.type;
             if (parenAfterNext) {
               node.params.push(parseCallExpression());
             } else {
@@ -169,13 +184,13 @@ exports.parser = function parser(tokens) {
             break;
           }
 
-          case TKNS.Plus.kind:
-          case TKNS.Number.kind:
+          case TKNS.Plus.type:
+          case TKNS.Number.type:
             node.params.push(next());
             break;
 
           // kick out to let parent handle paren closing
-          case TKNS.ParenEnd.kind:
+          case TKNS.ParenEnd.type:
             return node;
             break;
 
@@ -192,18 +207,14 @@ exports.parser = function parser(tokens) {
     }
 
     // look ahead for assignments (5 token lookahead for now)
-    if (peek(6).find((t) => t.kind === TKNS.Assignment.kind)) {
-      const name = parseAssignmentName();
-      next(); // eat assignment equal symbol
-      const value = parseAssignmentValue();
-
-      return AST.Assignment({ name, value });
+    if (peek(6).find((t) => t.type === TKNS.Assignment.type)) {
+      return parseAssignment();
     }
 
-    switch (peekToken.kind) {
-      case TKNS.Using.kind: {
+    switch (peekToken.type) {
+      case TKNS.Using.type: {
         next();
-        const node = AST.Using({
+        const node = AST.Using.build({
           tokens: [],
         });
 
@@ -213,17 +224,17 @@ exports.parser = function parser(tokens) {
         return node;
       }
 
-      case TKNS.Identifier.kind: {
+      case TKNS.Identifier.type: {
         return parseExpression();
       }
 
       // skip these tokens
-      case TKNS.NewLine.kind:
-      case TKNS.Semicolon.kind:
+      case TKNS.NewLine.type:
+      case TKNS.Semicolon.type:
         next();
         return;
       // EOF continue to end
-      case TKNS.EOF.kind:
+      case TKNS.EOF.type:
         next();
         return;
 
@@ -231,6 +242,11 @@ exports.parser = function parser(tokens) {
         throw new ParserError('Unexpected token during parse', peekToken);
     }
   }
+
+  // kickoff building the ast program
+  const ast = AST.Program.build({
+    body: [],
+  });
 
   while (current < tokens.length) {
     const node = parse();

@@ -48,8 +48,8 @@ exports.TKNS = buildTokenKinds({
 });
 
 function buildTokenKinds(object) {
-  Object.keys(object).forEach((key) => {
-    object[key].kind = key;
+  Object.keys(object).forEach((type) => {
+    object[type].type = type;
   });
 
   return object;

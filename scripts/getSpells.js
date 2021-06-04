@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const fs = require('fs').promises;
-const { cpp } = require('./cpp-parse/cpp');
+const { CPPCompiler } = require('./cpp-parse/CPPCompiler');
 
 // cd projRoot/crawl
 // git checkout <version>
@@ -11,14 +11,24 @@ const { cpp } = require('./cpp-parse/cpp');
 // if a spell is not available in spellbook we can consider it not in the game
 
 (async function run() {
-  await parseFile('./crawl/crawl-ref/source/book-data.h');
+  const bookData = await parseFile('./crawl/crawl-ref/source/book-data.h');
+  bookData.traverse({
+    Assignment: {
+      enter(node, parent) {
+        if (node.name.value === 'spellbook_templates[]') {
+          console.debug('Assignment', 'enter', node.name.value);
+          debugger;
+        }
+      },
+    },
+  });
+
   await parseFile('./crawl/crawl-ref/source/spl-data.h');
 })();
 
 async function parseFile(filename) {
   let source = await readFile(filename);
-  let cppDebug = cpp(source);
-  console.info(cppDebug.ast);
+  return new CPPCompiler(source);
 }
 
 async function readFile(filename) {
