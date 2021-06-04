@@ -11,6 +11,31 @@ const { CPPCompiler } = require('./cpp-parse/CPPCompiler');
 // if a spell is not available in spellbook we can consider it not in the game
 
 (async function run() {
+  const spellIds = await getPlayerAvailableSpells();
+  console.debug('spellIds', spellIds.length);
+
+  const spellData = await getSpellData();
+  console.debug('spellData', Object.keys(spellData).length);
+
+  // now use spell data and spellIds to build the spells available in the game
+  const spells = {};
+  spellIds.sort().forEach((id) => {
+    spells[id] = spellData[id];
+    console.debug(spells[id]);
+  });
+
+  console.debug('SPELL NAMES\n\n');
+  const spellNames = new Set();
+  Object.values(spells).forEach((spell) => {
+    spellNames.add(spell.name);
+  });
+  const spellNamesAlpha = Array.from(spellNames).sort();
+  spellNamesAlpha.forEach((spellName) => {
+    console.debug(`"${capitalize(spellName)}",`);
+  });
+})();
+
+async function getPlayerAvailableSpells() {
   const spellIdsSet = new Set();
   const crawlBookData = await parseFile('./crawl/crawl-ref/source/book-data.h');
   crawlBookData.traverse({
@@ -33,10 +58,37 @@ const { CPPCompiler } = require('./cpp-parse/CPPCompiler');
     },
   });
 
-  const spellIds = Array.from(spellIdsSet);
-  console.debug('spellIds', spellIds.length);
+  return Array.from(spellIdsSet);
+}
+
+async function getSpellData() {
+  // struct spell_desc
+  // {
+  //   enum, spell name,
+  //   spell schools,
+  //   flags,
+  //   level,
+  //   power_cap,
+  //   min_range, max_range, (-1 if not applicable)
+  //   noise, effect_noise
+  //   tile
+  // }
+  const SPELL_DESC_FIELD = [
+    'id',
+    'name',
+    'schools',
+    'flags',
+    'level',
+    'powerCap',
+    'minRange',
+    'maxRange',
+    'noise',
+    'effectNoise',
+    'tile',
+  ];
 
   const spellData = {};
+
   const crawlSpellData = await parseFile('./crawl/crawl-ref/source/spl-data.h');
   crawlSpellData.traverse({
     Assignment: {
@@ -45,30 +97,6 @@ const { CPPCompiler } = require('./cpp-parse/CPPCompiler');
         let isObject = node.value.type === CPPCompiler.AST.Object.type;
         if (isSpellDataArray && isObject) {
           // each field of this array is a a `spell_desc` struct
-          // struct spell_desc
-          // {
-          //   enum, spell name,
-          //   spell schools,
-          //   flags,
-          //   level,
-          //   power_cap,
-          //   min_range, max_range, (-1 if not applicable)
-          //   noise, effect_noise
-          //   tile
-          // }
-          const SPELL_DESC_FIELD = [
-            'id',
-            'name',
-            'schools',
-            'flags',
-            'level',
-            'powerCap',
-            'minRange',
-            'maxRange',
-            'noise',
-            'effectNoise',
-            'tile',
-          ];
           node.value.fields.forEach((spell_desc) => {
             // create spell
             const spell = {};
@@ -93,25 +121,8 @@ const { CPPCompiler } = require('./cpp-parse/CPPCompiler');
     },
   });
 
-  console.debug('spellData', Object.keys(spellData).length);
-
-  // now use spell data and spellIds to build the spells available in the game
-  const spells = {};
-  spellIds.sort().forEach((id) => {
-    spells[id] = spellData[id];
-    console.debug(spells[id]);
-  });
-
-  console.debug('SPELL NAMES\n\n');
-  const spellNames = new Set();
-  Object.values(spells).forEach((spell) => {
-    spellNames.add(spell.name);
-  });
-  const spellNamesAlpha = Array.from(spellNames).sort();
-  spellNamesAlpha.forEach((spellName) => {
-    console.debug(`"${capitalize(spellName)}",`);
-  });
-})();
+  return spellData;
+}
 
 async function parseFile(filename) {
   let source = await readFile(filename);
