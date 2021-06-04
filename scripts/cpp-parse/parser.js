@@ -100,7 +100,7 @@ exports.parser = function parser(tokens) {
     }
 
     function parseAssignmentLHS() {
-      const node = AST.AssignmentName.build({
+      const node = AST.AssignmentTypes.build({
         tokens: [],
       });
 
@@ -120,14 +120,10 @@ exports.parser = function parser(tokens) {
     }
 
     function parseAssignmentRHS() {
-      const node = AST.AssignmentValue.build({
-        value: null,
-      });
-
       while (!isTokenNext(TKNS.Semicolon)) {
         switch (peek().type) {
           case TKNS.CurlyBracketStart.type:
-            node.value = parseObject();
+            return parseObject();
             break;
           // skip new lines so we can parse objects that start on next line
           case TKNS.NewLine.type:
@@ -138,8 +134,6 @@ exports.parser = function parser(tokens) {
             throw new ParserError('Unexpected token during parseAssignmentRHS', peek());
         }
       }
-
-      return node;
     }
 
     function parseCallExpression() {
