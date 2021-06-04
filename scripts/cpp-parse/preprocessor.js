@@ -43,6 +43,29 @@ exports.preprocessor = function preprocessor(tokens) {
         }
         // eat the ending TKNS.PreprocessIfEnd
         next();
+        break;
+      }
+
+      case TKNS.PreprocessInclude.kind: {
+        // read and process the include preprocessor up until end of line
+        next();
+        while (!isTokenNext(TKNS.NewLine)) {
+          next();
+        }
+        // eat ending new line
+        next();
+        break;
+      }
+
+      case TKNS.PreprocessPragma.kind: {
+        // read and process the pragma preprocessor up until end of line
+        next();
+        while (!isTokenNext(TKNS.NewLine)) {
+          next();
+        }
+        // eat ending new line
+        next();
+        break;
       }
 
       // continue by default
@@ -53,12 +76,6 @@ exports.preprocessor = function preprocessor(tokens) {
 
   return processedTokens;
 };
-
-function CPPParseTokenError(message, kind) {
-  const error = new Error(`[${kind}] ${message}`);
-  error.name = 'TokenError';
-  return error;
-}
 
 function filterTokens(tokens) {
   return tokens.filter((t) => !DISCARD_TOKENS[t.kind]);

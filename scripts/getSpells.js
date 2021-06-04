@@ -18,7 +18,7 @@ const { cpp } = require('./cpp-parse/cpp');
 async function parseFile(filename) {
   let source = await readFile(filename);
   let cppDebug = cpp(source);
-  console.info(cppDebug);
+  console.info(cppDebug.ast);
 }
 
 async function readFile(filename) {
