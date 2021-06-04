@@ -99,8 +99,17 @@ const { CPPCompiler } = require('./cpp-parse/CPPCompiler');
     spells[id] = spellData[id];
   });
 
-  console.debug({ spells });
-  debugger;
+  // console.debug({ spells });
+
+  console.debug('SPELL NAMES\n\n');
+  const spellNames = new Set();
+  Object.values(spells).forEach((spell) => {
+    spellNames.add(spell.name);
+  });
+  const spellNamesAlpha = Array.from(spellNames).sort();
+  spellNamesAlpha.forEach((spellName) => {
+    console.debug(`"${capitalize(spellName)}",`);
+  });
 })();
 
 async function parseFile(filename) {
@@ -111,4 +120,9 @@ async function parseFile(filename) {
 async function readFile(filename) {
   let buffer = await fs.readFile(filename, { encoding: 'utf8', flag: 'r' });
   return buffer.toString();
+}
+
+function capitalize(string) {
+  const [firstChar] = string;
+  return firstChar.toUpperCase() + string.toLowerCase().substr(1, string.length);
 }
