@@ -11,19 +11,96 @@ const { CPPCompiler } = require('./cpp-parse/CPPCompiler');
 // if a spell is not available in spellbook we can consider it not in the game
 
 (async function run() {
-  const bookData = await parseFile('./crawl/crawl-ref/source/book-data.h');
-  bookData.traverse({
+  const spellIdsSet = new Set();
+  const crawlBookData = await parseFile('./crawl/crawl-ref/source/book-data.h');
+  crawlBookData.traverse({
     Assignment: {
       enter(node, parent) {
-        if (node.name.value === 'spellbook_templates[]') {
-          console.debug('Assignment', 'enter', node.name.value);
-          debugger;
+        let isTemplatesArray = node.name.value === 'spellbook_templates[]';
+        let isObject = node.value.type === 'Object';
+        if (isTemplatesArray && isObject) {
+          // each field of this array is a spellbook template object
+          node.value.fields.forEach((template) => {
+            // each field of this spellbook template object is a spell name
+            template.fields.forEach((objVal) => {
+              const [identifier] = objVal.values;
+              // add spell name to spellbook set
+              spellIdsSet.add(identifier.value);
+            });
+          });
         }
       },
     },
   });
 
-  await parseFile('./crawl/crawl-ref/source/spl-data.h');
+  const spellIds = Array.from(spellIdsSet);
+  console.debug('spellIds', spellIds.length);
+
+  const spellData = {};
+  const crawlSpellData = await parseFile('./crawl/crawl-ref/source/spl-data.h');
+  crawlSpellData.traverse({
+    Assignment: {
+      enter(node, parent) {
+        let isSpellDataArray = node.name.value === 'spelldata[]';
+        let isObject = node.value.type === 'Object';
+        if (isSpellDataArray && isObject) {
+          // each field of this array is a a `spell_desc` struct
+          // struct spell_desc
+          // {
+          //   enum, spell name,
+          //   spell schools,
+          //   flags,
+          //   level,
+          //   power_cap,
+          //   min_range, max_range, (-1 if not applicable)
+          //   noise, effect_noise
+          //   tile
+          // }
+          const SPELL_DESC_FIELD = [
+            'id',
+            'name',
+            'schools',
+            'flags',
+            'level',
+            'powerCap',
+            'minRange',
+            'maxRange',
+            'noise',
+            'effectNoise',
+            'tile',
+          ];
+          node.value.fields.forEach((spell_desc) => {
+            // create spell
+            const spell = {};
+
+            spell_desc.fields.forEach((spell_desc_field, i) => {
+              const spellDescFieldValues = spell_desc_field.values;
+              if (spellDescFieldValues.length === 1) {
+                const [node] = spellDescFieldValues;
+                spell[SPELL_DESC_FIELD[i]] = node.value;
+              } else {
+                spell[SPELL_DESC_FIELD[i]] = spellDescFieldValues.map((node) => node.value).filter((v) => v !== '|');
+              }
+            });
+
+            // add spell to spell data by id (enum)
+            spellData[spell.id] = spell;
+          });
+        }
+      },
+    },
+  });
+
+  console.debug('spellData', Object.keys(spellData).length);
+
+  // now use spell data and spellIds to build the spells available in the game
+  const spells = {};
+  spellIds.sort().forEach((id) => {
+    spells[id] = spellData[id];
+  });
+
+  console.debug({ spells });
+  debugger;
 })();
 
 async function parseFile(filename) {
