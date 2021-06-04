@@ -17,7 +17,7 @@ const { CPPCompiler } = require('./cpp-parse/CPPCompiler');
     Assignment: {
       enter(node, parent) {
         let isTemplatesArray = node.name.value === 'spellbook_templates[]';
-        let isObject = node.value.type === 'Object';
+        let isObject = node.value.type === CPPCompiler.AST.Object.type;
         if (isTemplatesArray && isObject) {
           // each field of this array is a spellbook template object
           node.value.fields.forEach((template) => {
@@ -42,7 +42,7 @@ const { CPPCompiler } = require('./cpp-parse/CPPCompiler');
     Assignment: {
       enter(node, parent) {
         let isSpellDataArray = node.name.value === 'spelldata[]';
-        let isObject = node.value.type === 'Object';
+        let isObject = node.value.type === CPPCompiler.AST.Object.type;
         if (isSpellDataArray && isObject) {
           // each field of this array is a a `spell_desc` struct
           // struct spell_desc
@@ -79,7 +79,9 @@ const { CPPCompiler } = require('./cpp-parse/CPPCompiler');
                 const [node] = spellDescFieldValues;
                 spell[SPELL_DESC_FIELD[i]] = node.value;
               } else {
-                spell[SPELL_DESC_FIELD[i]] = spellDescFieldValues.map((node) => node.value).filter((v) => v !== '|');
+                spell[SPELL_DESC_FIELD[i]] = spellDescFieldValues
+                  .filter((n) => n.type !== CPPCompiler.TKNS.BitwiseOr.type)
+                  .map((node) => node.value);
               }
             });
 
@@ -97,9 +99,8 @@ const { CPPCompiler } = require('./cpp-parse/CPPCompiler');
   const spells = {};
   spellIds.sort().forEach((id) => {
     spells[id] = spellData[id];
+    console.debug(spells[id]);
   });
-
-  // console.debug({ spells });
 
   console.debug('SPELL NAMES\n\n');
   const spellNames = new Set();
