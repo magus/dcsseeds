@@ -116,8 +116,8 @@ exports.lexer = function lexer(code) {
       case TKNS.Quote.value: {
         // eat the quote character that starts the string
         next();
-        // begin string
-        addToken(TKNS.String);
+        // begin empty string token
+        createToken(TKNS.String);
         // eat characters inside quotes until we hit closing quote
         while (!isTokenNext(TKNS.Quote)) {
           continueToken(TKNS.String);
