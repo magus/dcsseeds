@@ -5,22 +5,30 @@ const { CPPCompiler } = require('./cpp-parse/CPPCompiler');
 
 // cd projRoot/crawl
 // git checkout <version>
-// grab spellbook data from crawl-ref/source/book-data.h
-// grab spell data from crawl-ref/source/spl-data.h
-// build list of all spells currently available in spellbooks
-// if a spell is not available in spellbook we can consider it not in the game
 
 (async function run() {
+  // await getSpellUtils();
+
+  // grab spellbook data from crawl/crawl-ref/source/book-data.h
   const spellIds = await getPlayerAvailableSpells();
   console.debug('spellIds', spellIds.length);
 
+  // grab spell data from crawl/crawl-ref/source/spl-data.h
   const spellData = await getSpellData();
   console.debug('spellData', Object.keys(spellData).length);
 
-  // now use spell data and spellIds to build the spells available in the game
+  // grab gui icon maps from crawl/crawl-ref/source/rltiles/dc-spells.txt
+  const spellTileMap = await getSpellTileMap();
+  // console.debug({ spellTileMap });
+
+  // build list of all spells currently available in spellbooks (available to players in the game)
+  // if a spell is not available in spellbooks template we can exclude it for this consideration
   const spells = {};
   spellIds.sort().forEach((id) => {
-    spells[id] = spellData[id];
+    spells[id] = {
+      ...spellData[id],
+      tilePath: spellTileMap.get(id),
+    };
     console.debug(spells[id]);
   });
 
@@ -62,17 +70,8 @@ async function getPlayerAvailableSpells() {
 }
 
 async function getSpellData() {
-  // struct spell_desc
-  // {
-  //   enum, spell name,
-  //   spell schools,
-  //   flags,
-  //   level,
-  //   power_cap,
-  //   min_range, max_range, (-1 if not applicable)
-  //   noise, effect_noise
-  //   tile
-  // }
+  // See `struct spell_desc` in crawl/crawl-ref/source/spl-util.cc
+
   const SPELL_DESC_FIELD = [
     'id',
     'name',
@@ -122,6 +121,44 @@ async function getSpellData() {
   });
 
   return spellData;
+}
+
+async function getSpellUtils() {
+  // TODO requires updates to lexer and parser to handle more tokens
+  debugger;
+  const spellUtils = await parseFile('./crawl/crawl-ref/source/spl-util.cc');
+  console.debug({ spellUtils });
+}
+
+async function getSpellTileMap() {
+  const TILE_DIR = './crawl/crawl-ref/source/rltiles';
+  const DIR_RE = /^%sdir (.*)$/;
+
+  const tileMap = new Map();
+  let dir = null;
+  const spellTiles = await readFile(`${TILE_DIR}/dc-spells.txt`);
+  spellTiles.split('\n').forEach((line) => {
+    // handle directory lines
+    // directory lines specify we are starting a new icon tile mapping
+    // e.g. %sdir gui/spells/conjuration
+    const dirMatch = line.match(DIR_RE);
+    if (dirMatch) {
+      [, dir] = dirMatch;
+    } else {
+      // handle tile mapping lines
+      // tile mapping lines specify the icon filename and the spell id (enum)
+      // e.g. orb_of_destruction IOOD
+      if (line) {
+        const [filename, id] = line.split(' ');
+        const spellId = `SPELL_${id}`;
+        const tilePath = `${TILE_DIR}/${dir}/${filename}.png`;
+        tileMap.set(spellId, tilePath);
+        // console.debug({ spellId, tilePath });
+      }
+    }
+  });
+
+  return tileMap;
 }
 
 async function parseFile(filename) {
