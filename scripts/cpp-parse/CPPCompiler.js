@@ -5,7 +5,12 @@ const { preprocessor } = require('./preprocessor');
 const { parser } = require('./parser');
 const { traverser } = require('./traverser');
 
-exports.CPPCompiler = function CPPCompiler(source) {
+const { TKNS } = require('./TKNS');
+const { AST } = require('./AST');
+
+exports.CPPCompiler = CPPCompiler;
+
+function CPPCompiler(source) {
   let tokens = lexer(source);
   let processedTokens = preprocessor(tokens);
   let ast = parser(processedTokens);
@@ -17,4 +22,7 @@ exports.CPPCompiler = function CPPCompiler(source) {
   }
 
   return { __data, traverse };
-};
+}
+
+CPPCompiler.TKNS = TKNS;
+CPPCompiler.AST = AST;
