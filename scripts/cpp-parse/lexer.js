@@ -52,6 +52,11 @@ exports.lexer = function lexer(code) {
     readToken(tkn);
   }
 
+  function handleNewLine() {
+    row++;
+    col = 1;
+  }
+
   while (peek()) {
     // keywords
     for (let i = 0; i < KYWRDS.length; i++) {
@@ -70,8 +75,7 @@ exports.lexer = function lexer(code) {
       // new line special case; increment row and reset col
       case TKNS.NewLine.value:
         addToken(TKNS.NewLine);
-        row++;
-        col = 1;
+        handleNewLine();
         break;
 
       // process whitespace characters
@@ -87,7 +91,12 @@ exports.lexer = function lexer(code) {
 
           // eat characters for comment until we hit multiline comment end
           while (!isTokenNext(TKNS.MultiLineCommentEnd)) {
-            currentToken().value += next();
+            switch (peek()) {
+              case TKNS.NewLine.value:
+                handleNewLine();
+              default:
+                currentToken().value += next();
+            }
           }
           currentToken().value += next(TKNS.MultiLineCommentEnd.value.length);
         } else if (isTokenNext(TKNS.SingleLineComment)) {
