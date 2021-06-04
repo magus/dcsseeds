@@ -33,12 +33,26 @@ exports.parser = function parser(tokens) {
       });
 
       while (!isTokenNext(TKNS.Comma)) {
-        if (peek().type === TKNS.CurlyBracketEnd.type) {
-          // kick out back to object
-          return node;
-        }
+        switch (peek().type) {
+          case TKNS.CurlyBracketEnd.type:
+            // kick out back to object
+            return node;
 
-        node.values.push(next());
+          // skip new lines so we can parse objects that start on next line
+          case TKNS.NewLine.type:
+            next();
+            break;
+
+          case TKNS.Identifier.type:
+          case TKNS.String.type:
+          case TKNS.Number.type:
+          case TKNS.BitwiseOr.type:
+            node.values.push(next());
+            break;
+
+          default:
+            throw new ParserError('Unexpected token during parseObjectValue', peek().type);
+        }
       }
 
       // eat comma
