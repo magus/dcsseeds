@@ -3,6 +3,9 @@
 const fs = require('fs').promises;
 const { CPPCompiler } = require('./cpp-parse/CPPCompiler');
 
+const VERSION = '0.26.1';
+const GITHUB_RAW = `https://raw.githubusercontent.com/crawl/crawl/${VERSION}`;
+
 // cd projRoot/crawl
 // git checkout <version>
 
@@ -27,14 +30,17 @@ const { CPPCompiler } = require('./cpp-parse/CPPCompiler');
   spellIds.sort().forEach((id) => {
     let spell = spellData[id];
 
+    let tilePath = spellTileMap.get(spell.tileId);
+
     spell = spells[id] = {
       ...spell,
-      tilePath: spellTileMap.get(spell.tileId),
+      localTilePath: `./crawl/${tilePath}`,
+      githubTilePath: `${GITHUB_RAW}/${tilePath}`,
     };
 
-    if (!spell.tilePath) {
+    if (!spell.localTilePath) {
       console.error({ spell });
-      throw new Error(`[${spell.id}] missing tilepath`);
+      throw new Error(`[${spell.id}] missing localTilePath`);
     }
 
     console.debug(spell);
@@ -77,22 +83,22 @@ async function getPlayerAvailableSpells() {
   return Array.from(spellIdsSet);
 }
 
-async function getSpellData() {
-  // See `struct spell_desc` in crawl/crawl-ref/source/spl-util.cc
-  const SPELL_DESC_FIELD = [
-    'id',
-    'name',
-    'schools',
-    'flags',
-    'level',
-    'powerCap',
-    'minRange',
-    'maxRange',
-    'noise',
-    'effectNoise',
-    'tileId',
-  ];
+// See `struct spell_desc` in crawl/crawl-ref/source/spl-util.cc
+const SPELL_DESC_FIELD = [
+  'id',
+  'name',
+  'schools',
+  'flags',
+  'level',
+  'powerCap',
+  'minRange',
+  'maxRange',
+  'noise',
+  'effectNoise',
+  'tileId',
+];
 
+async function getSpellData() {
   const spellData = {};
 
   const crawlSpellData = await parseFile('./crawl/crawl-ref/source/spl-data.h');
@@ -119,6 +125,13 @@ async function getSpellData() {
               }
             });
 
+            // ensure schools and flags are always arrays
+            ensureArrayField(spell, 'schools');
+            ensureArrayField(spell, 'flags');
+
+            // parse spell schools
+            spell.schools = spell.schools.map((school) => SPSCHOOL[school].name);
+
             // correct tile id
             spell.tileId = re(spell.tileId, RE.tileId);
 
@@ -141,10 +154,10 @@ async function getSpellUtils() {
 }
 
 async function getSpellTileMap() {
-  const TILE_DIR = './crawl/crawl-ref/source/rltiles';
+  const TILE_DIR = 'crawl-ref/source/rltiles';
   const tileMap = new Map();
   let currentDir = null;
-  const spellTiles = await readFile(`${TILE_DIR}/dc-spells.txt`);
+  const spellTiles = await readFile(`./crawl/${TILE_DIR}/dc-spells.txt`);
   spellTiles.split('\n').forEach((line) => {
     // handle directory lines
     // directory lines specify we are starting a new icon tile mapping
@@ -197,3 +210,34 @@ const RE = {
   spellId: /^SPELL_(.*)$/,
   tileDir: /^%sdir (.*)$/,
 };
+
+// enum class spschool
+// See crawl/crawl-ref/source/spl-util.cc
+const SPSCHOOL = Object.freeze(
+  [
+    { name: 'Conjuration', id: 'conjuration' },
+    { name: 'Hexes', id: 'hexes' },
+    { name: 'Fire', id: 'fire' },
+    { name: 'Ice', id: 'ice' },
+    { name: 'Transmutation', id: 'transmutation' },
+    { name: 'Necromancy', id: 'necromancy' },
+    { name: 'Summoning', id: 'summoning' },
+    { name: 'Translocation', id: 'translocation' },
+    { name: 'Poison', id: 'poison' },
+    { name: 'Earth', id: 'earth' },
+    { name: 'Air', id: 'air' },
+    { name: 'Random', id: 'random' },
+    { name: 'None', id: 'none' },
+  ].reduce((spschools, data) => {
+    const { name, id } = data;
+    const codeEnum = `spschool::${id}`;
+    spschools[codeEnum] = { id, name, codeEnum };
+    return spschools;
+  }, {}),
+);
+
+function ensureArrayField(object, field) {
+  if (!Array.isArray(object[field])) {
+    object[field] = [object[field]];
+  }
+}
