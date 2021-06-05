@@ -25,11 +25,19 @@ const { CPPCompiler } = require('./cpp-parse/CPPCompiler');
   // if a spell is not available in spellbooks template we can exclude it for this consideration
   const spells = {};
   spellIds.sort().forEach((id) => {
-    spells[id] = {
-      ...spellData[id],
-      tilePath: spellTileMap.get(id),
+    let spell = spellData[id];
+
+    spell = spells[id] = {
+      ...spell,
+      tilePath: spellTileMap.get(spell.tileId),
     };
-    console.debug(spells[id]);
+
+    if (!spell.tilePath) {
+      console.error({ spell });
+      throw new Error(`[${spell.id}] missing tilepath`);
+    }
+
+    console.debug(spell);
   });
 
   console.debug('SPELL NAMES\n\n');
@@ -71,7 +79,6 @@ async function getPlayerAvailableSpells() {
 
 async function getSpellData() {
   // See `struct spell_desc` in crawl/crawl-ref/source/spl-util.cc
-
   const SPELL_DESC_FIELD = [
     'id',
     'name',
@@ -83,7 +90,7 @@ async function getSpellData() {
     'maxRange',
     'noise',
     'effectNoise',
-    'tile',
+    'tileId',
   ];
 
   const spellData = {};
@@ -112,6 +119,9 @@ async function getSpellData() {
               }
             });
 
+            // correct tile id
+            spell.tileId = re(spell.tileId, RE.tileId);
+
             // add spell to spell data by id (enum)
             spellData[spell.id] = spell;
           });
@@ -132,28 +142,25 @@ async function getSpellUtils() {
 
 async function getSpellTileMap() {
   const TILE_DIR = './crawl/crawl-ref/source/rltiles';
-  const DIR_RE = /^%sdir (.*)$/;
-
   const tileMap = new Map();
-  let dir = null;
+  let currentDir = null;
   const spellTiles = await readFile(`${TILE_DIR}/dc-spells.txt`);
   spellTiles.split('\n').forEach((line) => {
     // handle directory lines
     // directory lines specify we are starting a new icon tile mapping
     // e.g. %sdir gui/spells/conjuration
-    const dirMatch = line.match(DIR_RE);
-    if (dirMatch) {
-      [, dir] = dirMatch;
+    let lineDir = re(line, RE.tileDir);
+    if (lineDir) {
+      currentDir = lineDir;
     } else {
       // handle tile mapping lines
-      // tile mapping lines specify the icon filename and the spell id (enum)
+      // tile mapping lines specify the icon filename and the spell tile id
       // e.g. orb_of_destruction IOOD
       if (line) {
-        const [filename, id] = line.split(' ');
-        const spellId = `SPELL_${id}`;
-        const tilePath = `${TILE_DIR}/${dir}/${filename}.png`;
-        tileMap.set(spellId, tilePath);
-        // console.debug({ spellId, tilePath });
+        const [filename, tileId] = line.split(' ');
+        const tilePath = `${TILE_DIR}/${currentDir}/${filename}.png`;
+        tileMap.set(tileId, tilePath);
+        // console.debug({ tileId, tilePath });
       }
     }
   });
@@ -175,3 +182,18 @@ function capitalize(string) {
   const [firstChar] = string;
   return firstChar.toUpperCase() + string.toLowerCase().substr(1, string.length);
 }
+
+function re(string, regex) {
+  const match = string.match(regex);
+  if (match) {
+    let [, firstGroup] = match;
+    return firstGroup;
+  }
+  return null;
+}
+
+const RE = {
+  tileId: /^TILEG_(.*)$/,
+  spellId: /^SPELL_(.*)$/,
+  tileDir: /^%sdir (.*)$/,
+};
