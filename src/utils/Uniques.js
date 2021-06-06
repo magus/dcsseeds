@@ -1,5 +1,12 @@
+// Some things we consider uniques aren't really uniques
+// i.e. Lernaean hydra, Royal Jelly, Serpent of Hell
+// first pulled from https://github.com/crawl/crawl/blob/0.26.1/crawl-ref/source/dat/database/montitle.txt
+// but this might not be the best source
+
 // TODO: Programmatically pull from this file
-// See https://github.com/crawl/crawl/blob/master/crawl-ref/source/dat/database/montitle.txt
+// https://github.com/crawl/crawl/blob/0.26.1/crawl-ref/source/mon-data.h
+// M_UNIQUE flag indicates uniques
+
 const UniquesNames = [
   'Agnes',
   'Aizul',
