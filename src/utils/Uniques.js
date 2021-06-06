@@ -1,3 +1,4 @@
+// TODO: Programmatically pull from this file
 // See https://github.com/crawl/crawl/blob/master/crawl-ref/source/dat/database/montitle.txt
 const UniquesNames = [
   'Agnes',
