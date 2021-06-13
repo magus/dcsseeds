@@ -193,6 +193,11 @@ exports.lexer = function lexer(code) {
     switch (token.type) {
       case TKNS.Number.type:
         token.value = Number(token.value);
+        break;
+      case TKNS.BooleanTrue.type:
+      case TKNS.BooleanFalse.type:
+        token.value = Boolean(token.value);
+        break;
       default:
       // do nothing
     }
@@ -207,6 +212,8 @@ const KYWRDS = [
   TKNS.Struct,
   TKNS.Const,
   TKNS.Using,
+  TKNS.BooleanTrue,
+  TKNS.BooleanFalse,
   TKNS.PreprocessDefine,
   TKNS.PreprocessPragma,
   TKNS.PreprocessInclude,

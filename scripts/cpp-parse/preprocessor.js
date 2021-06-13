@@ -5,124 +5,10 @@ const { TKNS } = require('./TKNS');
 const { AST } = require('./AST');
 
 exports.preprocessor = function preprocessor(tokens) {
-  const { defines, processedTokens } = first_preprocessPass(tokens);
+  const result = first_preprocessPass(tokens);
 
-  // second pass to replace all defines
-  const secondPass = second_preprocessPass(defines, processedTokens);
-
-  return secondPass;
+  return result;
 };
-
-function second_preprocessPass(defines, tokens) {
-  let processedTokens = [];
-
-  let current = 0;
-
-  function peek(i = 1) {
-    if (i === 1) {
-      return tokens[current];
-    }
-
-    return tokens.slice(current, current + i);
-  }
-
-  function next(i = 1) {
-    let peekResult = peek(i);
-    current += i;
-    return peekResult;
-  }
-
-  function isTokenNext(tkn) {
-    return peek().type === tkn.type;
-  }
-
-  while (current < tokens.length) {
-    switch (peek().type) {
-      case TKNS.Identifier.type: {
-        // is this a #define ?
-        const define = defines[peek().value];
-        if (define) {
-          // eat the identifier which is the define name
-          next();
-
-          if (peek().type === TKNS.ParenStart.type) {
-            // this is a define with args, do we have expected args?
-            // console.debug('define', define.name, define.args);
-
-            if (peek().type === TKNS.ParenStart.type) {
-              function resetArg() {
-                const arg = [];
-                args.push(arg);
-                return arg;
-              }
-
-              const args = [];
-              let currentArg = resetArg();
-
-              // eat start paren
-              next();
-              while (!isTokenNext(TKNS.ParenEnd)) {
-                switch (peek().type) {
-                  // eat comma and reset arg
-                  case TKNS.Comma.type: {
-                    // eat the comma
-                    next();
-                    // reset currentArg
-                    currentArg = resetArg();
-
-                    break;
-                  }
-
-                  default:
-                    // capture all tokens into the current arg
-                    currentArg.push(next());
-                }
-              }
-              // eat end paren
-              next();
-
-              if (args.length !== define.args.length) {
-                throw new PreprocessorError('Unexpected args', { args, define });
-              }
-
-              // replace args in define.tokens and push onto processedTokens
-              const definedTokens = [];
-              define.tokens.forEach((token) => {
-                if (token.type === TKNS.Identifier.type) {
-                  for (let i = 0; i < define.args.length; i++) {
-                    const arg = define.args[i];
-
-                    // this token is an identifier with same name as arg
-                    // push the parsed arg above in its place
-                    if (token.value === arg) {
-                      definedTokens.push(...clone(args[i]));
-                      // skip ahead and process next token
-                      return;
-                    }
-                  }
-                }
-
-                // if we got to this point it wasn't a named arg of the define
-                // ... just forward the token
-                definedTokens.push(token);
-              });
-
-              // push the definedTokens onto processedTokens
-              processedTokens.push(...definedTokens);
-            }
-          } else {
-            processedTokens.push(...define.tokens);
-          }
-        }
-      }
-
-      // continue by default
-      default:
-        processedTokens.push(next());
-    }
-  }
-  return { defines, processedTokens };
-}
 
 function first_preprocessPass(tokens) {
   const defines = {};
@@ -199,6 +85,17 @@ function first_preprocessPass(tokens) {
           break;
         }
 
+        // handle nested #define macros
+        case TKNS.Identifier.type: {
+          const defineTokens = preprocessDefine();
+          if (defineTokens) {
+            node.tokens.push(...defineTokens);
+          } else {
+            node.tokens.push(next());
+          }
+          break;
+        }
+
         // ignore parens
         case TKNS.ParenStart.type:
         case TKNS.ParenEnd.type:
@@ -216,6 +113,87 @@ function first_preprocessPass(tokens) {
 
     // store defined value for parser
     defines[node.name] = node;
+  }
+
+  function preprocessDefine() {
+    // is this a #define ?
+    const define = defines[peek().value];
+    if (!define) {
+      return;
+    }
+
+    // eat the identifier which is the define name
+    next();
+
+    if (peek().type === TKNS.ParenStart.type) {
+      // this is a define with args, do we have expected args?
+      // console.debug('define', define.name, define.args);
+
+      if (peek().type === TKNS.ParenStart.type) {
+        function resetArg() {
+          const arg = [];
+          args.push(arg);
+          return arg;
+        }
+
+        const args = [];
+        let currentArg = resetArg();
+
+        // eat start paren
+        next();
+        while (!isTokenNext(TKNS.ParenEnd)) {
+          switch (peek().type) {
+            // eat comma and reset arg
+            case TKNS.Comma.type: {
+              // eat the comma
+              next();
+              // reset currentArg
+              currentArg = resetArg();
+
+              break;
+            }
+
+            default:
+              // capture all tokens into the current arg
+              currentArg.push(next());
+          }
+        }
+        // eat end paren
+        next();
+
+        if (args.length !== define.args.length) {
+          throw new PreprocessorError('Unexpected args', { args, define });
+        }
+
+        // replace args in define.tokens and push onto processedTokens
+        const definedTokens = [];
+        define.tokens.forEach((token) => {
+          if (token.type === TKNS.Identifier.type) {
+            for (let i = 0; i < define.args.length; i++) {
+              const arg = define.args[i];
+
+              // this token is an identifier with same name as arg
+              // push the parsed arg above in its place
+              if (token.value === arg) {
+                definedTokens.push(...clone(args[i]));
+                // skip ahead and process next token
+                return;
+              }
+            }
+          }
+
+          // if we got to this point it wasn't a named arg of the define
+          // ... just forward the token
+          definedTokens.push(token);
+        });
+
+        return definedTokens;
+      }
+    } else {
+      return define.tokens;
+    }
+
+    return true;
   }
 
   while (current < tokens.length) {
@@ -260,6 +238,14 @@ function first_preprocessPass(tokens) {
         // eat ending new line
         next();
         break;
+      }
+
+      case TKNS.Identifier.type: {
+        const defineTokens = preprocessDefine();
+        if (defineTokens) {
+          processedTokens.push(...defineTokens);
+          break;
+        }
       }
 
       // continue by default

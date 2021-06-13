@@ -12,6 +12,8 @@ exports.TKNS = buildTokenKinds({
   Struct: { value: 'struct' },
   Const: { value: 'const' },
   Using: { value: 'using' },
+  BooleanTrue: { value: 'true' },
+  BooleanFalse: { value: 'false' },
 
   // preprocessor directives
   // see https://docs.microsoft.com/en-us/cpp/preprocessor/preprocessor-directives?view=msvc-160

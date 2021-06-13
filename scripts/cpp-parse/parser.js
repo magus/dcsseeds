@@ -197,6 +197,8 @@ exports.parser = function parser(defines, tokens) {
             break;
           }
 
+          case TKNS.BooleanTrue.type:
+          case TKNS.BooleanFalse.type:
           case TKNS.String.type:
           case TKNS.Number.type:
           case TKNS.Plus.type:
