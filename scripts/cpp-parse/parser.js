@@ -3,7 +3,7 @@
 const { TKNS } = require('./TKNS');
 const { AST } = require('./AST');
 
-exports.parser = function parser(tokens) {
+exports.parser = function parser(defines, tokens) {
   let current = 0;
 
   function peek(i = 1) {
@@ -27,40 +27,6 @@ exports.parser = function parser(tokens) {
   function parse() {
     let peekToken = peek();
 
-    function parseObjectValue() {
-      const node = AST.ObjectValue.build({
-        values: [],
-      });
-
-      while (!isTokenNext(TKNS.Comma)) {
-        switch (peek().type) {
-          case TKNS.CurlyBracketEnd.type:
-            // kick out back to object
-            return node;
-
-          // skip new lines so we can parse objects that start on next line
-          case TKNS.NewLine.type:
-            next();
-            break;
-
-          case TKNS.Identifier.type:
-          case TKNS.String.type:
-          case TKNS.Number.type:
-          case TKNS.BitwiseOr.type:
-            node.values.push(next());
-            break;
-
-          default:
-            throw new ParserError('Unexpected token during parseObjectValue', peek().type);
-        }
-      }
-
-      // eat comma
-      next();
-
-      return node;
-    }
-
     function parseObject() {
       const node = AST.Object.build({
         fields: [],
@@ -75,24 +41,20 @@ exports.parser = function parser(tokens) {
             node.fields.push(parseObject());
             break;
 
-          case TKNS.Identifier.type:
-          case TKNS.String.type:
-          case TKNS.Number.type: {
-            node.fields.push(parseObjectValue());
-            break;
-          }
-
           // skip commas between elements
           case TKNS.Comma.type:
             next();
             break;
+
           // skip new lines so we can parse objects that start on next line
           case TKNS.NewLine.type:
             next();
             break;
 
-          default:
-            throw new ParserError('Unexpected token during parseObject', peek().type);
+          default: {
+            // push expression into object fields
+            node.fields.push(parseExpression());
+          }
         }
       }
 
@@ -161,6 +123,10 @@ exports.parser = function parser(tokens) {
 
       while (!isTokenNext(TKNS.ParenEnd)) {
         node.params.push(parseExpression());
+        // eat commas
+        if (isTokenNext(TKNS.Comma)) {
+          next();
+        }
       }
 
       // eat closing paren
@@ -174,7 +140,9 @@ exports.parser = function parser(tokens) {
         params: [],
       });
 
-      while (!isTokenNext(TKNS.Semicolon) && !isTokenNext(TKNS.Comma) && !isTokenNext(TKNS.NewLine)) {
+      let ended = false;
+
+      while (peek() && !ended) {
         // handle double equals
         if (isTokenNext(TKNS.BooleanEquals)) {
           node.params.push(next());
@@ -182,9 +150,46 @@ exports.parser = function parser(tokens) {
         }
 
         switch (peek().type) {
+          // kick back out, let parent handle closing element
+          case TKNS.Comma.type:
+          case TKNS.CurlyBracketEnd.type:
+          case TKNS.ParenEnd.type: {
+            ended = true;
+            break;
+          }
+
+          case TKNS.Semicolon.type: {
+            ended = true;
+            // eat ending character
+            next();
+            break;
+          }
+
+          // skip new lines
+          case TKNS.NewLine.type: {
+            next();
+            break;
+          }
+
+          case TKNS.CurlyBracketStart.type:
+            // start a new nested object
+            node.params.push(parseObject());
+            break;
+
+          // nested expression
+          case TKNS.ParenStart.type: {
+            // eat open paren
+            next();
+            node.params.push(parseExpression());
+            // eat closing paren
+            next();
+            break;
+          }
+
           case TKNS.Identifier.type: {
             const parenAfterNext = peek(2)[1].type === TKNS.ParenStart.type;
             if (parenAfterNext) {
+              // call expression, e.g. functionName(...)
               node.params.push(parseCallExpression());
             } else {
               node.params.push(next());
@@ -192,24 +197,19 @@ exports.parser = function parser(tokens) {
             break;
           }
 
-          case TKNS.Plus.type:
+          case TKNS.String.type:
           case TKNS.Number.type:
+          case TKNS.Plus.type:
+          case TKNS.BitwiseOr.type: {
             node.params.push(next());
             break;
-
-          // kick out to let parent handle paren closing
-          case TKNS.ParenEnd.type:
-            return node;
-            break;
+          }
 
           default:
             console.debug(JSON.stringify(node));
             throw new ParserError('Unexpected token during parseExpression', peek());
         }
       }
-
-      // eat ending semicolon or comma
-      next();
 
       return node;
     }

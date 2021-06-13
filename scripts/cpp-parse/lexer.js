@@ -84,6 +84,11 @@ exports.lexer = function lexer(code) {
         continueToken(TKNS.Whitespace);
         break;
 
+      case TKNS.Escape.value: {
+        addToken(TKNS.Escape);
+        break;
+      }
+
       case TKNS.ForwardSlash.value: {
         if (isTokenNext(TKNS.MultiLineComment)) {
           // eat the comment characters
@@ -120,6 +125,20 @@ exports.lexer = function lexer(code) {
         createToken(TKNS.String);
         // eat characters inside quotes until we hit closing quote
         while (!isTokenNext(TKNS.Quote)) {
+          continueToken(TKNS.String);
+        }
+        // eat closing quote to prevent infinite loop
+        next();
+        break;
+      }
+
+      case TKNS.SingleQuote.value: {
+        // eat the quote character that starts the string
+        next();
+        // begin empty string token
+        createToken(TKNS.String);
+        // eat characters inside quotes until we hit closing quote
+        while (!isTokenNext(TKNS.SingleQuote)) {
           continueToken(TKNS.String);
         }
         // eat closing quote to prevent infinite loop
@@ -188,6 +207,7 @@ const KYWRDS = [
   TKNS.Struct,
   TKNS.Const,
   TKNS.Using,
+  TKNS.PreprocessDefine,
   TKNS.PreprocessPragma,
   TKNS.PreprocessInclude,
   TKNS.PreprocessIfStart,

@@ -1,6 +1,7 @@
 exports.AST = buildASTTypes({
   Program: { body: null },
   Using: { tokens: null },
+  Define: { name: null, args: null, tokens: null },
   Assignment: { types: null, name: null, value: null },
   AssignmentTypes: { tokens: null },
   Expression: { params: null },

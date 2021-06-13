@@ -15,18 +15,21 @@ exports.TKNS = buildTokenKinds({
 
   // preprocessor directives
   // see https://docs.microsoft.com/en-us/cpp/preprocessor/preprocessor-directives?view=msvc-160
+  PreprocessDefine: { value: '#define' },
   PreprocessPragma: { value: '#pragma' },
   PreprocessInclude: { value: '#include' },
   PreprocessIfStart: { value: '#if' },
   PreprocessIfEnd: { value: '#endif' },
 
   // single characters
+  Escape: { value: '\\' },
   NewLine: { value: '\n' },
   Tab: { value: '\t' },
   Space: { value: ' ' },
   Semicolon: { value: ';' },
   Comma: { value: ',' },
   Quote: { value: '"' },
+  SingleQuote: { value: "'" },
   AngleBracketStart: { value: '<' },
   AngleBracketEnd: { value: '>' },
   CurlyBracketStart: { value: '{' },

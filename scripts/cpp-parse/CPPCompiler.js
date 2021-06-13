@@ -12,10 +12,10 @@ exports.CPPCompiler = CPPCompiler;
 
 function CPPCompiler(source) {
   let tokens = lexer(source);
-  let processedTokens = preprocessor(tokens);
-  let ast = parser(processedTokens);
+  let { defines, processedTokens } = preprocessor(tokens);
+  let ast = parser(defines, processedTokens);
 
-  const __data = { tokens, processedTokens, ast };
+  const __data = { defines, tokens, processedTokens, ast };
 
   function traverse(visitor) {
     traverser(ast, visitor);

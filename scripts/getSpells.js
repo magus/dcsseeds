@@ -70,7 +70,7 @@ async function getPlayerAvailableSpells() {
           node.value.fields.forEach((template) => {
             // each field of this spellbook template object is a spell name
             template.fields.forEach((objVal) => {
-              const [identifier] = objVal.values;
+              const [identifier] = objVal.params;
               // add spell name to spellbook set
               spellIdsSet.add(identifier.value);
             });
@@ -114,7 +114,7 @@ async function getSpellData() {
             const spell = {};
 
             spell_desc.fields.forEach((spell_desc_field, i) => {
-              const spellDescFieldValues = spell_desc_field.values;
+              const spellDescFieldValues = spell_desc_field.params;
               if (spellDescFieldValues.length === 1) {
                 const [node] = spellDescFieldValues;
                 spell[SPELL_DESC_FIELD[i]] = node.value;
