@@ -72,7 +72,13 @@ const MONSTERENTRY = Object.freeze(
     monstersWithTiles.push(monsterWithTile);
   });
 
-  // monstersWithTiles.forEach((monster) => console.debug(JSON.stringify(monster, null, 2)));
+  monstersWithTiles.forEach((monster) => {
+    // console.debug(monster.id);
+    // console.debug(JSON.stringify(monster, null, 2));
+    // console.debug('flags', JSON.stringify(monster.flags));
+    // console.debug('resists', JSON.stringify(monster.resists));
+  });
+
   console.debug({ monstersWithTiles });
 })();
 
