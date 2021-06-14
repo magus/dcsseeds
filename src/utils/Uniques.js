@@ -1,11 +1,5 @@
-// Some things we consider uniques aren't really uniques
-// i.e. Lernaean hydra, Royal Jelly, Serpent of Hell
-// first pulled from https://github.com/crawl/crawl/blob/0.26.1/crawl-ref/source/dat/database/montitle.txt
-// but this might not be the best source
-
-// TODO: Programmatically pull from this file
-// https://github.com/crawl/crawl/blob/0.26.1/crawl-ref/source/mon-data.h
-// M_UNIQUE flag indicates uniques
+// Programmatically pulled from crawl/crawl-ref/source/mon-data.h
+// M_UNIQUE flag indicates uniques, see scripts/getMonster.js
 
 const UniquesNames = [
   'Agnes',
@@ -16,6 +10,7 @@ const UniquesNames = [
   'Asterion',
   'Azrael',
   'Bai Suzhen',
+  'Blork the orc',
   'Boris',
   'Cerebov',
   'Chuck',
@@ -36,11 +31,12 @@ const UniquesNames = [
   'Gastronok',
   'Geryon',
   'Gloorx Vloq',
+  'Grinder',
   'Grum',
   'Harold',
   'Ignacio',
-  'Ilsuiw',
   'Ijyb',
+  'Ilsuiw',
   'Jessica',
   'Jorgrun',
   'Jory',
@@ -65,6 +61,7 @@ const UniquesNames = [
   'Nikola',
   'Pikel',
   'Polyphemus',
+  'Prince Ribbit',
   'Psyche',
   'Purgy',
   'Robin',
@@ -80,6 +77,10 @@ const UniquesNames = [
   'Urug',
   'Vashnia',
   'Xtahua',
+  'the Enchantress',
+  'the Lernaean hydra',
+  'the Royal Jelly',
+  'the Serpent of Hell',
 ];
 
 const UniquesLookup = {};
