@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 const fs = require('fs').promises;
+const arrayToEnum = require('../src/utils/arrayToEnum');
 const { CPPCompiler } = require('./cpp-parse/CPPCompiler');
 
 const VERSION = '0.26.1';
@@ -43,12 +44,7 @@ const MONSTERENTRY_FIELDNAMES = [
   'tileCorpseId',
 ];
 
-const MONSTERENTRY = Object.freeze(
-  MONSTERENTRY_FIELDNAMES.reduce((monsterentry, field) => {
-    monsterentry[field] = field;
-    return monsterentry;
-  }, {}),
-);
+const MONSTERENTRY = arrayToEnum(MONSTERENTRY_FIELDNAMES);
 
 (async function run() {
   const monsters = await getMonsterData();
