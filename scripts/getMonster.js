@@ -68,14 +68,14 @@ const MONSTERENTRY = arrayToEnum(MONSTERENTRY_FIELDNAMES);
     monstersWithTiles.push(monsterWithTile);
   });
 
+  // console.debug({ monstersWithTiles });
+
   monstersWithTiles.forEach((monster) => {
-    // console.debug(monster.id);
-    // console.debug(JSON.stringify(monster, null, 2));
+    console.debug(monster.id);
+    console.debug(JSON.stringify(monster, null, 2));
     // console.debug('flags', JSON.stringify(monster.flags));
     // console.debug('resists', JSON.stringify(monster.resists));
   });
-
-  console.debug({ monstersWithTiles });
 })();
 
 async function getMonsterData() {
@@ -160,7 +160,19 @@ async function getMonsterData() {
   return monsters;
 }
 
-const DEFAULT_ENERGY_USAGE = [10, 10, 10, 10, 10, 10, 10, 100];
+// Energy usage has a predictable array structure
+// See `struct mon_energy_usage` in crawl/crawl-ref/source/mon-util.h
+const ENERGY_USAGE_FIELDS = ['move', 'swim', 'attack', 'missile', 'spell', 'special', 'item', 'pickupPercent'];
+const DEFAULT_ENERGY_USAGE = buildEnergyUsage([10, 10, 10, 10, 10, 10, 10, 100]);
+
+function buildEnergyUsage(energyUsageArray) {
+  const energyUsage = {};
+  for (let i = 0; i < ENERGY_USAGE_FIELDS.length; i++) {
+    const energyUsageField = ENERGY_USAGE_FIELDS[i];
+    energyUsage[energyUsageField] = energyUsageArray[i];
+  }
+  return energyUsage;
+}
 
 function expression(type, token) {
   switch (type) {
@@ -185,7 +197,8 @@ function expression(type, token) {
       if (token.type === CPPCompiler.AST.Expression.type && token.params.length === 1) {
         return DEFAULT_ENERGY_USAGE;
       } else if (token.type === CPPCompiler.AST.Object.type && token.fields.length === 8) {
-        return token.fields.map((field) => expression('number', field));
+        const energyUsageArray = token.fields.map((field) => expression('number', field));
+        return buildEnergyUsage(energyUsageArray);
       } else {
         throw new Error(`Unhandled energy usage [${JSON.stringify(token, null, 2)}]`);
       }
