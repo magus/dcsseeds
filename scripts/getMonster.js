@@ -47,6 +47,30 @@ const MONSTERENTRY_FIELDNAMES = [
 const MONSTERENTRY = arrayToEnum(MONSTERENTRY_FIELDNAMES);
 
 (async function run() {
+  const monsters = await getMonstersWithTiles();
+
+  // console.debug({ monsters });
+
+  monsters.forEach((monster) => {
+    // console.debug(monster.id);
+    console.debug(JSON.stringify(monster, null, 2));
+    // console.debug('flags', JSON.stringify(monster.flags));
+    // console.debug('resists', JSON.stringify(monster.resists));
+    // if (monster.name === 'Grinder') {
+    // if (monster.id === 'DRACO_BASE') {
+    // if (monster.id === 'MONS_UGLY_THING') {
+    //   console.debug(JSON.stringify(monster, null, 2));
+    // }
+  });
+
+  const uniques = monsters.filter((m) => !!~m.flags.indexOf('M_UNIQUE')).map((m) => m.name);
+  // console.debug(JSON.stringify(uniques, null, 2));
+  const uniquesSorted = Array.from(new Set(uniques)).sort();
+  console.debug(uniquesSorted);
+  console.debug('uniques', uniquesSorted.length);
+})();
+
+async function getMonstersWithTiles() {
   const monsters = await getMonsterData();
   const monTileMap = await getMonTileMap();
 
@@ -127,20 +151,8 @@ const MONSTERENTRY = arrayToEnum(MONSTERENTRY_FIELDNAMES);
     monstersWithTiles.push(monsterWithTile);
   }
 
-  // console.debug({ monstersWithTiles });
-
-  monstersWithTiles.forEach((monster) => {
-    // console.debug(monster.id);
-    console.debug(JSON.stringify(monster, null, 2));
-    // console.debug('flags', JSON.stringify(monster.flags));
-    // console.debug('resists', JSON.stringify(monster.resists));
-    // if (monster.name === 'Grinder') {
-    // if (monster.id === 'DRACO_BASE') {
-    // if (monster.id === 'MONS_UGLY_THING') {
-    //   console.debug(JSON.stringify(monster, null, 2));
-    // }
-  });
-})();
+  return monstersWithTiles;
+}
 
 async function getMonsterData() {
   const monsters = [];
