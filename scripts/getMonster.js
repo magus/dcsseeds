@@ -51,35 +51,106 @@ const MONSTERENTRY = arrayToEnum(MONSTERENTRY_FIELDNAMES);
   const monTileMap = await getMonTileMap();
 
   const monstersWithTiles = [];
-  monsters.forEach((monster) => {
-    let tilePath = monTileMap.get(monster.tileId);
+
+  const flags = {
+    DRACO_BASE_MODE: 0,
+  };
+
+  for (let monster_i = 0; monster_i < monsters.length; monster_i++) {
+    const monster = monsters[monster_i];
+
+    let tilePaths = monTileMap.get(monster.tileId);
+
+    // handle DRACO_BASE special case (in order)
+    if (flags.DRACO_BASE_MODE) {
+      if (monster.tileId === 'DRACO_BASE') {
+        tilePaths = [tilePaths[flags.DRACO_BASE_MODE++]];
+        // console.debug('DRACO_BASE_MODE', { tilePaths });
+      } else {
+        // console.debug('ending', 'DRACO_BASE_MODE');
+        flags.DRACO_BASE_MODE = 0;
+      }
+    } else if (monster.tileId === 'DRACO_BASE') {
+      // console.debug('starting', 'DRACO_BASE_MODE');
+      tilePaths = [tilePaths[flags.DRACO_BASE_MODE++]];
+    } else if (monster.tileId === 'MONS_MERGED_SLIME_CREATURE') {
+      // handle MONS_MERGED special case
+      // See tileidx_monster_base in crawl/crawl-ref/source/tilepick.cc
+      tilePaths = monTileMap.get('MONS_SLIME_CREATURE').slice(1);
+    } else if (monster.tileId === 'MONS_SNAPLASHER_VINE') {
+      // handle tentacle special case
+      // See crawl/crawl-ref/source/tilepick.cc
+      tilePaths = monTileMap.get('MONS_VINE_S');
+    } else if (monster.tileId === 'MONS_STARSPAWN_TENTACLE') {
+      tilePaths = monTileMap.get('MONS_STARSPAWN_TENTACLE_S');
+    } else if (monster.tileId === 'MONS_KRAKEN_TENTACLE') {
+      tilePaths = monTileMap.get('MONS_KRAKEN_TENTACLE_WATER');
+    } else if (monster.tileId === 'MONS_ELDRITCH_TENTACLE') {
+      tilePaths = monTileMap.get('MONS_ELDRITCH_TENTACLE_PORTAL');
+    } else if (monster.tileId === 'MONS_SNAPLASHER_VINE_SEGMENT') {
+      // handle tentacle segments special case
+      // See crawl/crawl-ref/source/tilepick.cc
+      tilePaths = monTileMap.get('MONS_VINE_SEGMENT_N_S');
+    } else if (monster.tileId === 'MONS_STARSPAWN_TENTACLE_SEGMENT') {
+      tilePaths = monTileMap.get('MONS_STARSPAWN_TENTACLE_SEGMENT_N_S');
+    } else if (monster.tileId === 'MONS_KRAKEN_TENTACLE_SEGMENT') {
+      tilePaths = monTileMap.get('MONS_KRAKEN_TENTACLE_SEGMENT_N');
+    } else if (monster.tileId === 'MONS_ELDRITCH_TENTACLE_SEGMENT') {
+      tilePaths = monTileMap.get('MONS_ELDRITCH_TENTACLE_SEGMENT_N_S');
+    } else if (monster.tileId === 'MONS_PLAYER_SHADOW') {
+      // handle MONS_PLAYER_SHADOW special case
+      tilePaths = monTileMap.get('SHADOW');
+    }
+
+    // ensure tilePaths are present
+    if (!tilePaths || tilePaths.length < 1) {
+      console.error(JSON.stringify({ monster }, null, 2));
+      throw new Error(`[${monster.id}] missing tilePaths`);
+    }
 
     const monsterWithTile = {
       ...monster,
-      localTilePath: `./crawl/${tilePath}`,
-      githubTilePath: `${GITHUB_RAW}/${tilePath}`,
+      localTilePaths: tilePaths.map((tilePath) => `./crawl/${tilePath}`),
+      githubTilePaths: tilePaths.map((tilePath) => `${GITHUB_RAW}/${tilePath}`),
     };
 
-    if (!monsterWithTile.localTilePath) {
-      console.error({ monster });
-      throw new Error(`[${monster.id}] missing localTilePath`);
+    // ensure local tile paths exist (we have a valid tile)
+    for (let tile_i = 0; tile_i < monsterWithTile.localTilePaths.length; tile_i++) {
+      const localTilePath = monsterWithTile.localTilePaths[tile_i];
+      try {
+        await fs.stat(localTilePath);
+      } catch (err) {
+        throw new Error(`[${monster.id}] missing localTilePath [${localTilePath}]`);
+      }
     }
 
     monstersWithTiles.push(monsterWithTile);
-  });
+  }
 
   // console.debug({ monstersWithTiles });
 
   monstersWithTiles.forEach((monster) => {
-    console.debug(monster.id);
+    // console.debug(monster.id);
     console.debug(JSON.stringify(monster, null, 2));
     // console.debug('flags', JSON.stringify(monster.flags));
     // console.debug('resists', JSON.stringify(monster.resists));
+    // if (monster.name === 'Grinder') {
+    // if (monster.id === 'DRACO_BASE') {
+    // if (monster.id === 'MONS_UGLY_THING') {
+    //   console.debug(JSON.stringify(monster, null, 2));
+    // }
   });
 })();
 
 async function getMonsterData() {
   const monsters = [];
+
+  const flags = {
+    // flag to toggle when we are walking over the DRACO_BASE tile monsters
+    // draconians have an invalid tileId (TILEP_MONS_PROGRAM_BUG)
+    // they instead match, in order exactly to the sprites under DRACO_BASE in dc-mon.txt
+    DRACO_BASE_MODE: false,
+  };
 
   const monData = await parseFile('./crawl/crawl-ref/source/mon-data.h');
   monData.traverse({
@@ -91,7 +162,6 @@ async function getMonsterData() {
           // each field of this array is a `monsterentry` struct
           node.value.fields.forEach((monsterentry, i) => {
             const entry = {};
-            monsters.push(entry);
 
             // parse each field of this `monsterentry` struct
             monsterentry.fields.forEach((monsterentryField, i) => {
@@ -145,12 +215,44 @@ async function getMonsterData() {
               }
             });
 
+            // exclude incomplete DUMMY monsters
+            if (entry.id === 'MONS_HELL_LORD') {
+              return;
+            }
+
+            // include if we didn't exclude above
+            monsters.push(entry);
+
             //
             // fixup entry
             //
 
             // correct tile id
-            entry.tileId = re(entry.tileId, RE.tileId);
+            [RE.tileIdA, RE.tileIdB].some((regex) => {
+              const tileId = re(entry.tileId, regex);
+              if (tileId) {
+                entry.tileId = tileId;
+              }
+            });
+
+            // handle special case for orderd draconian sprites in dc-mon.txt
+            if (flags.DRACO_BASE_MODE) {
+              if (entry.tileId === 'MONS_PROGRAM_BUG') {
+                entry.tileId = 'DRACO_BASE';
+              } else {
+                // console.debug('ending', 'DRACO_BASE_MODE');
+                flags.DRACO_BASE_MODE = false;
+              }
+            } else if (entry.tileId === 'DRACO_BASE') {
+              // console.debug('starting', 'DRACO_BASE_MODE');
+              flags.DRACO_BASE_MODE = true;
+            }
+
+            // when tile id is invalid error default
+            if (entry.tileId === 'MONS_PROGRAM_BUG') {
+              // fallback to the id as the tile id
+              entry.tileId = entry.id;
+            }
           });
         }
       },
@@ -215,13 +317,20 @@ async function getMonTileMap() {
   const TILE_DIR = 'crawl-ref/source/rltiles';
   const tileMap = new Map();
   let currentDir = null;
-  const dcMonContent = await readFile(`./crawl/${TILE_DIR}/dc-mon.txt`);
-  const dcMonContentLines = dcMonContent.split('\n');
+  let currentTileId = null;
+
+  // collect dc files with tile specs
+  const tileFiles = ['dc-mon.txt', 'dc-misc.txt', 'dc-player.txt'];
+  const contentLines = [];
+  for (let i = 0; i < tileFiles.length; i++) {
+    const fileContent = await readFile(`./crawl/${TILE_DIR}/${tileFiles[i]}`);
+    contentLines.push(...fileContent.split('\n'));
+  }
 
   // first pass replace includes
   const includedLines = [];
-  for (let i = 0; i < dcMonContentLines.length; i++) {
-    const line = dcMonContentLines[i];
+  for (let i = 0; i < contentLines.length; i++) {
+    const line = contentLines[i];
     const include = re(line, RE.include);
     if (include) {
       const includeContent = await readFile(`./crawl/${TILE_DIR}/${include}`);
@@ -237,11 +346,14 @@ async function getMonTileMap() {
     // e.g. %sdir mon/nonliving
     let lineDir = re(line, RE.tileDir);
     let outline = re(line, RE.outline);
+    let back = re(line, RE.back);
+    let backDir = re(line, RE.backDir);
+    let endCat = re(line, RE.endCat);
+    let corpse = re(line, RE.corpse);
     let comment = re(line, RE.comment);
-    if (comment) {
-      // ignore # comment lines
-    } else if (outline) {
-      // ignore %rim outline lines
+
+    if (comment || outline || back || backDir || endCat || corpse) {
+      // ignore these lines
     } else if (lineDir) {
       currentDir = lineDir;
     } else {
@@ -249,10 +361,31 @@ async function getMonTileMap() {
       // tile mapping lines specify the icon filename and the tile id
       // e.g. tiamat_black MONS_TIAMAT
       if (line) {
-        const [filename, tileId] = line.split(' ');
-        const tilePath = `${TILE_DIR}/${currentDir}/${filename}.png`;
-        tileMap.set(tileId, tilePath);
-        console.debug({ tileId, tilePath });
+        let [filename, tileId] = line.split(' ');
+
+        // handle path filenames and filename only
+        let tilePath;
+        if (re(filename, RE.isPath)) {
+          // e.g. mon/unique/grinder MONS_GRINDER
+          tilePath = `${TILE_DIR}/${filename}.png`;
+        } else {
+          // e.g. ufetubus MONS_UFETUBUS
+          tilePath = `${TILE_DIR}/${currentDir}/${filename}.png`;
+        }
+
+        if (tileId) {
+          // set currentTileId to the new tileId
+          currentTileId = tileId;
+          tileMap.set(currentTileId, [tilePath]);
+        } else {
+          // continue previous tileId (currentTileId)
+          tileMap.set(currentTileId, [...tileMap.get(currentTileId), tilePath]);
+        }
+
+        // console.debug({
+        //   currentTileId,
+        //   tilePaths: tileMap.get(currentTileId),
+        // });
       }
     }
   });
@@ -280,9 +413,16 @@ function re(string, regex) {
 }
 
 const RE = {
-  tileId: /^TILEP_(.*)$/,
+  isPath: /(\/)/,
+  tileIdA: /^TILEP_(.*)$/,
+  tileIdB: /^TILE_(.*)$/,
+  tileCorpseId: /^TILE_CORPSE_(.*)$/,
   tileDir: /^%sdir (.*)$/,
   outline: /^%rim (.*)$/,
+  corpse: /^%corpse (.*)$/,
+  back: /^%back (.*)$/,
+  backDir: /^%back_sdir (.*)$/,
+  endCat: /^(%end_ctg)$/,
   comment: /^#(.*)$/,
   include: /^%include (.*)$/,
 };
