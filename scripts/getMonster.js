@@ -49,24 +49,39 @@ const MONSTERENTRY = arrayToEnum(MONSTERENTRY_FIELDNAMES);
 (async function run() {
   const monsters = await getMonstersWithTiles();
 
-  // console.debug({ monsters });
+  // console.dir(monsters, { depth: null });
 
   monsters.forEach((monster) => {
-    // console.debug(monster.id);
-    console.debug(JSON.stringify(monster, null, 2));
-    // console.debug('flags', JSON.stringify(monster.flags));
-    // console.debug('resists', JSON.stringify(monster.resists));
+    console.dir(monster.id);
+
+    console.dir(monster, { depth: null });
+
+    // console.dir(
+    //   [
+    //     // fields to log from monster
+    //     'id',
+    //     'flags',
+    //     'resists',
+    //   ].reduce((logged, field) => {
+    //     logged[field] = monster[field];
+    //     return logged;
+    //   }, {}),
+    //   { depth: null },
+    // );
+
     // if (monster.name === 'Grinder') {
+    // if (monster.id === 'MONS_SIGMUND') {
+    // if (monster.id === 'MONS_OCTOPODE') {
+    // if (monster.id === 'MONS_GOLDEN_DRAGON') {
     // if (monster.id === 'DRACO_BASE') {
     // if (monster.id === 'MONS_UGLY_THING') {
-    //   console.debug(JSON.stringify(monster, null, 2));
+    //   console.dir(monster, { depth: null });
     // }
   });
 
   const uniques = monsters.filter((m) => !!~m.flags.indexOf('M_UNIQUE')).map((m) => m.name);
-  // console.debug(JSON.stringify(uniques, null, 2));
   const uniquesSorted = Array.from(new Set(uniques)).sort();
-  console.debug(uniquesSorted);
+  console.dir(uniquesSorted);
   console.debug('uniques', uniquesSorted.length);
 })();
 
@@ -128,7 +143,7 @@ async function getMonstersWithTiles() {
 
     // ensure tilePaths are present
     if (!tilePaths || tilePaths.length < 1) {
-      console.error(JSON.stringify({ monster }, null, 2));
+      console.dir(monster, { depth: null });
       throw new Error(`[${monster.id}] missing tilePaths`);
     }
 
@@ -218,9 +233,7 @@ async function getMonsterData() {
                   return (entry[fieldName] = expression('tile', monsterentryField));
 
                 default:
-                  console.debug({ entry });
-                  console.debug(JSON.stringify({ entry }, null, 2));
-
+                  console.dir(entry, { depth: null });
                   throw new Error(
                     `Unexpected MONSTERENTRY field [${fieldName}] = [${JSON.stringify(monsterentryField, null, 2)}]`,
                   );
