@@ -160,8 +160,7 @@ function CompareSeed({ simple, seed }) {
 
         {players.map((player, i) => {
           const isWinner = maxScore === player.score;
-          const scoreRatio = maxScore >= 0 ? player.score / maxScore : 0;
-
+          const scoreRatio = maxScore > 0 ? player.score / maxScore : 0;
           const turnsPerSecond = player.timeSeconds ? player.turns / player.timeSeconds : 0;
 
           if (simple) {
@@ -214,7 +213,8 @@ const playerColors = [
 const loserColor = 'rgba(255, 255, 255, 0.40)';
 
 function ScoreRatioVisual({ ratio, color }) {
-  return <ScoreRatioVisualContainer width={ratio * 100} color={color}></ScoreRatioVisualContainer>;
+  const width = ratio * 100;
+  return <ScoreRatioVisualContainer width={width} color={color} />;
 }
 
 const ScoreRatioVisualContainer = styled.div`
