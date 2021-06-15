@@ -103,7 +103,12 @@ function getCsp(nonce) {
     policies['script-src'].push("'unsafe-eval'");
   }
   // Google Analytics
-  policies['script-src'].push('www.googletagmanager.com', 'www.google-analytics.com');
+  policies['script-src'].push(
+    'www.googletagmanager.com',
+    'www.google-analytics.com',
+    'https://o438648.ingest.sentry.io',
+    'https://sentry.io',
+  );
 
   const ContentSecurityPolicy = `
     default-src 'self';

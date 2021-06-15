@@ -1,3 +1,4 @@
+import * as React from 'react';
 import Head from 'next/head';
 import styled, { createGlobalStyle } from 'styled-components';
 import App from 'next/app';
@@ -9,7 +10,12 @@ const { Sentry, captureException } = sentryConfig();
 
 if (process.browser) {
   window.addEventListener('error', (event) => {
+    console.debug('[SentryConfig]', 'window.error', { event });
     captureException(event.error, { errorSource: 'browser.window.error' });
+
+    // prevent bubbling to the Sentry.Integration.TryCatch
+    // handler which wraps all `addEventListener` functions
+    event.stopPropagation();
   });
 }
 
@@ -66,6 +72,8 @@ export default class MyApp extends App {
   }
 
   componentDidCatch(error, errorInfo) {
+    console.debug('componentDidCatch');
+
     const errorEventId = captureException(error, {
       errorInfo,
       errorSource: 'componentDidCatch',
@@ -73,6 +81,8 @@ export default class MyApp extends App {
 
     // Store the event id at this point as we don't have access to it within
     // `getDerivedStateFromError`.
+    // `SentryConfig.Sentry.showReportDialog` can be used to manually send errors
+    // e.g. SentryConfig.Sentry.showReportDialog({ eventId: this.state.errorEventId });
     this.setState({ errorEventId });
   }
 
@@ -278,4 +288,22 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+`;
+
+const H1 = styled.h1`
+  display: inline-block;
+  margin: 0;
+  padding: 10px 0;
+  font-size: 24px;
+  font-weight: 500;
+  vertical-align: top;
+`;
+
+const Options = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+const Choice = styled.button`
+  margin: 0 8px;
 `;
