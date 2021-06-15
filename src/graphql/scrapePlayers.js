@@ -13,7 +13,7 @@ export function useItemSearch({ limit = 10, delayMs = 250 } = {}) {
 
   const debouncedSearchItems = React.useMemo(() => {
     return _debounce(searchItems, delayMs);
-  }, [searchItems]);
+  }, [searchItems, delayMs]);
 
   const allResults = !data || error ? [] : [...data.front, ...data.startWord, ...data.middle];
   const uniqueResults = _uniqBy(allResults, (r) => r.id);
