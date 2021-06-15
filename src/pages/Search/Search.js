@@ -15,6 +15,8 @@ export default function Search(props) {
 
   React.useEffect(() => {
     itemSearch.search(search);
+    // intentionally run once on mount
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   React.useEffect(() => {
@@ -36,6 +38,9 @@ export default function Search(props) {
     // that includes getServerSideProps, getStaticProps, and getInitialProps.
     // https://nextjs.org/docs/routing/shallow-routing
     router.replace(url, undefined, { shallow: true });
+
+    // intentionally run only when search query changes
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [search]);
 
   function handleSubmit() {
