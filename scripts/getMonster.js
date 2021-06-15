@@ -79,6 +79,8 @@ const MONSTERENTRY = arrayToEnum(MONSTERENTRY_FIELDNAMES);
     // }
   });
 
+  console.debug('monsters', monsters.length);
+
   const uniques = monsters.filter((m) => !!~m.flags.indexOf('M_UNIQUE')).map((m) => m.name);
   const uniquesSorted = Array.from(new Set(uniques)).sort();
   console.dir(uniquesSorted);
