@@ -213,8 +213,20 @@ function first_preprocessPass(tokens) {
         break;
       }
 
+      // parse #define declarations
       case TKNS.PreprocessDefine.type: {
         parseDefine();
+        break;
+      }
+
+      // replace #define'd identifiers with their define tokens
+      case TKNS.Identifier.type: {
+        const defineTokens = preprocessDefine();
+        if (defineTokens) {
+          processedTokens.push(...defineTokens);
+        } else {
+          processedTokens.push(next());
+        }
         break;
       }
 
@@ -238,14 +250,6 @@ function first_preprocessPass(tokens) {
         // eat ending new line
         next();
         break;
-      }
-
-      case TKNS.Identifier.type: {
-        const defineTokens = preprocessDefine();
-        if (defineTokens) {
-          processedTokens.push(...defineTokens);
-          break;
-        }
       }
 
       // continue by default
