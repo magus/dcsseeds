@@ -9,12 +9,15 @@ import useTouch from 'src/hooks/useTouch';
 import * as GraphqlSeed from 'src/graphql/seed';
 
 export default function Compare(props) {
-  const { playerA, playerB } = props;
-
-  if (!playerA || !playerB) {
+  if (!props.playerA || !props.playerB) {
     return <ErrorPage header="Error" message="Oops" />;
   }
 
+  return <CompareInternal {...props} />;
+}
+
+function CompareInternal(props) {
+  const { playerA, playerB } = props;
   const [details, set_details] = React.useState(null);
   const isTouch = useTouch();
 
@@ -245,7 +248,9 @@ function TableLayoutRow({ data, widths }) {
   return (
     <div style={{ display: 'flex' }}>
       {data.map((col, i) => (
-        <div style={{ flex: widths[i] || 0 }}>{col}</div>
+        <div key={col} style={{ flex: widths[i] || 0 }}>
+          {col}
+        </div>
       ))}
     </div>
   );
