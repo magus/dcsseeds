@@ -176,10 +176,10 @@ export const MORGUE_REGEX = {
       const [match, runeCountString, runeTotalString, runesString] = await runRegex(
         MORGUE_FIELD.Runes,
         morgueText,
-        /}: (\d)\/(\d+) runes: ([a-z\, ]+)/,
+        /}: (\d+)\/(\d+) runes: ([a-z\, \n]+)a:/,
       );
 
-      const runes = runesString.split(', ');
+      const runes = runesString.split(',').map((rune) => rune.trim());
       const runeCount = toNumber(runeCountString);
 
       return { runes, runeCount };
