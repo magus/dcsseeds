@@ -1,44 +1,5 @@
 import arrayToEnum from 'src/utils/arrayToEnum';
 
-// Health: 249/249    AC: 38    Str: 20    XL:     27
-// Magic:  57/57      EV: 33    Int: 40    God:    Vehumet [******]
-// Gold:   19647      SH: 29    Dex: 24    Spells: 8/80 levels left
-
-// rFire    + + +     SeeInvis +   a - +18 lance "Wyrmbane" {slay drac, rPois rF+ rC+ AC+3}
-// rCold    + + +     Faith    .   C - +2 tower shield {AC+3}
-// rNeg     + + +     Spirit   .   H - +0 scale mail of Decompression {*Drain rF+ Int+8 Slay+3}
-// rPois    ∞         Reflect  .   R - -2 hat of the Alchemist {rElec rPois rF+ rC+ rN+ Will+ rMut rCorr}
-// rElec    +         Harm     .   u - +2 cloak {Will+}
-// rCorr    +         Rampage  .   y - +0 pair of gloves of Jim Fyec {*Contam rElec Int+5 Stlth+}
-// rMut     +         Clarity  +   o - +2 pair of boots {run}
-// Will     +++++                  d - amulet of Pemah {RegenMP +Fly Will+ SInv}
-// Stlth    ++++......             T - ring "Ajiojuh" {AC+4 Int+2 Dex+4}
-// HPRegen  0.51/turn              v - ring "Atwat" {rElec rPois MP+9 Str+6 Dex+2}
-// MPRegen  0.60/turn
-
-// Weapon
-// Shield
-// Body
-// Head
-// Back
-// Hands
-// Feet
-// Amulet
-// Ring1
-// Ring2
-
-// rFire    + + +     SeeInvis +   a - +18 lance "Wyrmbane" {slay drac, rPois rF+ rC+ AC+3}
-// rCold    + + +     Faith    .   C - +2 tower shield {AC+3}
-// rNeg     + + +     Spirit   .   H - +0 scale mail of Decompression {*Drain rF+ Int+8 Slay+3}
-// rPois    ∞         Reflect  .   R - -2 hat of the Alchemist {rElec rPois rF+ rC+ rN+ Will+ rMut rCorr}
-// rElec    +         Harm     .   u - +2 cloak {Will+}
-// rCorr    +         Rampage  .   y - +0 pair of gloves of Jim Fyec {*Contam rElec Int+5 Stlth+}
-// rMut     +         Clarity  +   o - +2 pair of boots {run}
-// Will     +++++                  d - amulet of Pemah {RegenMP +Fly Will+ SInv}
-// Stlth    ++++......             T - ring "Ajiojuh" {AC+4 Int+2 Dex+4}
-// HPRegen  0.51/turn              v - ring "Atwat" {rElec rPois MP+9 Str+6 Dex+2}
-// MPRegen  0.60/turn
-
 export function Stats() {
   // stats
   this.hp = 0;
@@ -142,31 +103,131 @@ function addTrait(stats, trait) {
   }
 }
 
-const EquipSlotList = ['Weapon', 'Shield', 'Body', 'Head', 'Back', 'Hands', 'Feet', 'Amulet', 'Ring'];
-const EquipSlot = arrayToEnum(EquipSlotList);
+const EquipSlot = arrayToEnum(['Weapon', 'Shield', 'Body', 'Head', 'Back', 'Hands', 'Feet', 'Amulet', 'Ring']);
+
+const ArmorType = {
+  [EquipSlot.Shield]: arrayToEnum(['Buckler', 'Kite', 'Tower']),
+  [EquipSlot.Head]: arrayToEnum(['Hat', 'Helmet']),
+  [EquipSlot.Back]: arrayToEnum(['Cloak', 'Scarf']),
+  [EquipSlot.Hands]: arrayToEnum(['Gloves']),
+  [EquipSlot.Feet]: arrayToEnum(['Boots', 'Barding']),
+  [EquipSlot.Amulet]: arrayToEnum(['Amulet']),
+  [EquipSlot.Ring]: arrayToEnum(['Ring']),
+  [EquipSlot.Body]: arrayToEnum([
+    'Robe',
+    'LeatherArmour',
+    'RingMail',
+    'ScaleMail',
+    'ChainMail',
+    'PlateArmour',
+    'CrystalPlateArmour',
+    'AnimalSkin',
+    'TrollLeatherArmour',
+    'SteamDragonScales',
+    'AcidDragonScales',
+    'SwampDragonScales',
+    'QuicksilverDragonScales',
+    'FireDragonScales',
+    'IceDragonScales',
+    'PearlDragonScales',
+    'ShadowDragonScales',
+    'StormDragonScales',
+    'GoldDragonScales',
+  ]),
+};
+
+const ArmorTypeMeta = {
+  [EquipSlot.Shield]: {
+    // [description, SH, Evasion Penalty]
+    [ArmorType.Shield.Buckler]: ['Buckler', 3, 1],
+    [ArmorType.Shield.Kite]: ['Kite shield', 8, 3],
+    [ArmorType.Shield.Tower]: ['Tower shield', 13, 5],
+  },
+  [EquipSlot.Head]: {
+    // [description, AC, Encumberance Rating]
+    [ArmorType.Head.Hat]: ['Hat', 0, 0],
+    [ArmorType.Head.Helmet]: ['Helmet', 1, 0],
+  },
+  [EquipSlot.Back]: {
+    // [description, AC, Encumberance Rating]
+    [ArmorType.Back.Cloak]: ['Cloak', 1, 0],
+    [ArmorType.Back.Scarf]: ['Scarf', 0, 0],
+  },
+  [EquipSlot.Hands]: {
+    // [description, AC, Encumberance Rating]
+    [ArmorType.Hands.Gloves]: ['Gloves', 1, 0],
+  },
+  [EquipSlot.Feet]: {
+    // [description, AC, Encumberance Rating]
+    [ArmorType.Feet.Boots]: ['Boots', 1, 0],
+    [ArmorType.Feet.Barding]: ['Barding', 4, -6],
+  },
+  [EquipSlot.Amulet]: {
+    // [description, AC, Encumberance Rating]
+    [ArmorType.Amulet.Amulet]: ['Amulet', 0, 0],
+  },
+  [EquipSlot.Ring]: {
+    // [description, AC, Encumberance Rating]
+    [ArmorType.Ring.Ring]: ['Ring', 0, 0],
+  },
+  [EquipSlot.Body]: {
+    // [description, AC, Encumberance Rating]
+    [ArmorType.Body.Robe]: ['Robe', 2, 0],
+    [ArmorType.Body.LeatherArmour]: ['Leather armour', 3, 4],
+    [ArmorType.Body.RingMail]: ['Ring mail', 5, 7],
+    [ArmorType.Body.ScaleMail]: ['Scale mail', 6, 10],
+    [ArmorType.Body.ChainMail]: ['Chain mail', 8, 15],
+    [ArmorType.Body.PlateArmour]: ['Plate armour', 10, 18],
+    [ArmorType.Body.CrystalPlateArmour]: ['Crystal plate armour', 14, 23],
+    [ArmorType.Body.AnimalSkin]: ['Animal skin', 2, 0],
+    [ArmorType.Body.TrollLeatherArmour]: ['Troll leather armour', 4, 4],
+    [ArmorType.Body.SteamDragonScales]: ['Steam dragon scales', 5, 0],
+    [ArmorType.Body.AcidDragonScales]: ['Acid dragon scales', 6, 5],
+    [ArmorType.Body.SwampDragonScales]: ['Swamp dragon scales', 7, 7],
+    [ArmorType.Body.QuicksilverDragonScales]: ['Quicksilver dragon scales', 9, 7],
+    [ArmorType.Body.FireDragonScales]: ['Fire dragon scales', 8, 11],
+    [ArmorType.Body.IceDragonScales]: ['Ice dragon scales', 9, 11],
+    [ArmorType.Body.PearlDragonScales]: ['Pearl dragon scales', 10, 11],
+    [ArmorType.Body.ShadowDragonScales]: ['Shadow dragon scales', 10, 15],
+    [ArmorType.Body.StormDragonScales]: ['Storm dragon scales', 10, 15],
+    [ArmorType.Body.GoldDragonScales]: ['Gold dragon scales', 12, 23],
+  },
+};
 
 // Item takes in a string description and parse into object representing item
 // e.g. `-2 hat of the Alchemist {rElec rPois rF+ rC+ rN+ Will+ rMut rCorr}`
 export function Equipment(description) {
   this.description = description;
-  this.type = parseType(description);
 
-  // parse traits
-  // e.g. {rElec rPois rF+ rC+ rN+ Will+ rMut rCorr}
-  const { traits, invalidTraits } = parseTraits(description);
-  this.traits = traits;
-  this.invalidTraits = invalidTraits;
+  const { slot, type } = parseType(description);
+  this.slot = slot;
+  this.type = type;
+
+  this.traits = [];
+  this.invalidTraits = [];
+
+  // parse base AC of armor
+  if (this.slot === EquipSlot.Weapon) {
+    // for weapons, skip
+  } else if (this.slot === EquipSlot.Shield) {
+    // for shields, add SH
+    const [, sh, evasionPenalty] = ArmorTypeMeta[this.slot][this.type];
+    this.traits.push(createTrait(Trait.Modifier, `SH${mod(sh)}`));
+  } else {
+    // otherwise add AC
+    const [, ac, encumberance] = ArmorTypeMeta[this.slot][this.type];
+    this.traits.push(createTrait(Trait.Modifier, `AC${mod(ac)}`));
+  }
 
   // parse ac bonus at front of item
   // e.g. +2 cloak {Will+}
   const bonusACMatch = description.match(RE.BonusAC);
   if (bonusACMatch) {
-    const bonusAC = int(bonusACMatch[1]);
-    const modifier = bonusAC < 0 ? String(bonusAC) : `+${bonusAC}`;
+    const modifier = mod(bonusACMatch[1]);
 
-    if (this.type === EquipSlot.Weapon) {
+    if (this.slot === EquipSlot.Weapon) {
       // for weapons, skip
-    } else if (this.type === EquipSlot.Shield) {
+    } else if (this.slot === EquipSlot.Shield) {
       // for shields, add to AC and SH
       this.traits.push(createTrait(Trait.Modifier, `AC${modifier}`));
       this.traits.push(createTrait(Trait.Modifier, `SH${modifier}`));
@@ -175,6 +236,12 @@ export function Equipment(description) {
       this.traits.push(createTrait(Trait.Modifier, `AC${modifier}`));
     }
   }
+
+  // parse traits
+  // e.g. {rElec rPois rF+ rC+ rN+ Will+ rMut rCorr}
+  const { traits, invalidTraits } = parseTraits(description);
+  this.traits.push(...traits);
+  this.invalidTraits.push(...invalidTraits);
 }
 
 const TraitList = ['Brand', 'Modifier', 'Resist', 'Buff', 'Bip', 'Ability', 'Disable', 'Negative', 'Unique'];
@@ -266,29 +333,30 @@ const RE = {
       },
     },
   },
-  EquipmentSlots: {
-    [EquipSlot.Shield]: /(shield)/i,
-    [EquipSlot.Body]: /(scale mail)/i,
-    [EquipSlot.Head]: /(hat|helmet)/i,
-    [EquipSlot.Back]: /(cloak|scarf)/i,
-    [EquipSlot.Hands]: /(gauntlets|gloves)/i,
-    [EquipSlot.Feet]: /(boots)/i,
-    [EquipSlot.Amulet]: /(amulet)/i,
-    [EquipSlot.Ring]: /(ring)/i,
-  },
 };
 
 function parseType(description) {
-  const slots = Object.keys(RE.EquipmentSlots);
+  const slots = Object.keys(ArmorTypeMeta);
   for (let i = 0; i < slots.length; i++) {
     const slot = slots[i];
-    const regex = RE.EquipmentSlots[slot];
-    if (regex.test(description)) {
-      return slot;
+
+    // check each armor type in slot for match
+    const armorSlotTypes = Object.keys(ArmorTypeMeta[slot]);
+    for (let i = 0; i < armorSlotTypes.length; i++) {
+      const type = armorSlotTypes[i];
+      const armorTypeMeta = ArmorTypeMeta[slot][type];
+      const [armorTypeString] = armorTypeMeta;
+      const regex = new RegExp(armorTypeString, 'i');
+      if (regex.test(description)) {
+        return { slot, type };
+      }
     }
   }
 
-  return EquipSlot.Weapon;
+  return {
+    slot: EquipSlot.Weapon,
+    type: 'UNKNOWN',
+  };
 }
 
 function createTrait(type, traitString) {
@@ -348,4 +416,9 @@ function parseTraits(description) {
 
 function int(value) {
   return parseInt(value, 10);
+}
+
+function mod(value) {
+  const numericValue = int(value);
+  return numericValue < 0 ? String(numericValue) : `+${numericValue}`;
 }
