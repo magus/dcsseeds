@@ -3,12 +3,22 @@
 const fs = require('fs').promises;
 const arrayToEnum = require('../src/utils/arrayToEnum');
 const { CPPCompiler } = require('./cpp-parse/CPPCompiler');
+const { execSync } = require('child_process');
 
-const VERSION = '0.26.1';
+const VERSION = '0.27.0';
+// const VERSION = '0.26.1';
 const GITHUB_RAW = `https://raw.githubusercontent.com/crawl/crawl/${VERSION}`;
 
+// prepare crawl git submodule by checking out specific version for parsing
 // cd projRoot/crawl
-// git checkout <version>
+const projRoot = execSync('git rev-parse --show-toplevel').toString().trim();
+process.chdir(`${projRoot}/crawl`);
+// sync tags with origin (e.g. version tags like 0.27.0)
+execSync('git fetch origin');
+// checkout the specified version for parsing
+execSync(`git checkout ${VERSION}`);
+// return to projRoot
+process.chdir(projRoot);
 
 // `struct monsterentry` defines the fields of monster entries
 // See crawl/crawl-ref/source/mon-util.h
@@ -55,6 +65,10 @@ const MONSTERENTRY = arrayToEnum(MONSTERENTRY_FIELDNAMES);
     console.dir(monster.id);
 
     console.dir(monster, { depth: null });
+
+    // if (monster.name === 'endoplasm') {
+    //   console.dir(monster, { depth: null });
+    // }
 
     // console.dir(
     //   [
