@@ -99,27 +99,40 @@ export default function New(props) {
     );
   }
 
-  const tooManyActiveSeeds = GraphqlSeed.ACTIVE_SEEDS.parse(activeSeedsQuery);
+  // const tooManyActiveSeeds = GraphqlSeed.ACTIVE_SEEDS.parse(activeSeedsQuery);
 
-  if (tooManyActiveSeeds) {
-    return (
-      <Container>
-        <FlexColumns>
-          <Instructions>There are too many active seeds, try completing some active seeds!</Instructions>
-          <StyledLink href="/">Back to Home</StyledLink>
-        </FlexColumns>
-      </Container>
-    );
-  }
+  // if (tooManyActiveSeeds) {
+  //   return (
+  //     <Container>
+  //       <FlexColumns>
+  //         <Instructions>There are too many active seeds, try completing some active seeds!</Instructions>
+  //         <StyledLink href="/">Back to Home</StyledLink>
+  //       </FlexColumns>
+  //     </Container>
+  //   );
+  // }
 
   const speciesOptions = Versions.getSpecies({ version, background }).map((sp) => {
-    const recommendedSpecies = !!Versions.Recommended.Species[version][background][sp.value];
-    const recommendedBackground = !!Versions.Recommended.Backgrounds[version][sp.value][background];
+    const species = sp.value;
+    const speciesVersion = Versions.Recommended.Species[version];
+    if (!speciesVersion) throw new Error(`Versions.Recommended.Species missing version [${version}]`);
+    const speciesVersionBackground = speciesVersion[background];
+    if (!speciesVersionBackground)
+      throw new Error(`Versions.Recommended.Species missing version [${version}] for background [${background}]`);
+
+    const backgroundVersion = Versions.Recommended.Backgrounds[version];
+    if (!backgroundVersion) throw new Error(`Versions.Recommended.Backgrounds missing version [${version}]`);
+    const backgroundVersionSpecies = backgroundVersion[species];
+    if (!backgroundVersionSpecies)
+      throw new Error(`Versions.Recommended.Backgrounds missing version [${version}] for species [${species}]`);
+
+    const recommendedSpecies = !!speciesVersionBackground[species];
+    const recommendedBackground = !!backgroundVersionSpecies[background];
 
     let tier;
     if (recommendedSpecies && recommendedBackground) {
       tier = 0;
-    } else if (recommendedSpecies) {
+    } else if (recommendedSpecies || recommendedBackground) {
       tier = 1;
     } else {
       tier = 2;
@@ -134,13 +147,28 @@ export default function New(props) {
   });
 
   const backgroundsOptions = Versions.getBackgrounds({ version, species }).map((bg) => {
-    const recommendedSpecies = !!Versions.Recommended.Species[version][bg.value][species];
-    const recommendedBackground = !!Versions.Recommended.Backgrounds[version][species][bg.value];
+    const background = bg.value;
+    const speciesVersion = Versions.Recommended.Species[version];
+    if (!speciesVersion) throw new Error(`Versions.Recommended.Species missing version [${version}]`);
+    const speciesVersionBackground = speciesVersion[background];
+    if (!speciesVersionBackground)
+      throw new Error(`Versions.Recommended.Species missing version [${version}] for background [${background}]`);
+
+    const backgroundVersion = Versions.Recommended.Backgrounds[version];
+    if (!backgroundVersion) throw new Error(`Versions.Recommended.Backgrounds missing version [${version}]`);
+    const backgroundVersionSpecies = backgroundVersion[species];
+    if (!backgroundVersionSpecies)
+      throw new Error(`Versions.Recommended.Backgrounds missing version [${version}] for species [${species}]`);
+
+    const recommendedSpecies = !!speciesVersionBackground[species];
+    const recommendedBackground = !!backgroundVersionSpecies[background];
+
+    console.debug({ species, background, recommendedBackground, recommendedSpecies });
 
     let tier;
     if (recommendedSpecies && recommendedBackground) {
       tier = 0;
-    } else if (recommendedBackground) {
+    } else if (recommendedBackground || recommendedSpecies) {
       tier = 1;
     } else {
       tier = 2;
@@ -365,6 +393,7 @@ const LockInput = styled.input`
 
 const VERSION_CHOICES = [
   // <Select> options
+  { value: Versions.v27 },
   { value: Versions.v26 },
   { value: Versions.v25 },
   { value: Versions.v24 },
