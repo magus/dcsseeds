@@ -2,6 +2,20 @@
 # dcss-seeds
 track random seeds in dcss
 
+# how to update DCSS version
+
+Notes when upgrading from 0.26 to 0.27
+
+- Update versions in `src/utils/Versions.js`
+  - (add, remove) any Species and Backgrounds
+  - update recommended species/backgrounds lookups
+- Add new version to `VERSION_CHOICES` in `src/pages/New/New.js`
+- Verify on `/new` route that new version works (errors will throw if recommended things are missing)
+- Run `./scripts/getSpells.js` to gather spell list
+- Update spell slots in `Slots.rc` in `magus/dcss` .rc file
+- Update `src/api/job/scrapePlayers.js` `ALLOWED_VERSIONS` (use `api/pargueMorgue` to determine short `version` value to use here)
+- Use delete query at top of `src/api/job/scrapePlayers.js` to reset `scrapePlayers`-related tables
+
 ## TODO
 
 
