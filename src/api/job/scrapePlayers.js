@@ -26,10 +26,12 @@ import parseMorgue from 'src/utils/parseMorgue';
 
 // prettier-ignore
 const ALLOWED_VERSIONS = {
-  '0.26': true,
+  // '0.26': true,
+  '0.27': true,
 };
 
 // Adjust this if you want to parse more morgues per request
+const MAX_ITERATIONS_PER_REQUEST = 10;
 const MAX_MORGUES_PER_PLAYER = 1;
 
 // utils/parseMorgue item types (first string arg to createItem)
@@ -144,7 +146,8 @@ async function addMorgue({ player, morgue }) {
   }
 
   async function skip(reason) {
-    // no items in this run, create a morgue so we do not search it again
+    // used for errors and empty runs (no items)
+    // create a morgue entry in scrapePlayers for this player morgue, so we do not search it again
     await GQL_ADD_MORGUE.run({
       playerId,
       data: { [morgueLookupKey(morgue.timestamp)]: true },
@@ -207,11 +210,11 @@ async function addMorgue({ player, morgue }) {
 
     return skip('empty');
   } catch (error) {
-    return response('error', { error: error.message });
+    return skip(`[error] ${error.message}`);
   }
 }
 
-async function loopPlayerMorgues({ players, playerMorgues, iteration }) {
+async function loopPlayerMorgues({ players, playerMorgues }) {
   if (players.length !== playerMorgues.length) {
     throw new Error('[loopPlayerMorgues] players and playerMorgues must be equal size');
   }
@@ -242,10 +245,16 @@ module.exports = async function scrapePlayers(req, res) {
     const scrapeResults = awaitedScrapePlayerResults.map(({ result }) => result);
     const playerMorgues = awaitedScrapePlayerResults.map(({ morgues }) => morgues);
 
-    const loopResult = await loopPlayerMorgues({ players, playerMorgues });
+    const loopResults = [];
+    let iteration = 1;
+    while (iteration < MAX_ITERATIONS_PER_REQUEST) {
+      iteration++;
+      const results = await loopPlayerMorgues({ players, playerMorgues });
+      loopResults.push({ iteration, results });
+    }
 
     // console.debug('[scrapePlayers]', 'end');
-    return send(res, 200, { scrapeResults, loopResult });
+    return send(res, 200, { scrapeResults, loopResults });
   } catch (err) {
     return send(res, 500, err);
   }
