@@ -163,7 +163,7 @@ export default function New(props) {
     const recommendedSpecies = !!speciesVersionBackground[species];
     const recommendedBackground = !!backgroundVersionSpecies[background];
 
-    console.debug({ species, background, recommendedBackground, recommendedSpecies });
+    // console.debug({ species, background, recommendedBackground, recommendedSpecies });
 
     let tier;
     if (recommendedSpecies && recommendedBackground) {
