@@ -99,18 +99,18 @@ export default function New(props) {
     );
   }
 
-  // const tooManyActiveSeeds = GraphqlSeed.ACTIVE_SEEDS.parse(activeSeedsQuery);
+  const tooManyActiveSeeds = GraphqlSeed.ACTIVE_SEEDS.parse(activeSeedsQuery);
 
-  // if (tooManyActiveSeeds) {
-  //   return (
-  //     <Container>
-  //       <FlexColumns>
-  //         <Instructions>There are too many active seeds, try completing some active seeds!</Instructions>
-  //         <StyledLink href="/">Back to Home</StyledLink>
-  //       </FlexColumns>
-  //     </Container>
-  //   );
-  // }
+  if (tooManyActiveSeeds) {
+    return (
+      <Container>
+        <FlexColumns>
+          <Instructions>There are too many active seeds, try completing some active seeds!</Instructions>
+          <StyledLink href="/">Back to Home</StyledLink>
+        </FlexColumns>
+      </Container>
+    );
+  }
 
   const speciesOptions = Versions.getSpecies({ version, background }).map((sp) => {
     const species = sp.value;
@@ -368,6 +368,7 @@ const Instructions = styled.div`
 const FlexColumns = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
 `;
 
 const LockContainer = styled.div`
