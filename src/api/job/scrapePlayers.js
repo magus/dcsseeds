@@ -229,8 +229,14 @@ async function loopPlayerMorgues({ players, playerMorgues }) {
   return await Promise.all(results);
 }
 
+function getElapsedTime(start) {
+  return Date.now() - start;
+}
+
 module.exports = async function scrapePlayers(req, res) {
   try {
+    const reqStart = Date.now();
+
     // console.debug('[scrapePlayers]', 'start');
     const players = await GQL_SCRAPEPLAYERS.run();
 
@@ -247,14 +253,14 @@ module.exports = async function scrapePlayers(req, res) {
 
     const loopResults = [];
     let iteration = 1;
-    while (iteration < MAX_ITERATIONS_PER_REQUEST) {
+    while (getElapsedTime(reqStart) < 8000 && iteration < MAX_ITERATIONS_PER_REQUEST) {
       iteration++;
       const results = await loopPlayerMorgues({ players, playerMorgues });
       loopResults.push({ iteration, results });
     }
 
     // console.debug('[scrapePlayers]', 'end');
-    return send(res, 200, { scrapeResults, loopResults });
+    return send(res, 200, { iteration, scrapeResults, loopResults });
   } catch (err) {
     return send(res, 500, err);
   }
