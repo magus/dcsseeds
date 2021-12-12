@@ -257,6 +257,11 @@ module.exports = async function scrapePlayers(req, res) {
       iteration++;
       const results = await loopPlayerMorgues({ players, playerMorgues });
       loopResults.push({ iteration, results });
+      if (results.every((r) => r.length === 0)) {
+        // every result is empty, no more runs to parse
+        // exit early
+        break;
+      }
     }
 
     // console.debug('[scrapePlayers]', 'end');
