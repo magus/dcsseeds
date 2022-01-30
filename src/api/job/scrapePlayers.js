@@ -258,7 +258,7 @@ module.exports = async function scrapePlayers(req, res) {
     const playerMorgues = awaitedScrapePlayerResults.map(({ morgues }) => morgues);
 
     const loopResults = [];
-    let iteration = 1;
+    let iteration = 0;
     while (getElapsedTime(reqStart) < 8000 && iteration < MAX_ITERATIONS_PER_REQUEST) {
       iteration++;
       const results = await loopPlayerMorgues({ players, playerMorgues });
