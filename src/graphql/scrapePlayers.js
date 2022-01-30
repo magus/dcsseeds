@@ -24,7 +24,7 @@ export function useItemSearch({ limit = 10, delayMs = 250 } = {}) {
     error,
     results,
     latestResults: (search) => {
-      if (variables && variables.front === getSearchVariables(search).front) {
+      if (variables && variables.search === search) {
         return results;
       }
 
@@ -33,13 +33,17 @@ export function useItemSearch({ limit = 10, delayMs = 250 } = {}) {
     search: (text) => {
       if (!text) return;
 
-      const orderBy = {
-        timestamp: 'desc',
-        version: 'desc',
-      };
+      const orderBy = [
+        // sort in order of fields
+        { branch: { order: 'asc' } },
+        { level: 'asc' },
+        { timestamp: 'desc' },
+        { version: 'desc' },
+      ];
 
       const variables = {
         ...getSearchVariables(text),
+        search: text,
         orderBy,
         limit,
       };
@@ -51,9 +55,22 @@ export function useItemSearch({ limit = 10, delayMs = 250 } = {}) {
 
 function getSearchVariables(text) {
   return {
-    front: `${text}%`,
-    startWord: `% ${text}%`,
-    middle: `%${text}%`,
+    front: {
+      _or: [{ name: { _ilike: `${text}%` } }],
+    },
+
+    startWord: {
+      _or: [
+        { name: { _ilike: `% ${text}%` } },
+        { name: { _ilike: `%{${text}%` } },
+        { name: { _ilike: `% ${text}+%` } },
+        { name: { _ilike: `% ${text}-%` } },
+      ],
+    },
+
+    middle: {
+      _or: [{ name: { _ilike: `%${text}%` } }],
+    },
   };
 }
 
@@ -76,19 +93,20 @@ const SEARCH_ITEM_LOCATIONS = gql`
   ${SearchResultFragment}
 
   query SearchItemLocations(
-    $front: String!
-    $startWord: String!
-    $middle: String!
-    $orderBy: scrapePlayers_item_order_by!
+    $search: String!
+    $front: scrapePlayers_item_bool_exp!
+    $startWord: scrapePlayers_item_bool_exp!
+    $middle: scrapePlayers_item_bool_exp!
+    $orderBy: [scrapePlayers_item_order_by!]
     $limit: Int!
   ) {
-    front: scrapePlayers_item(where: { name: { _ilike: $front } }, order_by: [$orderBy], limit: $limit) {
+    front: scrapePlayers_item(where: $front, order_by: $orderBy, limit: $limit) {
       ...SearchResult
     }
-    startWord: scrapePlayers_item(where: { name: { _ilike: $startWord } }, order_by: [$orderBy], limit: $limit) {
+    startWord: scrapePlayers_item(where: $startWord, order_by: $orderBy, limit: $limit) {
       ...SearchResult
     }
-    middle: scrapePlayers_item(where: { name: { _ilike: $middle } }, order_by: [$orderBy], limit: $limit) {
+    middle: scrapePlayers_item(where: $middle, order_by: $orderBy, limit: $limit) {
       ...SearchResult
     }
   }

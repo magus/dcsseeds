@@ -177,7 +177,13 @@ async function addMorgue({ player, morgue }) {
       // e.g. type: 'item'
       if (!PARSE_MORGUE_ITEM_TYPES[item.type]) return;
 
-      const { name, branch, level, location } = item;
+      const { name, level, location } = item;
+
+      // creates and associate item.branch to new scrapePlayers_branch if needed
+      const branch = {
+        data: { name: item.branch },
+        on_conflict: { constraint: 'scrapePlayers_branch_pkey', update_columns: 'name' },
+      };
 
       const insertItem = {
         name,
