@@ -47,6 +47,15 @@ import { toNumber } from 'src/utils/toNumber';
 //   }
 // `;
 
+// Hasura: Clean up scheduled triggers data
+// https://hasura.io/docs/latest/graphql/core/scheduled-triggers/clean-up.html
+// Go to https://dcsseeds.herokuapp.com/console/data/sql
+// -- delete all cron events older than 1 day
+// DELETE FROM hdb_catalog.hdb_cron_events
+// WHERE
+//     status IN ('delivered', 'error', 'dead')
+//     AND created_at < now() - interval '1 day';
+
 // minimum version to allow parsing for
 // 0.27.0 would allow everything above e.g. 0.27.1, 0.28.0, etc.
 const MINIMUM_ALLOWED_VERSION = '0.27.1';
