@@ -31,6 +31,7 @@ async function parseMorgueText({ name, morgue, morgueText }) {
     ...(await MORGUE_REGEX[MORGUE_FIELD.God](args)),
     ...(await MORGUE_REGEX[MORGUE_FIELD.Filename](args)),
     ...(await MORGUE_REGEX[MORGUE_FIELD.Version](args)),
+    ...(await MORGUE_REGEX[MORGUE_FIELD.Trunk](args)),
     ...(await MORGUE_REGEX[MORGUE_FIELD.Seed](args)), // value
     ...(await MORGUE_REGEX[MORGUE_FIELD.Score](args)),
     ...(await MORGUE_REGEX[MORGUE_FIELD.SpeciesBackground](args)),
@@ -48,6 +49,7 @@ const MORGUE_FIELD = keyMirror({
   Seed: true,
   Score: true,
   SpeciesBackground: true,
+  Trunk: true,
   Turns: true,
   Time: true,
   Runes: true,
@@ -98,13 +100,32 @@ export const MORGUE_REGEX = {
     return { isMorgue, datetime };
   },
 
+  // https://regexr.com/6ebp7
   [MORGUE_FIELD.Version]: async ({ morgueText }) => {
     const [, fullVersion, version] = await runRegex(
       MORGUE_FIELD.Version,
       morgueText,
-      /version ((\d+\.\d+).*?)\s.*?character file./,
+      /version ((\d+(?:\.\d+)+).*?)\s.*?character file./,
     );
+
     return { fullVersion, version };
+  },
+
+  // https://regexr.com/6ebpa
+  [MORGUE_FIELD.Trunk]: async ({ morgueText }) => {
+    try {
+      const [, fullVersion, version] = await runRegex(
+        MORGUE_FIELD.Trunk,
+        morgueText,
+        /version ((\d+\.\d+\.\d+).*?)\s.*?character file./,
+      );
+
+      return { isTrunk: false };
+    } catch (err) {
+      // unable to parse version because version is a trunk version
+      // e.g. 0.29-a0-23-ga79f92a
+      return { isTrunk: true };
+    }
   },
 
   [MORGUE_FIELD.Seed]: async ({ morgueText }) => {
