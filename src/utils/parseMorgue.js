@@ -32,6 +32,7 @@ async function parseMorgueText({ name, morgue, morgueText }) {
     ...(await MORGUE_REGEX[MORGUE_FIELD.Filename](args)),
     ...(await MORGUE_REGEX[MORGUE_FIELD.Version](args)),
     ...(await MORGUE_REGEX[MORGUE_FIELD.Trunk](args)),
+    ...(await MORGUE_REGEX[MORGUE_FIELD.Sprint](args)),
     ...(await MORGUE_REGEX[MORGUE_FIELD.Seed](args)), // value
     ...(await MORGUE_REGEX[MORGUE_FIELD.Score](args)),
     ...(await MORGUE_REGEX[MORGUE_FIELD.SpeciesBackground](args)),
@@ -46,10 +47,11 @@ const MORGUE_FIELD = keyMirror({
   God: true,
   Filename: true,
   Version: true,
+  Trunk: true,
+  Sprint: true,
   Seed: true,
   Score: true,
   SpeciesBackground: true,
-  Trunk: true,
   Turns: true,
   Time: true,
   Runes: true,
@@ -109,6 +111,22 @@ export const MORGUE_REGEX = {
     );
 
     return { fullVersion, version };
+  },
+
+  // https://regexr.com/6ebqt
+  [MORGUE_FIELD.Sprint]: async ({ morgueText }) => {
+    try {
+      await runRegex(MORGUE_FIELD.Sprint, morgueText, /(Sprint).*?version.*?character file/);
+
+      // Sprint in version line, this is a sprint run
+      // Dungeon Sprint DCSS version 0.27-a0-1308-gc08437e (webtiles) character file.
+      return { isSprint: true };
+    } catch (err) {
+      // unable to parse Sprint from version line, not a sprint run
+      // Seeded DCSS version 0.27.1-34-g3ba077f (webtiles) character file.
+      // Dungeon Crawl Stone Soup version 0.27.1-34-g3ba077f (webtiles) character file.
+      return { isSprint: false };
+    }
   },
 
   // https://regexr.com/6ebpa
