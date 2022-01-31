@@ -317,10 +317,16 @@ function getAllMorgueNoteEvents(morgueNotes) {
   const events = [];
 
   function createEvent(type, name, _location, extra) {
-    return events.push({ type, name, ...getLocation(_location), ...extra });
-  }
+    const location = getLocation(_location);
 
-  // function logItem()
+    // do not log `item` event for areas with non-deterministic drops
+    // e.g. Abyss, Pandemonium, etc.
+    if (type === 'item' && RANDOM_BRANCHES[location.branch]) {
+      return;
+    }
+
+    return events.push({ type, name, ...location, ...extra });
+  }
 
   function parseNote(morgueNote) {
     try {
@@ -594,4 +600,9 @@ const BRANCH_NAMES = {
   "wizard's laboratory": 'WizLab',
   zig: 'Ziggurat',
   ziggurat: 'Ziggurat',
+};
+
+const RANDOM_BRANCHES = {
+  Abyss: true,
+  Pandemonium: true,
 };
