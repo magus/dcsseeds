@@ -164,6 +164,11 @@ async function addMorgue({ player, morgue }) {
 
     const { version, fullVersion, value: seed } = data;
 
+    // skip if trunk
+    if (data.isTrunk) {
+      return skip(`trunk seeds not allowed [${version}]`);
+    }
+
     // skip if not allowed version
     if (!ALLOWED_VERSIONS[version]) {
       return skip(`not allowed version [${version}]`);
