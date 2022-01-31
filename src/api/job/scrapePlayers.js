@@ -245,6 +245,12 @@ async function addMorgue({ player, morgue }) {
         on_conflict: { constraint: 'scrapePlayers_branch_pkey', update_columns: 'name' },
       };
 
+      // creates and associate seed+version to new scrapePlayers_seed if needed
+      const seedVersion = {
+        data: { seed, version },
+        on_conflict: { constraint: 'scrapePlayers_seedVersion_pkey', update_columns: 'seed' },
+      };
+
       const insertItem = {
         name,
         branch,
@@ -252,8 +258,7 @@ async function addMorgue({ player, morgue }) {
         morgue: url,
         playerId,
         timestamp,
-        seed,
-        version,
+        seedVersion,
         fullVersion,
       };
 
