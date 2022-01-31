@@ -317,20 +317,10 @@ function getAllMorgueNoteEvents(morgueNotes) {
   const events = [];
 
   function createEvent(type, name, _location, extra) {
-    let branch;
-    let level;
-
-    if (!!~_location.indexOf(':')) {
-      const locationSplit = _location.split(':');
-      branch = getBranch(locationSplit[0]);
-      level = locationSplit[1];
-    } else {
-      branch = getBranch(_location);
-    }
-
-    const location = level ? `${branch}:${level}` : branch;
-    return events.push({ type, name, location, branch, level, ...extra });
+    return events.push({ type, name, ...getLocation(_location), ...extra });
   }
+
+  // function logItem()
 
   function parseNote(morgueNote) {
     try {
@@ -525,6 +515,14 @@ function getAllMorgueNoteEvents(morgueNotes) {
   const uniqueEvents = uniqBy(events, (i) => `__T${i.type}____N${i.name}____L${i.location}__`);
 
   return uniqueEvents;
+}
+
+function getLocation(value) {
+  const [rawBranch, level] = value.split(':');
+  const branch = getBranch(rawBranch);
+  const location = level ? `${branch}:${level}` : branch;
+
+  return { location, branch, level };
 }
 
 function getBranch(branch) {
