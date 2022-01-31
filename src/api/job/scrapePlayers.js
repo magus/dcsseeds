@@ -3,6 +3,8 @@ const send = require('src/server/utils/zeitSend');
 import { gql } from '@apollo/client';
 import { serverQuery } from 'src/graphql/serverQuery';
 import parseMorgue from 'src/utils/parseMorgue';
+import runRegex from 'src/utils/runRegex';
+import { toNumber } from 'src/utils/toNumber';
 
 // DCSS score overview with player morgues
 // http://crawl.akrasiac.org/scoring/overview.html
@@ -17,18 +19,66 @@ import parseMorgue from 'src/utils/parseMorgue';
 //   }
 // }
 
-// Distinct branch names (audit parseMorgues BRANCH_NAMES getBranch logic)
-// query MyQuery {
-//   scrapePlayers_item(distinct_on: branch) {
-//     branch
+// Find a specific seed that contains multiple specific items
+// e.g. a 'shield' and 'amulet of the Four Winds'
+// This pattern can be used to programmatically build up search strings to find very specific kinds of runs
+// gql`
+//   query MyQuery {
+//     scrapePlayers_seedVersion(
+//       where: {
+//         _and: [
+//           { version: { _eq: "0.27.1" } }
+//           { items: { name: { _ilike: "%four%" } } }
+//           { items: { name: { _ilike: "%shield%" } } }
+//         ]
+//       }
+//     ) {
+//       items_aggregate {
+//         aggregate {
+//           count
+//         }
+//         nodes {
+//           name
+//           branchName
+//           level
+//         }
+//       }
+//     }
 //   }
-// }
+// `;
 
-// prettier-ignore
-const ALLOWED_VERSIONS = {
-  // '0.26': true,
-  '0.27': true,
+// minimum version to allow parsing for
+// 0.27.0 would allow everything above e.g. 0.27.1, 0.28.0, etc.
+const MINIMUM_ALLOWED_VERSION = '0.27.1';
+
+const RE = {
+  // https://regexr.com/6ebro
+  semver: /(\d+)\.(\d+)(?:\.(\d+))?/,
 };
+
+async function compareSemver(semverStringA, semverStringB) {
+  const [, ...semverPartsA] = await runRegex('parse-semver-a', semverStringA, RE.semver);
+  const [, ...semverPartsB] = await runRegex('parse-semver-b', semverStringB, RE.semver);
+
+  const semverA = semverPartsA.map(toNumber);
+  const semverB = semverPartsB.map(toNumber);
+
+  const minPartsToCheck = Math.max(semverA.length, semverB.length);
+  for (let i = 0; i < minPartsToCheck; i++) {
+    const partA = semverA[i] || 0;
+    const partB = semverB[i] || 0;
+
+    console.log({ partA, partB });
+
+    if (partA > partB) {
+      return +1;
+    } else if (partA < partB) {
+      return -1;
+    }
+  }
+
+  return 0;
+}
 
 // Adjust this if you want to parse more morgues per request
 const MAX_ITERATIONS_PER_REQUEST = 10;
@@ -169,9 +219,14 @@ async function addMorgue({ player, morgue }) {
       return skip(`trunk seeds not allowed [${fullVersion}]`);
     }
 
-    // skip if not allowed version
-    if (!ALLOWED_VERSIONS[version]) {
-      return skip(`not allowed version [${version}]`);
+    // skip if sprint
+    if (data.isSprint) {
+      return skip(`sprint runs not allowed`);
+    }
+
+    // skip if below minimum allowed version
+    if ((await compareSemver(MINIMUM_ALLOWED_VERSION, version)) > 0) {
+      return skip(`below minimum allowed version [${fullVersion} < ${MINIMUM_ALLOWED_VERSION}]`);
     }
 
     // collect items to send in a single mutation call
