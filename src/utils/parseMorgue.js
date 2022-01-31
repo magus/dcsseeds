@@ -473,7 +473,6 @@ function getAllMorgueNoteEvents(morgueNotes) {
       } else if (acquirement) {
         const [, item] = acquirement;
         createEvent('acquirement', item, morgueNote.loc);
-        createEvent('item', item, morgueNote.loc);
       } else if (found) {
         const [, item] = found;
         createEvent('found', item, morgueNote.loc);
