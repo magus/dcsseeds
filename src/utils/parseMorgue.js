@@ -404,6 +404,7 @@ function getAllMorgueNoteEvents(morgueNotes) {
       const leaveGod = morgueNote.note.match(/Fell from the grace of (.*)$/);
 
       const experienceLevel = morgueNote.note.match(/Reached XP level (\d*). HP: \d+\/(\d*) MP: \d+\/(\d*)/);
+      const skillLevel = morgueNote.note.match(/Reached skill level (?<level>\d+) in (?<skill>.*)/);
 
       if (gift) {
         // skip gifts
@@ -436,6 +437,9 @@ function getAllMorgueNoteEvents(morgueNotes) {
       } else if (experienceLevel) {
         const [, level, hp, mp] = experienceLevel;
         createEvent('experience-level', `XL:${level}`, morgueNote.loc, { level, hp, mp });
+      } else if (skillLevel) {
+        const name = `${skillLevel.groups.skill}:${skillLevel.groups.level}`;
+        createEvent('skill-level', name, morgueNote.loc, { ...skillLevel.groups });
       } else if (weildingWearing) {
         // What https://regexr.com/5e13q
         // Who  https://regexr.com/5e14f
