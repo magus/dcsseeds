@@ -234,8 +234,9 @@ export const MORGUE_REGEX = {
     try {
       const morgueNotes = getAllMorgueNotes(morgueText);
       const events = getAllMorgueNoteEvents(morgueNotes);
+      const eventCount = events.length;
 
-      return { events };
+      return { eventCount, events };
     } catch (err) {
       console.error('MORGUE_FIELD.Notes', err);
       // return empty
