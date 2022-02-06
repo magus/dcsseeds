@@ -64,10 +64,11 @@ export const MORGUE_REGEX = {
     try {
       // e.g. God:    the Shining One
       // https://regexr.com/5plrt
-      const [, parsedGod] = await runRegex(MORGUE_FIELD.God, morgueText, /God:\s+([a-z\s]*?)(?:\[.*)?$/im);
-      god = parsedGod;
+      const [, parsedGod] = await runRegex(MORGUE_FIELD.God, morgueText, /God:(.*?)(?:\[.*)?$/im);
+      [, god] = runRegex('god', parsedGod, Gods.Regex);
     } catch (err) {
-      // god unable to be parsed
+      // god unable to be parsed, probably no god
+      console.error('MORGUE_REGEX', MORGUE_FIELD.God, err);
     }
 
     return { god };
