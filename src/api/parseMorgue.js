@@ -18,12 +18,26 @@ module.exports = async (req, res) => {
       return send(res, 500, new Error('Must provide [morgue]'));
     }
 
+    const hrStartTime = process.hrtime();
     const morgueParsed = await parseMorgue(morgue);
+    const timeMs = hrTimeUnit(process.hrtime(hrStartTime), 'ms');
 
-    const data = { morgueParsed };
+    const data = { timeMs, morgueParsed };
     // console.debug({ morgueParsed });
     return send(res, 200, data, { prettyPrint: true });
   } catch (err) {
     return send(res, 500, err, { prettyPrint: true });
   }
 };
+
+function hrTimeUnit(hrTime, unit) {
+  switch (unit) {
+    case 'ms':
+      return hrTime[0] * 1e3 + hrTime[1] / 1e6;
+    case 'micro':
+      return hrTime[0] * 1e6 + hrTime[1] / 1e3;
+    case 'nano':
+    default:
+      return hrTime[0] * 1e9 + hrTime[1];
+  }
+}
