@@ -93,11 +93,6 @@ async function compareSemver(semverStringA, semverStringB) {
 const MAX_ITERATIONS_PER_REQUEST = 10;
 const MAX_MORGUES_PER_PLAYER = 1;
 
-// utils/parseMorgue item types (first string arg to createItem)
-const PARSE_MORGUE_ITEM_TYPES = {
-  item: true,
-};
-
 // Link to all servers
 // https://crawl.develz.org/play.htm
 // Australia: https://crawl.project357.org/morgue/xoxohorses/morgue-xoxohorses-20210321-232315.txt
@@ -242,9 +237,8 @@ async function addMorgue({ player, morgue }) {
     const items = [];
 
     data.events.forEach((item) => {
-      // only allow certain parse morgue item types
-      // e.g. type: 'item'
-      if (!PARSE_MORGUE_ITEM_TYPES[item.type]) return;
+      // only allow parseMorgue 'item' `type` (first string arg to createItem)
+      if (!item.type !== 'item') return;
 
       const { name, level, location } = item;
 
