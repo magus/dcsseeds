@@ -535,10 +535,13 @@ function getAllMorgueNoteEvents(morgueNotes) {
     }
   });
 
-  // remove duplicates
-  const uniqueEvents = uniqBy(events, (i) => `__T${i.type}____N${i.name}____L${i.location}__`);
+  // remove duplicates (mutates existing array)
+  // for example `noticed` (uniques noticed) can be registered multiple times
+  // e.g. Mennas in the morgue below
+  //      http://crawl.akrasiac.org/rawdata/KarmaDistortion/morgue-KarmaDistortion-20220206-104358.txt
+  uniqBy(events, (i) => `__T${i.type}____N${i.name}____L${i.location}__`);
 
-  return uniqueEvents;
+  return events;
 }
 
 function getLocation(value) {
