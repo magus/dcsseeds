@@ -402,12 +402,12 @@ function getAllMorgueNoteEvents(morgueNotes) {
       const killed = morgueNote.note.match(/Killed (.*)$/);
 
       // gods joined and left
-      const joinGod = morgueNote.note.match(/Became a worshipper of (.*)$/);
-      const leaveGod = morgueNote.note.match(/Fell from the grace of (.*)$/);
+      const joinGod = morgueNote.note.match(/Became a worshipper of (?<god>.*)$/);
+      const leaveGod = morgueNote.note.match(/Fell from the grace of (?<god>.*)$/);
+      const pietyLevel = morgueNote.note.match(/Reached (?<bips>\*+) piety under (?<god>.*)/);
 
       const experienceLevel = morgueNote.note.match(/Reached XP level (\d*). HP: \d+\/(\d*) MP: \d+\/(\d*)/);
       const skillLevel = morgueNote.note.match(/Reached skill level (?<level>\d+) in (?<skill>.*)/);
-      const pietyLevel = morgueNote.note.match(/Reached (?<bips>\*+) piety under (?<god>.*)/);
 
       if (gift) {
         // skip gifts
@@ -424,26 +424,15 @@ function getAllMorgueNoteEvents(morgueNotes) {
           createEvent('unique-killed', who, morgueNote.loc);
         }
       } else if (joinGod) {
-        const [, godFullName] = joinGod;
-        const match = godFullName.match(Gods.Regex);
-        if (match) {
-          const [, god] = match;
-          createEvent('join-god', god, morgueNote.loc, { god });
-        }
+        const [, god] = runRegex('god', joinGod.groups.god, Gods.Regex);
+        createEvent('join-god', god, morgueNote.loc, { god });
       } else if (leaveGod) {
-        const [, godFullName] = leaveGod;
-        const match = godFullName.match(Gods.Regex);
-        if (match) {
-          const [, god] = match;
-          createEvent('leave-god', god, morgueNote.loc, { god });
-        }
+        const [, god] = runRegex('god', leaveGod.groups.god, Gods.Regex);
+        createEvent('leave-god', god, morgueNote.loc, { god });
       } else if (pietyLevel) {
-        const match = pietyLevel.groups.god.match(Gods.Regex);
-        if (match) {
-          const [, god] = match;
-          const bips = pietyLevel.groups.bips.length;
-          createEvent('piety-god', `${god}:${pietyLevel.groups.bips}`, morgueNote.loc, { god, bips });
-        }
+        const [, god] = runRegex('god', pietyLevel.groups.god, Gods.Regex);
+        const bips = pietyLevel.groups.bips.length;
+        createEvent('piety-god', `${god}:${pietyLevel.groups.bips}`, morgueNote.loc, { god, bips });
       } else if (experienceLevel) {
         const [, level, hp, mp] = experienceLevel;
         createEvent('experience-level', `XL:${level}`, morgueNote.loc, { level, hp, mp });
