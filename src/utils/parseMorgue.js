@@ -403,6 +403,8 @@ function getAllMorgueNoteEvents(morgueNotes) {
       const joinGod = morgueNote.note.match(/Became a worshipper of (.*)$/);
       const leaveGod = morgueNote.note.match(/Fell from the grace of (.*)$/);
 
+      const experienceLevel = morgueNote.note.match(/Reached XP level (\d*). HP: \d+\/(\d*) MP: \d+\/(\d*)/);
+
       if (gift) {
         // skip gifts
         return;
@@ -431,6 +433,9 @@ function getAllMorgueNoteEvents(morgueNotes) {
           const [, god] = match;
           createEvent('leave-god', god, morgueNote.loc, { god });
         }
+      } else if (experienceLevel) {
+        const [, level, hp, mp] = experienceLevel;
+        createEvent('experience-level', `XL:${level}`, morgueNote.loc, { level, hp, mp });
       } else if (weildingWearing) {
         // What https://regexr.com/5e13q
         // Who  https://regexr.com/5e14f
