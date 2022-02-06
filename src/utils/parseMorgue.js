@@ -405,6 +405,7 @@ function getAllMorgueNoteEvents(morgueNotes) {
 
       const experienceLevel = morgueNote.note.match(/Reached XP level (\d*). HP: \d+\/(\d*) MP: \d+\/(\d*)/);
       const skillLevel = morgueNote.note.match(/Reached skill level (?<level>\d+) in (?<skill>.*)/);
+      const pietyLevel = morgueNote.note.match(/Reached (?<bips>\*+) piety under (?<god>.*)/);
 
       if (gift) {
         // skip gifts
@@ -433,6 +434,13 @@ function getAllMorgueNoteEvents(morgueNotes) {
         if (match) {
           const [, god] = match;
           createEvent('leave-god', god, morgueNote.loc, { god });
+        }
+      } else if (pietyLevel) {
+        const match = pietyLevel.groups.god.match(Gods.Regex);
+        if (match) {
+          const [, god] = match;
+          const bips = pietyLevel.groups.bips.length;
+          createEvent('piety-god', `${god}:${pietyLevel.groups.bips}`, morgueNote.loc, { god, bips });
         }
       } else if (experienceLevel) {
         const [, level, hp, mp] = experienceLevel;
