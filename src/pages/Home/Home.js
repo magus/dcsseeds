@@ -85,6 +85,7 @@ export default function Home(props) {
       <SeedList seeds={data} withHomeStyle />
 
       <LinkBar>
+        <LinkBarLink href="/parse">Parse</LinkBarLink>
         <LinkBarLink href="/search">Search</LinkBarLink>
         <LinkBarLink href="/new">New Seed</LinkBarLink>
         <LinkBarLink href="/history">History</LinkBarLink>
