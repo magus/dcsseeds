@@ -137,6 +137,8 @@ const Input = styled.input`
     outline: none;
   }
 
+  /* reset webkit search field appearance */
+  -webkit-appearance: textfield;
   ::-webkit-search-cancel-button {
     display: none;
   }
