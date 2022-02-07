@@ -236,15 +236,19 @@ async function addMorgue({ player, morgue }) {
     // collect items to send in a single mutation call
     const items = [];
 
-    data.events.forEach((item) => {
+    data.events.forEach((event) => {
       // only allow parseMorgue 'item' `type` (first string arg to createItem)
-      if (!item.type !== 'item') return;
+      if (!event.type !== 'item') return;
 
-      const { name, level, location } = item;
+      // do not record seed items for areas with non-deterministic drops
+      // e.g. Abyss, Pandemonium, etc.
+      if ({ Abyss: 1, Pandemonium: 1 }[event.branch]) {
+        return;
+      }
 
-      // creates and associate item.branch to new scrapePlayers_branch if needed
+      // creates and associate event.branch to new scrapePlayers_branch if needed
       const branch = {
-        data: { name: item.branch },
+        data: { name: event.branch },
         on_conflict: { constraint: 'scrapePlayers_branch_pkey', update_columns: 'name' },
       };
 
@@ -255,9 +259,9 @@ async function addMorgue({ player, morgue }) {
       };
 
       const insertItem = {
-        name,
+        name: event.data.item,
         branch,
-        location,
+        location: event.location,
         morgue: url,
         playerId,
         timestamp,
@@ -265,9 +269,9 @@ async function addMorgue({ player, morgue }) {
         fullVersion,
       };
 
-      // optionally include level
-      if (level) {
-        insertItem.level = parseInt(level, 10);
+      // optionally include event.level
+      if (event.level) {
+        insertItem.level = parseInt(event.level, 10);
       }
 
       items.push(insertItem);
