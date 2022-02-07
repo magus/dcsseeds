@@ -230,9 +230,9 @@ export const MORGUE_REGEX = {
     }
   },
 
-  [MORGUE_FIELD.Notes]: async ({ morgueText }) => {
+  [MORGUE_FIELD.Notes]: async ({ morgue, morgueText }) => {
     try {
-      const morgueNotes = getAllMorgueNotes(morgueText);
+      const morgueNotes = getAllMorgueNotes({ morgueText, morgue });
       const events = getAllMorgueNoteEvents(morgueNotes);
       const eventCount = events.length;
 
@@ -245,7 +245,7 @@ export const MORGUE_REGEX = {
   },
 };
 
-function getAllMorgueNotes(morgueText) {
+function getAllMorgueNotes({ morgueText, morgue }) {
   const NOTE_SEPARATOR = '|';
   const morgueLines = morgueText.split('\n');
 
@@ -320,7 +320,7 @@ function getAllMorgueNotes(morgueText) {
         }
         // start new note for thisLine
         const [turn, loc, note] = parseNoteLine(thisLine);
-        currentNote = { turn, loc, note };
+        currentNote = { morgue, turn, loc, note };
       }
     }
 
