@@ -386,7 +386,13 @@ const GQL_ADD_ITEM = serverQuery(
         affected_rows
       }
 
-      items: insert_scrapePlayers_item(objects: $items) {
+      items: insert_scrapePlayers_item(
+        objects: $items
+        on_conflict: {
+          constraint: scrapePlayers_item_name_branch_level_morgue_seed_fullVersion_ke
+          update_columns: name
+        }
+      ) {
         affected_rows
       }
     }
