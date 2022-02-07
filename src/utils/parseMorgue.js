@@ -68,7 +68,7 @@ export const MORGUE_REGEX = {
       [, god] = runRegex('god', parsedGod, Gods.Regex);
     } catch (err) {
       // god unable to be parsed, probably no god
-      console.error('MORGUE_REGEX', MORGUE_FIELD.God, err);
+      // console.error('MORGUE_REGEX', MORGUE_FIELD.God, err);
     }
 
     return { god };

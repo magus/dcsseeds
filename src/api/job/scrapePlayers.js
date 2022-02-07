@@ -192,9 +192,9 @@ async function addMorgue({ player, morgue }) {
   const { url, timestamp } = morgue;
 
   function response(status, extra) {
-    // mark morgue as visited
+    // locally mark morgue as visited
     player.morgues[morgueLookupKey(morgue.timestamp)] = true;
-    return { status, morgue: url, ...extra };
+    return { status, morgue: url, extra };
   }
 
   async function skip(reason) {
@@ -277,6 +277,7 @@ async function addMorgue({ player, morgue }) {
       await GQL_ADD_ITEM.run({
         items,
         playerId,
+        // remote (server) mark morgue as visited
         data: { [morgueLookupKey(morgue.timestamp)]: true },
       });
       return response('done (items)');
@@ -284,7 +285,7 @@ async function addMorgue({ player, morgue }) {
 
     return skip('empty');
   } catch (error) {
-    return skip(`[error] ${error.message}`);
+    return response('error', error.message);
   }
 }
 
