@@ -345,7 +345,6 @@ function getAllMorgueNoteEvents(morgueNotes) {
       // Found: https://regexr.com/5csaa
       const found = morgueNote.note.match(/Found the (.*)?/);
       const acquirement = morgueNote.note.match(/Acquired the (.*)?/);
-      const gift = morgueNote.note.match(/gifted it to you/);
 
       // idents
       const identPortal = morgueNote.note.match(/Identified the (.*) \(You found it in (?:the |a |an )?(.*)\)/);
@@ -394,6 +393,11 @@ function getAllMorgueNoteEvents(morgueNotes) {
       const joinGod = morgueNote.note.match(/Became a worshipper of (?<god>.*)$/);
       const leaveGod = morgueNote.note.match(/Fell from the grace of (?<god>.*)$/);
       const pietyLevel = morgueNote.note.match(/Reached (?<bips>\*+) piety under (?<god>.*)/);
+      const spellGift = morgueNote.note.match(/Offered knowledge of (?<spell>.*) by (?<god>.*?)\./);
+      // https://regexr.com/6equf
+      const identGift = morgueNote.note.match(
+        /Identified the (?<item>.*) \((?<god>.*?) gifted it to you (on level (?<level>\d+) of|in) ((the|a|an) )?(?<branch>.*)\)/,
+      );
 
       const experienceLevel = morgueNote.note.match(/Reached XP level (\d*). HP: \d+\/(\d*) MP: \d+\/(\d*)/);
       const skillLevel = morgueNote.note.match(/Reached skill level (?<level>\d+) in (?<skill>.*)/);
@@ -413,10 +417,7 @@ function getAllMorgueNoteEvents(morgueNotes) {
         /(?<kind>Gained|Lost) mutation: (?<desc>[^\(^\[]*?) (?:\((?<stat>.*?)\) )?\[(?<source>.*?)\]/,
       );
 
-      if (gift) {
-        // skip gifts
-        return;
-      } else if (noticed) {
+      if (noticed) {
         // Parse uniques encountered and defeated (if defeated or avoided if not)
         const [, who] = noticed;
         if (Uniques.Lookup[who]) {
@@ -436,6 +437,13 @@ function getAllMorgueNoteEvents(morgueNotes) {
       } else if (pietyLevel) {
         const [, god] = runRegex('god', pietyLevel.groups.god, Gods.Regex);
         addEvent('piety-god', morgueNote.loc, { ...pietyLevel.groups });
+      } else if (identGift) {
+        const { item } = identGift.groups;
+        const [, god] = runRegex('god', identGift.groups.god, Gods.Regex);
+        addEvent('god-gift', morgueNote.loc, { item, god });
+      } else if (spellGift) {
+        const [, god] = runRegex('god', spellGift.groups.god, Gods.Regex);
+        addEvent('god-gift', morgueNote.loc, { ...spellGift.groups });
       } else if (experienceLevel) {
         const [, level, hp, mp] = experienceLevel;
         addEvent('experience-level', morgueNote.loc, { level, hp, mp });
