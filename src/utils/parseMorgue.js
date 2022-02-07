@@ -233,10 +233,10 @@ export const MORGUE_REGEX = {
   [MORGUE_FIELD.Notes]: async ({ morgue, morgueText }) => {
     try {
       const morgueNotes = getAllMorgueNotes({ morgueText, morgue });
-      const events = getAllMorgueNoteEvents(morgueNotes);
+      const { events, eventErrors } = getAllMorgueNoteEvents(morgueNotes);
       const eventCount = events.length;
 
-      return { eventCount, events };
+      return { eventCount, events, eventErrors };
     } catch (err) {
       console.error('MORGUE_FIELD.Notes', err);
       // return empty
@@ -334,6 +334,8 @@ function getAllMorgueNotes({ morgueText, morgue }) {
 }
 
 function getAllMorgueNoteEvents(morgueNotes) {
+  const eventErrors = [];
+
   const events = [];
   const addEvent = (type, location, data) => events.push(createEvent(type, location, data));
 
@@ -539,9 +541,8 @@ function getAllMorgueNoteEvents(morgueNotes) {
         addEvent('ident', morgueNote.loc, { item });
         addEvent('item', morgueNote.loc, { item });
       }
-    } catch (err) {
-      console.error(`ERROR; SKIPPING NOTE [${JSON.stringify(morgueNote, null, 2)}]`);
-      console.error('MORGUE_FIELD.Notes', 'parseNote', err);
+    } catch (error) {
+      eventErrors.push({ error: error.message, morgueNote });
     }
   }
 
@@ -565,7 +566,7 @@ function getAllMorgueNoteEvents(morgueNotes) {
   //      http://crawl.akrasiac.org/rawdata/KarmaDistortion/morgue-KarmaDistortion-20220206-104358.txt
   uniqBy(events, (i) => `__T${i.type}____N${i.name}____L${i.location}__`);
 
-  return events;
+  return { events, eventErrors };
 }
 
 function createEvent(type, location, data) {
