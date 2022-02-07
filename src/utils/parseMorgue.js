@@ -349,6 +349,12 @@ function getAllMorgueNoteEvents(morgueNotes) {
       const found = morgueNote.note.match(/Found the (.*)?/);
       const acquirement = morgueNote.note.match(/Acquired the (.*)?/);
 
+      // gateway
+      // https://regexr.com/6ervr
+      const gateway = morgueNote.note.match(
+        /Found a (one-way )?(gate|gateway) (leading )?to ((the|a|an) )?(?<branch>.*)\./,
+      );
+
       // idents
       const identPortal = morgueNote.note.match(/Identified the (.*) \(You found it in (?:the |a |an )?(.*)\)/);
       const identWithLoc = morgueNote.note.match(
@@ -379,7 +385,6 @@ function getAllMorgueNoteEvents(morgueNotes) {
 
       const spells = morgueNote.note.match(/You add the spells? (.*) to your library/);
       const playerNotes = morgueNote.note.match(/^(>>.*)/);
-      const ziggurat = morgueNote.note.match(/Found a gateway to a ziggurat/);
 
       // Bought a +1 buckler of cold resistance for 181 gold pieces
       // Bought the amulet of the Manifold Knives {Acrobat rElec rF+} for 816 gold pieces
@@ -456,8 +461,9 @@ function getAllMorgueNoteEvents(morgueNotes) {
         addEvent('manual', morgueNote.loc, { ...manual.groups });
       } else if (mutation) {
         addEvent('mutation', morgueNote.loc, { ...mutation.groups });
-      } else if (ziggurat) {
-        addEvent('ziggurat', morgueNote.loc);
+      } else if (gateway) {
+        const branch = Branch.getBranch(gateway.groups.branch);
+        addEvent('portal', morgueNote.loc, { branch });
       } else if (playerNotes) {
         const [, note] = playerNotes;
         addEvent('player-note', morgueNote.loc, { note });
