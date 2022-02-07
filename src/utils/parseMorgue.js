@@ -5,6 +5,7 @@ const Backgrounds = require('src/utils/Backgrounds');
 const Species = require('src/utils/Species');
 const Uniques = require('src/utils/Uniques');
 const Gods = require('src/utils/Gods');
+const Branch = require('src/utils/Branch');
 
 const { uniqBy } = require('lodash');
 
@@ -575,79 +576,8 @@ function createEvent(type, location, data) {
 
 function getLocation(value) {
   const [rawBranch, level] = value.split(':');
-  const branch = getBranch(rawBranch);
+  const branch = Branch.getBranch(rawBranch);
   const location = level ? `${branch}:${level}` : branch;
 
   return { location, branch, level };
 }
-
-function getBranch(branch) {
-  return BRANCH_NAMES[branch.toLowerCase()] || branch;
-}
-
-// Branch name data
-// https://github.com/crawl/crawl/tree/master/crawl-ref/source/branch-data.h
-const BRANCH_NAMES = {
-  abyss: 'Abyss',
-  bailey: 'Bailey',
-  bazaar: 'Bazaar',
-  blade: 'Blade',
-  'hall of blades': 'Blade',
-  coc: 'Cocytus',
-  cocytus: 'Cocytus',
-  crypt: 'Crypt',
-  depths: 'Depths',
-  desolati: 'Desolation',
-  desolation: 'Desolation',
-  'desolation of salt': 'Desolation',
-  dis: 'Dis',
-  'iron city of dis': 'Dis',
-  d: 'Dungeon',
-  dungeon: 'Dungeon',
-  dwarf: 'Dwarf',
-  'dwarven hall': 'Dwarf',
-  elf: 'Elf',
-  'elven halls': 'Elf',
-  forest: 'Forest',
-  'enchanted forest': 'Forest',
-  gauntlet: 'Gauntlet',
-  geh: 'Gehenna',
-  gehenna: 'Gehenna',
-  'vestibule of hell': 'Hell',
-  hell: 'Hell',
-  icecv: 'IceCave',
-  'ice cave': 'IceCave',
-  lab: 'Labyrinth',
-  labyrinth: 'Labyrinth',
-  lair: 'Lair',
-  'lair of beasts': 'Lair',
-  orc: 'Orc',
-  'orcish mines': 'Orc',
-  ossuary: 'Ossuary',
-  pan: 'Pandemonium',
-  pandemonium: 'Pandemonium',
-  'pits of slime': 'Slime',
-  slime: 'Slime',
-  'slime pits': 'Slime',
-  'realm of zot': 'Zot',
-  zot: 'Zot',
-  sewer: 'Sewer',
-  shoals: 'Shoals',
-  snake: 'Snake',
-  'snake pit': 'Snake',
-  spider: 'Spider',
-  'spider nest': 'Spider',
-  swamp: 'Swamp',
-  tar: 'Tartarus',
-  tartarus: 'Tartarus',
-  tomb: 'Tomb',
-  'tomb of the ancients': 'Tomb',
-  'treasure trove': 'Trove',
-  trove: 'Trove',
-  vaults: 'Vaults',
-  volcano: 'Volcano',
-  wizlab: 'WizLab',
-  "wizard's laboratory": 'WizLab',
-  zig: 'Ziggurat',
-  ziggurat: 'Ziggurat',
-};
