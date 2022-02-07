@@ -216,6 +216,11 @@ async function addMorgue({ player, morgue }) {
 
     const { version, fullVersion, value: seed } = data;
 
+    // skip if bcrawl
+    if (data.is_bcrawl) {
+      return skip(`bcrawl runs not allowed`);
+    }
+
     // skip if trunk
     if (data.isTrunk) {
       return skip(`trunk seeds not allowed [${fullVersion}]`);

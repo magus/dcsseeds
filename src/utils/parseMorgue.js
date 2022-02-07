@@ -105,13 +105,13 @@ export const MORGUE_REGEX = {
 
   // https://regexr.com/6ebp7
   [MORGUE_FIELD.Version]: async ({ morgueText }) => {
-    const [, fullVersion, version] = await runRegex(
+    const [, fullVersion, bcrawl, version] = await runRegex(
       MORGUE_FIELD.Version,
       morgueText,
-      /version ((\d+(?:\.\d+)+).*?)\s.*?character file./,
+      /version ((bcrawl-)?(\d+(?:\.\d+)+).*?)\s.*?character file./,
     );
 
-    return { fullVersion, version };
+    return { fullVersion, version, is_bcrawl: Boolean(bcrawl) };
   },
 
   // https://regexr.com/6ebqt
