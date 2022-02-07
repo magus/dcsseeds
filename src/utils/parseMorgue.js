@@ -453,6 +453,27 @@ function getAllMorgueNoteEvents(morgueNotes) {
         addEvent('manual', morgueNote.loc, { ...manual.groups });
       } else if (mutation) {
         addEvent('mutation', morgueNote.loc, { ...mutation.groups });
+      } else if (ziggurat) {
+        addEvent('ziggurat', morgueNote.loc);
+      } else if (playerNotes) {
+        const [, note] = playerNotes;
+        addEvent('player-note', morgueNote.loc, { note });
+      } else if (pietyTrove) {
+        const kind = 'piety';
+        addEvent('trove', morgueNote.loc, { kind });
+      } else if (trove) {
+        const [, item] = trove;
+        const kind = 'item';
+        addEvent('trove', morgueNote.loc, { kind, item });
+      } else if (spells) {
+        // Parse out the spells into individual parseMorgue entries
+        // https://regexr.com/5p55t
+        const [, spellList] = spells;
+        const [, commaSpells, lastSpell] = spellList.match(/(?:(.*) and )?(.*?)$/);
+        commaSpells.split(', ').forEach((spell, i) => {
+          addEvent('spell', morgueNote.loc, { spell });
+        });
+        addEvent('spell', morgueNote.loc, { spell: lastSpell });
       } else if (weildingWearing) {
         // What https://regexr.com/5e13q
         // Who  https://regexr.com/5e14f
@@ -487,27 +508,6 @@ function getAllMorgueNoteEvents(morgueNotes) {
           addEvent('bought', morgueNote.loc, { item, gold });
           addEvent('item', morgueNote.loc, { item });
         }
-      } else if (ziggurat) {
-        addEvent('ziggurat', morgueNote.loc);
-      } else if (playerNotes) {
-        const [, note] = playerNotes;
-        addEvent('player-note', morgueNote.loc, { note });
-      } else if (pietyTrove) {
-        const kind = 'piety';
-        addEvent('trove', morgueNote.loc, { kind });
-      } else if (trove) {
-        const [, item] = trove;
-        const kind = 'item';
-        addEvent('trove', morgueNote.loc, { kind, item });
-      } else if (spells) {
-        // Parse out the spells into individual parseMorgue entries
-        // https://regexr.com/5p55t
-        const [, spellList] = spells;
-        const [, commaSpells, lastSpell] = spellList.match(/(?:(.*) and )?(.*?)$/);
-        commaSpells.split(', ').forEach((spell, i) => {
-          addEvent('spell', morgueNote.loc, { spell });
-        });
-        addEvent('spell', morgueNote.loc, { spell: lastSpell });
       } else if (acquirement) {
         const [, item] = acquirement;
         addEvent('acquirement', item, morgueNote.loc);
@@ -541,7 +541,7 @@ function getAllMorgueNoteEvents(morgueNotes) {
       }
     } catch (err) {
       console.error(`ERROR; SKIPPING NOTE [${JSON.stringify(morgueNote, null, 2)}]`);
-      console.error('MORGUE_FIELD.Items', 'parseNote', err);
+      console.error('MORGUE_FIELD.Notes', 'parseNote', err);
     }
   }
 
