@@ -77,8 +77,6 @@ async function compareSemver(semverStringA, semverStringB) {
     const partA = semverA[i] || 0;
     const partB = semverB[i] || 0;
 
-    console.log({ partA, partB });
-
     if (partA > partB) {
       return +1;
     } else if (partA < partB) {
@@ -238,13 +236,11 @@ async function addMorgue({ player, morgue }) {
 
     data.events.forEach((event) => {
       // only allow parseMorgue 'item' `type` (first string arg to createItem)
-      if (!event.type !== 'item') return;
+      if (event.type !== 'item') return;
 
       // do not record seed items for areas with non-deterministic drops
       // e.g. Abyss, Pandemonium, etc.
-      if ({ Abyss: 1, Pandemonium: 1 }[event.branch]) {
-        return;
-      }
+      if ({ Abyss: 1, Pandemonium: 1 }[event.branch]) return;
 
       // creates and associate event.branch to new scrapePlayers_branch if needed
       const branch = {
