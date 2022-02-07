@@ -397,6 +397,21 @@ function getAllMorgueNoteEvents(morgueNotes) {
 
       const experienceLevel = morgueNote.note.match(/Reached XP level (\d*). HP: \d+\/(\d*) MP: \d+\/(\d*)/);
       const skillLevel = morgueNote.note.match(/Reached skill level (?<level>\d+) in (?<skill>.*)/);
+      const manual = morgueNote.note.match(/Acquired a manual of (?<skill>.*)/);
+
+      // mutations
+      // https://regexr.com/6eqt8
+      // Gained mutation: You are partially covered in iridescent scales. (AC +2) [potion of mutation]
+      // Gained mutation: You passively dampen the noise of your surroundings. [potion of mutation]
+      // Gained mutation: Your flesh is heat resistant. (rF+) [a neqoxec]
+      // Gained mutation: You are weak. (Str -2) [an orb of fire]
+      // Lost mutation: You tend to lose your temper in combat. [potion of mutation]
+      // Lost mutation: Your magical capacity is low. (-10% MP) [potion of mutation]
+      // Lost mutation: You have hidden genetic potential. [a cacodemon]
+      // Lost mutation: You have an increased reservoir of magic. (+10% MP) [a cacodemon]
+      const mutation = morgueNote.note.match(
+        /(?<kind>Gained|Lost) mutation: (?<desc>[^\(^\[]*?) (?:\((?<stat>.*?)\) )?\[(?<source>.*?)\]/,
+      );
 
       if (gift) {
         // skip gifts
@@ -426,6 +441,10 @@ function getAllMorgueNoteEvents(morgueNotes) {
         addEvent('experience-level', morgueNote.loc, { level, hp, mp });
       } else if (skillLevel) {
         addEvent('skill-level', morgueNote.loc, { ...skillLevel.groups });
+      } else if (manual) {
+        addEvent('manual', morgueNote.loc, { ...manual.groups });
+      } else if (mutation) {
+        addEvent('mutation', morgueNote.loc, { ...mutation.groups });
       } else if (weildingWearing) {
         // What https://regexr.com/5e13q
         // Who  https://regexr.com/5e14f
