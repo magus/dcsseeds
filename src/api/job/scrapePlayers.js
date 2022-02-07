@@ -236,6 +236,15 @@ async function addMorgue({ player, morgue }) {
       return skip(`below minimum allowed version [${fullVersion} < ${MINIMUM_ALLOWED_VERSION}]`);
     }
 
+    // log all errors into scrapePlayers_errors table
+    const errors = data.eventErrors.map((eventError) => {
+      const { morgue, turn, note } = eventError.morgueNote;
+      return { morgue, turn, note, error: eventError.error };
+    });
+    console.debug({ errors });
+    // do NOT wait, this is logging not critical path for request
+    GQL_ADD_PARSE_ERROR.run({ errors });
+
     // collect items to send in a single mutation call
     const items = [];
 
@@ -403,6 +412,17 @@ const GQL_ADD_ITEM = serverQuery(
     }
   `,
 );
+
+const GQL_ADD_PARSE_ERROR = serverQuery(gql`
+  mutation AddParseError($errors: [scrapePlayers_errors_insert_input!]!) {
+    insert_scrapePlayers_errors(
+      objects: $errors
+      on_conflict: { constraint: scrapePlayers_errors_pkey, update_columns: error }
+    ) {
+      affected_rows
+    }
+  }
+`);
 
 function morgueLookupKey(timestamp) {
   const date = timestamp instanceof Date ? timestamp : new Date(timestamp);
