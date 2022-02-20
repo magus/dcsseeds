@@ -1,7 +1,7 @@
+import fetch from 'src/utils/fetch';
 import Species from 'src/utils/Species';
 import Backgrounds from 'src/utils/Backgrounds';
 import Versions from 'src/utils/Versions';
-import fetch from 'src/utils/fetch';
 
 export default async function getInitialProps(props = {}) {
   const { version, species, background } = props;
@@ -15,8 +15,8 @@ export default async function getInitialProps(props = {}) {
     .filter((_) => !!_)
     .join('&');
 
-  const resp = await fetch(`${process.env.PROTOCOL}://${process.env.HOSTNAME}/api/rollSeed?${queryString}`);
-  const json = await resp.json();
+  const rollSeedResponse = await fetch(`${process.env.PROTOCOL}://${process.env.HOSTNAME}/api/rollSeed?${queryString}`);
+  const rollSeedJson = await rollSeedResponse.json();
 
-  return json.data;
+  return rollSeedJson.data;
 }
