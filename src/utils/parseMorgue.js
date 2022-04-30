@@ -241,7 +241,7 @@ export const MORGUE_REGEX = {
     } catch (err) {
       console.error('MORGUE_FIELD.Notes', err);
       // return empty
-      return {};
+      return { eventCount: 0, events: [], eventErrors: [{ error: err.message, stack: err.stack }] };
     }
   },
 };
@@ -341,231 +341,233 @@ function getAllMorgueNoteEvents(morgueNotes) {
   const addEvent = (type, location, data) => events.push(createEvent(type, location, data));
 
   function parseNote(morgueNote) {
-    try {
-      // check in this order to ensure we find most specific first
-      // Regex Tests
-      // Idenfitied: https://regexr.com/5csa7
-      // Found: https://regexr.com/5csaa
-      const found = morgueNote.note.match(/Found the (.*)?/);
-      const acquirement = morgueNote.note.match(/Acquired the (.*)?/);
+    // check in this order to ensure we find most specific first
+    // Regex Tests
+    // Idenfitied: https://regexr.com/5csa7
+    // Found: https://regexr.com/5csaa
+    const found = morgueNote.note.match(/Found the (.*)?/);
+    const acquirement = morgueNote.note.match(/Acquired the (.*)?/);
 
-      // gateway
-      // https://regexr.com/6ervr
-      const gateway = morgueNote.note.match(
-        /Found a (one-way )?(gate|gateway) (leading )?to ((the|a|an) )?(?<branch>.*)\./,
-      );
+    // gateway
+    // https://regexr.com/6ervr
+    const gateway = morgueNote.note.match(
+      /Found a (one-way )?(gate|gateway) (leading )?to ((the|a|an) )?(?<branch>.*)\./,
+    );
 
-      // idents
-      const identPortal = morgueNote.note.match(/Identified the (.*) \(You found it in (?:the |a |an )?(.*)\)/);
-      const identWithLoc = morgueNote.note.match(
-        /Identified the (.*) \(You found it on level (\d{1,2}) of (?:the |a |an )?(.*)\)/,
-      );
+    // idents
+    const identPortal = morgueNote.note.match(/Identified the (.*) \(You found it in (?:the |a |an )?(.*)\)/);
+    const identWithLoc = morgueNote.note.match(
+      /Identified the (.*) \(You found it on level (\d{1,2}) of (?:the |a |an )?(.*)\)/,
+    );
 
-      // boughts
-      const identBoughtPortal = morgueNote.note.match(
-        /Identified the (.*) \(You bought it in a shop in (?:the |a |an )?(.*)\)/,
-      );
-      const identBoughtWithLoc = morgueNote.note.match(
-        /Identified the (.*) \(You bought it in a shop on level (\d{1,2}) of (?:the |a |an )?(.*)\)/,
-      );
+    // boughts
+    const identBoughtPortal = morgueNote.note.match(
+      /Identified the (.*) \(You bought it in a shop in (?:the |a |an )?(.*)\)/,
+    );
+    const identBoughtWithLoc = morgueNote.note.match(
+      /Identified the (.*) \(You bought it in a shop on level (\d{1,2}) of (?:the |a |an )?(.*)\)/,
+    );
 
-      // normal ident
-      const ident = morgueNote.note.match(/Identified the (.*)/);
-      // use randbook details to match generated book names
-      // https://github.com/crawl/crawl/tree/master/crawl-ref/source/dat/database/randbook.txt
-      // Examples
-      // Tome of Congealing Earth (You acquired it on level 1 of the Vaults)
-      const identIgnore = morgueNote.note.match(
-        /Identified the ((Tome|Grimoire|Almanac|Volume|Compendium|Handbook|Incunabulum|Papyrus|Catalogue|Guide|Collected Works|Disquisition|Reference Book)(.*))/,
-      );
+    // normal ident
+    const ident = morgueNote.note.match(/Identified the (.*)/);
+    // use randbook details to match generated book names
+    // https://github.com/crawl/crawl/tree/master/crawl-ref/source/dat/database/randbook.txt
+    // Examples
+    // Tome of Congealing Earth (You acquired it on level 1 of the Vaults)
+    const identIgnore = morgueNote.note.match(
+      /Identified the ((Tome|Grimoire|Almanac|Volume|Compendium|Handbook|Incunabulum|Papyrus|Catalogue|Guide|Collected Works|Disquisition|Reference Book)(.*))/,
+    );
 
-      // https://regexr.com/5fqgo
-      const trove = morgueNote.note.match(/This trove (?:needs|requires) (.*) to function/);
-      const pietyTrove = morgueNote.note.match(/This portal proclaims the superiority of the material over the divine/);
+    // https://regexr.com/5fqgo
+    const trove = morgueNote.note.match(/This trove (?:needs|requires) (.*) to function/);
+    const pietyTrove = morgueNote.note.match(/This portal proclaims the superiority of the material over the divine/);
 
-      const spells = morgueNote.note.match(/You add the spells? (.*) to your library/);
-      const playerNotes = morgueNote.note.match(/^(>>.*)/);
+    const spells = morgueNote.note.match(/You add the spells? (.*) to your library/);
+    const playerNotes = morgueNote.note.match(/^(>>.*)/);
 
-      // Bought a +1 buckler of cold resistance for 181 gold pieces
-      // Bought the amulet of the Manifold Knives {Acrobat rElec rF+} for 816 gold pieces
-      // Bought an uncursed ring of resist corrosion for 320 gold pieces
-      const bought = morgueNote.note.match(/Bought (?:the |a |an )?(.*?) for (\d+) gold pieces/);
+    // Bought a +1 buckler of cold resistance for 181 gold pieces
+    // Bought the amulet of the Manifold Knives {Acrobat rElec rF+} for 816 gold pieces
+    // Bought an uncursed ring of resist corrosion for 320 gold pieces
+    const bought = morgueNote.note.match(/Bought (?:the |a |an )?(.*?) for (\d+) gold pieces/);
 
-      const weildingWearing = morgueNote.note.match(/(wielding|wearing) the (.*?)(\.|and )/);
+    const weildingWearing = morgueNote.note.match(/(wielding|wearing) the (.*?)(\.|and )/);
 
-      // uniques noticed and killed
-      const noticed = morgueNote.note.match(/Noticed (.*)$/);
-      const killed = morgueNote.note.match(/Killed (.*)$/);
+    // uniques noticed and killed
+    const noticed = morgueNote.note.match(/Noticed (.*)$/);
+    const killed = morgueNote.note.match(/Killed (.*)$/);
 
-      // gods joined and left
-      const joinGod = morgueNote.note.match(/Became a worshipper of (?<god>.*)$/);
-      const leaveGod = morgueNote.note.match(/Fell from the grace of (?<god>.*)$/);
-      const pietyLevel = morgueNote.note.match(/Reached (?<bips>\*+) piety under (?<god>.*)/);
-      const spellGift = morgueNote.note.match(/Offered knowledge of (?<spell>.*) by (?<god>.*?)\./);
-      // https://regexr.com/6equf
-      const identGift = morgueNote.note.match(
-        /Identified the (?<item>.*) \((?<god>.*?) gifted it to you (on level (?<level>\d+) of|in) ((the|a|an) )?(?<branch>.*)\)/,
-      );
+    // gods joined and left
+    const joinGod = morgueNote.note.match(/Became a worshipper of (?<god>.*)$/);
+    const leaveGod = morgueNote.note.match(/Fell from the grace of (?<god>.*)$/);
+    const pietyLevel = morgueNote.note.match(/Reached (?<bips>\*+) piety under (?<god>.*)/);
+    const spellGift = morgueNote.note.match(/Offered knowledge of (?<spell>.*) by (?<god>.*?)\./);
+    // https://regexr.com/6equf
+    const identGift = morgueNote.note.match(
+      /Identified the (?<item>.*) \((?<god>.*?) gifted it to you (on level (?<level>\d+) of|in) ((the|a|an) )?(?<branch>.*)\)/,
+    );
 
-      const experienceLevel = morgueNote.note.match(/Reached XP level (\d*). HP: \d+\/(\d*) MP: \d+\/(\d*)/);
-      const skillLevel = morgueNote.note.match(/Reached skill level (?<level>\d+) in (?<skill>.*)/);
-      const manual = morgueNote.note.match(/Acquired a manual of (?<skill>.*)/);
+    const experienceLevel = morgueNote.note.match(/Reached XP level (\d*). HP: \d+\/(\d*) MP: \d+\/(\d*)/);
+    const skillLevel = morgueNote.note.match(/Reached skill level (?<level>\d+) in (?<skill>.*)/);
+    const manual = morgueNote.note.match(/Acquired a manual of (?<skill>.*)/);
 
-      // mutations
-      // https://regexr.com/6eqt8
-      // Gained mutation: You are partially covered in iridescent scales. (AC +2) [potion of mutation]
-      // Gained mutation: You passively dampen the noise of your surroundings. [potion of mutation]
-      // Gained mutation: Your flesh is heat resistant. (rF+) [a neqoxec]
-      // Gained mutation: You are weak. (Str -2) [an orb of fire]
-      // Lost mutation: You tend to lose your temper in combat. [potion of mutation]
-      // Lost mutation: Your magical capacity is low. (-10% MP) [potion of mutation]
-      // Lost mutation: You have hidden genetic potential. [a cacodemon]
-      // Lost mutation: You have an increased reservoir of magic. (+10% MP) [a cacodemon]
-      const mutation = morgueNote.note.match(
-        /(?<kind>Gained|Lost) mutation: (?<desc>[^\(^\[]*?) (?:\((?<stat>.*?)\) )?\[(?<source>.*?)\]/,
-      );
+    // mutations
+    // https://regexr.com/6eqt8
+    // Gained mutation: You are partially covered in iridescent scales. (AC +2) [potion of mutation]
+    // Gained mutation: You passively dampen the noise of your surroundings. [potion of mutation]
+    // Gained mutation: Your flesh is heat resistant. (rF+) [a neqoxec]
+    // Gained mutation: You are weak. (Str -2) [an orb of fire]
+    // Lost mutation: You tend to lose your temper in combat. [potion of mutation]
+    // Lost mutation: Your magical capacity is low. (-10% MP) [potion of mutation]
+    // Lost mutation: You have hidden genetic potential. [a cacodemon]
+    // Lost mutation: You have an increased reservoir of magic. (+10% MP) [a cacodemon]
+    const mutation = morgueNote.note.match(
+      /(?<kind>Gained|Lost) mutation: (?<desc>[^\(^\[]*?) (?:\((?<stat>.*?)\) )?\[(?<source>.*?)\]/,
+    );
 
-      if (noticed) {
-        // Parse uniques encountered and defeated (if defeated or avoided if not)
-        const [, who] = noticed;
-        if (Uniques.Lookup[who]) {
-          addEvent('unique-noticed', morgueNote.loc, { who });
-        }
-      } else if (killed) {
-        const [, who] = killed;
-        if (Uniques.Lookup[who]) {
-          addEvent('unique-killed', morgueNote.loc, { who });
-        }
-      } else if (joinGod) {
-        const [, god] = runRegex('god', joinGod.groups.god, Gods.Regex);
-        addEvent('join-god', morgueNote.loc, { god });
-      } else if (leaveGod) {
-        const [, god] = runRegex('god', leaveGod.groups.god, Gods.Regex);
-        addEvent('leave-god', morgueNote.loc, { god });
-      } else if (pietyLevel) {
-        const [, god] = runRegex('god', pietyLevel.groups.god, Gods.Regex);
-        addEvent('piety-god', morgueNote.loc, { ...pietyLevel.groups });
-      } else if (identGift) {
-        const { item } = identGift.groups;
-        const [, god] = runRegex('god', identGift.groups.god, Gods.Regex);
-        addEvent('god-gift', morgueNote.loc, { item, god });
-      } else if (spellGift) {
-        const [, god] = runRegex('god', spellGift.groups.god, Gods.Regex);
-        addEvent('god-gift', morgueNote.loc, { ...spellGift.groups });
-      } else if (experienceLevel) {
-        const [, level, hp, mp] = experienceLevel;
-        addEvent('experience-level', morgueNote.loc, { level, hp, mp });
-      } else if (skillLevel) {
-        addEvent('skill-level', morgueNote.loc, { ...skillLevel.groups });
-      } else if (manual) {
-        addEvent('manual', morgueNote.loc, { ...manual.groups });
-      } else if (mutation) {
-        addEvent('mutation', morgueNote.loc, { ...mutation.groups });
-      } else if (gateway) {
-        const branch = Branch.getBranch(gateway.groups.branch);
-        addEvent('portal', morgueNote.loc, { branch });
-      } else if (playerNotes) {
-        const [, note] = playerNotes;
-        addEvent('player-note', morgueNote.loc, { note });
-      } else if (pietyTrove) {
-        const kind = 'piety';
-        addEvent('trove', morgueNote.loc, { kind });
-      } else if (trove) {
-        const [, item] = trove;
-        const kind = 'item';
-        addEvent('trove', morgueNote.loc, { kind, item });
-      } else if (spells) {
-        // Parse out the spells into individual parseMorgue entries
-        // https://regexr.com/5p55t
-        const [, spellList] = spells;
-        const [, commaSpells, lastSpell] = spellList.match(/(?:(.*) and )?(.*?)$/);
-        commaSpells.split(', ').forEach((spell, i) => {
-          addEvent('spell', morgueNote.loc, { spell });
-        });
-        addEvent('spell', morgueNote.loc, { spell: lastSpell });
-      } else if (weildingWearing) {
-        // What https://regexr.com/5e13q
-        // Who  https://regexr.com/5e14f
-        // Maggie is wielding the +9 lance "Wyrmbane" {slay drac, rPois rF+ rC+ AC+3}.
-        // a deep elf elementalist comes into view. It is wielding a +1 scythe of protection and wearing the cursed +1 leather armour "Gaoloj" {*Corrode rN++ SInv}.
-        // a deep elf annihilator comes into view. It is wielding a +0 short sword and wearing the amulet of the Four Winds {rN+ MR+++ Clar}.
-        // Gastronok the Ponderous comes into view. He is wielding the +9 lance "Wyrmbane" {slay drac, rPois rF+ rC+ AC+3} and wearing the cursed +1 leather armour "Gaoloj" {*Corrode rN++ SInv}.
-        // a vault guard opens the door. It is wielding the +7 mace of Variability {chain chaos}.
-        // The vault guard is wielding the +7 mace of Variability {chain chaos}.
+    if (noticed) {
+      // Parse uniques encountered and defeated (if defeated or avoided if not)
+      const [, who] = noticed;
+      if (Uniques.Lookup[who]) {
+        addEvent('unique-noticed', morgueNote.loc, { who });
+      }
+    } else if (killed) {
+      const [, who] = killed;
+      if (Uniques.Lookup[who]) {
+        addEvent('unique-killed', morgueNote.loc, { who });
+      }
+    } else if (joinGod) {
+      const [, god] = runRegex('god', joinGod.groups.god, Gods.Regex);
+      addEvent('join-god', morgueNote.loc, { god });
+    } else if (leaveGod) {
+      const [, god] = runRegex('god', leaveGod.groups.god, Gods.Regex);
+      addEvent('leave-god', morgueNote.loc, { god });
+    } else if (pietyLevel) {
+      const [, god] = runRegex('god', pietyLevel.groups.god, Gods.Regex);
+      addEvent('piety-god', morgueNote.loc, { ...pietyLevel.groups });
+    } else if (identGift) {
+      const { item } = identGift.groups;
+      const [, god] = runRegex('god', identGift.groups.god, Gods.Regex);
+      addEvent('god-gift', morgueNote.loc, { item, god });
+    } else if (spellGift) {
+      const [, god] = runRegex('god', spellGift.groups.god, Gods.Regex);
+      addEvent('god-gift', morgueNote.loc, { ...spellGift.groups });
+    } else if (experienceLevel) {
+      const [, level, hp, mp] = experienceLevel;
+      addEvent('experience-level', morgueNote.loc, { level, hp, mp });
+    } else if (skillLevel) {
+      addEvent('skill-level', morgueNote.loc, { ...skillLevel.groups });
+    } else if (manual) {
+      addEvent('manual', morgueNote.loc, { ...manual.groups });
+    } else if (mutation) {
+      addEvent('mutation', morgueNote.loc, { ...mutation.groups });
+    } else if (gateway) {
+      const branch = Branch.getBranch(gateway.groups.branch);
+      addEvent('portal', morgueNote.loc, { branch });
+    } else if (playerNotes) {
+      const [, note] = playerNotes;
+      addEvent('player-note', morgueNote.loc, { note });
+    } else if (pietyTrove) {
+      const kind = 'piety';
+      addEvent('trove', morgueNote.loc, { kind });
+    } else if (trove) {
+      const [, item] = trove;
+      const kind = 'item';
+      addEvent('trove', morgueNote.loc, { kind, item });
+    } else if (spells) {
+      // Parse out the spells into individual parseMorgue entries
+      // https://regexr.com/5p55t
+      const [, spellList] = spells;
+      const [, commaSpells, lastSpell] = spellList.match(/(?:(.*) and )?(.*?)$/);
+      commaSpells.split(', ').forEach((spell, i) => {
+        addEvent('spell', morgueNote.loc, { spell });
+      });
+      addEvent('spell', morgueNote.loc, { spell: lastSpell });
+    } else if (weildingWearing) {
+      // What https://regexr.com/5e13q
+      // Who  https://regexr.com/5e14f
+      // Maggie is wielding the +9 lance "Wyrmbane" {slay drac, rPois rF+ rC+ AC+3}.
+      // a deep elf elementalist comes into view. It is wielding a +1 scythe of protection and wearing the cursed +1 leather armour "Gaoloj" {*Corrode rN++ SInv}.
+      // a deep elf annihilator comes into view. It is wielding a +0 short sword and wearing the amulet of the Four Winds {rN+ MR+++ Clar}.
+      // Gastronok the Ponderous comes into view. He is wielding the +9 lance "Wyrmbane" {slay drac, rPois rF+ rC+ AC+3} and wearing the cursed +1 leather armour "Gaoloj" {*Corrode rN++ SInv}.
+      // a vault guard opens the door. It is wielding the +7 mace of Variability {chain chaos}.
+      // The vault guard is wielding the +7 mace of Variability {chain chaos}.
 
-        // pull out the 'who'
-        const matchWho = morgueNote.note.match(/^((the |a |an )?(.*?) (is|opens the door|comes into view))/i);
-        if (matchWho) {
-          const [, , , who] = matchWho;
+      // pull out the 'who'
+      const matchWho = morgueNote.note.match(/^((the |a |an )?(.*?) (is|opens the door|comes into view))/i);
+      if (matchWho) {
+        const [, , , who] = matchWho;
 
-          // match each wielding or wearing in the note
-          const reWieldingWearing = /(wielding|wearing) the (.*?)(\.|and )/g;
-          let match = reWieldingWearing.exec(morgueNote.note);
-          while (match) {
-            const [, , item] = match;
-            addEvent('wearing-who', morgueNote.loc, { who, item });
-            addEvent('item', morgueNote.loc, { item });
-
-            // next match
-            match = reWieldingWearing.exec(morgueNote.note);
-          }
-        }
-      } else if (bought) {
-        const [, item, gold] = bought;
-        const artefactMatch = item.match(/{.*?}/);
-        if (artefactMatch) {
-          addEvent('bought', morgueNote.loc, { item, gold });
+        // match each wielding or wearing in the note
+        const reWieldingWearing = /(wielding|wearing) the (.*?)(\.|and )/g;
+        let match = reWieldingWearing.exec(morgueNote.note);
+        while (match) {
+          const [, , item] = match;
+          addEvent('wearing-who', morgueNote.loc, { who, item });
           addEvent('item', morgueNote.loc, { item });
+
+          // next match
+          match = reWieldingWearing.exec(morgueNote.note);
         }
-      } else if (acquirement) {
-        const [, item] = acquirement;
-        addEvent('acquirement', item, morgueNote.loc);
-      } else if (found) {
-        const [, item] = found;
-        addEvent('found', morgueNote.loc, { item });
+      }
+    } else if (bought) {
+      const [, item, gold] = bought;
+      const artefactMatch = item.match(/{.*?}/);
+      if (artefactMatch) {
+        addEvent('bought', morgueNote.loc, { item, gold });
         addEvent('item', morgueNote.loc, { item });
-      } else if (identPortal) {
-        const [, item, loc] = identPortal;
-        addEvent('ident-portal', loc, { item });
-        addEvent('item', loc, { item });
-      } else if (identWithLoc) {
-        const [, item, level, loc] = identWithLoc;
-        addEvent('ident-loc', `${loc}:${level}`, { item });
-        addEvent('item', `${loc}:${level}`, { item });
-      } else if (identBoughtPortal) {
-        const [, item, loc] = identBoughtPortal;
-        addEvent('ident-bought-portal', loc, { item });
-        addEvent('item', loc, { item });
-      } else if (identBoughtWithLoc) {
-        const [, item, level, loc] = identBoughtWithLoc;
-        addEvent('ident-bought-loc', `${loc}:${level}`, { item });
-        addEvent('item', `${loc}:${level}`, { item });
-      } else if (identIgnore) {
-        const [, item] = identIgnore;
-        console.warn('ident-ignore', morgueNote.loc, { item });
-      } else if (ident) {
-        const [, item] = ident;
-        addEvent('ident', morgueNote.loc, { item });
-        addEvent('item', morgueNote.loc, { item });
+      }
+    } else if (acquirement) {
+      const [, item] = acquirement;
+      addEvent('acquirement', item, morgueNote.loc);
+    } else if (found) {
+      const [, item] = found;
+      addEvent('found', morgueNote.loc, { item });
+      addEvent('item', morgueNote.loc, { item });
+    } else if (identPortal) {
+      const [, item, loc] = identPortal;
+      addEvent('ident-portal', loc, { item });
+      addEvent('item', loc, { item });
+    } else if (identWithLoc) {
+      const [, item, level, loc] = identWithLoc;
+      addEvent('ident-loc', `${loc}:${level}`, { item });
+      addEvent('item', `${loc}:${level}`, { item });
+    } else if (identBoughtPortal) {
+      const [, item, loc] = identBoughtPortal;
+      addEvent('ident-bought-portal', loc, { item });
+      addEvent('item', loc, { item });
+    } else if (identBoughtWithLoc) {
+      const [, item, level, loc] = identBoughtWithLoc;
+      addEvent('ident-bought-loc', `${loc}:${level}`, { item });
+      addEvent('item', `${loc}:${level}`, { item });
+    } else if (identIgnore) {
+      const [, item] = identIgnore;
+      console.warn('ident-ignore', morgueNote.loc, { item });
+    } else if (ident) {
+      const [, item] = ident;
+      addEvent('ident', morgueNote.loc, { item });
+      addEvent('item', morgueNote.loc, { item });
+    }
+  }
+
+  // run parseNote over each morgue note entry
+  for (let i = 0; i < morgueNotes.length; i++) {
+    const morgueNote = morgueNotes[i];
+
+    try {
+      parseNote(morgueNote);
+
+      // first note
+      if (i === 0) {
+        addEvent('first-event', morgueNote.loc, morgueNote.note);
+      }
+      // last note
+      if (i === morgueNotes.length - 1) {
+        addEvent('last-event', morgueNote.loc, morgueNote.note);
       }
     } catch (error) {
       eventErrors.push({ error: error.message, morgueNote });
     }
   }
-
-  // run parseNote over each morgue note entry
-  morgueNotes.forEach((morgueNote, i) => {
-    parseNote(morgueNote);
-
-    // first note
-    if (i === 0) {
-      addEvent('first-event', morgueNote.loc, morgueNote.note);
-    }
-    // last note
-    if (i === morgueNotes.length - 1) {
-      addEvent('last-event', morgueNote.loc, morgueNote.note);
-    }
-  });
 
   // remove duplicates (mutates existing array)
   // for example `noticed` (uniques noticed) can be registered multiple times

@@ -237,13 +237,27 @@ async function addMorgue({ player, morgue }) {
     }
 
     // log all errors into scrapePlayers_errors table
-    const errors = data.eventErrors.map((eventError) => {
-      const { morgue, turn, note } = eventError.morgueNote;
-      return { morgue, turn, note, error: eventError.error };
-    });
-    console.debug({ errors });
-    // do NOT wait, this is logging not critical path for request
-    GQL_ADD_PARSE_ERROR.run({ errors });
+    if (Array.isArray(data.eventErrors) && data.eventErrors.length) {
+      // collect valid scrape errors from data.eventErrors
+      const errors = [];
+      for (const eventError of data.eventErrors) {
+        if (eventError.morgueNote) {
+          const { morgue, turn, note } = eventError.morgueNote;
+          errors.push({ morgue, turn, note, error: eventError.error });
+        }
+      }
+
+      console.debug({ errors });
+
+      // do NOT wait, this is logging not critical path for request
+      GQL_ADD_PARSE_ERROR.run({ errors });
+
+      // throw error with all errors, this will include even non-scrape errors
+      // e.g. a real error such as a TypeError will be caught here too
+      const error = new Error(`parseMorgue::data.eventErrors`);
+      error.extra = data.eventErrors;
+      throw error;
+    }
 
     // collect items to send in a single mutation call
     const items = [];
@@ -299,7 +313,7 @@ async function addMorgue({ player, morgue }) {
 
     return skip('empty');
   } catch (error) {
-    return response('error', error.message);
+    return response('error', { message: error.message, extra: error.extra, stack: error.stack });
   }
 }
 
@@ -354,9 +368,9 @@ module.exports = async function scrapePlayers(req, res) {
     }
 
     // console.debug('[scrapePlayers]', 'end');
-    return send(res, 200, { iteration, scrapeResults, loopResults });
+    return send(res, 200, { iteration, scrapeResults, loopResults }, { prettyPrint: true });
   } catch (err) {
-    return send(res, 500, err);
+    return send(res, 500, err, { prettyPrint: true });
   }
 };
 
