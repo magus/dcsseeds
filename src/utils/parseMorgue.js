@@ -518,7 +518,7 @@ function getAllMorgueNoteEvents(morgueNotes) {
       }
     } else if (acquirement) {
       const [, item] = acquirement;
-      addEvent('acquirement', item, morgueNote.loc);
+      addEvent('acquirement', morgueNote.loc, { item });
     } else if (found) {
       const [, item] = found;
       addEvent('found', morgueNote.loc, { item });
