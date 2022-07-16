@@ -45,7 +45,7 @@ WITH deleted AS (
   DELETE FROM hdb_catalog.hdb_cron_events
   WHERE
       status IN ('delivered', 'error', 'dead')
-      AND created_at < now() - interval '13 day'
+      AND created_at < now() - interval '1 day'
   RETURNING status
 ) SELECT count(*) FROM deleted;
 `;
