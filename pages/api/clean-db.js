@@ -27,19 +27,39 @@ module.exports = async (req, res) => {
         'x-hasura-admin-secret': HASURA_ADMIN_SECRET,
       },
     });
+
     const json = await resp.json();
-    return send(res, 200, json);
+    try {
+      return send(res, 200, json.result, { prettyPrint: true });
+    } catch (err) {
+      return send(res, 200, { json, err }, { prettyPrint: true });
+    }
   } catch (err) {
-    return send(res, 500, err);
+    return send(res, 500, err, { prettyPrint: true });
   }
 };
 
 const SQL = {};
 SQL.DeleteCronEventRows = `
-DELETE FROM hdb_catalog.hdb_cron_events
-WHERE
-    status IN ('delivered', 'error', 'dead')
-    AND created_at < now() - interval '1 day';
+WITH deleted AS (
+  DELETE FROM hdb_catalog.hdb_cron_events
+  WHERE
+      status IN ('delivered', 'error', 'dead')
+      AND created_at < now() - interval '13 day'
+  RETURNING status
+) SELECT count(*) FROM deleted;
 `;
 
 const DB_QUERY_ENDPOINT = 'https://dcsseeds.herokuapp.com/v1/query';
+
+// SELECT
+//   pgClass.relname   AS tableName,
+//   pgClass.reltuples AS rowCount
+// FROM
+//   pg_class pgClass
+// INNER JOIN
+//   pg_namespace pgNamespace ON (pgNamespace.oid = pgClass.relnamespace)
+// WHERE
+//   pgNamespace.nspname NOT IN ('pg_catalog', 'information_schema') AND
+//   pgClass.relkind='r'
+// ORDER BY rowCount DESC
