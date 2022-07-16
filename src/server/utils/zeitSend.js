@@ -1,4 +1,5 @@
 const { send } = require('micro');
+const prettier = require('prettier');
 
 module.exports = function zeitSend(res, statusCode, data, { prettyPrint } = {}) {
   const isError = statusCode === 500 || data instanceof Error;
@@ -31,7 +32,13 @@ module.exports = function zeitSend(res, statusCode, data, { prettyPrint } = {}) 
 
   res.setHeader('Content-Type', 'application/json');
 
-  const formattedResponseJson = !prettyPrint ? responseJson : JSON.stringify(responseJson, null, 2);
+  let formattedResponseJson;
+  if (prettyPrint) {
+    // formattedResponseJson = JSON.stringify(responseJson, null, 2);
+    formattedResponseJson = prettier.format(JSON.stringify(responseJson), { semi: false, parser: 'json' });
+  } else {
+    formattedResponseJson = responseJson;
+  }
 
   return send(res, statusCode, formattedResponseJson);
 };
