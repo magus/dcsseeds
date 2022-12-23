@@ -1,6 +1,8 @@
 import { GraphQLClient } from 'graphql-request';
 
-const { HASURA_ADMIN_SECRET } = process.env;
+if (!process) throw new Error('process is missing from globals!');
+
+const { HASURA_ADMIN_SECRET, GRAPHQL_ENDPOINT } = process.env;
 
 export function serverQuery(query, parse) {
   async function run(variables) {
@@ -17,8 +19,6 @@ export function serverQuery(query, parse) {
     run,
   };
 }
-
-const GRAPHQL_ENDPOINT = 'https://dcsseeds.herokuapp.com/v1/graphql';
 
 const graphQLClient = new GraphQLClient(GRAPHQL_ENDPOINT, {
   headers: {

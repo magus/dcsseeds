@@ -75,7 +75,7 @@ function getSearchVariables(text) {
 }
 
 const SearchResultFragment = gql`
-  fragment SearchResult on scrapePlayers_item {
+  fragment SearchResult on dcsseeds_scrapePlayers_item {
     id
     name
     location
@@ -94,20 +94,23 @@ const SEARCH_ITEM_LOCATIONS = gql`
 
   query SearchItemLocations(
     $search: String!
-    $front: scrapePlayers_item_bool_exp!
-    $startWord: scrapePlayers_item_bool_exp!
-    $middle: scrapePlayers_item_bool_exp!
-    $orderBy: [scrapePlayers_item_order_by!]
+    $front: dcsseeds_scrapePlayers_item_bool_exp!
+    $startWord: dcsseeds_scrapePlayers_item_bool_exp!
+    $middle: dcsseeds_scrapePlayers_item_bool_exp!
+    $orderBy: [dcsseeds_scrapePlayers_item_order_by!]
     $limit: Int!
   ) {
-    front: scrapePlayers_item(where: $front, order_by: $orderBy, limit: $limit) {
+    front: dcsseeds_scrapePlayers_item(where: $front, order_by: $orderBy, limit: $limit) {
       ...SearchResult
     }
-    startWord: scrapePlayers_item(where: $startWord, order_by: $orderBy, limit: $limit) {
+    startWord: dcsseeds_scrapePlayers_item(where: $startWord, order_by: $orderBy, limit: $limit) {
       ...SearchResult
     }
-    middle: scrapePlayers_item(where: $middle, order_by: $orderBy, limit: $limit) {
+    middle: dcsseeds_scrapePlayers_item(where: $middle, order_by: $orderBy, limit: $limit) {
       ...SearchResult
+    }
+    _: dcsseeds_scrapePlayers_branch(where: { name: { _eq: $search } }) {
+      name
     }
   }
 `;

@@ -160,7 +160,7 @@ const UNRANDS = [
 const GQL_TOTAL_ITEMS = serverQuery(
   gql`
     query TotalItems {
-      items: scrapePlayers_item_aggregate {
+      items: dcsseeds_scrapePlayers_item_aggregate {
         aggregate {
           count(columns: id)
         }

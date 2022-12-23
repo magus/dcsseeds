@@ -18,6 +18,16 @@ Notes when upgrading from 0.26 to 0.27
 
 ## TODO
 
+- heroku free database is deleted
+- recreate all Hasura tables + initial scrape players
+- setup `dcsseeds_scrapePlayers` tables in `magic-graphql.iamnoah.com` DB (`magus/mono`)
+- updated hasura engine in `magic-auth` droplet
+
+    ```sh
+    docker pull hasura/graphql-engine
+    docker tag hasura/graphql-engine dokku/hasura
+    dokku tags:deploy hasura
+    ```
 
 ### parse morgue visualization
 
@@ -81,6 +91,7 @@ Randarts found (can include tile image for type)
   e.g. 8 draconian colors? seed % 8 will select a color for you
   Use this to wear random set of armors for certain backgrounds
   e.g. random robes for casters, random dragon scales for stabbers, random plate/leather/etc for melee classes, etc.
+
 ### seed_players
 
 - api/reparseMorgue

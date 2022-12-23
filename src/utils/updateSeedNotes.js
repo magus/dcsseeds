@@ -1,6 +1,6 @@
 const { query } = require('graphqurl');
 
-const { HASURA_ADMIN_SECRET } = process.env;
+const { HASURA_ADMIN_SECRET, GRAPHQL_ENDPOINT } = process.env;
 
 if (!HASURA_ADMIN_SECRET) throw new Error('HASURA_ADMIN_SECRET is required!');
 
@@ -68,8 +68,6 @@ const NOTE_EVENT_TYPES = {
   spell: true,
   'unique-noticed': true,
 };
-
-const GRAPHQL_ENDPOINT = 'https://dcsseeds.herokuapp.com/v1/graphql';
 
 // {
 //   "seed": "12134159514649495260",

@@ -11,10 +11,10 @@ import { toNumber } from 'src/utils/toNumber';
 
 // Delete everything to reparse
 // mutation MyMutation {
-//   update_scrapePlayers(where: {name: {_neq: ""}}, _set: {morgues: {}}) {
+//   update_dcsseeds_scrapePlayers(where: {name: {_neq: ""}}, _set: {morgues: {}}) {
 //     affected_rows
 //   }
-//   delete_scrapePlayers_item(where: {name: {_neq: ""}}) {
+//   delete_dcsseeds_scrapePlayers_item(where: {name: {_neq: ""}}) {
 //     affected_rows
 //   }
 // }
@@ -24,7 +24,7 @@ import { toNumber } from 'src/utils/toNumber';
 // This pattern can be used to programmatically build up search strings to find very specific kinds of runs
 // gql`
 //   query MyQuery {
-//     scrapePlayers_seedVersion(
+//     dcsseeds_scrapePlayers_seedVersion(
 //       where: {
 //         _and: [
 //           { version: { _eq: "0.27.1" } }
@@ -247,8 +247,6 @@ async function addMorgue({ player, morgue }) {
         }
       }
 
-      console.debug({ errors });
-
       // do NOT wait, this is logging not critical path for request
       GQL_ADD_PARSE_ERROR.run({ errors });
 
@@ -270,16 +268,16 @@ async function addMorgue({ player, morgue }) {
       // e.g. Abyss, Pandemonium, etc.
       if ({ Abyss: 1, Pandemonium: 1 }[event.branch]) return;
 
-      // creates and associate event.branch to new scrapePlayers_branch if needed
+      // creates and associate event.branch if needed
       const branch = {
         data: { name: event.branch },
-        on_conflict: { constraint: 'scrapePlayers_branch_pkey', update_columns: 'name' },
+        on_conflict: { constraint: 'dcsseeds_scrapePlayers_branch_pkey', update_columns: 'name' },
       };
 
-      // creates and associate seed+version to new scrapePlayers_seed if needed
+      // creates and associate seed+version if needed
       const seedVersion = {
         data: { seed, version },
-        on_conflict: { constraint: 'scrapePlayers_seedVersion_pkey', update_columns: 'seed' },
+        on_conflict: { constraint: 'dcsseeds_scrapePlayers_seedVersion_pkey', update_columns: 'seed' },
       };
 
       const insertItem = {
@@ -300,6 +298,8 @@ async function addMorgue({ player, morgue }) {
 
       items.push(insertItem);
     });
+
+    console.debug({ items, playerId });
 
     if (items.length) {
       await GQL_ADD_ITEM.run({
@@ -377,7 +377,7 @@ module.exports = async function scrapePlayers(req, res) {
 const GQL_SCRAPEPLAYERS = serverQuery(
   gql`
     query ListScrapePlayers {
-      scrapePlayers(order_by: { lastRun: asc_nulls_first }) {
+      dcsseeds_scrapePlayers(order_by: { lastRun: asc_nulls_first }) {
         id
         lastRun
         name
@@ -386,12 +386,12 @@ const GQL_SCRAPEPLAYERS = serverQuery(
       }
     }
   `,
-  (data) => data.scrapePlayers,
+  (data) => data.dcsseeds_scrapePlayers,
 );
 
 const GQL_LAST_RUN_PLAYER = serverQuery(gql`
   mutation LastRunPlayer($playerId: uuid!) {
-    update_scrapePlayers_by_pk(pk_columns: { id: $playerId }, _set: { lastRun: "now()" }) {
+    update_dcsseeds_scrapePlayers_by_pk(pk_columns: { id: $playerId }, _set: { lastRun: "now()" }) {
       id
     }
   }
@@ -400,7 +400,7 @@ const GQL_LAST_RUN_PLAYER = serverQuery(gql`
 const GQL_ADD_MORGUE = serverQuery(
   gql`
     mutation AddMorgue($playerId: uuid!, $data: jsonb!) {
-      update_scrapePlayers(_append: { morgues: $data }, where: { id: { _eq: $playerId } }) {
+      update_dcsseeds_scrapePlayers(_append: { morgues: $data }, where: { id: { _eq: $playerId } }) {
         affected_rows
       }
     }
@@ -409,15 +409,15 @@ const GQL_ADD_MORGUE = serverQuery(
 
 const GQL_ADD_ITEM = serverQuery(
   gql`
-    mutation AddItem($playerId: uuid!, $data: jsonb!, $items: [scrapePlayers_item_insert_input!]!) {
-      update_scrapePlayers(_append: { morgues: $data }, where: { id: { _eq: $playerId } }) {
+    mutation AddItem($playerId: uuid!, $data: jsonb!, $items: [dcsseeds_scrapePlayers_item_insert_input!]!) {
+      update_dcsseeds_scrapePlayers(_append: { morgues: $data }, where: { id: { _eq: $playerId } }) {
         affected_rows
       }
 
-      items: insert_scrapePlayers_item(
+      items: insert_dcsseeds_scrapePlayers_item(
         objects: $items
         on_conflict: {
-          constraint: scrapePlayers_item_name_branch_level_morgue_seed_fullVersion_ke
+          constraint: dcsseeds_scrapePlayers_item_name_branchName_level_morgue_seed_f
           update_columns: name
         }
       ) {
@@ -428,10 +428,10 @@ const GQL_ADD_ITEM = serverQuery(
 );
 
 const GQL_ADD_PARSE_ERROR = serverQuery(gql`
-  mutation AddParseError($errors: [scrapePlayers_errors_insert_input!]!) {
-    insert_scrapePlayers_errors(
+  mutation AddParseError($errors: [dcsseeds_scrapePlayers_errors_insert_input!]!) {
+    insert_dcsseeds_scrapePlayers_errors(
       objects: $errors
-      on_conflict: { constraint: scrapePlayers_errors_pkey, update_columns: error }
+      on_conflict: { constraint: dcsseeds_scrapePlayers_errors_pkey, update_columns: error }
     ) {
       affected_rows
     }

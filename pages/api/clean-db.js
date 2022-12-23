@@ -52,6 +52,11 @@ WITH deleted AS (
 
 const DB_QUERY_ENDPOINT = 'https://dcsseeds.herokuapp.com/v1/query';
 
+// -- delete rows from table
+// DELETE FROM hdb_catalog.hdb_cron_event_invocation_logs;
+// DELETE FROM hdb_catalog.hdb_cron_events;
+
+// -- count rows in tables
 // SELECT
 //   pgClass.relname   AS tableName,
 //   pgClass.reltuples AS rowCount

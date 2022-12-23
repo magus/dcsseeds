@@ -2,7 +2,7 @@ const { GraphQLClient } = require('graphql-request');
 const send = require('src/server/utils/zeitSend');
 const GraphqlSeed = require('src/graphql/seed');
 
-const { HASURA_ADMIN_SECRET } = process.env;
+const { HASURA_ADMIN_SECRET, GRAPHQL_ENDPOINT } = process.env;
 
 if (!HASURA_ADMIN_SECRET) throw new Error('HASURA_ADMIN_SECRET is required!');
 
@@ -26,5 +26,3 @@ module.exports = async (req, res) => {
     return send(res, 500, err);
   }
 };
-
-const GRAPHQL_ENDPOINT = 'https://dcsseeds.herokuapp.com/v1/graphql';

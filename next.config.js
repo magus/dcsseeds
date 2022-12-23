@@ -38,6 +38,7 @@ module.exports = withSourceMaps({
       new webpack.DefinePlugin({
         __DEV__: JSON.stringify(EnvConfig.DEV),
         'process.env.SENTRY_RELEASE': JSON.stringify(buildId),
+        'process.env.GRAPHQL_ENDPOINT': JSON.stringify(process.env.GRAPHQL_ENDPOINT),
       }),
     );
 
