@@ -6,6 +6,7 @@ const runRegex = require('src/utils/runRegex');
 
 const Branch = keyMirror({
   Abyss: true,
+  Arena: true,
   Bailey: true,
   Bazaar: true,
   Blade: true,
@@ -46,6 +47,7 @@ const Branch = keyMirror({
 
 const BRANCH_ALIASES = {
   abyss: Branch.Abyss,
+  arena: Branch.Arena,
   bailey: Branch.Bailey,
   bazaar: Branch.Bazaar,
   blade: Branch.Blade,
