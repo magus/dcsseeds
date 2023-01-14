@@ -242,8 +242,8 @@ async function addMorgue({ player, morgue }) {
       const errors = [];
       for (const eventError of data.eventErrors) {
         if (eventError.morgueNote) {
-          const { morgue, turn, note } = eventError.morgueNote;
-          errors.push({ morgue, turn, note, error: eventError.error });
+          const { morgue, turn, note, loc } = eventError.morgueNote;
+          errors.push({ morgue, turn, loc, note, error: eventError.error });
         }
       }
 
@@ -299,8 +299,6 @@ async function addMorgue({ player, morgue }) {
       items.push(insertItem);
     });
 
-    console.debug({ items, playerId });
-
     if (items.length) {
       await GQL_ADD_ITEM.run({
         items,
@@ -313,6 +311,11 @@ async function addMorgue({ player, morgue }) {
 
     return skip('empty');
   } catch (error) {
+    // write error into db
+    const errors = [{ morgue, turn: '', note: '', loc: '', error: error.message }];
+    GQL_ADD_PARSE_ERROR.run({ errors });
+
+    // bubble error
     return response('error', { message: error.message, extra: error.extra, stack: error.stack });
   }
 }
