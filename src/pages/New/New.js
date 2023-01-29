@@ -394,9 +394,9 @@ const LockInput = styled.input`
 
 const VERSION_CHOICES = [
   // <Select> options
-  { value: Versions.v280 },
-  { value: Versions.v271 },
-  { value: Versions.v270 },
+  { value: Versions.v29 },
+  { value: Versions.v28 },
+  { value: Versions.v27 },
   { value: Versions.v26 },
   { value: Versions.v25 },
   { value: Versions.v24 },

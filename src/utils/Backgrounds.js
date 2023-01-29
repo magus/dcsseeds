@@ -49,6 +49,7 @@ const Names = {
   [Backgrounds.FE]: 'Fire Elementalist',
   [Backgrounds.Fi]: 'Fighter',
   [Backgrounds.Gl]: 'Gladiator',
+  [Backgrounds.HW]: 'Hedge Wizard',
   [Backgrounds.Hu]: 'Hunter',
   [Backgrounds.IE]: 'Ice Elementalist',
   [Backgrounds.Mo]: 'Monk',
