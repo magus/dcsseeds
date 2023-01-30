@@ -5,6 +5,7 @@
   "scripts": {
     "search": "node ./scripts/parseUser",
     "dev": "node src/server",
+    "prod": "yarn build && yarn start",
     "build": "next build",
     "start": "NODE_ENV=production node src/server",
     "lint": "next lint",
