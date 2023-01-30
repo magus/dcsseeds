@@ -10,7 +10,7 @@ import StyledLink from 'src/components/StyledLink';
 
 import Species from 'src/utils/Species';
 import Backgrounds from 'src/utils/Backgrounds';
-import Versions from 'src/utils/Versions';
+import Version from 'src/Version';
 import * as GraphqlSeed from 'src/graphql/seed';
 
 import getInitialProps from './getInitialProps';
@@ -30,11 +30,11 @@ export default function New(props) {
   });
 
   function handleVersion(version) {
-    const versionSpecies = Versions.getSpecies({ version }).map((_) => _.value);
+    const versionSpecies = Version.getSpecies({ version }).map((_) => _.value);
     // if species not available in version, reset to first species
     if (!~versionSpecies.indexOf(species)) set_species(versionSpecies[0]);
 
-    const versionBackgrounds = Versions.getBackgrounds({ version }).map((_) => _.value);
+    const versionBackgrounds = Version.getBackgrounds({ version }).map((_) => _.value);
     // if background not available in version, reset to first background
     if (!~versionBackgrounds.indexOf(background)) set_background(versionBackgrounds[0]);
 
@@ -112,19 +112,19 @@ export default function New(props) {
     );
   }
 
-  const speciesOptions = Versions.getSpecies({ version, background }).map((sp) => {
+  const speciesOptions = Version.getSpecies({ version, background }).map((sp) => {
     const species = sp.value;
-    const speciesVersion = Versions.Recommended.Species[version];
-    if (!speciesVersion) throw new Error(`Versions.Recommended.Species missing version [${version}]`);
+    const speciesVersion = Version.Recommended.Species[version];
+    if (!speciesVersion) throw new Error(`Version.Recommended.Species missing version [${version}]`);
     const speciesVersionBackground = speciesVersion[background];
     if (!speciesVersionBackground)
-      throw new Error(`Versions.Recommended.Species missing version [${version}] for background [${background}]`);
+      throw new Error(`Version.Recommended.Species missing version [${version}] for background [${background}]`);
 
-    const backgroundVersion = Versions.Recommended.Backgrounds[version];
-    if (!backgroundVersion) throw new Error(`Versions.Recommended.Backgrounds missing version [${version}]`);
+    const backgroundVersion = Version.Recommended.Backgrounds[version];
+    if (!backgroundVersion) throw new Error(`Version.Recommended.Backgrounds missing version [${version}]`);
     const backgroundVersionSpecies = backgroundVersion[species];
     if (!backgroundVersionSpecies)
-      throw new Error(`Versions.Recommended.Backgrounds missing version [${version}] for species [${species}]`);
+      throw new Error(`Version.Recommended.Backgrounds missing version [${version}] for species [${species}]`);
 
     const recommendedSpecies = !!speciesVersionBackground[species];
     const recommendedBackground = !!backgroundVersionSpecies[background];
@@ -146,19 +146,19 @@ export default function New(props) {
     };
   });
 
-  const backgroundsOptions = Versions.getBackgrounds({ version, species }).map((bg) => {
+  const backgroundsOptions = Version.getBackgrounds({ version, species }).map((bg) => {
     const background = bg.value;
-    const speciesVersion = Versions.Recommended.Species[version];
-    if (!speciesVersion) throw new Error(`Versions.Recommended.Species missing version [${version}]`);
+    const speciesVersion = Version.Recommended.Species[version];
+    if (!speciesVersion) throw new Error(`Version.Recommended.Species missing version [${version}]`);
     const speciesVersionBackground = speciesVersion[background];
     if (!speciesVersionBackground)
-      throw new Error(`Versions.Recommended.Species missing version [${version}] for background [${background}]`);
+      throw new Error(`Version.Recommended.Species missing version [${version}] for background [${background}]`);
 
-    const backgroundVersion = Versions.Recommended.Backgrounds[version];
-    if (!backgroundVersion) throw new Error(`Versions.Recommended.Backgrounds missing version [${version}]`);
+    const backgroundVersion = Version.Recommended.Backgrounds[version];
+    if (!backgroundVersion) throw new Error(`Version.Recommended.Backgrounds missing version [${version}]`);
     const backgroundVersionSpecies = backgroundVersion[species];
     if (!backgroundVersionSpecies)
-      throw new Error(`Versions.Recommended.Backgrounds missing version [${version}] for species [${species}]`);
+      throw new Error(`Version.Recommended.Backgrounds missing version [${version}] for species [${species}]`);
 
     const recommendedSpecies = !!speciesVersionBackground[species];
     const recommendedBackground = !!backgroundVersionSpecies[background];
@@ -394,10 +394,10 @@ const LockInput = styled.input`
 
 const VERSION_CHOICES = [
   // <Select> options
-  { value: Versions.v29 },
-  { value: Versions.v28 },
-  { value: Versions.v27 },
-  { value: Versions.v26 },
-  { value: Versions.v25 },
-  { value: Versions.v24 },
+  { value: Version.v29, name: '0.29' },
+  { value: Version.v28, name: '0.28' },
+  { value: Version.v27, name: '0.27' },
+  { value: Version.v26, name: '0.26' },
+  { value: Version.v25, name: '0.25' },
+  { value: Version.v24, name: '0.24' },
 ];

@@ -66,6 +66,14 @@ const Names = {
   [Species.VS]: 'Vine Stalker',
 };
 
+for (const pair of Object.entries(Names)) {
+  const [key, value] = pair;
+
+  if (key === 'undefined') {
+    throw new Error(`Invalid entry in Names [${JSON.stringify({ key, value })}]`);
+  }
+}
+
 module.exports = {
   ...Species,
   Keys: Species,

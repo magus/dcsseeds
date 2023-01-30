@@ -1,7 +1,6 @@
 import fetch from 'src/utils/fetch';
 import Species from 'src/utils/Species';
 import Backgrounds from 'src/utils/Backgrounds';
-import Versions from 'src/utils/Versions';
 
 export default async function getInitialProps(props = {}) {
   const { version, species, background } = props;

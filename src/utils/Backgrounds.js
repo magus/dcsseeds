@@ -16,6 +16,7 @@ const Backgrounds = keyMirror({
   En: true,
   FE: true,
   Gl: true,
+  HW: true,
   Hu: true,
   IE: true,
   Mo: true,
@@ -62,6 +63,14 @@ const Names = {
   [Backgrounds.Wr]: 'Warper',
   [Backgrounds.Wz]: 'Wizard',
 };
+
+for (const pair of Object.entries(Names)) {
+  const [key, value] = pair;
+
+  if (key === 'undefined') {
+    throw new Error(`Invalid entry in Names [${JSON.stringify({ key, value })}]`);
+  }
+}
 
 module.exports = {
   ...Backgrounds,

@@ -3,7 +3,7 @@ const { randomElement } = require('src/server/utils/random');
 const { generateSeed } = require('src/server/utils/seed');
 const Species = require('src/utils/Species');
 const Backgrounds = require('src/utils/Backgrounds');
-const Versions = require('src/utils/Versions');
+const Version = require('src/Version');
 
 // returns the random seed values for /new
 // Example API Request
@@ -12,7 +12,7 @@ const Versions = require('src/utils/Versions');
 module.exports = async (req, res) => {
   try {
     const seed = generateSeed();
-    const version = req.query.version || Versions.v26;
+    const version = req.query.version || Version.v29;
 
     let species = req.query.species;
     let background = req.query.background;
@@ -22,13 +22,13 @@ module.exports = async (req, res) => {
       // filter out banned combos
       // e.g. felid weapon backgrounds like gladiator, hunter, etc.
       // e.g. demigod god backgrounds like chaos knight, monk, etc.
-      const speciesOptions = Versions.getSpecies({ version, background }).filter((_) => !_.banned);
+      const speciesOptions = Version.getSpecies({ version, background }).filter((_) => !_.banned);
       species = randomElement(speciesOptions).value;
     }
 
     // choose random background
     if (!background) {
-      const backgroundOptions = Versions.getBackgrounds({ version, species }).filter((_) => !_.banned);
+      const backgroundOptions = Version.getBackgrounds({ version, species }).filter((_) => !_.banned);
       background = randomElement(backgroundOptions).value;
     }
 
