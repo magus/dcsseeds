@@ -541,7 +541,7 @@ function getAllMorgueNoteEvents(morgueNotes) {
       addEvent('item', `${loc}:${level}`, { item });
     } else if (identIgnore) {
       const [, item] = identIgnore;
-      console.warn('ident-ignore', morgueNote.loc, { item });
+      // console.warn('ident-ignore', morgueNote.loc, { item });
     } else if (ident) {
       const [, item] = ident;
       addEvent('ident', morgueNote.loc, { item });

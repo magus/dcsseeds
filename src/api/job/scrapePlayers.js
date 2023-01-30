@@ -100,28 +100,40 @@ const MAX_MORGUES_PER_PLAYER = 1;
 // - Korea: no custom seed option either
 // - Japan: didn't load
 // - New York: https://crawl.kelbi.org/crawl/morgue/MalcolmRose/morgue-MalcolmRose-20210116-054957.txt
+
+function ServerConfig(rawdata_base) {
+  return {
+    rawdataUrl: (name) => `${rawdata_base}/${name}`,
+
+    morgueRegex: (name) => new RegExp(`href=(?:\"|\').*?(morgue-${name}-([0-9\-]*?)\.txt(?:\.gz)?)(?:\"|\')`, 'g'),
+
+    morgueTimestampRegex: (timestamp) => {
+      const [, Y, M, D, h, m, s] = /(\d{4})(\d{2})(\d{2})-(\d{2})(\d{2})(\d{2})/.exec(timestamp);
+      const dateString = `${Y}-${M}-${D}T${h}:${m}:${s}.000Z`;
+      return new Date(dateString);
+    },
+  };
+}
+
+// http://crawl.akrasiac.org/scoring/per-day.html
+// http://crawl.akrasiac.org/scoring/recent.html
+// http://crawl.akrasiac.org/scoring/all-players.html
+
+// maybe instead of parsing the server morgue lists directly
+// parse the akrasiac listings above, which link out to individual morgue files
+// this avoids the issue of handling each server and instead goes back
+// to handling just morgue files, a player name is unique identifier across servers
 const SERVER_CONFIG = {
-  // http://crawl.akrasiac.org/scoring/per-day.html
-  // http://crawl.akrasiac.org/scoring/recent.html
-  // http://crawl.akrasiac.org/scoring/all-players.html
-  akrasiac: {
-    rawdataUrl: (name) => `http://crawl.akrasiac.org/rawdata/${name}`,
-    morgueRegex: (name) => new RegExp(`href=(?:\"|\').*?(morgue-${name}-([0-9\-]*?)\.txt(?:\.gz)?)(?:\"|\')`, 'g'),
-    morgueTimestampRegex: (timestamp) => {
-      const [, Y, M, D, h, m, s] = /(\d{4})(\d{2})(\d{2})-(\d{2})(\d{2})(\d{2})/.exec(timestamp);
-      const dateString = `${Y}-${M}-${D}T${h}:${m}:${s}.000Z`;
-      return new Date(dateString);
-    },
-  },
-  kelbi: {
-    rawdataUrl: (name) => `https://crawl.kelbi.org/crawl/morgue/${name}`,
-    morgueRegex: (name) => new RegExp(`href=(?:\"|\').*?(morgue-${name}-([0-9\-]*?)\.txt(?:\.gz)?)(?:\"|\')`, 'g'),
-    morgueTimestampRegex: (timestamp) => {
-      const [, Y, M, D, h, m, s] = /(\d{4})(\d{2})(\d{2})-(\d{2})(\d{2})(\d{2})/.exec(timestamp);
-      const dateString = `${Y}-${M}-${D}T${h}:${m}:${s}.000Z`;
-      return new Date(dateString);
-    },
-  },
+  akrasiac: new ServerConfig('http://crawl.akrasiac.org/rawdata'),
+  xtahua: new ServerConfig('https://crawl.xtahua.com/crawl/morgue'),
+  project357: new ServerConfig('https://crawl.project357.org/morgue'),
+
+  // problematic servers ...
+
+  // kelbi has really long response times
+  kelbi: new ServerConfig('https://crawl.kelbi.org/crawl/morgue'),
+  // morgue list is inaccessible, can only access morgue files directly
+  berotato: new ServerConfig('https://cbro.berotato.org/morgue'),
 };
 
 async function scrapePlayer(player) {
@@ -136,16 +148,22 @@ async function parsePlayer(player) {
   let resp;
 
   const { name } = player;
+
   const serverConfig = SERVER_CONFIG[player.server];
+
+  if (!serverConfig) {
+    throw new Error(`unrecognized server [${player.server}]`);
+  }
 
   const rawdataUrl = serverConfig.rawdataUrl(name);
   resp = await fetch(rawdataUrl);
 
   if (resp.status === 404) {
-    console.debug('[scrapePlayer]', '404', name);
+    console.debug('[scrapePlayer]', '404', rawdataUrl);
+
     // Should we remove the player or something?
     // Maybe, it's fine for now, it will find 0 morgues anyway
-    return null;
+    return [];
   }
 
   const morgue_list_html = await resp.text();
@@ -191,7 +209,14 @@ async function parsePlayerMorgues({ player, morgues, limit = MAX_MORGUES_PER_PLA
   }
 
   const result = await Promise.all(asyncAddMorgues);
-  await GQL_LAST_RUN_PLAYER.run({ playerId: player.id });
+
+  if (!result.length) {
+    // console.debug(player.name, player.server, 'no new morgues');
+  }
+
+  // console.debug('mark last run for', player.name, player.server);
+  // await GQL_LAST_RUN_PLAYER.run({ playerId: player.id });
+
   // console.debug('[scrapePlayer]', 'asyncAddMorgues', asyncAddMorgues.length, { result });
   return result;
 }
@@ -213,10 +238,9 @@ async function addMorgue({ player, morgue }) {
       playerId,
       data: { [morgueLookupKey(morgue.timestamp)]: true },
     });
+
     return response(`skip (${reason})`);
   }
-
-  console.debug('[addMorgue]', url);
 
   try {
     // parse morgue
@@ -358,7 +382,6 @@ module.exports = async function scrapePlayers(req, res) {
     const scrapePlayerResults = [];
     for (let i = 0; i < players.length; i++) {
       const player = players[i];
-      console.debug('[scrapePlayers]', player.name);
       scrapePlayerResults.push(scrapePlayer(player));
     }
 
@@ -379,9 +402,12 @@ module.exports = async function scrapePlayers(req, res) {
       }
     }
 
+    const time = getElapsedTime(reqStart);
+
     // console.debug('[scrapePlayers]', 'end');
-    return send(res, 200, { iteration, scrapeResults, loopResults }, { prettyPrint: true });
+    return send(res, 200, { time, iteration, scrapeResults, loopResults }, { prettyPrint: true });
   } catch (err) {
+    const time = getElapsedTime(reqStart);
     return send(res, 500, err, { prettyPrint: true });
   }
 };
@@ -401,18 +427,14 @@ const GQL_SCRAPEPLAYERS = serverQuery(
   (data) => data.dcsseeds_scrapePlayers,
 );
 
-const GQL_LAST_RUN_PLAYER = serverQuery(gql`
-  mutation LastRunPlayer($playerId: uuid!) {
-    update_dcsseeds_scrapePlayers_by_pk(pk_columns: { id: $playerId }, _set: { lastRun: "now()" }) {
-      id
-    }
-  }
-`);
-
 const GQL_ADD_MORGUE = serverQuery(
   gql`
     mutation AddMorgue($playerId: uuid!, $data: jsonb!) {
-      update_dcsseeds_scrapePlayers(_append: { morgues: $data }, where: { id: { _eq: $playerId } }) {
+      update_dcsseeds_scrapePlayers(
+        _append: { morgues: $data }
+        where: { id: { _eq: $playerId } }
+        _set: { lastRun: "now()" }
+      ) {
         affected_rows
       }
     }
@@ -422,7 +444,11 @@ const GQL_ADD_MORGUE = serverQuery(
 const GQL_ADD_ITEM = serverQuery(
   gql`
     mutation AddItem($playerId: uuid!, $data: jsonb!, $items: [dcsseeds_scrapePlayers_item_insert_input!]!) {
-      update_dcsseeds_scrapePlayers(_append: { morgues: $data }, where: { id: { _eq: $playerId } }) {
+      update_dcsseeds_scrapePlayers(
+        _append: { morgues: $data }
+        where: { id: { _eq: $playerId } }
+        _set: { lastRun: "now()" }
+      ) {
         affected_rows
       }
 
