@@ -101,6 +101,9 @@ const MAX_MORGUES_PER_PLAYER = 1;
 // - Japan: didn't load
 // - New York: https://crawl.kelbi.org/crawl/morgue/MalcolmRose/morgue-MalcolmRose-20210116-054957.txt
 const SERVER_CONFIG = {
+  // http://crawl.akrasiac.org/scoring/per-day.html
+  // http://crawl.akrasiac.org/scoring/recent.html
+  // http://crawl.akrasiac.org/scoring/all-players.html
   akrasiac: {
     rawdataUrl: (name) => `http://crawl.akrasiac.org/rawdata/${name}`,
     morgueRegex: (name) => new RegExp(`href=(?:\"|\').*?(morgue-${name}-([0-9\-]*?)\.txt(?:\.gz)?)(?:\"|\')`, 'g'),
@@ -136,7 +139,7 @@ async function parsePlayer(player) {
   const serverConfig = SERVER_CONFIG[player.server];
 
   const rawdataUrl = serverConfig.rawdataUrl(name);
-  resp = await fetch(`${rawdataUrl}?C=M;O=D`);
+  resp = await fetch(rawdataUrl);
 
   if (resp.status === 404) {
     console.debug('[scrapePlayer]', '404', name);
@@ -145,24 +148,30 @@ async function parsePlayer(player) {
     return null;
   }
 
-  const rawdataMorgueHtml = await resp.text();
+  const morgue_list_html = await resp.text();
 
   // if (player.name === 'MalcolmRose') {
-  //   console.debug({ rawdataMorgueHtml });
+  //   console.debug({ morgue_list_html });
   // }
 
-  const morgues = [];
+  const morgue_list = [];
   const regex = serverConfig.morgueRegex(name);
-  let match = regex.exec(rawdataMorgueHtml);
+  let match = regex.exec(morgue_list_html);
   while (match) {
     const [, filename, timeString] = match;
     const timestamp = serverConfig.morgueTimestampRegex(timeString);
     const url = `${rawdataUrl}/${filename}`;
-    morgues.push({ url, timestamp });
-    match = regex.exec(rawdataMorgueHtml);
+    morgue_list.push({ url, timestamp });
+    match = regex.exec(morgue_list_html);
   }
 
-  return morgues;
+  // reverse the list so that most recent (bottom) is first
+  morgue_list.reverse();
+
+  // show first and last morgue parsed from html page
+  // console.debug(morgue_list[0], morgue_list[morgue_list.length - 1]);
+
+  return morgue_list;
 }
 
 async function parsePlayerMorgues({ player, morgues, limit = MAX_MORGUES_PER_PLAYER }) {
