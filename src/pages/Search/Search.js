@@ -2,136 +2,27 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { useRouter } from 'next/router';
 
+import * as ScrapePlayers from 'src/graphql/scrapePlayers';
+import { useArtifactFilter } from 'src/graphql/useArtifactFilter';
+
 import { SearchField } from './components/SearchField';
 import { SearchResults } from './components/SearchResults';
-import * as ScrapePlayers from 'src/graphql/scrapePlayers';
-
-// TODO parse all unrands from crawl source
-// see scripts/getMonster.js and make equivalent for
-// https://github.com/crawl/crawl/tree/master/crawl-ref/source/dat/descript/unrand.txt
-// since we support many versions we should add to our list from each version
-// e.g. for 0.27-0.29 get all uniques and create a unique set from all 3 lists
-
-// TODO handle AND queries
-// find seeds with artifact combos
-// build programmatically by creating every artifact query nested under every other
-// then we can build a ui to filter by artifact presence
-// and at each level we can show which other artifacts are available
-//
-// e.g.
-//    for each result.wyrmbane
-//    result.wyrmbane.warlock.length, count it
-//    total count = number of seeds with wrymbane AND warlock mirror
-//
-// top level query show count for each unrand
-gql`
-  query MyQueryA {
-    wyrmbane: dcsseeds_scrapePlayers_seedVersion(
-      where: { items: { name: { _ilike: "%wyrmbane%" } } }
-      order_by: { items_aggregate: { count: desc } }
-    ) {
-      seed
-      version
-    }
-    warlock: dcsseeds_scrapePlayers_seedVersion(
-      where: { items: { name: { _ilike: "%warlock%" } } }
-      order_by: { items_aggregate: { count: desc } }
-    ) {
-      seed
-      version
-    }
-    spriggan: dcsseeds_scrapePlayers_seedVersion(
-      where: { items: { name: { _ilike: "%spriggan%" } } }
-      order_by: { items_aggregate: { count: desc } }
-    ) {
-      seed
-      version
-    }
-  }
-
-  fragment Result on dcsseeds_scrapePlayers_item {
-    branchName
-    level
-  }
-`;
-
-// query to filter for combined artifacts
-// display pill for each artifact (make it a grid so each cell is same size, e.g. 3x30 or 4x30, etc.)
-// select pill to toggle 'AND artifact'
-// after each pill selection, build and run the nested query and update counts for all artifacts
-//    -> select (wymbane 6)
-//       *query wymbane > nested artifacts
-//       *update counts so all other counts should go down but wymbane should stay at 50
-//       *show results for wymbane
-//       -> select (warlock's mirror 2)
-//          *query wymbane > warlocks > nested artifacts
-//          *update counts so all other counts should go down but wymbane and warlocks should stay at 2
-//          *show results for wymbane + warlocks
-//
-gql`
-  query MyQueryA {
-    wyrmbane: dcsseeds_scrapePlayers_seedVersion(
-      where: { items: { name: { _ilike: "%wyrmbane%" } } }
-      order_by: { items_aggregate: { count: desc } }
-    ) {
-      seed
-      version
-      wyrmbane: items(where: { name: { _ilike: "%wyrmbane%" } }) {
-        ...Result
-        seedVersion {
-          warlock: items(where: { name: { _ilike: "%warlock%" } }) {
-            ...Result
-            seedVersion {
-              spriggan: items(where: { name: { _ilike: "%spriggan%" } }) {
-                ...Result
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-
-  fragment Result on dcsseeds_scrapePlayers_item {
-    branchName
-    level
-  }
-`;
-
-//
-// alternatively the top level query can be filtered by using _in filter with array of seed identifiers
-// requires updating seedVersion table with unique identifier for _in query
-// for example for a wymrbane query with 4 seed versions
-//
-//
-//     gql`
-//       query MyQueryA {
-//         dcsseeds_scrapePlayers_seedVersion(
-//           where: {
-//             seed: { _in: ["2138692063163957027", "4770158223621261664", "16086881908306480364", "11675607203939162522"] }
-//           }
-//         ) {
-//           wyrmbane: items(where: { name: { _ilike: "%wyrmbane%" } }) {
-//             ...Result
-//           }
-//           warlock: items(where: { name: { _ilike: "%warlock%" } }) {
-//             ...Result
-//           }
-//           spriggan: items(where: { name: { _ilike: "%spriggan%" } }) {
-//             ...Result
-//           }
-//         }
-//       }
-//     `;
-//
-//
+import { random_placeholder } from './random_placeholder';
 
 export default function Search(props) {
+  const placeholder = React.useRef(random_placeholder());
+
   const router = useRouter();
   const { q } = router.query;
   const searchFieldRef = React.useRef();
   const [search, set_search] = React.useState(q || '');
   const itemSearch = ScrapePlayers.useItemSearch();
+
+  const artifact_filter = useArtifactFilter(props);
+  if (typeof window !== 'undefined') {
+    window.artifact_filter = artifact_filter;
+  }
+  console.debug('[artifact_filter]', artifact_filter);
 
   React.useEffect(() => {
     itemSearch.search(search);
@@ -179,7 +70,7 @@ export default function Search(props) {
   }
 
   function handleTrySearch() {
-    set_search(props.placeholder);
+    set_search(placeholder.current);
   }
 
   const formattedTotalItemCount = new Intl.NumberFormat().format(props.totalItemCount);
@@ -198,7 +89,7 @@ export default function Search(props) {
       <SearchField
         ref={searchFieldRef}
         label="Search"
-        placeholder={props.placeholder}
+        placeholder={placeholder.current}
         value={search}
         onSubmit={handleSubmit}
         onClear={handleClear}
