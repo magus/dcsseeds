@@ -31,7 +31,7 @@ export default function Search(props) {
   React.useEffect(() => {
     if (!router.isReady) return;
 
-    if (search !== router.query.q) {
+    if (router.query.q && search !== router.query.q) {
       set_search(router.query.q);
     }
 
