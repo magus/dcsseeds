@@ -10,7 +10,13 @@ import { SearchResults } from './components/SearchResults';
 import { random_placeholder } from './random_placeholder';
 
 export default function Search(props) {
-  const placeholder = React.useRef(random_placeholder());
+  // temporary working on artifact filter
+  const artifact_filter = useArtifactFilter(props);
+  if (typeof window !== 'undefined') {
+    window.artifact_filter = artifact_filter;
+  }
+  console.debug('[artifact_filter]', artifact_filter);
+  // temporary working on artifact filter
 
   const router = useRouter();
   const { q } = router.query;
@@ -18,11 +24,10 @@ export default function Search(props) {
   const [search, set_search] = React.useState(q || '');
   const itemSearch = ScrapePlayers.useItemSearch();
 
-  const artifact_filter = useArtifactFilter(props);
-  if (typeof window !== 'undefined') {
-    window.artifact_filter = artifact_filter;
-  }
-  console.debug('[artifact_filter]', artifact_filter);
+  const [placeholder, set_placeholder] = React.useState(undefined);
+  React.useEffect(() => {
+    set_placeholder(random_placeholder());
+  }, []);
 
   React.useEffect(() => {
     itemSearch.search(search);
@@ -70,7 +75,7 @@ export default function Search(props) {
   }
 
   function handleTrySearch() {
-    set_search(placeholder.current);
+    set_search(placeholder);
   }
 
   const formattedTotalItemCount = new Intl.NumberFormat().format(props.totalItemCount);
@@ -89,7 +94,7 @@ export default function Search(props) {
       <SearchField
         ref={searchFieldRef}
         label="Search"
-        placeholder={placeholder.current}
+        placeholder={placeholder}
         value={search}
         onSubmit={handleSubmit}
         onClear={handleClear}
