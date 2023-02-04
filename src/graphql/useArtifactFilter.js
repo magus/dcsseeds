@@ -96,18 +96,21 @@ export function useArtifactFilter(props) {
     }
   }
 
-  return { filter_list, add_filter, remove_filter, artifact_count, seedVersion_set_list, result_list };
+  return { filter_list, add_filter, remove_filter, artifact_count, result_list };
 
-  async function remove_filter(i) {
-    // construct the updated filter_list and use it to make a fresh query
-    // we have to re-query because we might remove an earlier filter
-    throw new Error();
+  async function remove_filter(artifact_i) {
+    // console.debug('[useArtifactFilter]', 'remove_filter', { artifact_i });
+    const next_filter_list = filter_list.filter((i) => i !== artifact_i);
+    await query_next_filter(next_filter_list);
   }
 
-  async function add_filter(i) {
-    // console.debug('[useArtifactFilter]', 'filter', { i });
+  async function add_filter(artifact_i) {
+    // console.debug('[useArtifactFilter]', 'add_filter', { artifact_i });
+    const next_filter_list = [...filter_list, artifact_i];
+    await query_next_filter(next_filter_list);
+  }
 
-    const next_filter_list = [...filter_list, i];
+  async function query_next_filter(next_filter_list) {
     const nested_query = active_filter_query(next_filter_list);
     const [first_filter, ...rest_filter] = next_filter_list;
 
