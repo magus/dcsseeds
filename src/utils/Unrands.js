@@ -99,7 +99,7 @@ export const UNRANDS = [
   // `trident of the Octopus King`,
   // `Vampire's Tooth`,
   `warlock's mirror`,
-  // `whip "Snakebite"`,
+  `whip "Snakebite"`,
   // `Wrath of Trog`,
   // `zealot's sword`,
 ];

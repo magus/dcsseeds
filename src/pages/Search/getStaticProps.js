@@ -42,21 +42,11 @@ const GQL_TOTAL_ITEMS = serverQuery(
 const safe_name = (value) => value.replace(/"/g, '\\"');
 const result_key = (i) => `result_${i}`;
 
-const ResultFragment = gql`
-  fragment Result on dcsseeds_scrapePlayers_item {
-    branchName
-    level
-    morgue
-  }
-`;
-
 const GQL_TOP_LEVEL = serverQuery(
   gql`
     query TopLevelArtifacts {
       ${UNRANDS.map(SeedVersionFilter)}
     }
-
-    ${ResultFragment}
   `,
   (data) => data,
 );
@@ -70,12 +60,7 @@ function SeedVersionFilter(name, i) {
       where: { items: { name: { _ilike: "${name_ilike}" } } }
       order_by: { items_aggregate: { count: desc } }
     ) {
-      items(where: { name: { _ilike: "${name_ilike}" } }, limit: 1, order_by: { branch: { order: asc } }) {
-        ...Result
-        seedVersion {
-          seed
-          version
-        }
-      }
+      seed
+      version
     }`;
 }

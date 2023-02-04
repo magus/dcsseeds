@@ -34,15 +34,71 @@ import { UNRANDS } from 'src/utils/Unrands';
 //          *show results for wymbane + warlocks
 //
 export function useArtifactFilter(props) {
+  const client = useApolloClient();
+
   const [filter_list, set_filter_list] = React.useState([
     // represent top level (no filter)
     create_filter_entry(null, props.artifact_list),
   ]);
 
-  const client = useApolloClient();
+  const [first_filter] = filter_list;
+  const last_filter = filter_list[filter_list.length - 1];
+  const active_filter_list = filter_list.slice(1);
+  const filter_path = active_filter_list.map((filter_entry) => result_key(filter_entry.i));
+
+  // build a lookup for the top-level artifact counts to quickly count
+  // results for artifact_count array below
+  const seedVersion_set_list = React.useMemo(() => {
+    const set_list = [];
+
+    for (let i = 0; i < UNRANDS.length; i++) {
+      const set = new Set();
+      const result_list = first_filter.data[i];
+
+      for (const result of result_list) {
+        const key = seed_version_key(result.seed, result.version);
+        set.add(key);
+      }
+
+      set_list[i] = set;
+    }
+
+    return set_list;
+  }, [first_filter]);
+
+  // 1. count the number of results for each artifact
+  // 2. build result list given current filter list
+  let artifact_count = [];
+  let result_list = [];
+
+  if (filter_list.length === 1) {
+    // handle initial case with query result from static props
+    for (let i = 0; i < UNRANDS.length; i++) {
+      const seedVersion_set = seedVersion_set_list[i];
+      artifact_count[i] = seedVersion_set.size;
+    }
+  } else if (filter_list.length > 1) {
+    result_list = traverse_data(last_filter.data, filter_path, handle_result);
+
+    for (let i = 0; i < UNRANDS.length; i++) {
+      artifact_count[i] = 0;
+
+      for (const result of result_list) {
+        const seedVersion_set = seedVersion_set_list[i];
+
+        if (seedVersion_set.has(seed_version_key(result.seed, result.version))) {
+          artifact_count[i]++;
+        }
+      }
+    }
+  }
+
+  return { filter_list, add_filter, artifact_count, seedVersion_set_list, result_list };
 
   async function add_filter(i) {
     console.debug('[useArtifactFilter]', 'filter', { i });
+
+    const nested_query = active_filter_query([...active_filter_list, create_filter_entry(i)]);
 
     let query;
 
@@ -54,7 +110,7 @@ export function useArtifactFilter(props) {
             where: { items: { name: { _ilike: "${ilike(i)}" } } }
             order_by: { items_aggregate: { count: desc } }
           ) {
-            ${UnrandQuery}
+            ${nested_query}
           }
         }
 
@@ -70,7 +126,7 @@ export function useArtifactFilter(props) {
             where: { items: { name: { _ilike: "${ilike(first_filter.i)}" } } }
             order_by: { items_aggregate: { count: desc } }
           ) {
-            ${NestedFilter(nested_filter, UnrandQuery)}
+            ${NestedFilter(nested_filter, nested_query)}
           }
         }
 
@@ -84,49 +140,46 @@ export function useArtifactFilter(props) {
 
     set_filter_list((L) => [...L, create_filter_entry(i, result.data)]);
   }
+}
 
-  // build result list given current filter list
-  const result_list = [];
+const seed_version_key = (seed, version) => `${seed}-${version}`;
 
-  if (filter_list.length > 1) {
-    const last_filter = filter_list[filter_list.length - 1];
-    const path = filter_list.slice(1).map((filter_entry) => result_key(filter_entry.i));
-    traverse_data(last_filter.data, path, onVisit);
+function handle_result(node, path) {
+  // console.debug('visit', { node, path });
+  const { seed, version } = node;
+
+  const item_list = [];
+
+  for (const key of path) {
+    const [item] = node[key];
+    item_list.push(item);
   }
 
-  function onVisit(node, path) {
-    // console.debug('visit', { node, path });
-    const { seed, version } = node;
-    const item_list = [];
-    for (const key of path) {
-      const [item] = node[key];
-      item_list.push(item);
-    }
-    result_list.push({ item_list, seed, version });
+  return { item_list, seed, version };
+}
+
+function traverse_data(node, path, handle_result, i = 0, result_list = []) {
+  if (i === path.length) {
+    const result = handle_result(node, path);
+    result_list.push(result);
+    return;
   }
 
-  function traverse_data(node, path, onVisit, i = 0) {
-    if (i === path.length) {
-      onVisit(node, path);
-      return;
-    }
+  const key = path[i];
+  const node_list = node[key];
 
-    const key = path[i];
-    const node_list = node[key];
-
-    if (!Array.isArray(node_list)) {
-      return;
-    }
-
-    // console.debug({ node, path, i, key, node_list });
-
-    for (const nested_node of node_list) {
-      const next_node = nested_node?.seedVersion || nested_node;
-      traverse_data(next_node, path, onVisit, i + 1);
-    }
+  if (!Array.isArray(node_list)) {
+    return;
   }
 
-  return { filter_list, add_filter, result_list };
+  // console.debug({ node, path, i, key, node_list });
+
+  for (const nested_node of node_list) {
+    const next_node = nested_node?.seedVersion || nested_node;
+    traverse_data(next_node, path, handle_result, i + 1, result_list);
+  }
+
+  return result_list;
 }
 
 const safe_name = (value) => value.replace(/"/g, '\\"');
@@ -134,13 +187,15 @@ const ilike = (i) => `%${safe_name(UNRANDS[i])}%`;
 const result_key = (i) => `result_${i}`;
 const create_filter_entry = (i, data) => ({ i, data });
 
-const UnrandQuery = `
+function active_filter_query(active_filter_list) {
+  return `
   seed
   version
-  ${UNRANDS.map(KeyedItemsResult)}
-`;
+  ${active_filter_list.map((filter) => KeyedUnrandResult(filter.i)).join('\n')}
+  `;
+}
 
-function KeyedItemsResult(_, i) {
+function KeyedUnrandResult(i) {
   const key = result_key(i);
 
   return `
