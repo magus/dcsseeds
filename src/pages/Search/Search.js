@@ -30,10 +30,13 @@ export default function Search(props) {
   }, []);
 
   React.useEffect(() => {
-    itemSearch.search(search);
-    // intentionally run once on mount
+    if (search !== router.query.q) {
+      set_search(router.query.q);
+    }
+
+    // intentionally run once after router is ready
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [router.isReady]);
 
   React.useEffect(() => {
     // fire off search query
