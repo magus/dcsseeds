@@ -103,7 +103,7 @@ const MAX_MORGUES_PER_PLAYER = 1;
 
 function ServerConfig(rawdata_base) {
   return {
-    rawdataUrl: (name) => `${rawdata_base}/${name}`,
+    rawdataUrl: (name) => `${rawdata_base}/${name}/`,
 
     morgueRegex: (name) => new RegExp(`href=(?:\"|\').*?(morgue-${name}-([0-9\-]*?)\.txt(?:\.gz)?)(?:\"|\')`, 'g'),
 
@@ -127,13 +127,12 @@ const SERVER_CONFIG = {
   akrasiac: new ServerConfig('http://crawl.akrasiac.org/rawdata'),
   xtahua: new ServerConfig('https://crawl.xtahua.com/crawl/morgue'),
   project357: new ServerConfig('https://crawl.project357.org/morgue'),
+  berotato: new ServerConfig('https://cbro.berotato.org/morgue'),
 
   // problematic servers ...
 
   // kelbi has really long response times
   kelbi: new ServerConfig('https://crawl.kelbi.org/crawl/morgue'),
-  // morgue list is inaccessible, can only access morgue files directly
-  berotato: new ServerConfig('https://cbro.berotato.org/morgue'),
 };
 
 async function scrapePlayer(player) {
@@ -178,7 +177,7 @@ async function parsePlayer(player) {
   while (match) {
     const [, filename, timeString] = match;
     const timestamp = serverConfig.morgueTimestampRegex(timeString);
-    const url = `${rawdataUrl}/${filename}`;
+    const url = `${rawdataUrl}${filename}`;
     morgue_list.push({ url, timestamp });
     match = regex.exec(morgue_list_html);
   }
