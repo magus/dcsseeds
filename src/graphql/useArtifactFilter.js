@@ -36,15 +36,18 @@ import { UNRANDS } from 'src/utils/Unrands';
 export function useArtifactFilter(props) {
   const client = useApolloClient();
 
-  const [filter_list, set_filter_list] = React.useState([
-    // represent top level (no filter)
-    create_filter_entry(null, props.artifact_list),
-  ]);
+  const [state, patch_state] = React.useReducer(
+    (state, action) => {
+      return { ...state, ...action };
+    },
+    {
+      query_result: null,
+      filter_list: [],
+    },
+  );
 
-  const [first_filter] = filter_list;
-  const last_filter = filter_list[filter_list.length - 1];
-  const active_filter_list = filter_list.slice(1);
-  const filter_path = active_filter_list.map((filter_entry) => result_key(filter_entry.i));
+  const { filter_list, query_result } = state;
+  const filter_path = filter_list.map((i) => result_key(i));
 
   // build a lookup for the top-level artifact counts to quickly count
   // results for artifact_count array below
@@ -53,7 +56,7 @@ export function useArtifactFilter(props) {
 
     for (let i = 0; i < UNRANDS.length; i++) {
       const set = new Set();
-      const result_list = first_filter.data[i];
+      const result_list = props.artifact_list[i];
 
       for (const result of result_list) {
         const key = seed_version_key(result.seed, result.version);
@@ -64,21 +67,21 @@ export function useArtifactFilter(props) {
     }
 
     return set_list;
-  }, [first_filter]);
+  }, [props.artifact_list]);
 
   // 1. count the number of results for each artifact
   // 2. build result list given current filter list
   let artifact_count = [];
   let result_list = [];
 
-  if (filter_list.length === 1) {
+  if (filter_list.length === 0) {
     // handle initial case with query result from static props
     for (let i = 0; i < UNRANDS.length; i++) {
       const seedVersion_set = seedVersion_set_list[i];
       artifact_count[i] = seedVersion_set.size;
     }
-  } else if (filter_list.length > 1) {
-    result_list = traverse_data(last_filter.data, filter_path, handle_result);
+  } else {
+    result_list = traverse_data(query_result, filter_path, handle_result);
 
     for (let i = 0; i < UNRANDS.length; i++) {
       artifact_count[i] = 0;
@@ -93,56 +96,44 @@ export function useArtifactFilter(props) {
     }
   }
 
-  return { filter_list, add_filter, artifact_count, seedVersion_set_list, result_list };
+  return { filter_list, add_filter, remove_filter, artifact_count, seedVersion_set_list, result_list };
+
+  async function remove_filter(i) {
+    // construct the updated filter_list and use it to make a fresh query
+    // we have to re-query because we might remove an earlier filter
+    throw new Error();
+  }
 
   async function add_filter(i) {
-    console.debug('[useArtifactFilter]', 'filter', { i });
+    // console.debug('[useArtifactFilter]', 'filter', { i });
 
-    const nested_query = active_filter_query([...active_filter_list, create_filter_entry(i)]);
+    const next_filter_list = [...filter_list, i];
+    const nested_query = active_filter_query(next_filter_list);
+    const [first_filter, ...rest_filter] = next_filter_list;
 
-    let query;
-
-    // first filter, top level seedVersion query
-    if (filter_list.length === 1) {
-      query = gql`
-        query FilterArtifactSearch {
-          ${result_key(i)}: dcsseeds_scrapePlayers_seedVersion(
-            where: { items: { name: { _ilike: "${ilike(i)}" } } }
-            order_by: { items_aggregate: { count: desc } }
-          ) {
-            ${nested_query}
-          }
+    const query = gql`
+      query FilterArtifactSearch {
+        ${result_key(first_filter)}: dcsseeds_scrapePlayers_seedVersion(
+          where: { items: { name: { _ilike: "${ilike(first_filter)}" } } }
+          order_by: { items_aggregate: { count: desc } }
+        ) {
+          ${NestedFilter(rest_filter, nested_query)}
         }
+      }
 
-        ${ResultFragment}
-      `;
-    } else {
-      const [, first_filter, ...rest_filter] = filter_list;
-      const nested_filter = [...rest_filter, create_filter_entry(i)];
-
-      query = gql`
-        query FilterArtifactSearch {
-          ${result_key(first_filter.i)}: dcsseeds_scrapePlayers_seedVersion(
-            where: { items: { name: { _ilike: "${ilike(first_filter.i)}" } } }
-            order_by: { items_aggregate: { count: desc } }
-          ) {
-            ${NestedFilter(nested_filter, nested_query)}
-          }
-        }
-
-        ${ResultFragment}
-      `;
-    }
+      ${ResultFragment}
+    `;
 
     const fetchPolicy = 'cache-first';
     const result = await client.query({ query, fetchPolicy });
-    console.debug('[useArtifactFilter]', 'filter', { result });
+    // console.debug('[useArtifactFilter]', 'filter', { result });
 
-    set_filter_list((L) => [...L, create_filter_entry(i, result.data)]);
+    patch_state({
+      query_result: result.data,
+      filter_list: next_filter_list,
+    });
   }
 }
-
-const seed_version_key = (seed, version) => `${seed}-${version}`;
 
 function handle_result(node, path) {
   // console.debug('visit', { node, path });
@@ -185,13 +176,13 @@ function traverse_data(node, path, handle_result, i = 0, result_list = []) {
 const safe_name = (value) => value.replace(/"/g, '\\"');
 const ilike = (i) => `%${safe_name(UNRANDS[i])}%`;
 const result_key = (i) => `result_${i}`;
-const create_filter_entry = (i, data) => ({ i, data });
+const seed_version_key = (seed, version) => `${seed}-${version}`;
 
-function active_filter_query(active_filter_list) {
+function active_filter_query(filter_list) {
   return `
-  seed
-  version
-  ${active_filter_list.map((filter) => KeyedUnrandResult(filter.i)).join('\n')}
+    seed
+    version
+    ${filter_list.map((i) => KeyedUnrandResult(i)).join('\n')}
   `;
 }
 
@@ -212,8 +203,8 @@ function NestedFilter(filter_list, unrand_query) {
     // walk backwards wrapping inner queries
     const filter_entry = filter_list[filter_list.length - 1 - i];
 
-    const key = result_key(filter_entry.i);
-    const filter_ilike = ilike(filter_entry.i);
+    const key = result_key(filter_entry);
+    const filter_ilike = ilike(filter_entry);
 
     nested_query = `
       ${key}: items(where: { name: { _ilike: "${filter_ilike}" } }, limit: 1, order_by: { branch: { order: asc } }) {
