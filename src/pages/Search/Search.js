@@ -19,9 +19,8 @@ export default function Search(props) {
   // temporary working on artifact filter
 
   const router = useRouter();
-  const { q } = router.query;
   const searchFieldRef = React.useRef();
-  const [search, set_search] = React.useState(q || '');
+  const [search, set_search] = React.useState(router.query.q || '');
   const itemSearch = ScrapePlayers.useItemSearch();
 
   const [placeholder, set_placeholder] = React.useState(undefined);
@@ -30,6 +29,8 @@ export default function Search(props) {
   }, []);
 
   React.useEffect(() => {
+    if (!router.isReady) return;
+
     if (search !== router.query.q) {
       set_search(router.query.q);
     }
