@@ -4,49 +4,79 @@ import { useRouter } from 'next/router';
 import { motion, AnimatePresence } from 'framer-motion';
 
 import { useArtifactFilter } from 'src/graphql/useArtifactFilter';
+import { ArtifactSearchResult } from './ArtifactSearchResult';
 import { UNRANDS } from 'src/utils/Unrands';
 
-import * as Spacer from '../../../components/Spacer';
+import * as Spacer from 'src/components/Spacer';
 
 export function ArtifactSearch(props) {
   return (
     <Container>
-      {UNRANDS.map((name, i) => {
-        const active = props.filter_set.has(i);
-        const count = props.artifact_count[i];
+      <ArtifactFilters {...props} />
 
-        function handle_click() {
-          // console.debug({ name, i });
-          if (count === 0) return;
+      <Spacer.Vertical size="2" />
 
-          if (active) {
-            props.remove_filter(i);
-          } else {
-            props.add_filter(i);
-          }
-        }
-
-        if (count === 0) {
-          return null;
-        }
-
-        return (
-          <ButtonGroup
-            key={name}
-            // force line break
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            layout
-          >
-            <Button active={active} count={count} onClick={handle_click}>
-              {name} ({count})
-            </Button>
-          </ButtonGroup>
-        );
-      })}
+      <ArtifactResults {...props} />
     </Container>
   );
+}
+
+function ArtifactResults(props) {
+  const { result_list } = props;
+
+  return props.result_list.map((result, i) => {
+    const key = [result.seed, result.version].join('-');
+    return (
+      <motion.div
+        // force line break
+        key={key}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        layout
+      >
+        <ArtifactSearchResult {...result} />
+      </motion.div>
+    );
+    return;
+  });
+}
+
+function ArtifactFilters(props) {
+  return UNRANDS.map((name, i) => {
+    const active = props.filter_set.has(i);
+    const count = props.artifact_count[i];
+
+    function handle_click() {
+      // console.debug({ name, i });
+      if (count === 0) return;
+
+      if (active) {
+        props.remove_filter(i);
+      } else {
+        props.add_filter(i);
+      }
+    }
+
+    if (count === 0) {
+      return null;
+    }
+
+    return (
+      <ButtonGroup
+        key={name}
+        // force line break
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        layout
+      >
+        <Button active={active} count={count} onClick={handle_click}>
+          {name} ({count})
+        </Button>
+      </ButtonGroup>
+    );
+  });
 }
 
 const Container = styled.div`
