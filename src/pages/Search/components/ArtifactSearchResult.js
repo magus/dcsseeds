@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { motion } from 'framer-motion';
 
 import CopyButton from 'src/components/CopyButton';
@@ -40,9 +40,13 @@ function Item(props) {
         &nbsp;<Level>{props.level}</Level>
       </div>
 
-      <Link href={morgue} rel="noopener noreferrer" target="_blank">
-        <Name>{props.name}</Name>
-      </Link>
+      <Spacer.Horizontal size="3" />
+
+      <Name>
+        <Link href={morgue} rel="noopener noreferrer" target="_blank">
+          {props.name}
+        </Link>
+      </Name>
     </ItemRow>
   );
 }
@@ -80,10 +84,6 @@ const Container = styled(motion.div)`
   flex-direction: column;
 `;
 
-const Name = styled.span`
-  font-size: var(--font-small);
-`;
-
 const Level = styled.span`
   font-size: var(--font-normal);
 `;
@@ -99,9 +99,23 @@ const Version = styled.span`
   color: var(--gray400);
 `;
 
-const Link = styled.a`
+const LinkColor = css`
   color: var(--blue-color);
   text-decoration: none;
+`;
+
+const Name = styled.div`
+  ${LinkColor}
+
+  white-space: nowrap;
+  font-size: var(--font-small);
+  overflow: hidden;
+  text-overflow: ellipsis;
+`;
+
+const Link = styled.a`
+  ${LinkColor}
+
   :visited {
     color: var(--blue-color);
   }
