@@ -1,6 +1,6 @@
 const EnvConfig = {
   DEV: process.env.NODE_ENV !== 'production',
-  APP_NAME: 'dcsseeds',
+  APP_NAME: 'DCSS Search',
   PROTOCOL: 'https',
   HOSTNAME: 'dcss.vercel.app',
   SENTRY_DSN: 'https://c30a968049c246739657687af5d2fabb@o438648.ingest.sentry.io/5403737',

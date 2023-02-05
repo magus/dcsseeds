@@ -1,6 +1,8 @@
 import Page from 'src/components/Page';
 import Search from './Search';
 
-const SearchPage = Page(Search, { withApollo: true });
+const withApollo = true;
+
+const SearchPage = Page(Search, { withApollo });
 
 export default SearchPage;
