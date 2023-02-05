@@ -9,8 +9,10 @@ export const Square = styled.div`
 
 export const Horizontal = styled.div`
   width: ${SpacerSize};
+  height: 100%;
 `;
 
 export const Vertical = styled.div`
+  width: 100%;
   height: ${SpacerSize};
 `;
