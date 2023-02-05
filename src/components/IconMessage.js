@@ -35,6 +35,8 @@ const Message = styled.div`
 `;
 
 const MessageButton = styled.button`
+  height: auto;
+
   /* reset button styles */
   background-color: transparent;
   border: none;

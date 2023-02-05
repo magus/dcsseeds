@@ -6,5 +6,12 @@ export function RandomSearchCTA(props) {
     return null;
   }
 
-  return <IconMessage icon="👋" message="Click here for a random search..." onMessageClick={props.onTrySearch} />;
+  return (
+    <IconMessage
+      // force line break
+      icon="👋"
+      message="Click here for a random search..."
+      onMessageClick={props.onTrySearch}
+    />
+  );
 }
