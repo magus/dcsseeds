@@ -96,21 +96,37 @@ export function useArtifactFilter(props) {
     }
   }
 
-  return { filter_list, add_filter, remove_filter, artifact_count, result_list };
+  const filter_set = new Set(filter_list);
+  return { filter_set, add_filter, remove_filter, artifact_count, result_list };
 
   async function remove_filter(artifact_i) {
+    if (artifact_i >= UNRANDS.length) {
+      console.warn('cannot filter unrecognized', { artifact_i });
+      return;
+    }
+
     // console.debug('[useArtifactFilter]', 'remove_filter', { artifact_i });
     const next_filter_list = filter_list.filter((i) => i !== artifact_i);
     await query_next_filter(next_filter_list);
   }
 
   async function add_filter(artifact_i) {
+    if (artifact_i >= UNRANDS.length) {
+      console.warn('cannot filter unrecognized', { artifact_i });
+      return;
+    }
+
     // console.debug('[useArtifactFilter]', 'add_filter', { artifact_i });
     const next_filter_list = [...filter_list, artifact_i];
     await query_next_filter(next_filter_list);
   }
 
   async function query_next_filter(next_filter_list) {
+    if (next_filter_list.length === 0) {
+      // reset query_result and filters, back to no filters
+      return patch_state({ query_result: null, filter_list: [] });
+    }
+
     const nested_query = active_filter_query(next_filter_list);
     const [first_filter, ...rest_filter] = next_filter_list;
 
