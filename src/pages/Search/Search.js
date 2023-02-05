@@ -1,111 +1,105 @@
 import * as React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { useRouter } from 'next/router';
+import { motion, AnimatePresence } from 'framer-motion';
 
-import * as ScrapePlayers from 'src/graphql/scrapePlayers';
 import { useArtifactFilter } from 'src/graphql/useArtifactFilter';
+import { UNRANDS } from 'src/utils/Unrands';
 
-import { SearchField } from './components/SearchField';
-import { SearchResults } from './components/SearchResults';
-import { random_placeholder } from './random_placeholder';
+import { ItemSearch } from './components/ItemSearch';
+import * as Spacer from '../../components/Spacer';
+
+function ArtifactFilter(props) {
+  return (
+    <AnimatePresence>
+      <ArtifactFilterContainer>
+        {UNRANDS.map((name, i) => {
+          const active = props.filter_set.has(i);
+          const count = props.artifact_count[i];
+
+          function handle_click() {
+            // console.debug({ name, i });
+            if (count === 0) return;
+
+            if (active) {
+              props.remove_filter(i);
+            } else {
+              props.add_filter(i);
+            }
+          }
+
+          if (count === 0) {
+            return null;
+          }
+
+          return (
+            <ArtifactFilterButtonGroup
+              key={name}
+              // force line break
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              layout
+            >
+              <ArtifactFilterButton active={active} count={count} onClick={handle_click}>
+                {name} ({count})
+              </ArtifactFilterButton>
+            </ArtifactFilterButtonGroup>
+          );
+        })}
+      </ArtifactFilterContainer>
+    </AnimatePresence>
+  );
+}
+
+const ArtifactFilterContainer = styled.div`
+  flex-direction: row;
+`;
+
+const ArtifactFilterButtonGroup = styled(motion.div)`
+  display: inline-flex;
+  margin: 0 var(--spacer-2) var(--spacer-2) 0;
+`;
+
+const ArtifactFilterButton = styled.button`
+  font-size: var(--font-small);
+  padding: var(--spacer-d2) var(--spacer-1);
+  height: auto;
+  transition: color, background-color 0.2s ease-out;
+
+  ${(props) => {
+    switch (true) {
+      case props.active:
+        return css`
+          background-color: rgb(21, 128, 61);
+          color: rgb(220, 252, 231);
+        `;
+      case props.count === 0:
+        return css`
+          background-color: #171717;
+          color: #404040;
+        `;
+      default:
+        return '';
+    }
+  }}
+`;
 
 export default function Search(props) {
-  // temporary working on artifact filter
   const artifact_filter = useArtifactFilter(props);
-  if (typeof window !== 'undefined') {
-    window.artifact_filter = artifact_filter;
-  }
   console.debug('[artifact_filter]', artifact_filter);
-  // temporary working on artifact filter
 
   const router = useRouter();
-  const searchFieldRef = React.useRef();
-  const [search, set_search] = React.useState(router.query.q || '');
-  const itemSearch = ScrapePlayers.useItemSearch();
-
-  const [placeholder, set_placeholder] = React.useState(undefined);
-  React.useEffect(() => {
-    set_placeholder(random_placeholder());
-  }, []);
-
-  React.useEffect(() => {
-    if (!router.isReady) return;
-
-    if (router.query.q && search !== router.query.q) {
-      set_search(router.query.q);
-    }
-
-    // intentionally run once after router is ready
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [router.isReady]);
-
-  React.useEffect(() => {
-    // fire off search query
-    if (search) {
-      itemSearch.search(search);
-    }
-
-    // sync url q= with search term
-    const url = {
-      pathname: router.pathname,
-    };
-
-    if (search) {
-      url.query = { q: search };
-    }
-
-    // Shallow routing allows you to change the URL without running data fetching methods again,
-    // that includes getServerSideProps, getStaticProps, and getInitialProps.
-    // https://nextjs.org/docs/routing/shallow-routing
-    router.replace(url, undefined, { shallow: true });
-
-    // intentionally run only when search query changes
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [search]);
-
-  function handleSubmit() {
-    // console.debug('[Search]', 'handleSubmit', { search });
-    searchFieldRef.current.blur();
-  }
-
-  function handleChange(text) {
-    // console.debug('[Search]', 'handleChange', { text });
-    set_search(text);
-  }
-
-  function handleClear() {
-    // console.debug('[Search]', 'handleClear');
-    set_search('');
-  }
-
-  function handleTrySearch() {
-    set_search(placeholder);
-  }
-
-  const formattedTotalItemCount = new Intl.NumberFormat().format(props.totalItemCount);
-  const results = itemSearch.latestResults(search);
-
-  // console.debug('[Search]', { results, itemSearch });
 
   return (
     <Container>
-      <Spacer />
+      <Spacer.Vertical size="2" />
 
-      <TotalItems>
-        Search over <strong>{formattedTotalItemCount}</strong> items...
-      </TotalItems>
+      <ItemSearch {...props} />
 
-      <SearchField
-        ref={searchFieldRef}
-        label="Search"
-        placeholder={placeholder}
-        value={search}
-        onSubmit={handleSubmit}
-        onClear={handleClear}
-        onChange={handleChange}
-      />
-      <Spacer />
-      <SearchResults loading={itemSearch.loading} search={search} results={results} onTrySearch={handleTrySearch} />
+      <Spacer.Vertical size="2" />
+
+      <ArtifactFilter {...artifact_filter} />
     </Container>
   );
 }
@@ -115,13 +109,4 @@ const Container = styled.div`
   max-width: 720px;
   margin: 0 auto;
   padding: var(--spacer-1) var(--spacer-2);
-`;
-
-const Spacer = styled.div`
-  height: var(--spacer-2);
-`;
-
-const TotalItems = styled.div`
-  font-size: var(--font-small);
-  padding: var(--spacer-1) 0;
 `;
