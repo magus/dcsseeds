@@ -14,8 +14,8 @@ export default function SEOHeadTags(props) {
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content={`https://${process.env.HOSTNAME}/${path}`} />
-      <meta property="og:image" content={`https://${process.env.HOSTNAME}/${image_path}`} />
+      <meta property="og:url" content={app_url(path)} />
+      <meta property="og:image" content={app_url(image_path)} />
       <meta property="twitter:card" content="summary_large_image" />
       <meta property="twitter:creator" content="magusnn" />
       <meta property="twitter:creator:id" content="23604692" />
@@ -25,4 +25,8 @@ export default function SEOHeadTags(props) {
       <meta name="keywords" content={keywords.join(', ')} />
     </Head>
   );
+}
+
+function app_url(pathname) {
+  return `${process.env.PROTOCOL}://${process.env.HOSTNAME}/${pathname}`;
 }
