@@ -4,18 +4,20 @@ import styled from 'styled-components';
 import CopyButton from 'src/components/CopyButton';
 import { TimeAgo } from 'src/components/TimeAgo';
 
+import * as Spacer from 'src/components/Spacer';
+
 export function SearchResult({ search, result }) {
   const parseMorgueUrl = `/api/parseMorgue?morgue=${result.morgue}`;
 
   return (
     <SearchResultContainer>
       <Small>{result.location}</Small>
-      <SpacerSmall />
+      <Spacer.Vertical size="d2" />
       <Item>
         <Highlight match={search}>{result.name}</Highlight>
       </Item>
 
-      <Spacer />
+      <Spacer.Vertical size="2" />
 
       <BottomRow>
         <BottomLeft>
@@ -120,16 +122,6 @@ const SearchResultContainer = styled.div`
 const Item = styled.div`
   font-size: var(--font-large);
   text-align: left;
-`;
-
-const SpacerSmall = styled.div`
-  height: var(--spacer-d2);
-  width: 100%;
-`;
-
-const Spacer = styled.div`
-  height: var(--spacer-2);
-  width: 100%;
 `;
 
 const Small = styled.span`
