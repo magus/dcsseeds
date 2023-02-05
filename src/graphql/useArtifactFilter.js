@@ -2,7 +2,7 @@ import * as React from 'react';
 import { gql } from '@apollo/client';
 import { useApolloClient } from '@apollo/client';
 
-import { UNRANDS } from 'src/utils/Unrands';
+import * as Unrands from 'src/utils/Unrands';
 
 // TODO parse all unrands from crawl source
 // see scripts/getMonster.js and make equivalent for
@@ -54,7 +54,7 @@ export function useArtifactFilter(props) {
   const seedVersion_set_list = React.useMemo(() => {
     const set_list = [];
 
-    for (let i = 0; i < UNRANDS.length; i++) {
+    for (let i = 0; i < Unrands.List.length; i++) {
       const set = new Set();
       const result_list = props.artifact_list[i];
 
@@ -76,14 +76,14 @@ export function useArtifactFilter(props) {
 
   if (filter_list.length === 0) {
     // handle initial case with query result from static props
-    for (let i = 0; i < UNRANDS.length; i++) {
+    for (let i = 0; i < Unrands.List.length; i++) {
       const seedVersion_set = seedVersion_set_list[i];
       artifact_count[i] = seedVersion_set.size;
     }
   } else {
     result_list = traverse_data(query_result, filter_path, handle_result);
 
-    for (let i = 0; i < UNRANDS.length; i++) {
+    for (let i = 0; i < Unrands.List.length; i++) {
       artifact_count[i] = 0;
 
       for (const result of result_list) {
@@ -97,10 +97,14 @@ export function useArtifactFilter(props) {
   }
 
   const filter_set = new Set(filter_list);
-  return { filter_set, add_filter, remove_filter, artifact_count, result_list };
+  return { filter_set, add_filter, remove_filter, init_filter_list, artifact_count, result_list };
+
+  async function init_filter_list(filter_list) {
+    await query_next_filter(filter_list);
+  }
 
   async function remove_filter(artifact_i) {
-    if (artifact_i >= UNRANDS.length) {
+    if (artifact_i >= Unrands.List.length) {
       console.warn('cannot filter unrecognized', { artifact_i });
       return;
     }
@@ -111,7 +115,7 @@ export function useArtifactFilter(props) {
   }
 
   async function add_filter(artifact_i) {
-    if (artifact_i >= UNRANDS.length) {
+    if (artifact_i >= Unrands.List.length) {
       console.warn('cannot filter unrecognized', { artifact_i });
       return;
     }
@@ -193,7 +197,7 @@ function traverse_data(node, path, handle_result, i = 0, result_list = []) {
 }
 
 const safe_name = (value) => value.replace(/"/g, '\\"');
-const ilike = (i) => `%${safe_name(UNRANDS[i])}%`;
+const ilike = (i) => `%${safe_name(Unrands.List[i])}%`;
 const result_key = (i) => `result_${i}`;
 const seed_version_key = (seed, version) => `${seed}-${version}`;
 

@@ -7,7 +7,7 @@ import { TimeAgo } from 'src/components/TimeAgo';
 import * as Spacer from 'src/components/Spacer';
 
 export function ArtifactSearchResult(props) {
-  console.debug('[ArtifactSearchResult]', props);
+  // console.debug('[ArtifactSearchResult]', props);
 
   return (
     <Container>

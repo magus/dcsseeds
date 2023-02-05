@@ -8,15 +8,13 @@ import { useArtifactFilter } from 'src/graphql/useArtifactFilter';
 import { ItemSearch } from './components/ItemSearch';
 import { ArtifactSearch } from './components/ArtifactSearch';
 import * as Spacer from 'src/components/Spacer';
+import * as Unrands from 'src/utils/Unrands';
 
 function SearchInternal(props) {
-  const artifact_filter = useArtifactFilter(props);
-  console.debug('[artifact_filter]', artifact_filter);
-
   const router = useRouter();
 
-  if (artifact_filter.result_list.length) {
-    return <ArtifactSearch key="ArtifactSearch" {...artifact_filter} />;
+  if (router.query.a) {
+    return <ArtifactSearch key="ArtifactSearch" {...props} />;
   } else if (router.query.q) {
     return <ItemSearch {...props} />;
   }
@@ -27,7 +25,7 @@ function SearchInternal(props) {
 
       <Spacer.Vertical size="2" />
 
-      <ArtifactSearch key="ArtifactSearch" {...artifact_filter} />
+      <ArtifactSearch key="ArtifactSearch" {...props} />
     </React.Fragment>
   );
 }

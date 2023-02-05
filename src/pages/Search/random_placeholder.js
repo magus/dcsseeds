@@ -1,8 +1,8 @@
-import { UNRANDS } from 'src/utils/Unrands';
+import * as Unrands from 'src/utils/Unrands';
 import { random, randomElement } from 'src/utils/random';
 
 export function random_placeholder() {
-  const list = random() > 0.5 ? BRANDS : UNRANDS;
+  const list = random() > 0.5 ? BRANDS : Unrands.List;
   const placeholder = randomElement(list);
   return placeholder;
 }

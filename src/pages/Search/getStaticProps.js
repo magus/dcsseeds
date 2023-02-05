@@ -2,7 +2,7 @@ import { gql } from '@apollo/client';
 
 import fetch from 'src/utils/fetch';
 import { serverQuery } from 'src/graphql/serverQuery';
-import { UNRANDS } from 'src/utils/Unrands';
+import * as Unrands from 'src/utils/Unrands';
 
 export async function getStaticProps(context) {
   // context.res.setHeader('Cache-Control', 'public, s-maxage=300, stale-while-revalidate=1800');
@@ -12,7 +12,7 @@ export async function getStaticProps(context) {
   // unroll top level artifact search into array of results
   const artifact_list = [];
 
-  for (let i = 0; i < UNRANDS.length; i++) {
+  for (let i = 0; i < Unrands.List.length; i++) {
     const result = query_artifact[result_key(i)];
     artifact_list.push(result);
   }
@@ -45,7 +45,7 @@ const result_key = (i) => `result_${i}`;
 const GQL_TOP_LEVEL = serverQuery(
   gql`
     query TopLevelArtifacts {
-      ${UNRANDS.map(SeedVersionFilter)}
+      ${Unrands.List.map(SeedVersionFilter)}
     }
   `,
   (data) => data,
