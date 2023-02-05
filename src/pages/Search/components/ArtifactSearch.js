@@ -37,7 +37,7 @@ function ArtifactResults(props) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        layout
+        layout="position"
       >
         <ArtifactSearchResult {...result} />
       </motion.div>
@@ -76,7 +76,7 @@ function ArtifactFilterButton(props) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      layout
+      layout="position"
     >
       <Button active={props.active} disabled={props.disabled} count={count} onClick={handle_click}>
         {props.name} ({count})
