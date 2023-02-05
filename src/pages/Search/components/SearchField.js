@@ -34,6 +34,10 @@ function _SearchField(props, ref) {
     }
   }
 
+  function handle_focus() {
+    ref.current.select();
+  }
+
   return (
     <SearchContainer>
       <SearchBar>
@@ -48,6 +52,7 @@ function _SearchField(props, ref) {
           id="search"
           placeholder={props.placeholder}
           value={props.value}
+          onFocus={handle_focus}
           onChange={handleChange}
           onKeyDown={handleKeyDown}
         />
