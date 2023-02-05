@@ -41,12 +41,13 @@ export function useArtifactFilter(props) {
       return { ...state, ...action };
     },
     {
+      loading: false,
       query_result: null,
       filter_list: [],
     },
   );
 
-  const { filter_list, query_result } = state;
+  const { loading, filter_list, query_result } = state;
   const filter_path = filter_list.map((i) => result_key(i));
 
   // build a lookup for the top-level artifact counts to quickly count
@@ -97,7 +98,11 @@ export function useArtifactFilter(props) {
   }
 
   const filter_set = new Set(filter_list);
-  return { filter_set, artifact_count, result_list, reset, add_filter, remove_filter, init_filter_list };
+
+  const api = { loading, filter_set, artifact_count, result_list, reset, add_filter, remove_filter, init_filter_list };
+  // console.debug('[useArtifactFilter]', api);
+
+  return api;
 
   async function reset() {
     // reset query_result and filters, back to no filters
@@ -136,6 +141,8 @@ export function useArtifactFilter(props) {
       return reset();
     }
 
+    patch_state({ loading: true });
+
     const nested_query = active_filter_query(next_filter_list);
     const [first_filter, ...rest_filter] = next_filter_list;
 
@@ -157,6 +164,7 @@ export function useArtifactFilter(props) {
     // console.debug('[useArtifactFilter]', 'filter', { result });
 
     patch_state({
+      loading: false,
       query_result: result.data,
       filter_list: next_filter_list,
     });

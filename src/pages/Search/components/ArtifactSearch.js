@@ -10,6 +10,123 @@ import * as Unrands from 'src/utils/Unrands';
 import * as Spacer from 'src/components/Spacer';
 
 export function ArtifactSearch(props) {
+  const artifact_filter = useSyncArtifactFilter(props);
+
+  return (
+    <Container>
+      <ArtifactFilters {...artifact_filter} />
+
+      <Spacer.Vertical size="2" />
+
+      <ResultsContainer>
+        <ArtifactResults {...artifact_filter} />
+      </ResultsContainer>
+    </Container>
+  );
+}
+
+function ArtifactResults(props) {
+  const { result_list } = props;
+
+  return props.result_list.map((result, i) => {
+    const key = [result.seed, result.version].join('-');
+    return (
+      <motion.div
+        // force line break
+        key={key}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        layout
+      >
+        <ArtifactSearchResult {...result} />
+      </motion.div>
+    );
+    return;
+  });
+}
+
+function ArtifactFilterButton(props) {
+  const count = props.artifact_count[props.i];
+
+  function handle_click() {
+    // console.debug({ name, i });
+    if (count === 0) return;
+
+    if (props.active) {
+      props.remove_filter(props.i);
+    } else {
+      props.add_filter(props.i);
+    }
+
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }
+
+  if (count === 0) {
+    return null;
+  }
+
+  return (
+    <ButtonGroup
+      key={props.name}
+      // force line break
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      layout
+    >
+      <Button active={props.active} disabled={props.disabled} count={count} onClick={handle_click}>
+        {props.name} ({count})
+      </Button>
+    </ButtonGroup>
+  );
+}
+
+function ArtifactFilters(props) {
+  let active_buttons = [];
+  let inactive_buttons = [];
+
+  for (let i = 0; i < Unrands.List.length; i++) {
+    const name = Unrands.List[i];
+    const active = props.filter_set.has(i);
+
+    const button = (
+      <ArtifactFilterButton
+        // force line break
+        key={name}
+        {...props}
+        disabled={props.loading}
+        name={name}
+        active={active}
+        i={i}
+      />
+    );
+
+    if (active) {
+      active_buttons.push(button);
+    } else {
+      inactive_buttons.push(button);
+    }
+  }
+
+  return (
+    <Filters>
+      {props.filter_set.size === 0 ? null : (
+        <ButtonGroup>
+          <Button onClick={props.reset}>❌ Clear</Button>
+        </ButtonGroup>
+      )}
+
+      {active_buttons}
+      {inactive_buttons}
+    </Filters>
+  );
+}
+
+function useSyncArtifactFilter(props) {
   const router = useRouter();
 
   const artifact_filter = useArtifactFilter(props);
@@ -65,92 +182,7 @@ export function ArtifactSearch(props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filter_list_key]);
 
-  return (
-    <Container>
-      <ArtifactFilters {...artifact_filter} />
-
-      <Spacer.Vertical size="2" />
-
-      <ResultsContainer>
-        <ArtifactResults {...artifact_filter} />
-      </ResultsContainer>
-    </Container>
-  );
-}
-
-function ArtifactResults(props) {
-  const { result_list } = props;
-
-  return props.result_list.map((result, i) => {
-    const key = [result.seed, result.version].join('-');
-    return (
-      <motion.div
-        // force line break
-        key={key}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        layout
-      >
-        <ArtifactSearchResult {...result} />
-      </motion.div>
-    );
-    return;
-  });
-}
-
-function ArtifactFilters(props) {
-  const buttons = Unrands.List.map((name, i) => {
-    const active = props.filter_set.has(i);
-    const count = props.artifact_count[i];
-
-    function handle_click() {
-      // console.debug({ name, i });
-      if (count === 0) return;
-
-      if (active) {
-        props.remove_filter(i);
-      } else {
-        props.add_filter(i);
-      }
-
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth',
-      });
-    }
-
-    if (count === 0) {
-      return null;
-    }
-
-    return (
-      <ButtonGroup
-        key={name}
-        // force line break
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        layout
-      >
-        <Button active={active} count={count} onClick={handle_click}>
-          {name} ({count})
-        </Button>
-      </ButtonGroup>
-    );
-  });
-
-  return (
-    <Filters>
-      {props.filter_set.size === 0 ? null : (
-        <ButtonGroup>
-          <Button onClick={props.reset}>❌ Clear</Button>
-        </ButtonGroup>
-      )}
-
-      {buttons}
-    </Filters>
-  );
+  return artifact_filter;
 }
 
 const ResultsContainer = styled.div`
@@ -176,14 +208,18 @@ const Container = styled.div`
 
 const ButtonGroup = styled(motion.div)`
   display: flex;
+  flex-grow: 1;
   margin: 0 var(--spacer-d2) var(--spacer-d2) 0;
 `;
 
 const Button = styled.button`
+  flex-grow: 1;
   font-size: var(--font-small);
   padding: var(--spacer-d2) var(--spacer-1);
   height: auto;
-  transition: color, background-color 0.2s ease-out;
+  transition: opacity, color, background-color 0.2s ease-out;
+
+  opacity: ${(props) => (props.disabled ? 0.4 : 1.0)};
 
   ${(props) => {
     switch (true) {
