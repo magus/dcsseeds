@@ -122,7 +122,6 @@ const Branch = styled.span`
 const Version = styled.span`
   font-size: var(--font-small);
   font-weight: var(--font-bold);
-  color: var(--gray400);
 `;
 
 const LinkColor = css`
