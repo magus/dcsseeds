@@ -154,8 +154,13 @@ export function useArtifactFilter(props) {
 
       if (all_below_1) {
         console.warn('SPECIAL CASE, SELECT ALL REMAINING');
-        const filter_list = Array.from(special_case_set);
-        const special_case_result = await run_query_filter({ client, props, filter_list, seedVersion_set_list });
+
+        const special_case_result = await run_query_filter({
+          client,
+          props,
+          filter_list: Array.from(special_case_set),
+          seedVersion_set_list,
+        });
         patch_state({ loading: false, filter_list, ...special_case_result });
       } else {
         patch_state({ loading: false, filter_list, artifact_count, result_list });
