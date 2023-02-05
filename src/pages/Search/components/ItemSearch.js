@@ -44,7 +44,11 @@ export function ItemSearch(props) {
     };
 
     if (search) {
-      url.query = { q: search };
+      url.query = {
+        // ensure we do not clear other query params
+        ...router.query,
+        q: search,
+      };
     }
 
     // Shallow routing allows you to change the URL without running data fetching methods again,

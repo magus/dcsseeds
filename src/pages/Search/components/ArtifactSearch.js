@@ -170,7 +170,11 @@ function useSyncArtifactFilter(props) {
 
     if (artifact_filter.filter_set) {
       const names = filter_list.map((i) => Unrands.List[i]);
-      url.query = { a: names };
+      url.query = {
+        // ensure we do not clear other query params
+        ...router.query,
+        a: names,
+      };
     }
 
     // // Shallow routing allows you to change the URL without running data fetching methods again,
