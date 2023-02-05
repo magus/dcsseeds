@@ -42,8 +42,11 @@ export default function Search(props) {
 }
 
 const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   min-height: 100%;
-  max-width: 720px;
+  width: 100%;
   margin: 0 auto;
   padding: var(--spacer-1) var(--spacer-2);
 `;

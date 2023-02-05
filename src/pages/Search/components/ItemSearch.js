@@ -81,7 +81,7 @@ export function ItemSearch(props) {
   // console.debug('[Search]', { results, itemSearch });
 
   return (
-    <React.Fragment>
+    <Container>
       <TotalItems>
         Search over <strong>{formattedTotalItemCount}</strong> items...
       </TotalItems>
@@ -99,9 +99,14 @@ export function ItemSearch(props) {
       <Spacer.Vertical size="2" />
 
       <SearchResults loading={itemSearch.loading} search={search} results={results} onTrySearch={handleTrySearch} />
-    </React.Fragment>
+    </Container>
   );
 }
+
+const Container = styled.div`
+  max-width: 720px;
+  width: 100%;
+`;
 
 const TotalItems = styled.div`
   font-size: var(--font-small);

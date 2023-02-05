@@ -71,7 +71,9 @@ export function ArtifactSearch(props) {
 
       <Spacer.Vertical size="2" />
 
-      <ArtifactResults {...artifact_filter} />
+      <ResultsContainer>
+        <ArtifactResults {...artifact_filter} />
+      </ResultsContainer>
     </Container>
   );
 }
@@ -98,7 +100,7 @@ function ArtifactResults(props) {
 }
 
 function ArtifactFilters(props) {
-  return Unrands.List.map((name, i) => {
+  const buttons = Unrands.List.map((name, i) => {
     const active = props.filter_set.has(i);
     const count = props.artifact_count[i];
 
@@ -132,14 +134,42 @@ function ArtifactFilters(props) {
       </ButtonGroup>
     );
   });
+
+  return (
+    <Filters>
+      {props.filter_set.size === 0 ? null : (
+        <ButtonGroup>
+          <Button onClick={props.reset}>❌ Clear</Button>
+        </ButtonGroup>
+      )}
+
+      {buttons}
+    </Filters>
+  );
 }
 
-const Container = styled.div`
+const ResultsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  max-width: 720px;
+  width: 100%;
+`;
+
+const Filters = styled.div`
+  display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+`;
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const ButtonGroup = styled(motion.div)`
-  display: inline-flex;
+  display: flex;
   margin: 0 var(--spacer-d2) var(--spacer-d2) 0;
 `;
 
