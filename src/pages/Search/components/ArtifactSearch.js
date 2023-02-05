@@ -47,16 +47,16 @@ function ArtifactResults(props) {
 }
 
 function ArtifactFilterButton(props) {
-  const count = props.artifact_count[props.i];
+  const count = props.artifact_count[props.unrand_key];
 
   function handle_click() {
     // console.debug({ name, i });
     if (count === 0) return;
 
     if (props.active) {
-      props.remove_filter(props.i);
+      props.remove_filter(props.unrand_key);
     } else {
-      props.add_filter(props.i);
+      props.add_filter(props.unrand_key);
     }
 
     window.scrollTo({
@@ -88,36 +88,47 @@ function ArtifactFilterButton(props) {
 function ArtifactFilters(props) {
   const router = useRouter();
 
-  let active_buttons = [];
-  let inactive_buttons = [];
+  let button_list = [];
 
   const search = router.query.q;
 
+  const active_key_list = Array.from(props.filter_set);
+
+  const inactive_key_list = [];
   for (let i = 0; i < Unrands.List.length; i++) {
-    const name = Unrands.List[i];
-    const active = props.filter_set.has(i);
+    if (!props.filter_set.has(i)) {
+      inactive_key_list.push(i);
+    }
+  }
+
+  const filter_unrand_key_list = active_key_list.concat(inactive_key_list);
+
+  for (let i = 0; i < filter_unrand_key_list.length; i++) {
+    const unrand_key = filter_unrand_key_list[i];
+    const name = Unrands.List[unrand_key];
+    const active = props.filter_set.has(unrand_key);
 
     const button = (
       <ArtifactFilterButton
         // force line break
-        key={name}
+        key={unrand_key}
         {...props}
         disabled={props.loading}
         name={name}
         active={active}
-        i={i}
+        unrand_key={unrand_key}
       />
     );
 
     if (active) {
-      active_buttons.push(button);
+      button_list.push(button);
     } else {
       // skip filters that do not match active search
       if (search && !name.toLowerCase().includes(search.toLowerCase())) {
         continue;
       }
 
-      inactive_buttons.push(button);
+      button_list.push(button);
     }
   }
 
@@ -129,8 +140,7 @@ function ArtifactFilters(props) {
         </ButtonGroup>
       )}
 
-      {active_buttons}
-      {inactive_buttons}
+      {button_list}
     </Filters>
   );
 }
