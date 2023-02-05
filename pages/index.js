@@ -1,1 +1,2 @@
-export { default } from 'src/pages/Home';
+export { default } from 'src/pages/Search';
+export { getStaticProps } from 'src/pages/Search/getStaticProps';
