@@ -97,7 +97,12 @@ export function useArtifactFilter(props) {
   }
 
   const filter_set = new Set(filter_list);
-  return { filter_set, add_filter, remove_filter, init_filter_list, artifact_count, result_list };
+  return { filter_set, artifact_count, result_list, reset, add_filter, remove_filter, init_filter_list };
+
+  async function reset() {
+    // reset query_result and filters, back to no filters
+    return patch_state({ query_result: null, filter_list: [] });
+  }
 
   async function init_filter_list(filter_list) {
     await query_next_filter(filter_list);
@@ -128,7 +133,7 @@ export function useArtifactFilter(props) {
   async function query_next_filter(next_filter_list) {
     if (next_filter_list.length === 0) {
       // reset query_result and filters, back to no filters
-      return patch_state({ query_result: null, filter_list: [] });
+      return reset();
     }
 
     const nested_query = active_filter_query(next_filter_list);
