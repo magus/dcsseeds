@@ -222,7 +222,6 @@ const GlobalStyle = createGlobalStyle`
       --text-color-rgb: var(--white-rgb);
       --button-bg: var(--gray800);
       --button-border: var(--gray800);
-      --button-text: var(--black);
       --button-text: var(--white);
       --button-hover-shadow: var(--white-rgb);
       --button-hover-border: var(--gray600);
