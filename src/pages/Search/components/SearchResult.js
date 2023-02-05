@@ -27,7 +27,7 @@ export function SearchResult({ search, result }) {
         </BottomLeft>
 
         <BottomRight>
-          <MorgueLink href={parseMorgueUrl} rel="noopener" target="_blank">
+          <MorgueLink href={parseMorgueUrl} rel="noopener noreferrer" target="_blank">
             <AlignRight>
               <Small>
                 <TimeAgo date={result.timestamp} />

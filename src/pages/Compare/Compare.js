@@ -182,7 +182,7 @@ function CompareSeed({ simple, seed }) {
               </TimeColumn>
               <RuneColumn>{player.runeCount}</RuneColumn>
               <ScoreColumn>
-                <Link key={player.name} href={player.morgue} rel="noopener" target="_blank">
+                <Link key={player.name} href={player.morgue} rel="noopener noreferrer" target="_blank">
                   <Score>{player.score}</Score>
                 </Link>
               </ScoreColumn>
