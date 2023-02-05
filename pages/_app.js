@@ -176,8 +176,11 @@ const GlobalStyle = createGlobalStyle`
 
     --font-small: 14px;
     --font-normal: 16px;
+    --font-medium: 18px;
     --font-large: 20px;
 
+    --font-medium: 500;
+    --font-bold: 700;
     --font-heavy: 800;
 
     --app-color: rgb(25, 174, 94);
