@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 
 import * as ScrapePlayers from 'src/graphql/scrapePlayers';
 
-import * as Spacer from '../../../components/Spacer';
+import * as Spacer from 'src/components/Spacer';
 import { SearchField } from './SearchField';
 import { SearchResults } from './SearchResults';
 import { random_placeholder } from '../random_placeholder';

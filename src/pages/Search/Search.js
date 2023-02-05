@@ -7,7 +7,7 @@ import { useArtifactFilter } from 'src/graphql/useArtifactFilter';
 
 import { ItemSearch } from './components/ItemSearch';
 import { ArtifactSearch } from './components/ArtifactSearch';
-import * as Spacer from '../../components/Spacer';
+import * as Spacer from 'src/components/Spacer';
 
 function SearchInternal(props) {
   const artifact_filter = useArtifactFilter(props);
