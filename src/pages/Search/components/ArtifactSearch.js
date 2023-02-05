@@ -151,10 +151,6 @@ function useSyncArtifactFilter(props) {
   const artifact_filter = useArtifactFilter(props);
   // console.debug('[artifact_filter]', artifact_filter);
 
-  const filter_list = Array.from(artifact_filter.filter_set);
-  filter_list.sort();
-  const filter_list_key = filter_list.join('');
-
   React.useEffect(() => {
     if (!router.isReady) return;
 
@@ -188,7 +184,7 @@ function useSyncArtifactFilter(props) {
     url.pathname = router.pathname;
 
     if (artifact_filter.filter_set) {
-      const names = filter_list.map((i) => Unrands.List[i]);
+      const names = Array.from(artifact_filter.filter_set).map((i) => Unrands.List[i]);
       url.query = {
         // ensure we do not clear other query params
         ...router.query,
@@ -203,7 +199,7 @@ function useSyncArtifactFilter(props) {
 
     // intentionally run only when filter set changes
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [filter_list_key]);
+  }, [artifact_filter.filter_list_key]);
 
   return artifact_filter;
 }
@@ -216,6 +212,7 @@ const ResultsContainer = styled.div`
 `;
 
 const Filters = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
