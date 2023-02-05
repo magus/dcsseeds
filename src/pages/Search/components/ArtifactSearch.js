@@ -113,6 +113,11 @@ function ArtifactFilters(props) {
       } else {
         props.add_filter(i);
       }
+
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
     }
 
     if (count === 0) {
