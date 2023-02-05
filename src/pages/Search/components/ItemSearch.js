@@ -6,7 +6,9 @@ import * as ScrapePlayers from 'src/graphql/scrapePlayers';
 
 import * as Spacer from 'src/components/Spacer';
 import { SearchField } from './SearchField';
+import { ArtifactSearch } from './ArtifactSearch';
 import { SearchResults } from './SearchResults';
+import { RandomSearchCTA } from './RandomSearchCTA';
 import { random_placeholder } from '../random_placeholder';
 
 export function ItemSearch(props) {
@@ -102,7 +104,15 @@ export function ItemSearch(props) {
 
       <Spacer.Vertical size="2" />
 
-      <SearchResults loading={itemSearch.loading} search={search} results={results} onTrySearch={handleTrySearch} />
+      {/* hide cta when artifact filter is active */}
+      {router.query.a ? null : <RandomSearchCTA search={search} onTrySearch={handleTrySearch} />}
+
+      <ArtifactSearch key="ArtifactSearch" {...props} />
+
+      <Spacer.Vertical size="2" />
+
+      {/* hide results when artifact filter is active */}
+      {router.query.a ? null : <SearchResults loading={itemSearch.loading} search={search} results={results} />}
     </Container>
   );
 }

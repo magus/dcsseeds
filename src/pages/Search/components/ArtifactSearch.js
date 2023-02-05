@@ -86,8 +86,12 @@ function ArtifactFilterButton(props) {
 }
 
 function ArtifactFilters(props) {
+  const router = useRouter();
+
   let active_buttons = [];
   let inactive_buttons = [];
+
+  const search = router.query.q;
 
   for (let i = 0; i < Unrands.List.length; i++) {
     const name = Unrands.List[i];
@@ -108,6 +112,11 @@ function ArtifactFilters(props) {
     if (active) {
       active_buttons.push(button);
     } else {
+      // skip filters that do not match active search
+      if (search && !name.toLowerCase().includes(search.toLowerCase())) {
+        continue;
+      }
+
       inactive_buttons.push(button);
     }
   }
