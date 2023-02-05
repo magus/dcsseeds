@@ -1,4 +1,3 @@
-const { query } = require('graphqurl');
 const parseMorgue = require('src/utils/parseMorgue');
 const send = require('src/server/utils/zeitSend');
 

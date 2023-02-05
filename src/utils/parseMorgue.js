@@ -7,7 +7,7 @@ const Uniques = require('src/utils/Uniques');
 const Gods = require('src/utils/Gods');
 const Branch = require('src/utils/Branch');
 
-const { uniqBy } = require('lodash');
+const { uniqBy, set } = require('lodash');
 
 module.exports = async function parseMorgue(morgue) {
   const morgueResponse = await fetch(morgue);
@@ -369,7 +369,7 @@ function getAllMorgueNoteEvents(morgueNotes) {
     );
 
     // normal ident
-    const ident = morgueNote.note.match(/Identified the (.*)/);
+    const ident = morgueNote.note.match(/Identified (?:the |a |an )?(.*)/);
     // use randbook details to match generated book names
     // https://github.com/crawl/crawl/tree/master/crawl-ref/source/dat/database/randbook.txt
     // Examples
@@ -520,9 +520,17 @@ function getAllMorgueNoteEvents(morgueNotes) {
       const [, item] = acquirement;
       addEvent('acquirement', morgueNote.loc, { item });
     } else if (found) {
+      // for some reason ring of the octopus king is both 'found' and 'identified'
+      // the first 'found' event often has no details on the stats
+      // so we ignore it to prevent logging a useless value
+      const ignore_set = new Set();
+      ignore_set.add('ring of the Octopus King');
+
       const [, item] = found;
-      addEvent('found', morgueNote.loc, { item });
-      addEvent('item', morgueNote.loc, { item });
+      if (!ignore_set.has(item)) {
+        addEvent('found', morgueNote.loc, { item });
+        addEvent('item', morgueNote.loc, { item });
+      }
     } else if (identPortal) {
       const [, item, loc] = identPortal;
       addEvent('ident-portal', loc, { item });

@@ -1,1 +1,1 @@
-module.exports = require('src/api/job/scrapePlayers');
+module.exports = require('src/api/scrapePlayers/scrapePlayers');
