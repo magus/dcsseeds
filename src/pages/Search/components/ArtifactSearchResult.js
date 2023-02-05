@@ -11,9 +11,30 @@ export function ArtifactSearchResult(props) {
 
   return (
     <Container>
-      {props.item_list.map((item) => (
-        <Item key={item.name} {...item} />
-      ))}
+      <table>
+        <tbody>
+          {props.item_list.map((item, i) => {
+            let vertical_pad = null;
+
+            if (i !== props.item_list.length - 1) {
+              vertical_pad = (
+                <tr>
+                  <td>
+                    <Spacer.Vertical size="d2" />
+                  </td>
+                </tr>
+              );
+            }
+
+            return (
+              <React.Fragment key={item.name}>
+                <Item {...item} />
+                {vertical_pad}
+              </React.Fragment>
+            );
+          })}
+        </tbody>
+      </table>
 
       <Spacer.Vertical size="2" />
 
@@ -35,27 +56,32 @@ function Item(props) {
 
   return (
     <ItemRow>
-      <div>
+      <td>
         <Branch>{props.branchName}</Branch>
         &nbsp;<Level>{props.level}</Level>
-      </div>
+      </td>
 
-      <Spacer.Horizontal size="3" />
+      <td>
+        <Spacer.Horizontal size="1" />
+      </td>
 
-      <Name>
-        <Link href={morgue} rel="noopener noreferrer" target="_blank">
-          {props.name}
-        </Link>
-      </Name>
+      <ItemRight>
+        <Name>
+          <Link href={morgue} rel="noopener noreferrer" target="_blank">
+            {props.name}
+          </Link>
+        </Name>
+      </ItemRight>
     </ItemRow>
   );
 }
 
-const ItemRow = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+const ItemRow = styled.tr`
+  vertical-align: top;
+`;
+
+const ItemRight = styled.td`
+  text-align: right;
 `;
 
 const BottomRow = styled.div`
@@ -107,10 +133,12 @@ const LinkColor = css`
 const Name = styled.div`
   ${LinkColor}
 
-  white-space: nowrap;
   font-size: var(--font-small);
+  /*
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  */
 `;
 
 const Link = styled.a`
