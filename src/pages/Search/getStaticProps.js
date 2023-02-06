@@ -59,6 +59,18 @@ const GQL_TOP_LEVEL = serverQuery(gql`
   ${ResultFragment}
 `);
 
+// // debug query easily by writing it to disk
+// require('fs').writeFileSync(
+//   'query.graphql',
+//   gql`
+// query TopLevelArtifacts {
+//   ${Unrands.List.map(SeedVersionFilter)}
+// }
+
+// ${ResultFragment}
+// `.loc.source.body,
+// );
+
 function SeedVersionFilter(name, i) {
   const name_ilike = `%${safe_name(name)}%`;
   const key = result_key(i);
@@ -66,7 +78,6 @@ function SeedVersionFilter(name, i) {
   return `
     ${key}: dcsseeds_scrapePlayers_seedVersion(
       where: { items: { name: { _ilike: "${name_ilike}" } } }
-      order_by: { items_aggregate: { count: desc } }
     ) {
       seed
       version
