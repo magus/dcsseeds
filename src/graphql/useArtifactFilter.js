@@ -128,7 +128,7 @@ export function useArtifactFilter(props) {
     patch_state({ loading: true });
 
     try {
-      let { artifact_count, result_list } = await run_query_filter({
+      let query_result = await run_query_filter({
         client,
         props,
         filter_list,
@@ -141,8 +141,8 @@ export function useArtifactFilter(props) {
       // automatically select them all as active to save time
       const special_case_set = new Set(filter_list);
       let all_below_1 = true;
-      for (let i = 0; i < artifact_count.length; i++) {
-        const count = artifact_count[i];
+      for (let i = 0; i < query_result.artifact_count.length; i++) {
+        const count = query_result.artifact_count[i];
 
         if (count === 1) {
           special_case_set.add(i);
@@ -153,7 +153,7 @@ export function useArtifactFilter(props) {
       }
 
       if (all_below_1) {
-        console.warn('SPECIAL CASE, SELECT ALL REMAINING');
+        // console.warn('SPECIAL CASE, SELECT ALL REMAINING');
 
         const special_case_result = await run_query_filter({
           client,
@@ -163,7 +163,7 @@ export function useArtifactFilter(props) {
         });
         patch_state({ loading: false, filter_list, ...special_case_result });
       } else {
-        patch_state({ loading: false, filter_list, artifact_count, result_list });
+        patch_state({ loading: false, filter_list, ...query_result });
       }
     } catch (error) {
       patch_state({ loading: false });
@@ -172,7 +172,6 @@ export function useArtifactFilter(props) {
   }
 }
 
-// count the number of results for each artifact
 function get_artifact_count(result_list, args) {
   const artifact_count = [];
 
@@ -195,13 +194,19 @@ function get_artifact_count(result_list, args) {
 const QUERY_FILTER_TYPE = 'local';
 
 async function run_query_filter(args) {
-  switch (QUERY_FILTER_TYPE) {
-    case 'graphql':
-      return await graphql_filter(args);
-    case 'local':
-    default:
-      return await local_filter(args);
-  }
+  const result_list = await (async function () {
+    switch (QUERY_FILTER_TYPE) {
+      case 'graphql':
+        return await graphql_filter(args);
+      case 'local':
+      default:
+        return await local_filter(args);
+    }
+  })();
+
+  const artifact_count = get_artifact_count(result_list, args);
+
+  return { result_list, artifact_count };
 }
 
 function empty_filter(args) {
@@ -262,9 +267,7 @@ async function local_filter(args) {
     }
   }
 
-  const artifact_count = get_artifact_count(result_list, args);
-
-  return { artifact_count, result_list };
+  return result_list;
 }
 
 async function graphql_filter(args) {
@@ -301,9 +304,7 @@ async function graphql_filter(args) {
   const filter_path = filter_list.map((i) => result_key(i));
   result_list = traverse_data(query_result.data, filter_path, handle_result);
 
-  const artifact_count = get_artifact_count(result_list, args);
-
-  return { artifact_count, result_list };
+  return result_list;
 }
 
 function handle_result(node, path) {
