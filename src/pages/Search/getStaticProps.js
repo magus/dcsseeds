@@ -7,7 +7,11 @@ import * as Unrands from 'src/utils/Unrands';
 export async function getStaticProps(context) {
   // context.res.setHeader('Cache-Control', 'public, s-maxage=300, stale-while-revalidate=1800');
 
-  const [totalItemCount, query_artifact] = await Promise.all([GQL_TOTAL_ITEMS.run(), GQL_TOP_LEVEL.run()]);
+  const [totalItemCount, query_artifact, version_list] = await Promise.all([
+    GQL_TOTAL_ITEMS.run(),
+    GQL_TOP_LEVEL.run(),
+    GQL_VERSIONS.run(),
+  ]);
 
   // unroll top level artifact search into array of results
   const artifact_list = [];
@@ -17,7 +21,7 @@ export async function getStaticProps(context) {
     artifact_list.push(result);
   }
 
-  const props = { totalItemCount, artifact_list };
+  const props = { totalItemCount, artifact_list, version_list };
 
   return {
     props,
@@ -25,6 +29,19 @@ export async function getStaticProps(context) {
     revalidate: 60,
   };
 }
+
+const GQL_VERSIONS = serverQuery(
+  gql`
+    query Versions {
+      seedVersion: dcsseeds_scrapePlayers_seedVersion_aggregate(distinct_on: version) {
+        nodes {
+          version
+        }
+      }
+    }
+  `,
+  (data) => data.seedVersion.nodes.map((node) => node.version),
+);
 
 const GQL_TOTAL_ITEMS = serverQuery(
   gql`

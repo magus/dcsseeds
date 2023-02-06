@@ -38,42 +38,80 @@ export function useArtifactFilter(props) {
 
   // build a lookup for the top-level artifact counts to quickly count
   // results for artifact_count array below
-  const [seedVersion_set_list, seedVersion_item_map] = React.useMemo(() => {
-    const set_list = [];
-    const map = new Map();
+  const [seedVersion_set_list, seedVersion_item_map, version_seed_map, version_item_map] = React.useMemo(() => {
+    const seedVersion_set_list = [];
+    const seedVersion_item_map = new Map();
 
-    for (let i = 0; i < Unrands.List.length; i++) {
-      const result_list = props.artifact_list[i];
+    // { [version]: Set(seedVersion) } for each version store seedVersion set
+    const version_seed_map = new Map();
 
-      const seedVersion_set = new Set();
+    // { [version]: [count, count, ...] } for each version store count
+    const version_item_map = new Map();
 
-      for (const result of result_list) {
-        const key = seed_version_key(result.seed, result.version);
-
-        // store seed version for this unrand
-        seedVersion_set.add(key);
-
-        // store this unrand for this seed
-        const seed_item_list = map.get(key) || [];
-        const [item] = result.items;
-        seed_item_list.push(item);
-        map.set(key, seed_item_list);
-      }
-
-      set_list[i] = seedVersion_set;
+    // initialize version maps for all versions
+    for (const version of props.version_list) {
+      version_seed_map.set(version, new Set());
+      version_item_map.set(version, []);
     }
 
-    return [set_list, map];
-  }, [props.artifact_list]);
+    for (let i = 0; i < Unrands.List.length; i++) {
+      // init item count for each version
+      for (const version of props.version_list) {
+        version_item_map.get(version)[i] = 0;
+      }
+
+      const result_list = props.artifact_list[i];
+
+      const item_seedVersion_set = new Set();
+
+      for (const result of result_list) {
+        const seedVersion = seed_version_key(result.seed, result.version);
+
+        // store count of this item for this version
+        version_item_map.get(result.version)[i]++;
+
+        // set the seedVersion key in the version lookup
+        version_seed_map.get(result.version).add(result.seed);
+
+        // store seed version for this unrand
+        item_seedVersion_set.add(seedVersion);
+
+        // store this unrand for this seed
+        const seedVersion_item_list = seedVersion_item_map.get(seedVersion) || [];
+        const [item] = result.items;
+        seedVersion_item_list.push(item);
+        seedVersion_item_map.set(seedVersion, seedVersion_item_list);
+      }
+
+      seedVersion_set_list[i] = item_seedVersion_set;
+    }
+
+    // console.debug('[build memoized seedVersion data structures]', {
+    //   seedVersion_set_list,
+    //   seedVersion_item_map,
+    //   version_seed_map,
+    //   version_item_map,
+    // });
+
+    return [seedVersion_set_list, seedVersion_item_map, version_seed_map, version_item_map];
+  }, [props.artifact_list, props.version_list]);
 
   function init_state() {
     const filter_list = [];
+    const version_set = new Set();
 
     return {
       loading: false,
+      version_set,
       filter_list,
       result_list: [],
-      artifact_count: get_artifact_count([], { seedVersion_set_list }),
+      ...get_counts([], {
+        version_set,
+        seedVersion_set_list,
+        seedVersion_item_map,
+        version_seed_map,
+        version_item_map,
+      }),
     };
   }
 
@@ -98,6 +136,8 @@ export function useArtifactFilter(props) {
     add_filter,
     remove_filter,
     init_filter_list,
+    add_version,
+    remove_version,
   };
 
   // console.debug('[useArtifactFilter]', api);
@@ -109,8 +149,23 @@ export function useArtifactFilter(props) {
     return patch_state(init_state());
   }
 
+  async function add_version(version) {
+    const version_set = new Set(state.version_set);
+    version_set.add(version);
+    const { filter_list } = state;
+    await query_next_filter({ filter_list, version_set });
+  }
+
+  async function remove_version(version) {
+    const version_set = new Set(state.version_set);
+    version_set.delete(version);
+    const { filter_list } = state;
+    await query_next_filter({ filter_list, version_set });
+  }
+
   async function init_filter_list(filter_list) {
-    await query_next_filter(filter_list);
+    const { version_set } = state;
+    await query_next_filter({ filter_list, version_set });
   }
 
   async function remove_filter(artifact_i) {
@@ -120,8 +175,9 @@ export function useArtifactFilter(props) {
     }
 
     // console.debug('[useArtifactFilter]', 'remove_filter', { artifact_i });
-    const next_filter_list = state.filter_list.filter((i) => i !== artifact_i);
-    await query_next_filter(next_filter_list);
+    const { version_set } = state;
+    const filter_list = state.filter_list.filter((i) => i !== artifact_i);
+    await query_next_filter({ filter_list, version_set });
   }
 
   async function add_filter(artifact_i) {
@@ -131,23 +187,27 @@ export function useArtifactFilter(props) {
     }
 
     // console.debug('[useArtifactFilter]', 'add_filter', { artifact_i });
-    const next_filter_list = [...state.filter_list, artifact_i];
-    await query_next_filter(next_filter_list);
+    const { version_set } = state;
+    const filter_list = [...state.filter_list, artifact_i];
+    await query_next_filter({ filter_list, version_set });
   }
 
-  async function query_next_filter(filter_list) {
+  async function query_next_filter({ filter_list, version_set }) {
     patch_state({ loading: true });
 
     try {
       let query_result = await run_query_filter({
         client,
         props,
+        version_set,
         filter_list,
         seedVersion_set_list,
         seedVersion_item_map,
+        version_seed_map,
+        version_item_map,
       });
 
-      patch_state({ loading: false, filter_list, ...query_result });
+      patch_state({ loading: false, version_set, filter_list, ...query_result });
     } catch (error) {
       patch_state({ loading: false });
       throw error;
@@ -155,18 +215,24 @@ export function useArtifactFilter(props) {
   }
 }
 
-function get_artifact_count(result_list, args) {
+function get_counts(result_list, args) {
   const artifact_count = [];
 
   for (let i = 0; i < Unrands.List.length; i++) {
+    artifact_count[i] = 0;
+
     const seedVersion_set = args.seedVersion_set_list[i];
 
     if (result_list.length === 0) {
-      // handle initial case with query result from static props
-      artifact_count[i] = seedVersion_set.size;
+      if (args.version_set.size === 0) {
+        artifact_count[i] = seedVersion_set.size;
+      } else {
+        for (const version of Array.from(args.version_set)) {
+          const version_item_list = args.version_item_map.get(version);
+          artifact_count[i] += version_item_list[i];
+        }
+      }
     } else {
-      artifact_count[i] = 0;
-
       for (const result of result_list) {
         if (seedVersion_set.has(seed_version_key(result.seed, result.version))) {
           artifact_count[i]++;
@@ -175,14 +241,33 @@ function get_artifact_count(result_list, args) {
     }
   }
 
-  return artifact_count;
+  const version_count = new Map();
+
+  for (const version of Array.from(args.version_seed_map.keys())) {
+    let count = 0;
+    const seed_set = args.version_seed_map.get(version);
+
+    if (result_list.length === 0) {
+      count += Array.from(seed_set).length;
+    } else {
+      for (const result of result_list) {
+        if (seed_set.has(result.seed)) {
+          count++;
+        }
+      }
+    }
+
+    version_count.set(version, count);
+  }
+
+  return { artifact_count, version_count };
 }
 
 // 'graphql' | 'local'
 const QUERY_FILTER_TYPE = 'local';
 
 async function run_query_filter(args) {
-  const result_list = await (async function () {
+  const unfiltered_result_list = await (async function () {
     switch (QUERY_FILTER_TYPE) {
       case 'graphql':
         return await graphql_filter(args);
@@ -192,9 +277,17 @@ async function run_query_filter(args) {
     }
   })();
 
-  const artifact_count = get_artifact_count(result_list, args);
+  // filter result_list by state.version_set
+  const result_list = unfiltered_result_list.filter((result) => {
+    if (args.version_set.size === 0) {
+      return true;
+    }
 
-  return { result_list, artifact_count };
+    return args.version_set.has(result.version);
+  });
+  // .filter((result) => args.state.version_set.has(result.version));
+
+  return { result_list, ...get_counts(result_list, args) };
 }
 
 async function local_filter(args) {
@@ -223,7 +316,7 @@ async function local_filter(args) {
       };
 
       const [item] = result.items;
-      seed_result.item_list.push(item);
+      seed_result.item_list.push({ ...item, unrand_key });
 
       seed_map.set(seed_key, seed_result);
 
@@ -276,45 +369,44 @@ async function graphql_filter(args) {
   const query_result = await args.client.query({ query, fetchPolicy });
   // console.debug('[useArtifactFilter]', 'graphql_filter', { query_result });
 
-  const filter_path = filter_list.map((i) => result_key(i));
-  result_list = traverse_data(query_result.data, filter_path, handle_result);
+  result_list = traverse_data(query_result.data, filter_list, handle_result);
 
   return result_list;
 }
 
-function handle_result(node, path) {
-  // console.debug('visit', { node, path });
+function handle_result(node, filter_list) {
+  // console.debug('visit', { node, filter_list });
   const { seed, version } = node;
 
   const item_list = [];
 
-  for (const key of path) {
-    const [item] = node[key];
-    item_list.push(item);
+  for (const unrand_key of filter_list) {
+    const [item] = node[result_key(unrand_key)];
+    item_list.push({ ...item, unrand_key });
   }
 
-  return { item_list, seed, version };
+  return { all_item_list: [], item_list, seed, version };
 }
 
-function traverse_data(node, path, handle_result, i = 0, result_list = []) {
-  if (i === path.length) {
-    const result = handle_result(node, path);
+function traverse_data(node, filter_list, handle_result, i = 0, result_list = []) {
+  if (i === filter_list.length) {
+    const result = handle_result(node, filter_list);
     result_list.push(result);
     return;
   }
 
-  const key = path[i];
+  const key = result_key(filter_list[i]);
   const node_list = node[key];
 
   if (!Array.isArray(node_list)) {
     return;
   }
 
-  // console.debug({ node, path, i, key, node_list });
+  // console.debug({ node, filter_list, i, key, node_list });
 
   for (const nested_node of node_list) {
     const next_node = nested_node?.seedVersion || nested_node;
-    traverse_data(next_node, path, handle_result, i + 1, result_list);
+    traverse_data(next_node, filter_list, handle_result, i + 1, result_list);
   }
 
   return result_list;

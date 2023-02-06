@@ -14,6 +14,8 @@ export function ArtifactSearch(props) {
 
   return (
     <Container>
+      <VersionFilters {...artifact_filter} />
+
       <ArtifactFilters {...artifact_filter} />
 
       <Spacer.Vertical size="2" />
@@ -79,6 +81,31 @@ function FilterButton(props) {
         {props.name} ({props.count})
       </Button>
     </ButtonGroup>
+  );
+}
+
+function VersionFilters(props) {
+  const version_list = Array.from(props.version_count.keys()).sort();
+
+  return (
+    <Filters>
+      {version_list.map((version) => {
+        const active = props.version_set.has(version);
+        const count = props.version_count.get(version);
+
+        return (
+          <FilterButton
+            key={version}
+            name={version}
+            count={count}
+            handleAdd={() => props.add_version(version)}
+            handleRemove={() => props.remove_version(version)}
+            disabled={props.loading}
+            active={active}
+          />
+        );
+      })}
+    </Filters>
   );
 }
 
