@@ -31,21 +31,32 @@ function ItemListRows(props) {
 export function ArtifactSearchResult(props) {
   // console.debug('[ArtifactSearchResult]', props);
 
+  const active_set = new Set();
+  for (const item of props.item_list) {
+    active_set.add(item.name);
+  }
+
+  const rest_item_list = props.all_item_list.filter((i) => !active_set.has(i.name));
+
   return (
     <Container>
       <table>
         <tbody>
           <ItemListRows item_list={props.item_list} />
 
-          <tr>
-            <td colSpan="3">
-              <Spacer.Vertical size="1" />
-              <ItemDivider />
-              <Spacer.Vertical size="1" />
-            </td>
-          </tr>
+          {rest_item_list.length === 0 ? null : (
+            <>
+              <tr>
+                <td colSpan="3">
+                  <Spacer.Vertical size="1" />
+                  <ItemDivider />
+                  <Spacer.Vertical size="1" />
+                </td>
+              </tr>
 
-          <ItemListRows item_list={props.all_item_list} />
+              <ItemListRows item_list={rest_item_list} />
+            </>
+          )}
         </tbody>
       </table>
 
