@@ -217,7 +217,7 @@ const GlobalStyle = createGlobalStyle`
     @media (prefers-color-scheme: dark) {
       --bg-color: var(--black);
       --bg-color-rgb: var(--black-rgb);
-      --divider-color: var(--gray800);
+      --divider-color: var(--gray400);
       --text-color: var(--white);
       --text-color-rgb: var(--white-rgb);
       --button-bg: var(--gray800);
