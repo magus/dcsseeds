@@ -46,17 +46,15 @@ function ArtifactResults(props) {
   });
 }
 
-function ArtifactFilterButton(props) {
-  const count = props.artifact_count[props.unrand_key];
-
+function FilterButton(props) {
   function handle_click() {
     // console.debug({ name, i });
-    if (count === 0) return;
+    if (props.count === 0) return;
 
     if (props.active) {
-      props.remove_filter(props.unrand_key);
+      props.handleRemove();
     } else {
-      props.add_filter(props.unrand_key);
+      props.handleAdd();
     }
 
     window.scrollTo({
@@ -65,21 +63,20 @@ function ArtifactFilterButton(props) {
     });
   }
 
-  if (count === 0) {
+  if (props.count === 0) {
     return null;
   }
 
   return (
     <ButtonGroup
       key={props.name}
-      // force line break
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       layout="position"
     >
-      <Button active={props.active} disabled={props.disabled} count={count} onClick={handle_click}>
-        {props.name} ({count})
+      <Button active={props.active} disabled={props.disabled} count={props.count} onClick={handle_click}>
+        {props.name} ({props.count})
       </Button>
     </ButtonGroup>
   );
@@ -109,14 +106,14 @@ function ArtifactFilters(props) {
     const active = props.filter_set.has(unrand_key);
 
     const button = (
-      <ArtifactFilterButton
-        // force line break
+      <FilterButton
         key={unrand_key}
-        {...props}
-        disabled={props.loading}
         name={name}
+        count={props.artifact_count[unrand_key]}
+        handleAdd={() => props.add_filter(unrand_key)}
+        handleRemove={() => props.remove_filter(unrand_key)}
+        disabled={props.loading}
         active={active}
-        unrand_key={unrand_key}
       />
     );
 
