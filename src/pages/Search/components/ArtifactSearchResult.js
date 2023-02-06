@@ -6,6 +6,28 @@ import CopyButton from 'src/components/CopyButton';
 import { TimeAgo } from 'src/components/TimeAgo';
 import * as Spacer from 'src/components/Spacer';
 
+function ItemListRows(props) {
+  const vertical_pad = (
+    <tr>
+      <td>
+        <Spacer.Vertical size="d2" />
+      </td>
+    </tr>
+  );
+
+  return props.item_list.map((item, i) => {
+    let vertical_pad = null;
+
+    const is_last = i !== props.item_list.length - 1;
+
+    return (
+      <React.Fragment key={item.name}>
+        <Item {...item} />
+        {is_last ? null : vertical_pad}
+      </React.Fragment>
+    );
+  });
+}
 export function ArtifactSearchResult(props) {
   // console.debug('[ArtifactSearchResult]', props);
 
@@ -13,26 +35,17 @@ export function ArtifactSearchResult(props) {
     <Container>
       <table>
         <tbody>
-          {props.item_list.map((item, i) => {
-            let vertical_pad = null;
+          <ItemListRows item_list={props.item_list} />
 
-            if (i !== props.item_list.length - 1) {
-              vertical_pad = (
-                <tr>
-                  <td>
-                    <Spacer.Vertical size="d2" />
-                  </td>
-                </tr>
-              );
-            }
+          <tr>
+            <td colSpan="3">
+              <Spacer.Vertical size="1" />
+              <ItemDivider />
+              <Spacer.Vertical size="1" />
+            </td>
+          </tr>
 
-            return (
-              <React.Fragment key={item.name}>
-                <Item {...item} />
-                {vertical_pad}
-              </React.Fragment>
-            );
-          })}
+          <ItemListRows item_list={props.all_item_list} />
         </tbody>
       </table>
 
@@ -112,6 +125,12 @@ const Container = styled(motion.div)`
 
 const Level = styled.span`
   font-size: var(--font-normal);
+`;
+
+const ItemDivider = styled.div`
+  background-color: var(--divider-color);
+  height: 1px;
+  width: 100%;
 `;
 
 const Branch = styled.span`

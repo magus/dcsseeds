@@ -56,13 +56,32 @@ export function useArtifactFilter(props) {
     return set_list;
   }, [props.artifact_list]);
 
+  const seedVersion_item_map = React.useMemo(() => {
+    const map = new Map();
+
+    for (let i = 0; i < Unrands.List.length; i++) {
+      const result_list = props.artifact_list[i];
+
+      for (const result of result_list) {
+        const key = seed_version_key(result.seed, result.version);
+        const seed_item_list = map.get(key) || [];
+        const [item] = result.items;
+        seed_item_list.push(item);
+        map.set(key, seed_item_list);
+      }
+    }
+
+    return map;
+  }, [props.artifact_list]);
+
   function init_state() {
     const filter_list = [];
 
     return {
       loading: false,
       filter_list,
-      ...empty_filter({ seedVersion_set_list }),
+      result_list: [],
+      artifact_count: get_artifact_count([], { seedVersion_set_list }),
     };
   }
 
@@ -133,38 +152,10 @@ export function useArtifactFilter(props) {
         props,
         filter_list,
         seedVersion_set_list,
+        seedVersion_item_map,
       });
 
-      // 🚨 SPECIAL CASE
-      // when artifact counts are all less than or equal to 1
-      // we know a single seed version contains all items
-      // automatically select them all as active to save time
-      const special_case_set = new Set(filter_list);
-      let all_below_1 = true;
-      for (let i = 0; i < query_result.artifact_count.length; i++) {
-        const count = query_result.artifact_count[i];
-
-        if (count === 1) {
-          special_case_set.add(i);
-        } else if (count > 1) {
-          all_below_1 = false;
-          break;
-        }
-      }
-
-      if (all_below_1) {
-        // console.warn('SPECIAL CASE, SELECT ALL REMAINING');
-
-        const special_case_result = await run_query_filter({
-          client,
-          props,
-          filter_list: Array.from(special_case_set),
-          seedVersion_set_list,
-        });
-        patch_state({ loading: false, filter_list, ...special_case_result });
-      } else {
-        patch_state({ loading: false, filter_list, ...query_result });
-      }
+      patch_state({ loading: false, filter_list, ...query_result });
     } catch (error) {
       patch_state({ loading: false });
       throw error;
@@ -176,13 +167,18 @@ function get_artifact_count(result_list, args) {
   const artifact_count = [];
 
   for (let i = 0; i < Unrands.List.length; i++) {
-    artifact_count[i] = 0;
+    const seedVersion_set = args.seedVersion_set_list[i];
 
-    for (const result of result_list) {
-      const seedVersion_set = args.seedVersion_set_list[i];
+    if (result_list.length === 0) {
+      // handle initial case with query result from static props
+      artifact_count[i] = seedVersion_set.size;
+    } else {
+      artifact_count[i] = 0;
 
-      if (seedVersion_set.has(seed_version_key(result.seed, result.version))) {
-        artifact_count[i]++;
+      for (const result of result_list) {
+        if (seedVersion_set.has(seed_version_key(result.seed, result.version))) {
+          artifact_count[i]++;
+        }
       }
     }
   }
@@ -209,37 +205,15 @@ async function run_query_filter(args) {
   return { result_list, artifact_count };
 }
 
-function empty_filter(args) {
-  // 1. count the number of results for each artifact
-  // 2. build result list given current filter list
-  let artifact_count = [];
-  let result_list = [];
-
-  // handle initial case with query result from static props
-  for (let i = 0; i < Unrands.List.length; i++) {
-    const seedVersion_set = args.seedVersion_set_list[i];
-    artifact_count[i] = seedVersion_set.size;
-  }
-
-  return { artifact_count, result_list };
-}
-
 async function local_filter(args) {
   const { filter_list } = args;
 
   if (filter_list.length === 0) {
     // handle initial case with query result from static props
-    return empty_filter(args);
+    return [];
   }
 
-  // build result list given current filter list
-  let result_list = [];
-
-  const seedVersion_set = new Set();
-
-  // const [first_filter, ...rest_filter] = filter_list;
-  // const first_filter_result = args.seedVersion_set_list[first_filter];
-
+  // first collect seeds and item matches into an array of results
   const seed_map = new Map();
 
   for (const unrand_key of filter_list) {
@@ -248,7 +222,13 @@ async function local_filter(args) {
     for (const result of unrand_list) {
       const { seed, version } = result;
       const seed_key = seed_version_key(seed, version);
-      const seed_result = seed_map.get(seed_key) || { seed, version, item_list: [] };
+
+      const seed_result = seed_map.get(seed_key) || {
+        seed,
+        version,
+        all_item_list: args.seedVersion_item_map.get(seed_key),
+        item_list: [],
+      };
 
       const [item] = result.items;
       seed_result.item_list.push(item);
@@ -260,6 +240,9 @@ async function local_filter(args) {
   }
 
   // console.debug({ seed_map });
+
+  // now filter the lists that have all the filtered items
+  let result_list = [];
 
   for (const seed_result of seed_map.values()) {
     if (seed_result.item_list.length === filter_list.length) {
@@ -275,7 +258,7 @@ async function graphql_filter(args) {
 
   if (filter_list.length === 0) {
     // handle initial case with query result from static props
-    return empty_filter(args);
+    return [];
   }
 
   // build result list given current filter list
