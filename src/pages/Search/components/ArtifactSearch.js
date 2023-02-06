@@ -100,7 +100,7 @@ function VersionFilters(props) {
             count={count}
             handleAdd={() => props.add_version(version)}
             handleRemove={() => props.remove_version(version)}
-            disabled={props.loading || count === 0}
+            disabled={props.loading || (!active && count === 0)}
             active={active}
           />
         );
