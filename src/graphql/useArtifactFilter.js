@@ -235,7 +235,11 @@ function get_counts(result_list, args) {
     } else {
       for (const result of result_list) {
         if (seedVersion_set.has(seed_version_key(result.seed, result.version))) {
-          artifact_count[i]++;
+          if (args.version_set.size === 0) {
+            artifact_count[i]++;
+          } else if (args.version_set.has(result.version)) {
+            artifact_count[i]++;
+          }
         }
       }
     }
@@ -277,6 +281,8 @@ async function run_query_filter(args) {
     }
   })();
 
+  const counts = get_counts(unfiltered_result_list, args);
+
   // filter result_list by state.version_set
   const result_list = unfiltered_result_list.filter((result) => {
     if (args.version_set.size === 0) {
@@ -285,9 +291,8 @@ async function run_query_filter(args) {
 
     return args.version_set.has(result.version);
   });
-  // .filter((result) => args.state.version_set.has(result.version));
 
-  return { result_list, ...get_counts(result_list, args) };
+  return { result_list, ...counts };
 }
 
 async function local_filter(args) {

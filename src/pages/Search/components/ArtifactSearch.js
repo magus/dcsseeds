@@ -51,7 +51,7 @@ function ArtifactResults(props) {
 function FilterButton(props) {
   function handle_click() {
     // console.debug({ name, i });
-    if (props.count === 0) return;
+    if (props.disabled) return;
 
     if (props.active) {
       props.handleRemove();
@@ -65,7 +65,7 @@ function FilterButton(props) {
     });
   }
 
-  if (props.count === 0) {
+  if (props.hide) {
     return null;
   }
 
@@ -77,7 +77,7 @@ function FilterButton(props) {
       exit={{ opacity: 0 }}
       layout="position"
     >
-      <Button active={props.active} disabled={props.disabled} count={props.count} onClick={handle_click}>
+      <Button active={props.active} disabled={props.disabled} onClick={handle_click}>
         {props.name} ({props.count})
       </Button>
     </ButtonGroup>
@@ -100,7 +100,7 @@ function VersionFilters(props) {
             count={count}
             handleAdd={() => props.add_version(version)}
             handleRemove={() => props.remove_version(version)}
-            disabled={props.loading}
+            disabled={props.loading || count === 0}
             active={active}
           />
         );
@@ -131,16 +131,18 @@ function ArtifactFilters(props) {
     const unrand_key = filter_unrand_key_list[i];
     const name = Unrands.List[unrand_key];
     const active = props.filter_set.has(unrand_key);
+    const count = props.artifact_count[unrand_key];
 
     const button = (
       <FilterButton
         key={unrand_key}
         name={name}
-        count={props.artifact_count[unrand_key]}
+        count={count}
         handleAdd={() => props.add_filter(unrand_key)}
         handleRemove={() => props.remove_filter(unrand_key)}
-        disabled={props.loading}
+        disabled={props.loading || count === 0}
         active={active}
+        hide={count === 0}
       />
     );
 
@@ -272,10 +274,9 @@ const Button = styled.button`
           background-color: rgb(21, 128, 61);
           color: rgb(220, 252, 231);
         `;
-      case props.count === 0:
+      case props.disabled:
         return css`
-          background-color: #171717;
-          color: #404040;
+          opacity: 0.4;
         `;
       default:
         return '';
