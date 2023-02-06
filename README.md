@@ -3,56 +3,17 @@
 track random seeds in dcss
 
 
+# TODO
 
-## 2023-02-05 optimize search performance
+## self submit scrape player
 
-- followed documentation for fuzzy text search with hasura
+- setup a form to allow adding players
+- text input for player name
+- dropdown with server
+- setup an api endpoint that can fetch morgues and confirm player + server combo is valid
+- after verifying write entry into scrapePlayers table
 
-  > https://hasura.io/docs/latest/schema/postgres/custom-functions/#example-fuzzy-match-search-functions
-  > https://hasura.io/blog/full-text-search-with-hasura-graphql-api-postgres/
-
-- ran sql below directly, creating index which improved query performance
-- query time down to 1s from original 30s (timing out in nextjs static page generation)
-- db migrations over in `magus/mono://databases/magic-graphql.iamnoah.com/migrations` are a little funky
-
-  ```sql
-  CREATE EXTENSION pg_trgm;
-
-  CREATE INDEX dcsseeds_scrapePlayers_item_name_gin_idx ON "public"."dcsseeds_scrapePlayers_item"
-  USING GIN ((name) gin_trgm_ops);
-  ```
-
-
-## 2022-12-23 migrate tables to magic hasura db
-
-- heroku free database is deleted
-- recreate all Hasura tables + initial scrape players
-- setup `dcsseeds_scrapePlayers` tables in `magic-graphql.iamnoah.com` DB (`magus/mono`)
-- updated hasura engine in `magic-auth` droplet
-
-    ```sh
-    docker pull hasura/graphql-engine
-    docker tag hasura/graphql-engine dokku/hasura
-    dokku tags:deploy hasura
-    ```
-
-
-## 2022-08-13 how to update DCSS version
-
-Notes when upgrading from 0.26 to 0.27
-
-- Update versions in `src/utils/Versions.js`
-  - (add, remove) any Species and Backgrounds
-  - update recommended species/backgrounds lookups
-- Add new version to `VERSION_CHOICES` in `src/pages/New/New.js`
-- Verify on `/new` route that new version works (errors will throw if recommended things are missing)
-- Run `./scripts/getSpells.js` to gather spell list
-- Update spell slots in `Slots.rc` in `magus/dcss` .rc file
-- Update `src/api/job/scrapePlayers.js` `ALLOWED_VERSIONS` (use `api/pargueMorgue` to determine short `version` value to use here)
-- Use delete query at top of `src/api/job/scrapePlayers.js` to reset `scrapePlayers`-related tables
-
-
-### parse morgue visualization
+## parse morgue visualization
 
 Display a rich page with summary of morgue
 
@@ -74,7 +35,7 @@ Unrands found (can include tile image)
 Randarts found (can include tile image for type)
 
 
-### scrapePlayers
+## scrapePlayers
 
 - strategy to make scraping more fair across players
 - set a MAX_REQUESTS quota per api request e.g. 250
@@ -101,7 +62,7 @@ Randarts found (can include tile image for type)
   should be able to set keys on the JSON object with mutations (instead of sending entire object)
 
 
-### design
+## design
 
 - Race + Background icons
   https://github.com/crawl/crawl/tree/master/crawl-ref/source/rltiles/player/base
@@ -115,7 +76,7 @@ Randarts found (can include tile image for type)
   Use this to wear random set of armors for certain backgrounds
   e.g. random robes for casters, random dragon scales for stabbers, random plate/leather/etc for melee classes, etc.
 
-### seed_players
+## seed_players
 
 - api/reparseMorgue
   - other fields? God, Death location, XL, Health, Magic, Gold, AC, EV, etc.
@@ -128,13 +89,7 @@ Randarts found (can include tile image for type)
 
 
 
-## Resources
-
-- [Zeit Dashboard](https://vercel.com/noah/dcsseeds)
-- [Google Analytics](https://analytics.google.com/analytics/web/#/a106090287w244212901p227276709/admin)
-- [Sentry Issues](https://sentry.io/organizations/dcss/issues/?project=5403737&statsPeriod=14d)
-
-## Setup
+# Setup
 
 Install `now` CLI
 
@@ -174,26 +129,11 @@ https://zeit.co/docs/v2/environment-variables-and-secrets
 now secrets add <secret-name> <secret-value>
 ```
 
-## server
+# Resources
 
-### Overview
-
-`api` directory contains serverless lambda functions
-
-Hosted on [Zeit](https://zeit.co/docs) running now v2 serverless lamba functions. Handles custom business logic (e.g. [`/src/api/submit`](./src/api/submit.js)).
-
-GraphQL databse backend provided by [Hasura](https://hasura.io/), hosted on [Heroku Postgres](https://www.heroku.com/postgres).
-
-[StatusCake](https://app.statuscake.com/) is used to monitor availability and simultaneously keep the Hasura Heroku dyno warm with a periodic query (every 5 min).
-
-- [parseUser](#parseUser)
-
-## scripts
-
-### parseUser
-
-```sh
-yarn search magusnn by Sigmund
-```
-
-![Demo GIF of parseUser for user "magusnn" for term "by sigmund"](https://raw.githubusercontent.com/magus/dcsseeds/master/static/parseuser-demo-4x.766b70.gif)
+- [Zeit Dashboard](https://vercel.com/noah/dcsseeds)
+- [Google Analytics](https://analytics.google.com/analytics/web/#/a106090287w244212901p227276709/admin)
+- [Sentry Issues](https://sentry.io/organizations/dcss/issues/?project=5403737&statsPeriod=14d)
+- [Hasura GraphQL database](https://hasura.io/)
+- [magic-graphql.iamnoah.com](https://github.com/magus/mono/tree/master/databases/magic-graphql.iamnoah.com) hosted Hasura instance
+- [StatusCake](https://app.statuscake.com/); monitor availability and simultaneously keep the Hasura Heroku dyno warm with a periodic query (every 5 min)
