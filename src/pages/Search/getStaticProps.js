@@ -22,7 +22,7 @@ export async function getStaticProps(context) {
   return {
     props,
     // https://nextjs.org/docs/api-reference/data-fetching/get-static-props#revalidate
-    revalidate: 300,
+    revalidate: 60,
   };
 }
 
