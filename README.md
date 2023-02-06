@@ -5,6 +5,21 @@ track random seeds in dcss
 
 # TODO
 
+## feedback
+
+- add feedback form page that writes to database
+- link to feedback form page on search (small link below search input?)
+- allow inputting arbitrary text
+- optional contact field that accepts email (validate it client-side)
+ - write to database (text, email, created_at)
+
+## self submit scrape morgue
+
+- setup a form to allow inputting a morgue url
+- call api/scrapeMorgue with url=morgue
+- if error parsing morgue, show error
+- if player doesn't exist return error and direct to form to add player for scraping
+
 ## self submit scrape player
 
 - setup a form to allow adding players
