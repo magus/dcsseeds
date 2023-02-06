@@ -38,40 +38,32 @@ export function useArtifactFilter(props) {
 
   // build a lookup for the top-level artifact counts to quickly count
   // results for artifact_count array below
-  const seedVersion_set_list = React.useMemo(() => {
+  const [seedVersion_set_list, seedVersion_item_map] = React.useMemo(() => {
     const set_list = [];
-
-    for (let i = 0; i < Unrands.List.length; i++) {
-      const set = new Set();
-      const result_list = props.artifact_list[i];
-
-      for (const result of result_list) {
-        const key = seed_version_key(result.seed, result.version);
-        set.add(key);
-      }
-
-      set_list[i] = set;
-    }
-
-    return set_list;
-  }, [props.artifact_list]);
-
-  const seedVersion_item_map = React.useMemo(() => {
     const map = new Map();
 
     for (let i = 0; i < Unrands.List.length; i++) {
       const result_list = props.artifact_list[i];
 
+      const seedVersion_set = new Set();
+
       for (const result of result_list) {
         const key = seed_version_key(result.seed, result.version);
+
+        // store seed version for this unrand
+        seedVersion_set.add(key);
+
+        // store this unrand for this seed
         const seed_item_list = map.get(key) || [];
         const [item] = result.items;
         seed_item_list.push(item);
         map.set(key, seed_item_list);
       }
+
+      set_list[i] = seedVersion_set;
     }
 
-    return map;
+    return [set_list, map];
   }, [props.artifact_list]);
 
   function init_state() {
