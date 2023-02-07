@@ -53,9 +53,9 @@ export function ItemSearch(props) {
     set_search(placeholder);
   }
 
-  function init_from_query(q) {
-    if (q && search !== q) {
-      set_search(q);
+  function init_from_query(query) {
+    if (query.q && search !== query.q) {
+      set_search(query.q);
     }
   }
 
@@ -66,7 +66,7 @@ export function ItemSearch(props) {
 
   return (
     <Container>
-      <QueryParams.Init q={init_from_query} />
+      <QueryParams.Init onReady={init_from_query} q />
       <QueryParams.Sync q={search} />
 
       <TotalItems>

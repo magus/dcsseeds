@@ -133,9 +133,9 @@ export function useArtifactFilter(props) {
     filter_set,
     filter_list_key,
     reset,
+    init,
     add_filter,
     remove_filter,
-    init_filter_list,
     add_version,
     remove_version,
   };
@@ -149,23 +149,26 @@ export function useArtifactFilter(props) {
     return patch_state(init_state());
   }
 
+  async function init(args) {
+    const filter_list = args.filter_list || [];
+    const version_set = new Set(args.version_list);
+    await query_next_filter({ version_set, filter_list });
+  }
+
   async function add_version(version) {
     const version_set = new Set(state.version_set);
     version_set.add(version);
-    const { filter_list } = state;
-    await query_next_filter({ filter_list, version_set });
+    await set_version(version_set);
   }
 
   async function remove_version(version) {
     const version_set = new Set(state.version_set);
     version_set.delete(version);
-    const { filter_list } = state;
-    await query_next_filter({ filter_list, version_set });
+    await set_version(version_set);
   }
 
-  async function init_filter_list(filter_list) {
-    const { version_set } = state;
-    await query_next_filter({ filter_list, version_set });
+  async function set_version(version_set) {
+    await query_next_filter({ version_set });
   }
 
   async function remove_filter(artifact_i) {
@@ -175,9 +178,8 @@ export function useArtifactFilter(props) {
     }
 
     // console.debug('[useArtifactFilter]', 'remove_filter', { artifact_i });
-    const { version_set } = state;
     const filter_list = state.filter_list.filter((i) => i !== artifact_i);
-    await query_next_filter({ filter_list, version_set });
+    await query_next_filter({ filter_list });
   }
 
   async function add_filter(artifact_i) {
@@ -187,27 +189,30 @@ export function useArtifactFilter(props) {
     }
 
     // console.debug('[useArtifactFilter]', 'add_filter', { artifact_i });
-    const { version_set } = state;
     const filter_list = [...state.filter_list, artifact_i];
-    await query_next_filter({ filter_list, version_set });
+    await query_next_filter({ filter_list });
   }
 
-  async function query_next_filter({ filter_list, version_set }) {
+  async function query_next_filter(args) {
     patch_state({ loading: true });
+
+    // pull both args from state to ensure the missing
+    // arg is properly passed when it's missing from args
+    const { version_set, filter_list } = state;
+    const full_args = { version_set, filter_list, ...args };
 
     try {
       let query_result = await run_query_filter({
         client,
         props,
-        version_set,
-        filter_list,
+        ...full_args,
         seedVersion_set_list,
         seedVersion_item_map,
         version_seed_map,
         version_item_map,
       });
 
-      patch_state({ loading: false, version_set, filter_list, ...query_result });
+      patch_state({ loading: false, ...args, ...query_result });
     } catch (error) {
       patch_state({ loading: false });
       throw error;

@@ -2,36 +2,31 @@ import * as React from 'react';
 import { useRouter } from 'next/router';
 
 export function Init(props) {
+  const { onReady, ...param_type_map } = props;
   const router = useRouter();
 
   React.useEffect(() => {
     if (!router.isReady) return;
 
-    // console.debug('[QueryParams.Init]', { props });
+    // console.debug('[QueryParams.Init]', { param_type_map });
 
-    for (const param_name of Object.keys(props)) {
-      const param_config = props[param_name];
+    const query = {};
+
+    for (const param_name of Object.keys(param_type_map)) {
+      const type = param_type_map[param_name];
       const query_value = router.query[param_name];
-
-      let type;
-      let handle_param;
-
-      if (typeof param_config === 'function') {
-        type = 'string';
-        handle_param = param_config;
-      } else if (Array.isArray(param_config)) {
-        [type, handle_param] = param_config;
-      }
-
-      const args = { param_name, type, query_value, handle_param };
+      const args = { param_name, type, query_value };
       const param_value = handle_param_type(args);
       if (param_value) {
-        console.debug('[QueryParams.Init]', 'INIT', args);
-        args.handle_param(param_value);
+        // console.debug('[QueryParams.Init]', 'INIT', { ...args, param_value });
+        query[param_name] = param_value;
       } else {
-        console.debug('[QueryParams.Init]', 'SKIP', args);
+        // console.debug('[QueryParams.Init]', 'SKIP', { ...args, param_value });
       }
     }
+
+    // console.debug('[QueryParams.Init]', 'onReady', { query });
+    onReady(query);
 
     function handle_param_type(args) {
       switch (args.type) {
@@ -92,7 +87,7 @@ export function Sync(props) {
       }
     }
 
-    console.debug('[QueryParams.Sync]', { deps_array_key, props, url });
+    // console.debug('[QueryParams.Sync]', { deps_array_key, props, url });
 
     // // Shallow routing allows you to change the URL without running data fetching methods again,
     // // that includes getServerSideProps, getStaticProps, and getInitialProps.

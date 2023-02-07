@@ -13,23 +13,25 @@ import * as QueryParams from '../hooks/QueryParams';
 export function ArtifactSearch(props) {
   const artifact_filter = useArtifactFilter(props);
 
-  function init_from_query(name_list) {
+  function init_from_query(query) {
     const filter_list = [];
 
-    for (const name of name_list) {
+    for (const name of query.a) {
       const i = Unrands.NameIndex[name];
       if (typeof i === 'number') {
         filter_list.push(i);
       }
     }
 
-    artifact_filter.init_filter_list(filter_list);
+    const version_list = query.v;
+    artifact_filter.init({ filter_list, version_list });
   }
 
   return (
     <Container>
-      <QueryParams.Init a={['array', init_from_query]} />
+      <QueryParams.Init onReady={init_from_query} a="array" v="array" />
       <QueryParams.Sync a={Array.from(artifact_filter.filter_set).map((i) => Unrands.List[i])} />
+      <QueryParams.Sync v={Array.from(artifact_filter.version_set)} />
 
       <ArtifactFilters {...artifact_filter} />
 
