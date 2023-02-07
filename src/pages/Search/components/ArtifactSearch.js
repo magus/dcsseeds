@@ -3,18 +3,33 @@ import styled, { css } from 'styled-components';
 import { useRouter } from 'next/router';
 import { motion, AnimatePresence } from 'framer-motion';
 
-import { useArtifactFilter } from 'src/graphql/useArtifactFilter';
-import { ArtifactSearchResult } from './ArtifactSearchResult';
 import * as Unrands from 'src/utils/Unrands';
-
 import * as Spacer from 'src/components/Spacer';
+import { useArtifactFilter } from 'src/graphql/useArtifactFilter';
+
+import { ArtifactSearchResult } from './ArtifactSearchResult';
+import * as QueryParams from '../hooks/QueryParams';
 
 export function ArtifactSearch(props) {
-  const artifact_filter = useSyncArtifactFilter(props);
+  const artifact_filter = useArtifactFilter(props);
+
+  function init_from_query(name_list) {
+    const filter_list = [];
+
+    for (const name of name_list) {
+      const i = Unrands.NameIndex[name];
+      if (typeof i === 'number') {
+        filter_list.push(i);
+      }
+    }
+
+    artifact_filter.init_filter_list(filter_list);
+  }
 
   return (
     <Container>
-      <VersionFilters {...artifact_filter} />
+      <QueryParams.Init a={['array', init_from_query]} />
+      <QueryParams.Sync a={Array.from(artifact_filter.filter_set).map((i) => Unrands.List[i])} />
 
       <ArtifactFilters {...artifact_filter} />
 
@@ -84,31 +99,6 @@ function FilterButton(props) {
   );
 }
 
-function VersionFilters(props) {
-  const version_list = Array.from(props.version_count.keys()).sort();
-
-  return (
-    <Filters>
-      {version_list.map((version) => {
-        const active = props.version_set.has(version);
-        const count = props.version_count.get(version);
-
-        return (
-          <FilterButton
-            key={version}
-            name={version}
-            count={count}
-            handleAdd={() => props.add_version(version)}
-            handleRemove={() => props.remove_version(version)}
-            disabled={props.loading || (!active && count === 0)}
-            active={active}
-          />
-        );
-      })}
-    </Filters>
-  );
-}
-
 function ArtifactFilters(props) {
   const router = useRouter();
 
@@ -159,75 +149,45 @@ function ArtifactFilters(props) {
   }
 
   return (
-    <Filters>
-      {props.filter_set.size === 0 ? null : (
-        <ButtonGroup>
-          <Button onClick={props.reset}>❌ Clear</Button>
-        </ButtonGroup>
-      )}
+    <React.Fragment>
+      {!button_list.length ? null : <VersionFilters {...props} />}
 
-      {button_list}
-    </Filters>
+      <Filters>
+        {props.filter_set.size === 0 ? null : (
+          <ButtonGroup>
+            <Button onClick={props.reset}>❌ Clear</Button>
+          </ButtonGroup>
+        )}
+
+        {button_list}
+      </Filters>
+    </React.Fragment>
   );
 }
 
-function useSyncArtifactFilter(props) {
-  const router = useRouter();
+function VersionFilters(props) {
+  const version_list = Array.from(props.version_count.keys()).sort();
 
-  const artifact_filter = useArtifactFilter(props);
-  // console.debug('[artifact_filter]', artifact_filter);
+  return (
+    <Filters>
+      {version_list.map((version) => {
+        const active = props.version_set.has(version);
+        const count = props.version_count.get(version);
 
-  React.useEffect(() => {
-    if (!router.isReady) return;
-
-    let artifact_list = router.query.a;
-
-    if (artifact_list) {
-      // ensure it's always an array
-      if (!Array.isArray(artifact_list)) {
-        artifact_list = [artifact_list];
-      }
-
-      const filter_list = [];
-
-      for (const name of artifact_list) {
-        const i = Unrands.NameIndex[name];
-        if (typeof i === 'number') {
-          filter_list.push(i);
-        }
-      }
-
-      artifact_filter.init_filter_list(filter_list);
-    }
-
-    // intentionally run once after router is ready
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [router.isReady]);
-
-  // sync url with artifact filters
-  React.useEffect(() => {
-    const url = {};
-    url.pathname = router.pathname;
-
-    if (artifact_filter.filter_set) {
-      const names = Array.from(artifact_filter.filter_set).map((i) => Unrands.List[i]);
-      url.query = {
-        // ensure we do not clear other query params
-        ...router.query,
-        a: names,
-      };
-    }
-
-    // // Shallow routing allows you to change the URL without running data fetching methods again,
-    // // that includes getServerSideProps, getStaticProps, and getInitialProps.
-    // // https://nextjs.org/docs/routing/shallow-routing
-    router.replace(url, undefined, { shallow: true });
-
-    // intentionally run only when filter set changes
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [artifact_filter.filter_list_key]);
-
-  return artifact_filter;
+        return (
+          <FilterButton
+            key={version}
+            name={version}
+            count={count}
+            handleAdd={() => props.add_version(version)}
+            handleRemove={() => props.remove_version(version)}
+            disabled={props.loading || (!active && count === 0)}
+            active={active}
+          />
+        );
+      })}
+    </Filters>
+  );
 }
 
 const ResultsContainer = styled.div`

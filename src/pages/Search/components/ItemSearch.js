@@ -6,6 +6,7 @@ import * as ScrapePlayers from 'src/graphql/scrapePlayers';
 
 import * as Spacer from 'src/components/Spacer';
 import { SearchField } from './SearchField';
+import * as QueryParams from '../hooks/QueryParams';
 import { ArtifactSearch } from './ArtifactSearch';
 import { SearchResults } from './SearchResults';
 import { RandomSearchCTA } from './RandomSearchCTA';
@@ -24,39 +25,10 @@ export function ItemSearch(props) {
   }, []);
 
   React.useEffect(() => {
-    if (!router.isReady) return;
-
-    if (router.query.q && search !== router.query.q) {
-      set_search(router.query.q);
-    }
-
-    // intentionally run once after router is ready
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [router.isReady]);
-
-  React.useEffect(() => {
     // fire off search query
     if (search) {
       itemSearch.search(search);
     }
-
-    // sync url q= with search term
-    const url = {
-      pathname: router.pathname,
-    };
-
-    if (search) {
-      url.query = {
-        // ensure we do not clear other query params
-        ...router.query,
-        q: search,
-      };
-    }
-
-    // Shallow routing allows you to change the URL without running data fetching methods again,
-    // that includes getServerSideProps, getStaticProps, and getInitialProps.
-    // https://nextjs.org/docs/routing/shallow-routing
-    router.replace(url, undefined, { shallow: true });
 
     // intentionally run only when search query changes
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -81,13 +53,22 @@ export function ItemSearch(props) {
     set_search(placeholder);
   }
 
+  function init_from_query(q) {
+    if (q && search !== q) {
+      set_search(q);
+    }
+  }
+
   const formattedTotalItemCount = format_number.format(props.totalItemCount);
   const results = itemSearch.latestResults(search);
 
-  // console.debug('[Search]', { results, itemSearch });
+  // console.debug('[Search]', { results, itemSearch, search });
 
   return (
     <Container>
+      <QueryParams.Init q={init_from_query} />
+      <QueryParams.Sync q={search} />
+
       <TotalItems>
         Search over <strong>{formattedTotalItemCount}</strong> items...
       </TotalItems>
