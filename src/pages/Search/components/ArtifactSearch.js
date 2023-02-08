@@ -14,15 +14,7 @@ export function ArtifactSearch(props) {
   const artifact_filter = useArtifactFilter(props);
 
   function init_from_query(query) {
-    const filter_list = [];
-
-    for (const name of query.a) {
-      const i = Unrands.NameIndex[name];
-      if (typeof i === 'number') {
-        filter_list.push(i);
-      }
-    }
-
+    const filter_list = query.a;
     const version_list = query.v;
     artifact_filter.init({ filter_list, version_list });
   }

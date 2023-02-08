@@ -150,8 +150,22 @@ export function useArtifactFilter(props) {
   }
 
   async function init(args) {
-    const filter_list = args.filter_list || [];
-    const version_set = new Set(args.version_list);
+    let version_set = new Set();
+    let filter_list = [];
+
+    if (Array.isArray(args.filter_list)) {
+      for (const name of args.filter_list) {
+        const i = Unrands.NameIndex[name];
+        if (typeof i === 'number') {
+          filter_list.push(i);
+        }
+      }
+    }
+
+    if (Array.isArray(args.version_list)) {
+      version_set = new Set(args.version_list);
+    }
+
     await query_next_filter({ version_set, filter_list });
   }
 
