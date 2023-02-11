@@ -1,7 +1,16 @@
 import * as React from 'react';
+import { useRouter } from 'next/router';
+
 import { IconMessage } from 'src/components/IconMessage';
 
 export function RandomSearchCTA(props) {
+  const router = useRouter();
+
+  // hide cta when artifact filter is active
+  if (router.query.a) {
+    return null;
+  }
+
   if (props.search) {
     return null;
   }

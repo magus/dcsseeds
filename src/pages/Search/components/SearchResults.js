@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useRouter } from 'next/router';
 import styled from 'styled-components';
 
 import { IconMessage } from 'src/components/IconMessage';
@@ -12,6 +13,13 @@ import { SearchResult } from './SearchResult';
 // unmount fly out to bottom
 
 function SearchResultsInternal(props) {
+  const router = useRouter();
+
+  // hide results when artifact filter is active
+  if (router.query.a) {
+    return null;
+  }
+
   if (!props.search) {
     return null;
   }

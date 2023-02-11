@@ -1,6 +1,5 @@
 import * as React from 'react';
 import styled, { css } from 'styled-components';
-import { useRouter } from 'next/router';
 import { AnimatePresence } from 'framer-motion';
 
 import { useArtifactFilter } from 'src/graphql/useArtifactFilter';
@@ -10,8 +9,6 @@ import * as Spacer from 'src/components/Spacer';
 import * as Unrands from 'src/utils/Unrands';
 
 export default function Search(props) {
-  const router = useRouter();
-
   return (
     <Container>
       <Spacer.Vertical size="2" />

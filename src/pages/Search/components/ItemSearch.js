@@ -1,6 +1,5 @@
 import * as React from 'react';
 import styled, { css } from 'styled-components';
-import { useRouter } from 'next/router';
 
 import * as ScrapePlayers from 'src/graphql/scrapePlayers';
 
@@ -13,8 +12,6 @@ import { RandomSearchCTA } from './RandomSearchCTA';
 import { random_placeholder } from '../random_placeholder';
 
 export function ItemSearch(props) {
-  const router = useRouter();
-
   const searchFieldRef = React.useRef();
   const [search, set_search] = React.useState('');
   const itemSearch = ScrapePlayers.useItemSearch();
@@ -85,15 +82,13 @@ export function ItemSearch(props) {
 
       <Spacer.Vertical size="2" />
 
-      {/* hide cta when artifact filter is active */}
-      {router.query.a ? null : <RandomSearchCTA search={search} onTrySearch={handleTrySearch} />}
+      <RandomSearchCTA search={search} onTrySearch={handleTrySearch} />
 
       <ArtifactSearch key="ArtifactSearch" {...props} />
 
       <Spacer.Vertical size="2" />
 
-      {/* hide results when artifact filter is active */}
-      {router.query.a ? null : <SearchResults loading={itemSearch.loading} search={search} results={results} />}
+      <SearchResults loading={itemSearch.loading} search={search} results={results} />
     </Container>
   );
 }
