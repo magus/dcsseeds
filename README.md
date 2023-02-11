@@ -5,12 +5,6 @@ track random seeds in dcss
 
 # TODO
 
-## push state on search page
-
-- when modifying query, (`<QueryParams.Sync>`)
-- add a `action="push"` prop to `router.push` instead of `router.replace`
-- allow back and forward buttons to modify search filters
-
 ## morgue browser
 
 - link for each morgue file, either by submission or morgue url

@@ -1,14 +1,16 @@
 import * as React from 'react';
 import { useRouter } from 'next/router';
+import { replace } from 'lodash';
 
 export function Init(props) {
   const { onReady, ...param_type_map } = props;
   const router = useRouter();
+  const url = router.asPath;
 
   React.useEffect(() => {
     if (!router.isReady) return;
 
-    // console.debug('[QueryParams.Init]', { param_type_map });
+    // console.debug('[QueryParams.Init]', { url, param_type_map });
 
     const query = {};
 
@@ -44,25 +46,20 @@ export function Init(props) {
       }
     }
 
-    // let param_final = router.query.a;
-
-    // // ensure single value is also always an array for consistency
-    // if (param_final) {
-    //   if (!Array.isArray(param_final)) {
-    //     param_final = [param_final];
-    //   }
-    // }
-
     // intentionally run once after router is ready
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [router.isReady]);
+  }, [router.isReady, url]);
 
   return null;
 }
 
 export function Sync(props) {
   const router = useRouter();
-  const values_list = Object.values(props);
+  let { action, ...param_props } = props;
+
+  const router_action = router[action] || router.replace;
+
+  const values_list = Object.values(param_props);
 
   // query params can be array values, e.g. a=1&a=2...
   // so we flatten nested array values for useEffect deps
@@ -78,8 +75,8 @@ export function Sync(props) {
     // ensure we do not clear other query params
     url.query = { ...router.query };
 
-    for (const param_key of Object.keys(props)) {
-      const param_value = props[param_key];
+    for (const param_key of Object.keys(param_props)) {
+      const param_value = param_props[param_key];
       if (param_value) {
         url.query[param_key] = param_value;
       } else {
@@ -87,12 +84,12 @@ export function Sync(props) {
       }
     }
 
-    // console.debug('[QueryParams.Sync]', { deps_array_key, props, url });
+    // console.debug('[QueryParams.Sync]', { deps_array_key, param_props, url, action, router_action });
 
     // // Shallow routing allows you to change the URL without running data fetching methods again,
     // // that includes getServerSideProps, getStaticProps, and getInitialProps.
     // // https://nextjs.org/docs/routing/shallow-routing
-    router.replace(url, undefined, { shallow: true });
+    router_action(url, undefined, { shallow: true });
 
     // intentionally run only when filter set changes
     // eslint-disable-next-line react-hooks/exhaustive-deps
