@@ -5,6 +5,19 @@ track random seeds in dcss
 
 # TODO
 
+## push state on search page
+
+- when modifying query, (`<QueryParams.Sync>`)
+- add a `action="push"` prop to `router.push` instead of `router.replace`
+- allow back and forward buttons to modify search filters
+
+## morgue browser
+
+- link for each morgue file, either by submission or morgue url
+- replace the current `/api/parseMorgue` route and instead show a page
+- present items in list like search results to more easily see them
+- also more easily shareable, this is the start of the "parse morgue visualization" describe below
+
 ## feedback
 
 - add feedback form page that writes to database
@@ -12,6 +25,19 @@ track random seeds in dcss
 - allow inputting arbitrary text
 - optional contact field that accepts email (validate it client-side)
  - write to database (text, email, created_at)
+
+## self submit pastebin
+
+- allow pasting in literal raw text of a morgue file
+- if there is a `value` (seed) then we can parse items and add them
+- we don't need to always have a player
+- just store a `submission` row and set morgue url to point to an internal link
+- e.g. `https://dcss.vercel.app/morgue/:submission_id`
+- submission.id (guid identifying this unique submission event)
+- submission.text (the literal morgue string pasted into input box)
+- submission.created_at (timestamp of submission)
+- submission.ip_address (store so we can find and remove submissions from bad actors if we notice them)
+- submit `submission` and `items` in one transaction to ensure atomic
 
 ## self submit scrape morgue
 
@@ -49,6 +75,18 @@ Artefacts
 Unrands found (can include tile image)
 Randarts found (can include tile image for type)
 
+- Race + Background icons
+  https://github.com/crawl/crawl/tree/master/crawl-ref/source/rltiles/player/base
+  https://github.com/crawl/crawl/tree/master/crawl-ref/source/rltiles/gui/backgrounds
+
+- Design and styling
+
+- Randomize based on % against seed value
+  Male vs Female? seed % 2!
+  e.g. 8 draconian colors? seed % 8 will select a color for you
+  Use this to wear random set of armors for certain backgrounds
+  e.g. random robes for casters, random dragon scales for stabbers, random plate/leather/etc for melee classes, etc.
+
 
 ## scrapePlayers
 
@@ -77,19 +115,6 @@ Randarts found (can include tile image for type)
   should be able to set keys on the JSON object with mutations (instead of sending entire object)
 
 
-## design
-
-- Race + Background icons
-  https://github.com/crawl/crawl/tree/master/crawl-ref/source/rltiles/player/base
-  https://github.com/crawl/crawl/tree/master/crawl-ref/source/rltiles/gui/backgrounds
-
-- Design and styling
-
-- Randomize based on % against seed value
-  Male vs Female? seed % 2!
-  e.g. 8 draconian colors? seed % 8 will select a color for you
-  Use this to wear random set of armors for certain backgrounds
-  e.g. random robes for casters, random dragon scales for stabbers, random plate/leather/etc for melee classes, etc.
 
 ## seed_players
 
