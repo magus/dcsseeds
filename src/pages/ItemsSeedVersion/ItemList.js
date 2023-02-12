@@ -81,6 +81,7 @@ function Item(props) {
             </a>
           </Link>
         </Name>
+        <Spacer.Vertical size="1" />
       </ItemRight>
     </ItemRow>
   );
@@ -91,7 +92,7 @@ const ItemRow = styled.tr`
 `;
 
 const ItemRight = styled.td`
-  text-align: right;
+  text-align: left;
 `;
 
 const BottomRow = styled.div`
@@ -111,8 +112,6 @@ const BottomLeft = styled.div`
 `;
 
 const Container = styled(motion.div)`
-  width: 100%;
-  max-width: 720px;
   margin: var(--spacer-1) 0;
   padding: var(--spacer-3) var(--spacer-3);
   border-radius: var(--spacer-1);
@@ -142,6 +141,13 @@ const Version = styled.span`
 `;
 
 const Name = styled.div`
+  font-size: var(--font-small);
+  /*
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  */
+
   a {
     color: var(--blue-color);
     text-decoration: none;
@@ -150,11 +156,4 @@ const Name = styled.div`
       color: var(--blue-color);
     }
   }
-
-  font-size: var(--font-small);
-  /*
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  */
 `;
