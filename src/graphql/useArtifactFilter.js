@@ -101,7 +101,6 @@ export function useArtifactFilter(props) {
     const version_set = new Set();
 
     return {
-      ready: false,
       loading: false,
       version_set,
       filter_list,
@@ -146,9 +145,7 @@ export function useArtifactFilter(props) {
   return api;
 
   async function reset() {
-    // reset back to initial state
-    const { ready } = state;
-    return patch_state({ ...init_state(), ready });
+    return patch_state(init_state());
   }
 
   async function init(args) {
@@ -228,7 +225,7 @@ export function useArtifactFilter(props) {
         version_item_map,
       });
 
-      patch_state({ loading: false, ready: true, ...args, ...query_result });
+      patch_state({ loading: false, ...args, ...query_result });
     } catch (error) {
       patch_state({ loading: false });
       throw error;
