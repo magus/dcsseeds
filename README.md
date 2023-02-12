@@ -5,13 +5,6 @@ track random seeds in dcss
 
 # TODO
 
-## morgue browser
-
-- link for each morgue file, either by submission or morgue url
-- replace the current `/api/parseMorgue` route and instead show a page
-- present items in list like search results to more easily see them
-- also more easily shareable, this is the start of the "parse morgue visualization" describe below
-
 ## feedback
 
 - add feedback form page that writes to database
