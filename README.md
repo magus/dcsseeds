@@ -5,6 +5,15 @@ track random seeds in dcss
 
 # TODO
 
+## idea
+
+- first step in refactor
+  - change `useArtifactFilter()` into `<UseArtifactFilter>` which renders `<QueryParams.Sync>`
+- second step of refactor
+  - could we write artifact / version to query params only
+  - refactor so query params become source of truth, `add_filter()` simply calls `router.push()`
+  - then the `QueryParams.Sync` should pickup `onChange` and update state
+
 ## feedback
 
 - add feedback form page that writes to database
