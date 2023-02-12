@@ -1,5 +1,6 @@
 import * as React from 'react';
-import styled, { css } from 'styled-components';
+import Link from 'next/link';
+import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
 import CopyButton from 'src/components/CopyButton';
@@ -22,7 +23,7 @@ function ItemListRows(props) {
 
     return (
       <React.Fragment key={item.name}>
-        <Item {...item} />
+        <Item {...props} {...item} />
         {is_last ? null : vertical_pad}
       </React.Fragment>
     );
@@ -42,7 +43,7 @@ export function ArtifactSearchResult(props) {
     <Container>
       <table>
         <tbody>
-          <ItemListRows item_list={props.item_list} />
+          <ItemListRows {...props} />
 
           {rest_item_list.length === 0 ? null : (
             <>
@@ -54,7 +55,7 @@ export function ArtifactSearchResult(props) {
                 </td>
               </tr>
 
-              <ItemListRows item_list={rest_item_list} />
+              <ItemListRows {...props} item_list={rest_item_list} />
             </>
           )}
         </tbody>
@@ -76,7 +77,12 @@ export function ArtifactSearchResult(props) {
 }
 
 function Item(props) {
-  const morgue = `/api/parseMorgue?morgue=${props.morgue}`;
+  const { seed, version } = props;
+
+  const items_link = {
+    pathname: '/items/[version]/[seed]',
+    query: { seed, version },
+  };
 
   return (
     <ItemRow>
@@ -91,8 +97,10 @@ function Item(props) {
 
       <ItemRight>
         <Name>
-          <Link href={morgue} rel="noopener noreferrer" target="_blank">
-            {props.name}
+          <Link passHref href={items_link}>
+            <a rel="noopener noreferrer" target="_blank">
+              {props.name}
+            </a>
           </Link>
         </Name>
       </ItemRight>
@@ -154,13 +162,15 @@ const Version = styled.span`
   font-weight: var(--font-bold);
 `;
 
-const LinkColor = css`
-  color: var(--blue-color);
-  text-decoration: none;
-`;
-
 const Name = styled.div`
-  ${LinkColor}
+  a {
+    color: var(--blue-color);
+    text-decoration: none;
+
+    &:visited {
+      color: var(--blue-color);
+    }
+  }
 
   font-size: var(--font-small);
   /*
@@ -168,12 +178,4 @@ const Name = styled.div`
   overflow: hidden;
   text-overflow: ellipsis;
   */
-`;
-
-const Link = styled.a`
-  ${LinkColor}
-
-  :visited {
-    color: var(--blue-color);
-  }
 `;
