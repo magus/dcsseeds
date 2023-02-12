@@ -51,9 +51,7 @@ export function ItemSearch(props) {
   }
 
   function init_from_query(query) {
-    if (query.q && search !== query.q) {
-      set_search(query.q);
-    }
+    set_search(query.q || '');
   }
 
   const formattedTotalItemCount = format_number.format(props.totalItemCount);
