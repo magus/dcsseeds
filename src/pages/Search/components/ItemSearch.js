@@ -63,8 +63,12 @@ export function ItemSearch(props) {
 
   return (
     <Container>
-      <QueryParams.Init onReady={init_from_query} q />
-      <QueryParams.Sync q={search} />
+      <QueryParams.Sync
+        onChange={init_from_query}
+        params={{
+          q: ['string', search],
+        }}
+      />
 
       <TotalItems>
         Search over <strong>{formattedTotalItemCount}</strong> items...

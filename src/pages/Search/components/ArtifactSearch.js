@@ -21,15 +21,14 @@ export function ArtifactSearch(props) {
 
   return (
     <Container>
-      <QueryParams.Init onReady={init_from_query} a="array" v="array" />
-
-      {!artifact_filter.ready ? null : (
-        <QueryParams.Sync
-          action="push"
-          v={Array.from(artifact_filter.version_set)}
-          a={Array.from(artifact_filter.filter_set).map((i) => Unrands.List[i])}
-        />
-      )}
+      <QueryParams.Sync
+        action="push"
+        onChange={init_from_query}
+        params={{
+          v: ['array', Array.from(artifact_filter.version_set)],
+          a: ['array', Array.from(artifact_filter.filter_set).map((i) => Unrands.List[i])],
+        }}
+      />
 
       <ArtifactFilters {...artifact_filter} />
 

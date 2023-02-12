@@ -2,98 +2,137 @@ import * as React from 'react';
 import { useRouter } from 'next/router';
 import { replace } from 'lodash';
 
-export function Init(props) {
-  const { onReady, ...param_type_map } = props;
-  const router = useRouter();
-  const url = router.asPath;
-
-  React.useEffect(() => {
-    if (!router.isReady) return;
-
-    // console.debug('[QueryParams.Init]', { url, param_type_map });
-
-    const query = {};
-
-    for (const param_name of Object.keys(param_type_map)) {
-      const type = param_type_map[param_name];
-      const query_value = router.query[param_name];
-      const args = { param_name, type, query_value };
-      const param_value = handle_param_type(args);
-      if (param_value) {
-        // console.debug('[QueryParams.Init]', 'INIT', { ...args, param_value });
-        query[param_name] = param_value;
-      } else {
-        // console.debug('[QueryParams.Init]', 'SKIP', { ...args, param_value });
-      }
-    }
-
-    // console.debug('[QueryParams.Init]', 'onReady', { query });
-    onReady(query);
-
-    function handle_param_type(args) {
-      switch (args.type) {
-        case 'array': {
-          if (Array.isArray(args.query_value)) {
-            return args.query_value;
-          } else if (typeof args.query_value === 'string') {
-            return [args.query_value];
-          }
-        }
-
-        case 'string':
-        default:
-          return args.query_value;
-      }
-    }
-
-    // intentionally run once after router is ready
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [router.isReady, url]);
-
-  return null;
-}
-
 export function Sync(props) {
   const router = useRouter();
-  let { action, ...param_props } = props;
 
-  const router_action = router[action] || router.replace;
+  if (!router.isReady) return null;
 
-  const values_list = Object.values(param_props);
+  return <SyncInternal {...props} router={router} />;
+}
+
+function SyncInternal(props) {
+  const { action, onChange, params, router } = props;
+  const is_init = React.useRef(false);
+  const is_syncing = React.useRef(false);
+  const router_url = router.asPath;
+
+  const target_query = {};
+  const router_query = {};
+
+  for (const name of Object.keys(params)) {
+    const [type, value] = params[name];
+
+    if (value) {
+      target_query[name] = value;
+    }
+
+    const query_value = normalize_query_value({ name, type, router });
+
+    if (query_value) {
+      router_query[name] = query_value;
+    }
+
+    // console.debug({ type, name, value, query_value });
+  }
 
   // query params can be array values, e.g. a=1&a=2...
   // so we flatten nested array values for useEffect deps
   // also String all values since they must be valid strings
-  const deps_array_key = values_list.flat(1).map(String).join('');
+  const target_query_key = query_key(target_query);
+  const router_query_key = query_key(router_query);
+
+  // console.debug({
+  //   router,
+  //   action,
+  //   onChange,
+  //   params,
+  //   router_url,
+  //   is_init,
+  //   router_query,
+  //   router_query_key,
+  //   target_query,
+  //   target_query_key,
+  // });
 
   React.useEffect(() => {
-    if (!router.isReady) return;
+    if (!is_init.current) return;
 
-    const url = {};
-    url.pathname = router.pathname;
+    const needs_sync = target_query_key !== router_query_key;
+
+    if (!needs_sync) return;
+
+    is_syncing.current = true;
+
+    const next_url = {};
+    next_url.pathname = router.pathname;
 
     // ensure we do not clear other query params
-    url.query = { ...router.query };
+    next_url.query = { ...router.query };
 
-    for (const param_key of Object.keys(param_props)) {
-      const param_value = param_props[param_key];
-      if (param_value) {
-        url.query[param_key] = param_value;
+    for (const name of Object.keys(target_query)) {
+      const value = target_query[name];
+      if (value) {
+        next_url.query[name] = value;
       } else {
-        delete url.query[param_key];
+        delete next_url.query[name];
       }
     }
 
-    // console.debug('[QueryParams.Sync]', { deps_array_key, param_props, url, action, router_action });
+    // console.debug('[QueryParams.Sync]', 'sync', { next_url });
 
-    // // Shallow routing allows you to change the URL without running data fetching methods again,
-    // // that includes getServerSideProps, getStaticProps, and getInitialProps.
-    // // https://nextjs.org/docs/routing/shallow-routing
-    router_action(url, undefined, { shallow: true });
+    // Shallow routing allows you to change the URL without running data fetching methods again,
+    // that includes getServerSideProps, getStaticProps, and getInitialProps.
+    // https://nextjs.org/docs/routing/shallow-routing
+    const router_action = router[action] || router.replace;
+    router_action(next_url, undefined, { shallow: true });
 
-    // intentionally run only when filter set changes
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [deps_array_key]);
+  }, [target_query_key]);
+
+  // this MUST go second to ensure we do not run sync immediately after init
+  React.useEffect(() => {
+    is_init.current = true;
+
+    let query;
+
+    if (is_syncing.current) {
+      query = target_query;
+    } else {
+      query = router_query;
+    }
+
+    // console.debug('[QueryParams.Sync]', 'onChange', { is_syncing, query });
+    onChange(query);
+
+    is_syncing.current = false;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [router_query_key]);
 
   return null;
+}
+
+function normalize_query_value(args) {
+  const query_value = args.router.query[args.name];
+
+  switch (args.type) {
+    case 'array': {
+      if (Array.isArray(query_value)) {
+        return query_value;
+      } else if (typeof query_value === 'string') {
+        return [query_value];
+      }
+    }
+
+    case 'string':
+    default:
+      return query_value;
+  }
+}
+
+function query_key(query) {
+  return Object.entries(query)
+    .map((entry) => entry.flat(1))
+    .flat(1)
+    .map(String)
+    .join('');
 }
