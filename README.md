@@ -27,10 +27,10 @@ track random seeds in dcss
 - we don't need to always have a player
 - just store a `submission` row and set morgue url to point to an internal link
 - e.g. `https://dcss.vercel.app/morgue/:submission_id`
-- submission.id (guid identifying this unique submission event)
-- submission.text (the literal morgue string pasted into input box)
-- submission.created_at (timestamp of submission)
-- submission.ip_address (store so we can find and remove submissions from bad actors if we notice them)
+- `submission.id`           guid identifying this unique submission event
+- `submission.text`         literal morgue string pasted into input box
+- `submission.created_at`   timestamp of submission
+- `submission.ip_address`   store so we can find and remove submissions from bad actors if we notice them
 - submit `submission` and `items` in one transaction to ensure atomic
 
 ## self submit scrape morgue
