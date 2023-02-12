@@ -21,16 +21,10 @@ function SyncInternal(props) {
 
   for (const name of Object.keys(params)) {
     const [type, value] = params[name];
-
-    if (value) {
-      target_query[name] = value;
-    }
-
     const query_value = normalize_query_value({ name, type, router });
 
-    if (query_value) {
-      router_query[name] = query_value;
-    }
+    update_query(target_query, name, value);
+    update_query(router_query, name, query_value);
 
     // console.debug({ type, name, value, query_value });
   }
@@ -41,18 +35,7 @@ function SyncInternal(props) {
   const target_query_key = query_key(target_query);
   const router_query_key = query_key(router_query);
 
-  // console.debug({
-  //   router,
-  //   action,
-  //   onChange,
-  //   params,
-  //   router_url,
-  //   is_init,
-  //   router_query,
-  //   router_query_key,
-  //   target_query,
-  //   target_query_key,
-  // });
+  // console.debug({ ...props, router_url, router_query, router_query_key, target_query, target_query_key });
 
   React.useEffect(() => {
     if (!is_init.current) return;
@@ -69,13 +52,9 @@ function SyncInternal(props) {
     // ensure we do not clear other query params
     next_url.query = { ...router.query };
 
-    for (const name of Object.keys(target_query)) {
+    for (const name of Object.keys(params)) {
       const value = target_query[name];
-      if (value) {
-        next_url.query[name] = value;
-      } else {
-        delete next_url.query[name];
-      }
+      update_query(next_url.query, name, value);
     }
 
     // console.debug('[QueryParams.Sync]', 'sync', { next_url });
@@ -101,7 +80,7 @@ function SyncInternal(props) {
       query = router_query;
     }
 
-    // console.debug('[QueryParams.Sync]', 'onChange', { is_syncing, query });
+    // console.debug('[QueryParams.Sync]', 'onChange', { is_syncing: is_syncing.current, query });
     onChange(query);
 
     is_syncing.current = false;
@@ -126,6 +105,14 @@ function normalize_query_value(args) {
     case 'string':
     default:
       return query_value;
+  }
+}
+
+function update_query(query, name, value) {
+  if (value) {
+    query[name] = value;
+  } else {
+    delete query[name];
   }
 }
 
