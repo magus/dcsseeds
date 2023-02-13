@@ -16,7 +16,7 @@ export function ArtifactSearch(props) {
   function init_from_query(query) {
     const filter_list = query.a;
     const version_list = query.v;
-    artifact_filter.init({ filter_list, version_list });
+    artifact_filter.sync({ filter_list, version_list });
   }
 
   return (

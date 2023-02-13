@@ -131,7 +131,7 @@ export function useArtifactFilter(props) {
     ...state,
     filter_set,
     reset,
-    init,
+    sync,
     add_filter,
     remove_filter,
     add_version,
@@ -146,7 +146,7 @@ export function useArtifactFilter(props) {
     return patch_state(init_state());
   }
 
-  async function init(args) {
+  async function sync(args) {
     let version_set = new Set();
     let filter_list = [];
 
