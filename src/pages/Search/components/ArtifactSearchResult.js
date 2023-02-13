@@ -51,7 +51,7 @@ export function ArtifactSearchResult(props) {
                 <td colSpan="3">
                   <Spacer.Vertical size="1" />
                   <ItemDivider />
-                  <Spacer.Vertical size="1" />
+                  <Spacer.Vertical size="2" />
                 </td>
               </tr>
 
