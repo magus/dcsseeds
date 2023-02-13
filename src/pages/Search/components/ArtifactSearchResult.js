@@ -86,7 +86,7 @@ function Item(props) {
 
   return (
     <ItemRow>
-      <td>
+      <td className="location">
         <Branch>{props.branchName}</Branch>
         &nbsp;<Level>{props.level}</Level>
       </td>
@@ -111,10 +111,18 @@ function Item(props) {
 
 const ItemRow = styled.tr`
   vertical-align: top;
+
+  .location {
+    width: 120px;
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
 `;
 
 const ItemRight = styled.td`
   text-align: left;
+  width: 100%;
 `;
 
 const BottomRow = styled.div`

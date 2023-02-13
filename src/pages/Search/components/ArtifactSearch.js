@@ -192,8 +192,9 @@ function VersionFilters(props) {
 const ResultsContainer = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 720px;
   width: 100%;
+  max-width: 720px;
+  min-width: 320px;
 `;
 
 const Filters = styled.div`
@@ -208,7 +209,6 @@ const Container = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
 `;
 
 const ButtonGroup = styled(motion.div)`

@@ -23,8 +23,9 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100%;
   width: 100%;
+  min-height: 100%;
+  min-width: 320px;
   margin: 0 auto;
   padding: var(--spacer-1) var(--spacer-2);
 `;
