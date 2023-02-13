@@ -50,7 +50,7 @@ export function ItemSearch(props) {
     set_search(placeholder);
   }
 
-  function init_from_query(query) {
+  function handle_query(query) {
     set_search(query.q || '');
   }
 
@@ -62,7 +62,7 @@ export function ItemSearch(props) {
   return (
     <Container>
       <QueryParams.Sync
-        onChange={init_from_query}
+        onChange={handle_query}
         params={{
           q: ['string', search],
         }}

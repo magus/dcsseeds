@@ -13,7 +13,7 @@ import * as QueryParams from '../hooks/QueryParams';
 export function ArtifactSearch(props) {
   const artifact_filter = useArtifactFilter(props);
 
-  function init_from_query(query) {
+  function handle_query(query) {
     const filter_list = query.a;
     const version_list = query.v;
     artifact_filter.sync({ filter_list, version_list });
@@ -23,7 +23,7 @@ export function ArtifactSearch(props) {
     <Container>
       <QueryParams.Sync
         action="push"
-        onChange={init_from_query}
+        onChange={handle_query}
         params={{
           v: ['array', Array.from(artifact_filter.version_set)],
           a: ['array', Array.from(artifact_filter.filter_set).map((i) => Unrands.List[i])],
