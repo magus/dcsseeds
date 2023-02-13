@@ -126,12 +126,10 @@ export function useArtifactFilter(props) {
   // generate unique set of filters from list
   // also calculate a unique key identifying this combination
   const filter_set = new Set(state.filter_list);
-  const filter_list_key = set_key(filter_set);
 
   const api = {
     ...state,
     filter_set,
-    filter_list_key,
     reset,
     init,
     add_filter,
