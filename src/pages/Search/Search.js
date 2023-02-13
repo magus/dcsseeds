@@ -2,8 +2,6 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { AnimatePresence } from 'framer-motion';
 
-import { useArtifactFilter } from 'src/graphql/useArtifactFilter';
-
 import { ItemSearch } from './components/ItemSearch';
 import * as Spacer from 'src/components/Spacer';
 import * as Unrands from 'src/utils/Unrands';

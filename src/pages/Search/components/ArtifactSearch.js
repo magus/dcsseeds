@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 import * as Unrands from 'src/utils/Unrands';
 import * as Spacer from 'src/components/Spacer';
-import { useArtifactFilter } from 'src/graphql/useArtifactFilter';
+import { useArtifactFilter } from '../hooks/useArtifactFilter';
 
 import { ArtifactSearchResult } from './ArtifactSearchResult';
 import * as QueryParams from '../hooks/QueryParams';
