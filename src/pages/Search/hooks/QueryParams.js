@@ -12,10 +12,17 @@ export function Sync(props) {
 
 function SyncInternal(props) {
   const { action, onChange, params, router } = props;
-  const is_init = React.useRef(false);
-  const is_syncing = React.useRef(false);
   const router_url = router.asPath;
 
+  // track first run to ensure we do not run sync too early
+  const is_init = React.useRef(false);
+
+  // reset is_syncing flag to ensure it's always correct
+  const is_syncing = React.useRef(false);
+  is_syncing.current = false;
+
+  // target_query represents query from params passed in props
+  // router_query represents query from router state
   const target_query = {};
   const router_query = {};
 
@@ -82,8 +89,6 @@ function SyncInternal(props) {
 
     // console.debug('[QueryParams.Sync]', 'onChange', { is_syncing: is_syncing.current, query });
     onChange(query);
-
-    is_syncing.current = false;
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [router_query_key]);
 
