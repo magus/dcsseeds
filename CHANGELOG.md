@@ -1,5 +1,102 @@
 # CHANGELOG
 
+## 2023-02-15 item constraints
+
+- `dcsseeds_scrapePlayers_item_name_branchName_level_morgue_seed_f` constraint based on `['fullVersion', 'branchName', 'level', 'morgue', 'seed', 'name']` is too unique
+- since we incldue `morgue` it creates duplicate items for players who run the same seed
+- instead it should be `['version', 'branchName', 'level', 'seed', 'name']` to uniquely identify an item
+- in order to implement this constraint i have to cleanup all rows that break the constraint
+- if we try to add the constraint hasura admin shows us an error which tells us which items to delete
+
+
+```json
+{ "code": "postgres-error", "error": "query execution failed", "internal": { "arguments": [], "error": { "description": "Key (version, \"branchName\", level, seed, name)=(0.28.0, Dungeon, 9, 10077074884737061911, +0 scale mail of Jipp {Str+2 Dex+3}) is duplicated.", "exec_status": "FatalError", "hint": null, "message": "could not create unique index \"dcsseeds_scrapePlayers_item_version_branchName_level_seed_name_\"", "status_code": "23505" }, "prepared": false, "statement": "alter table \"public\".\"dcsseeds_scrapePlayers_item\" add constraint \"dcsseeds_scrapePlayers_item_version_branchName_level_seed_name_key\" unique (\"version\", \"branchName\", \"level\", \"seed\", \"name\");" }, "path": "$[1]" }
+```
+
+```json
+{
+    "code": "postgres-error",
+    "error": "query execution failed",
+    "internal": {
+        "arguments": [],
+        "error": {
+            "description": "Key (version, \"branchName\", level, seed, name)=(0.28.0, Dungeon, 9, 10077074884737061911, +0 scale mail of Jipp {Str+2 Dex+3}) is duplicated.",
+            "exec_status": "FatalError",
+            "hint": null,
+            "message": "could not create unique index \"dcsseeds_scrapePlayers_item_version_branchName_level_seed_name_\"",
+            "status_code": "23505"
+        },
+        "prepared": false,
+        "statement": "alter table \"public\".\"dcsseeds_scrapePlayers_item\" add constraint \"dcsseeds_scrapePlayers_item_version_branchName_level_seed_name_key\" unique (\"version\", \"branchName\", \"level\", \"seed\", \"name\");"
+    },
+    "path": "$[1]"
+}
+```
+
+- hopefully there aren't too many, going to manually start deleting
+- finding the duplicates via this graphql query
+
+```
+76f5eea9-0c15-4914-9336-1de0dd3f77e1
+6c54b091-44ff-448f-8b2a-8121c5da6231
+```
+
+```graphql
+query MyQuery {
+  dcsseeds_scrapePlayers_item(
+    where: { name: { _ilike: "+3 leather armour \"Kueloi\" {Fly Int-3 Dex+4 SInv}" } }
+    order_by: { timestamp: asc }
+  ) {
+    id
+    name
+    morgue
+    timestamp
+    version
+    seed
+    branchName
+    level
+  }
+}
+```
+- deleting the duplicates
+
+```graphql
+mutation MyMutation {
+  delete_dcsseeds_scrapePlayers_item(
+    where: {
+      id: {
+        _in: [
+          "6ee59ef3-6dc7-4053-af31-ad3aab3365a0"
+          "445d9fcf-1f06-4ca9-a3f4-ae813169e5ea"
+          "f4360bde-07d5-47e8-b5ad-42637cbd03bd"
+          "641cc76f-d39b-4947-a781-c420f0f5939a"
+          "3a72d4fb-df54-4b9d-9b23-41f3b61c8d23"
+          "1e0da1d8-5aec-4343-9d6d-9d4448efa262"
+          "8178bcc7-e1f2-414a-a460-1af0842010cc"
+          "7a92d8df-2c8e-4165-b0e8-ac393ee2e8f5"
+          "b5768699-9ba8-4900-a557-54615e515b20"
+        ]
+      }
+    }
+  ) {
+    affected_rows
+  }
+}
+```
+
+- there were WAY too many so I opted to delete everything with graphql below
+
+```graphql
+mutation MyMutation {
+  delete_dcsseeds_scrapePlayers_item(where: {morgue: {_ilike: "http%"}}) {
+    affected_rows
+  }
+}
+```
+
+- then immediately saved the new constraint, successfully
+- will update scraper and then let it repopulate overnight
+
 ## 2023-02-05 optimize search performance
 
 - followed documentation for fuzzy text search with hasura
