@@ -79,9 +79,11 @@ export function ArtifactSearchResult(props) {
 function Item(props) {
   const { seed, version } = props;
 
+  const highlight = props.all_item_list.map((item) => item.name);
+
   const items_link = {
     pathname: '/items/[version]/[seed]',
-    query: { seed, version },
+    query: { seed, version, highlight },
   };
 
   return (

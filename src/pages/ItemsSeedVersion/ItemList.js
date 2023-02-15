@@ -62,8 +62,14 @@ function Item(props) {
     query: { morgue },
   };
 
+  const class_list = [];
+
+  if (props.highlight.has(props.name)) {
+    class_list.push('highlight');
+  }
+
   return (
-    <ItemRow>
+    <ItemRow className={class_list.join(' ')}>
       <td>
         <Branch>{props.branchName}</Branch>
         &nbsp;<Level>{props.level}</Level>
@@ -89,6 +95,10 @@ function Item(props) {
 
 const ItemRow = styled.tr`
   vertical-align: top;
+
+  &.highlight {
+    font-weight: var(--font-bold);
+  }
 `;
 
 const ItemRight = styled.td`

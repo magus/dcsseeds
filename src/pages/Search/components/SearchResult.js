@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Link from 'next/link';
 import styled from 'styled-components';
 
 import CopyButton from 'src/components/CopyButton';
@@ -7,7 +8,14 @@ import { TimeAgo } from 'src/components/TimeAgo';
 import * as Spacer from 'src/components/Spacer';
 
 export function SearchResult({ search, result }) {
-  const parseMorgueUrl = `/api/parseMorgue?morgue=${result.morgue}`;
+  const { seed, version } = result;
+
+  const highlight = result.name;
+
+  const items_link = {
+    pathname: '/items/[version]/[seed]',
+    query: { seed, version, highlight },
+  };
 
   return (
     <SearchResultContainer>
@@ -21,21 +29,25 @@ export function SearchResult({ search, result }) {
 
       <BottomRow>
         <BottomLeft>
-          <CopyButton tooltip copy={result.seed} title="Click to copy seed" copyMessage="Seed copied!">
+          <CopyButton tooltip copy={seed} title="Click to copy seed" copyMessage="Seed copied!">
             🌱
           </CopyButton>
         </BottomLeft>
 
         <BottomRight>
-          <MorgueLink href={parseMorgueUrl} rel="noopener noreferrer" target="_blank">
-            <AlignRight>
-              <Small>
-                <TimeAgo date={result.timestamp} />
-              </Small>
-            </AlignRight>
-            <Player>{result.player.name}</Player>
-            {' · '}
-            <Small>{result.version}</Small>
+          <MorgueLink href={items_link} rel="noopener noreferrer" target="_blank">
+            <Link passHref href={items_link}>
+              <a rel="noopener noreferrer" target="_blank">
+                <AlignRight>
+                  <Small>
+                    <TimeAgo date={result.timestamp} />
+                  </Small>
+                </AlignRight>
+                <Player>{result.player.name}</Player>
+                {' · '}
+                <Small>{version}</Small>
+              </a>
+            </Link>
           </MorgueLink>
         </BottomRight>
       </BottomRow>
@@ -166,11 +178,14 @@ const BottomRight = styled.div`
   justify-content: flex-end;
 `;
 
-const MorgueLink = styled.a`
-  color: var(--blue-color);
-  text-decoration: none;
-  :visited {
+const MorgueLink = styled.div`
+  a {
     color: var(--blue-color);
+    text-decoration: none;
+
+    &:visited {
+      color: var(--blue-color);
+    }
   }
 `;
 
