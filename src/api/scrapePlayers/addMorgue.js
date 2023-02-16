@@ -157,7 +157,7 @@ const GQL_ADD_ITEM = serverQuery(
       items: insert_dcsseeds_scrapePlayers_item(
         objects: $items
         on_conflict: {
-          constraint: dcsseeds_scrapePlayers_item_version_seed_branchName_level_name_
+          constraint: dcsseeds_scrapePlayers_item_name_branchName_level_seed_morgue_f
           update_columns: name
         }
       ) {

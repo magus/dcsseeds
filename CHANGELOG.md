@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## 2023-02-16
+
+- realized the unique constraint was not being enforced whatsoever
+- looked into creating a custom function to implement `distinct on` + `order by`
+- created `dcsseeds_scrapePlayers_items_version_seed` custom function
+- used in `src/pages/ItemsSeedVersion/getStaticProps`
+- variable names for functions cannot collide with column names otherwise things fail and prefer column name
+- e.g. `WHERE seed = seed` is using the same value as the column so equivalent to `WHERE 1=1` (always true)
+- so adjusted parameters `seed` -> `input_seed` and `version` -> `input_version`
+
 ## 2023-02-15 item constraints
 
 - `dcsseeds_scrapePlayers_item_name_branchName_level_morgue_seed_f` constraint based on `['fullVersion', 'branchName', 'level', 'morgue', 'seed', 'name']` is too unique

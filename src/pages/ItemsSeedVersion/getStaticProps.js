@@ -32,10 +32,7 @@ const Result = gql`
 const GQL_ItemsSeedVersion = serverQuery(
   gql`
     query ItemsSeedVersion($seed: String!, $version: String!) {
-      item_list: dcsseeds_scrapePlayers_item(
-        where: { seed: { _eq: $seed }, version: { _eq: $version } }
-        order_by: { branch: { order: asc } }
-      ) {
+      item_list: dcsseeds_scrapePlayers_items_version_seed(args: { input_seed: $seed, input_version: $version }) {
         ...Result
       }
     }
