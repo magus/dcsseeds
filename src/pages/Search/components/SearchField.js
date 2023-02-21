@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const SearchField = React.forwardRef(_SearchField);
 
@@ -80,10 +80,32 @@ const SearchContainer = styled.div`
   align-items: center;
 `;
 
+const InputBorder = css`
+  border: 1px solid transparent;
+  box-shadow: 0 1px 6px rgba(var(--text-color-rgb), 0.28);
+`;
+
+const InputBorderDark = css`
+  border: 1px solid var(--gray400);
+  box-shadow: none;
+`;
+
 const SearchBar = styled.div`
   position: relative;
   width: 100%;
   height: var(--spacer-6);
+
+  :hover {
+    input {
+      ${InputBorder}
+    }
+
+    @media (prefers-color-scheme: dark) {
+      input {
+        ${InputBorderDark}
+      }
+    }
+  }
 `;
 
 const SearchIcon = styled.span`
@@ -140,15 +162,10 @@ const Input = styled.input`
 
   :hover,
   :focus {
-    border: 1px solid transparent;
-    box-shadow: 0 1px 6px rgba(var(--text-color-rgb), 0.28);
-  }
+    ${InputBorder}
 
-  @media (prefers-color-scheme: dark) {
-    :hover,
-    :focus {
-      border: 1px solid var(--gray400);
-      box-shadow: none;
+    @media (prefers-color-scheme: dark) {
+      ${InputBorderDark}
     }
   }
 
