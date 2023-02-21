@@ -222,7 +222,6 @@ const Button = styled.button`
   font-size: var(--font-small);
   padding: var(--spacer-d2) var(--spacer-1);
   height: auto;
-  transition: opacity, color, background-color 0.2s ease-out;
 
   opacity: ${(props) => (props.disabled ? 0.4 : 1.0)};
 
@@ -230,8 +229,10 @@ const Button = styled.button`
     switch (true) {
       case props.active:
         return css`
-          background-color: rgb(21, 128, 61);
-          color: rgb(220, 252, 231);
+          --button-text: rgb(220, 252, 231);
+          --button-bg: rgb(21, 128, 61);
+          --button-border: rgb(21, 128, 61);
+          --button-hover-border: rgb(34 197 94);
         `;
       case props.disabled:
         return css`
