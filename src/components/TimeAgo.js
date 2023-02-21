@@ -17,12 +17,24 @@ function getTimeAgoData(date) {
 }
 
 export function TimeAgo(props) {
-  const date = props.date instanceof Date ? props.date : new Date(props.date);
+  const date = (function () {
+    switch (true) {
+      case props.date instanceof Date:
+        return props.date;
+      case Boolean(props.date):
+        return new Date(props.date);
+      default:
+        return new Date(0);
+    }
+  })();
+
   const timeAgoData = getTimeAgoData(date);
 
   if (props.simpledate) {
     const absSeconds = Math.abs(timeAgoData.secondsAgo);
+
     let options = {};
+
     if (absSeconds < HOUR) {
       // minutes: 2:54am (3 minutes ago)
       options = {
