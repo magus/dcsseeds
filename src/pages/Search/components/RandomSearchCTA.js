@@ -1,7 +1,6 @@
 import * as React from 'react';
+import styled from 'styled-components';
 import { useRouter } from 'next/router';
-
-import { IconMessage } from 'src/components/IconMessage';
 
 export function RandomSearchCTA(props) {
   const router = useRouter();
@@ -11,16 +10,12 @@ export function RandomSearchCTA(props) {
     return null;
   }
 
-  if (props.search) {
-    return null;
-  }
-
-  return (
-    <IconMessage
-      // force line break
-      icon="👋"
-      message="Click here for a random search..."
-      onMessageClick={props.onTrySearch}
-    />
-  );
+  return <Button onClick={props.onClick}>🎲</Button>;
 }
+
+const Button = styled.button`
+  --font-size: var(--font-xlarge);
+  --button-bg: transparent;
+  --button-border: transparent;
+  --button-hover-border: transparent;
+`;

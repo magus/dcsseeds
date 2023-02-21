@@ -38,6 +38,14 @@ function _SearchField(props, ref) {
     ref.current.select();
   }
 
+  let right_content = null;
+
+  if (props.value) {
+    right_content = <ClearIcon onClick={props.onClear}>❌</ClearIcon>;
+  } else if (props.right) {
+    right_content = props.right;
+  }
+
   return (
     <SearchContainer>
       <SearchBar>
@@ -56,8 +64,10 @@ function _SearchField(props, ref) {
           onChange={handleChange}
           onKeyDown={handleKeyDown}
         />
+
         <SearchIcon>🔎</SearchIcon>
-        {!props.value ? null : <ClearIcon onClick={props.onClear}>❌</ClearIcon>}
+
+        <RightContent>{right_content}</RightContent>
       </SearchBar>
     </SearchContainer>
   );
@@ -89,6 +99,13 @@ const SearchIcon = styled.span`
   font-size: var(--font-large);
 `;
 
+const RightContent = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+`;
+
 const ClearIcon = styled.button`
   /* reset button styles */
   background-color: transparent;
@@ -98,9 +115,6 @@ const ClearIcon = styled.button`
     border: none;
   }
 
-  position: absolute;
-  top: 0;
-  right: 0;
   height: 100%;
   width: var(--spacer-6);
   padding: 0 var(--spacer-2) 0 0;

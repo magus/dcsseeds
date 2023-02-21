@@ -81,6 +81,7 @@ export function ItemSearch(props) {
         onSubmit={handleSubmit}
         onClear={handleClear}
         onChange={handleChange}
+        right={<RandomSearchCTA onClick={handleTrySearch} />}
       />
 
       <Spacer.Vertical size="d2" />
@@ -88,8 +89,6 @@ export function ItemSearch(props) {
       <RecentRunLink {...props} />
 
       <Spacer.Vertical size="2" />
-
-      <RandomSearchCTA search={search} onTrySearch={handleTrySearch} />
 
       <ArtifactSearch key="ArtifactSearch" {...props} />
 
