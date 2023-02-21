@@ -1,15 +1,15 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import Link from 'next/link';
 
 import * as ScrapePlayers from 'src/graphql/scrapePlayers';
-
 import * as Spacer from 'src/components/Spacer';
-import { TimeAgo } from 'src/components/TimeAgo';
 
 import { SearchField } from './SearchField';
 import * as QueryParams from '../hooks/QueryParams';
 import { ArtifactSearch } from './ArtifactSearch';
 import { SearchResults } from './SearchResults';
+import { RecentRunLink } from './RecentRunLink';
 import { RandomSearchCTA } from './RandomSearchCTA';
 import { random_placeholder } from '../random_placeholder';
 
@@ -85,20 +85,7 @@ export function ItemSearch(props) {
 
       <Spacer.Vertical size="d2" />
 
-      <TinyBelowSearch>
-        <span>
-          <b>{props.recent_run.player_name}</b>
-        </span>
-        &nbsp;
-        <span>
-          found <b>{format_number.format(props.recent_run.item_count)}</b> items
-        </span>
-        &nbsp;
-        <span className="datetime">
-          (<TimeAgo date={props.recent_run.updated_at} />)
-        </span>
-        <Spacer.Horizontal size="1" style={{ display: 'inline-block' }} />
-      </TinyBelowSearch>
+      <RecentRunLink {...props} />
 
       <Spacer.Vertical size="2" />
 
@@ -121,11 +108,6 @@ const Container = styled.div`
 const TotalItems = styled.div`
   font-size: var(--font-small);
   padding: var(--spacer-1) 0;
-`;
-
-const TinyBelowSearch = styled.div`
-  font-size: var(--font-tiny);
-  text-align: right;
 `;
 
 const format_number = new Intl.NumberFormat();
