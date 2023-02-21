@@ -277,12 +277,22 @@ const GlobalStyle = createGlobalStyle`
   }
 
 
-  #__next {
-    height: 100%;
-  }
-
   b {
     font-weight: var(--font-bold);
+  }
+
+  a {
+    color: var(--blue-color);
+    text-decoration: none;
+
+    &:visited {
+      color: var(--blue-color);
+    }
+  }
+
+
+  #__next {
+    height: 100%;
   }
 `;
 

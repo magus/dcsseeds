@@ -157,13 +157,4 @@ const Name = styled.div`
   overflow: hidden;
   text-overflow: ellipsis;
   */
-
-  a {
-    color: var(--blue-color);
-    text-decoration: none;
-
-    &:visited {
-      color: var(--blue-color);
-    }
-  }
 `;

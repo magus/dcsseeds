@@ -14,9 +14,4 @@ export default function Username({ inline, withoutUrl, url, children: username }
 
 const UsernameText = styled.a`
   display: ${(props) => (props.inline ? 'inline-block' : 'block')};
-  color: var(--blue-color);
-  text-decoration: none;
-  :visited {
-    color: var(--blue-color);
-  }
 `;

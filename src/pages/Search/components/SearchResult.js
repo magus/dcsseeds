@@ -178,16 +178,7 @@ const BottomRight = styled.div`
   justify-content: flex-end;
 `;
 
-const MorgueLink = styled.div`
-  a {
-    color: var(--blue-color);
-    text-decoration: none;
-
-    &:visited {
-      color: var(--blue-color);
-    }
-  }
-`;
+const MorgueLink = styled.div``;
 
 const AlignRight = styled.div`
   text-align: right;
