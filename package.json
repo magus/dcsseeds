@@ -10,9 +10,9 @@
     "start": "NODE_ENV=production node src/server",
     "lint": "next lint",
     "test": "NODE_PATH=. node src/server/utils/__tests__/seed.test.js",
-    "deploy": "now",
-    "deploy:prod": "now --prod",
-    "deploy:purge": "now rm dcsseeds --safe"
+    "deploy": "vercel",
+    "deploy:prod": "vercel --prod",
+    "deploy:purge": "vercel rm dcsseeds --safe"
   },
   "engines": {
     "node": "16.x"
