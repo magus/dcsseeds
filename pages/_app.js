@@ -210,7 +210,7 @@ const GlobalStyle = createGlobalStyle`
     --text-color: var(--black);
     --text-color-rgb: var(--black-rgb);
     --button-bg: var(--gray200);
-    --button-border: var(--gray200);
+    --button-border: var(--button-bg);
     --button-text: var(--gray700);
     --button-hover-shadow: var(--black-rgb);
     --button-hover-border: var(--gray400);
@@ -222,7 +222,7 @@ const GlobalStyle = createGlobalStyle`
       --text-color: var(--white);
       --text-color-rgb: var(--white-rgb);
       --button-bg: var(--gray800);
-      --button-border: var(--gray800);
+      --button-border: var(--button-bg);
       --button-text: var(--white);
       --button-hover-shadow: var(--white-rgb);
       --button-hover-border: var(--gray600);
@@ -263,11 +263,12 @@ const GlobalStyle = createGlobalStyle`
     font-size: var(--font-size);
     font-weight: 700;
     color: var(--button-text);
+    transition: opacity,color,background-color,box-shadow,border-color 250ms ease-out;
   }
 
   button:hover {
     box-shadow: 0 1px 1px rgba(var(--button-hover-shadow), 0.1);
-    border: 1px solid var(--button-hover-border);
+    border-color: var(--button-hover-border);
   }
 
   @media (prefers-color-scheme: dark) {
