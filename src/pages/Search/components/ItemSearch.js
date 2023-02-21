@@ -54,7 +54,7 @@ export function ItemSearch(props) {
     set_search(query.q || '');
   }
 
-  const formattedTotalItemCount = format_number.format(props.totalItemCount);
+  const formatted_total_item_count = format_number.format(props.total_item_count);
   const results = itemSearch.latestResults(search);
 
   // console.debug('[Search]', { results, itemSearch, search });
@@ -69,7 +69,7 @@ export function ItemSearch(props) {
       />
 
       <TotalItems>
-        Search over <strong>{formattedTotalItemCount}</strong> items...
+        Search over <strong>{formatted_total_item_count}</strong> items...
       </TotalItems>
 
       <SearchField
