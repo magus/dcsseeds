@@ -179,6 +179,8 @@ const GlobalStyle = createGlobalStyle`
     --font-normal: 16px;
     --font-medium: 18px;
     --font-large: 20px;
+    --font-xlarge: 24px;
+    --font-jumbo: 32px;
 
     --font-medium: 500;
     --font-bold: 700;
