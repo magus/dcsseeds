@@ -174,6 +174,7 @@ const GlobalStyle = createGlobalStyle`
     --spacer-7: calc(var(--spacer) * 7);
     --spacer-8: calc(var(--spacer) * 8);
 
+    --font-tiny: 12px;
     --font-small: 14px;
     --font-normal: 16px;
     --font-medium: 18px;
@@ -278,6 +279,10 @@ const GlobalStyle = createGlobalStyle`
 
   #__next {
     height: 100%;
+  }
+
+  b {
+    font-weight: var(--font-bold);
   }
 `;
 
