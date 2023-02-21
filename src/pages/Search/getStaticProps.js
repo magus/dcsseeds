@@ -71,6 +71,22 @@ const GQL_SearchStaticProps = serverQuery(
         }
       }
 
+      recent_run_list: dcsseeds_scrapePlayers_seedVersion(limit: 1, order_by: { updated_at: desc }) {
+        seed
+        version
+        updated_at
+        items_aggregate {
+          aggregate {
+            count
+          }
+        }
+        items(order_by: { timestamp: desc }, limit: 1) {
+          player {
+            name
+          }
+        }
+      }
+
       ${Unrands.List.map(SeedVersionFilter)}
     }
 
@@ -79,6 +95,17 @@ const GQL_SearchStaticProps = serverQuery(
   (data) => {
     const total_item_count = data.total_items.aggregate.count;
     const version_list = data.seed_version.nodes.map((node) => node.version);
+
+    // last updated seed version
+    const [{ updated_at, seed, version, items_aggregate, items }] = data.recent_run_list;
+    const [recent_item] = items;
+    const recent_run = {
+      seed,
+      version,
+      updated_at,
+      player_name: recent_item.player.name,
+      item_count: items_aggregate.aggregate.count,
+    };
 
     // unroll top level artifact search into array of results
     const artifact_list = [];
@@ -91,6 +118,7 @@ const GQL_SearchStaticProps = serverQuery(
     return {
       total_item_count,
       version_list,
+      recent_run,
       artifact_list,
     };
   },
