@@ -19,7 +19,6 @@ export const List = [
   `arbalest "Damnation"`,
   `arc blade`,
   `autumn katana`,
-  `Axe of Woe`,
   `Black Knight's barding`,
   `brooch of Shielding`,
   `captain's cutlass`,
