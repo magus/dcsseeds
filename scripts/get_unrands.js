@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 const fs_promises = require('fs').promises;
 const fs = require('fs');
-const arrayToEnum = require('../src/utils/arrayToEnum');
 const { CPPCompiler } = require('./cpp-parse/CPPCompiler');
 const { execSync } = require('child_process');
 
@@ -22,13 +21,13 @@ process.chdir(`${PROJ_ROOT}/crawl`);
 
 // checkout the specified version for parsing
 execSync(`git reset --hard`);
-execSync(`git checkout ${VERSION}`);
+execSync(`git checkout ${VERSION} > /dev/null 2>&1`);
 
 // run tasks to prepare files for processing (e.g. remove development items tagged with TAG_MAJOR_VERSION)
 // see crawl/.github/workflows/ci.yml
 process.chdir(`${PROJ_ROOT}/crawl/crawl-ref/source`);
 execSync('util/tag-major-upgrade -t 35');
-if (fs.existsSync('util/tag-35-upgrade.py')) {
+if (fs.existsSync('util/tag-35-upgrade.py > /dev/null 2>&1')) {
   execSync('util/tag-35-upgrade.py');
 }
 
@@ -116,19 +115,15 @@ process.chdir(PROJ_ROOT);
   });
 
   // console.dir(unrand_list, { depth: null });
-
   console.debug('unrand_list', unrand_list.length);
 
   const art_enum = await parseFile(`${PROJ_ROOT}/crawl/crawl-ref/source/art-enum.h`);
-  // console.dir(art_enum.defines, { depth: null });
   const [num_unrandarts_token] = art_enum.defines.NUM_UNRANDARTS.tokens;
 
   // ensure we parsed the same number as crawl repo scripts
   if (num_unrandarts_token.value !== unrand_list.length) {
     throw new Error('length of parsed unrands does not match expected length');
   }
-
-  // console.dir(unrand_list, { depth: null });
 
   console.debug();
   for (const unrand of unrand_list) {
@@ -143,6 +138,7 @@ process.chdir(PROJ_ROOT);
       continue;
     }
 
+    // console.debug(unrand);
     console.debug(`  ${JSON.stringify(unrand.name)},`);
   }
 })();
@@ -169,13 +165,4 @@ async function parseFile(filename) {
   let buffer = await fs_promises.readFile(filename, { encoding: 'utf8', flag: 'r' });
   let source = buffer.toString();
   return new CPPCompiler(source);
-}
-
-function re(string, regex) {
-  const match = string.match(regex);
-  if (match) {
-    let [, firstGroup] = match;
-    return firstGroup;
-  }
-  return null;
 }
