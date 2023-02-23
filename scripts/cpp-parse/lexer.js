@@ -126,10 +126,27 @@ exports.lexer = function lexer(code) {
         next();
         // begin empty string token
         createToken(TKNS.String);
+
         // eat characters inside quotes until we hit closing quote
-        while (!isTokenNext(TKNS.Quote)) {
-          continueToken(TKNS.String);
+        let ended = false;
+        while (!ended) {
+          switch (true) {
+            case isTokenNext(TKNS.Quote):
+              ended = true;
+              break;
+
+            // include escaped characters inside string
+            case isTokenNext(TKNS.Escape): {
+              next(TKNS.Escape.length);
+              continueToken(TKNS.String);
+              break;
+            }
+
+            default:
+              continueToken(TKNS.String);
+          }
         }
+
         // eat closing quote to prevent infinite loop
         next();
         break;
@@ -140,10 +157,27 @@ exports.lexer = function lexer(code) {
         next();
         // begin empty string token
         createToken(TKNS.String);
+
         // eat characters inside quotes until we hit closing quote
-        while (!isTokenNext(TKNS.SingleQuote)) {
-          continueToken(TKNS.String);
+        let ended = false;
+        while (!ended) {
+          switch (true) {
+            case isTokenNext(TKNS.SingleQuote):
+              ended = true;
+              break;
+
+            // include escaped characters inside string
+            case isTokenNext(TKNS.Escape): {
+              next(TKNS.Escape.length);
+              continueToken(TKNS.String);
+              break;
+            }
+
+            default:
+              continueToken(TKNS.String);
+          }
         }
+
         // eat closing quote to prevent infinite loop
         next();
         break;
