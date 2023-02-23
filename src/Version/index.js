@@ -1,4 +1,4 @@
-const keyMirror = require('src/utils/keyMirror');
+const keyMirror = require('../utils/keyMirror');
 
 const Version = keyMirror({
   v29: true,
@@ -16,7 +16,7 @@ const Version = keyMirror({
 // https://github.com/crawl/crawl/blob/0.28.0/crawl-ref/source/ng-restr.cc
 //
 // Consider using parser to programmatically get jobs, species, recommended etc.
-const VersionMeta = {
+const Metadata = {
   [Version.v29]: require('./0.29'),
   [Version.v28]: require('./0.28'),
   [Version.v27]: require('./0.27'),
@@ -41,7 +41,7 @@ const BannedCombos = {
 };
 
 for (const version of Object.keys(Version)) {
-  const version_meta = VersionMeta[version];
+  const version_meta = Metadata[version];
 
   SpeciesBackgrounds.Species[version] = version_meta.Species;
   SpeciesBackgrounds.Backgrounds[version] = version_meta.Backgrounds;
@@ -65,8 +65,33 @@ for (const version of Object.keys(Version)) {
   }
 }
 
+function get_version_key(version) {
+  switch (true) {
+    case version.startsWith('0.29'):
+      return Version.v29;
+    case version.startsWith('0.28'):
+      return Version.v28;
+    case version.startsWith('0.27'):
+      return Version.v27;
+    case version.startsWith('0.26'):
+      return Version.v26;
+    case version.startsWith('0.25'):
+      return Version.v25;
+    case version.startsWith('0.24'):
+      return Version.v24;
+
+    default:
+      throw new Error(`Unrecognized version [${version}]`);
+  }
+}
+
+function get_metadata(version) {
+  return Metadata[get_version_key(version)];
+}
+
 module.exports = {
   ...Version,
+  get_metadata,
   Enum: Version,
   Recommended,
   getSpecies: ({ version, background }, options) => getType('Species', version, background, options),

@@ -1,4 +1,4 @@
-const keyMirror = require('src/utils/keyMirror');
+const keyMirror = require('./keyMirror');
 
 const Backgrounds = keyMirror({
   AE: true,

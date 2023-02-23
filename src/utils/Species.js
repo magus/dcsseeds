@@ -1,4 +1,4 @@
-const keyMirror = require('src/utils/keyMirror');
+const keyMirror = require('./keyMirror');
 
 const Species = keyMirror({
   Ba: true,
