@@ -5,7 +5,7 @@ const arrayToEnum = require('../src/utils/arrayToEnum');
 const { CPPCompiler } = require('./cpp-parse/CPPCompiler');
 const { execSync } = require('child_process');
 
-const VERSION = '0.27.0';
+const VERSION = '0.27.1';
 // const VERSION = '0.26.1';
 const GITHUB_RAW = `https://raw.githubusercontent.com/crawl/crawl/${VERSION}`;
 
@@ -62,9 +62,13 @@ const MONSTERENTRY = arrayToEnum(MONSTERENTRY_FIELDNAMES);
   // console.dir(monsters, { depth: null });
 
   monsters.forEach((monster) => {
-    console.dir(monster.id);
+    // console.dir(monster.id);
 
     console.dir(monster, { depth: null });
+
+    // if (monster.name === 'ettin') {
+    //   console.dir(monster, { depth: null });
+    // }
 
     // if (monster.name === 'endoplasm') {
     //   console.dir(monster, { depth: null });
