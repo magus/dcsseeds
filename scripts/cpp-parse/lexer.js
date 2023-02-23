@@ -66,8 +66,11 @@ exports.lexer = function lexer(code) {
       }
     }
 
-    while (TKNS.Number.re.test(peek())) {
-      continueToken(TKNS.Number);
+    // only parse numbers when they are not inside an identifier
+    if (currentToken() && currentToken().type !== TKNS.Identifier.type) {
+      while (TKNS.Number.re.test(peek())) {
+        continueToken(TKNS.Number);
+      }
     }
 
     // single line characters
