@@ -61,6 +61,75 @@ exports.parser = function parser(defines, tokens) {
       // eat the closing bracket
       next();
 
+      // skip commas immediately after object (included array elements, e.g. art-data.h)
+      if (peek().type === TKNS.Comma.type) {
+        next();
+      }
+
+      return node;
+    }
+
+    function parseEnum() {
+      // console.debug('parseEnum', peek(10));
+
+      const node = AST.Enum.build({
+        name: '',
+        values: [],
+      });
+
+      // eat enum keyword
+      next();
+
+      // this is the name of enum type
+      node.name = next().value;
+
+      // eat up until CurlyBracketStart
+      while (!isTokenNext(TKNS.CurlyBracketStart)) {
+        next();
+      }
+      // eat the opening curly bracket
+      next();
+
+      // console.debug('start enum values', { node }, peek(10));
+
+      while (!isTokenNext(TKNS.CurlyBracketEnd)) {
+        switch (peek().type) {
+          case TKNS.Identifier.type:
+            const name = next();
+
+            // look ahead for assignment (default value)
+            if (peek().type === TKNS.Assignment.type) {
+              // eat assignment
+              next();
+              // grab value
+              const value = next().value;
+              node.values.push({ name, value });
+            } else {
+              node.values.push({ name });
+            }
+            break;
+
+          // skip commas between elements
+          case TKNS.Comma.type:
+            next();
+            break;
+
+          // skip new lines so we can parse objects that start on next line
+          case TKNS.NewLine.type:
+            next();
+            break;
+
+          default: {
+            throw new ParserError('Unexpected token during parseEnum', peek());
+          }
+        }
+      }
+
+      // eat the closing curly bracket
+      next();
+
+      // console.dir({ node }, { depth: null });
+
       return node;
     }
 
@@ -234,9 +303,16 @@ exports.parser = function parser(defines, tokens) {
         return node;
       }
 
+      case TKNS.Enum.type: {
+        return parseEnum();
+      }
+
       case TKNS.Identifier.type: {
         return parseExpression();
       }
+
+      case TKNS.CurlyBracketStart.type:
+        return parseObject();
 
       // skip these tokens
       case TKNS.NewLine.type:

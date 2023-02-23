@@ -73,7 +73,7 @@ exports.lexer = function lexer(code) {
       }
     }
 
-    // single line characters
+    // single character tokens
     switch (peek()) {
       // new line special case; increment row and reset col
       case TKNS.NewLine.value:
@@ -248,6 +248,7 @@ const KYWRDS = [
   TKNS.Static,
   TKNS.Struct,
   TKNS.Const,
+  TKNS.Enum,
   TKNS.Using,
   TKNS.BooleanTrue,
   TKNS.BooleanFalse,

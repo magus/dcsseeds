@@ -7,7 +7,7 @@ exports.AST = buildASTTypes({
   Expression: { params: null },
   CallExpression: { name: null, params: null },
   Object: { fields: null },
-  ObjectValue: { values: null },
+  Enum: { name: null, values: null },
 });
 
 function buildASTTypes(object) {

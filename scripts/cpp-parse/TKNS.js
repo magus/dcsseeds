@@ -11,6 +11,7 @@ exports.TKNS = buildTokenKinds({
   Static: { value: 'static' },
   Struct: { value: 'struct' },
   Const: { value: 'const' },
+  Enum: { value: 'enum' },
   Using: { value: 'using' },
   BooleanTrue: { value: 'true' },
   BooleanFalse: { value: 'false' },
