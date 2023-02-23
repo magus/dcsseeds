@@ -6,6 +6,10 @@ import { toNumber } from 'src/utils/toNumber';
 
 import { morgueLookupKey } from './Morgue';
 
+// minimum version to allow parsing for
+// 0.27.0 would allow everything above e.g. 0.27.1, 0.28.0, etc.
+const MINIMUM_ALLOWED_VERSION = '0.27.1';
+
 export async function addMorgue(args) {
   const { player, morgue } = args;
 
@@ -200,10 +204,6 @@ const GQL_ADD_PARSE_ERROR = serverQuery(gql`
 // WHERE
 //     status IN ('delivered', 'error', 'dead')
 //     AND created_at < now() - interval '1 day';
-
-// minimum version to allow parsing for
-// 0.27.0 would allow everything above e.g. 0.27.1, 0.28.0, etc.
-const MINIMUM_ALLOWED_VERSION = '0.27.1';
 
 const RE = {
   // https://regexr.com/6ebro
