@@ -267,10 +267,22 @@ exports.parser = function parser(defines, tokens) {
   }
 
   return ast;
-};
 
-function ParserError(message, token) {
-  const error = new Error(`[${JSON.stringify(token)}] ${message}`);
-  error.name = 'ParserError';
-  return error;
-}
+  function ParserError(message, token) {
+    const debug_delta = 4;
+
+    console.debug();
+    console.debug();
+    tokens.slice(Math.max(0, current - debug_delta), current).forEach((t) => {
+      console.debug('  ', t);
+    });
+    console.debug('❗️', token);
+    tokens.slice(current + 1, current + debug_delta + 1).forEach((t) => {
+      console.debug('  ', t);
+    });
+
+    const error = new Error(`[${JSON.stringify(token)}] ${message}`);
+    error.name = 'ParserError';
+    return error;
+  }
+};
