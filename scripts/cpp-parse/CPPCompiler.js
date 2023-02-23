@@ -15,13 +15,11 @@ function CPPCompiler(source) {
   let { defines, processedTokens } = preprocessor(tokens);
   let ast = parser(defines, processedTokens);
 
-  const __data = { defines, tokens, processedTokens, ast };
-
   function traverse(visitor) {
     traverser(ast, visitor);
   }
 
-  return { __data, traverse };
+  return { traverse, defines, tokens, processedTokens, ast };
 }
 
 CPPCompiler.TKNS = TKNS;
