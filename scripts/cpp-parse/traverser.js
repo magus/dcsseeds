@@ -45,6 +45,7 @@ exports.traverser = function traverser(ast, visitor) {
 
       // These nodes do not have any child nodes to visit, so we break
       case AST.Using.type:
+      case AST.Enum.type:
       case AST.Assignment.type:
       case TKNS.Plus.type:
       case TKNS.BooleanEquals.type:
