@@ -7,29 +7,7 @@ track random seeds in dcss
 
 ## cpp parser
 
-- build out something to determine this and walk a large file like `artefact.cc` and print out where it matches etc to debug
-- use `ParserError` below to trigger a debug to easily see tokens for debugging
-```js
-throw new ParserError('force error');
-```
-
-- top level parser for 'body' which is used initially and also inside function body
-- internally most expressions should abort when encountering a semicolon (add that in)
-- e.g. assignment should immediately kick out / END when we reach semicolon, and we should consume at the right spot to begin parsing again, maybe at top level 'body' parser?
-
-- maybe come up with a way to capture 'statements' when we encounter something we cannot parse, wrap up everything up until a semicolon into an ambiguous statement AST node and see how much we can parse without it
-
 - implement `include` in preprocessor by literally copying a files content and putting it inline, then re-run the lexer + preprocessor again until we do not need to edit again
-
-- capture all tokens into a 'statement', i.e. up to semicolon
-- we could use this as a block to look at to determine parser path
-- for example we are doing something like this with '=' by looking for that to determine we need to parse an assignment statement
-- another might be function declaractions which will always be a sequence of first seeing an identifier followed by open parens `identifier (` (similar to call expression) and then a close parents with an open bracket `} {`, both can have any amount of whitespace between them but only whitespace
-
-
-should abort active parsing when it rea
-- top level parser should abort active parsing when it rea
-
 
 ## feedback
 
