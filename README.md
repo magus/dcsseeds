@@ -5,6 +5,28 @@ track random seeds in dcss
 
 # TODO
 
+## unrand images
+
+get_unrands outputs a tile field
+figure out how to go from tile to path in repo
+
+https://github.com/crawl/crawl/tree/master/crawl-ref/source/rltiles/item
+
+modify get_unrands to take put into clipboard (save time)
+output the full exports.UnrandList = [ … ];
+
+for each unrand output an object instead of string literal
+{ name, tile_url }
+tile_url will be raw url to image on github at specific version tag
+
+update build_unrand_list to also output a map
+{ [name]: { name, tile_url } }
+constantly replace name entries to store latest / newest tile_url
+
+then use this map to show an icon inside artifact filters
+also show icon next to artifact search result
+
+
 ## feedback
 
 - add feedback form page that writes to database
