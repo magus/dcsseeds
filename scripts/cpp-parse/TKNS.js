@@ -8,9 +8,17 @@ exports.TKNS = buildTokenKinds({
   Number: { value: null, re: /[0-9\.\-]/ },
 
   // keywords
+  If: { value: 'if' },
+  Else: { value: 'else' },
+  Return: { value: 'return' },
   Static: { value: 'static' },
   Struct: { value: 'struct' },
   Const: { value: 'const' },
+  TypeVoid: { value: 'void' },
+  TypeBool: { value: 'bool' },
+  TypeInt: { value: 'int' },
+  TypeString: { value: 'string' },
+  Function: { value: 'function' },
   Enum: { value: 'enum' },
   Using: { value: 'using' },
   BooleanTrue: { value: 'true' },
@@ -22,6 +30,7 @@ exports.TKNS = buildTokenKinds({
   PreprocessPragma: { value: '#pragma' },
   PreprocessInclude: { value: '#include' },
   PreprocessIfStart: { value: '#if' },
+  PreprocessIfNotStart: { value: '#ifndef' },
   PreprocessIfEnd: { value: '#endif' },
 
   // single characters

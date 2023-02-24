@@ -199,7 +199,8 @@ function first_preprocessPass(tokens) {
   while (current < tokens.length) {
     let peekToken = peek();
     switch (peekToken.type) {
-      case TKNS.PreprocessIfStart.type: {
+      case TKNS.PreprocessIfStart.type:
+      case TKNS.PreprocessIfNotStart.type: {
         // read and process the if preprocessor and the tokens it wraps
         const include = false;
         while (!isTokenNext(TKNS.PreprocessIfEnd)) {

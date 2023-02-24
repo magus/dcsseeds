@@ -58,14 +58,6 @@ exports.lexer = function lexer(code) {
   }
 
   while (peek()) {
-    // keywords
-    for (let i = 0; i < KYWRDS.length; i++) {
-      let keyword = KYWRDS[i];
-      if (isTokenNext(keyword)) {
-        addToken(keyword);
-      }
-    }
-
     // only parse numbers when they are not inside an identifier
     if (currentToken() && currentToken().type !== TKNS.Identifier.type) {
       while (TKNS.Number.re.test(peek())) {
@@ -214,6 +206,12 @@ exports.lexer = function lexer(code) {
       case TKNS.Semicolon.value:
         addToken(TKNS.Semicolon);
         break;
+      case TKNS.AngleBracketStart.value:
+        addToken(TKNS.AngleBracketStart);
+        break;
+      case TKNS.AngleBracketEnd.value:
+        addToken(TKNS.AngleBracketEnd);
+        break;
 
       // process ongoing currentToken
       default: {
@@ -231,10 +229,22 @@ exports.lexer = function lexer(code) {
       case TKNS.Number.type:
         token.value = Number(token.value);
         break;
+
       case TKNS.BooleanTrue.type:
       case TKNS.BooleanFalse.type:
-        token.value = Boolean(token.value);
+        token.value = JSON.parse(token.value);
         break;
+
+      case TKNS.Identifier.type: {
+        // convert identifiers to known keywords
+        for (const keyword of KYWRDS) {
+          if (token.value === keyword.value) {
+            token.type = keyword.type;
+          }
+        }
+        break;
+      }
+
       default:
       // do nothing
     }
@@ -245,9 +255,17 @@ exports.lexer = function lexer(code) {
 
 const KYWRDS = [
   // keywords to match immediately
+  TKNS.If,
+  TKNS.Else,
+  TKNS.Return,
   TKNS.Static,
   TKNS.Struct,
   TKNS.Const,
+  TKNS.TypeVoid,
+  TKNS.TypeBool,
+  TKNS.TypeInt,
+  TKNS.TypeString,
+  TKNS.Function,
   TKNS.Enum,
   TKNS.Using,
   TKNS.BooleanTrue,
@@ -256,6 +274,7 @@ const KYWRDS = [
   TKNS.PreprocessPragma,
   TKNS.PreprocessInclude,
   TKNS.PreprocessIfStart,
+  TKNS.PreprocessIfNotStart,
   TKNS.PreprocessIfEnd,
 ];
 
