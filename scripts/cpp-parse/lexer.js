@@ -2,7 +2,7 @@
 
 const { TKNS } = require('./TKNS');
 
-exports.lexer = function lexer(code) {
+exports.lexer = function lexer(code, options = {}) {
   const result = [];
 
   const currentToken = () => result[result.length - 1];
@@ -221,7 +221,9 @@ exports.lexer = function lexer(code) {
   }
 
   // insert EOF token at end
-  createToken(TKNS.EOF);
+  if (!options.omit_EOF) {
+    createToken(TKNS.EOF);
+  }
 
   // convert any token values from strings (e.g. numbers)
   result.forEach((token) => {

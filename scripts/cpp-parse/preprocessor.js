@@ -4,13 +4,13 @@ const { filter } = require('lodash');
 const { TKNS } = require('./TKNS');
 const { AST } = require('./AST');
 
-exports.preprocessor = function preprocessor(tokens) {
-  const result = first_preprocessPass(tokens);
+exports.preprocessor = function preprocessor(tokens, options) {
+  const result = first_preprocessPass(tokens, options);
 
   return result;
 };
 
-function first_preprocessPass(tokens) {
+function first_preprocessPass(tokens, options) {
   const defines = {};
   let processedTokens = [];
 
@@ -235,7 +235,21 @@ function first_preprocessPass(tokens) {
         // read and process the include preprocessor up until end of line
         next();
         while (!isTokenNext(TKNS.NewLine)) {
-          next();
+          switch (peek().type) {
+            case TKNS.String.type: {
+              // replace the include with the tokens included in options
+              const token = next();
+              const include_tokens = options.include_tokens[token.value];
+              if (Array.isArray(include_tokens)) {
+                processedTokens.push(...include_tokens);
+              }
+              break;
+            }
+
+            default:
+              // eat and move along
+              next();
+          }
         }
         // eat ending new line
         next();
@@ -263,7 +277,7 @@ function first_preprocessPass(tokens) {
   processedTokens = filterTokens(processedTokens);
 
   // second pass to replace all defines
-  return { defines, processedTokens };
+  return [processedTokens, { defines }];
 }
 
 function filterTokens(tokens) {

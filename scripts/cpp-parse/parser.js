@@ -3,7 +3,7 @@
 const { TKNS } = require('./TKNS');
 const { AST } = require('./AST');
 
-exports.parser = function parser(defines, tokens) {
+exports.parser = function parser(tokens, options) {
   let current = 0;
 
   function peek(i = 1) {

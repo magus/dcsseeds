@@ -38,8 +38,28 @@ execSync('perl util/art-data.pl');
 process.chdir(PROJ_ROOT);
 
 (async function run() {
-  const art_data = await parseFile(`${PROJ_ROOT}/crawl/crawl-ref/source/art-data.h`);
-  const raw_object_list = art_data.ast.body;
+  const artefact_cc = await readFile(`${PROJ_ROOT}/crawl/crawl-ref/source/artefact.cc`);
+  const art_data_h = await readFile(`${PROJ_ROOT}/crawl/crawl-ref/source/art-data.h`);
+
+  const parsed = new CPPCompiler(artefact_cc, {
+    include: {
+      'art-data.h': art_data_h,
+    },
+  });
+
+  let raw_object_list;
+
+  for (const statement of parsed.ast.body) {
+    if (statement.type === 'Assignment') {
+      if (statement.name.value === 'unranddata[]') {
+        raw_object_list = statement.value.fields;
+      }
+    }
+  }
+
+  if (!raw_object_list) {
+    throw new Error('Unable to find unranddata[]');
+  }
 
   const flat_object_list = [];
 
@@ -117,7 +137,7 @@ process.chdir(PROJ_ROOT);
   // console.dir(unrand_list, { depth: null });
   console.debug('unrand_list', unrand_list.length);
 
-  const art_enum = await parseFile(`${PROJ_ROOT}/crawl/crawl-ref/source/art-enum.h`);
+  const art_enum = new CPPCompiler(await readFile(`${PROJ_ROOT}/crawl/crawl-ref/source/art-enum.h`));
   const [num_unrandarts_token] = art_enum.defines.NUM_UNRANDARTS.tokens;
 
   // ensure we parsed the same number as crawl repo scripts
@@ -161,8 +181,8 @@ function extract_object_field(field) {
   }
 }
 
-async function parseFile(filename) {
+async function readFile(filename) {
   let buffer = await fs_promises.readFile(filename, { encoding: 'utf8', flag: 'r' });
   let source = buffer.toString();
-  return new CPPCompiler(source);
+  return source;
 }

@@ -5,10 +5,6 @@ track random seeds in dcss
 
 # TODO
 
-## cpp parser
-
-- implement `include` in preprocessor by literally copying a files content and putting it inline, then re-run the lexer + preprocessor again until we do not need to edit again
-
 ## feedback
 
 - add feedback form page that writes to database
