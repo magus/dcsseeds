@@ -1,8 +1,11 @@
 #!/usr/bin/env node
-const fs_promises = require('fs').promises;
 const fs = require('fs');
-const { CPPCompiler } = require('./cpp-parse/CPPCompiler');
 const { execSync } = require('child_process');
+
+const { pbcopy } = require('./pbcopy');
+const { read_file } = require('./read_file');
+const { get_tile_map } = require('./get_tile_map');
+const { CPPCompiler } = require('./cpp-parse/CPPCompiler');
 
 const [, , VERSION] = process.argv;
 
@@ -21,13 +24,13 @@ process.chdir(`${PROJ_ROOT}/crawl`);
 
 // checkout the specified version for parsing
 execSync(`git reset --hard`);
-execSync(`git checkout ${VERSION} > /dev/null 2>&1`);
+execSync(`git checkout ${VERSION}`);
 
 // run tasks to prepare files for processing (e.g. remove development items tagged with TAG_MAJOR_VERSION)
 // see crawl/.github/workflows/ci.yml
 process.chdir(`${PROJ_ROOT}/crawl/crawl-ref/source`);
 execSync('util/tag-major-upgrade -t 35');
-if (fs.existsSync('util/tag-35-upgrade.py > /dev/null 2>&1')) {
+if (fs.existsSync('util/tag-35-upgrade.py')) {
   execSync('util/tag-35-upgrade.py');
 }
 
@@ -38,8 +41,8 @@ execSync('perl util/art-data.pl');
 process.chdir(PROJ_ROOT);
 
 (async function run() {
-  const artefact_cc = await readFile(`${PROJ_ROOT}/crawl/crawl-ref/source/artefact.cc`);
-  const art_data_h = await readFile(`${PROJ_ROOT}/crawl/crawl-ref/source/art-data.h`);
+  const artefact_cc = await read_file(`${PROJ_ROOT}/crawl/crawl-ref/source/artefact.cc`);
+  const art_data_h = await read_file(`${PROJ_ROOT}/crawl/crawl-ref/source/art-data.h`);
 
   const parsed = new CPPCompiler(artefact_cc, {
     include: {
@@ -137,7 +140,7 @@ process.chdir(PROJ_ROOT);
   // console.dir(unrand_list, { depth: null });
   console.debug('unrand_list', unrand_list.length);
 
-  const art_enum = new CPPCompiler(await readFile(`${PROJ_ROOT}/crawl/crawl-ref/source/art-enum.h`));
+  const art_enum = new CPPCompiler(await read_file(`${PROJ_ROOT}/crawl/crawl-ref/source/art-enum.h`));
   const [num_unrandarts_token] = art_enum.defines.NUM_UNRANDARTS.tokens;
 
   // ensure we parsed the same number as crawl repo scripts
@@ -176,11 +179,14 @@ process.chdir(PROJ_ROOT);
     throw new Error('art-enum.h contains different number of parsed unrands');
   }
 
+  const tile_map = await get_tile_map(['dc-unrand.txt']);
+
   const filtered_unrand_list = [];
 
   for (let i = 0; i < unrand_list.length; i++) {
     const unrand = unrand_list[i];
-    unrand.enum = unrand_enum_list[i];
+    unrand.id = unrand_enum_list[i];
+    unrand.tile_path = tile_map.get(unrand.id);
 
     // ignore dummy artifacts
     if (/DUMMY/.test(unrand.name)) {
@@ -193,18 +199,32 @@ process.chdir(PROJ_ROOT);
       continue;
     }
 
+    // validation for unfiltered unrands
+
+    if (!Array.isArray(unrand.tile_path) || !unrand.tile_path.length) {
+      console.error({ unrand });
+      throw new Error('missing tile');
+    }
+
+    // normalize to first tile path
+    const [first_tile_path] = unrand.tile_path;
+    unrand.tile_path = first_tile_path;
+    unrand.image_url = `${GITHUB_RAW}/${first_tile_path}`;
+
     filtered_unrand_list.push(unrand);
   }
 
-  const output_lines = [''];
+  const output_lines = ['', '// prettier-ignore'];
   output_lines.push('exports.UnrandList = [');
   for (const unrand of filtered_unrand_list) {
     // console.debug(unrand);
-    output_lines.push(`  ${JSON.stringify(unrand.name)},`);
+    const { image_url, name, id } = unrand;
+    output_lines.push(`  ${JSON.stringify({ image_url, name, id })},`);
   }
   output_lines.push('];');
 
-  console.debug(output_lines.join('\n'));
+  pbcopy(output_lines.join('\n'));
+  console.info('📋 Copied `UnrandList` export to clipboard.');
 })();
 
 function extract_object_field(field) {
@@ -223,10 +243,4 @@ function extract_object_field(field) {
       return value_list;
     }
   }
-}
-
-async function readFile(filename) {
-  let buffer = await fs_promises.readFile(filename, { encoding: 'utf8', flag: 'r' });
-  let source = buffer.toString();
-  return source;
 }

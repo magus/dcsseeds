@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styled, { css } from 'styled-components';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 
 import * as Unrands from 'src/utils/Unrands';
@@ -92,6 +93,12 @@ function FilterButton(props) {
       layout="position"
     >
       <Button active={props.active} disabled={props.disabled} onClick={handle_click}>
+        {!props.image ? null : (
+          <React.Fragment>
+            <Image alt={props.name} src={props.image} width={24} height={24} />
+            <Spacer.Horizontal size="1" />
+          </React.Fragment>
+        )}
         {props.name} ({props.count})
       </Button>
     </ButtonGroup>
@@ -116,16 +123,17 @@ function ArtifactFilters(props) {
 
   const filter_unrand_key_list = active_key_list.concat(inactive_key_list);
 
-  for (let i = 0; i < filter_unrand_key_list.length; i++) {
-    const unrand_key = filter_unrand_key_list[i];
+  for (const unrand_key of filter_unrand_key_list) {
     const name = Unrands.List[unrand_key];
     const active = props.filter_set.has(unrand_key);
     const count = props.artifact_count[unrand_key];
+    const metadata = Unrands.Metadata[unrand_key];
 
     const button = (
       <FilterButton
         key={unrand_key}
         name={name}
+        image={metadata.image_url}
         count={count}
         handleAdd={() => props.add_filter(unrand_key)}
         handleRemove={() => props.remove_filter(unrand_key)}
@@ -218,6 +226,9 @@ const ButtonGroup = styled(motion.div)`
 `;
 
 const Button = styled.button`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   flex-grow: 1;
   font-size: var(--font-small);
   padding: var(--spacer-d2) var(--spacer-1);

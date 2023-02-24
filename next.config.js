@@ -9,6 +9,10 @@ const EnvConfig = require('./src/config/env');
 const { SENTRY_TOKEN_HEADER } = process.env;
 
 module.exports = withSourceMaps({
+  images: {
+    domains: ['raw.githubusercontent.com'],
+  },
+
   // --------------------------------------------------
   // withSourceMaps: source maps + sentry configuration
   env: {

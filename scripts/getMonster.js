@@ -10,16 +10,16 @@ const VERSION = '0.27.1';
 const GITHUB_RAW = `https://raw.githubusercontent.com/crawl/crawl/${VERSION}`;
 
 // prepare crawl git submodule by checking out specific version for parsing
-// cd projRoot/crawl
-const projRoot = execSync('git rev-parse --show-toplevel').toString().trim();
-process.chdir(`${projRoot}/crawl`);
+// cd PROJ_ROOT/crawl
+const PROJ_ROOT = execSync('git rev-parse --show-toplevel').toString().trim();
+process.chdir(`${PROJ_ROOT}/crawl`);
 // // sync tags with origin (e.g. version tags like 0.27.0)
 // execSync('git fetch origin');
 // checkout the specified version for parsing
 execSync(`git reset --hard`);
-execSync(`git checkout ${VERSION} > /dev/null 2>&1`);
-// return to projRoot
-process.chdir(projRoot);
+execSync(`git checkout ${VERSION}`);
+// return to PROJ_ROOT
+process.chdir(PROJ_ROOT);
 
 // `struct monsterentry` defines the fields of monster entries
 // See crawl/crawl-ref/source/mon-util.h
