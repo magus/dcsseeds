@@ -1,4 +1,4 @@
-const { randomInt } = require('src/server/utils/random');
+const { randomInt } = require('./random');
 
 // DCSS seeds are 64 bit integers
 // This means that the highest possible value for a seed is 2^64
