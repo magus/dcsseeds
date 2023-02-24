@@ -13,10 +13,11 @@ const GITHUB_RAW = `https://raw.githubusercontent.com/crawl/crawl/${VERSION}`;
 // cd projRoot/crawl
 const projRoot = execSync('git rev-parse --show-toplevel').toString().trim();
 process.chdir(`${projRoot}/crawl`);
-// sync tags with origin (e.g. version tags like 0.27.0)
-execSync('git fetch origin');
+// // sync tags with origin (e.g. version tags like 0.27.0)
+// execSync('git fetch origin');
 // checkout the specified version for parsing
-execSync(`git checkout ${VERSION}`);
+execSync(`git reset --hard`);
+execSync(`git checkout ${VERSION} > /dev/null 2>&1`);
 // return to projRoot
 process.chdir(projRoot);
 
