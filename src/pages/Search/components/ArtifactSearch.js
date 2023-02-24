@@ -92,7 +92,7 @@ function FilterButton(props) {
       exit={{ opacity: 0 }}
       layout="position"
     >
-      <Button active={props.active} disabled={props.disabled} onClick={handle_click}>
+      <Button image={props.image} active={props.active} disabled={props.disabled} onClick={handle_click}>
         {!props.image ? null : (
           <React.Fragment>
             <Image alt={props.name} src={props.image} width={24} height={24} />
@@ -231,7 +231,14 @@ const Button = styled.button`
   justify-content: center;
   flex-grow: 1;
   font-size: var(--font-small);
-  padding: var(--spacer-d2) var(--spacer-1);
+  white-space: nowrap;
+  padding: ${(props) => {
+    if (props.image) {
+      return css`0 var(--spacer-d2)`;
+    }
+    return css`var(--spacer-d2) var(--spacer-d2)`;
+  }};
+
   height: auto;
 
   opacity: ${(props) => (props.disabled ? 0.4 : 1.0)};

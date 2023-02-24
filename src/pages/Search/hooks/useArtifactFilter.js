@@ -79,7 +79,7 @@ export function useArtifactFilter(props) {
         // store this unrand for this seed
         const seedVersion_item_list = seedVersion_item_map.get(seedVersion) || [];
         const [item] = result.items;
-        seedVersion_item_list.push(item);
+        seedVersion_item_list.push({ ...item, unrand_key: i });
         seedVersion_item_map.set(seedVersion, seedVersion_item_list);
       }
 

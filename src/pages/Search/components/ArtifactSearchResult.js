@@ -1,8 +1,10 @@
 import * as React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
+import * as Unrands from 'src/utils/Unrands';
 import CopyButton from 'src/components/CopyButton';
 import { TimeAgo } from 'src/components/TimeAgo';
 import * as Spacer from 'src/components/Spacer';
@@ -48,7 +50,7 @@ export function ArtifactSearchResult(props) {
           {rest_item_list.length === 0 ? null : (
             <>
               <tr>
-                <td colSpan="3">
+                <td colSpan="999">
                   <Spacer.Vertical size="1" />
                   <ItemDivider />
                   <Spacer.Vertical size="2" />
@@ -86,6 +88,8 @@ function Item(props) {
     query: { seed, version, highlight },
   };
 
+  const metadata = Unrands.Metadata[props.unrand_key];
+
   return (
     <ItemRow>
       <td className="location">
@@ -101,11 +105,14 @@ function Item(props) {
         <Name>
           <Link passHref href={items_link}>
             <a rel="noopener noreferrer" target="_blank">
+              <div className="image">
+                <Image alt={props.name} src={metadata.image_url} layout="fixed" width={24} height={24} />
+              </div>
+              <Spacer.Horizontal size="1" />
               {props.name}
             </a>
           </Link>
         </Name>
-        <Spacer.Vertical size="1" />
       </ItemRight>
     </ItemRow>
   );
@@ -113,6 +120,7 @@ function Item(props) {
 
 const ItemRow = styled.tr`
   vertical-align: top;
+  margin: 0 0 var(--spacer-1) 0;
 
   .location {
     width: 120px;
@@ -123,8 +131,9 @@ const ItemRow = styled.tr`
 `;
 
 const ItemRight = styled.td`
-  text-align: left;
   width: 100%;
+  text-align: left;
+  vertical-align: middle;
 `;
 
 const BottomRow = styled.div`
@@ -179,4 +188,8 @@ const Name = styled.div`
   overflow: hidden;
   text-overflow: ellipsis;
   */
+  a {
+    display: flex;
+    align-items: center;
+  }
 `;
