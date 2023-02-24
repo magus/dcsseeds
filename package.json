@@ -10,6 +10,7 @@
     "start": "NODE_ENV=production node src/server",
     "lint": "next lint",
     "test": "jest",
+    "test:debug": "node --inspect-brk node_modules/.bin/jest --runInBand",
     "deploy": "vercel",
     "deploy:prod": "vercel --prod",
     "deploy:purge": "vercel rm dcsseeds --safe"
