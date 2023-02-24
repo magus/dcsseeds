@@ -145,10 +145,45 @@ process.chdir(PROJ_ROOT);
     throw new Error('length of parsed unrands does not match expected length');
   }
 
-  console.debug();
-  for (const unrand of unrand_list) {
+  let unrand_enum_list = [];
+
+  art_enum.traverse({
+    Enum: {
+      enter(node, parent) {
+        if (node.name.value === 'unrand_type') {
+          let start = false;
+          for (const enum_entry of node.values) {
+            // exit on LAST
+            if (enum_entry.name.value === 'UNRAND_LAST') {
+              break;
+            }
+
+            if (enum_entry.name.value === 'UNRAND_START') {
+              start = true;
+            } else if (start) {
+              unrand_enum_list.push(enum_entry.name.value);
+            }
+          }
+        }
+      },
+    },
+  });
+
+  // art-enum.h contains a 1:1 mapping of the enums for each artifact above
+  // the numbers must match before we proceed to matching them up
+  // ensure we parsed the same number as crawl repo scripts
+  if (unrand_list.length !== unrand_enum_list.length) {
+    throw new Error('art-enum.h contains different number of parsed unrands');
+  }
+
+  const filtered_unrand_list = [];
+
+  for (let i = 0; i < unrand_list.length; i++) {
+    const unrand = unrand_list[i];
+    unrand.enum = unrand_enum_list[i];
+
     // ignore dummy artifacts
-    if (!!~unrand.name.indexOf('DUMMY')) {
+    if (/DUMMY/.test(unrand.name)) {
       continue;
     }
 
@@ -158,9 +193,18 @@ process.chdir(PROJ_ROOT);
       continue;
     }
 
-    // console.debug(unrand);
-    console.debug(`  ${JSON.stringify(unrand.name)},`);
+    filtered_unrand_list.push(unrand);
   }
+
+  const output_lines = [''];
+  output_lines.push('exports.UnrandList = [');
+  for (const unrand of filtered_unrand_list) {
+    // console.debug(unrand);
+    output_lines.push(`  ${JSON.stringify(unrand.name)},`);
+  }
+  output_lines.push('];');
+
+  console.debug(output_lines.join('\n'));
 })();
 
 function extract_object_field(field) {
