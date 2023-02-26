@@ -16,6 +16,13 @@ export function RecentRunLink(props) {
   return (
     <Container>
       <TinyBelowSearch>
+        <Link passHref href="/morgue/add">
+          <a rel="noopener noreferrer">
+            <Spacer.Horizontal size="1" style={{ display: 'inline-block' }} />
+            <span>Add morgue...</span>
+          </a>
+        </Link>
+
         <Link passHref href={recent_run_link}>
           <a rel="noopener noreferrer" target="_blank">
             <span>
@@ -44,9 +51,8 @@ const Container = styled.div`
 
 const TinyBelowSearch = styled.div`
   display: flex;
-  align-self: flex-end;
+  justify-content: space-between;
   font-size: var(--font-tiny);
-  display: inline-block;
 `;
 
 const format_number = new Intl.NumberFormat();
