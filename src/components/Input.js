@@ -6,47 +6,58 @@ export const Input = React.forwardRef(InputInternal);
 function InputInternal(props, ref) {
   const { onChange, onSubmit, rightContent, icon, ...rest_input_props } = props;
 
+  const local_input_ref = React.useRef();
+  const input_ref = ref || local_input_ref;
+  const [local_value, set_local_value] = React.useState('');
+
   function handle_key_down(event) {
     const key = event.key;
 
-    if (key === 'Enter' || key === 'Escape') {
-      event.preventDefault();
-    }
-
     if (key === 'Enter') {
-      if (typeof onSubmit === 'function') {
-        onSubmit(ref.current.value);
-      }
+      event.preventDefault();
+      handle_submit();
     }
 
     if (key === 'Escape') {
+      event.preventDefault();
       handle_clear();
     }
   }
 
   function handle_change(event) {
+    const text = event.target.value;
+
     if (typeof onChange === 'function') {
-      onChange(event.target.value);
+      onChange(text);
+    } else {
+      set_local_value(text);
     }
   }
 
   function handle_clear() {
     if (typeof onChange === 'function') {
       onChange('');
+    } else {
+      input_ref.current.value = '';
+      set_local_value('');
     }
   }
 
   function handle_focus() {
-    ref.current.select();
+    input_ref.current.select();
   }
 
   function handle_submit() {
-    ref.current.blur();
+    input_ref.current.blur();
+
+    if (typeof onSubmit === 'function') {
+      onSubmit(input_ref.current.value);
+    }
   }
 
   let right_content = null;
 
-  if (props.value) {
+  if (props.value || input_ref.current?.value) {
     right_content = <ClearIcon onClick={handle_clear}>❌</ClearIcon>;
   } else if (rightContent) {
     right_content = rightContent;
@@ -57,7 +68,7 @@ function InputInternal(props, ref) {
       <InputWrapper>
         <StyledInput
           // force line break
-          ref={ref}
+          ref={input_ref}
           onFocus={handle_focus}
           onChange={handle_change}
           onKeyDown={handle_key_down}
@@ -74,6 +85,7 @@ function InputInternal(props, ref) {
 }
 
 const Container = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
