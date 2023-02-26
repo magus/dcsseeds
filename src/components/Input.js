@@ -1,36 +1,38 @@
 import * as React from 'react';
 import styled, { css } from 'styled-components';
 
-export const SearchField = React.forwardRef(_SearchField);
+export const Input = React.forwardRef(InputInternal);
 
-function _SearchField(props, ref) {
-  function handleKeyDown(e) {
-    const key = e.key;
+function InputInternal(props, ref) {
+  const { onChange, onSubmit, rightContent, icon, ...rest_input_props } = props;
+
+  function handle_key_down(event) {
+    const key = event.key;
 
     if (key === 'Enter' || key === 'Escape') {
-      e.preventDefault();
-    }
-
-    if (props.isDisabled) {
-      return;
+      event.preventDefault();
     }
 
     if (key === 'Enter') {
-      if (typeof props.onSubmit === 'function') {
-        props.onSubmit();
+      if (typeof onSubmit === 'function') {
+        onSubmit(ref.current.value);
       }
     }
 
     if (key === 'Escape') {
-      if (typeof props.onClear === 'function') {
-        props.onClear();
-      }
+      handle_clear();
     }
   }
 
-  function handleChange(e) {
-    if (typeof props.onChange === 'function') {
-      props.onChange(e.target.value);
+  function handle_change(event) {
+    if (typeof onChange === 'function') {
+      onChange(event.target.value);
+    }
+  }
+
+  function handle_clear() {
+    if (typeof onChange === 'function') {
+      onChange('');
     }
   }
 
@@ -38,42 +40,40 @@ function _SearchField(props, ref) {
     ref.current.select();
   }
 
+  function handle_submit() {
+    ref.current.blur();
+  }
+
   let right_content = null;
 
   if (props.value) {
-    right_content = <ClearIcon onClick={props.onClear}>❌</ClearIcon>;
-  } else if (props.right) {
-    right_content = props.right;
+    right_content = <ClearIcon onClick={handle_clear}>❌</ClearIcon>;
+  } else if (rightContent) {
+    right_content = rightContent;
   }
 
   return (
-    <SearchContainer>
-      <SearchBar>
-        <Input
+    <Container>
+      <InputWrapper>
+        <StyledInput
+          // force line break
           ref={ref}
-          aria-label={props.label}
-          autoCapitalize="off"
-          autoComplete="off"
-          autoCorrect="off"
-          type="search"
-          name="search"
-          id="search"
-          placeholder={props.placeholder}
-          value={props.value}
           onFocus={handle_focus}
-          onChange={handleChange}
-          onKeyDown={handleKeyDown}
+          onChange={handle_change}
+          onKeyDown={handle_key_down}
+          onSubmit={handle_submit}
+          {...rest_input_props}
         />
 
-        <SearchIcon>🔎</SearchIcon>
+        <Icon>{icon}</Icon>
 
         <RightContent>{right_content}</RightContent>
-      </SearchBar>
-    </SearchContainer>
+      </InputWrapper>
+    </Container>
   );
 }
 
-const SearchContainer = styled.div`
+const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -90,7 +90,7 @@ const InputBorderDark = css`
   box-shadow: none;
 `;
 
-const SearchBar = styled.div`
+const InputWrapper = styled.div`
   position: relative;
   width: 100%;
   height: var(--spacer-6);
@@ -108,7 +108,7 @@ const SearchBar = styled.div`
   }
 `;
 
-const SearchIcon = styled.span`
+const Icon = styled.span`
   position: absolute;
   top: 0;
   left: 0;
@@ -146,7 +146,7 @@ const ClearIcon = styled.button`
   font-size: var(--font-large);
 `;
 
-const Input = styled.input`
+const StyledInput = styled.input`
   width: 100%;
   height: 100%;
   padding: var(--spacer-1) var(--spacer-6);

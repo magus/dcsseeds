@@ -4,8 +4,8 @@ import Link from 'next/link';
 
 import * as ScrapePlayers from 'src/graphql/scrapePlayers';
 import * as Spacer from 'src/components/Spacer';
+import { Input } from 'src/components/Input';
 
-import { SearchField } from './SearchField';
 import * as QueryParams from '../hooks/QueryParams';
 import { ArtifactSearch } from './ArtifactSearch';
 import { SearchResults } from './SearchResults';
@@ -14,7 +14,7 @@ import { RandomSearchCTA } from './RandomSearchCTA';
 import { random_placeholder } from '../random_placeholder';
 
 export function ItemSearch(props) {
-  const searchFieldRef = React.useRef();
+  const input_ref = React.useRef();
   const [search, set_search] = React.useState('');
   const itemSearch = ScrapePlayers.useItemSearch();
 
@@ -33,19 +33,9 @@ export function ItemSearch(props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [search]);
 
-  function handleSubmit() {
-    // console.debug('[Search]', 'handleSubmit', { search });
-    searchFieldRef.current.blur();
-  }
-
   function handleChange(text) {
     // console.debug('[Search]', 'handleChange', { text });
     set_search(text);
-  }
-
-  function handleClear() {
-    // console.debug('[Search]', 'handleClear');
-    set_search('');
   }
 
   function handleTrySearch() {
@@ -73,15 +63,20 @@ export function ItemSearch(props) {
         Search over <strong>{format_number.format(props.total_item_count)}</strong> items...
       </TotalItems>
 
-      <SearchField
-        ref={searchFieldRef}
-        label="Search"
+      <Input
+        ref={input_ref}
+        icon="🔎"
+        aria-label="Filter items and artifacts"
+        autoCapitalize="off"
+        autoComplete="off"
+        autoCorrect="off"
+        type="search"
+        name="search"
+        id="search"
         placeholder={placeholder}
         value={search}
-        onSubmit={handleSubmit}
-        onClear={handleClear}
         onChange={handleChange}
-        right={<RandomSearchCTA onClick={handleTrySearch} />}
+        rightContent={<RandomSearchCTA onClick={handleTrySearch} />}
       />
 
       <Spacer.Vertical size="d2" />
