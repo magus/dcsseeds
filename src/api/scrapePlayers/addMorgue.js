@@ -140,7 +140,7 @@ export async function addMorgue(args) {
     return skip('empty');
   } catch (error) {
     // write error into db
-    const errors = [{ morgue: morgue.url, turn: '', note: '', loc: '', error: error.message }];
+    const errors = [{ morgue: morgue.url, error: error.message }];
     GQL_ADD_PARSE_ERROR.run({ errors });
 
     // bubble error
@@ -199,7 +199,7 @@ const GQL_ADD_PARSE_ERROR = serverQuery(gql`
   mutation AddParseError($errors: [dcsseeds_scrapePlayers_errors_insert_input!]!) {
     insert_dcsseeds_scrapePlayers_errors(
       objects: $errors
-      on_conflict: { constraint: dcsseeds_scrapePlayers_errors_pkey, update_columns: error }
+      on_conflict: { constraint: dcsseeds_scrapePlayers_errors_error_morgue_turn_loc_note_key, update_columns: error }
     ) {
       affected_rows
     }

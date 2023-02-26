@@ -1,5 +1,4 @@
 import { gql } from '@apollo/client';
-import { query } from 'graphqurl';
 
 import parseMorgue from 'src/utils/parseMorgue';
 import send from 'src/server/utils/zeitSend';
@@ -16,16 +15,20 @@ if (!HASURA_ADMIN_SECRET) throw new Error('HASURA_ADMIN_SECRET is required!');
 // force scrape a morgue file, storing results in scrapePlayers_item
 // http://localhost:3000/api/scrapeMorgue?morgue=http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20230114-084156.txt
 
+// items            http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20230226-012223.txt
+// no items (skip)  http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20230226-011455.txt
+// error            http://crawl.akrasiac.org/rawdata/magusnn/
+
 module.exports = async function handler(req, res) {
+  const hrStartTime = process.hrtime();
+
+  const morgue_url = req.query.morgue;
+
+  if (!morgue_url) {
+    throw new Error('Must provide [morgue]');
+  }
+
   try {
-    const morgue_url = req.query.morgue;
-
-    if (!morgue_url) {
-      throw new Error('Must provide [morgue]');
-    }
-
-    const hrStartTime = process.hrtime();
-
     const morgue = new Morgue(morgue_url);
 
     // determine server from morgue_url
@@ -54,25 +57,23 @@ module.exports = async function handler(req, res) {
     // parse and add the morgue items
     const response = await addMorgue({ player, morgue });
 
+    // ensure error response treated as error
+    if (response.status === 'error') {
+      throw new Error(response.extra.message);
+    }
+
     const timeMs = hrTimeUnit(process.hrtime(hrStartTime), 'ms');
     const data = { timeMs, morgue, cleared_items, player, response };
     return send(res, 200, data, { prettyPrint: true });
   } catch (err) {
-    return send(res, 500, err, { prettyPrint: true });
+    // immediate response
+    send(res, 500, err, { prettyPrint: true });
+
+    // track this error remotely
+    const error_message = err.message || '__unknown__';
+    GQL_TrackError.run({ error_message, morgue_url });
   }
 };
-
-function hrTimeUnit(hrTime, unit) {
-  switch (unit) {
-    case 'ms':
-      return hrTime[0] * 1e3 + hrTime[1] / 1e6;
-    case 'micro':
-      return hrTime[0] * 1e6 + hrTime[1] / 1e3;
-    case 'nano':
-    default:
-      return hrTime[0] * 1e9 + hrTime[1];
-  }
-}
 
 const GQL_ClearMorgueItems = serverQuery(
   gql`
@@ -107,3 +108,26 @@ const GQL_UpsertPlayer = serverQuery(
     return player;
   },
 );
+
+const GQL_TrackError = serverQuery(gql`
+  mutation TrackError($error_message: String!, $morgue_url: String!) {
+    insert_dcsseeds_scrapePlayers_errors_one(
+      object: { error: $error_message, morgue: $morgue_url }
+      on_conflict: { constraint: dcsseeds_scrapePlayers_errors_error_morgue_turn_loc_note_key, update_columns: error }
+    ) {
+      morgue
+    }
+  }
+`);
+
+function hrTimeUnit(hrTime, unit) {
+  switch (unit) {
+    case 'ms':
+      return hrTime[0] * 1e3 + hrTime[1] / 1e6;
+    case 'micro':
+      return hrTime[0] * 1e6 + hrTime[1] / 1e3;
+    case 'nano':
+    default:
+      return hrTime[0] * 1e9 + hrTime[1];
+  }
+}
