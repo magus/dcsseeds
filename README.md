@@ -5,11 +5,6 @@ track random seeds in dcss
 
 # TODO
 
-## self submit scrape morgue
-
-- if server doesn't exist log morgue url into errors for reviewing later
-- manually review errors and add players manually
-
 ## feedback
 
 - add feedback form page that writes to database
