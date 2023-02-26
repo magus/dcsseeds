@@ -46,3 +46,6 @@ public/service-worker.js
 
 # ignore scripts cache
 scripts/.cache
+
+# Sentry
+.sentryclirc

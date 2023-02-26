@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.7.7",
+    "@sentry/nextjs": "^7.38.0",
     "crypto": "^1.0.1",
     "framer-motion": "^2.6.2",
     "graphql": "^15.3.0",
