@@ -14,30 +14,39 @@ export function RecentRunLink(props) {
   };
 
   return (
-    <Link passHref href={recent_run_link}>
-      <a rel="noopener noreferrer" target="_blank">
-        <TinyBelowSearch>
-          <span>
-            <b>{props.recent_run.player_name}</b>
-          </span>
-          &nbsp;
-          <span>
-            found <b>{format_number.format(props.recent_run.item_count)}</b> items
-          </span>
-          &nbsp;
-          <span className="datetime">
-            (<TimeAgo date={props.recent_run.updated_at} />)
-          </span>
-          <Spacer.Horizontal size="1" style={{ display: 'inline-block' }} />
-        </TinyBelowSearch>
-      </a>
-    </Link>
+    <Container>
+      <TinyBelowSearch>
+        <Link passHref href={recent_run_link}>
+          <a rel="noopener noreferrer" target="_blank">
+            <span>
+              <b>{props.recent_run.player_name}</b>
+            </span>
+            &nbsp;
+            <span>
+              found <b>{format_number.format(props.recent_run.item_count)}</b> items
+            </span>
+            &nbsp;
+            <span className="datetime">
+              (<TimeAgo date={props.recent_run.updated_at} />)
+            </span>
+            <Spacer.Horizontal size="1" style={{ display: 'inline-block' }} />
+          </a>
+        </Link>
+      </TinyBelowSearch>
+    </Container>
   );
 }
 
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
 const TinyBelowSearch = styled.div`
+  display: flex;
+  align-self: flex-end;
   font-size: var(--font-tiny);
-  text-align: right;
+  display: inline-block;
 `;
 
 const format_number = new Intl.NumberFormat();
