@@ -5,7 +5,11 @@ export function Morgue(url) {
 }
 
 function morgue_meta(url) {
-  const [, player, Y, M, D, h, m, s] = url.match(RE.morgue_filename);
+  const match = url.match(RE.morgue_filename);
+
+  if (!match) throw new Error('Morgue URL must match timestamp pattern');
+
+  const [, player, Y, M, D, h, m, s] = match;
   const date = new Date(`${Y}-${M}-${D}T${h}:${m}:${s}.000Z`);
   return { player, date };
 }
