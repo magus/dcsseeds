@@ -15,9 +15,7 @@ export function serverQuery(query, parse) {
     return data;
   }
 
-  return {
-    run,
-  };
+  return { run };
 }
 
 const graphQLClient = new GraphQLClient(GRAPHQL_ENDPOINT, {

@@ -1,7 +1,9 @@
 import { gql } from '@apollo/client';
 import { query } from 'graphqurl';
+
 import parseMorgue from 'src/utils/parseMorgue';
 import send from 'src/server/utils/zeitSend';
+import { serverQuery } from 'src/graphql/serverQuery';
 
 import { Morgue } from './Morgue';
 import { SERVER_CONFIG } from './ServerConfig';
@@ -42,36 +44,14 @@ module.exports = async function handler(req, res) {
       throw new Error('server not recognized');
     }
 
-    // get player
-    const variables = { name: morgue.player, server };
-
-    const player_result = await query({
-      query: GQL_PlayerByNameServer,
-      endpoint: GRAPHQL_ENDPOINT,
-      variables,
-      headers: {
-        'x-hasura-admin-secret': HASURA_ADMIN_SECRET,
-      },
-    });
-
-    const [player] = player_result.data.player_list;
-
-    if (!player?.id) {
-      throw new Error(`player not found [${JSON.stringify(variables)}]`);
-    }
-
     // clear all items from any previous scrapes
-    const clear_result = await query({
-      query: GQL_ClearMorgueItems,
-      endpoint: GRAPHQL_ENDPOINT,
-      variables: { morgue: morgue_url },
-      headers: {
-        'x-hasura-admin-secret': HASURA_ADMIN_SECRET,
-      },
-    });
+    const cleared_items = await GQL_ClearMorgueItems.run({ morgue_url });
 
-    const cleared_items = clear_result.data.item.affected_rows;
+    // get player or create if it does not exist
+    const name = morgue.player;
+    const player = await GQL_UpsertPlayer.run({ name, server });
 
+    // parse and add the morgue items
     const response = await addMorgue({ player, morgue });
 
     const timeMs = hrTimeUnit(process.hrtime(hrStartTime), 'ms');
@@ -94,20 +74,36 @@ function hrTimeUnit(hrTime, unit) {
   }
 }
 
-const GQL_PlayerByNameServer = gql`
-  query PlayerByNameServer($name: String!, $server: String!) {
-    player_list: dcsseeds_scrapePlayers(where: { name: { _eq: $name }, server: { _eq: $server } }) {
-      id
-      name
-      server
+const GQL_ClearMorgueItems = serverQuery(
+  gql`
+    mutation ClearMorgueItems($morgue_url: String!) {
+      item: delete_dcsseeds_scrapePlayers_item(where: { morgue: { _eq: $morgue_url } }) {
+        affected_rows
+      }
     }
-  }
-`;
+  `,
+  (data) => data.item.affected_rows,
+);
 
-const GQL_ClearMorgueItems = gql`
-  mutation ClearMorgueItems($morgue: String!) {
-    item: delete_dcsseeds_scrapePlayers_item(where: { morgue: { _eq: $morgue } }) {
-      affected_rows
+const GQL_UpsertPlayer = serverQuery(
+  gql`
+    mutation UpsertPlayer($name: String!, $server: String!) {
+      insert_dcsseeds_scrapePlayers(
+        objects: { name: $name, server: $server }
+        on_conflict: { constraint: dcsseeds_scrapePlayers_name_server_key, update_columns: name }
+      ) {
+        affected_rows
+        returning {
+          id
+          name
+          server
+          morgues
+        }
+      }
     }
-  }
-`;
+  `,
+  (data) => {
+    const [player] = data.insert_dcsseeds_scrapePlayers.returning;
+    return player;
+  },
+);
