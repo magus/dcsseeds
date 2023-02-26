@@ -520,17 +520,29 @@ function getAllMorgueNoteEvents(morgueNotes) {
       const [, item] = acquirement;
       addEvent('acquirement', morgueNote.loc, { item });
     } else if (found) {
+      const [, item] = found;
+
+      // check if this item was acquired (lookback at previous event)
+      const last_event = events[events.length - 1];
+      if (last_event.type === 'acquirement' && last_event.data.item === item) {
+        // skip this found item since it was acquired
+        // console.debug('skipping found acquired', { item });
+        return;
+      }
+
       // for some reason ring of the octopus king is both 'found' and 'identified'
       // the first 'found' event often has no details on the stats
       // so we ignore it to prevent logging a useless value
       const ignore_set = new Set();
       ignore_set.add('ring of the Octopus King');
 
-      const [, item] = found;
-      if (!ignore_set.has(item)) {
-        addEvent('found', morgueNote.loc, { item });
-        addEvent('item', morgueNote.loc, { item });
+      if (ignore_set.has(item)) {
+        // skip ignored items
+        return;
       }
+
+      addEvent('found', morgueNote.loc, { item });
+      addEvent('item', morgueNote.loc, { item });
     } else if (identPortal) {
       const [, item, loc] = identPortal;
       addEvent('ident-portal', loc, { item });
