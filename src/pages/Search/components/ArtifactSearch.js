@@ -6,9 +6,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 import * as Unrands from 'src/utils/Unrands';
 import * as Spacer from 'src/components/Spacer';
-import { useArtifactFilter } from '../hooks/useArtifactFilter';
+import * as Scroller from 'src/modules/Scroller';
 
 import { ArtifactSearchResult } from './ArtifactSearchResult';
+import { useArtifactFilter } from '../hooks/useArtifactFilter';
 import * as QueryParams from '../hooks/QueryParams';
 
 export function ArtifactSearch(props) {
@@ -64,20 +65,17 @@ function ArtifactResults(props) {
 }
 
 function FilterButton(props) {
-  function handle_click() {
+  async function handle_click() {
     // console.debug({ name, i });
     if (props.disabled) return;
+
+    await Scroller.top();
 
     if (props.active) {
       props.handleRemove();
     } else {
       props.handleAdd();
     }
-
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
   }
 
   if (props.hide) {
