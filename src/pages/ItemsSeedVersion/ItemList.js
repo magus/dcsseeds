@@ -82,9 +82,7 @@ function Item(props) {
       <ItemRight>
         <Name>
           <Link href={morgue_link}>
-            <a rel="noopener noreferrer" target="_blank">
-              {props.name}
-            </a>
+            <a rel="noopener noreferrer">{props.name}</a>
           </Link>
         </Name>
         <Spacer.Vertical size="1" />

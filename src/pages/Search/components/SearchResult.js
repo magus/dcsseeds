@@ -35,9 +35,9 @@ export function SearchResult({ search, result }) {
         </BottomLeft>
 
         <BottomRight>
-          <MorgueLink href={items_link} rel="noopener noreferrer" target="_blank">
+          <MorgueLink>
             <Link passHref href={items_link}>
-              <a rel="noopener noreferrer" target="_blank">
+              <a rel="noopener noreferrer">
                 <AlignRight>
                   <Small>
                     <TimeAgo date={result.timestamp} />

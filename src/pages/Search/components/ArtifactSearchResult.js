@@ -104,7 +104,7 @@ function Item(props) {
       <ItemRight>
         <Name>
           <Link passHref href={items_link}>
-            <a rel="noopener noreferrer" target="_blank">
+            <a rel="noopener noreferrer">
               <div className="image">
                 <Image alt={props.name} src={metadata.image_url} layout="fixed" width={24} height={24} />
               </div>

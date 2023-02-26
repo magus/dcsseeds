@@ -89,7 +89,7 @@ function MaybeItemsLink(props) {
 
   return (
     <Link passHref href={items_link}>
-      <a rel="noopener noreferrer" target="_blank">
+      <a rel="noopener noreferrer">
         {props.children}, found <b>{format_number.format(props.morgue_data.item_count)}</b> items
       </a>
     </Link>

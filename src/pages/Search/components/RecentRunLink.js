@@ -24,7 +24,7 @@ export function RecentRunLink(props) {
         </Link>
 
         <Link passHref href={recent_run_link}>
-          <a rel="noopener noreferrer" target="_blank">
+          <a rel="noopener noreferrer">
             <span>
               <b>{props.recent_run.player_name}</b>
             </span>
