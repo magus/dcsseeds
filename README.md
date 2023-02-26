@@ -5,21 +5,10 @@ track random seeds in dcss
 
 # TODO
 
-
-## self submit scrape player
-
-- setup a form to allow adding players
-- text input for player name
-- dropdown with server
-- setup an api endpoint that can fetch morgues and confirm player + server combo is valid
-- after verifying write entry into scrapePlayers table
-
 ## self submit scrape morgue
 
-- setup a form to allow inputting a morgue url
-- call api/scrapeMorgue with url=morgue
-- if error parsing morgue, show error
-- if player doesn't exist return error and direct to form to add player for scraping
+- if server doesn't exist log morgue url into errors for reviewing later
+- manually review errors and add players manually
 
 ## feedback
 
