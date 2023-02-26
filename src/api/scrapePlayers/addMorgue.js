@@ -127,13 +127,14 @@ export async function addMorgue(args) {
     });
 
     if (items.length) {
-      await GQL_ADD_ITEM.run({
+      const result = await GQL_ADD_ITEM.run({
         items,
         playerId,
         // remote (server) mark morgue as visited
         data: { [morgue.timestamp]: true },
       });
-      return response('done (items)');
+
+      return response('done (items)', result);
     }
 
     return skip('empty');
@@ -165,10 +166,19 @@ const GQL_ADD_ITEM = serverQuery(
           update_columns: name
         }
       ) {
-        affected_rows
+        returning {
+          seed
+          version
+        }
       }
     }
   `,
+  (data) => {
+    const item_count = data.items.returning.length;
+    const [first_item] = data.items.returning;
+    const { seed, version } = first_item;
+    return { item_count, seed, version };
+  },
 );
 
 const GQL_ADD_MORGUE = serverQuery(
