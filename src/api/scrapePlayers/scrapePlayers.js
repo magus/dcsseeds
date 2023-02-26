@@ -1,4 +1,4 @@
-const send = require('src/server/utils/zeitSend');
+const send = require('src/server/zeitSend');
 
 import { gql } from '@apollo/client';
 import { serverQuery } from 'src/graphql/serverQuery';

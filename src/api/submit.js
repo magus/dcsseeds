@@ -1,7 +1,7 @@
 const { query } = require('graphqurl');
 const parseMorgue = require('src/utils/parseMorgue');
 const updateSeedNotes = require('src/utils/updateSeedNotes');
-const send = require('src/server/utils/zeitSend');
+const send = require('src/server/zeitSend');
 
 const { HASURA_ADMIN_SECRET, GRAPHQL_ENDPOINT } = process.env;
 

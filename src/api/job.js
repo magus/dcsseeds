@@ -1,4 +1,4 @@
-import send from 'src/server/utils/zeitSend';
+import send from 'src/server/zeitSend';
 
 import { gql } from '@apollo/client';
 import { serverQuery } from 'src/graphql/serverQuery';

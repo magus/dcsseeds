@@ -1,23 +1,8 @@
 import * as React from 'react';
 import Head from 'next/head';
-import styled, { createGlobalStyle } from 'styled-components';
-import App from 'next/app';
-import sentryConfig from 'src/sentry/config';
+import { createGlobalStyle } from 'styled-components';
 
 const TITLE = process.env.APP_NAME || '';
-
-const { Sentry, captureException } = sentryConfig();
-
-if (process.browser) {
-  window.addEventListener('error', (event) => {
-    console.debug('[SentryConfig]', 'window.error', { event });
-    captureException(event.error, { errorSource: 'browser.window.error' });
-
-    // prevent bubbling to the Sentry.Integration.TryCatch
-    // handler which wraps all `addEventListener` functions
-    event.stopPropagation();
-  });
-}
 
 // Will be called once for every metric that has to be reported.
 // https://nextjs.org/blog/next-9-4#integrated-web-vitals-reporting
@@ -46,119 +31,24 @@ export function reportWebVitals(metric) {
   }
 }
 
-export default class MyApp extends App {
-  static getDerivedStateFromProps(props, state) {
-    // If there was an error generated within getInitialProps, and we haven't
-    // yet seen an error, we add it to this.state here
-    return {
-      hasError: props.hasError || state.hasError || false,
-      errorEventId: props.errorEventId || state.errorEventId || undefined,
-    };
-  }
+export default function App(props) {
+  return (
+    <>
+      <GlobalStyle />
 
-  static getDerivedStateFromError() {
-    // React Error Boundary here allows us to set state flagging the error (and
-    // later render a fallback UI).
-    return { hasError: true };
-  }
+      <Head>
+        <meta
+          key="meta-viewport"
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        />
+        <title>{TITLE}</title>
+      </Head>
 
-  constructor() {
-    super(...arguments);
-
-    this.state = {
-      hasError: false,
-      errorEventId: undefined,
-    };
-  }
-
-  componentDidCatch(error, errorInfo) {
-    console.debug('componentDidCatch');
-
-    const errorEventId = captureException(error, {
-      errorInfo,
-      errorSource: 'componentDidCatch',
-    });
-
-    // Store the event id at this point as we don't have access to it within
-    // `getDerivedStateFromError`.
-    // `SentryConfig.Sentry.showReportDialog` can be used to manually send errors
-    // e.g. SentryConfig.Sentry.showReportDialog({ eventId: this.state.errorEventId });
-    this.setState({ errorEventId });
-  }
-
-  componentDidMount() {
-    window.addEventListener('error', (event) => {
-      captureException(event.error, { errorSource: 'browser._app.window.error' });
-    });
-  }
-
-  render() {
-    const { Component, pageProps } = this.props;
-
-    return (
-      <>
-        <GlobalStyle />
-
-        <Head>
-          <meta
-            key="meta-viewport"
-            name="viewport"
-            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
-          />
-          <title>{TITLE}</title>
-        </Head>
-
-        {this.state.hasError ? (
-          <Container>
-            <div>
-              <H1>Sorry, something went wrong.</H1>
-              <Options>
-                <Choice
-                  onClick={() => {
-                    Sentry.showReportDialog({ eventId: this.state.errorEventId });
-                  }}
-                >
-                  Report
-                </Choice>
-                <Choice
-                  onClick={() => {
-                    window.location.reload(true);
-                  }}
-                >
-                  Reload
-                </Choice>
-              </Options>
-            </div>
-          </Container>
-        ) : (
-          <Component {...pageProps} />
-        )}
-      </>
-    );
-  }
+      <props.Component {...props.pageProps} />
+    </>
+  );
 }
-
-// Only uncomment this method if you have blocking data requirements for
-// every single page in your application. This disables the ability to
-// perform automatic static optimization, causing every page in your app to
-// be server-side rendered.
-//
-// MyApp.getInitialProps = async (appContext) => {
-//   try {
-//     // calls page's `getInitialProps` and fills `appProps.pageProps`
-//     const appProps = await App.getInitialProps(appContext);
-
-//     return { ...appProps };
-//   } catch (error) {
-//     // Capture errors that happen during a page's getInitialProps.
-//     // This will work on both client and server sides.
-//     const errorEventId = captureException(error, ctx);
-//     return {
-//       hasError: true,
-//       errorEventId,
-//     };
-//   }
-// };
 
 const GlobalStyle = createGlobalStyle`
   :root {
@@ -297,33 +187,4 @@ const GlobalStyle = createGlobalStyle`
   #__next {
     height: 100%;
   }
-`;
-
-const Container = styled.div`
-  font-family: -apple-system, BlinkMacSystemFont, Roboto, 'Segoe UI', 'Fira Sans', Avenir, 'Helvetica Neue',
-    'Lucida Grande', sans-serif;
-  height: 100vh;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;
-
-const H1 = styled.h1`
-  display: inline-block;
-  margin: 0;
-  padding: 10px 0;
-  font-size: 24px;
-  font-weight: 500;
-  vertical-align: top;
-`;
-
-const Options = styled.div`
-  display: flex;
-  justify-content: center;
-`;
-
-const Choice = styled.button`
-  margin: 0 8px;
 `;

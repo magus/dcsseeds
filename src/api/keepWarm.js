@@ -1,5 +1,5 @@
 const { GraphQLClient } = require('graphql-request');
-const send = require('src/server/utils/zeitSend');
+const send = require('src/server/zeitSend');
 const GraphqlSeed = require('src/graphql/seed');
 
 const { HASURA_ADMIN_SECRET, GRAPHQL_ENDPOINT } = process.env;

@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client';
 
 import parseMorgue from 'src/utils/parseMorgue';
-import send from 'src/server/utils/zeitSend';
+import send from 'src/server/zeitSend';
 import { serverQuery } from 'src/graphql/serverQuery';
 
 import { Morgue } from './Morgue';

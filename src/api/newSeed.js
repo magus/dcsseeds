@@ -1,5 +1,5 @@
 const { query } = require('graphqurl');
-const send = require('src/server/utils/zeitSend');
+const send = require('src/server/zeitSend');
 const GraphqlSeed = require('src/graphql/seed');
 
 const Species = require('src/utils/Species');
