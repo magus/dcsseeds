@@ -16,7 +16,7 @@
     "deploy:purge": "vercel rm dcsseeds --safe"
   },
   "engines": {
-    "node": "16.x"
+    "node": "18.x"
   },
   "dependencies": {
     "@apollo/client": "^3.7.7",
@@ -35,7 +35,7 @@
     "isomorphic-unfetch": "^3.0.0",
     "lodash": "^4.17.20",
     "micro": "^9.3.4",
-    "next": "^11.0.0",
+    "next": "^12.3.4",
     "node-fetch": "^2.6.0",
     "prettier": "^2.1.0",
     "react": "^17.0.2",
