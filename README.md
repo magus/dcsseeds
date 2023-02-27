@@ -7,6 +7,24 @@ track random seeds in dcss
 
 ## item search
 
+- instead of parsing `Identified 3 scrolls of acquirement`
+- we MUST instead use `Acquired ...` this is because you might identify them anywhere
+- which leads to weirdness like this seed, with 3 and 4 acquirements on D1 and D3
+- https://dcss.vercel.app/items/0.29.1/9529714651559989746?highlight=3+scrolls+of+acquirement
+- D3 4 acquirements https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20230218-042401.txt
+- D1 3 acquirements https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20230218-001037.txt
+- instead, count each `Acquired ...` event and determine total count
+- then save each as a `scroll of Acquirement` on that branch + level
+- if there are multiple on a level, count it as multiple
+- example https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20230218-001037.txt
+- should show 3 scrolls on D1 and 1 scroll on D3
+- each run may reveal them in different levels so we must only ever store a single runs acquirements
+- use the run with the greatest total acquirements as the source of truth
+- that means we need to compare total acquirements versus current acquirements for seedVersion (query)
+- if higher, we must send a delete mutation followed by an insert mutation with the new acquirement events
+- MUST do this before writing items since writing items is atomic and also marks morgue as visited/read
+
+
 - branch and level filters after searching for items
 - using unique values from search result, populate a list of filters client-side
 
@@ -16,6 +34,8 @@ track random seeds in dcss
   e.g.  https://dcss.vercel.app/?q=%2B13+crystal
         seed  3467139861098030199
         v     0.29.1
+- need to track only items once per seed version, update unique keys to exclude morgue, timestamp etc.
+- unique key should be (name, branch, level, seed, version)
 
 - noting god altars (e.g. luongo/jivya sewers/ice caves or rare temple temple layouts)
 - imagine searching for something like `altar:jivya` and being able to filter by branch/level like above
