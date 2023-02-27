@@ -24,11 +24,11 @@ module.exports = async function handler(req, res) {
 
   const morgue_url = req.query.morgue;
 
-  if (!morgue_url) {
-    throw new Error('Must provide [morgue]');
-  }
-
   try {
+    if (!morgue_url) {
+      throw new Error('Must provide [morgue]');
+    }
+
     const morgue = new Morgue(morgue_url);
 
     // determine server from morgue_url
