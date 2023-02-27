@@ -10,6 +10,7 @@ if (!process.env.HASURA_ADMIN_SECRET) throw new Error('HASURA_ADMIN_SECRET is re
 // http://localhost:3000/api/cache_unrand_query?window_size=25
 
 export default async function handler(req, res) {
+  const stopwatch = new Stopwatch();
   const window_size = Number(req.query.window_size);
 
   try {
@@ -38,8 +39,9 @@ export default async function handler(req, res) {
     }
 
     const cache_result = await GQL_CacheUnrandResultList.run({ cache_list });
-
-    return send(res, 200, cache_result, { prettyPrint: true });
+    const time_ms = stopwatch.stop();
+    const data = { time_ms, cache_result };
+    return send(res, 200, data, { prettyPrint: true });
   } catch (err) {
     return send(res, 500, err, { prettyPrint: true });
   }
@@ -96,4 +98,24 @@ function SeedVersionFilter(unrand) {
         ...Result
       }
     }`;
+}
+
+function Stopwatch() {
+  const start_time = process.hrtime();
+
+  function stop(unit = 'ms') {
+    const hrtime = process.hrtime(start_time);
+
+    switch (unit) {
+      case 'ms':
+        return hrtime[0] * 1e3 + hrtime[1] / 1e6;
+      case 'micro':
+        return hrtime[0] * 1e6 + hrtime[1] / 1e3;
+      case 'nano':
+      default:
+        return hrtime[0] * 1e9 + hrtime[1];
+    }
+  }
+
+  return { stop };
 }
