@@ -3,6 +3,7 @@ import { gql } from '@apollo/client';
 import { serverQuery } from 'src/graphql/serverQuery';
 import send from 'src/server/zeitSend';
 import * as Unrands from 'src/utils/Unrands';
+import { Stopwatch } from 'src/server/Stopwatch';
 
 if (!process.env.HASURA_ADMIN_SECRET) throw new Error('HASURA_ADMIN_SECRET is required!');
 
@@ -20,8 +21,9 @@ export default async function handler(req, res) {
 
     // perform queries for set of oldest (stale) cache entries
     const stale_unrand_list = await GQL_CacheUnrandOldest.run({ window_size });
+    stopwatch.record('fetch stale cache rows');
 
-    const unrand_query = serverQuery(gql`
+    const GQL_UnrandQueryResults = serverQuery(gql`
       query UnrandQueryRange {
         ${stale_unrand_list.map((unrand, i) => SeedVersionFilter(unrand))}
       }
@@ -29,7 +31,7 @@ export default async function handler(req, res) {
       ${ResultFragment}
     `);
 
-    const query_result = await unrand_query.run();
+    const query_result = await stopwatch.time(GQL_UnrandQueryResults.run()).record('calculate unrand results');
 
     const cache_list = [];
 
@@ -38,9 +40,12 @@ export default async function handler(req, res) {
       cache_list.push({ unrand_key, result_list });
     }
 
-    const cache_result = await GQL_CacheUnrandResultList.run({ cache_list });
-    const time_ms = stopwatch.stop();
-    const data = { time_ms, cache_result };
+    const cache_result = await stopwatch
+      .time(GQL_CacheUnrandResultList.run({ cache_list }))
+      .record('write results to cache');
+
+    const times = stopwatch.list();
+    const data = { times, cache_result };
     return send(res, 200, data, { prettyPrint: true });
   } catch (err) {
     return send(res, 500, err, { prettyPrint: true });
@@ -98,24 +103,4 @@ function SeedVersionFilter(unrand) {
         ...Result
       }
     }`;
-}
-
-function Stopwatch() {
-  const start_time = process.hrtime();
-
-  function stop(unit = 'ms') {
-    const hrtime = process.hrtime(start_time);
-
-    switch (unit) {
-      case 'ms':
-        return hrtime[0] * 1e3 + hrtime[1] / 1e6;
-      case 'micro':
-        return hrtime[0] * 1e6 + hrtime[1] / 1e3;
-      case 'nano':
-      default:
-        return hrtime[0] * 1e9 + hrtime[1];
-    }
-  }
-
-  return { stop };
 }
