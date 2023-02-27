@@ -43,82 +43,76 @@ function SeedVersionFilter(name, i) {
     }`;
 }
 
-// // debug query easily by writing it to disk
-// require('fs').writeFileSync(
-//   'query.graphql',
-//   gql`
-// query TopLevelArtifacts {
-//   ${Unrands.List.map(SeedVersionFilter)}
-// }
-
-// ${ResultFragment}
-// `.loc.source.body,
-// );
-
-const GQL_SearchStaticProps = serverQuery(
-  gql`
-    query SearchStaticProps {
-      total_items: dcsseeds_scrapePlayers_item_aggregate {
-        aggregate {
-          count(columns: id)
-        }
+const GQL_SEARCH_STATIC_PROPS = gql`
+  query SearchStaticProps {
+    total_items: dcsseeds_scrapePlayers_item_aggregate {
+      aggregate {
+        count(columns: id)
       }
+    }
 
-      seed_version: dcsseeds_scrapePlayers_seedVersion_aggregate(distinct_on: version) {
-        nodes {
-          version
-        }
-      }
-
-      recent_run_list: dcsseeds_scrapePlayers_seedVersion(limit: 1, order_by: { updated_at: desc }) {
-        seed
+    seed_version: dcsseeds_scrapePlayers_seedVersion_aggregate(distinct_on: version) {
+      nodes {
         version
-        updated_at
-        items_aggregate {
-          aggregate {
-            count
-          }
-        }
-        items(order_by: { timestamp: desc }, limit: 1) {
-          player {
-            name
-          }
+      }
+    }
+
+    recent_run_list: dcsseeds_scrapePlayers_seedVersion(limit: 1, order_by: { updated_at: desc }) {
+      seed
+      version
+      updated_at
+      items_aggregate {
+        aggregate {
+          count
         }
       }
-
-      ${Unrands.List.map(SeedVersionFilter)}
+      items(order_by: { timestamp: desc }, limit: 1) {
+        player {
+          name
+        }
+      }
     }
 
-    ${ResultFragment}
-  `,
-  (data) => {
-    const total_item_count = data.total_items.aggregate.count;
-    const version_list = data.seed_version.nodes.map((node) => node.version);
+    ${Unrands.List.map(SeedVersionFilter)}
+  }
 
-    // last updated seed version
-    const [{ updated_at, seed, version, items_aggregate, items }] = data.recent_run_list;
-    const [recent_item] = items;
-    const recent_run = {
-      seed,
-      version,
-      updated_at,
-      player_name: recent_item.player.name,
-      item_count: items_aggregate.aggregate.count,
-    };
+  ${ResultFragment}
+`;
 
-    // unroll top level artifact search into array of results
-    const artifact_list = [];
+// debug_gql(GQL_SEARCH_STATIC_PROPS);
 
-    for (let i = 0; i < Unrands.List.length; i++) {
-      const result = data[result_key(i)];
-      artifact_list.push(result);
-    }
+const GQL_SearchStaticProps = serverQuery(GQL_SEARCH_STATIC_PROPS, (data) => {
+  const total_item_count = data.total_items.aggregate.count;
+  const version_list = data.seed_version.nodes.map((node) => node.version);
 
-    return {
-      total_item_count,
-      version_list,
-      recent_run,
-      artifact_list,
-    };
-  },
-);
+  // last updated seed version
+  const [{ updated_at, seed, version, items_aggregate, items }] = data.recent_run_list;
+  const [recent_item] = items;
+  const recent_run = {
+    seed,
+    version,
+    updated_at,
+    player_name: recent_item.player.name,
+    item_count: items_aggregate.aggregate.count,
+  };
+
+  // unroll top level artifact search into array of results
+  const artifact_list = [];
+
+  for (let i = 0; i < Unrands.List.length; i++) {
+    const result = data[result_key(i)];
+    artifact_list.push(result);
+  }
+
+  return {
+    total_item_count,
+    version_list,
+    recent_run,
+    artifact_list,
+  };
+});
+
+// debug query easily by writing it to disk
+function debug_gql(gql_query) {
+  require('fs').writeFileSync('query.graphql', gql_query.loc.source.body);
+}
