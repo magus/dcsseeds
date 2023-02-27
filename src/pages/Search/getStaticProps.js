@@ -15,34 +15,6 @@ export async function getStaticProps(context) {
   };
 }
 
-const safe_name = (value) => value.replace(/"/g, '\\"');
-const result_key = (i) => `result_${i}`;
-
-const ResultFragment = gql`
-  fragment Result on dcsseeds_scrapePlayers_item {
-    name
-    branchName
-    level
-    morgue
-  }
-`;
-
-function SeedVersionFilter(name, i) {
-  const name_ilike = `%${safe_name(name)}%`;
-  const key = result_key(i);
-
-  return `
-    ${key}: dcsseeds_scrapePlayers_seedVersion(
-      where: { items: { name: { _ilike: "${name_ilike}" } } }
-    ) {
-      seed
-      version
-      items(where: { name: { _ilike: "${name_ilike}" } }, limit: 1, order_by: { branch: { order: asc } }) {
-        ...Result
-      }
-    }`;
-}
-
 const GQL_SEARCH_STATIC_PROPS = gql`
   query SearchStaticProps {
     total_items: dcsseeds_scrapePlayers_item_aggregate {
@@ -73,10 +45,11 @@ const GQL_SEARCH_STATIC_PROPS = gql`
       }
     }
 
-    ${Unrands.List.map(SeedVersionFilter)}
+    unrand_cache: dcsseeds_scrapePlayers_unrand_cache {
+      result_list
+      unrand_key
+    }
   }
-
-  ${ResultFragment}
 `;
 
 // debug_gql(GQL_SEARCH_STATIC_PROPS);
@@ -99,9 +72,9 @@ const GQL_SearchStaticProps = serverQuery(GQL_SEARCH_STATIC_PROPS, (data) => {
   // unroll top level artifact search into array of results
   const artifact_list = [];
 
-  for (let i = 0; i < Unrands.List.length; i++) {
-    const result = data[result_key(i)];
-    artifact_list.push(result);
+  for (const cache_entry of data.unrand_cache) {
+    const unrand = Unrands.ById[cache_entry.unrand_key];
+    artifact_list[unrand.i] = cache_entry.result_list;
   }
 
   return {
