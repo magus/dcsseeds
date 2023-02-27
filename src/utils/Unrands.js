@@ -220,8 +220,10 @@ export const Metadata = [
 ];
 
 export const NameIndex = {};
+export const ById = {};
 
-for (let i = 0; i < List.length; i++) {
-  const name = List[i];
-  NameIndex[name] = i;
+for (let i = 0; i < Metadata.length; i++) {
+  const unrand = Metadata[i];
+  NameIndex[unrand.name] = i;
+  ById[unrand.id] = { ...unrand, i };
 }
