@@ -1,8 +1,6 @@
 const send = require('../../src/server/zeitSend');
 
-const { HASURA_ADMIN_SECRET } = process.env;
-
-if (!HASURA_ADMIN_SECRET) throw new Error('HASURA_ADMIN_SECRET is required!');
+if (!process.env.HASURA_ADMIN_SECRET) throw new Error('HASURA_ADMIN_SECRET is required!');
 
 // runs sql to cleanup event log rows from the database
 // periodically we reach the max rows (10,000) supported on heroku
@@ -13,7 +11,7 @@ if (!HASURA_ADMIN_SECRET) throw new Error('HASURA_ADMIN_SECRET is required!');
 module.exports = async (req, res) => {
   try {
     // https://hasura.io/docs/latest/graphql/core/api-reference/schema-metadata-api/run-sql/
-    const resp = await fetch(DB_QUERY_ENDPOINT, {
+    const resp = await fetch(process.env.SQL_ENDPOINT, {
       method: 'POST',
       body: JSON.stringify({
         type: 'run_sql',
@@ -24,7 +22,7 @@ module.exports = async (req, res) => {
       headers: {
         'Content-Type': 'application/json; charset=utf8',
         'X-Hasura-Role': 'admin',
-        'x-hasura-admin-secret': HASURA_ADMIN_SECRET,
+        'x-hasura-admin-secret': process.env.HASURA_ADMIN_SECRET,
       },
     });
 
@@ -49,8 +47,6 @@ WITH deleted AS (
   RETURNING status
 ) SELECT count(*) FROM deleted;
 `;
-
-const DB_QUERY_ENDPOINT = 'https://dcsseeds.herokuapp.com/v1/query';
 
 // -- delete rows from table
 // DELETE FROM hdb_catalog.hdb_cron_event_invocation_logs;
