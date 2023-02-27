@@ -5,6 +5,23 @@ track random seeds in dcss
 
 # TODO
 
+## item search
+
+- branch and level filters after searching for items
+- using unique values from search result, populate a list of filters client-side
+
+- include gold price with items that were bought
+
+- if you splat one seed over & over trying to get a certain item off the ground (cough cough couldn't be me), there will be multiple entries for that item
+  e.g.  https://dcss.vercel.app/?q=%2B13+crystal
+        seed  3467139861098030199
+        v     0.29.1
+
+- noting god altars (e.g. luongo/jivya sewers/ice caves or rare temple temple layouts)
+- imagine searching for something like `altar:jivya` and being able to filter by branch/level like above
+
+source https://www.reddit.com/r/dcss/comments/11c0r2c/dcss_search_find_seeds_with_artifact_combinations/ja6h437/
+
 ## feedback
 
 - add feedback form page that writes to database
