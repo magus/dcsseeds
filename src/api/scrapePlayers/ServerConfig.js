@@ -29,6 +29,7 @@ export const SERVER_CONFIG = {
   xtahua: new ServerConfig('https://crawl.xtahua.com/crawl/morgue'),
   project357: new ServerConfig('https://crawl.project357.org/morgue'),
   berotato: new ServerConfig('https://cbro.berotato.org/morgue'),
+  underhound: new ServerConfig('https://underhound.eu/crawl/morgue'),
 
   // problematic servers ...
 
