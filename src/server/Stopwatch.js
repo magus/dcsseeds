@@ -20,8 +20,14 @@
 export function Stopwatch() {
   let record_list = [];
   let start_time = process.hrtime();
+  let init_time = process.hrtime();
 
-  return { start, list, reset, record, time };
+  return { elapsed_ms, start, list, reset, record, time };
+
+  function elapsed_ms() {
+    const [ms] = time_record(init_time, 'ms');
+    return ms;
+  }
 
   function start() {
     start_time = process.hrtime();
@@ -33,6 +39,8 @@ export function Stopwatch() {
 
   function reset() {
     record_list = [];
+    init_time = process.hrtime();
+    start();
   }
 
   function record(label, unit) {
