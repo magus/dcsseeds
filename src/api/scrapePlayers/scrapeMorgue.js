@@ -3,6 +3,7 @@ import { gql } from '@apollo/client';
 import { parseMorgue } from 'src/utils/parseMorgue';
 import send from 'src/server/zeitSend';
 import { serverQuery } from 'src/graphql/serverQuery';
+import { Stopwatch } from 'src/server/Stopwatch';
 
 import { Morgue } from 'src/server/Morgue';
 import { SERVER_CONFIG } from './ServerConfig';
@@ -20,7 +21,7 @@ if (!HASURA_ADMIN_SECRET) throw new Error('HASURA_ADMIN_SECRET is required!');
 // error            http://crawl.akrasiac.org/rawdata/magusnn/
 
 module.exports = async function handler(req, res) {
-  const hrStartTime = process.hrtime();
+  const stopwatch = new Stopwatch();
 
   const morgue_url = req.query.morgue;
 
@@ -40,29 +41,34 @@ module.exports = async function handler(req, res) {
 
     // clear all items from any previous scrapes
     const cleared_items = await GQL_ClearMorgueItems.run({ morgue_url });
+    stopwatch.record('clear previous items');
 
     // get player or create if it does not exist
     const name = morgue.player;
     const player = await GQL_UpsertPlayer.run({ name, server });
+    stopwatch.record('upsert player');
 
     // parse and add the morgue items
     const response = await addMorgue({ player, morgue });
+    stopwatch.record('add morgue items');
 
     // ensure error response treated as error
     if (response.status === 'error') {
-      throw new Error(response.extra.message);
+      throw response.extra;
     }
 
-    const timeMs = hrTimeUnit(process.hrtime(hrStartTime), 'ms');
-    const data = { timeMs, morgue, cleared_items, player, response };
+    const times = stopwatch.list();
+    const data = { times, morgue, cleared_items, player, response };
     return send(res, 200, data, { prettyPrint: true });
   } catch (err) {
     // immediate response
     send(res, 500, err, { prettyPrint: true });
 
     // track this error remotely
-    const error_message = err.message || '__unknown__';
-    GQL_TrackError.run({ error_message, morgue_url });
+    if (!__DEV__) {
+      const error_message = err.message || '__unknown__';
+      GQL_TrackError.run({ error_message, morgue_url });
+    }
   }
 };
 
@@ -110,15 +116,3 @@ const GQL_TrackError = serverQuery(gql`
     }
   }
 `);
-
-function hrTimeUnit(hrTime, unit) {
-  switch (unit) {
-    case 'ms':
-      return hrTime[0] * 1e3 + hrTime[1] / 1e6;
-    case 'micro':
-      return hrTime[0] * 1e6 + hrTime[1] / 1e3;
-    case 'nano':
-    default:
-      return hrTime[0] * 1e9 + hrTime[1];
-  }
-}
