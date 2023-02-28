@@ -3,7 +3,15 @@
  * https://jestjs.io/docs/configuration
  */
 
-module.exports = {
+const next_jest = require('next/jest');
+
+const create_jest_config = next_jest({
+  dir: './',
+});
+
+const config = {
+  moduleDirectories: ['node_modules', '<rootDir>/'],
+
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
@@ -31,7 +39,7 @@ module.exports = {
   // ],
 
   // Indicates which provider should be used to instrument code for coverage
-  coverageProvider: "v8",
+  coverageProvider: 'v8',
 
   // A list of reporter names that Jest uses when writing coverage reports
   // coverageReporters: [
@@ -193,3 +201,5 @@ module.exports = {
   // Whether to use watchman for file crawling
   // watchman: true,
 };
+
+module.exports = create_jest_config(config);
