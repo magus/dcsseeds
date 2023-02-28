@@ -1,4 +1,4 @@
-const parseMorgue = require('src/utils/parseMorgue');
+const { parseMorgue } = require('src/utils/parseMorgue');
 const send = require('src/server/zeitSend');
 
 const { HASURA_ADMIN_SECRET } = process.env;

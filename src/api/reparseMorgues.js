@@ -1,5 +1,5 @@
 const { query } = require('graphqurl');
-const parseMorgue = require('src/utils/parseMorgue');
+const { parseMorgue } = require('src/utils/parseMorgue');
 const updateSeedNotes = require('src/utils/updateSeedNotes');
 const send = require('src/server/zeitSend');
 

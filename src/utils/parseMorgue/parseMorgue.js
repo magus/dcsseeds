@@ -1,17 +1,17 @@
-const keyMirror = require('src/utils/keyMirror');
-const { toNumber } = require('src/utils/toNumber');
-const runRegex = require('src/utils/runRegex');
-const Backgrounds = require('src/utils/Backgrounds');
-const Species = require('src/utils/Species');
-const Uniques = require('src/utils/Uniques');
-const Gods = require('src/utils/Gods');
-const Branch = require('src/utils/Branch');
+import { uniqBy, set } from 'lodash';
 
-const { uniqBy, set } = require('lodash');
+import keyMirror from 'src/utils/keyMirror';
+import { toNumber } from 'src/utils/toNumber';
+import runRegex from 'src/utils/runRegex';
+import Backgrounds from 'src/utils/Backgrounds';
+import Species from 'src/utils/Species';
+import Uniques from 'src/utils/Uniques';
+import Gods from 'src/utils/Gods';
+import Branch from 'src/utils/Branch';
 
-module.exports = async function parseMorgue(morgue) {
-  const morgueResponse = await fetch(morgue);
-  const morgueText = await morgueResponse.text();
+export async function parseMorgue(morgue) {
+  const response = await fetch(morgue);
+  const morgueText = await response.text();
 
   // https://regexr.com/5ed8a
   const [, name] = await runRegex('name', morgue, /\/([^\/]+)\/+([^\/]+)\.txt(?:\.gz)?$/);
@@ -23,7 +23,7 @@ module.exports = async function parseMorgue(morgue) {
     morgue,
     ...morgueParsed,
   };
-};
+}
 
 async function parseMorgueText({ name, morgue, morgueText }) {
   const args = { name, morgue, morgueText };

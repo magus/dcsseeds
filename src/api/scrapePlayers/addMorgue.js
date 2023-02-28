@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client';
 import { serverQuery } from 'src/graphql/serverQuery';
-import parseMorgue from 'src/utils/parseMorgue';
+import { parseMorgue } from 'src/utils/parseMorgue';
 import runRegex from 'src/utils/runRegex';
 import { toNumber } from 'src/utils/toNumber';
 
