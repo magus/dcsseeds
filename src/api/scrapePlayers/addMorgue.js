@@ -4,7 +4,7 @@ import { parseMorgue } from 'src/utils/parseMorgue';
 import runRegex from 'src/utils/runRegex';
 import { toNumber } from 'src/utils/toNumber';
 
-import { MINIMUM_ALLOWED_VERSION } from './Constants';
+import { MINIMUM_ALLOWED_VERSION } from './constants';
 
 export async function addMorgue(args) {
   const { player, morgue } = args;
