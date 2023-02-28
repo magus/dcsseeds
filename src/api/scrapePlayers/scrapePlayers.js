@@ -68,14 +68,17 @@ async function parsePlayer(player) {
   const serverConfig = SERVER_CONFIG[player.server];
 
   if (!serverConfig) {
-    throw new Error(`unrecognized server [${player.server}]`);
+    // throw new Error(`unrecognized server [${player.server}]`);
+    console.error('[scrapePlayer]', 'unrecognized server', { player });
+
+    return [];
   }
 
   const rawdataUrl = serverConfig.rawdataUrl(name);
   resp = await fetch(rawdataUrl);
 
   if (resp.status === 404) {
-    console.debug('[scrapePlayer]', '404', rawdataUrl);
+    console.error('[scrapePlayer]', '404', rawdataUrl);
 
     // Should we remove the player or something?
     // Maybe, it's fine for now, it will find 0 morgues anyway
