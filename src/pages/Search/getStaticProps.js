@@ -74,6 +74,12 @@ const GQL_SearchStaticProps = serverQuery(GQL_SEARCH_STATIC_PROPS, (data) => {
 
   for (const cache_entry of data.unrand_cache) {
     const unrand = Unrands.ById[cache_entry.unrand_key];
+
+    if (!unrand) {
+      console.error('Cached unrand missing from local Unrands list', { cache_entry });
+      continue;
+    }
+
     artifact_list[unrand.i] = cache_entry.result_list;
   }
 
