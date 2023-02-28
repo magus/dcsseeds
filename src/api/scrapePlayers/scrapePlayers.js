@@ -2,6 +2,7 @@ import send from 'src/server/zeitSend';
 
 import { gql } from '@apollo/client';
 import { serverQuery } from 'src/graphql/serverQuery';
+import { Stopwatch } from 'src/server/Stopwatch';
 
 import { addMorgue } from './addMorgue';
 import { fetch_morgue_list } from './fetch_morgue_list';
@@ -116,12 +117,8 @@ async function loopPlayerMorgues({ players, playerMorgues }) {
   return await Promise.all(results);
 }
 
-function getElapsedTime(start) {
-  return Date.now() - start;
-}
-
 module.exports = async function scrapePlayers(req, res) {
-  const reqStart = Date.now();
+  const stopwatch = new Stopwatch();
 
   try {
     // console.debug('[scrapePlayers]', 'start');
@@ -134,13 +131,19 @@ module.exports = async function scrapePlayers(req, res) {
     }
 
     const playerMorgues = await Promise.all(promise_player_morgue_list);
+    stopwatch.record(`scrape player morgue list`);
 
     const loopResults = [];
     let iteration = 0;
-    while (getElapsedTime(reqStart) < 8000 && iteration < MAX_ITERATIONS_PER_REQUEST) {
+    while (stopwatch.elapsed_ms() < 8000 && iteration < MAX_ITERATIONS_PER_REQUEST) {
       iteration++;
+
       const results = await loopPlayerMorgues({ players, playerMorgues });
+
+      stopwatch.record(`iteration#${iteration}`);
+
       loopResults.push({ iteration, results });
+
       if (results.every((r) => r.length === 0)) {
         // every result is empty, no more runs to parse
         // exit early
@@ -148,12 +151,12 @@ module.exports = async function scrapePlayers(req, res) {
       }
     }
 
-    const time = getElapsedTime(reqStart);
-
     // console.debug('[scrapePlayers]', 'end');
-    return send(res, 200, { time, iteration, loopResults }, { prettyPrint: true });
+    const total_time = stopwatch.elapsed_ms();
+    const times = stopwatch.list();
+    const data = { times, total_time, iteration, loopResults };
+    return send(res, 200, data, { prettyPrint: true });
   } catch (err) {
-    const time = getElapsedTime(reqStart);
     return send(res, 500, err, { prettyPrint: true });
   }
 };
