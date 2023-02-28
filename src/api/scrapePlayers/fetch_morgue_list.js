@@ -1,11 +1,12 @@
 import { Morgue } from 'src/server/Morgue';
 import { SERVER_CONFIG } from './ServerConfig';
 
-export async function fetch_morgue_list(args) {
+import { VERSION_LIST, MINIMUM_ALLOWED_DATE } from './constants';
+
+export async function fetch_morgue_list(player) {
   const morgue_list = [];
   const skip_morgue_set = new Set();
 
-  const { player, VERSION_LIST, MINIMUM_ALLOWED_DATE } = args;
   const server_config = SERVER_CONFIG[player.server];
 
   if (!server_config) {
@@ -44,7 +45,7 @@ export async function fetch_morgue_list(args) {
     // this will return null when we cycle at end of matches
     while (next_match()) {
       const [, filename, timeString] = match;
-      const url = `${morgue_list_url}${filename}`;
+      const url = `${morgue_list_url}/${filename}`;
 
       const morgue = new Morgue(url);
 

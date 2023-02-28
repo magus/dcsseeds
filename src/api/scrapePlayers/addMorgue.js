@@ -4,8 +4,10 @@ import { parseMorgue } from 'src/utils/parseMorgue';
 import runRegex from 'src/utils/runRegex';
 import { toNumber } from 'src/utils/toNumber';
 
+import { MINIMUM_ALLOWED_VERSION } from './Constants';
+
 export async function addMorgue(args) {
-  const { player, morgue, MINIMUM_ALLOWED_VERSION } = args;
+  const { player, morgue } = args;
 
   const playerId = player.id;
   const { url, timestamp } = morgue;

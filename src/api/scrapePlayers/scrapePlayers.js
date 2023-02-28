@@ -5,6 +5,7 @@ import { serverQuery } from 'src/graphql/serverQuery';
 
 import { addMorgue } from './addMorgue';
 import { fetch_morgue_list } from './fetch_morgue_list';
+import { MAX_MORGUES_PER_PLAYER, MAX_ITERATIONS_PER_REQUEST } from './constants';
 
 // DCSS score overview with player morgues
 // http://crawl.akrasiac.org/scoring/overview.html
@@ -47,23 +48,8 @@ import { fetch_morgue_list } from './fetch_morgue_list';
 //   }
 // `;
 
-// Adjust this if you want to parse more morgues per request
-const MAX_ITERATIONS_PER_REQUEST = 10;
-const MAX_MORGUES_PER_PLAYER = 1;
-
-const VERSION_LIST = ['0.27', '0.28', '0.29'];
-
-// minimum version to allow parsing for
-// 0.27.0 would allow everything above e.g. 0.27.1, 0.28.0, etc.
-const MINIMUM_ALLOWED_VERSION = '0.27.1';
-
-// date when minimum allowed version was released
-// this can be used to skip morgues before min version
-// e.g. https://github.com/crawl/crawl/tree/0.27.1
-const MINIMUM_ALLOWED_DATE = new Date('2021-08-18');
-
 async function scrape_morgue_list(player) {
-  const { morgue_list, skip_morgue_set } = await fetch_morgue_list({ player, VERSION_LIST, MINIMUM_ALLOWED_DATE });
+  const { morgue_list, skip_morgue_set } = await fetch_morgue_list(player);
 
   // console.debug();
   // console.debug(player.name, 'morgue_list', morgue_list.length, 'skip_morgue_set', skip_morgue_set.size);
@@ -97,7 +83,7 @@ async function parsePlayerMorgues({ player, morgues }) {
     const morgue = morgues[i];
     const newMorgue = !player.morgues[morgue.timestamp];
     if (newMorgue) {
-      asyncAddMorgues.push(addMorgue({ player, morgue, MINIMUM_ALLOWED_VERSION }));
+      asyncAddMorgues.push(addMorgue({ player, morgue }));
     }
   }
 
