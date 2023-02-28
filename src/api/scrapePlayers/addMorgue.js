@@ -4,12 +4,8 @@ import { parseMorgue } from 'src/utils/parseMorgue';
 import runRegex from 'src/utils/runRegex';
 import { toNumber } from 'src/utils/toNumber';
 
-// minimum version to allow parsing for
-// 0.27.0 would allow everything above e.g. 0.27.1, 0.28.0, etc.
-const MINIMUM_ALLOWED_VERSION = '0.27.1';
-
 export async function addMorgue(args) {
-  const { player, morgue } = args;
+  const { player, morgue, MINIMUM_ALLOWED_VERSION } = args;
 
   const playerId = player.id;
   const { url, timestamp } = morgue;

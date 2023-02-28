@@ -52,56 +52,70 @@ import { SERVER_CONFIG } from './ServerConfig';
 const MAX_ITERATIONS_PER_REQUEST = 10;
 const MAX_MORGUES_PER_PLAYER = 1;
 
-async function scrapePlayer(player) {
-  const morgues = await parsePlayer(player);
-  // console.debug({ morgues });
-  const result = await parsePlayerMorgues({ player, morgues, limit: 1 });
+// minimum version to allow parsing for
+// 0.27.0 would allow everything above e.g. 0.27.1, 0.28.0, etc.
+const MINIMUM_ALLOWED_VERSION = '0.27.1';
 
-  return { morgues, result };
-}
+// date when minimum allowed version was released
+// this can be used to skip morgues before min version
+// e.g. https://github.com/crawl/crawl/tree/0.27.1
+const MINIMUM_ALLOWED_DATE = new Date('2021-08-18');
 
-async function parsePlayer(player) {
-  let resp;
-
-  const { name } = player;
-
+async function scrape_morgue_list(player) {
   const serverConfig = SERVER_CONFIG[player.server];
 
   if (!serverConfig) {
     // throw new Error(`unrecognized server [${player.server}]`);
-    console.error('[scrapePlayer]', 'unrecognized server', { player });
+    console.error('scrape_morgue_list', 'unrecognized server', player.name, player.server);
 
     return [];
   }
 
-  const rawdataUrl = serverConfig.rawdataUrl(name);
-  resp = await fetch(rawdataUrl);
+  const rawdataUrl = serverConfig.rawdataUrl(player.name);
+  const resp = await fetch(rawdataUrl);
 
   if (resp.status === 404) {
-    console.error('[scrapePlayer]', '404', rawdataUrl);
+    console.error('scrape_morgue_list', '404', rawdataUrl);
 
     // Should we remove the player or something?
     // Maybe, it's fine for now, it will find 0 morgues anyway
     return [];
   }
 
-  const morgue_list_html = await resp.text();
-
-  // if (player.name === 'MalcolmRose') {
-  //   console.debug({ morgue_list_html });
-  // }
-
   const morgue_list = [];
-  const regex = serverConfig.morgueRegex(name);
-  let match = regex.exec(morgue_list_html);
-  while (match) {
+  const skip_morgue_set = new Set();
+
+  const morgue_list_html = await resp.text();
+  const regex = serverConfig.morgueRegex(player.name);
+
+  let match;
+
+  function next_match() {
+    // move to next match
+    match = regex.exec(morgue_list_html);
+    return match;
+  }
+
+  // keep moving forward until we run out of matches
+  // this will return null when we cycle at end of matches
+  while (next_match()) {
     const [, filename, timeString] = match;
     const url = `${rawdataUrl}${filename}`;
 
-    morgue_list.push(new Morgue(url));
+    const morgue = new Morgue(url);
 
-    // move to next match
-    match = regex.exec(morgue_list_html);
+    // filter morgue before minimum allowed date
+    if (morgue.date < MINIMUM_ALLOWED_DATE) {
+      // if not already marked, add to skip morgue list
+      if (!player.morgues[morgue.timestamp]) {
+        skip_morgue_set.add(morgue.timestamp);
+      }
+
+      continue;
+    }
+
+    // if we got to this point, add this morgue to list
+    morgue_list.push(morgue);
   }
 
   // reverse the list so that most recent (bottom) is first
@@ -110,22 +124,35 @@ async function parsePlayer(player) {
   // show first and last morgue parsed from html page
   // console.debug(morgue_list[0], morgue_list[morgue_list.length - 1]);
 
+  if (skip_morgue_set.size) {
+    const morgue_map = {};
+
+    for (const timestamp of skip_morgue_set) {
+      morgue_map[timestamp] = true;
+    }
+
+    console.debug(player.name, skip_morgue_set.size, 'older morgues as skipped');
+    const player_id = player.id;
+    await GQL_ADD_MORGUE.run({ player_id, morgue_map });
+  }
+
   return morgue_list;
 }
 
-async function parsePlayerMorgues({ player, morgues, limit = MAX_MORGUES_PER_PLAYER }) {
+async function parsePlayerMorgues({ player, morgues }) {
   const asyncAddMorgues = [];
+
   for (let i = 0; i < morgues.length; i++) {
     // for (let i = 0; i < morgues.length; i++) {
     // for (let i = 0; i < 1; i++) {
 
     // skip if we have reached max morgues to parse per player
-    if (asyncAddMorgues.length >= limit) break;
+    if (asyncAddMorgues.length >= MAX_MORGUES_PER_PLAYER) break;
 
     const morgue = morgues[i];
     const newMorgue = !player.morgues[morgue.timestamp];
     if (newMorgue) {
-      asyncAddMorgues.push(addMorgue({ player, morgue }));
+      asyncAddMorgues.push(addMorgue({ player, morgue, MINIMUM_ALLOWED_VERSION }));
     }
   }
 
@@ -148,10 +175,11 @@ async function loopPlayerMorgues({ players, playerMorgues }) {
   }
 
   const results = [];
+
   for (let i = 0; i < players.length; i++) {
     const player = players[i];
     const morgues = playerMorgues[i];
-    results.push(parsePlayerMorgues({ player, morgues, limit: 1 }));
+    results.push(parsePlayerMorgues({ player, morgues }));
   }
 
   return await Promise.all(results);
@@ -168,15 +196,13 @@ module.exports = async function scrapePlayers(req, res) {
     // console.debug('[scrapePlayers]', 'start');
     const players = await GQL_SCRAPEPLAYERS.run();
 
-    const scrapePlayerResults = [];
-    for (let i = 0; i < players.length; i++) {
-      const player = players[i];
-      scrapePlayerResults.push(scrapePlayer(player));
+    const promise_player_morgue_list = [];
+
+    for (const player of players) {
+      promise_player_morgue_list.push(scrape_morgue_list(player));
     }
 
-    const awaitedScrapePlayerResults = await Promise.all(scrapePlayerResults);
-    const scrapeResults = awaitedScrapePlayerResults.map(({ result }) => result);
-    const playerMorgues = awaitedScrapePlayerResults.map(({ morgues }) => morgues);
+    const playerMorgues = await Promise.all(promise_player_morgue_list);
 
     const loopResults = [];
     let iteration = 0;
@@ -194,7 +220,7 @@ module.exports = async function scrapePlayers(req, res) {
     const time = getElapsedTime(reqStart);
 
     // console.debug('[scrapePlayers]', 'end');
-    return send(res, 200, { time, iteration, scrapeResults, loopResults }, { prettyPrint: true });
+    return send(res, 200, { time, iteration, loopResults }, { prettyPrint: true });
   } catch (err) {
     const time = getElapsedTime(reqStart);
     return send(res, 500, err, { prettyPrint: true });
@@ -214,4 +240,18 @@ const GQL_SCRAPEPLAYERS = serverQuery(
     }
   `,
   (data) => data.dcsseeds_scrapePlayers,
+);
+
+const GQL_ADD_MORGUE = serverQuery(
+  gql`
+    mutation AddMorgue($player_id: uuid!, $morgue_map: jsonb!) {
+      update_dcsseeds_scrapePlayers(
+        _append: { morgues: $morgue_map }
+        where: { id: { _eq: $player_id } }
+        _set: { lastRun: "now()" }
+      ) {
+        affected_rows
+      }
+    }
+  `,
 );
