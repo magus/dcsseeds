@@ -32,16 +32,7 @@ module.exports = async function handler(req, res) {
     const morgue = new Morgue(morgue_url);
 
     // determine server from morgue_url
-    let server;
-
-    for (const server_name of Object.keys(SERVER_CONFIG)) {
-      const config = SERVER_CONFIG[server_name];
-      const re = new RegExp(`^${config.rawdata_base}`);
-      if (re.test(morgue_url)) {
-        server = server_name;
-        break;
-      }
-    }
+    const server = SERVER_CONFIG.morgue_server(morgue_url);
 
     if (!server) {
       throw new Error('server not recognized');

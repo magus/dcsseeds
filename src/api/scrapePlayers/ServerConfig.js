@@ -34,6 +34,20 @@ for (const server of Object.keys(Server)) {
   SERVER_CONFIG[server] = new ServerConfig(server);
 }
 
+// determine server from morgue_url
+SERVER_CONFIG.morgue_server = function morgue_server(morgue_url) {
+  for (const server_name of Object.keys(SERVER_CONFIG)) {
+    const config = SERVER_CONFIG[server_name];
+    const re = new RegExp(`^${config.rawdata_base}`);
+
+    if (re.test(morgue_url)) {
+      return server_name;
+    }
+  }
+
+  return null;
+};
+
 function ServerConfig(server) {
   const rawdata_base = (function () {
     switch (server) {
