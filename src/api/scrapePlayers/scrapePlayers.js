@@ -1,11 +1,10 @@
-const send = require('src/server/zeitSend');
+import send from 'src/server/zeitSend';
 
 import { gql } from '@apollo/client';
 import { serverQuery } from 'src/graphql/serverQuery';
 
-import { Morgue } from 'src/server/Morgue';
 import { addMorgue } from './addMorgue';
-import { SERVER_CONFIG } from './ServerConfig';
+import { fetch_morgue_list } from './fetch_morgue_list';
 
 // DCSS score overview with player morgues
 // http://crawl.akrasiac.org/scoring/overview.html
@@ -52,6 +51,8 @@ import { SERVER_CONFIG } from './ServerConfig';
 const MAX_ITERATIONS_PER_REQUEST = 10;
 const MAX_MORGUES_PER_PLAYER = 1;
 
+const VERSION_LIST = ['0.27', '0.28', '0.29'];
+
 // minimum version to allow parsing for
 // 0.27.0 would allow everything above e.g. 0.27.1, 0.28.0, etc.
 const MINIMUM_ALLOWED_VERSION = '0.27.1';
@@ -62,66 +63,10 @@ const MINIMUM_ALLOWED_VERSION = '0.27.1';
 const MINIMUM_ALLOWED_DATE = new Date('2021-08-18');
 
 async function scrape_morgue_list(player) {
-  const serverConfig = SERVER_CONFIG[player.server];
+  const { morgue_list, skip_morgue_set } = await fetch_morgue_list({ player, VERSION_LIST, MINIMUM_ALLOWED_DATE });
 
-  if (!serverConfig) {
-    // throw new Error(`unrecognized server [${player.server}]`);
-    console.error('scrape_morgue_list', 'unrecognized server', player.name, player.server);
-
-    return [];
-  }
-
-  const rawdataUrl = serverConfig.rawdataUrl(player.name);
-  const resp = await fetch(rawdataUrl);
-
-  if (resp.status === 404) {
-    console.error('scrape_morgue_list', '404', rawdataUrl);
-
-    // Should we remove the player or something?
-    // Maybe, it's fine for now, it will find 0 morgues anyway
-    return [];
-  }
-
-  const morgue_list = [];
-  const skip_morgue_set = new Set();
-
-  const morgue_list_html = await resp.text();
-  const regex = serverConfig.morgueRegex(player.name);
-
-  let match;
-
-  function next_match() {
-    // move to next match
-    match = regex.exec(morgue_list_html);
-    return match;
-  }
-
-  // keep moving forward until we run out of matches
-  // this will return null when we cycle at end of matches
-  while (next_match()) {
-    const [, filename, timeString] = match;
-    const url = `${rawdataUrl}${filename}`;
-
-    const morgue = new Morgue(url);
-
-    // filter morgue before minimum allowed date
-    if (morgue.date < MINIMUM_ALLOWED_DATE) {
-      // if not already marked, add to skip morgue list
-      if (!player.morgues[morgue.timestamp]) {
-        skip_morgue_set.add(morgue.timestamp);
-      }
-
-      continue;
-    }
-
-    // if we got to this point, add this morgue to list
-    morgue_list.push(morgue);
-  }
-
-  // reverse the list so that most recent (bottom) is first
-  morgue_list.reverse();
-
-  // show first and last morgue parsed from html page
+  // console.debug();
+  // console.debug(player.name, 'morgue_list', morgue_list.length, 'skip_morgue_set', skip_morgue_set.size);
   // console.debug(morgue_list[0], morgue_list[morgue_list.length - 1]);
 
   if (skip_morgue_set.size) {
@@ -232,7 +177,6 @@ const GQL_SCRAPEPLAYERS = serverQuery(
     query ListScrapePlayers {
       dcsseeds_scrapePlayers(order_by: { lastRun: asc_nulls_first }) {
         id
-        lastRun
         name
         server
         morgues
