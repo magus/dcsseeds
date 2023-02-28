@@ -1,9 +1,179 @@
 # CHANGELOG
 
 
+
+
 ## 2023-02-27
 
-- deep in the performance weeds
+### 502 error
+
+- `We're sorry, but something went wrong.` seems to be nginx 502 error page
+- https://sourcegraph.com/github.com/dokku/dokku/-/blob/plugins/nginx-vhosts/templates/502-error.html?subtree=true
+- this answer seems to have some useful steps for debugging next time
+- https://www.digitalocean.com/community/questions/why-am-i-getting-a-502-bad-gateway-using-dokku-after-a-few-hours-of-uptime?comment=152511
+
+- immediate fix was to restart the dokku hasura deploy
+
+    ```sh
+    ssh root@104.236.34.97
+    dokku tags:deploy hasura
+    ```
+
+- using a curl cron to restart instance when it enters this 502 state could be useful as health check
+- dokku added crons in 0.23 but we are on 0.22, need to update to unblock dokku crons
+- after update above the 502 error reappeared so debugged it a bit but didn't find anything useful
+- command logs below
+
+    ```sh
+    ssh root@104.236.34.97
+
+    dokku-update
+    # this took awhile and also updated system
+    # 502 error reappeared after update
+
+    # try to debug a bit
+    dokku logs hasura
+    # shows failing requests, nothing new learned
+    dokku ps:report hasura
+    dokku ps:inspect hasura
+    # shows process is still running
+
+    curl https://magic-graphql.iamnoah.com/v1/graphql
+    # success returns a short json error
+    # error returns 502 page
+
+    dokku ps:rebuild --all
+    # failed to rebuild hasura, going to try deploying with new git:from-image
+    dokku git:from-image hasura hasura/graphql-engine
+    dokku ps:rebuild --all
+    # still failing, so trying to restart
+    dokku ps:restart hasura
+        -----> Running post-deploy
+        panic: runtime error: index out of range [1] with length 1
+
+        goroutine 1 [running]:
+        github.com/dokku/dokku/plugins/common.ParseScaleOutput({0xc0000aa400, 0x0, 0xc0000506e0?})
+          /go/src/github.com/dokku/dokku/plugins/common/common.go:399 +0x154
+        github.com/dokku/dokku/plugins/network.BuildConfig({0x7ffcaf79d231, 0x6})
+          /go/src/github.com/dokku/dokku/plugins/network/network.go:55 +0x116
+        main.main()
+          /go/src/github.com/dokku/dokku/plugins/network/src/triggers/triggers.go:34 +0x534
+        !     exit status 2
+    # also fails, same error
+    # https://serverfault.com/questions/1123094/after-upgrading-dokku-cant-start-applications
+    dokku ps:scale hasura web=1
+    # instance successfully restarted now and working
+    ```
+
+- can we setup a report policy for dokku hasura app to recover from this failure state?
+- updating dokku on digital ocean droplet with cron health check
+- https://dokku.com/docs/advanced-usage/deployment-tasks/
+- https://dokku.com/docs/processes/scheduled-cron-tasks/#using-run-for-cron-tasks
+
+
+    ```sh
+    # can we use dokku checks for health monitoring?
+    # we could manually invoke them to see if they restart instance
+    # https://dokku.com/docs/deployment/zero-downtime-deploys/#check-instructions
+    dokku checks:run hasura
+    # runs nothing just waits 10s (default)
+    # need to create a CHECKS file in app dir
+    dokku apps:report hasura
+    # discover app dir /home/dokku/hasura
+    cd /home/dokku/hasura
+    vim CHECKS
+
+        WAIT=5      # wait 5s before starting checks
+        TIMEOUT=30  # timeout after 30s
+        ATTEMPTS=5  # retry 5 times
+
+        //magic-graphql.iamnoah.com/v1/graphql {{"{"}}"code":"not-found","error":"resource does not exist","path":"$"{{"}"}}
+
+    # run checks again
+    dokku checks:run hasura
+    # still defaults, might be in wrong location?
+    dokku enter hasura
+    # had to be added to dockerfile via below
+    vim Dockerfile
+
+        FROM hasura/graphql-engine
+        ADD CHECKS /
+
+    docker build -t="dokku/hasura/graphql-engine" .
+    dokku git:from-image hasura dokku/hasura/graphql-engine
+    # edit dockerfile and retry via
+    docker build -t="dokku/hasura/graphql-engine" .
+    dokku ps:rebuild hasura
+    # checks failing due to variables at top
+    # removed variables so just the single check line
+    # curl now fails after 5 attempts
+
+        =====> Processing deployment checks
+        -----> Deploying hasura via the docker-local scheduler...
+        -----> Deploying web (count=1)
+              Attempting pre-flight checks (web.1)
+              CHECKS expected result: http://localhost/v1/graphql => "{"code":"not-found","error":"resource does not exist","path":"$"}" (web.1)
+              Attempt 1/5. Waiting for 5 seconds (web.1)
+        !     curl: (7) Failed to connect to 172.17.0.4 port 5000: Connection refused
+        !     Check attempt 1/5 failed (web.1)
+              Attempt 2/5. Waiting for 5 seconds (web.1)
+        !     curl: (7) Failed to connect to 172.17.0.4 port 5000: Connection refused
+        !     Check attempt 2/5 failed (web.1)
+              Attempt 3/5. Waiting for 5 seconds (web.1)
+        !     curl: (7) Failed to connect to 172.17.0.4 port 5000: Connection refused
+        !     Check attempt 3/5 failed (web.1)
+              Attempt 4/5. Waiting for 5 seconds (web.1)
+        !     curl: (7) Failed to connect to 172.17.0.4 port 5000: Connection refused
+        !     Check attempt 4/5 failed (web.1)
+              Attempt 5/5. Waiting for 5 seconds (web.1)
+        !     curl: (7) Failed to connect to 172.17.0.4 port 5000: Connection refused
+        !     Check attempt 5/5 failed (web.1)
+        !     Could not start due to 1 failed checks (web.1)
+
+    # trying app.json instead
+    # https://dokku.com/docs/advanced-usage/deployment-tasks/
+    vim Dockerfile
+    vim app.json
+    vim health-check.sh
+    chmod +x health-check.sh
+    docker build -t="dokku/hasura/graphql-engine" .
+    dokku ps:rebuild hasura
+
+    # ok the health-check.sh script runs post deploy
+    # going to try to setup cron now
+    # https://dokku.com/docs/processes/scheduled-cron-tasks/#using-run-for-cron-tasks
+    # ok same as above but with the versions checked into magic.iamnoah.com repo
+    dokku cron:list hasura
+    dokku cron:report hasura
+
+    # cron is running but no logs so setup vector logging
+    dokku logs:vector-start
+    dokku logs:set hasura vector-sink "console://?encoding[codec]=json"
+    dokku logs:vector-logs --tail
+    # confirmed cron is running successfully
+
+    # turns out this is useless because the dokku command
+    # is not found inside container, so cannot restart in health-check.sh
+    # instead will setup a cron inside host machine
+    # https://www.digitalocean.com/community/tutorials/how-to-use-cron-to-automate-tasks-ubuntu-1804
+    crontab -e
+    # paste in line below
+    */1 * * * * /home/dokku/hasura/health-check.sh 5 "https://magic-graphql.iamnoah.com/v1/graphql" '{"code":"not-found","error":"resource does not exist","path":"$"}' > /var/log/cronlog 2>&1
+
+    # tail logs for cron, without stdout from process
+    journalctl -u cron.service -f
+    # confirmed it's running but need to redirect output
+    vim /etc/logrotate.d/cronlog
+
+    # since we are no longer modifying dockerfile we can revert the image back to hasura base
+    dokku git:from-image hasura hasura/graphql-engine
+    dokku ps:rebuild hasura
+
+    # updating instructions in mono/sites/magic.iamnoah.com/README.md
+    ```
+
+
+### query performance
 - unrand query for artifact filters was hitting `10s` vercel timeout
 - create `/api/cache_unrand_query` to update `window_size` unrand result lists every `1min`
 - now `getStaticProps` can query the `unrand_cache` table which is only `106` rows or JSON blobs, very fast
