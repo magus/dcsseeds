@@ -4,7 +4,7 @@ import parseMorgue from 'src/utils/parseMorgue';
 import send from 'src/server/zeitSend';
 import { serverQuery } from 'src/graphql/serverQuery';
 
-import { Morgue } from './Morgue';
+import { Morgue } from 'src/server/Morgue';
 import { SERVER_CONFIG } from './ServerConfig';
 import { addMorgue } from './addMorgue';
 

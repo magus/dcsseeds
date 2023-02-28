@@ -3,7 +3,7 @@ const send = require('src/server/zeitSend');
 import { gql } from '@apollo/client';
 import { serverQuery } from 'src/graphql/serverQuery';
 
-import { Morgue } from './Morgue';
+import { Morgue } from 'src/server/Morgue';
 import { addMorgue } from './addMorgue';
 import { SERVER_CONFIG } from './ServerConfig';
 
