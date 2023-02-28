@@ -88,7 +88,7 @@ function ServerConfig(server) {
       return `${rawdata_base}/${version}/${player_name}`;
     }
 
-    return `${rawdata_base}/${player_name}/`;
+    return `${rawdata_base}/${player_name}`;
   }
 
   function morgueRegex(player_name) {
