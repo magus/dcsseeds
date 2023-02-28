@@ -193,9 +193,7 @@ process.chdir(PROJ_ROOT);
       continue;
     }
 
-    // ignore this sprint-only artifact
-    // http://crawl.chaosforge.org/Axe_of_Woe
-    if (unrand.name === 'Axe of Woe') {
+    if (IGNORE_UNRAND.has(unrand.id)) {
       continue;
     }
 
@@ -244,3 +242,9 @@ function extract_object_field(field) {
     }
   }
 }
+
+// ignore sprint-only artifacts
+// http://crawl.chaosforge.org/Axe_of_Woe
+const IGNORE_UNRAND = new Set();
+IGNORE_UNRAND.add('UNRAND_INVISIBILITY');
+IGNORE_UNRAND.add('UNRAND_WOE');

@@ -1,8 +1,9 @@
 // Generated from `scripts/build_unrand_list 0.27 0.28 0.29`
 
+// Generated from `scripts/build_unrand_list 0.27 0.28 0.29`
+
 export const List = [
   'amulet of Elemental Vulnerability',
-  'amulet of invisibility',
   'amulet of the Air',
   'amulet of the Four Winds',
   'amulet of Vitality',
@@ -112,7 +113,6 @@ export const List = [
 // prettier-ignore
 export const Metadata = [
   {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.29.0/crawl-ref/source/rltiles/item/amulet/artefact/urand_elemental_vulnerability.png","name":"amulet of Elemental Vulnerability","id":"UNRAND_ELEMENTAL_VULNERABILITY"},
-  {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.29.0/crawl-ref/source/rltiles/item/amulet/artefact/urand_cekugob.png","name":"amulet of invisibility","id":"UNRAND_INVISIBILITY"},
   {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.29.0/crawl-ref/source/rltiles/item/amulet/artefact/urand_air.png","name":"amulet of the Air","id":"UNRAND_AIR"},
   {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.29.0/crawl-ref/source/rltiles/item/amulet/artefact/urand_four_winds.png","name":"amulet of the Four Winds","id":"UNRAND_FOUR_WINDS"},
   {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.29.0/crawl-ref/source/rltiles/item/amulet/artefact/urand_vitality.png","name":"amulet of Vitality","id":"UNRAND_VITALITY"},

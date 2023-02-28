@@ -218,7 +218,6 @@ exports.UnrandList = [
   {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.29.0/crawl-ref/source/rltiles/item/armour/artefact/urand_kryias.png","name":"Kryia's mail coat","id":"UNRAND_KRYIAS"},
   {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.29.0/crawl-ref/source/rltiles/item/weapon/artefact/urand_frostbite.png","name":"frozen axe \"Frostbite\"","id":"UNRAND_FROSTBITE"},
   {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.29.0/crawl-ref/source/rltiles/item/armour/artefact/urand_warlock.png","name":"warlock's mirror","id":"UNRAND_WARLOCK_MIRROR"},
-  {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.29.0/crawl-ref/source/rltiles/item/amulet/artefact/urand_cekugob.png","name":"amulet of invisibility","id":"UNRAND_INVISIBILITY"},
   {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.29.0/crawl-ref/source/rltiles/item/weapon/artefact/urand_thermic_engine.png","name":"Maxwell's thermic engine","id":"UNRAND_THERMIC_ENGINE"},
   {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.29.0/crawl-ref/source/rltiles/item/weapon/artefact/urand_rift.png","name":"demon trident \"Rift\"","id":"UNRAND_RIFT"},
   {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.29.0/crawl-ref/source/rltiles/item/weapon/artefact/urand_staff_of_battle.png","name":"staff of Battle","id":"UNRAND_BATTLE"},
