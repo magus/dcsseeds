@@ -490,6 +490,5 @@ const ResultFragment = gql`
     name
     branchName
     level
-    morgue
   }
 `;
