@@ -178,7 +178,7 @@
 - create `/api/cache_unrand_query` to update `window_size` unrand result lists every `1min`
 - now `getStaticProps` can query the `unrand_cache` table which is only `106` rows or JSON blobs, very fast
 - still bothers me that `/api/cache_unrand_query` for `30` unrands is taking upward for `4000ms`
-- finally created a B-Tree index on items table `dcsseeds_scrapeplayers_item_seedVersionBTREEon(seed, version)`
+- finally created a B-Tree index on items table `dcsseeds_scrapeplayers_item_seedVersion(seed, version)`
 - this improved query performance significantly since we are looking for all items grouped by seed version
 - the original, `106` unrand query is down to `2000ms` from about `10000ms` (`5x` faster)
 
