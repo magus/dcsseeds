@@ -12,25 +12,28 @@ include gold price if `event.data.gold` exists (store in gold column with item?)
 ## better sorting
 
 we need to search for items and order by branch order
-
 the current approach searches seedVersion first which breaks ordering entirely
 alternative below is better
-  ```graphql
-  query {
-    dcsseeds_scrapePlayers_item(
-      where: { name: { _ilike: "%wyrmbane%" }, branch: { _or: { name: { _eq: "Dungeon" } } } }
-      order_by: { branch: { order: asc }, level: asc }
-    ) {
-      name
-      branchName
-      level
-      seed
-      version
-    }
-  }
-  ```
-
 update both useArtifactFilter AND the cache_unrand_query graphql queries
+
+**NOTE**: may need to implement as sql function and add `DISTINCT ON ("seed", "version")`
+          to top level query to remove duplicates (similar to `dcsseeds_scrapePlayers_items_version_seed`)
+
+```graphql
+query {
+  dcsseeds_scrapePlayers_item(
+    where: { name: { _ilike: "%wyrmbane%" } }
+    # distinct_on: [seed, version]
+    order_by: [{ branch: { order: asc } }, { level: asc }]
+  ) {
+    name
+    branchName
+    level
+    seed
+    version
+  }
+}
+```
 
 some items are duplicated, this is a problem
 items should be unique on (name, branch, level, seed, version)
@@ -64,66 +67,114 @@ under `Equip` screen might have started something similar
 how can we store these so that we can query these combinations easily?
 https://hasura.io/docs/latest/schema/common-patterns/data-modeling/many-to-many/
 
-NOTE: `id` column is for example readability, use `Integer (auto-increment)` in real database
+**NOTE**: `id` column is for example readability, use `Integer (auto-increment)` in real database
   better performance than `uuid` and we aren't distributed so no need for `uuid`
   > uuids needed when multiple processes generate unique IDs independently
   > https://news.ycombinator.com/item?id=11863492
 
-`property` table, store each property in a row in a table
-we can even store unrand as a property and use it to quickly index unrand items
-properties would be created on insert and automatically associated
-https://hasura.io/docs/latest/schema/common-patterns/data-modeling/many-to-many/#insert-using-many-to-many-relationships
+`dcss_seed_version` table, asssociate unique seed version combinations
+  Primary Key `id Integer (auto-increment)`
+  Unique Key  `(version, seed)`
+  - also easy remove / invalidate entries for reparsing
+  - e.g. delete all where `version: 0.30.0`
+  - ensure when deleting a `seed_version` we should delete all associated `event` and `morgue` entries
+  - this will cause the players morgue map to remove entries and trigger reparsing those morgue files
 
-| type     | name                   | id  |
-| -------- | ---------------------- | --- |
-| unrand   | UNRAND_SPRIGGANS_KNIFE |     |
-|          |                        |     |
-| weapon   | axe                    |     |
-| offhand  | buckler                |     |
-| body     | plate armour           |     |
-| body     | crystal plate armour   | CPA |
-| neck     | scarf                  |     |
-| neck     | amulet                 |     |
-| ring     | ring                   |     |
-|          |                        |     |
-| brand    | drain                  |     |
-| brand    | vorpal                 |     |
-| brand    | vamp                   |     |
-|          |                        |     |
-| property | gold                   |     |
-| property | plus                   | PL  |
-| property | slay                   |     |
-| property | will                   |     |
-| property | rC                     | RC  |
-| property | rN                     | RN  |
-| property | rPois                  | RPO |
-| property | Dex                    | DEX |
-| property | AC                     |     |
-| property | *Corrode               |     |
-|          |                        |     |
+| id  | version | seed                |
+| --- | ------- | ------------------- |
+|     | 0.29.1  | 3467139861098030199 |
+|     |         |                     |
 
-`event` table, might look like
+`dcss_search_morgue` table, asssociate a specific run to a player
+  Primary Key `url`
+  - allow us to build current `morgues` json map dynamically
+  - query all rows for a player and then , use `url` to construct the json object for fast lookup in `scrapePlayers`
+  - instead of timestamp, use the `url` as the key in the map for lookup
+  - more readable and avoids the timestamp calculation
 
-| type | id  | name                                                                 | branch  | level | seed                | version | created_at                | updated_at                |
-| ---- | --- | -------------------------------------------------------------------- | ------- | ----- | ------------------- | ------- | ------------------------- | ------------------------- |
-| item | 42  | +13 crystal plate armour of the Devil's Team {rPois rC+ rN+++ Dex-5} | Dungeon | 4     | 3467139861098030199 | 0.29.1  | 2023-01-14T08:41:56+00:00 | 2023-02-20T16:27:19+00:00 |
-|      |     |                                                                      |         |       |                     |         |                           |                           |
+| timestamp                | version | seed                | url (PK)                                                                     | player_id |
+| ------------------------ | ------- | ------------------- | ---------------------------------------------------------------------------- | --------- |
+| 2023-01-14T08:41:56.000Z | 0.29.1  | 3467139861098030199 | http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20230114-084156.txt |           |
+|                          |         |                     |                                                                              |           |
 
-`event_property` table, bridges `property` and `event`
+`dcss_search_event` table, might look like
+  Primary Key `id Integer (auto-increment)`
+  Unique Key  `(name, branch, level, version, seed)`
+  - `name`, `branch`, `level`, `version` and `seed` for a unique key to prevent duplicates
+  - `on_conflict` update `name` value (basically a noop)
+  - `branch` is literal name (associated column can be `branch_ref`)
+
+| type | id  | name                                                                 | branch  | level | version | seed                 | created_at               | updated_at               |
+| ---- | --- | -------------------------------------------------------------------- | ------- | ----- | ------- | -------------------- | ------------------------ | ------------------------ |
+| item | 42  | +13 crystal plate armour of the Devil's Team {rPois rC+ rN+++ Dex-5} | Dungeon | 4     | 0.29.1  | 3467139861098030199  | 2023-01-14T08:41:56.000Z | 2023-02-20T16:27:19.000Z |
+| item | 19  | +7 Spriggan's Knife {stab, EV+4 Stlth+}                              | Dungeon | 13    | 0.27.1  | 12712793890262719231 | 2021-11-10T03:15:51.000Z | 2021-11-10T03:15:51.000Z |
+|      |     |                                                                      |         |       |         |                      |                          |                          |
+
+`dcss_search_property` table, store each property in a row in a table
+  - with this setup it even becomes clear we could store more information here
+  - `unrand` property for marking unique unrand items for indexing and quick lookup
+  - properties would be created on insert and automatically associated
+  - https://hasura.io/docs/latest/schema/common-patterns/data-modeling/many-to-many/#insert-using-many-to-many-relationships
+
+| type     | name                   | value | id   |
+| -------- | ---------------------- | ----- | ---- |
+| unrand   | UNRAND_SPRIGGANS_KNIFE |       |      |
+|          |                        |       |      |
+| weapon   | axe                    |       |      |
+| weapon   | dagger                 |       |      |
+| offhand  | buckler                |       |      |
+| body     | plate armour           |       |      |
+| body     | crystal plate armour   |       | CPA  |
+| neck     | scarf                  |       |      |
+| neck     | amulet                 |       |      |
+| ring     | ring                   |       |      |
+|          |                        |       |      |
+| brand    | drain                  |       |      |
+| brand    | vorpal                 |       |      |
+| brand    | vamp                   |       |      |
+|          |                        |       |      |
+| property | gold                   |       | GOLD |
+| property | plus                   | 7     | 7PL  |
+| property | plus                   | 13    | 13PL |
+| property | slay                   |       |      |
+| property | will                   |       |      |
+| property | rC                     | 1     | RC   |
+| property | rN                     | 3     | RN   |
+| property | rPois                  | 1     | RPO  |
+| property | Dex                    | -5    | DEX  |
+| property | EV                     | 4     | EV   |
+| property | *Corrode               |       |      |
+| property | stab                   |       | STAB |
+| property | Stlth                  | 1     | STLT |
+|          |                        |       |      |
+
+`dcss_search_event_property` table, bridges `property` and `event`
+  - surfaced as `properties` (1:N relationship) on `event` shape
+  - `value` column in `event_property` for situations with many possible values e.g. `gold`
+  - for example gold value is stored in the bridging table to avoid thousands of `property` rows
 
 | event_id | property_id | value |
 | -------- | ----------- | ----- |
-| 42       | PL          | 13    |
+| 42       | 13PL        |       |
 | 42       | CPA         |       |
-| 42       | RPO         | 1     |
-| 42       | RC          | 1     |
-| 42       | RN          | 3     |
-| 42       | DEX         | -5    |
+| 42       | RPO         |       |
+| 42       | RC          |       |
+| 42       | RN          |       |
+| 42       | DEX         |       |
+| 42       | GOLD        | 1862  |
+|          |             |       |
+| 19       | 7PL         |       |
+| 19       | STAB        |       |
+| 19       | EV          |       |
+| 19       | STLT        |       |
 |          |             |       |
 
 
 iterate + test by parsing and storying a 15 rune win with lots of events, unrands, etc.
 then try out queries etc. to ensure things work, if not, blow it away and try again
+
+setup a parallel events scraper that runs every 5 minutes like items
+allow us to test and gather events without breaking existing items functionality
 
 ## show more + result limit
 implement a `result_limit`, start at `20`, increment by `20` (`40`, `60`, etc.)
@@ -136,8 +187,7 @@ can either fetch full window each time or select partial window and add to exist
 thinking about long term introspection and query flexibility
 storing "events" instead of just "items"
 think about "events" with a "type" field
-we could start by creating a new 'events' table and writing to that at the same time we write
-to items when we call scrapePlayers
+
 
 type: item | unrand | spell | altar | unique | portal
 - unrand (known artefacts e.g. wyrmbane, hat of the alchemist, etc.)
