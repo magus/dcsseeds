@@ -4,7 +4,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
 {
   "background": "Wanderer",
   "datetime": 2021-06-23T08:51:46.000Z,
-  "eventCount": 1481,
+  "eventCount": 1500,
   "eventErrors": [],
   "events": [
     {
@@ -2593,6 +2593,76 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
     {
       "branch": "Dungeon",
       "data": {
+        "gold": "22",
+        "item": "scroll of identify",
+      },
+      "level": "10",
+      "location": "Dungeon:10",
+      "type": "bought",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "gold": "38",
+        "item": "scroll of fear",
+      },
+      "level": "10",
+      "location": "Dungeon:10",
+      "type": "bought",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "gold": "22",
+        "item": "scroll of identify",
+      },
+      "level": "10",
+      "location": "Dungeon:10",
+      "type": "bought",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "gold": "33",
+        "item": "scroll of teleportation",
+      },
+      "level": "10",
+      "location": "Dungeon:10",
+      "type": "bought",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "gold": "38",
+        "item": "scroll of immolation",
+      },
+      "level": "10",
+      "location": "Dungeon:10",
+      "type": "bought",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "gold": "22",
+        "item": "scroll of identify",
+      },
+      "level": "10",
+      "location": "Dungeon:10",
+      "type": "bought",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "gold": "360",
+        "item": "book of Conjurations",
+      },
+      "level": "9",
+      "location": "Dungeon:9",
+      "type": "bought",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
         "spell": "Magic Dart",
       },
       "level": "9",
@@ -3404,6 +3474,16 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
     {
       "branch": "Orc",
       "data": {
+        "gold": "38",
+        "item": "scroll of fear",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "bought",
+    },
+    {
+      "branch": "Orc",
+      "data": {
         "level": "12",
         "skill": "Spellcasting",
       },
@@ -4052,6 +4132,37 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
     {
       "branch": "Orc",
       "data": {
+        "gold": "110",
+        "item": "knobbly opal ring",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "bought",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "gold": "110",
+        "item": "potion of heal wounds",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "bought",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "gold": "171",
+        "item": "smoking robe",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "bought",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "gold": "171",
         "item": "+0 robe of Myqicoc {Will+ rCorr Int-3 Dex+3}",
       },
       "level": "2",
@@ -4061,11 +4172,22 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
     {
       "branch": "Orc",
       "data": {
+        "gold": "171",
         "item": "+0 robe of Myqicoc {Will+ rCorr Int-3 Dex+3}",
       },
       "level": "2",
       "location": "Orc:2",
       "type": "item",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "gold": "217",
+        "item": "pair of glowing boots",
+      },
+      "level": "8",
+      "location": "Dungeon:8",
+      "type": "bought",
     },
     {
       "branch": "Shoals",
@@ -5509,6 +5631,46 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
       "type": "skill-level",
     },
     {
+      "branch": "Orc",
+      "data": {
+        "gold": "220",
+        "item": "potion of resistance",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "bought",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "gold": "77",
+        "item": "scroll of amnesia",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "bought",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "gold": "220",
+        "item": "potion of haste",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "bought",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "gold": "88",
+        "item": "wand of disintegration (8)",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "bought",
+    },
+    {
       "branch": "Vaults",
       "data": {
         "level": "16",
@@ -6386,6 +6548,16 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
       "level": "5",
       "location": "Slime:5",
       "type": "item",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "gold": "600",
+        "item": "book of Party Tricks",
+      },
+      "level": "9",
+      "location": "Dungeon:9",
+      "type": "bought",
     },
     {
       "branch": "Dungeon",
@@ -7516,6 +7688,26 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
       "level": "11",
       "location": "Dungeon:11",
       "type": "mutation",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "gold": "165",
+        "item": "scroll of enchant armour",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "bought",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "gold": "88",
+        "item": "potion of mutation",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "bought",
     },
     {
       "branch": "Zot",

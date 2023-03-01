@@ -4,7 +4,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
 {
   "background": "Fighter",
   "datetime": 2021-09-17T23:15:05.000Z,
-  "eventCount": 311,
+  "eventCount": 361,
   "eventErrors": [],
   "events": [
     {
@@ -1055,6 +1055,17 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
     {
       "branch": "Dungeon",
       "data": {
+        "gold": "868",
+        "item": "fading plate armour",
+      },
+      "level": "8",
+      "location": "Dungeon:8",
+      "type": "bought",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "gold": "868",
         "item": "+10 plate armour "Defod" {Dex+3}",
       },
       "level": "8",
@@ -1064,6 +1075,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
     {
       "branch": "Dungeon",
       "data": {
+        "gold": "868",
         "item": "+10 plate armour "Defod" {Dex+3}",
       },
       "level": "8",
@@ -1568,16 +1580,28 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
     {
       "branch": "Dungeon",
       "data": {
-        "item": "+1 gold dragon scales (You bought it in a shop on level 8 of the Dungeon)",
+        "gold": "2075",
+        "item": "runed gold dragon scales",
       },
       "level": "8",
       "location": "Dungeon:8",
-      "type": "ident",
+      "type": "bought",
     },
     {
       "branch": "Dungeon",
       "data": {
-        "item": "+1 gold dragon scales (You bought it in a shop on level 8 of the Dungeon)",
+        "gold": "2075",
+        "item": "+1 gold dragon scales",
+      },
+      "level": "8",
+      "location": "Dungeon:8",
+      "type": "ident-bought-loc",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "gold": "2075",
+        "item": "+1 gold dragon scales",
       },
       "level": "8",
       "location": "Dungeon:8",
@@ -1743,6 +1767,66 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "level": "3",
       "location": "Swamp:3",
       "type": "skill-level",
+    },
+    {
+      "branch": "Swamp",
+      "data": {
+        "gold": "105",
+        "item": "scroll of blinking",
+      },
+      "level": "3",
+      "location": "Swamp:3",
+      "type": "bought",
+    },
+    {
+      "branch": "Swamp",
+      "data": {
+        "gold": "105",
+        "item": "scroll of blinking",
+      },
+      "level": "3",
+      "location": "Swamp:3",
+      "type": "bought",
+    },
+    {
+      "branch": "Swamp",
+      "data": {
+        "gold": "105",
+        "item": "scroll of blinking",
+      },
+      "level": "3",
+      "location": "Swamp:3",
+      "type": "bought",
+    },
+    {
+      "branch": "Swamp",
+      "data": {
+        "gold": "105",
+        "item": "scroll of blinking",
+      },
+      "level": "3",
+      "location": "Swamp:3",
+      "type": "bought",
+    },
+    {
+      "branch": "Swamp",
+      "data": {
+        "gold": "105",
+        "item": "scroll of blinking",
+      },
+      "level": "3",
+      "location": "Swamp:3",
+      "type": "bought",
+    },
+    {
+      "branch": "Swamp",
+      "data": {
+        "gold": "28",
+        "item": "scroll of fog",
+      },
+      "level": "3",
+      "location": "Swamp:3",
+      "type": "bought",
     },
     {
       "branch": "Swamp",
@@ -1920,6 +2004,16 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "level": "15",
       "location": "Dungeon:15",
       "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "gold": "247",
+        "item": "+1 cloak of preservation",
+      },
+      "level": "8",
+      "location": "Dungeon:8",
+      "type": "bought",
     },
     {
       "branch": "Orc",
@@ -2140,8 +2234,279 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "type": "skill-level",
     },
     {
+      "branch": "Orc",
+      "data": {
+        "gold": "63",
+        "item": "scroll of magic mapping",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "bought",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "gold": "135",
+        "item": "scroll of enchant weapon",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "bought",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "gold": "36",
+        "item": "scroll of fog",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "bought",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "gold": "54",
+        "item": "scroll of teleportation",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "bought",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "gold": "135",
+        "item": "scroll of enchant armour",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "bought",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "gold": "256",
+        "item": "2 potions of invisibility",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "bought",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "gold": "48",
+        "item": "potion of curing",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "bought",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "gold": "128",
+        "item": "potion of invisibility",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "bought",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "gold": "48",
+        "item": "potion of curing",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "bought",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "gold": "48",
+        "item": "potion of curing",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "bought",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "gold": "48",
+        "item": "potion of curing",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "bought",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "gold": "128",
+        "item": "potion of mutation",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "bought",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "gold": "64",
+        "item": "potion of might",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "bought",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "gold": "90",
+        "item": "scroll of teleportation",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "bought",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "gold": "90",
+        "item": "potion of curing",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "bought",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "gold": "90",
+        "item": "scroll of teleportation",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "bought",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "gold": "70",
+        "item": "potion of heal wounds",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "bought",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "gold": "42",
+        "item": "potion of curing",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "bought",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "gold": "70",
+        "item": "potion of berserk rage",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "bought",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "gold": "42",
+        "item": "potion of lignification",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "bought",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "gold": "42",
+        "item": "potion of lignification",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "bought",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "gold": "42",
+        "item": "potion of lignification",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "bought",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "gold": "140",
+        "item": "potion of haste",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "bought",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "gold": "140",
+        "item": "potion of haste",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "bought",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "gold": "112",
+        "item": "potion of cancellation",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "bought",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "gold": "182",
+        "item": "wand of iceblast (9)",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "bought",
+    },
+    {
       "branch": "Dungeon",
       "data": {
+        "gold": "237",
+        "item": "pair of heavily runed gloves",
+      },
+      "level": "8",
+      "location": "Dungeon:8",
+      "type": "bought",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "gold": "237",
         "item": "-2 pair of gloves of Boklytt {Will+ Slay+3}",
       },
       "level": "8",
@@ -2151,11 +2516,132 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
     {
       "branch": "Dungeon",
       "data": {
+        "gold": "237",
         "item": "-2 pair of gloves of Boklytt {Will+ Slay+3}",
       },
       "level": "8",
       "location": "Dungeon:8",
       "type": "item",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "gold": "60",
+        "item": "potion of might",
+      },
+      "level": "10",
+      "location": "Dungeon:10",
+      "type": "bought",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "gold": "45",
+        "item": "potion of lignification",
+      },
+      "level": "10",
+      "location": "Dungeon:10",
+      "type": "bought",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "gold": "120",
+        "item": "potion of ambrosia",
+      },
+      "level": "10",
+      "location": "Dungeon:10",
+      "type": "bought",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "gold": "45",
+        "item": "potion of curing",
+      },
+      "level": "10",
+      "location": "Dungeon:10",
+      "type": "bought",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "gold": "128",
+        "item": "potion of cancellation",
+      },
+      "level": "10",
+      "location": "Dungeon:10",
+      "type": "bought",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "gold": "128",
+        "item": "potion of ambrosia",
+      },
+      "level": "10",
+      "location": "Dungeon:10",
+      "type": "bought",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "gold": "128",
+        "item": "potion of mutation",
+      },
+      "level": "10",
+      "location": "Dungeon:10",
+      "type": "bought",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "gold": "48",
+        "item": "potion of lignification",
+      },
+      "level": "10",
+      "location": "Dungeon:10",
+      "type": "bought",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "gold": "80",
+        "item": "potion of heal wounds",
+      },
+      "level": "10",
+      "location": "Dungeon:10",
+      "type": "bought",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "gold": "128",
+        "item": "potion of mutation",
+      },
+      "level": "10",
+      "location": "Dungeon:10",
+      "type": "bought",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "gold": "160",
+        "item": "potion of haste",
+      },
+      "level": "10",
+      "location": "Dungeon:10",
+      "type": "bought",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "gold": "160",
+        "item": "potion of haste",
+      },
+      "level": "10",
+      "location": "Dungeon:10",
+      "type": "bought",
     },
     {
       "branch": "Vaults",
@@ -2951,6 +3437,26 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "level": "1",
       "location": "Depths:1",
       "type": "acquirement",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "gold": "396",
+        "item": "wand of acid (14)",
+      },
+      "level": "2",
+      "location": "Depths:2",
+      "type": "bought",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "gold": "38",
+        "item": "scroll of magic mapping",
+      },
+      "level": "2",
+      "location": "Depths:2",
+      "type": "bought",
     },
     {
       "branch": "Depths",

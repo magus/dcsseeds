@@ -340,6 +340,34 @@ function getAllMorgueNoteEvents(morgueNotes) {
   const events = [];
   const addEvent = (type, location, data) => events.push(createEvent(type, location, data));
 
+  // run parseNote over each morgue note entry
+  for (let i = 0; i < morgueNotes.length; i++) {
+    const morgueNote = morgueNotes[i];
+
+    try {
+      parseNote(morgueNote);
+
+      // first note
+      if (i === 0) {
+        addEvent('first-event', morgueNote.loc, morgueNote.note);
+      }
+      // last note
+      if (i === morgueNotes.length - 1) {
+        addEvent('last-event', morgueNote.loc, morgueNote.note);
+      }
+    } catch (error) {
+      eventErrors.push({ error: error.message, morgueNote });
+    }
+  }
+
+  // remove duplicates (mutates existing array)
+  // for example `noticed` (uniques noticed) can be registered multiple times
+  // e.g. Mennas in the morgue below
+  //      http://crawl.akrasiac.org/rawdata/KarmaDistortion/morgue-KarmaDistortion-20220206-104358.txt
+  uniqBy(events, (i) => `__T${i.type}____N${i.name}____L${i.location}__`);
+
+  return { events, eventErrors };
+
   function parseNote(morgueNote) {
     // check in this order to ensure we find most specific first
     // Regex Tests
@@ -388,6 +416,7 @@ function getAllMorgueNoteEvents(morgueNotes) {
     // Bought a +1 buckler of cold resistance for 181 gold pieces
     // Bought the amulet of the Manifold Knives {Acrobat rElec rF+} for 816 gold pieces
     // Bought an uncursed ring of resist corrosion for 320 gold pieces
+    // Bought runed gold dragon scales for 2075 gold pieces
     const bought = morgueNote.note.match(/Bought (?:the |a |an )?(.*?) for (\d+) gold pieces/);
 
     const weildingWearing = morgueNote.note.match(/(wielding|wearing) the (.*?)(\.|and )/);
@@ -511,9 +540,12 @@ function getAllMorgueNoteEvents(morgueNotes) {
       }
     } else if (bought) {
       const [, item, gold] = bought;
+      // always log bought events
+      addEvent('bought', morgueNote.loc, { item, gold });
+
+      // but only log item if it's an artefact
       const artefactMatch = item.match(/{.*?}/);
       if (artefactMatch) {
-        addEvent('bought', morgueNote.loc, { item, gold });
         addEvent('item', morgueNote.loc, { item });
       }
     } else if (acquirement) {
@@ -553,12 +585,14 @@ function getAllMorgueNoteEvents(morgueNotes) {
       addEvent('item', `${loc}:${level}`, { item });
     } else if (identBoughtPortal) {
       const [, item, loc] = identBoughtPortal;
-      addEvent('ident-bought-portal', loc, { item });
-      addEvent('item', loc, { item });
+      const gold = find_previous_bought_price(item);
+      addEvent('ident-bought-portal', loc, { item, gold });
+      addEvent('item', loc, { item, gold });
     } else if (identBoughtWithLoc) {
       const [, item, level, loc] = identBoughtWithLoc;
-      addEvent('ident-bought-loc', `${loc}:${level}`, { item });
-      addEvent('item', `${loc}:${level}`, { item });
+      const gold = find_previous_bought_price(item);
+      addEvent('ident-bought-loc', `${loc}:${level}`, { item, gold });
+      addEvent('item', `${loc}:${level}`, { item, gold });
     } else if (identIgnore) {
       const [, item] = identIgnore;
       // console.warn('ident-ignore', morgueNote.loc, { item });
@@ -569,33 +603,26 @@ function getAllMorgueNoteEvents(morgueNotes) {
     }
   }
 
-  // run parseNote over each morgue note entry
-  for (let i = 0; i < morgueNotes.length; i++) {
-    const morgueNote = morgueNotes[i];
+  function find_previous_bought_price(item) {
+    const item_type = get_item_type(item);
 
-    try {
-      parseNote(morgueNote);
-
-      // first note
-      if (i === 0) {
-        addEvent('first-event', morgueNote.loc, morgueNote.note);
-      }
-      // last note
-      if (i === morgueNotes.length - 1) {
-        addEvent('last-event', morgueNote.loc, morgueNote.note);
-      }
-    } catch (error) {
-      eventErrors.push({ error: error.message, morgueNote });
+    if (!item_type) {
+      throw new Error('unable to get item type');
     }
+
+    // look back at previous events for a bought with item type
+    for (let i = events.length - 1; i >= 0; i--) {
+      const event = events[i];
+      if (event.type === 'bought') {
+        const bought_type = !!~event.data.item.indexOf(item_type);
+        if (bought_type) {
+          return event.data.gold;
+        }
+      }
+    }
+
+    throw new Error('unable to find matching bought event');
   }
-
-  // remove duplicates (mutates existing array)
-  // for example `noticed` (uniques noticed) can be registered multiple times
-  // e.g. Mennas in the morgue below
-  //      http://crawl.akrasiac.org/rawdata/KarmaDistortion/morgue-KarmaDistortion-20220206-104358.txt
-  uniqBy(events, (i) => `__T${i.type}____N${i.name}____L${i.location}__`);
-
-  return { events, eventErrors };
 }
 
 function createEvent(type, location, data) {
@@ -608,4 +635,13 @@ function getLocation(value) {
   const location = level ? `${branch}:${level}` : branch;
 
   return { location, branch, level };
+}
+
+function get_item_type(item) {
+  const item_type_match = item.match(/^([+|-]\d+ )?(?<item_type>[^\s]+)/);
+  if (item_type_match) {
+    const { item_type } = item_type_match.groups;
+    return item_type;
+  }
+  return null;
 }
