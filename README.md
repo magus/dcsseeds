@@ -2,10 +2,160 @@
 # dcss-seeds
 track random seeds in dcss
 
-
 # TODO
 
-## item search
+## prices
+
+include gold price if `event.data.gold` exists (store in gold column with item?)
+
+
+## better sorting
+
+we need to search for items and order by branch order
+
+the current approach searches seedVersion first which breaks ordering entirely
+alternative below is better
+  ```graphql
+  query {
+    dcsseeds_scrapePlayers_item(
+      where: { name: { _ilike: "%wyrmbane%" }, branch: { _or: { name: { _eq: "Dungeon" } } } }
+      order_by: { branch: { order: asc }, level: asc }
+    ) {
+      name
+      branchName
+      level
+      seed
+      version
+    }
+  }
+  ```
+
+update both useArtifactFilter AND the cache_unrand_query graphql queries
+
+some items are duplicated, this is a problem
+items should be unique on (name, branch, level, seed, version)
+at some point we were including (morgue, timestamp) which creates duplicates
+we may need to restart parsing because there are duplicates that should not be there
+  e.g.  https://dcss.vercel.app/?q=%2B13+crystal
+        seed  3467139861098030199
+        v     0.29.1
+
+
+## true item search
+
+open ended item search needs more structure, right now it's a very simple text match
+but doesn't support using AND/OR to combine clauses, we should come up with a better strategy
+for example it'd be much better if we could filter items by
+  - type (e.g. shield, axe, staff, body, feet, barding, ring, etc.)
+  - brand (e.g. drain, venom, flame, pain, vorpal, vamp, etc.)
+  - property (e.g. Slay, Int, Str, rElec, rF, Contam, *Corrode, Drain etc.)
+imagine queries such as
+  (amulet reflect)       -- amulet with reflect
+  (body ac)              -- body armor with any amount of ac
+  (head will+ ac+4)      -- head with exactly Will+ and AC+4
+  (axe vamp slay>2)      -- axe with at least slay+2 and vamp brand
+  (ring !int<0 str>4)    -- ring with at least str+4 and no negative int
+  (gold<1000)            -- any item with a cost less then 1000 (including free)
+
+step one will be writing a parser to read items
+extract the relevant details into json schema
+under `Equip` screen might have started something similar
+
+how can we store these so that we can query these combinations easily?
+https://hasura.io/docs/latest/schema/common-patterns/data-modeling/many-to-many/
+
+NOTE: `id` column is for example readability, use a `uuid` in real database
+
+`property` table, store each property in a row in a table
+we can even store unrand as a property and use it to quickly index unrand items
+properties would be created on insert and automatically associated
+https://hasura.io/docs/latest/schema/common-patterns/data-modeling/many-to-many/#insert-using-many-to-many-relationships
+
+| type     | name                   | id  |
+| -------- | ---------------------- | --- |
+| unrand   | UNRAND_SPRIGGANS_KNIFE |     |
+|          |                        |     |
+| weapon   | axe                    |     |
+| offhand  | buckler                |     |
+| body     | plate armour           |     |
+| body     | crystal plate armour   | CPA |
+| neck     | scarf                  |     |
+| neck     | amulet                 |     |
+| ring     | ring                   |     |
+|          |                        |     |
+| brand    | drain                  |     |
+| brand    | vorpal                 |     |
+| brand    | vamp                   |     |
+|          |                        |     |
+| property | gold                   |     |
+| property | plus                   | PL  |
+| property | slay                   |     |
+| property | will                   |     |
+| property | rC                     | RC  |
+| property | rN                     | RN  |
+| property | rPois                  | RPO |
+| property | Dex                    | DEX |
+| property | AC                     |     |
+| property | *Corrode               |     |
+|          |                        |     |
+
+`event` table, might look like
+
+| type | id  | name                                                                 | branch  | level | seed                | version | created_at                | updated_at                |
+| ---- | --- | -------------------------------------------------------------------- | ------- | ----- | ------------------- | ------- | ------------------------- | ------------------------- |
+| item | 42  | +13 crystal plate armour of the Devil's Team {rPois rC+ rN+++ Dex-5} | Dungeon | 4     | 3467139861098030199 | 0.29.1  | 2023-01-14T08:41:56+00:00 | 2023-02-20T16:27:19+00:00 |
+|      |     |                                                                      |         |       |                     |         |                           |                           |
+
+`event_property` table, bridges `property` and `event`
+
+| event_id | property_id | value |
+| -------- | ----------- | ----- |
+| 42       | PL          | 13    |
+| 42       | CPA         |       |
+| 42       | RPO         | 1     |
+| 42       | RC          | 1     |
+| 42       | RN          | 3     |
+| 42       | DEX         | -5    |
+|          |             |       |
+
+
+iterate + test by parsing and storying a 15 rune win with lots of events, unrands, etc.
+then try out queries etc. to ensure things work, if not, blow it away and try again
+
+## show more + result limit
+implement a `result_limit`, start at `20`, increment by `20` (`40`, `60`, etc.)
+display `[Show more (238 more results)]` button to increase `result_limit`
+can either fetch full window each time or select partial window and add to existing
+
+
+## event search (not just items)
+
+thinking about long term introspection and query flexibility
+storing "events" instead of just "items"
+think about "events" with a "type" field
+we could start by creating a new 'events' table and writing to that at the same time we write
+to items when we call scrapePlayers
+
+type: item | unrand | spell | altar | unique | portal
+- unrand (known artefacts e.g. wyrmbane, hat of the alchemist, etc.)
+- spells (requires magus.rc `note_messages += You add the spell`)
+- god altars (e.g. `Found a radiant altar of Vehumet.`)
+- uniques
+- Portals (eg abyss, ice cave, wizlab, etc)
+- acquirement scrolls (see below)
+
+this would give us the ability to easily query for combinations
+  e.g. (altar:vehumet) AND (spell:statue form) AND (Dungeon)
+
+there are two approaches we can take to querying, the first is doing it all client-side
+just like artifacts we can know the full set of uniques, god altars, spells, portal etc.
+since we know them all we could cache and query them just like artifact filters
+
+when we implement true item searching, we can construct an array of conditions for
+the where clause in a graphql query and fetch results that way
+in order for complex queries to work we need all items to be in a single table
+
+### acquirement scrolls
 
 - instead of parsing `Identified 3 scrolls of acquirement`
 - we MUST instead use `Acquired ...` this is because you might identify them anywhere
@@ -24,23 +174,17 @@ track random seeds in dcss
 - if higher, we must send a delete mutation followed by an insert mutation with the new acquirement events
 - MUST do this before writing items since writing items is atomic and also marks morgue as visited/read
 
+### displaying event results
 
-- branch and level filters after searching for items
-- using unique values from search result, populate a list of filters client-side
+for each event type we should have a toggle to hide/show the options
+by default we can have artefacts enabled
+e.g. (✅ Artefacts) (❌ Altars) (❌ Uniques) (❌ Portals) (❌ Spells)
 
-- include gold price with items that were bought
+by toggling on an event type you opt two things
+  1.  showing the filter buttons for that event type
+  2.  showing that event type in the result cards
+      we can show all items sorted by branch order together and easily turn them on/off
 
-- if you splat one seed over & over trying to get a certain item off the ground (cough cough couldn't be me), there will be multiple entries for that item
-  e.g.  https://dcss.vercel.app/?q=%2B13+crystal
-        seed  3467139861098030199
-        v     0.29.1
-- need to track only items once per seed version, update unique keys to exclude morgue, timestamp etc.
-- unique key should be (name, branch, level, seed, version)
-
-- noting god altars (e.g. luongo/jivya sewers/ice caves or rare temple temple layouts)
-- imagine searching for something like `altar:jivya` and being able to filter by branch/level like above
-
-source https://www.reddit.com/r/dcss/comments/11c0r2c/dcss_search_find_seeds_with_artifact_combinations/ja6h437/
 
 ## feedback
 
