@@ -64,7 +64,10 @@ under `Equip` screen might have started something similar
 how can we store these so that we can query these combinations easily?
 https://hasura.io/docs/latest/schema/common-patterns/data-modeling/many-to-many/
 
-NOTE: `id` column is for example readability, use a `uuid` in real database
+NOTE: `id` column is for example readability, use `Integer (auto-increment)` in real database
+  better performance than `uuid` and we aren't distributed so no need for `uuid`
+  > uuids needed when multiple processes generate unique IDs independently
+  > https://news.ycombinator.com/item?id=11863492
 
 `property` table, store each property in a row in a table
 we can even store unrand as a property and use it to quickly index unrand items
