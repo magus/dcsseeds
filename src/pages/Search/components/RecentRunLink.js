@@ -26,7 +26,7 @@ export function RecentRunLink(props) {
         <Link passHref href={recent_run_link}>
           <a rel="noopener noreferrer">
             <span>
-              <b>{props.recent_run.player_name}</b>
+              <b>{props.recent_run.player.name}</b>
             </span>
             &nbsp;
             <span>
@@ -34,7 +34,7 @@ export function RecentRunLink(props) {
             </span>
             &nbsp;
             <span className="datetime">
-              (<TimeAgo date={props.recent_run.updated_at} />)
+              (<TimeAgo date={props.recent_run.timestamp} />)
             </span>
             <Spacer.Horizontal size="1" style={{ display: 'inline-block' }} />
           </a>
