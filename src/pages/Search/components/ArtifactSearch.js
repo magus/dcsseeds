@@ -52,10 +52,11 @@ function ArtifactResults(props) {
       <motion.div
         // force line break
         key={key}
+        layout="position"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        layout="position"
+        transition={spring_config}
       >
         <ArtifactSearchResult {...result} />
       </motion.div>
@@ -85,10 +86,12 @@ function FilterButton(props) {
   return (
     <ButtonGroup
       key={props.name}
+      layout="position"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      layout="position"
+      transition={spring_config}
+      active={props.active}
     >
       <Button image={props.image} active={props.active} disabled={props.disabled} onClick={handle_click}>
         {!props.image ? null : (
@@ -159,7 +162,14 @@ function ArtifactFilters(props) {
 
       <Filters>
         {props.filter_set.size === 0 ? null : (
-          <ButtonGroup>
+          <ButtonGroup
+            key="clear"
+            layout="position"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={spring_config}
+          >
             <Button onClick={props.reset}>❌ Clear</Button>
           </ButtonGroup>
         )}
@@ -221,6 +231,8 @@ const ButtonGroup = styled(motion.div)`
   display: flex;
   flex-grow: 1;
   margin: 0 var(--spacer-d2) var(--spacer-d2) 0;
+
+  z-index: ${(props) => (props.active ? 1 : 'initial')};
 `;
 
 const Button = styled.button`
@@ -259,3 +271,9 @@ const Button = styled.button`
     }
   }}
 `;
+
+const spring_config = {
+  type: 'spring',
+  mass: 0.25,
+  stiffness: 150,
+};
