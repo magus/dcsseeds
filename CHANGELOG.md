@@ -1,5 +1,30 @@
 # CHANGELOG
 
+## 2023-03-01
+
+- setting up foreign keys to control how updates and deletes impact related tables
+  trying to setup so deleting seedVersion will delete associated items
+
+  dcsseeds_scrapePlayers_item . branchName        → dcsseeds_scrapePlayers_branch . name
+      update restrict
+      delete restrict
+
+  dcsseeds_scrapePlayers_item . ( version, seed ) → dcsseeds_scrapePlayers_seedVersion . ( version, seed )
+    update restrict
+    delete cascade
+
+- testing on seed with single item first
+  v0.29.0, seed 13228964911619526999 (1 item)
+  it worked, the associated item is gone
+  going to try it again this time with a seed with more items
+  v0.29.0, seed 16830254511677329900 (78 items)
+
+  22131 total items before....
+  22053 total items after
+  22131 - 22053 = 78
+
+- the foreign keys are working as expected
+
 
 ## 2023-02-28
 
