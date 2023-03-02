@@ -383,7 +383,11 @@ async function graphql_filter(args) {
         }
       }
 
-      ${ResultFragment}
+      fragment NestedUnrandResult on dcsseeds_scrapePlayers_item {
+        name
+        branchName
+        level
+      }
     `;
 
   const fetchPolicy = 'cache-first';
@@ -468,7 +472,7 @@ function KeyedUnrandResult(i) {
 
   return `
     ${key}: items(where: { name: { _ilike: "${name_ilike}" } }, limit: 1, order_by: { branch: { order: asc } }) {
-      ...Result
+      ...NestedUnrandResult
     }
   `;
 }
@@ -494,11 +498,3 @@ function NestedFilter(filter_list, unrand_query) {
 
   return nested_query;
 }
-
-const ResultFragment = gql`
-  fragment Result on dcsseeds_scrapePlayers_item {
-    name
-    branchName
-    level
-  }
-`;

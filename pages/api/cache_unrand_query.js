@@ -28,7 +28,13 @@ export default async function handler(req, res) {
         ${stale_unrand_list.map((unrand, i) => SeedVersionFilter(unrand))}
       }
 
-      ${ResultFragment}
+      fragment UnrandResult on dcsseeds_scrapePlayers_item {
+        name
+        branchName
+        level
+        seed
+        version
+      }
     `);
 
     const query_result = await stopwatch.time(GQL_UnrandQueryResults.run()).record('calculate unrand results');
@@ -80,22 +86,12 @@ const GQL_CacheUnrandResultList = serverQuery(gql`
 
 const safe_name = (value) => value.replace(/"/g, '\\"');
 
-const ResultFragment = gql`
-  fragment Result on dcsseeds_scrapePlayers_item {
-    name
-    branchName
-    level
-    seed
-    version
-  }
-`;
-
 function SeedVersionFilter(unrand) {
   const name_ilike = `%${safe_name(unrand.name)}%`;
   const key = unrand.id;
 
   return `
     ${key}: dcsseeds_scrapePlayers_item_search_name(args: {search_name: "${name_ilike}"}) {
-      ...Result
+      ...UnrandResult
     }`;
 }

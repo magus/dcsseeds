@@ -20,24 +20,20 @@ export async function getStaticProps(context) {
   };
 }
 
-const Result = gql`
-  fragment Result on dcsseeds_scrapePlayers_item {
-    name
-    branchName
-    level
-    morgue
-  }
-`;
-
 const GQL_ItemsSeedVersion = serverQuery(
   gql`
     query ItemsSeedVersion($seed: String!, $version: String!) {
       item_list: dcsseeds_scrapePlayers_items_version_seed(args: { input_seed: $seed, input_version: $version }) {
-        ...Result
+        ...SeedVersionItem
       }
     }
 
-    ${Result}
+    fragment SeedVersionItem on dcsseeds_scrapePlayers_item {
+      name
+      branchName
+      level
+      morgue
+    }
   `,
   (data) => data.item_list,
 );
