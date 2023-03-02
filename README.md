@@ -4,9 +4,62 @@ track random seeds in dcss
 
 # TODO
 
+
+## [events-refactor](docs/events-refactor.md)
+s
+
+## cleanup branches
+
+`Arena` branch needs ordering
+`Hell` branch seems invalid, investigate morgues with it and figure out fix
+
 ## prices
 
-include gold price if `event.data.gold` exists (store in gold column with item?)
+include gold price in item if  exists
+store `event.data.gold` in `item.gold` column for easy display with results
+
+> +7 Spriggan's Knife {stab, EV+4 Stlth+} (1482 gold)
+
+
+## alternative graphql nested artifact query approach
+
+`useArtifactFilter`
+alternative to nested queries is to build an `_and` query on the items in filter list
+all items are grouped and sorted which means we can return first matches for each filter
+this means we get perfect branch ordering on the combined results
+we should be able to remove a lot of confusing logic around traversing and nesting queries too
+
+this should also be a faster query bringing local and graphql closer in user experience
+maybe even good enough to drop the local filtering (but probably not)
+
+```graphql
+query {
+  dcsseeds_scrapePlayers_seedVersion(
+    where: {
+      _and: [
+        { items: { name: { _iregex: "\\+13 crystal" } } }
+        { items: { name: { _iregex: "dagger of dawn" } } }
+      ]
+    }
+  ) {
+    items(
+      order_by: [{ branch: { order: asc } }, { level: asc }]
+      where: {
+        _or: [
+          { name: { _iregex: "\\+13 crystal" } }
+          { name: { _iregex: "dagger of dawn" } }
+        ]
+      }
+    ) {
+      version
+      seed
+      name
+      branchName
+      level
+    }
+  }
+}
+```
 
 
 ## better sorting
@@ -14,7 +67,8 @@ include gold price if `event.data.gold` exists (store in gold column with item?)
 we need to search for items and order by branch order
 the current approach searches seedVersion first which breaks ordering entirely
 alternative below is better
-update both useArtifactFilter AND the cache_unrand_query graphql queries
+
+update graphql in both `useArtifactFilter` AND `/api/cache_unrand_query`
 
 **NOTE**: may need to implement as sql function and add `DISTINCT ON ("seed", "version")`
           to top level query to remove duplicates (similar to `dcsseeds_scrapePlayers_items_version_seed`)
@@ -35,14 +89,6 @@ query {
 }
 ```
 
-some items are duplicated, this is a problem
-items should be unique on (name, branch, level, seed, version)
-at some point we were including (morgue, timestamp) which creates duplicates
-we may need to restart parsing because there are duplicates that should not be there
-  e.g.  https://dcss.vercel.app/?q=%2B13+crystal
-        seed  3467139861098030199
-        v     0.29.1
-
 
 ## true item search
 
@@ -60,184 +106,55 @@ imagine queries such as
   (ring !int<0 str>4)    -- ring with at least str+4 and no negative int
   (gold<1000)            -- any item with a cost less then 1000 (including free)
 
-step one will be writing a parser to read items
-extract the relevant details into json schema
-under `Equip` screen might have started something similar
 
-how can we store these so that we can query these combinations easily?
-https://hasura.io/docs/latest/schema/common-patterns/data-modeling/many-to-many/
+we can get really close using regex where clauses, see below
 
-**NOTE**: `id` column is for example readability, use `Integer (auto-increment)` in real database
-  better performance than `uuid` and we aren't distributed so no need for `uuid`
-  > uuids needed when multiple processes generate unique IDs independently
-  > https://news.ycombinator.com/item?id=11863492
+- only support `>` (not `>=` for simplicity)
+  - why? `>` and `>=` communicate the same thing
+    `plus >  6`  `min_plus = 7 = 6 + 1`
+    `plus >= 7`  `min_plus = 7`
 
-`dcss_seed_version` table, asssociate unique seed version combinations
-  Primary Key `id Integer (auto-increment)`
-  Unique Key  `(version, seed)`
-  - also easy remove / invalidate entries for reparsing
-  - e.g. delete all where `version: 0.30.0`
-  - ensure when deleting a `seed_version` we should delete all associated `event` and `morgue` entries
-  - this will cause the players morgue map to remove entries and trigger reparsing those morgue files
+- maybe just need to translate input into series of regex clauses for query
 
-| id  | version | seed                |
-| --- | ------- | ------------------- |
-|     | 0.29.1  | 3467139861098030199 |
-|     |         |                     |
+  > (plus > 6 AND slay > 5) OR (rN > 2 AND Will > 2 AND !Contam)
 
-`dcss_search_morgue` table, asssociate a specific run to a player
-  Primary Key `url`
-  - allow us to build current `morgues` json map dynamically
-  - query all rows for a player and then , use `url` to construct the json object for fast lookup in `scrapePlayers`
-  - instead of timestamp, use the `url` as the key in the map for lookup
-  - more readable and avoids the timestamp calculation
-
-| timestamp                | version | seed                | url (PK)                                                                     | player_id |
-| ------------------------ | ------- | ------------------- | ---------------------------------------------------------------------------- | --------- |
-| 2023-01-14T08:41:56.000Z | 0.29.1  | 3467139861098030199 | http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20230114-084156.txt |           |
-|                          |         |                     |                                                                              |           |
-
-`dcss_search_event` table, might look like
-  Primary Key `id Integer (auto-increment)`
-  Unique Key  `(name, branch, level, version, seed)`
-  - `name`, `branch`, `level`, `version` and `seed` for a unique key to prevent duplicates
-  - `on_conflict` update `name` value (basically a noop)
-  - `branch` is literal name (associated column can be `branch_ref`)
-
-| type | id  | name                                                                 | branch  | level | version | seed                 | created_at               | updated_at               |
-| ---- | --- | -------------------------------------------------------------------- | ------- | ----- | ------- | -------------------- | ------------------------ | ------------------------ |
-| item | 42  | +13 crystal plate armour of the Devil's Team {rPois rC+ rN+++ Dex-5} | Dungeon | 4     | 0.29.1  | 3467139861098030199  | 2023-01-14T08:41:56.000Z | 2023-02-20T16:27:19.000Z |
-| item | 19  | +7 Spriggan's Knife {stab, EV+4 Stlth+}                              | Dungeon | 13    | 0.27.1  | 12712793890262719231 | 2021-11-10T03:15:51.000Z | 2021-11-10T03:15:51.000Z |
-|      |     |                                                                      |         |       |         |                      |                          |                          |
-
-`dcss_search_property` table, store each property in a row in a table
-  - with this setup it even becomes clear we could store more information here
-  - `unrand` property for marking unique unrand items for indexing and quick lookup
-  - properties would be created on insert and automatically associated
-  - https://hasura.io/docs/latest/schema/common-patterns/data-modeling/many-to-many/#insert-using-many-to-many-relationships
-
-| type     | name                   | value | id   |
-| -------- | ---------------------- | ----- | ---- |
-| unrand   | UNRAND_SPRIGGANS_KNIFE |       |      |
-|          |                        |       |      |
-| weapon   | axe                    |       |      |
-| weapon   | dagger                 |       |      |
-| offhand  | buckler                |       |      |
-| body     | plate armour           |       |      |
-| body     | crystal plate armour   |       | CPA  |
-| neck     | scarf                  |       |      |
-| neck     | amulet                 |       |      |
-| ring     | ring                   |       |      |
-|          |                        |       |      |
-| brand    | drain                  |       |      |
-| brand    | vorpal                 |       |      |
-| brand    | vamp                   |       |      |
-|          |                        |       |      |
-| property | gold                   |       | GOLD |
-| property | plus                   | 7     | 7PL  |
-| property | plus                   | 13    | 13PL |
-| property | slay                   |       |      |
-| property | will                   |       |      |
-| property | rC                     | 1     | RC   |
-| property | rN                     | 3     | RN   |
-| property | rPois                  | 1     | RPO  |
-| property | Dex                    | -5    | DEX  |
-| property | EV                     | 4     | EV   |
-| property | *Corrode               |       |      |
-| property | stab                   |       | STAB |
-| property | Stlth                  | 1     | STLT |
-|          |                        |       |      |
-
-`dcss_search_event_property` table, bridges `property` and `event`
-  - surfaced as `properties` (1:N relationship) on `event` shape
-  - `value` column in `event_property` for situations with many possible values e.g. `gold`
-  - for example gold value is stored in the bridging table to avoid thousands of `property` rows
-
-| event_id | property_id | value |
-| -------- | ----------- | ----- |
-| 42       | 13PL        |       |
-| 42       | CPA         |       |
-| 42       | RPO         |       |
-| 42       | RC          |       |
-| 42       | RN          |       |
-| 42       | DEX         |       |
-| 42       | GOLD        | 1862  |
-|          |             |       |
-| 19       | 7PL         |       |
-| 19       | STAB        |       |
-| 19       | EV          |       |
-| 19       | STLT        |       |
-|          |             |       |
-
-
-iterate + test by parsing and storying a 15 rune win with lots of events, unrands, etc.
-then try out queries etc. to ensure things work, if not, blow it away and try again
-
-setup a parallel events scraper that runs every 5 minutes like items
-allow us to test and gather events without breaking existing items functionality
-
-## show more + result limit
-implement a `result_limit`, start at `20`, increment by `20` (`40`, `60`, etc.)
-display `[Show more (238 more results)]` button to increase `result_limit`
-can either fetch full window each time or select partial window and add to existing
-
-
-## event search (not just items)
-
-thinking about long term introspection and query flexibility
-storing "events" instead of just "items"
-think about "events" with a "type" field
-
-
-type: item | unrand | spell | altar | unique | portal
-- unrand (known artefacts e.g. wyrmbane, hat of the alchemist, etc.)
-- spells (requires magus.rc `note_messages += You add the spell`)
-- god altars (e.g. `Found a radiant altar of Vehumet.`)
-- uniques
-- Portals (eg abyss, ice cave, wizlab, etc)
-- acquirement scrolls (see below)
-
-this would give us the ability to easily query for combinations
-  e.g. (altar:vehumet) AND (spell:statue form) AND (Dungeon)
-
-there are two approaches we can take to querying, the first is doing it all client-side
-just like artifacts we can know the full set of uniques, god altars, spells, portal etc.
-since we know them all we could cache and query them just like artifact filters
-
-when we implement true item searching, we can construct an array of conditions for
-the where clause in a graphql query and fetch results that way
-in order for complex queries to work we need all items to be in a single table
-
-### acquirement scrolls
-
-- instead of parsing `Identified 3 scrolls of acquirement`
-- we MUST instead use `Acquired ...` this is because you might identify them anywhere
-- which leads to weirdness like this seed, with 3 and 4 acquirements on D1 and D3
-- https://dcss.vercel.app/items/0.29.1/9529714651559989746?highlight=3+scrolls+of+acquirement
-- D3 4 acquirements https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20230218-042401.txt
-- D1 3 acquirements https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20230218-001037.txt
-- instead, count each `Acquired ...` event and determine total count
-- then save each as a `scroll of Acquirement` on that branch + level
-- if there are multiple on a level, count it as multiple
-- example https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20230218-001037.txt
-- should show 3 scrolls on D1 and 1 scroll on D3
-- each run may reveal them in different levels so we must only ever store a single runs acquirements
-- use the run with the greatest total acquirements as the source of truth
-- that means we need to compare total acquirements versus current acquirements for seedVersion (query)
-- if higher, we must send a delete mutation followed by an insert mutation with the new acquirement events
-- MUST do this before writing items since writing items is atomic and also marks morgue as visited/read
-
-### displaying event results
-
-for each event type we should have a toggle to hide/show the options
-by default we can have artefacts enabled
-e.g. (✅ Artefacts) (❌ Altars) (❌ Uniques) (❌ Portals) (❌ Spells)
-
-by toggling on an event type you opt two things
-  1.  showing the filter buttons for that event type
-  2.  showing that event type in the result cards
-      we can show all items sorted by branch order together and easily turn them on/off
-
+  ```graphql
+  query {
+    dcsseeds_scrapePlayers_item(
+      order_by: [{ branch: { order: asc } }, { level: asc }]
+      where: {
+        _or: [
+          # (plus > 6 AND slay > 5) OR (rN > 2 AND Will > 2 AND !Contam)
+          {
+            _and: [
+              # plus > 6 AND slay > 5
+              { name: { _iregex: "^\\+([7-9]|\\d{2,})" } }
+              { name: { _iregex: "Slay\\+([6-9]|\\d{2,})" } }
+              # { name: { _nregex: "\\-Tele" } }
+              # brand
+              # { name: { _iregex: "{vamp" } }
+            ]
+          }
+          {
+            _and: [
+              # rN > 2 AND Will > 2 AND !Contam
+              { name: { _iregex: "rN[\\+]{3,}" } }
+              { name: { _iregex: "Will[\\+]{3,}" } }
+              { name: { _nregex: "Contam" } }
+              # { name: { _nregex: "\\-Cast" } }
+            ]
+          }
+        ]
+      }
+    ) {
+      version
+      seed
+      name
+      branchName
+      level
+    }
+  }
+  ```
 
 ## feedback
 
