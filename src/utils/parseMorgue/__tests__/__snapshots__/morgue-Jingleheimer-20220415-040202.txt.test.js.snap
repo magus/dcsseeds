@@ -1,0 +1,2351 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220415-040202.txt 1`] = `
+{
+  "background": "Fighter",
+  "datetime": 2022-04-15T04:02:02.000Z,
+  "eventCount": 237,
+  "eventErrors": [],
+  "events": [
+    {
+      "branch": "Dungeon",
+      "data": "Jingleheimer the Minotaur Fighter began the quest for the Orb.",
+      "level": "1",
+      "location": "Dungeon:1",
+      "type": "first-event",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "hp": "19",
+        "level": "1",
+        "mp": "0",
+      },
+      "level": "1",
+      "location": "Dungeon:1",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "hp": "26",
+        "level": "2",
+        "mp": "1",
+      },
+      "level": "1",
+      "location": "Dungeon:1",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "hp": "31",
+        "level": "3",
+        "mp": "2",
+      },
+      "level": "1",
+      "location": "Dungeon:1",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Natasha",
+      },
+      "level": "2",
+      "location": "Dungeon:2",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Natasha",
+      },
+      "level": "2",
+      "location": "Dungeon:2",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "5",
+        "skill": "Maces & Flails",
+      },
+      "level": "2",
+      "location": "Dungeon:2",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "hp": "39",
+        "level": "4",
+        "mp": "3",
+      },
+      "level": "2",
+      "location": "Dungeon:2",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Natasha",
+      },
+      "level": "2",
+      "location": "Dungeon:2",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Natasha",
+      },
+      "level": "2",
+      "location": "Dungeon:2",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Natasha",
+      },
+      "level": "2",
+      "location": "Dungeon:2",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Natasha",
+      },
+      "level": "2",
+      "location": "Dungeon:2",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "hp": "45",
+        "level": "5",
+        "mp": "4",
+      },
+      "level": "2",
+      "location": "Dungeon:2",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "item": "+1 whip of Eternal Harmony {flame, rElec Int+2}",
+      },
+      "level": "3",
+      "location": "Dungeon:3",
+      "type": "ident",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "item": "+1 whip of Eternal Harmony {flame, rElec Int+2}",
+      },
+      "level": "3",
+      "location": "Dungeon:3",
+      "type": "item",
+    },
+    {
+      "branch": "Temple",
+      "data": {
+        "god": "Elyvilon",
+      },
+      "level": undefined,
+      "location": "Temple",
+      "type": "join-god",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Ijyb",
+      },
+      "level": "5",
+      "location": "Dungeon:5",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "hp": "51",
+        "level": "6",
+        "mp": "5",
+      },
+      "level": "6",
+      "location": "Dungeon:6",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Menkaure",
+      },
+      "level": "5",
+      "location": "Dungeon:5",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Menkaure",
+      },
+      "level": "6",
+      "location": "Dungeon:6",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Sigmund",
+      },
+      "level": "5",
+      "location": "Dungeon:5",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "hp": "57",
+        "level": "7",
+        "mp": "6",
+      },
+      "level": "5",
+      "location": "Dungeon:5",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "bips": "*",
+        "god": "Elyvilon",
+      },
+      "level": "4",
+      "location": "Dungeon:4",
+      "type": "piety-god",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "10",
+        "skill": "Maces & Flails",
+      },
+      "level": "5",
+      "location": "Dungeon:5",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Edmund",
+      },
+      "level": "5",
+      "location": "Dungeon:5",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Edmund",
+      },
+      "level": "4",
+      "location": "Dungeon:4",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "hp": "64",
+        "level": "8",
+        "mp": "7",
+      },
+      "level": "5",
+      "location": "Dungeon:5",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Ijyb",
+      },
+      "level": "5",
+      "location": "Dungeon:5",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Sigmund",
+      },
+      "level": "5",
+      "location": "Dungeon:5",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "god": "Elyvilon",
+      },
+      "level": "5",
+      "location": "Dungeon:5",
+      "type": "leave-god",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "god": "Gozag",
+      },
+      "level": "5",
+      "location": "Dungeon:5",
+      "type": "join-god",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "item": "4 scrolls of acquirement",
+      },
+      "level": "6",
+      "location": "Dungeon:6",
+      "type": "ident",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "item": "4 scrolls of acquirement",
+      },
+      "level": "6",
+      "location": "Dungeon:6",
+      "type": "item",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "hp": "70",
+        "level": "9",
+        "mp": "8",
+      },
+      "level": "6",
+      "location": "Dungeon:6",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "15",
+        "skill": "Maces & Flails",
+      },
+      "level": "7",
+      "location": "Dungeon:7",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "1",
+        "skill": "Dodging",
+      },
+      "level": "8",
+      "location": "Dungeon:8",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "5",
+        "skill": "Fighting",
+      },
+      "level": "7",
+      "location": "Dungeon:7",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "hp": "81",
+        "level": "10",
+        "mp": "9",
+      },
+      "level": "8",
+      "location": "Dungeon:8",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "gold": "56",
+        "item": "scroll of identify",
+      },
+      "level": "8",
+      "location": "Dungeon:8",
+      "type": "bought",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "gold": "126",
+        "item": "cloak",
+      },
+      "level": "8",
+      "location": "Dungeon:8",
+      "type": "bought",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "5",
+        "skill": "Dodging",
+      },
+      "level": "8",
+      "location": "Dungeon:8",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "gold": "256",
+        "item": "fine buckler",
+      },
+      "level": "6",
+      "location": "Dungeon:6",
+      "type": "bought",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "gold": "256",
+        "item": "+1 buckler of Mutualism {Str+5}",
+      },
+      "level": "6",
+      "location": "Dungeon:6",
+      "type": "ident-bought-loc",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "gold": "256",
+        "item": "+1 buckler of Mutualism {Str+5}",
+      },
+      "level": "6",
+      "location": "Dungeon:6",
+      "type": "item",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "gold": "1080",
+        "item": "+3 pair of seven-league boots {Rampage+âˆž}",
+      },
+      "level": "6",
+      "location": "Dungeon:6",
+      "type": "bought",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "item": "+3 pair of seven-league boots {Rampage+âˆž}",
+      },
+      "level": "6",
+      "location": "Dungeon:6",
+      "type": "item",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "item": "+8 storm bow {elec, penet}",
+      },
+      "level": "9",
+      "location": "Dungeon:9",
+      "type": "found",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "item": "+8 storm bow {elec, penet}",
+      },
+      "level": "9",
+      "location": "Dungeon:9",
+      "type": "item",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "hp": "97",
+        "level": "11",
+        "mp": "10",
+      },
+      "level": "10",
+      "location": "Dungeon:10",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "10",
+        "skill": "Fighting",
+      },
+      "level": "10",
+      "location": "Dungeon:10",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "gold": "624",
+        "item": "scroll of acquirement",
+      },
+      "level": "11",
+      "location": "Dungeon:11",
+      "type": "bought",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "gold": "24",
+        "item": "scroll of identify",
+      },
+      "level": "11",
+      "location": "Dungeon:11",
+      "type": "bought",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "gold": "24",
+        "item": "scroll of identify",
+      },
+      "level": "11",
+      "location": "Dungeon:11",
+      "type": "bought",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "desc": "You sometimes lose the ability to read scrolls when taking damage.",
+        "kind": "Gained",
+        "source": "potion of mutation",
+        "stat": undefined,
+      },
+      "level": "11",
+      "location": "Dungeon:11",
+      "type": "mutation",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "desc": "You have hidden genetic defects.",
+        "kind": "Gained",
+        "source": "potion of mutation",
+        "stat": undefined,
+      },
+      "level": "11",
+      "location": "Dungeon:11",
+      "type": "mutation",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "desc": "You have hidden genetic defects.",
+        "kind": "Lost",
+        "source": "potion of mutation",
+        "stat": undefined,
+      },
+      "level": "11",
+      "location": "Dungeon:11",
+      "type": "mutation",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "desc": "You sometimes lose the ability to read scrolls when taking damage.",
+        "kind": "Lost",
+        "source": "potion of mutation",
+        "stat": undefined,
+      },
+      "level": "11",
+      "location": "Dungeon:11",
+      "type": "mutation",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "desc": "Your spells are a little harder to cast, but a little more powerful.",
+        "kind": "Gained",
+        "source": "potion of mutation",
+        "stat": undefined,
+      },
+      "level": "11",
+      "location": "Dungeon:11",
+      "type": "mutation",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "desc": "You are agile.",
+        "kind": "Gained",
+        "source": "potion of mutation",
+        "stat": "Dex +2",
+      },
+      "level": "11",
+      "location": "Dungeon:11",
+      "type": "mutation",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "10",
+        "skill": "Dodging",
+      },
+      "level": "10",
+      "location": "Dungeon:10",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "item": "ring "Assi" {Wiz rPois Str+4 Int+3 Dex-4}",
+      },
+      "level": "11",
+      "location": "Dungeon:11",
+      "type": "acquirement",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "1",
+        "skill": "Throwing",
+      },
+      "level": "11",
+      "location": "Dungeon:11",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "hp": "112",
+        "level": "12",
+        "mp": "11",
+      },
+      "level": "12",
+      "location": "Dungeon:12",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "5",
+        "skill": "Throwing",
+      },
+      "level": "12",
+      "location": "Dungeon:12",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Urug",
+      },
+      "level": "13",
+      "location": "Dungeon:13",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Urug",
+      },
+      "level": "13",
+      "location": "Dungeon:13",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "10",
+        "skill": "Throwing",
+      },
+      "level": "12",
+      "location": "Dungeon:12",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "hp": "118",
+        "level": "13",
+        "mp": "12",
+      },
+      "level": "13",
+      "location": "Dungeon:13",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "5",
+        "skill": "Shields",
+      },
+      "level": "12",
+      "location": "Dungeon:12",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "branch": "Vaults",
+      },
+      "level": "13",
+      "location": "Dungeon:13",
+      "type": "portal",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Kirke",
+      },
+      "level": "13",
+      "location": "Dungeon:13",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Kirke",
+      },
+      "level": "12",
+      "location": "Dungeon:12",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Erolcha",
+      },
+      "level": "13",
+      "location": "Dungeon:13",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "5",
+        "skill": "Armour",
+      },
+      "level": "13",
+      "location": "Dungeon:13",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Erolcha",
+      },
+      "level": "13",
+      "location": "Dungeon:13",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "skill": "Throwing",
+      },
+      "level": "14",
+      "location": "Dungeon:14",
+      "type": "manual",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "gold": "702",
+        "item": "runed plate armour",
+      },
+      "level": "6",
+      "location": "Dungeon:6",
+      "type": "bought",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "gold": "702",
+        "item": "shiny plate armour",
+      },
+      "level": "6",
+      "location": "Dungeon:6",
+      "type": "bought",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "who": "Maggie",
+      },
+      "level": "2",
+      "location": "Lair:2",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "who": "Maggie",
+      },
+      "level": "2",
+      "location": "Lair:2",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "item": "+2 hand axe of Guotsole {venom, *Corrode rN+ Int+2 Stlth+}",
+      },
+      "level": "2",
+      "location": "Lair:2",
+      "type": "ident",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "item": "+2 hand axe of Guotsole {venom, *Corrode rN+ Int+2 Stlth+}",
+      },
+      "level": "2",
+      "location": "Lair:2",
+      "type": "item",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "hp": "129",
+        "level": "14",
+        "mp": "13",
+      },
+      "level": "2",
+      "location": "Lair:2",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "level": "10",
+        "skill": "Armour",
+      },
+      "level": "2",
+      "location": "Lair:2",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "level": "1",
+        "skill": "Evocations",
+      },
+      "level": "5",
+      "location": "Lair:5",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "level": "15",
+        "skill": "Fighting",
+      },
+      "level": "6",
+      "location": "Lair:6",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "hp": "141",
+        "level": "15",
+        "mp": "14",
+      },
+      "level": "6",
+      "location": "Lair:6",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "gold": "255",
+        "item": "pair of glowing gloves",
+      },
+      "level": "6",
+      "location": "Lair:6",
+      "type": "bought",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "gold": "884",
+        "item": "runed plate armour",
+      },
+      "level": "6",
+      "location": "Lair:6",
+      "type": "bought",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "gold": "255",
+        "item": "pair of glowing gloves",
+      },
+      "level": "6",
+      "location": "Lair:6",
+      "type": "bought",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "gold": "323",
+        "item": "masterwork chain mail",
+      },
+      "level": "6",
+      "location": "Lair:6",
+      "type": "bought",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "gold": "323",
+        "item": "+8 chain mail "Murun" {rCorr}",
+      },
+      "level": "6",
+      "location": "Lair:6",
+      "type": "ident-bought-loc",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "gold": "323",
+        "item": "+8 chain mail "Murun" {rCorr}",
+      },
+      "level": "6",
+      "location": "Lair:6",
+      "type": "item",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "5",
+        "skill": "Evocations",
+      },
+      "level": "15",
+      "location": "Dungeon:15",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "level": "15",
+        "skill": "Dodging",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "hp": "157",
+        "level": "16",
+        "mp": "15",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "gold": "172",
+        "item": "pair of runed boots",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "bought",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "gold": "849",
+        "item": "+2 hat of the Bear Spirit {Spirit, *Rage Will++}",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "bought",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "item": "+2 hat of the Bear Spirit {Spirit, *Rage Will++}",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "item",
+    },
+    {
+      "branch": "Spider",
+      "data": {
+        "item": "+7 chain mail of Qiysimoa {rN+}",
+      },
+      "level": "2",
+      "location": "Spider:2",
+      "type": "ident",
+    },
+    {
+      "branch": "Spider",
+      "data": {
+        "item": "+7 chain mail of Qiysimoa {rN+}",
+      },
+      "level": "2",
+      "location": "Spider:2",
+      "type": "item",
+    },
+    {
+      "branch": "Spider",
+      "data": {
+        "item": "+3 robe of Clouds {*Thunder rCloud rElec}",
+      },
+      "level": "2",
+      "location": "Spider:2",
+      "type": "found",
+    },
+    {
+      "branch": "Spider",
+      "data": {
+        "item": "+3 robe of Clouds {*Thunder rCloud rElec}",
+      },
+      "level": "2",
+      "location": "Spider:2",
+      "type": "item",
+    },
+    {
+      "branch": "IceCave",
+      "data": {
+        "item": "+2 hat of the Meadowlark {rC+++ Str-5 Slay+3}",
+      },
+      "level": undefined,
+      "location": "IceCave",
+      "type": "ident",
+    },
+    {
+      "branch": "IceCave",
+      "data": {
+        "item": "+2 hat of the Meadowlark {rC+++ Str-5 Slay+3}",
+      },
+      "level": undefined,
+      "location": "IceCave",
+      "type": "item",
+    },
+    {
+      "branch": "IceCave",
+      "data": {
+        "item": "ring "Rukhloqosk" {rC+ Int+4}",
+      },
+      "level": undefined,
+      "location": "IceCave",
+      "type": "ident",
+    },
+    {
+      "branch": "IceCave",
+      "data": {
+        "item": "ring "Rukhloqosk" {rC+ Int+4}",
+      },
+      "level": undefined,
+      "location": "IceCave",
+      "type": "item",
+    },
+    {
+      "branch": "IceCave",
+      "data": {
+        "item": "ring of the Middle {rF+ Int+4 Dex+2}",
+      },
+      "level": undefined,
+      "location": "IceCave",
+      "type": "ident",
+    },
+    {
+      "branch": "IceCave",
+      "data": {
+        "item": "ring of the Middle {rF+ Int+4 Dex+2}",
+      },
+      "level": undefined,
+      "location": "IceCave",
+      "type": "item",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "gold": "523",
+        "item": "ring "Uwke" {Fly rN++ Str-2}",
+      },
+      "level": "6",
+      "location": "Lair:6",
+      "type": "bought",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "item": "ring "Uwke" {Fly rN++ Str-2}",
+      },
+      "level": "6",
+      "location": "Lair:6",
+      "type": "item",
+    },
+    {
+      "branch": "Swamp",
+      "data": {
+        "hp": "168",
+        "level": "17",
+        "mp": "16",
+      },
+      "level": "1",
+      "location": "Swamp:1",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Swamp",
+      "data": {
+        "who": "Louise",
+      },
+      "level": "2",
+      "location": "Swamp:2",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Swamp",
+      "data": {
+        "who": "Louise",
+      },
+      "level": "2",
+      "location": "Swamp:2",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Swamp",
+      "data": {
+        "item": "+4 skin of Zhor {*Englaciate rC+++ SInv}",
+      },
+      "level": "3",
+      "location": "Swamp:3",
+      "type": "found",
+    },
+    {
+      "branch": "Swamp",
+      "data": {
+        "item": "+4 skin of Zhor {*Englaciate rC+++ SInv}",
+      },
+      "level": "3",
+      "location": "Swamp:3",
+      "type": "item",
+    },
+    {
+      "branch": "Swamp",
+      "data": {
+        "who": "Aizul",
+      },
+      "level": "3",
+      "location": "Swamp:3",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Swamp",
+      "data": {
+        "who": "Aizul",
+      },
+      "level": "3",
+      "location": "Swamp:3",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Swamp",
+      "data": {
+        "who": "Bai Suzhen",
+      },
+      "level": "4",
+      "location": "Swamp:4",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Swamp",
+      "data": {
+        "who": "Bai Suzhen",
+      },
+      "level": "4",
+      "location": "Swamp:4",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Swamp",
+      "data": {
+        "who": "Nikola",
+      },
+      "level": "4",
+      "location": "Swamp:4",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Swamp",
+      "data": {
+        "who": "Nikola",
+      },
+      "level": "4",
+      "location": "Swamp:4",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Swamp",
+      "data": {
+        "item": "+3 mace "Gatuenaig" {venom, rPois rC- Str+2}",
+      },
+      "level": "4",
+      "location": "Swamp:4",
+      "type": "ident",
+    },
+    {
+      "branch": "Swamp",
+      "data": {
+        "item": "+3 mace "Gatuenaig" {venom, rPois rC- Str+2}",
+      },
+      "level": "4",
+      "location": "Swamp:4",
+      "type": "item",
+    },
+    {
+      "branch": "Swamp",
+      "data": {
+        "item": "-3 pair of boots of Ceosacytz {Slay+3}",
+      },
+      "level": "4",
+      "location": "Swamp:4",
+      "type": "ident",
+    },
+    {
+      "branch": "Swamp",
+      "data": {
+        "item": "-3 pair of boots of Ceosacytz {Slay+3}",
+      },
+      "level": "4",
+      "location": "Swamp:4",
+      "type": "item",
+    },
+    {
+      "branch": "Spider",
+      "data": {
+        "hp": "182",
+        "level": "18",
+        "mp": "17",
+      },
+      "level": "4",
+      "location": "Spider:4",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Swamp",
+      "data": {
+        "item": "+8 hand axe of Tedalom {vorpal, *Noise Str+4 Dex+8}",
+      },
+      "level": "2",
+      "location": "Swamp:2",
+      "type": "ident",
+    },
+    {
+      "branch": "Swamp",
+      "data": {
+        "item": "+8 hand axe of Tedalom {vorpal, *Noise Str+4 Dex+8}",
+      },
+      "level": "2",
+      "location": "Swamp:2",
+      "type": "item",
+    },
+    {
+      "branch": "Swamp",
+      "data": {
+        "item": "+8 shortbow "Orb Guardian's Regret" {freeze, rN++ Will+ Dex-4}",
+      },
+      "level": "4",
+      "location": "Swamp:4",
+      "type": "ident",
+    },
+    {
+      "branch": "Swamp",
+      "data": {
+        "item": "+8 shortbow "Orb Guardian's Regret" {freeze, rN++ Will+ Dex-4}",
+      },
+      "level": "4",
+      "location": "Swamp:4",
+      "type": "item",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "gold": "180",
+        "item": "potion of heal wounds",
+      },
+      "level": "6",
+      "location": "Lair:6",
+      "type": "bought",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "gold": "180",
+        "item": "potion of heal wounds",
+      },
+      "level": "6",
+      "location": "Lair:6",
+      "type": "bought",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "gold": "36",
+        "item": "scroll labelled ASICSIE DUXT",
+      },
+      "level": "6",
+      "location": "Lair:6",
+      "type": "bought",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "level": "10",
+        "skill": "Shields",
+      },
+      "level": "1",
+      "location": "Vaults:1",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "branch": "Bazaar",
+      },
+      "level": "1",
+      "location": "Vaults:1",
+      "type": "portal",
+    },
+    {
+      "branch": "Bazaar",
+      "data": {
+        "gold": "165",
+        "item": "pair of runed boots",
+      },
+      "level": undefined,
+      "location": "Bazaar",
+      "type": "bought",
+    },
+    {
+      "branch": "Bazaar",
+      "data": {
+        "gold": "572",
+        "item": "glowing plate armour",
+      },
+      "level": undefined,
+      "location": "Bazaar",
+      "type": "bought",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "level": "10",
+        "skill": "Evocations",
+      },
+      "level": "1",
+      "location": "Vaults:1",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "gold": "120",
+        "item": "2 potions of heal wounds",
+      },
+      "level": "1",
+      "location": "Vaults:1",
+      "type": "bought",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "gold": "96",
+        "item": "potion of invisibility",
+      },
+      "level": "1",
+      "location": "Vaults:1",
+      "type": "bought",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "hp": "190",
+        "level": "19",
+        "mp": "18",
+      },
+      "level": "1",
+      "location": "Vaults:1",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "gold": "63",
+        "item": "scroll of teleportation",
+      },
+      "level": "2",
+      "location": "Vaults:2",
+      "type": "bought",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "item": "+1 hand axe of Qazlal {chaos, rC+ rN+}",
+      },
+      "level": "2",
+      "location": "Vaults:2",
+      "type": "ident",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "item": "+1 hand axe of Qazlal {chaos, rC+ rN+}",
+      },
+      "level": "2",
+      "location": "Vaults:2",
+      "type": "item",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "who": "Donald",
+      },
+      "level": "3",
+      "location": "Vaults:3",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "who": "Donald",
+      },
+      "level": "3",
+      "location": "Vaults:3",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "hp": "202",
+        "level": "20",
+        "mp": "19",
+      },
+      "level": "3",
+      "location": "Vaults:3",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "level": "15",
+        "skill": "Throwing",
+      },
+      "level": "4",
+      "location": "Vaults:4",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "gold": "277",
+        "item": "scroll of silence",
+      },
+      "level": "6",
+      "location": "Lair:6",
+      "type": "bought",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "gold": "296",
+        "item": "glowing scarf",
+      },
+      "level": "6",
+      "location": "Lair:6",
+      "type": "bought",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "gold": "72",
+        "item": "scroll of identify",
+      },
+      "level": "6",
+      "location": "Lair:6",
+      "type": "bought",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "gold": "171",
+        "item": "scroll of summoning",
+      },
+      "level": "1",
+      "location": "Elf:1",
+      "type": "bought",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "gold": "142",
+        "item": "scroll of enchant weapon",
+      },
+      "level": "1",
+      "location": "Elf:1",
+      "type": "bought",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "gold": "142",
+        "item": "scroll of enchant weapon",
+      },
+      "level": "1",
+      "location": "Elf:1",
+      "type": "bought",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "gold": "66",
+        "item": "scroll of fear",
+      },
+      "level": "1",
+      "location": "Elf:1",
+      "type": "bought",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "gold": "57",
+        "item": "scroll of teleportation",
+      },
+      "level": "1",
+      "location": "Elf:1",
+      "type": "bought",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "item": "+0 leather armour of Levity {Regen+}",
+      },
+      "level": "1",
+      "location": "Elf:1",
+      "type": "ident",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "item": "+0 leather armour of Levity {Regen+}",
+      },
+      "level": "1",
+      "location": "Elf:1",
+      "type": "item",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "hp": "214",
+        "level": "21",
+        "mp": "20",
+      },
+      "level": "2",
+      "location": "Elf:2",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "level": "15",
+        "skill": "Shields",
+      },
+      "level": "2",
+      "location": "Elf:2",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "who": "Azrael",
+      },
+      "level": "2",
+      "location": "Elf:2",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "who": "Azrael",
+      },
+      "level": "2",
+      "location": "Elf:2",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "gold": "260",
+        "item": "2 potions of haste",
+      },
+      "level": "3",
+      "location": "Elf:3",
+      "type": "bought",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "gold": "45",
+        "item": "scroll of fear",
+      },
+      "level": "3",
+      "location": "Elf:3",
+      "type": "bought",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "who": "Mara",
+      },
+      "level": "3",
+      "location": "Elf:3",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "who": "Mara",
+      },
+      "level": "3",
+      "location": "Elf:3",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "item": "+8 glaive "Suofo" {venom, Dex+4}",
+      },
+      "level": "3",
+      "location": "Elf:3",
+      "type": "ident",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "item": "+8 glaive "Suofo" {venom, Dex+4}",
+      },
+      "level": "3",
+      "location": "Elf:3",
+      "type": "item",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "item": "ring "Peadon" {rPois rN+ Str+4 Stlth+}",
+      },
+      "level": "3",
+      "location": "Elf:3",
+      "type": "ident",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "item": "ring "Peadon" {rPois rN+ Str+4 Stlth+}",
+      },
+      "level": "3",
+      "location": "Elf:3",
+      "type": "item",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "gold": "699",
+        "item": "amulet "Cicaam" {Acrobat rF+ rN+ Will+}",
+      },
+      "level": "6",
+      "location": "Lair:6",
+      "type": "bought",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "item": "amulet "Cicaam" {Acrobat rF+ rN+ Will+}",
+      },
+      "level": "6",
+      "location": "Lair:6",
+      "type": "item",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "gold": "477",
+        "item": "ring "Dinuowe" {Fly rN++ Str-2 Dex+3 SInv}",
+      },
+      "level": "6",
+      "location": "Lair:6",
+      "type": "bought",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "item": "ring "Dinuowe" {Fly rN++ Str-2 Dex+3 SInv}",
+      },
+      "level": "6",
+      "location": "Lair:6",
+      "type": "item",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "hp": "226",
+        "level": "22",
+        "mp": "21",
+      },
+      "level": "1",
+      "location": "Depths:1",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "branch": "Pandemonium",
+      },
+      "level": "1",
+      "location": "Depths:1",
+      "type": "portal",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "branch": "Hell",
+      },
+      "level": "1",
+      "location": "Depths:1",
+      "type": "portal",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "branch": "Ziggurat",
+      },
+      "level": "2",
+      "location": "Depths:2",
+      "type": "portal",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "who": "the Enchantress",
+      },
+      "level": "2",
+      "location": "Depths:2",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "who": "the Enchantress",
+      },
+      "level": "2",
+      "location": "Depths:2",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "branch": "Abyss",
+      },
+      "level": "2",
+      "location": "Depths:2",
+      "type": "portal",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "level": "27",
+        "skill": "Fighting",
+      },
+      "level": "2",
+      "location": "Depths:2",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "item": "+4 scale mail of the Lily {rPois}",
+      },
+      "level": "2",
+      "location": "Depths:2",
+      "type": "ident",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "item": "+4 scale mail of the Lily {rPois}",
+      },
+      "level": "2",
+      "location": "Depths:2",
+      "type": "item",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "gold": "72",
+        "item": "scroll of teleportation",
+      },
+      "level": "3",
+      "location": "Depths:3",
+      "type": "bought",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "hp": "240",
+        "level": "23",
+        "mp": "22",
+      },
+      "level": "3",
+      "location": "Depths:3",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "gold": "2142",
+        "item": "runed fire dragon scales",
+      },
+      "level": "6",
+      "location": "Lair:6",
+      "type": "bought",
+    },
+    {
+      "branch": "Trove",
+      "data": {
+        "item": "+8 spear "Oboi" {speed, Str+4}",
+      },
+      "level": undefined,
+      "location": "Trove",
+      "type": "ident",
+    },
+    {
+      "branch": "Trove",
+      "data": {
+        "item": "+8 spear "Oboi" {speed, Str+4}",
+      },
+      "level": undefined,
+      "location": "Trove",
+      "type": "item",
+    },
+    {
+      "branch": "Trove",
+      "data": {
+        "item": "+1 ring mail of Limited Liability {Str+3}",
+      },
+      "level": undefined,
+      "location": "Trove",
+      "type": "ident",
+    },
+    {
+      "branch": "Trove",
+      "data": {
+        "item": "+1 ring mail of Limited Liability {Str+3}",
+      },
+      "level": undefined,
+      "location": "Trove",
+      "type": "item",
+    },
+    {
+      "branch": "Trove",
+      "data": {
+        "item": "amulet "Beulayn" {RegenMP rElec Int+4 Dex+6}",
+      },
+      "level": undefined,
+      "location": "Trove",
+      "type": "ident",
+    },
+    {
+      "branch": "Trove",
+      "data": {
+        "item": "amulet "Beulayn" {RegenMP rElec Int+4 Dex+6}",
+      },
+      "level": undefined,
+      "location": "Trove",
+      "type": "item",
+    },
+    {
+      "branch": "Trove",
+      "data": {
+        "item": "amulet "Koashrem" {Spirit Str+4}",
+      },
+      "level": undefined,
+      "location": "Trove",
+      "type": "ident",
+    },
+    {
+      "branch": "Trove",
+      "data": {
+        "item": "amulet "Koashrem" {Spirit Str+4}",
+      },
+      "level": undefined,
+      "location": "Trove",
+      "type": "item",
+    },
+    {
+      "branch": "Trove",
+      "data": {
+        "item": "+0 pair of gloves of Modesty {Regen+ rCorr}",
+      },
+      "level": undefined,
+      "location": "Trove",
+      "type": "ident",
+    },
+    {
+      "branch": "Trove",
+      "data": {
+        "item": "+0 pair of gloves of Modesty {Regen+ rCorr}",
+      },
+      "level": undefined,
+      "location": "Trove",
+      "type": "item",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "branch": "Zot",
+      },
+      "level": "4",
+      "location": "Depths:4",
+      "type": "portal",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "item": "ring "Zodegefon" {Wiz rElec Int+3}",
+      },
+      "level": "4",
+      "location": "Depths:4",
+      "type": "ident",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "item": "ring "Zodegefon" {Wiz rElec Int+3}",
+      },
+      "level": "4",
+      "location": "Depths:4",
+      "type": "item",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "hp": "249",
+        "level": "24",
+        "mp": "22",
+      },
+      "level": "4",
+      "location": "Vaults:4",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "item": "amulet "Tomelor" {Spirit *Corrode Str+3 SInv}",
+      },
+      "level": "4",
+      "location": "Vaults:4",
+      "type": "ident",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "item": "amulet "Tomelor" {Spirit *Corrode Str+3 SInv}",
+      },
+      "level": "4",
+      "location": "Vaults:4",
+      "type": "item",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "level": "15",
+        "skill": "Armour",
+      },
+      "level": "4",
+      "location": "Vaults:4",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "level": "27",
+        "skill": "Dodging",
+      },
+      "level": "5",
+      "location": "Vaults:5",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "item": "+2 pair of gloves "Ylirim" {Harm rF+ Str+3 Int+4}",
+      },
+      "level": "5",
+      "location": "Vaults:5",
+      "type": "ident",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "item": "+2 pair of gloves "Ylirim" {Harm rF+ Str+3 Int+4}",
+      },
+      "level": "5",
+      "location": "Vaults:5",
+      "type": "item",
+    },
+    {
+      "branch": "Zot",
+      "data": {
+        "item": "+1 robe "Onebbih" {rN+}",
+      },
+      "level": "1",
+      "location": "Zot:1",
+      "type": "ident",
+    },
+    {
+      "branch": "Zot",
+      "data": {
+        "item": "+1 robe "Onebbih" {rN+}",
+      },
+      "level": "1",
+      "location": "Zot:1",
+      "type": "item",
+    },
+    {
+      "branch": "Zot",
+      "data": {
+        "hp": "257",
+        "level": "25",
+        "mp": "22",
+      },
+      "level": "1",
+      "location": "Zot:1",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Zot",
+      "data": {
+        "item": "+9 double sword "Mecigg" {vamp, rElec SInv}",
+      },
+      "level": "2",
+      "location": "Zot:2",
+      "type": "ident",
+    },
+    {
+      "branch": "Zot",
+      "data": {
+        "item": "+9 double sword "Mecigg" {vamp, rElec SInv}",
+      },
+      "level": "2",
+      "location": "Zot:2",
+      "type": "item",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "gold": "380",
+        "item": "scroll of brand weapon",
+      },
+      "level": "1",
+      "location": "Elf:1",
+      "type": "bought",
+    },
+    {
+      "branch": "Zot",
+      "data": {
+        "item": "+2 robe of Disappointment {rN+ Str+3}",
+      },
+      "level": "2",
+      "location": "Zot:2",
+      "type": "ident",
+    },
+    {
+      "branch": "Zot",
+      "data": {
+        "item": "+2 robe of Disappointment {rN+ Str+3}",
+      },
+      "level": "2",
+      "location": "Zot:2",
+      "type": "item",
+    },
+    {
+      "branch": "Zot",
+      "data": {
+        "item": "+3 hat of Pondering {ponderous, Will+ MP+10 Int+5}",
+      },
+      "level": "4",
+      "location": "Zot:4",
+      "type": "found",
+    },
+    {
+      "branch": "Zot",
+      "data": {
+        "item": "+3 hat of Pondering {ponderous, Will+ MP+10 Int+5}",
+      },
+      "level": "4",
+      "location": "Zot:4",
+      "type": "item",
+    },
+    {
+      "branch": "Zot",
+      "data": {
+        "hp": "266",
+        "level": "26",
+        "mp": "22",
+      },
+      "level": "5",
+      "location": "Zot:5",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Zot",
+      "data": {
+        "desc": "You are occasionally teleported next to monsters.",
+        "kind": "Gained",
+        "source": "an orb of fire",
+        "stat": undefined,
+      },
+      "level": "5",
+      "location": "Zot:5",
+      "type": "mutation",
+    },
+    {
+      "branch": "Zot",
+      "data": {
+        "desc": "Armour fits poorly on your strangely shaped body.",
+        "kind": "Gained",
+        "source": "an orb of fire",
+        "stat": undefined,
+      },
+      "level": "5",
+      "location": "Zot:5",
+      "type": "mutation",
+    },
+    {
+      "branch": "Zot",
+      "data": {
+        "desc": "You are frail.",
+        "kind": "Gained",
+        "source": "an orb of fire",
+        "stat": "-10% HP",
+      },
+      "level": "5",
+      "location": "Zot:5",
+      "type": "mutation",
+    },
+    {
+      "branch": "Zot",
+      "data": {
+        "desc": "You are frail.",
+        "kind": "Lost",
+        "source": "potion of mutation",
+        "stat": "-10% HP",
+      },
+      "level": "4",
+      "location": "Zot:4",
+      "type": "mutation",
+    },
+    {
+      "branch": "Zot",
+      "data": {
+        "desc": "You are agile.",
+        "kind": "Lost",
+        "source": "potion of mutation",
+        "stat": "Dex +2",
+      },
+      "level": "4",
+      "location": "Zot:4",
+      "type": "mutation",
+    },
+    {
+      "branch": "Zot",
+      "data": {
+        "desc": "Your spells are a little harder to cast, but a little more powerful.",
+        "kind": "Lost",
+        "source": "potion of mutation",
+        "stat": undefined,
+      },
+      "level": "4",
+      "location": "Zot:4",
+      "type": "mutation",
+    },
+    {
+      "branch": "Zot",
+      "data": {
+        "desc": "You are frail.",
+        "kind": "Gained",
+        "source": "potion of mutation",
+        "stat": "-10% HP",
+      },
+      "level": "4",
+      "location": "Zot:4",
+      "type": "mutation",
+    },
+    {
+      "branch": "Zot",
+      "data": {
+        "desc": "You have a beak for a mouth.",
+        "kind": "Gained",
+        "source": "potion of mutation",
+        "stat": undefined,
+      },
+      "level": "4",
+      "location": "Zot:4",
+      "type": "mutation",
+    },
+    {
+      "branch": "Zot",
+      "data": {
+        "desc": "You are occasionally teleported next to monsters.",
+        "kind": "Lost",
+        "source": "potion of mutation",
+        "stat": undefined,
+      },
+      "level": "4",
+      "location": "Zot:4",
+      "type": "mutation",
+    },
+    {
+      "branch": "Zot",
+      "data": {
+        "desc": "You have a beak for a mouth.",
+        "kind": "Lost",
+        "source": "potion of mutation",
+        "stat": undefined,
+      },
+      "level": "4",
+      "location": "Zot:4",
+      "type": "mutation",
+    },
+    {
+      "branch": "Zot",
+      "data": {
+        "desc": "Armour fits poorly on your strangely shaped body.",
+        "kind": "Lost",
+        "source": "potion of mutation",
+        "stat": undefined,
+      },
+      "level": "4",
+      "location": "Zot:4",
+      "type": "mutation",
+    },
+    {
+      "branch": "Zot",
+      "data": {
+        "desc": "Your mind is acute.",
+        "kind": "Gained",
+        "source": "potion of mutation",
+        "stat": "Int +2",
+      },
+      "level": "4",
+      "location": "Zot:4",
+      "type": "mutation",
+    },
+    {
+      "branch": "Zot",
+      "data": {
+        "desc": "You passively map a small area around you.",
+        "kind": "Gained",
+        "source": "potion of mutation",
+        "stat": undefined,
+      },
+      "level": "4",
+      "location": "Zot:4",
+      "type": "mutation",
+    },
+    {
+      "branch": "Zot",
+      "data": {
+        "desc": "You are occasionally teleported next to monsters.",
+        "kind": "Gained",
+        "source": "an orb of fire",
+        "stat": undefined,
+      },
+      "level": "5",
+      "location": "Zot:5",
+      "type": "mutation",
+    },
+    {
+      "branch": "Zot",
+      "data": {
+        "desc": "Armour fits poorly on your strangely shaped body.",
+        "kind": "Gained",
+        "source": "an orb of fire",
+        "stat": undefined,
+      },
+      "level": "5",
+      "location": "Zot:5",
+      "type": "mutation",
+    },
+    {
+      "branch": "Zot",
+      "data": {
+        "desc": "Your magical capacity is low.",
+        "kind": "Gained",
+        "source": "an orb of fire",
+        "stat": "-10% MP",
+      },
+      "level": "5",
+      "location": "Zot:5",
+      "type": "mutation",
+    },
+    {
+      "branch": "Zot",
+      "data": {
+        "desc": "You have hidden genetic defects.",
+        "kind": "Gained",
+        "source": "an orb of fire",
+        "stat": undefined,
+      },
+      "level": "5",
+      "location": "Zot:5",
+      "type": "mutation",
+    },
+    {
+      "branch": "Zot",
+      "data": "Slain by an Orb Guardian",
+      "level": "5",
+      "location": "Zot:5",
+      "type": "last-event",
+    },
+  ],
+  "fullVersion": "0.28.0-45-g0d030f2227",
+  "god": "Gozag",
+  "isMorgue": true,
+  "isSprint": false,
+  "isTrunk": false,
+  "is_bcrawl": false,
+  "morgue": "https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220415-040202.txt",
+  "name": "Jingleheimer",
+  "runeCount": 3,
+  "runes": [
+    "decaying",
+    "silver",
+    "gossamer",
+  ],
+  "score": "586548",
+  "species": "Minotaur",
+  "timeSeconds": 23808,
+  "turns": 118782,
+  "value": "13591998346360536447",
+  "version": "0.28.0",
+}
+`;

@@ -4,7 +4,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
 {
   "background": "Fighter",
   "datetime": 2022-08-10T03:44:03.000Z,
-  "eventCount": 328,
+  "eventCount": 326,
   "eventErrors": [],
   "events": [
     {
@@ -2713,24 +2713,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "level": "3",
       "location": "Snake:3",
       "type": "bought",
-    },
-    {
-      "branch": "Snake",
-      "data": {
-        "item": "+7 great mace "Firestarter" {inner flame, rF++}",
-      },
-      "level": "3",
-      "location": "Snake:3",
-      "type": "item",
-    },
-    {
-      "branch": "Snake",
-      "data": {
-        "item": "+7 great mace "Firestarter" {inner flame, rF++}",
-      },
-      "level": "3",
-      "location": "Snake:3",
-      "type": "found",
     },
     {
       "branch": "Snake",

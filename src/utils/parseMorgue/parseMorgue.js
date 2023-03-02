@@ -590,6 +590,13 @@ function getAllMorgueNoteEvents(morgueNotes) {
           return;
         }
 
+        // check if this item was logged immediately before this event
+        if (last_event.type === 'item' && last_event.data.item === item) {
+          // skip this found item since it was bought
+          // console.debug('skipping found bought', { item });
+          return;
+        }
+
         // for some reason ring of the octopus king is both 'found' and 'identified'
         // the first 'found' event often has no details on the stats
         // so we ignore it to prevent logging a useless value
