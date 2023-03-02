@@ -284,6 +284,7 @@ function get_counts(result_list, args) {
 }
 
 // 'graphql' | 'local'
+// const QUERY_FILTER_TYPE = 'graphql';
 const QUERY_FILTER_TYPE = 'local';
 
 async function run_query_filter(args) {
@@ -370,7 +371,7 @@ async function graphql_filter(args) {
   // build result list given current filter list
   let result_list = [];
 
-  const nested_query = active_filter_query(filter_list);
+  const nested_query = active_filter_query();
   const [first_filter, ...rest_filter] = filter_list;
   const first_filter_ilike = ilike(first_filter);
 
@@ -397,17 +398,26 @@ async function graphql_filter(args) {
 }
 
 function handle_result(node, filter_list) {
-  // console.debug('visit', { node, filter_list });
   const { seed, version } = node;
 
   const item_list = [];
+  const all_item_list = [];
 
   for (const unrand_key of filter_list) {
     const [item] = node[result_key(unrand_key)];
     item_list.push({ ...item, unrand_key });
   }
 
-  return { all_item_list: [], item_list, seed, version };
+  for (let unrand_key = 0; unrand_key < Unrands.List.length; unrand_key++) {
+    const [item] = node[result_key(unrand_key)];
+    if (item) {
+      all_item_list.push({ ...item, unrand_key });
+    }
+  }
+
+  // console.debug('visit', { node, filter_list, item_list, all_item_list });
+
+  return { all_item_list, item_list, seed, version };
 }
 
 function traverse_data(node, filter_list, handle_result, i = 0, result_list = []) {
@@ -446,11 +456,11 @@ function set_key(set) {
   return key;
 }
 
-function active_filter_query(filter_list) {
+function active_filter_query() {
   return `
     seed
     version
-    ${filter_list.map((i) => KeyedUnrandResult(i)).join('\n')}
+    ${Unrands.List.map((u, i) => KeyedUnrandResult(i)).join('\n')}
   `;
 }
 
