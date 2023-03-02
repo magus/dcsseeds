@@ -6,12 +6,7 @@ track random seeds in dcss
 
 
 ## [events-refactor](docs/events-refactor.md)
-s
 
-## cleanup branches
-
-`Arena` branch needs ordering
-`Hell` branch seems invalid, investigate morgues with it and figure out fix
 
 ## prices
 
