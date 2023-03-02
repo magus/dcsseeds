@@ -372,11 +372,12 @@ async function graphql_filter(args) {
 
   const nested_query = active_filter_query(filter_list);
   const [first_filter, ...rest_filter] = filter_list;
+  const first_filter_ilike = ilike(first_filter);
 
   const query = gql`
       query FilterArtifactSearch {
         ${result_key(first_filter)}: dcsseeds_scrapePlayers_seedVersion(
-          where: { items: { name: { _ilike: "${ilike(first_filter)}" } } }
+          where: { items: { name: { _ilike: "${first_filter_ilike}" } } }
           order_by: { items_aggregate: { count: desc } }
         ) {
           ${NestedFilter(rest_filter, nested_query)}
@@ -455,9 +456,10 @@ function active_filter_query(filter_list) {
 
 function KeyedUnrandResult(i) {
   const key = result_key(i);
+  const name_ilike = ilike(i);
 
   return `
-    ${key}: items(where: { name: { _ilike: "${ilike(i)}" } }, limit: 1, order_by: { branch: { order: asc } }) {
+    ${key}: items(where: { name: { _ilike: "${name_ilike}" } }, limit: 1, order_by: { branch: { order: asc } }) {
       ...Result
     }
   `;
