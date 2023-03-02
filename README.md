@@ -8,46 +8,6 @@ track random seeds in dcss
 ## [events-refactor](docs/events-refactor.md)
 
 
-## better sorting
-
-look at results for wyrmbane, the order is horrible
-
-> https://dcss.vercel.app/?q=wyr&a=lance+%22Wyrmbane%22
-
-we need to search for items and order by branch order
-the current approach searches seedVersion first which breaks ordering entirely
-alternative below is better
-
-update graphql in both `useArtifactFilter` AND `/api/cache_unrand_query`
-
-**NOTE**: may need to implement as sql function and add `DISTINCT ON ("seed", "version")`
-          to top level query to remove duplicates (similar to `dcsseeds_scrapePlayers_items_version_seed`)
-
-```graphql
-query {
-  dcsseeds_scrapePlayers_item(
-    where: { name: { _ilike: "%wyrmbane%" } }
-    # distinct_on: [seed, version]
-    order_by: [{ branch: { order: asc } }, { level: asc }]
-  ) {
-    name
-    branchName
-    level
-    seed
-    version
-  }
-}
-```
-
-
-## prices
-
-include gold price in item if  exists
-store `event.data.gold` in `item.gold` column for easy display with results
-
-> +7 Spriggan's Knife {stab, EV+4 Stlth+} (1482 gold)
-
-
 ## alternative graphql nested artifact query approach
 
 `useArtifactFilter`
@@ -87,6 +47,15 @@ query {
   }
 }
 ```
+
+
+## prices
+
+include gold price in item if  exists
+store `event.data.gold` in `item.gold` column for easy display with results
+
+> +7 Spriggan's Knife {stab, EV+4 Stlth+} (1482 gold)
+
 
 
 ## true item search

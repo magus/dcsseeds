@@ -78,8 +78,7 @@ export function useArtifactFilter(props) {
 
         // store this unrand for this seed
         const seedVersion_item_list = seedVersion_item_map.get(seedVersion) || [];
-        const [item] = result.items;
-        seedVersion_item_list.push({ ...item, unrand_key: i });
+        seedVersion_item_list.push({ ...result, unrand_key: i });
         seedVersion_item_map.set(seedVersion, seedVersion_item_list);
       }
 
@@ -337,8 +336,7 @@ async function local_filter(args) {
         item_list: [],
       };
 
-      const [item] = result.items;
-      seed_result.item_list.push({ ...item, unrand_key });
+      seed_result.item_list.push({ ...result, unrand_key });
 
       seed_map.set(seed_key, seed_result);
 

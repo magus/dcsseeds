@@ -85,6 +85,8 @@ const ResultFragment = gql`
     name
     branchName
     level
+    seed
+    version
   }
 `;
 
@@ -93,13 +95,7 @@ function SeedVersionFilter(unrand) {
   const key = unrand.id;
 
   return `
-    ${key}: dcsseeds_scrapePlayers_seedVersion(
-      where: { items: { name: { _ilike: "${name_ilike}" } } }
-    ) {
-      seed
-      version
-      items(where: { name: { _ilike: "${name_ilike}" } }, limit: 1, order_by: { branch: { order: asc } }) {
-        ...Result
-      }
+    ${key}: dcsseeds_scrapePlayers_item_search_name(args: {search_name: "${name_ilike}"}) {
+      ...Result
     }`;
 }

@@ -1,7 +1,22 @@
 # CHANGELOG
 
 
+## 2023-02-28
 
+- syntax error near $ when creating postgres function
+- look at migrations for actual function sql, the version in admin console has whitespace errors
+
+```sql
+CREATE OR REPLACE FUNCTION public."dcsseeds_scrapePlayers_item_search_name"(search_name text)
+ RETURNS SETOF "dcsseeds_scrapePlayers_item"
+ LANGUAGE sql
+ STABLE
+AS $function$
+    SELECT
+      DISTINCT ON ("branch_order", "level", "seed", "version")
+      "timestamp",
+      "name",
+```
 
 ## 2023-02-27
 
