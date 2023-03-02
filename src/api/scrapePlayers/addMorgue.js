@@ -1,10 +1,8 @@
 import { gql } from '@apollo/client';
 import { serverQuery } from 'src/graphql/serverQuery';
 import { parseMorgue } from 'src/utils/parseMorgue';
-import runRegex from 'src/utils/runRegex';
-import { toNumber } from 'src/utils/toNumber';
 
-import { MINIMUM_ALLOWED_VERSION } from './constants';
+import * as constants from './constants';
 
 export async function addMorgue(args) {
   const { player, morgue } = args;
@@ -55,8 +53,8 @@ export async function addMorgue(args) {
     }
 
     // skip if below minimum allowed version
-    if ((await compareSemver(MINIMUM_ALLOWED_VERSION, version)) > 0) {
-      return skip(`below minimum allowed version [${fullVersion} < ${MINIMUM_ALLOWED_VERSION}]`);
+    if (constants.version_gate(version)) {
+      return skip(`below minimum allowed version [${fullVersion}]`);
     }
 
     // log all errors into scrapePlayers_errors table
@@ -210,30 +208,3 @@ const GQL_ADD_PARSE_ERROR = serverQuery(gql`
 // WHERE
 //     status IN ('delivered', 'error', 'dead')
 //     AND created_at < now() - interval '1 day';
-
-const RE = {
-  // https://regexr.com/6ebro
-  semver: /(\d+)\.(\d+)(?:\.(\d+))?/,
-};
-
-async function compareSemver(semverStringA, semverStringB) {
-  const [, ...semverPartsA] = await runRegex('parse-semver-a', semverStringA, RE.semver);
-  const [, ...semverPartsB] = await runRegex('parse-semver-b', semverStringB, RE.semver);
-
-  const semverA = semverPartsA.map(toNumber);
-  const semverB = semverPartsB.map(toNumber);
-
-  const minPartsToCheck = Math.max(semverA.length, semverB.length);
-  for (let i = 0; i < minPartsToCheck; i++) {
-    const partA = semverA[i] || 0;
-    const partB = semverB[i] || 0;
-
-    if (partA > partB) {
-      return +1;
-    } else if (partA < partB) {
-      return -1;
-    }
-  }
-
-  return 0;
-}
