@@ -58,7 +58,7 @@ module.exports = async function handler(req, res) {
     }
 
     const times = stopwatch.list();
-    const data = { times, morgue, cleared_items, player, response };
+    const data = { times, morgue, cleared_items, response };
     return send(res, 200, data, { prettyPrint: true });
   } catch (err) {
     // immediate response
