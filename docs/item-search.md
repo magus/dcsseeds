@@ -21,19 +21,49 @@ See [events-refactor](docs/events-refactor.md) which has outline for properties 
 of item name, this would be requisite for this work so we could create a document for each item
 
 
+## first pass use postgresql and regexes
 
-## Algolia
+it is fast enough, can bulid a proof of concept like this
+for fun we could explore trying out elasticsearch but maybe overkill for our purposes
+at least for now regex seems fast enough and avoids setting up more services/tasks
 
-might be worth looking into at least
-we might not need it but look into a bit, the free tier seems decent (10k records)
-if we upload `seedVersion` with items array it might work out, try uploading one and test it out
+## using elasticsearch records to search all items
 
-> 2722 records
-> size = 4 540 486 bytes ~= 4.3 MB
-> 4.3 MB / 2722 records ~= 1.7 KB per record
+we can upload the records at the same time we mutation items into database
+inside `addMorgue` we can create and make the calls to write the records
+alternatively we could write some periodic task (cron event in the database, github action, etc.)
+that queried database for the data, builds records and uploads them to algolia
 
-> record with most items, (0.29.1, 17285712271763003931) with 182 items
-> size = 38 562 bytes ~= 37.7 KB
+the query below can be used to gather data which we would store in our record
+we will need to split all the items into json record to store in search index
+
+use the property splitter from [events-refactor](docs/events-refactor.md)
+
+we only need to make the fields which are numerically interesting indexable in that way
+fields like `rPois`, `*Corrode`, etc. will be searchable by full text search anyway
+
+```json
+[
+  {
+    "name": "+13 crystal plate armour of the Devil's Team {rPois rC+ rN+++ Dex-5}",
+    "seed": "1234567890",
+    "version": "0.29.1",
+    "plus": 13,
+    "rPois": 1,
+    "rC": 1,
+    "rN": 3,
+    "Dex": -5,
+  },
+  {
+    "name": "+7 Spriggan's Knife {stab, EV+4 Stlth+}",
+    "seed": "1234567890",
+    "version": "0.29.1",
+    "plus": 7,
+    "EV": 4,
+    "Stlth": 1,
+  },
+]
+```
 
 
 ```graphql
@@ -59,6 +89,13 @@ query ItemRecordDemo {
 }
 ```
 
+### providers
+
+#### Algolia
+
+seems easy to use but pricey and free tier only stores 10k records
+just `0.29.1` items are currently over 10k entries so we wouldn't be able to store everything
+
 > https://www.algolia.com/doc/
 
 the demo is pretty compelling, very fast, shows facets (pivots for filtering etc.)
@@ -68,8 +105,6 @@ the React hooks look good too, seems like a very well written library
 
 > https://www.algolia.com/doc/guides/building-search-ui/what-is-instantsearch/react-hooks/
 
-
-### alternatives
 
 #### opensearch
 free tier on aws could probably get us far for now
