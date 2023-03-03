@@ -4,8 +4,8 @@ track random seeds in dcss
 
 # TODO
 
-
 ## [events-refactor](docs/events-refactor.md)
+## [item-search](docs/item-search.md)
 
 
 ## alternative graphql nested artifact query approach
@@ -56,73 +56,6 @@ store `event.data.gold` in `item.gold` column for easy display with results
 
 > +7 Spriggan's Knife {stab, EV+4 Stlth+} (1482 gold)
 
-
-
-## true item search
-
-open ended item search needs more structure, right now it's a very simple text match
-but doesn't support using AND/OR to combine clauses, we should come up with a better strategy
-for example it'd be much better if we could filter items by
-  - type (e.g. shield, axe, staff, body, feet, barding, ring, etc.)
-  - brand (e.g. drain, venom, flame, pain, vorpal, vamp, etc.)
-  - property (e.g. Slay, Int, Str, rElec, rF, Contam, *Corrode, Drain etc.)
-imagine queries such as
-  (amulet reflect)       -- amulet with reflect
-  (body ac)              -- body armor with any amount of ac
-  (head will+ ac+4)      -- head with exactly Will+ and AC+4
-  (axe vamp slay>2)      -- axe with at least slay+2 and vamp brand
-  (ring !int<0 str>4)    -- ring with at least str+4 and no negative int
-  (gold<1000)            -- any item with a cost less then 1000 (including free)
-
-
-we can get really close using regex where clauses, see below
-
-- only support `>` (not `>=` for simplicity)
-  - why? `>` and `>=` communicate the same thing
-    `plus >  6`  `min_plus = 7 = 6 + 1`
-    `plus >= 7`  `min_plus = 7`
-
-- maybe just need to translate input into series of regex clauses for query
-
-  > (plus > 6 AND slay > 5) OR (rN > 2 AND Will > 2 AND !Contam)
-
-  ```graphql
-  query {
-    dcsseeds_scrapePlayers_item(
-      order_by: [{ branch: { order: asc } }, { level: asc }]
-      where: {
-        _or: [
-          # (plus > 6 AND slay > 5) OR (rN > 2 AND Will > 2 AND !Contam)
-          {
-            _and: [
-              # plus > 6 AND slay > 5
-              { name: { _iregex: "^\\+([7-9]|\\d{2,})" } }
-              { name: { _iregex: "Slay\\+([6-9]|\\d{2,})" } }
-              # { name: { _nregex: "\\-Tele" } }
-              # brand
-              # { name: { _iregex: "{vamp" } }
-            ]
-          }
-          {
-            _and: [
-              # rN > 2 AND Will > 2 AND !Contam
-              { name: { _iregex: "rN[\\+]{3,}" } }
-              { name: { _iregex: "Will[\\+]{3,}" } }
-              { name: { _nregex: "Contam" } }
-              # { name: { _nregex: "\\-Cast" } }
-            ]
-          }
-        ]
-      }
-    ) {
-      version
-      seed
-      name
-      branchName
-      level
-    }
-  }
-  ```
 
 ## feedback
 
