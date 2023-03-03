@@ -10,7 +10,25 @@ track random seeds in dcss
 
 ## alternative graphql nested artifact query approach
 
-`useArtifactFilter`
+### `cache_unrand_query` (local artifact filters)
+
+when combining two or more artifacts, results are out of order
+this is unavoidable at a query level since they are all done individually and cached
+we can fix this client-side though
+add a query for branch order to static props, so we have it client side
+use that to sort the all_item_list within each result, after all aggregations are done
+ensure we do the sorting outside the `local` specific logic, so `graphql` can also benefit
+
+### `useArtifactFilter`
+
+with the sorting done above, we should see better results within each result
+now the only thing to do will be to sort each of the results by the FIRST item of `item_list`, the filtered items (not all items)
+this will put them into the same order as we have from the cached local version
+
+once we have results below we should sort them client side by branch order
+add a query for branch order to static props, so we have it client side
+use that to sort the top level results and also the items within each result
+
 alternative to nested queries is to build an `_and` query on the items in filter list
 all items are grouped and sorted which means we can return first matches for each filter
 this means we get perfect branch ordering on the combined results
@@ -24,22 +42,125 @@ query {
   dcsseeds_scrapePlayers_seedVersion(
     where: {
       _and: [
-        { items: { name: { _iregex: "\\+13 crystal" } } }
-        { items: { name: { _iregex: "dagger of dawn" } } }
+        { items: { name: { _ilike: "%amulet of the Four Winds%" } } }
+        { items: { name: { _ilike: "%morningstar \"Eos\"%" } } }
       ]
     }
   ) {
+    version
+    seed
     items(
       order_by: [{ branch: { order: asc } }, { level: asc }]
       where: {
         _or: [
-          { name: { _iregex: "\\+13 crystal" } }
-          { name: { _iregex: "dagger of dawn" } }
+          { name: { _ilike: "%amulet of Elemental Vulnerability%" } }
+          { name: { _ilike: "%amulet of the Air%" } }
+          { name: { _ilike: "%amulet of the Four Winds%" } }
+          { name: { _ilike: "%amulet of Vitality%" } }
+          { name: { _ilike: "%arbalest \"Damnation\"%" } }
+          { name: { _ilike: "%arc blade%" } }
+          { name: { _ilike: "%autumn katana%" } }
+          { name: { _ilike: "%Black Knight's barding%" } }
+          { name: { _ilike: "%brooch of Shielding%" } }
+          { name: { _ilike: "%captain's cutlass%" } }
+          { name: { _ilike: "%Cigotuvi's embrace%" } }
+          { name: { _ilike: "%cloak of Starlight%" } }
+          { name: { _ilike: "%cloak of the Thief%" } }
+          { name: { _ilike: "%crown of Dyrovepreva%" } }
+          { name: { _ilike: "%dagger \"Morg\"%" } }
+          { name: { _ilike: "%dark maul%" } }
+          { name: { _ilike: "%Delatra's gloves%" } }
+          { name: { _ilike: "%demon blade \"Leech\"%" } }
+          { name: { _ilike: "%demon trident \"Rift\"%" } }
+          { name: { _ilike: "%demon whip \"Spellbinder\"%" } }
+          { name: { _ilike: "%dragonskin cloak%" } }
+          { name: { _ilike: "%dreamshard necklace%" } }
+          { name: { _ilike: "%Elemental Staff%" } }
+          { name: { _ilike: "%faerie dragon scales%" } }
+          { name: { _ilike: "%fencer's gloves%" } }
+          { name: { _ilike: "%frozen axe \"Frostbite\"%" } }
+          { name: { _ilike: "%gauntlets of War%" } }
+          { name: { _ilike: "%giant club \"Skullcrusher\"%" } }
+          { name: { _ilike: "%glaive of Prune%" } }
+          { name: { _ilike: "%glaive of the Guard%" } }
+          { name: { _ilike: "%great mace \"Firestarter\"%" } }
+          { name: { _ilike: "%great mace \"Undeadhunter\"%" } }
+          { name: { _ilike: "%greatsling \"Punk\"%" } }
+          { name: { _ilike: "%hat of Pondering%" } }
+          { name: { _ilike: "%hat of the Alchemist%" } }
+          { name: { _ilike: "%hat of the Bear Spirit%" } }
+          { name: { _ilike: "%heavy crossbow \"Sniper\"%" } }
+          { name: { _ilike: "%hood of the Assassin%" } }
+          { name: { _ilike: "%Kryia's mail coat%" } }
+          { name: { _ilike: "%lajatang of Order%" } }
+          { name: { _ilike: "%lance \"Wyrmbane\"%" } }
+          { name: { _ilike: "%Lear's hauberk%" } }
+          { name: { _ilike: "%lightning scales%" } }
+          { name: { _ilike: "%lochaber axe%" } }
+          { name: { _ilike: "%longbow \"Zephyr\"%" } }
+          { name: { _ilike: "%macabre finger necklace%" } }
+          { name: { _ilike: "%mace of Variability%" } }
+          { name: { _ilike: "%Mad Mage's Maulers%" } }
+          { name: { _ilike: "%Majin-Bo%" } }
+          { name: { _ilike: "%mask of the Dragon%" } }
+          { name: { _ilike: "%Maxwell's patent armour%" } }
+          { name: { _ilike: "%Maxwell's thermic engine%" } }
+          { name: { _ilike: "%mithril axe \"Arga\"%" } }
+          { name: { _ilike: "%moon troll leather armour%" } }
+          { name: { _ilike: "%morningstar \"Eos\"%" } }
+          { name: { _ilike: "%mountain boots%" } }
+          { name: { _ilike: "%necklace of Bloodlust%" } }
+          { name: { _ilike: "%obsidian axe%" } }
+          { name: { _ilike: "%orange crystal plate armour%" } }
+          { name: { _ilike: "%pair of quick blades \"Gyre\" and \"Gimble\"%" } }
+          { name: { _ilike: "%plutonium sword%" } }
+          { name: { _ilike: "%ratskin cloak%" } }
+          { name: { _ilike: "%ring of Shadows%" } }
+          { name: { _ilike: "%ring of the Hare%" } }
+          { name: { _ilike: "%ring of the Mage%" } }
+          { name: { _ilike: "%ring of the Octopus King%" } }
+          { name: { _ilike: "%ring of the Tortoise%" } }
+          { name: { _ilike: "%robe of Augmentation%" } }
+          { name: { _ilike: "%robe of Clouds%" } }
+          { name: { _ilike: "%robe of Folly%" } }
+          { name: { _ilike: "%robe of Misfortune%" } }
+          { name: { _ilike: "%robe of Night%" } }
+          { name: { _ilike: "%robe of Vines%" } }
+          { name: { _ilike: "%salamander hide armour%" } }
+          { name: { _ilike: "%scales of the Dragon King%" } }
+          { name: { _ilike: "%sceptre of Asmodeus%" } }
+          { name: { _ilike: "%sceptre of Torment%" } }
+          { name: { _ilike: "%scythe \"Finisher\"%" } }
+          { name: { _ilike: "%scythe of Curses%" } }
+          { name: { _ilike: "%seven-league boots%" } }
+          { name: { _ilike: "%shield of Resistance%" } }
+          { name: { _ilike: "%shield of the Gong%" } }
+          { name: { _ilike: "%shillelagh \"Devastator\"%" } }
+          { name: { _ilike: "%Singing Sword%" } }
+          { name: { _ilike: "%skin of Zhor%" } }
+          { name: { _ilike: "%Spriggan's Knife%" } }
+          { name: { _ilike: "%staff of Battle%" } }
+          { name: { _ilike: "%staff of Dispater%" } }
+          { name: { _ilike: "%staff of Olgreb%" } }
+          { name: { _ilike: "%staff of the Meek%" } }
+          { name: { _ilike: "%staff of Wucad Mu%" } }
+          { name: { _ilike: "%storm bow%" } }
+          { name: { _ilike: "%sword of Cerebov%" } }
+          { name: { _ilike: "%sword of Power%" } }
+          { name: { _ilike: "%sword of Zonguldrok%" } }
+          { name: { _ilike: "%Throatcutter%" } }
+          { name: { _ilike: "%tower shield of Ignorance%" } }
+          { name: { _ilike: "%trident of the Octopus King%" } }
+          { name: { _ilike: "%trishula \"Condemnation\"%" } }
+          { name: { _ilike: "%Vampire's Tooth%" } }
+          { name: { _ilike: "%warlock's mirror%" } }
+          { name: { _ilike: "%whip \"Snakebite\"%" } }
+          { name: { _ilike: "%woodcutter's axe%" } }
+          { name: { _ilike: "%Wrath of Trog%" } }
+          { name: { _ilike: "%zealot's sword%" } }
         ]
       }
     ) {
-      version
-      seed
       name
       branchName
       level

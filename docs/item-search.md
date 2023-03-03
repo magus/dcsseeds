@@ -21,33 +21,88 @@ See [events-refactor](docs/events-refactor.md) which has outline for properties 
 of item name, this would be requisite for this work so we could create a document for each item
 
 
-## first pass use postgresql and regexes
+## displaying results
+
+for all approaches when displaying results we will want to re-group them into a seed version object
+this should be a simple iteration to recreate the shape we use for artifact filters
+it will also allow us to reuse all of the rendering logic we have for artifacts which is nice
+this is very similar to what we do in useArtifactFilter as well when we build local results
+
+```js
+const result_map = new Map();
+
+// record_list is the array of search results which is a flat json object
+for (const result of record_list) {
+  const { seed, version, name, branch, level } = result;
+  const seed_key = seed_version_key(seed, version);
+
+  const seed_result = result_map.get(seed_key) || {
+    seed,
+    version,
+    // empty because each unique result will be present in item_list
+    // all_item_list is used by artifact search to show other artifacts
+    all_item_list: [],
+    item_list: [],
+  };
+
+  seed_result.item_list.push({ name, branch, level });
+
+  result_map.set(seed_key, seed_result);
+}
+```
+
+## approaches
+
+### graphql regexes
 
 it is fast enough, can bulid a proof of concept like this
 for fun we could explore trying out elasticsearch but maybe overkill for our purposes
 at least for now regex seems fast enough and avoids setting up more services/tasks
 
-## using elasticsearch records to search all items
+### search record table
 
 we can upload the records at the same time we mutation items into database
 inside `addMorgue` we can create and make the calls to write the records
 alternatively we could write some periodic task (cron event in the database, github action, etc.)
-that queried database for the data, builds records and uploads them to algolia
+that queried database for the data, builds records and saves them
 
+use the property splitter from [events-refactor](docs/events-refactor.md)
 the query below can be used to gather data which we would store in our record
 we will need to split all the items into json record to store in search index
 
+store results in a table on graphql, query that table using where clauses
+little more direct, avoids regex converting in favor of more readable where clauses?
+
+```graphql
+  { property_list: { property: { name: { _eq: "plus" } value: { _gt: 4 } } } }
+  { property_list: { property: { type: { _eq: "brand" } name: { _eq: "vamp" } } } }
+```
+
+
+## using elasticsearch records to search all items
+
+same as above, we upload the records but instead to the elasticsearch provider (see options below)
 use the property splitter from [events-refactor](docs/events-refactor.md)
 
-we only need to make the fields which are numerically interesting indexable in that way
-fields like `rPois`, `*Corrode`, etc. will be searchable by full text search anyway
+must be flat because arrays are not easy to combine boolean queries in elasticsearch since
+records are filtered at the top level if any filter matches a property
+e.g.  `plus > 6 AND EV > 3` would return both records below, but you might expect only the first
+      this is because the top record matches the first boolean and the bottom matches the second
+
+you can nest fields and query them but it is a little more complicated
+keeping it flat seems good for our case since we don't require many fields just a name and value
+https://opensearch.org/docs/1.3/opensearch/supported-field-types/nested/
 
 ```json
 [
   {
+    "id": "1234",
     "name": "+13 crystal plate armour of the Devil's Team {rPois rC+ rN+++ Dex-5}",
     "seed": "1234567890",
     "version": "0.29.1",
+    "branch": "Dungeon",
+    "branch_order": -99,
+    "level": 13,
     "plus": 13,
     "rPois": 1,
     "rC": 1,
@@ -55,9 +110,14 @@ fields like `rPois`, `*Corrode`, etc. will be searchable by full text search any
     "Dex": -5,
   },
   {
+    "id": "5678",
     "name": "+7 Spriggan's Knife {stab, EV+4 Stlth+}",
     "seed": "1234567890",
     "version": "0.29.1",
+    "branch": "Lair",
+    "level": 3,
+    "branch_order": -80,
+    "stab": true,
     "plus": 7,
     "EV": 4,
     "Stlth": 1,
