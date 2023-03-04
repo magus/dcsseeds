@@ -21,36 +21,64 @@ import { MAX_MORGUES_PER_PLAYER, MAX_ITERATIONS_PER_REQUEST } from './constants'
 //   }
 // }
 
-// Find a specific seed that contains multiple specific items
-// e.g. a 'shield' and 'amulet of the Four Winds'
-// This pattern can be used to programmatically build up search strings to find very specific kinds of runs
-// gql`
-//   query MyQuery {
-//     dcsseeds_scrapePlayers_seedVersion(
-//       where: {
-//         _and: [
-//           { version: { _eq: "0.27.1" } }
-//           { items: { name: { _ilike: "%four%" } } }
-//           { items: { name: { _ilike: "%shield%" } } }
-//         ]
-//       }
-//     ) {
-//       items_aggregate {
-//         aggregate {
-//           count
-//         }
-//         nodes {
-//           name
-//           branchName
-//           level
-//         }
-//       }
-//     }
-//   }
-// `;
+// set this to true to debug the flow and results
+// of this api function without writing to database
+const DEBUG = false;
 
-async function scrape_morgue_list(player) {
-  const { morgue_list, skip_morgue_set } = await fetch_morgue_list(player);
+export default async function scrapePlayers(req, res) {
+  try {
+    const stopwatch = new Stopwatch();
+
+    const player_list = await stopwatch.time(GQL_SCRAPEPLAYERS.run()).record('fetch player list');
+
+    const promise_result_list = player_list.map((player) => scrape_morgue_list({ player, stopwatch }));
+
+    const result_list = await Promise.all(promise_result_list);
+
+    const total_morgues = sum_list(result_list.map((result) => result.list.length));
+
+    stopwatch.record(`total time`);
+    const times = stopwatch.list();
+    const data = { times, total_morgues, result_list };
+    return send(res, 200, data, { prettyPrint: true });
+  } catch (err) {
+    return send(res, 500, err, { prettyPrint: true });
+  }
+}
+
+// TODO, is there a way we can ABORT when we reach a certain time?
+async function scrape_morgue_list({ player, stopwatch }) {
+  const player_stopwatch = new Stopwatch();
+
+  const player_id = player.id;
+  const { name, server } = player;
+
+  const result = {
+    name,
+    server,
+    list: [],
+    times: [],
+  };
+
+  function finish_result() {
+    result.times = player_stopwatch.list();
+    return result;
+  }
+
+  const maybe_morgue_list = await player_stopwatch
+    .time(Promise.race([fetch_morgue_list(player), sleep_ms(5000)]))
+    .record('fetch morgue list');
+
+  if (!maybe_morgue_list) {
+    // the 5s sleep finished before morgue fetch, abort this fetch
+    await player_stopwatch
+      .time(maybe_player_morgues({ player_id, morgue_map: {} }))
+      .record('abort morgue list fetch, marking last run');
+
+    return finish_result();
+  }
+
+  const { morgue_list, skip_morgue_set } = maybe_morgue_list;
 
   // console.debug();
   // console.debug(player.name, 'morgue_list', morgue_list.length, 'skip_morgue_set', skip_morgue_set.size);
@@ -63,108 +91,71 @@ async function scrape_morgue_list(player) {
       morgue_map[timestamp] = true;
     }
 
-    console.debug(player.name, skip_morgue_set.size, 'older morgues as skipped');
-    const player_id = player.id;
-    await GQL_ADD_MORGUE.run({ player_id, morgue_map });
+    await player_stopwatch
+      .time(maybe_player_morgues({ player_id, morgue_map }))
+      .record(`skip ${skip_morgue_set.size} older morgues`);
   }
 
-  return morgue_list;
-}
+  for (const morgue of morgue_list) {
+    if (stopwatch.elapsed_ms() >= 5000) {
+      // console.debug('exiting', name, result.list.length);
+      break;
+    }
 
-async function parsePlayerMorgues({ player, morgues }) {
-  const asyncAddMorgues = [];
+    const is_new = !player.morgues[morgue.timestamp];
 
-  for (let i = 0; i < morgues.length; i++) {
-    // for (let i = 0; i < morgues.length; i++) {
-    // for (let i = 0; i < 1; i++) {
+    if (is_new) {
+      const promise = maybe_addMorgue({ player, morgue });
+      const morgue_result = await player_stopwatch.time(promise).record(morgue.url);
 
-    // skip if we have reached max morgues to parse per player
-    if (asyncAddMorgues.length >= MAX_MORGUES_PER_PLAYER) break;
-
-    const morgue = morgues[i];
-    const newMorgue = !player.morgues[morgue.timestamp];
-    if (newMorgue) {
-      asyncAddMorgues.push(addMorgue({ player, morgue }));
+      result.list.push(morgue_result);
     }
   }
 
-  const result = await Promise.all(asyncAddMorgues);
-
-  if (!result.length) {
-    // console.debug(player.name, player.server, 'no new morgues');
+  if (result.list.length === 0) {
+    await player_stopwatch
+      .time(maybe_player_morgues({ player_id, morgue_map: {} }))
+      .record('no new morgues, marking last run');
   }
 
-  // console.debug('mark last run for', player.name, player.server);
-  // await GQL_LAST_RUN_PLAYER.run({ playerId: player.id });
-
-  // console.debug('[scrapePlayer]', 'asyncAddMorgues', asyncAddMorgues.length, { result });
-  return result;
+  return finish_result();
 }
 
-async function loopPlayerMorgues({ players, playerMorgues }) {
-  if (players.length !== playerMorgues.length) {
-    throw new Error('[loopPlayerMorgues] players and playerMorgues must be equal size');
+async function maybe_addMorgue({ player, morgue }) {
+  if (DEBUG) {
+    await sleep_ms(Math.random() * 3000 + 2000);
+    return [player.name, morgue.url];
   }
 
-  const results = [];
-
-  for (let i = 0; i < players.length; i++) {
-    const player = players[i];
-    const morgues = playerMorgues[i];
-    results.push(parsePlayerMorgues({ player, morgues }));
-  }
-
-  return await Promise.all(results);
+  return addMorgue({ player, morgue });
 }
 
-module.exports = async function scrapePlayers(req, res) {
-  const stopwatch = new Stopwatch();
-
-  try {
-    // console.debug('[scrapePlayers]', 'start');
-    const players = await GQL_SCRAPEPLAYERS.run();
-
-    const promise_player_morgue_list = [];
-
-    for (const player of players) {
-      promise_player_morgue_list.push(scrape_morgue_list(player));
-    }
-
-    const playerMorgues = await Promise.all(promise_player_morgue_list);
-    stopwatch.record(`scrape player morgue list`);
-
-    const loopResults = [];
-    let iteration = 0;
-    while (stopwatch.elapsed_ms() < 8000 && iteration < MAX_ITERATIONS_PER_REQUEST) {
-      iteration++;
-
-      const results = await loopPlayerMorgues({ players, playerMorgues });
-
-      stopwatch.record(`iteration#${iteration}`);
-
-      loopResults.push({ iteration, results });
-
-      if (results.every((r) => r.length === 0)) {
-        // every result is empty, no more runs to parse
-        // exit early
-        break;
-      }
-    }
-
-    // console.debug('[scrapePlayers]', 'end');
-    const total_time = stopwatch.elapsed_ms();
-    const times = stopwatch.list();
-    const data = { times, total_time, iteration, loopResults };
-    return send(res, 200, data, { prettyPrint: true });
-  } catch (err) {
-    return send(res, 500, err, { prettyPrint: true });
+async function maybe_player_morgues(variables) {
+  if (DEBUG) {
+    await sleep_ms(Math.random() * 1000 + 400);
   }
-};
+
+  return GQL_PLAYER_MORGUES.run(variables);
+}
+
+function sleep_ms(ms) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
+}
+
+function sum_list(list) {
+  let sum = 0;
+  for (const value of list) {
+    sum += value;
+  }
+  return sum;
+}
 
 const GQL_SCRAPEPLAYERS = serverQuery(
   gql`
     query ListScrapePlayers {
-      dcsseeds_scrapePlayers(order_by: { lastRun: asc_nulls_first }) {
+      dcsseeds_scrapePlayers(limit: 15, order_by: { lastRun: asc_nulls_first }) {
         id
         name
         server
@@ -175,7 +166,7 @@ const GQL_SCRAPEPLAYERS = serverQuery(
   (data) => data.dcsseeds_scrapePlayers,
 );
 
-const GQL_ADD_MORGUE = serverQuery(
+const GQL_PLAYER_MORGUES = serverQuery(
   gql`
     mutation AddMorgue($player_id: uuid!, $morgue_map: jsonb!) {
       update_dcsseeds_scrapePlayers(
