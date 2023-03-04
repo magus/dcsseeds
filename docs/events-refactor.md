@@ -14,9 +14,8 @@ that means each unique morgue / run for the same seed version creates duplicate 
 
 ### clearing morgues, seeds or versions for reparsing
 
-currently `player.morgues` is used to track visited morgues
-but this is not easily queried and
-such as the morgue table and associating morgues with seeds to build morgue map dynamically
+currently `player.morgues` is used to track visited morgues but this is not easily queried
+create morgue table and associating morgues with seeds to build morgue map dynamically
 allow clearing all seed version items for reparsing etc.
 
 ### complex item queries require regex
@@ -102,8 +101,7 @@ https://hasura.io/docs/latest/schema/common-patterns/data-modeling/many-to-many/
   - properties would be created on insert and automatically associated
     https://hasura.io/docs/latest/schema/common-patterns/data-modeling/many-to-many/#insert-using-many-to-many-relationships
   - requires parsing properties from item `name` field
-    the regex approach would be a good starting point
-    exploration under `Equip` screen may be relevant
+    see [item-parsing](./item-parsing.md)
 
 
 | type     | name                   | value | id   |

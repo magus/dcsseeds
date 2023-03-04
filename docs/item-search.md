@@ -17,9 +17,6 @@ imagine queries such as
   (gold<1000)            -- any item with a cost less then 1000 (including free)
 
 
-See [events-refactor](docs/events-refactor.md) which has outline for properties and parsing them out
-of item name, this would be requisite for this work so we could create a document for each item
-
 
 ## displaying results
 
@@ -51,6 +48,7 @@ for (const result of record_list) {
 }
 ```
 
+
 ## approaches
 
 ### graphql regexes
@@ -59,14 +57,61 @@ it is fast enough, can bulid a proof of concept like this
 for fun we could explore trying out elasticsearch but maybe overkill for our purposes
 at least for now regex seems fast enough and avoids setting up more services/tasks
 
+translate input into series of regex clauses for query
+we can get really close using regex where clauses, see below
+only support `>` (not `>=` for simplicity)
+  why? `>` and `>=` communicate the same thing
+  `plus >  6`  `min_plus = 7 = 6 + 1`
+  `plus >= 7`  `min_plus = 7`
+
+
+```graphql
+query {
+  dcsseeds_scrapePlayers_item(
+    order_by: [{ branch: { order: asc } }, { level: asc }]
+    where: {
+      _or: [
+        # (plus > 6 AND slay > 5) OR (rN > 2 AND Will > 2 AND !Contam)
+        {
+          _and: [
+            # plus > 6 AND slay > 5
+            { name: { _iregex: "^\\+([7-9]|\\d{2,})" } }
+            { name: { _iregex: "Slay\\+([6-9]|\\d{2,})" } }
+            # { name: { _nregex: "\\-Tele" } }
+            # brand
+            # { name: { _iregex: "{vamp" } }
+          ]
+        }
+        {
+          _and: [
+            # rN > 2 AND Will > 2 AND !Contam
+            { name: { _iregex: "rN[\\+]{3,}" } }
+            { name: { _iregex: "Will[\\+]{3,}" } }
+            { name: { _nregex: "Contam" } }
+            # { name: { _nregex: "\\-Cast" } }
+          ]
+        }
+      ]
+    }
+  ) {
+    version
+    seed
+    name
+    branchName
+    level
+  }
+}
+```
+
 ### search record table
+
+> requisite see [item-parsing](./item-parsing.md)
 
 we can upload the records at the same time we mutation items into database
 inside `addMorgue` we can create and make the calls to write the records
 alternatively we could write some periodic task (cron event in the database, github action, etc.)
 that queried database for the data, builds records and saves them
 
-use the property splitter from [events-refactor](docs/events-refactor.md)
 the query below can be used to gather data which we would store in our record
 we will need to split all the items into json record to store in search index
 
@@ -79,10 +124,11 @@ little more direct, avoids regex converting in favor of more readable where clau
 ```
 
 
-## using elasticsearch records to search all items
+### using elasticsearch records to search all items
 
-same as above, we upload the records but instead to the elasticsearch provider (see options below)
-use the property splitter from [events-refactor](docs/events-refactor.md)
+> requisite see [item-parsing](./item-parsing.md)
+
+same as above, we create records but instead upload to elasticsearch provider (see options below)
 
 must be flat because arrays are not easy to combine boolean queries in elasticsearch since
 records are filtered at the top level if any filter matches a property
@@ -149,9 +195,9 @@ query ItemRecordDemo {
 }
 ```
 
-### providers
+#### providers
 
-#### Algolia
+##### Algolia
 
 seems easy to use but pricey and free tier only stores 10k records
 just `0.29.1` items are currently over 10k entries so we wouldn't be able to store everything
@@ -166,60 +212,13 @@ the React hooks look good too, seems like a very well written library
 > https://www.algolia.com/doc/guides/building-search-ui/what-is-instantsearch/react-hooks/
 
 
-#### opensearch
+##### opensearch
 free tier on aws could probably get us far for now
 https://opensearch.org/docs
 the docs are pretty good, shows some examples like range queries etc which
 we would use to implement above
 https://opensearch.org/docs/2.4/opensearch/query-dsl/term/#range
 
-
-#### regex clauses in graphql
-translate input into series of regex clauses for query
-we can get really close using regex where clauses, see below
-only support `>` (not `>=` for simplicity)
-  why? `>` and `>=` communicate the same thing
-  `plus >  6`  `min_plus = 7 = 6 + 1`
-  `plus >= 7`  `min_plus = 7`
-
-
-```graphql
-query {
-  dcsseeds_scrapePlayers_item(
-    order_by: [{ branch: { order: asc } }, { level: asc }]
-    where: {
-      _or: [
-        # (plus > 6 AND slay > 5) OR (rN > 2 AND Will > 2 AND !Contam)
-        {
-          _and: [
-            # plus > 6 AND slay > 5
-            { name: { _iregex: "^\\+([7-9]|\\d{2,})" } }
-            { name: { _iregex: "Slay\\+([6-9]|\\d{2,})" } }
-            # { name: { _nregex: "\\-Tele" } }
-            # brand
-            # { name: { _iregex: "{vamp" } }
-          ]
-        }
-        {
-          _and: [
-            # rN > 2 AND Will > 2 AND !Contam
-            { name: { _iregex: "rN[\\+]{3,}" } }
-            { name: { _iregex: "Will[\\+]{3,}" } }
-            { name: { _nregex: "Contam" } }
-            # { name: { _nregex: "\\-Cast" } }
-          ]
-        }
-      ]
-    }
-  ) {
-    version
-    seed
-    name
-    branchName
-    level
-  }
-}
-```
 
 #### typesense
 https://github.com/dokku/dokku-typesense
