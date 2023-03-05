@@ -8,7 +8,6 @@ export async function addMorgue(args) {
   const { player, morgue } = args;
 
   const playerId = player.id;
-  const { url, timestamp } = morgue;
 
   function response(status, extra) {
     // locally mark morgue as visited
@@ -16,7 +15,7 @@ export async function addMorgue(args) {
       player.morgues[morgue.timestamp] = true;
     }
 
-    return { status, morgue: url, extra };
+    return { status, morgue: morgue.filename, extra };
   }
 
   async function skip(reason) {
@@ -32,7 +31,7 @@ export async function addMorgue(args) {
 
   try {
     // parse morgue
-    const data = await parseMorgue(url);
+    const data = await parseMorgue(morgue.url);
     // console.debug('addMorge', { data });
 
     const { version, fullVersion, value: seed } = data;
@@ -105,7 +104,7 @@ export async function addMorgue(args) {
         name: event.data.item,
         branch,
         location: event.location,
-        morgue: url,
+        morgue: morgue.url,
         playerId,
         timestamp: morgue.date,
         seedVersion,

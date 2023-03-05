@@ -1,7 +1,10 @@
+import path from 'path';
+
 export function Morgue(url) {
   const { player, date } = morgue_meta(url);
   const timestamp = String(date.getTime());
-  return { url, timestamp, date, player };
+  const filename = path.basename(url);
+  return { filename, timestamp, date, player, url };
 }
 
 function morgue_meta(url) {
