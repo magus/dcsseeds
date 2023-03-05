@@ -1,7 +1,5 @@
 // Generated from `scripts/build_unrand_list 0.27 0.28 0.29`
 
-// Generated from `scripts/build_unrand_list 0.27 0.28 0.29`
-
 export const List = [
   'amulet of Elemental Vulnerability',
   'amulet of the Air',
