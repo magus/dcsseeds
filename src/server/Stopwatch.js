@@ -55,19 +55,61 @@ export function Stopwatch() {
     const start_time = process.hrtime();
 
     let record_args;
+    let timeout_ms;
 
-    promise.then(() => {
-      const [label, unit] = record_args;
-      const entry = [label, time_record(start_time, unit)];
-      record_list.push(entry);
-    });
+    const api = { timeout, record };
+
+    return api;
+
+    function timeout(ms) {
+      const number_ms = isNaN(ms) ? 0 : ms;
+      timeout_ms = Math.max(0, number_ms);
+      return api;
+    }
 
     function record(...args) {
       record_args = args;
-      return promise;
+      return wrapped_promise();
     }
 
-    return { record };
+    function save_record(error) {
+      const entry = [];
+
+      if (error instanceof StopwatchError && error.type === 'timeout') {
+        entry.push('TIMEOUT');
+      }
+
+      const [label, unit] = record_args;
+      entry.push(label);
+      entry.push(time_record(start_time, unit));
+
+      record_list.push(entry);
+    }
+
+    async function wrapped_promise() {
+      let result;
+      let error;
+
+      if (typeof timeout_ms !== 'number') {
+        result = await promise;
+      } else {
+        result = await Promise.race([
+          promise,
+
+          sleep_ms(timeout_ms).then(() => {
+            error = new StopwatchError('timeout');
+          }),
+        ]);
+      }
+
+      save_record(error);
+
+      if (error) {
+        throw error;
+      }
+
+      return result;
+    }
   }
 }
 
@@ -86,5 +128,26 @@ function hrtime_unit(hrtime, unit = 'ms') {
     case 'nano':
     default:
       return hrtime[0] * 1e9 + hrtime[1];
+  }
+}
+
+function sleep_ms(ms) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
+}
+
+class StopwatchError extends Error {
+  constructor(type = 'Unknown', ...params) {
+    // Pass remaining arguments (including vendor specific ones) to parent constructor
+    super(...params);
+
+    // Maintains proper stack trace for where our error was thrown (only available on V8)
+    if (Error.captureStackTrace) {
+      Error.captureStackTrace(this, StopwatchError);
+    }
+
+    this.name = `[StopwatchError::${type}]`;
+    this.type = type;
   }
 }
