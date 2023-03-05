@@ -25,6 +25,9 @@ import { MAX_MORGUES_PER_PLAYER, MAX_ITERATIONS_PER_REQUEST } from './constants'
 // of this api function without writing to database
 const DEBUG = false;
 
+const TIMEOUT_MS = 8000;
+const ms_budget = (stopwatch) => TIMEOUT_MS - stopwatch.elapsed_ms();
+
 export default async function scrapePlayers(req, res) {
   try {
     const stopwatch = new Stopwatch();
@@ -37,7 +40,7 @@ export default async function scrapePlayers(req, res) {
 
     const total_morgues = sum_list(result_list.map((result) => result.list.length));
 
-    stopwatch.record(`total time`);
+    stopwatch.record('total time');
     const times = stopwatch.list();
     const data = { times, total_morgues, result_list };
     return send(res, 200, data, { prettyPrint: true });
@@ -49,6 +52,7 @@ export default async function scrapePlayers(req, res) {
 // TODO, is there a way we can ABORT when we reach a certain time?
 async function scrape_morgue_list({ player, stopwatch }) {
   const player_stopwatch = new Stopwatch();
+  player_stopwatch.record(`start=${stopwatch.elapsed_ms()}`);
 
   const player_id = player.id;
   const { name, server } = player;
@@ -56,61 +60,62 @@ async function scrape_morgue_list({ player, stopwatch }) {
   const result = {
     name,
     server,
+    error: false,
     list: [],
     times: [],
   };
 
-  function finish_result() {
-    result.times = player_stopwatch.list();
-    return result;
-  }
+  try {
+    const maybe_morgue_list = await player_stopwatch
+      .time(fetch_morgue_list(player))
+      .timeout(ms_budget(stopwatch))
+      .record('fetch morgue list');
 
-  const maybe_morgue_list = await player_stopwatch
-    .time(Promise.race([fetch_morgue_list(player), sleep_ms(5000)]))
-    .record('fetch morgue list');
-
-  if (!maybe_morgue_list) {
-    // the 5s sleep finished before morgue fetch, abort this fetch
-    await player_stopwatch
-      .time(maybe_player_morgues({ player_id, morgue_map: {} }))
-      .record('abort morgue list fetch, marking last run');
-
-    return finish_result();
-  }
-
-  const { morgue_list, skip_morgue_set } = maybe_morgue_list;
-
-  // console.debug();
-  // console.debug(player.name, 'morgue_list', morgue_list.length, 'skip_morgue_set', skip_morgue_set.size);
-  // console.debug(morgue_list[0], morgue_list[morgue_list.length - 1]);
-
-  if (skip_morgue_set.size) {
-    const morgue_map = {};
-
-    for (const timestamp of skip_morgue_set) {
-      morgue_map[timestamp] = true;
+    if (!maybe_morgue_list) {
+      // the 5s sleep finished before morgue fetch, abort this fetch
+      throw new Error('abort morgue list fetch, marking last run');
     }
 
-    await player_stopwatch
-      .time(maybe_player_morgues({ player_id, morgue_map }))
-      .record(`skip ${skip_morgue_set.size} older morgues`);
-  }
+    const { morgue_list, skip_morgue_set } = maybe_morgue_list;
 
-  for (const morgue of morgue_list) {
-    if (stopwatch.elapsed_ms() >= 5000) {
-      // console.debug('exiting', name, result.list.length);
-      break;
+    // console.debug();
+    // console.debug(player.name, 'morgue_list', morgue_list.length, 'skip_morgue_set', skip_morgue_set.size);
+    // console.debug(morgue_list[0], morgue_list[morgue_list.length - 1]);
+
+    if (skip_morgue_set.size) {
+      const morgue_map = {};
+
+      for (const timestamp of skip_morgue_set) {
+        morgue_map[timestamp] = true;
+      }
+
+      await player_stopwatch
+        .time(maybe_player_morgues({ player_id, morgue_map }))
+        .record(`skip ${skip_morgue_set.size} older morgues`);
     }
 
-    const is_new = !player.morgues[morgue.timestamp];
+    for (const morgue of morgue_list) {
+      // this is important, ensures we don't keep calling with short timeouts
+      if (ms_budget(stopwatch) < 1) {
+        break;
+      }
 
-    if (is_new) {
-      const promise = maybe_addMorgue({ player, morgue });
-      const morgue_result = await player_stopwatch.time(promise).record(morgue.url);
+      const is_new = !player.morgues[morgue.timestamp];
 
-      result.list.push(morgue_result);
+      if (is_new) {
+        const morgue_result = await player_stopwatch
+          .time(maybe_addMorgue({ player, morgue }))
+          .timeout(ms_budget(stopwatch))
+          .record(morgue.filename);
+
+        result.list.push(morgue_result);
+      }
     }
+  } catch (error) {
+    result.error = error.stack.split('\n');
   }
+
+  result.times = player_stopwatch.list();
 
   if (result.list.length === 0) {
     await player_stopwatch
@@ -118,12 +123,14 @@ async function scrape_morgue_list({ player, stopwatch }) {
       .record('no new morgues, marking last run');
   }
 
-  return finish_result();
+  return result;
 }
+
+const fake_ms = (at_least, delta) => at_least + Math.random() * delta;
 
 async function maybe_addMorgue({ player, morgue }) {
   if (DEBUG) {
-    await sleep_ms(Math.random() * 3000 + 2000);
+    await sleep_ms(fake_ms(2000, 3000));
     return [player.name, morgue.url];
   }
 
@@ -132,7 +139,7 @@ async function maybe_addMorgue({ player, morgue }) {
 
 async function maybe_player_morgues(variables) {
   if (DEBUG) {
-    await sleep_ms(Math.random() * 1000 + 400);
+    return await sleep_ms(fake_ms(150, 850));
   }
 
   return GQL_PLAYER_MORGUES.run(variables);
