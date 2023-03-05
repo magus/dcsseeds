@@ -64,8 +64,12 @@ export async function fetch_morgue_list(player) {
     }
   }
 
-  // reverse the list so that most recent (bottom) is first
-  morgue_list.reverse();
+  if (morgue_list.length === 0) {
+    return { morgue_list, skip_morgue_set };
+  }
+
+  // sort list so that most recent is first
+  morgue_list.sort((a, b) => b.timestamp - a.timestamp);
 
   return { morgue_list, skip_morgue_set };
 }
