@@ -6,7 +6,7 @@ exports.AST = buildASTTypes({
   AssignmentTypes: { tokens: null },
   Expression: { params: null },
   CallExpression: { name: null, params: null },
-  Function: { name: null, return_type: null, params: null, body: null },
+  Function: { name: null, signature: null, return_type: null, params: null, body: null },
   Object: { fields: null },
   Enum: { name: null, values: null },
   Struct: { name: null, values: null },

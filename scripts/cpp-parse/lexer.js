@@ -206,9 +206,43 @@ exports.lexer = function lexer(code, options = {}) {
       case TKNS.Semicolon.value:
         addToken(TKNS.Semicolon);
         break;
-      case TKNS.AngleBracketStart.value:
-        addToken(TKNS.AngleBracketStart);
+      case TKNS.AngleBracketStart.value: {
+        // maybe this is a typed identifier
+        //
+        // vector<coord_def>
+        //    { type: 'Identifier', value: 'vector', row: 760, col: 1 }
+        //    { type: 'AngleBracketStart', value: '<', row: 760, col: 7 }
+        //    { type: 'Identifier', value: 'coord_def', row: 760, col: 8 }
+        //    { type: 'AngleBracketEnd', value: '>', row: 760, col: 17 }
+        //
+        // map<curse_type, curse_data>
+        //
+        //    {type: 'Identifier', value: 'map', row: 594, col: 11}
+        //    {type: 'AngleBracketStart', value: '<', row: 594, col: 14}
+        //    {type: 'TypeString', value: 'string', row: 594, col: 15}
+        //    {type: 'Comma', value: ',', row: 594, col: 21}
+        //    {type: 'Whitespace', value: ' ', row: 594, col: 22}
+        //    {type: 'TypeString', value: 'string', row: 594, col: 23}
+
+        if (currentToken().type === TKNS.Identifier.type) {
+          // eat characters for the identifier until we reach the end bracket
+          while (!isTokenNext(TKNS.AngleBracketEnd)) {
+            continueToken(TKNS.Identifier);
+          }
+          // include the closing angle bracket
+          continueToken(TKNS.Identifier);
+        } else {
+          // this can be many things
+          // <<   bitwise shift
+          // <    less than
+          // <=   less than or equal
+          // we can determine each and lex them but we do not for now
+          addToken(TKNS.AngleBracketStart);
+        }
+
         break;
+      }
+
       case TKNS.AngleBracketEnd.value:
         addToken(TKNS.AngleBracketEnd);
         break;
@@ -259,6 +293,7 @@ const KYWRDS = [
   // keywords to match immediately
   TKNS.If,
   TKNS.Else,
+  TKNS.For,
   TKNS.Return,
   TKNS.Static,
   TKNS.Struct,

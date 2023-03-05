@@ -10,6 +10,7 @@ exports.TKNS = buildTokenKinds({
   // keywords
   If: { value: 'if' },
   Else: { value: 'else' },
+  For: { value: 'for' },
   Return: { value: 'return' },
   Static: { value: 'static' },
   Struct: { value: 'struct' },

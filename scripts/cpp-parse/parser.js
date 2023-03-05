@@ -363,15 +363,21 @@ exports.parser = function parser(tokens) {
   }
 
   function parseFunction(func_def) {
-    const [maybe_func_node, skip_count] = func_def;
+    const [func_node, skip_count] = func_def;
 
     // swallow the nodes used in function definition
     for (let i = 0; i < skip_count; i++) {
       next();
     }
 
-    // swallow closing paren of function params
+    // swallow closing paren of function params or semicolon of signature
     next();
+
+    if (func_node.signature) {
+      return func_node;
+    }
+
+    // only if we are NOT a signature, parse body indescriminantly
 
     // swallow up to opening curly bracket to start function body
     while (!isTokenNext(TKNS.CurlyBracketStart) && !isTokenNext(TKNS.Semicolon)) {
@@ -382,6 +388,7 @@ exports.parser = function parser(tokens) {
           break;
 
         default:
+          console.error({ func_def });
           throw new ParserError('Function definition must end with curly bracket or semicolon');
       }
     }
@@ -411,7 +418,7 @@ exports.parser = function parser(tokens) {
           }
 
           if (curly_bracket_count !== 0) {
-            maybe_func_node.body.push(next());
+            func_node.body.push(next());
           }
         }
 
@@ -424,7 +431,7 @@ exports.parser = function parser(tokens) {
         throw new ParserError('Unexpected function body');
     }
 
-    return maybe_func_node;
+    return func_node;
   }
 
   function capture_statement(start) {
@@ -511,7 +518,7 @@ exports.parser = function parser(tokens) {
 
   return ast;
 
-  function debug_tokens(debug_delta = 4) {
+  function debug_tokens(debug_delta = 8) {
     console.debug();
     console.debug();
     tokens.slice(Math.max(0, current - debug_delta), current).forEach((t) => {
@@ -543,6 +550,7 @@ exports.parser = function parser(tokens) {
 function function_definition(statement) {
   const node = AST.Function.build({
     name: null,
+    signature: false,
     return_type: null,
     params: [],
     body: [],
@@ -554,6 +562,8 @@ function function_definition(statement) {
 
   for (let i = 0; i < statement.length; i++) {
     const token = statement[i];
+
+    // console.debug({ i, token, identifier_paren, function_defintion_end, paren_count });
 
     if (identifier_paren === -1 && token.type === TKNS.Identifier.type) {
       node.name = token;
@@ -581,8 +591,12 @@ function function_definition(statement) {
         identifier_paren = i + 1;
       }
     } else if (i === identifier_paren) {
-      // paren must immediately follow identifier, reset otherwise
-      if (token.type === TKNS.ParenStart.type) {
+      if (token.type === TKNS.Semicolon.type) {
+        // function signature will start with a semicolon
+        node.signature = true;
+        return [node, i];
+      } else if (token.type === TKNS.ParenStart.type) {
+        // paren must immediately follow identifier, reset otherwise
         paren_count = 1;
       } else {
         identifier_paren = -1;
@@ -590,6 +604,7 @@ function function_definition(statement) {
     } else if (function_defintion_end !== -1) {
       if (token.type === TKNS.Semicolon.type) {
         // function signature will start with a semicolon
+        node.signature = true;
         return [node, function_defintion_end];
       } else if (token.type === TKNS.CurlyBracketStart.type) {
         // function body will start with a curly bracket

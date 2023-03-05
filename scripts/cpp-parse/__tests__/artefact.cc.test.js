@@ -14,8 +14,8 @@ test('parses artefact.cc without errors', async () => {
     },
   });
 
-  expect(parsed.ast.body.length).toBe(78);
-  expect(parsed.tokens.length).toBe(31033);
+  expect(parsed.ast.body.length).toBe(75);
+  expect(parsed.tokens.length).toBe(30530);
 });
 
 async function readFile(filename) {

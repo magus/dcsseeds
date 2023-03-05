@@ -51,6 +51,8 @@ exports.traverser = function traverser(ast, visitor) {
       case TKNS.BooleanEquals.type:
       case TKNS.Identifier.type:
       case TKNS.Number.type:
+      case TKNS.Function.type:
+      case TKNS.Struct.type:
         break;
 
       // And again, if we haven't recognized the node type then we'll throw an
