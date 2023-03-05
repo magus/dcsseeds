@@ -1,6 +1,5 @@
-import { Morgue } from 'src/server/Morgue';
+import { Morgue } from './Morgue';
 import { SERVER_CONFIG } from './ServerConfig';
-
 import { VERSION_LIST, MINIMUM_ALLOWED_DATE } from './constants';
 
 export async function fetch_morgue_list(player) {

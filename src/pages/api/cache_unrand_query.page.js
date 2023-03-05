@@ -5,8 +5,6 @@ import send from 'src/server/zeitSend';
 import * as Unrands from 'src/utils/Unrands';
 import { Stopwatch } from 'src/server/Stopwatch';
 
-if (!process.env.HASURA_ADMIN_SECRET) throw new Error('HASURA_ADMIN_SECRET is required!');
-
 // Example API Request
 // http://localhost:3000/api/cache_unrand_query?window_size=25
 

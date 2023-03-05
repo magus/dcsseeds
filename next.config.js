@@ -49,6 +49,8 @@ const moduleExports = {
     ...EnvConfig,
   },
 
+  pageExtensions: ['page.tsx', 'page.ts', 'page.jsx', 'page.js'],
+
   images: {
     domains: ['raw.githubusercontent.com'],
   },

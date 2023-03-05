@@ -13,6 +13,7 @@ module.exports = {
     'import/resolver': {
       'node': {
         'paths': ['.'],
+        'extensions': ['.js', '.jsx', '.ts', '.tsx'],
       },
     },
   },

@@ -1,13 +1,13 @@
-const send = require('src/server/zeitSend');
-const { randomElement } = require('src/server/random');
-const { generateSeed } = require('src/server/seed');
-const Version = require('src/Version');
+import send from 'src/server/zeitSend';
+import { randomElement } from 'src/server/random';
+import { generateSeed } from 'src/server/seed';
+import Version from 'src/Version';
 
 // returns the random seed values for /new
 // Example API Request
 // http://localhost:3000/api/rollSeed
 
-module.exports = async (req, res) => {
+export default async function roll_seed(req, res) {
   try {
     const seed = generateSeed();
     const version = req.query.version || Version.v29;
@@ -35,4 +35,4 @@ module.exports = async (req, res) => {
   } catch (err) {
     return send(res, 500, err);
   }
-};
+}

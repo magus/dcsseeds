@@ -22,7 +22,7 @@ export default function AddMorgue() {
     patch_state({ ...init_state(), loading: true });
 
     try {
-      const api_url = new URL('/api/scrapeMorgue', window.location.origin);
+      const api_url = new URL('/api/scrapePlayers/scrapeMorgue', window.location.origin);
       api_url.searchParams.set('morgue', value);
 
       const resp = await fetch(api_url);

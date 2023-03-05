@@ -8,7 +8,7 @@ import Species from 'src/utils/Species';
 import Backgrounds from 'src/utils/Backgrounds';
 import Version from 'src/Version';
 
-import getInitialProps from './getInitialProps';
+import { getInitialProps } from './getInitialProps';
 
 export default function New(props) {
   const [species, set_species] = React.useState(props.species);

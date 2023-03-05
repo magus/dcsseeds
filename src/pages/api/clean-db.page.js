@@ -1,4 +1,4 @@
-const send = require('../../src/server/zeitSend');
+import send from 'src/server/zeitSend';
 
 if (!process.env.HASURA_ADMIN_SECRET) throw new Error('HASURA_ADMIN_SECRET is required!');
 
@@ -8,7 +8,7 @@ if (!process.env.HASURA_ADMIN_SECRET) throw new Error('HASURA_ADMIN_SECRET is re
 // Example API Request
 // http://localhost:3000/api/clean-db
 
-module.exports = async (req, res) => {
+export default async function clean_db(req, res) {
   try {
     // https://hasura.io/docs/latest/graphql/core/api-reference/schema-metadata-api/run-sql/
     const resp = await fetch(process.env.SQL_ENDPOINT, {
@@ -35,7 +35,7 @@ module.exports = async (req, res) => {
   } catch (err) {
     return send(res, 500, err, { prettyPrint: true });
   }
-};
+}
 
 const SQL = {};
 SQL.DeleteCronEventRows = `

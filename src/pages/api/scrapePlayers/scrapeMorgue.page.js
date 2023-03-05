@@ -4,12 +4,12 @@ import send from 'src/server/zeitSend';
 import { serverQuery } from 'src/graphql/serverQuery';
 import { Stopwatch } from 'src/server/Stopwatch';
 
-import { Morgue } from 'src/server/Morgue';
+import { Morgue } from './Morgue';
 import { SERVER_CONFIG } from './ServerConfig';
 import { addMorgue } from './addMorgue';
 
 // force scrape a morgue file, storing results in scrapePlayers_item
-// http://localhost:3000/api/scrapeMorgue?morgue=http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20230114-084156.txt
+// http://localhost:3000/api/scrapePlayers/scrapeMorgue?morgue=http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20230114-084156.txt
 
 // items            http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20230226-012223.txt
 // no items (skip)  http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20230226-011455.txt
