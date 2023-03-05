@@ -59,7 +59,7 @@ async function scrape_morgue_list({ player, stopwatch }) {
   const result = {
     name,
     server,
-    error: false,
+    error: undefined,
     list: [],
     times: [],
   };
