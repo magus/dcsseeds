@@ -47,7 +47,7 @@ const PROJ_ROOT = execSync('git rev-parse --show-toplevel').toString().trim();
   output_lines.push('');
   output_lines.push(`export const List = ${JSON.stringify(curse_list)};`);
 
-  const abbr_map = {};
+  const abbr_map: { [key: string]: Curse } = {};
   for (const curse of curse_list) {
     abbr_map[curse.abbr] = curse;
   }
@@ -62,17 +62,17 @@ const PROJ_ROOT = execSync('git rev-parse --show-toplevel').toString().trim();
   crawl.reset();
 })();
 
-async function parse_curse_list(version) {
+async function parse_curse_list(version: string): Promise<{ list: Array<Curse>; version: string }> {
   crawl.prepare(version);
 
   const god_abil_cc = CPPCompiler(await read_file(`${PROJ_ROOT}/crawl/crawl-ref/source/god-abil.cc`));
 
   // static map<curse_type, curse_data> _ashenzari_curses =
-  let curse_object_list;
+  let curse_object_list: any;
 
   god_abil_cc.traverse({
     Assignment: {
-      enter(node) {
+      enter(node: any) {
         if (node.name.value === '_ashenzari_curses') {
           curse_object_list = node.value.fields;
         }
@@ -89,7 +89,9 @@ async function parse_curse_list(version) {
   return { list, version };
 }
 
-function extract_curse(object): { id: string; name: string; abbr: string } {
+type Curse = { id: string; name: string; abbr: string };
+
+function extract_curse(object: any): Curse {
   const curse = {
     id: '',
     name: '',
