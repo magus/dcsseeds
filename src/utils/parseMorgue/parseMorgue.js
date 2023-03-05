@@ -8,6 +8,7 @@ import Species from 'src/utils/Species';
 import Uniques from 'src/utils/Uniques';
 import Gods from 'src/utils/Gods';
 import Branch from 'src/utils/Branch';
+import * as AshenzariCurses from 'src/utils/AshenzariCurses';
 
 export async function parseMorgue(morgue) {
   const response = await fetch(morgue);
@@ -406,9 +407,11 @@ function getAllMorgueNoteEvents(morgueNotes) {
       );
 
       // idents
-      const identPortal = morgueNote.note.match(/Identified the (.*) \(You found it in (?:the |a |an )?(.*)\)/);
+      const identPortal = morgueNote.note.match(
+        /Identified (?:the |a |an )(.*) \(You found it in (?:the |a |an )?(.*)\)/,
+      );
       const identWithLoc = morgueNote.note.match(
-        /Identified the (.*) \(You found it on level (\d{1,2}) of (?:the |a |an )?(.*)\)/,
+        /Identified (?:the |a |an )(.*) \(You found it on level (\d{1,2}) of (?:the |a |an )?(.*)\)/,
       );
 
       // boughts
@@ -605,19 +608,39 @@ function getAllMorgueNoteEvents(morgueNotes) {
         addEvent('item', morgueNote.loc, { item });
       } else if (identPortal) {
         const [, item, loc] = identPortal;
+
+        if (is_ashenzari_curse(item)) {
+          return;
+        }
+
         addEvent('ident-portal', loc, { item });
         addEvent('item', loc, { item });
       } else if (identWithLoc) {
         const [, item, level, loc] = identWithLoc;
+
+        if (is_ashenzari_curse(item)) {
+          return;
+        }
+
         addEvent('ident-loc', `${loc}:${level}`, { item });
         addEvent('item', `${loc}:${level}`, { item });
       } else if (identBoughtPortal) {
         const [, item, loc] = identBoughtPortal;
+
+        if (is_ashenzari_curse(item)) {
+          return;
+        }
+
         const gold = find_previous_bought_price(events, item);
         addEvent('ident-bought-portal', loc, { item, gold });
         addEvent('item', loc, { item, gold });
       } else if (identBoughtWithLoc) {
         const [, item, level, loc] = identBoughtWithLoc;
+
+        if (is_ashenzari_curse(item)) {
+          return;
+        }
+
         const gold = find_previous_bought_price(events, item);
         addEvent('ident-bought-loc', `${loc}:${level}`, { item, gold });
         addEvent('item', `${loc}:${level}`, { item, gold });
@@ -626,6 +649,11 @@ function getAllMorgueNoteEvents(morgueNotes) {
         // console.warn('ident-ignore', morgueNote.loc, { item });
       } else if (ident) {
         const [, item] = ident;
+
+        if (is_ashenzari_curse(item)) {
+          return;
+        }
+
         addEvent('ident', morgueNote.loc, { item });
         addEvent('item', morgueNote.loc, { item });
       }
@@ -696,14 +724,47 @@ function find_previous_bought_price(events, item) {
     if (event.type === 'bought') {
       const bought_type = !!~event.data.item.indexOf(item_type);
       if (bought_type) {
+        // console.debug('FOUND', { item, item_type, event });
         return event.data.gold;
       }
     }
   });
 
   if (!gold) {
+    console.error({ item, item_type });
     throw new Error('unable to find matching bought event');
   }
 
   return gold;
 }
+
+function is_ashenzari_curse(item_name) {
+  const property_list = get_property_list(item_name);
+
+  for (const property of property_list) {
+    if (AshenzariCurses.ByAbbr[property]) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
+function get_property_list(item_name) {
+  const property_list_match = item_name.match(RE.property_list);
+
+  if (!property_list_match) {
+    return [];
+  }
+
+  const { property_list_string } = property_list_match.groups;
+  const property_list = property_list_string.split(RE.property_list_split);
+
+  // console.debug({ item_name, property_list });
+  return property_list;
+}
+
+const RE = {
+  property_list: /{(?<property_list_string>.*)}/,
+  property_list_split: /, | /,
+};

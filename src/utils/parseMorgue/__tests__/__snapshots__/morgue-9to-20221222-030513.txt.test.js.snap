@@ -1,0 +1,2113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`] = `
+{
+  "background": "Hedge Wizard",
+  "datetime": 2022-12-22T03:05:13.000Z,
+  "eventCount": 216,
+  "eventErrors": [],
+  "events": [
+    {
+      "branch": "Dungeon",
+      "data": "9to the Kobold Hedge Wizard began the quest for the Orb.",
+      "level": "1",
+      "location": "Dungeon:1",
+      "type": "first-event",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "hp": "10",
+        "level": "1",
+        "mp": "4",
+      },
+      "level": "1",
+      "location": "Dungeon:1",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "hp": "15",
+        "level": "2",
+        "mp": "6",
+      },
+      "level": "1",
+      "location": "Dungeon:1",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "hp": "19",
+        "level": "3",
+        "mp": "7",
+      },
+      "level": "1",
+      "location": "Dungeon:1",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "1",
+        "skill": "Ice Magic",
+      },
+      "level": "1",
+      "location": "Dungeon:1",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Terence",
+      },
+      "level": "2",
+      "location": "Dungeon:2",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "hp": "24",
+        "level": "4",
+        "mp": "9",
+      },
+      "level": "3",
+      "location": "Dungeon:3",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "item": "+2 helmet of Satisfaction {+Inv Int+4}",
+      },
+      "level": "3",
+      "location": "Dungeon:3",
+      "type": "ident",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "item": "+2 helmet of Satisfaction {+Inv Int+4}",
+      },
+      "level": "3",
+      "location": "Dungeon:3",
+      "type": "item",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "gold": "24",
+        "item": "scroll of identify",
+      },
+      "level": "3",
+      "location": "Dungeon:3",
+      "type": "bought",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "gold": "90",
+        "item": "scroll of blinking",
+      },
+      "level": "3",
+      "location": "Dungeon:3",
+      "type": "bought",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "gold": "12",
+        "item": "scroll of noise",
+      },
+      "level": "3",
+      "location": "Dungeon:3",
+      "type": "bought",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "hp": "28",
+        "level": "5",
+        "mp": "10",
+      },
+      "level": "2",
+      "location": "Dungeon:2",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "1",
+        "skill": "Fighting",
+      },
+      "level": "4",
+      "location": "Dungeon:4",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "1",
+        "skill": "Short Blades",
+      },
+      "level": "4",
+      "location": "Dungeon:4",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "hp": "34",
+        "level": "6",
+        "mp": "11",
+      },
+      "level": "4",
+      "location": "Dungeon:4",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "1",
+        "skill": "Hexes",
+      },
+      "level": "4",
+      "location": "Dungeon:4",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Eustachio",
+      },
+      "level": "5",
+      "location": "Dungeon:5",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "4",
+        "skill": "Spellcasting",
+      },
+      "level": "5",
+      "location": "Dungeon:5",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "hp": "38",
+        "level": "7",
+        "mp": "13",
+      },
+      "level": "5",
+      "location": "Dungeon:5",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Temple",
+      "data": {
+        "god": "Ashenzari",
+      },
+      "level": undefined,
+      "location": "Temple",
+      "type": "join-god",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Grinder",
+      },
+      "level": "5",
+      "location": "Dungeon:5",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "hp": "44",
+        "level": "8",
+        "mp": "14",
+      },
+      "level": "6",
+      "location": "Dungeon:6",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "5",
+        "skill": "Ice Magic",
+      },
+      "level": "6",
+      "location": "Dungeon:6",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "5",
+        "skill": "Spellcasting",
+      },
+      "level": "8",
+      "location": "Dungeon:8",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "bips": "*",
+        "god": "Ashenzari",
+      },
+      "level": "6",
+      "location": "Dungeon:6",
+      "type": "piety-god",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "item": "scroll of acquirement",
+      },
+      "level": "6",
+      "location": "Dungeon:6",
+      "type": "ident",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "item": "scroll of acquirement",
+      },
+      "level": "6",
+      "location": "Dungeon:6",
+      "type": "item",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "hp": "48",
+        "level": "9",
+        "mp": "17",
+      },
+      "level": "6",
+      "location": "Dungeon:6",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "item": "amulet of Elemental Vulnerability {rPois rF-- rC-- AC+8}",
+      },
+      "level": "6",
+      "location": "Dungeon:6",
+      "type": "found",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "item": "amulet of Elemental Vulnerability {rPois rF-- rC-- AC+8}",
+      },
+      "level": "6",
+      "location": "Dungeon:6",
+      "type": "item",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Terence",
+      },
+      "level": "2",
+      "location": "Dungeon:2",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Grinder",
+      },
+      "level": "5",
+      "location": "Dungeon:5",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "6",
+        "skill": "Spellcasting",
+      },
+      "level": "5",
+      "location": "Dungeon:5",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "5",
+        "skill": "Conjurations",
+      },
+      "level": "5",
+      "location": "Dungeon:5",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "5",
+        "skill": "Hexes",
+      },
+      "level": "5",
+      "location": "Dungeon:5",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Eustachio",
+      },
+      "level": "5",
+      "location": "Dungeon:5",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "1",
+        "skill": "Evocations",
+      },
+      "level": "5",
+      "location": "Dungeon:5",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "bips": "**",
+        "god": "Ashenzari",
+      },
+      "level": "7",
+      "location": "Dungeon:7",
+      "type": "piety-god",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "hp": "56",
+        "level": "10",
+        "mp": "21",
+      },
+      "level": "8",
+      "location": "Dungeon:8",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "7",
+        "skill": "Spellcasting",
+      },
+      "level": "8",
+      "location": "Dungeon:8",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "bips": "***",
+        "god": "Ashenzari",
+      },
+      "level": "9",
+      "location": "Dungeon:9",
+      "type": "piety-god",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "hp": "64",
+        "level": "11",
+        "mp": "23",
+      },
+      "level": "10",
+      "location": "Dungeon:10",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "gold": "40",
+        "item": "potion of might",
+      },
+      "level": "10",
+      "location": "Dungeon:10",
+      "type": "bought",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "5",
+        "skill": "Stealth",
+      },
+      "level": "10",
+      "location": "Dungeon:10",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "5",
+        "skill": "Fighting",
+      },
+      "level": "10",
+      "location": "Dungeon:10",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "8",
+        "skill": "Spellcasting",
+      },
+      "level": "10",
+      "location": "Dungeon:10",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "gold": "135",
+        "item": "pair of gloves",
+      },
+      "level": "3",
+      "location": "Dungeon:3",
+      "type": "bought",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "gold": "25",
+        "item": "scroll labelled LUOWIA VECVI",
+      },
+      "level": "3",
+      "location": "Dungeon:3",
+      "type": "bought",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "who": "Sonja",
+      },
+      "level": "1",
+      "location": "Lair:1",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "who": "Sonja",
+      },
+      "level": "1",
+      "location": "Lair:1",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "hp": "75",
+        "level": "12",
+        "mp": "27",
+      },
+      "level": "2",
+      "location": "Lair:2",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "bips": "****",
+        "god": "Ashenzari",
+      },
+      "level": "2",
+      "location": "Lair:2",
+      "type": "piety-god",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "level": "5",
+        "skill": "Evocations",
+      },
+      "level": "1",
+      "location": "Lair:1",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "level": "9",
+        "skill": "Spellcasting",
+      },
+      "level": "3",
+      "location": "Lair:3",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "hp": "82",
+        "level": "13",
+        "mp": "29",
+      },
+      "level": "3",
+      "location": "Lair:3",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "item": "+6 trident "Demon's Death Toll" {flame, rPois rF+ Stlth+}",
+      },
+      "level": "4",
+      "location": "Lair:4",
+      "type": "ident",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "item": "+6 trident "Demon's Death Toll" {flame, rPois rF+ Stlth+}",
+      },
+      "level": "4",
+      "location": "Lair:4",
+      "type": "item",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "level": "1",
+        "skill": "Fire Magic",
+      },
+      "level": "5",
+      "location": "Lair:5",
+      "type": "skill-level",
+    },
+    {
+      "branch": "IceCave",
+      "data": {
+        "level": "10",
+        "skill": "Spellcasting",
+      },
+      "level": undefined,
+      "location": "IceCave",
+      "type": "skill-level",
+    },
+    {
+      "branch": "IceCave",
+      "data": {
+        "hp": "92",
+        "level": "14",
+        "mp": "32",
+      },
+      "level": undefined,
+      "location": "IceCave",
+      "type": "experience-level",
+    },
+    {
+      "branch": "IceCave",
+      "data": {
+        "level": "5",
+        "skill": "Fire Magic",
+      },
+      "level": undefined,
+      "location": "IceCave",
+      "type": "skill-level",
+    },
+    {
+      "branch": "IceCave",
+      "data": {
+        "item": "ring of Plog {Ice rN+}",
+      },
+      "level": undefined,
+      "location": "IceCave",
+      "type": "ident",
+    },
+    {
+      "branch": "IceCave",
+      "data": {
+        "item": "ring of Plog {Ice rN+}",
+      },
+      "level": undefined,
+      "location": "IceCave",
+      "type": "item",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "item": "+0 ring mail of Lugonu's Inspiration {Harm Drain Regen+ rCorr}",
+      },
+      "level": "5",
+      "location": "Lair:5",
+      "type": "ident",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "item": "+0 ring mail of Lugonu's Inspiration {Harm Drain Regen+ rCorr}",
+      },
+      "level": "5",
+      "location": "Lair:5",
+      "type": "item",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "level": "10",
+        "skill": "Conjurations",
+      },
+      "level": "5",
+      "location": "Lair:5",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "level": "5",
+        "skill": "Dodging",
+      },
+      "level": "5",
+      "location": "Lair:5",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "bips": "*****",
+        "god": "Ashenzari",
+      },
+      "level": "2",
+      "location": "Lair:2",
+      "type": "piety-god",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "who": "Gastronok",
+      },
+      "level": "2",
+      "location": "Lair:2",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "gold": "90",
+        "item": "scroll of enchant weapon",
+      },
+      "level": "3",
+      "location": "Dungeon:3",
+      "type": "bought",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "gold": "114",
+        "item": "scroll of summoning",
+      },
+      "level": "3",
+      "location": "Dungeon:3",
+      "type": "bought",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "1",
+        "skill": "Air Magic",
+      },
+      "level": "11",
+      "location": "Dungeon:11",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "11",
+        "skill": "Spellcasting",
+      },
+      "level": "11",
+      "location": "Dungeon:11",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "item": "+2 giant spiked club of Quantum Leap {vorpal, rPois rF+ Dex+3}",
+      },
+      "level": "12",
+      "location": "Dungeon:12",
+      "type": "ident",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "item": "+2 giant spiked club of Quantum Leap {vorpal, rPois rF+ Dex+3}",
+      },
+      "level": "12",
+      "location": "Dungeon:12",
+      "type": "item",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "hp": "97",
+        "level": "15",
+        "mp": "34",
+      },
+      "level": "13",
+      "location": "Dungeon:13",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "1",
+        "skill": "Shields",
+      },
+      "level": "14",
+      "location": "Dungeon:14",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "5",
+        "skill": "Short Blades",
+      },
+      "level": "14",
+      "location": "Dungeon:14",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "branch": "Vaults",
+      },
+      "level": "14",
+      "location": "Dungeon:14",
+      "type": "portal",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "who": "Jorgrun",
+      },
+      "level": "1",
+      "location": "Orc:1",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "who": "Jorgrun",
+      },
+      "level": "1",
+      "location": "Orc:1",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "gold": "75",
+        "item": "potion of heal wounds",
+      },
+      "level": "1",
+      "location": "Orc:1",
+      "type": "bought",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "level": "12",
+        "skill": "Spellcasting",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "level": "5",
+        "skill": "Air Magic",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "gold": "162",
+        "item": "pair of boots",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "bought",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "hp": "101",
+        "level": "16",
+        "mp": "35",
+      },
+      "level": "1",
+      "location": "Elf:1",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "level": "10",
+        "skill": "Dodging",
+      },
+      "level": "1",
+      "location": "Elf:1",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Swamp",
+      "data": {
+        "item": "+1 robe of the Guilds {-Cast Rampage Dex+9}",
+      },
+      "level": "1",
+      "location": "Swamp:1",
+      "type": "ident",
+    },
+    {
+      "branch": "Swamp",
+      "data": {
+        "item": "+1 robe of the Guilds {-Cast Rampage Dex+9}",
+      },
+      "level": "1",
+      "location": "Swamp:1",
+      "type": "item",
+    },
+    {
+      "branch": "Swamp",
+      "data": {
+        "level": "5",
+        "skill": "Shields",
+      },
+      "level": "1",
+      "location": "Swamp:1",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Swamp",
+      "data": {
+        "hp": "106",
+        "level": "17",
+        "mp": "37",
+      },
+      "level": "1",
+      "location": "Swamp:1",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Swamp",
+      "data": {
+        "bips": "******",
+        "god": "Ashenzari",
+      },
+      "level": "2",
+      "location": "Swamp:2",
+      "type": "piety-god",
+    },
+    {
+      "branch": "Swamp",
+      "data": {
+        "level": "13",
+        "skill": "Spellcasting",
+      },
+      "level": "2",
+      "location": "Swamp:2",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Swamp",
+      "data": {
+        "who": "Donald",
+      },
+      "level": "3",
+      "location": "Swamp:3",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Swamp",
+      "data": {
+        "who": "Donald",
+      },
+      "level": "3",
+      "location": "Swamp:3",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Spider",
+      "data": {
+        "level": "10",
+        "skill": "Fire Magic",
+      },
+      "level": "1",
+      "location": "Spider:1",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Spider",
+      "data": {
+        "item": "+2 robe "Mioseef" {+Inv rPois}",
+      },
+      "level": "1",
+      "location": "Spider:1",
+      "type": "ident",
+    },
+    {
+      "branch": "Spider",
+      "data": {
+        "item": "+2 robe "Mioseef" {+Inv rPois}",
+      },
+      "level": "1",
+      "location": "Spider:1",
+      "type": "item",
+    },
+    {
+      "branch": "Spider",
+      "data": {
+        "hp": "115",
+        "level": "18",
+        "mp": "39",
+      },
+      "level": "1",
+      "location": "Spider:1",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Spider",
+      "data": {
+        "item": "+0 morningstar of Magnificence {elec, rPois Str-3 Dex+2 SInv}",
+      },
+      "level": "2",
+      "location": "Spider:2",
+      "type": "ident",
+    },
+    {
+      "branch": "Spider",
+      "data": {
+        "item": "+0 morningstar of Magnificence {elec, rPois Str-3 Dex+2 SInv}",
+      },
+      "level": "2",
+      "location": "Spider:2",
+      "type": "item",
+    },
+    {
+      "branch": "Spider",
+      "data": {
+        "level": "10",
+        "skill": "Fighting",
+      },
+      "level": "3",
+      "location": "Spider:3",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Spider",
+      "data": {
+        "item": "+7 kite shield of the Barber Surgeon {Contam Regen+ Str+4 Int+4 Dex+6}",
+      },
+      "level": "3",
+      "location": "Spider:3",
+      "type": "acquirement",
+    },
+    {
+      "branch": "Spider",
+      "data": {
+        "item": "+1 leather armour of the Beloved God {+Blink Dex+4}",
+      },
+      "level": "4",
+      "location": "Spider:4",
+      "type": "ident",
+    },
+    {
+      "branch": "Spider",
+      "data": {
+        "item": "+1 leather armour of the Beloved God {+Blink Dex+4}",
+      },
+      "level": "4",
+      "location": "Spider:4",
+      "type": "item",
+    },
+    {
+      "branch": "Spider",
+      "data": {
+        "item": "+11 broad axe of the Charming Enemy {drain, Fly Str+7 Dex-3 Stlth+}",
+      },
+      "level": "4",
+      "location": "Spider:4",
+      "type": "ident",
+    },
+    {
+      "branch": "Spider",
+      "data": {
+        "item": "+11 broad axe of the Charming Enemy {drain, Fly Str+7 Dex-3 Stlth+}",
+      },
+      "level": "4",
+      "location": "Spider:4",
+      "type": "item",
+    },
+    {
+      "branch": "Spider",
+      "data": {
+        "level": "10",
+        "skill": "Evocations",
+      },
+      "level": "4",
+      "location": "Spider:4",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Spider",
+      "data": {
+        "level": "14",
+        "skill": "Spellcasting",
+      },
+      "level": "4",
+      "location": "Spider:4",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Spider",
+      "data": {
+        "item": "+1 hat "Gaillis" {+Blink}",
+      },
+      "level": "4",
+      "location": "Spider:4",
+      "type": "ident",
+    },
+    {
+      "branch": "Spider",
+      "data": {
+        "item": "+1 hat "Gaillis" {+Blink}",
+      },
+      "level": "4",
+      "location": "Spider:4",
+      "type": "item",
+    },
+    {
+      "branch": "Spider",
+      "data": {
+        "who": "Arachne",
+      },
+      "level": "4",
+      "location": "Spider:4",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Spider",
+      "data": {
+        "who": "Arachne",
+      },
+      "level": "4",
+      "location": "Spider:4",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Spider",
+      "data": {
+        "hp": "121",
+        "level": "19",
+        "mp": "40",
+      },
+      "level": "4",
+      "location": "Spider:4",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "who": "Gastronok",
+      },
+      "level": "2",
+      "location": "Lair:2",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "hp": "128",
+        "level": "20",
+        "mp": "41",
+      },
+      "level": "4",
+      "location": "Lair:4",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Roxanne",
+      },
+      "level": "15",
+      "location": "Dungeon:15",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Roxanne",
+      },
+      "level": "15",
+      "location": "Dungeon:15",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "gold": "324",
+        "item": "translucent ring mail",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "bought",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "gold": "324",
+        "item": "+2 ring mail of the Earth {Regen+}",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "ident-bought-loc",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "gold": "324",
+        "item": "+2 ring mail of the Earth {Regen+}",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "item",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "gold": "324",
+        "item": "scorched scale mail",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "bought",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "gold": "324",
+        "item": "+0 scale mail of Qonalopu {-Tele Rampage Fly rF+}",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "ident-bought-loc",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "gold": "324",
+        "item": "+0 scale mail of Qonalopu {-Tele Rampage Fly rF+}",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "item",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "gold": "45",
+        "item": "scroll of teleportation",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "bought",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "item": "+3 halberd of Ysuptuam {vorpal, *Slow rC- rCorr Int+6}",
+      },
+      "level": "2",
+      "location": "Elf:2",
+      "type": "ident",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "item": "+3 halberd of Ysuptuam {vorpal, *Slow rC- rCorr Int+6}",
+      },
+      "level": "2",
+      "location": "Elf:2",
+      "type": "item",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "level": "1",
+        "skill": "Earth Magic",
+      },
+      "level": "2",
+      "location": "Elf:2",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "gold": "60",
+        "item": "scroll of amnesia",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "bought",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "gold": "600",
+        "item": "Great Wizards, Vol. VII",
+      },
+      "level": "2",
+      "location": "Elf:2",
+      "type": "bought",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "level": "1",
+        "skill": "Transmutations",
+      },
+      "level": "3",
+      "location": "Elf:3",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "hp": "134",
+        "level": "21",
+        "mp": "43",
+      },
+      "level": "3",
+      "location": "Elf:3",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "gold": "112",
+        "item": "scroll of blinking",
+      },
+      "level": "3",
+      "location": "Elf:3",
+      "type": "bought",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "gold": "75",
+        "item": "potion of heal wounds",
+      },
+      "level": "3",
+      "location": "Elf:3",
+      "type": "bought",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "level": "15",
+        "skill": "Spellcasting",
+      },
+      "level": "3",
+      "location": "Elf:3",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "item": "Laviykam's Grimoire of Greatest Risks and Utility",
+      },
+      "level": "3",
+      "location": "Elf:3",
+      "type": "ident",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "item": "Laviykam's Grimoire of Greatest Risks and Utility",
+      },
+      "level": "3",
+      "location": "Elf:3",
+      "type": "item",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "item": "+4 hand axe of Uqixai {vorpal, rC++}",
+      },
+      "level": "3",
+      "location": "Elf:3",
+      "type": "ident",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "item": "+4 hand axe of Uqixai {vorpal, rC++}",
+      },
+      "level": "3",
+      "location": "Elf:3",
+      "type": "item",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "item": "+8 plate armour of Baldness {Rampage rElec Str-2 Stlth+}",
+      },
+      "level": "3",
+      "location": "Elf:3",
+      "type": "ident",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "item": "+8 plate armour of Baldness {Rampage rElec Str-2 Stlth+}",
+      },
+      "level": "3",
+      "location": "Elf:3",
+      "type": "item",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "item": "+1 spear "Ytoss" {vorpal, Fragile Int+5 Dex+2}",
+      },
+      "level": "3",
+      "location": "Elf:3",
+      "type": "ident",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "item": "+1 spear "Ytoss" {vorpal, Fragile Int+5 Dex+2}",
+      },
+      "level": "3",
+      "location": "Elf:3",
+      "type": "item",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "gold": "420",
+        "item": "Trismegistus Codex",
+      },
+      "level": "3",
+      "location": "Elf:3",
+      "type": "bought",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "level": "15",
+        "skill": "Conjurations",
+      },
+      "level": "1",
+      "location": "Vaults:1",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "hp": "136",
+        "level": "22",
+        "mp": "43",
+      },
+      "level": "1",
+      "location": "Vaults:1",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "who": "Aizul",
+      },
+      "level": "2",
+      "location": "Vaults:2",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "who": "Aizul",
+      },
+      "level": "2",
+      "location": "Vaults:2",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "level": "16",
+        "skill": "Spellcasting",
+      },
+      "level": "2",
+      "location": "Vaults:2",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "who": "Jory",
+      },
+      "level": "2",
+      "location": "Vaults:2",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "who": "Jory",
+      },
+      "level": "2",
+      "location": "Vaults:2",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "item": "+1 hat of the Little Devil {Rampage Int+6}",
+      },
+      "level": "3",
+      "location": "Vaults:3",
+      "type": "ident",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "item": "+1 hat of the Little Devil {Rampage Int+6}",
+      },
+      "level": "3",
+      "location": "Vaults:3",
+      "type": "item",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "level": "10",
+        "skill": "Stealth",
+      },
+      "level": "3",
+      "location": "Vaults:3",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "hp": "145",
+        "level": "23",
+        "mp": "47",
+      },
+      "level": "3",
+      "location": "Vaults:3",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "level": "15",
+        "skill": "Dodging",
+      },
+      "level": "3",
+      "location": "Vaults:3",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "level": "17",
+        "skill": "Spellcasting",
+      },
+      "level": "3",
+      "location": "Vaults:3",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "who": "Xtahua",
+      },
+      "level": "4",
+      "location": "Vaults:4",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "who": "Xtahua",
+      },
+      "level": "4",
+      "location": "Vaults:4",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "branch": "Pandemonium",
+      },
+      "level": "1",
+      "location": "Depths:1",
+      "type": "portal",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "branch": "Hell",
+      },
+      "level": "1",
+      "location": "Depths:1",
+      "type": "portal",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "gold": "105",
+        "item": "twisted agate ring",
+      },
+      "level": "1",
+      "location": "Depths:1",
+      "type": "bought",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "who": "the Enchantress",
+      },
+      "level": "2",
+      "location": "Depths:2",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "hp": "151",
+        "level": "24",
+        "mp": "48",
+      },
+      "level": "2",
+      "location": "Depths:2",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "level": "5",
+        "skill": "Transmutations",
+      },
+      "level": "2",
+      "location": "Depths:2",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "who": "the Enchantress",
+      },
+      "level": "2",
+      "location": "Depths:2",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "gold": "917",
+        "item": "+11 dagger "Goidux Ritoa" {vorpal, Will+}",
+      },
+      "level": "9",
+      "location": "Dungeon:9",
+      "type": "bought",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "item": "+11 dagger "Goidux Ritoa" {vorpal, Will+}",
+      },
+      "level": "9",
+      "location": "Dungeon:9",
+      "type": "item",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "branch": "Abyss",
+      },
+      "level": "3",
+      "location": "Depths:3",
+      "type": "portal",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "level": "18",
+        "skill": "Spellcasting",
+      },
+      "level": "3",
+      "location": "Depths:3",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "item": "+9 shortbow of the Beast {venom, MP+9}",
+      },
+      "level": "3",
+      "location": "Depths:3",
+      "type": "ident",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "item": "+9 shortbow of the Beast {venom, MP+9}",
+      },
+      "level": "3",
+      "location": "Depths:3",
+      "type": "item",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "item": "+6 double sword "Houfees" {vorpal, rN+ Int+2}",
+      },
+      "level": "3",
+      "location": "Depths:3",
+      "type": "ident",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "item": "+6 double sword "Houfees" {vorpal, rN+ Int+2}",
+      },
+      "level": "3",
+      "location": "Depths:3",
+      "type": "item",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "item": "ring "Efeimo" {*Slow rF++ Dex+6}",
+      },
+      "level": "3",
+      "location": "Depths:3",
+      "type": "ident",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "item": "ring "Efeimo" {*Slow rF++ Dex+6}",
+      },
+      "level": "3",
+      "location": "Depths:3",
+      "type": "item",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "branch": "Abyss",
+      },
+      "level": "3",
+      "location": "Depths:3",
+      "type": "portal",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "branch": "Ziggurat",
+      },
+      "level": "4",
+      "location": "Depths:4",
+      "type": "portal",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "branch": "Zot",
+      },
+      "level": "4",
+      "location": "Depths:4",
+      "type": "portal",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "level": "10",
+        "skill": "Short Blades",
+      },
+      "level": "4",
+      "location": "Depths:4",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "hp": "156",
+        "level": "25",
+        "mp": "48",
+      },
+      "level": "4",
+      "location": "Depths:4",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Crypt",
+      "data": {
+        "item": "ring of Fait {Ice Will+ Slay+3 Stlth-}",
+      },
+      "level": "1",
+      "location": "Crypt:1",
+      "type": "ident",
+    },
+    {
+      "branch": "Crypt",
+      "data": {
+        "item": "ring of Fait {Ice Will+ Slay+3 Stlth-}",
+      },
+      "level": "1",
+      "location": "Crypt:1",
+      "type": "item",
+    },
+    {
+      "branch": "Crypt",
+      "data": {
+        "level": "10",
+        "skill": "Hexes",
+      },
+      "level": "1",
+      "location": "Crypt:1",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Crypt",
+      "data": {
+        "level": "5",
+        "skill": "Earth Magic",
+      },
+      "level": "1",
+      "location": "Crypt:1",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Crypt",
+      "data": {
+        "level": "19",
+        "skill": "Spellcasting",
+      },
+      "level": "1",
+      "location": "Crypt:1",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Crypt",
+      "data": {
+        "item": "+1 leather armour "Ixaokheu" {rPois Str+6 Dex-5}",
+      },
+      "level": "1",
+      "location": "Crypt:1",
+      "type": "ident",
+    },
+    {
+      "branch": "Crypt",
+      "data": {
+        "item": "+1 leather armour "Ixaokheu" {rPois Str+6 Dex-5}",
+      },
+      "level": "1",
+      "location": "Crypt:1",
+      "type": "item",
+    },
+    {
+      "branch": "Crypt",
+      "data": {
+        "level": "15",
+        "skill": "Stealth",
+      },
+      "level": "2",
+      "location": "Crypt:2",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Crypt",
+      "data": {
+        "level": "10",
+        "skill": "Shields",
+      },
+      "level": "2",
+      "location": "Crypt:2",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Crypt",
+      "data": {
+        "item": "+5 battleaxe "Jaumn" {flame, Int+4 Stlth+}",
+      },
+      "level": "3",
+      "location": "Crypt:3",
+      "type": "ident",
+    },
+    {
+      "branch": "Crypt",
+      "data": {
+        "item": "+5 battleaxe "Jaumn" {flame, Int+4 Stlth+}",
+      },
+      "level": "3",
+      "location": "Crypt:3",
+      "type": "item",
+    },
+    {
+      "branch": "Crypt",
+      "data": {
+        "hp": "163",
+        "level": "26",
+        "mp": "50",
+      },
+      "level": "3",
+      "location": "Crypt:3",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "level": "20",
+        "skill": "Spellcasting",
+      },
+      "level": "5",
+      "location": "Vaults:5",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "item": "+0 pair of gloves of a Labyrinth {Str-5 Int+5}",
+      },
+      "level": "5",
+      "location": "Vaults:5",
+      "type": "ident",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "item": "+0 pair of gloves of a Labyrinth {Str-5 Int+5}",
+      },
+      "level": "5",
+      "location": "Vaults:5",
+      "type": "item",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "item": "+0 ring mail of Hijiemaa {rPois Int+7 Dex+4}",
+      },
+      "level": "5",
+      "location": "Vaults:5",
+      "type": "ident",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "item": "+0 ring mail of Hijiemaa {rPois Int+7 Dex+4}",
+      },
+      "level": "5",
+      "location": "Vaults:5",
+      "type": "item",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "item": "+10 whip "Aget" {vorpal, rPois rC- rCorr Str+6}",
+      },
+      "level": "5",
+      "location": "Vaults:5",
+      "type": "ident",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "item": "+10 whip "Aget" {vorpal, rPois rC- rCorr Str+6}",
+      },
+      "level": "5",
+      "location": "Vaults:5",
+      "type": "item",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "hp": "166",
+        "level": "27",
+        "mp": "50",
+      },
+      "level": "5",
+      "location": "Vaults:5",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "level": "15",
+        "skill": "Evocations",
+      },
+      "level": "5",
+      "location": "Vaults:5",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Zot",
+      "data": {
+        "level": "5",
+        "skill": "Summonings",
+      },
+      "level": "2",
+      "location": "Zot:2",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Zot",
+      "data": {
+        "item": "+11 quick blade of the Boar {vamp, rElec rCorr Dex+2 Stlth-}",
+      },
+      "level": "2",
+      "location": "Zot:2",
+      "type": "ident",
+    },
+    {
+      "branch": "Zot",
+      "data": {
+        "item": "+11 quick blade of the Boar {vamp, rElec rCorr Dex+2 Stlth-}",
+      },
+      "level": "2",
+      "location": "Zot:2",
+      "type": "item",
+    },
+    {
+      "branch": "Zot",
+      "data": {
+        "level": "21",
+        "skill": "Spellcasting",
+      },
+      "level": "3",
+      "location": "Zot:3",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Zot",
+      "data": {
+        "item": "+1 long sword "Transmigrator" {elec, rElec rC+ Dex+2 Stlth+}",
+      },
+      "level": "3",
+      "location": "Zot:3",
+      "type": "ident",
+    },
+    {
+      "branch": "Zot",
+      "data": {
+        "item": "+1 long sword "Transmigrator" {elec, rElec rC+ Dex+2 Stlth+}",
+      },
+      "level": "3",
+      "location": "Zot:3",
+      "type": "item",
+    },
+    {
+      "branch": "Zot",
+      "data": {
+        "item": "amulet of Fakhliys {Spirit Rampage rPois rF-}",
+      },
+      "level": "4",
+      "location": "Zot:4",
+      "type": "ident",
+    },
+    {
+      "branch": "Zot",
+      "data": {
+        "item": "amulet of Fakhliys {Spirit Rampage rPois rF-}",
+      },
+      "level": "4",
+      "location": "Zot:4",
+      "type": "item",
+    },
+    {
+      "branch": "Zot",
+      "data": {
+        "item": "+0 helmet of the Soldier {Int+3}",
+      },
+      "level": "4",
+      "location": "Zot:4",
+      "type": "ident",
+    },
+    {
+      "branch": "Zot",
+      "data": {
+        "item": "+0 helmet of the Soldier {Int+3}",
+      },
+      "level": "4",
+      "location": "Zot:4",
+      "type": "item",
+    },
+    {
+      "branch": "Zot",
+      "data": {
+        "level": "15",
+        "skill": "Hexes",
+      },
+      "level": "5",
+      "location": "Zot:5",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Zot",
+      "data": {
+        "level": "22",
+        "skill": "Spellcasting",
+      },
+      "level": "5",
+      "location": "Zot:5",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": "Escaped with the Orb!",
+      "level": "$",
+      "location": "Dungeon:$",
+      "type": "last-event",
+    },
+  ],
+  "fullVersion": "0.29.1-2-gbd0b4ee654",
+  "god": "Ashenzari",
+  "isMorgue": true,
+  "isSprint": false,
+  "isTrunk": false,
+  "is_bcrawl": false,
+  "morgue": "http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt",
+  "name": "9to",
+  "runeCount": 3,
+  "runes": [
+    "decaying",
+    "silver",
+    "gossamer",
+  ],
+  "score": "1402390",
+  "species": "Kobold",
+  "timeSeconds": 41194,
+  "turns": 104585,
+  "value": "12360128747637419707",
+  "version": "0.29.1",
+}
+`;

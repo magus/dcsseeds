@@ -773,19 +773,19 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
     {
       "branch": "Dungeon",
       "data": {
-        "item": "+0 crystal plate armour {rare} (You found it on level 3 of the Dungeon)",
+        "item": "+0 crystal plate armour {rare}",
       },
-      "level": "4",
-      "location": "Dungeon:4",
-      "type": "ident",
+      "level": "3",
+      "location": "Dungeon:3",
+      "type": "ident-loc",
     },
     {
       "branch": "Dungeon",
       "data": {
-        "item": "+0 crystal plate armour {rare} (You found it on level 3 of the Dungeon)",
+        "item": "+0 crystal plate armour {rare}",
       },
-      "level": "4",
-      "location": "Dungeon:4",
+      "level": "3",
+      "location": "Dungeon:3",
       "type": "item",
     },
     {
@@ -12984,16 +12984,16 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
     {
       "branch": "Ziggurat",
       "data": {
-        "item": "+2 pair of boots of running (You found it on level 25 of a ziggurat)",
+        "item": "+2 pair of boots of running",
       },
       "level": "25",
       "location": "Ziggurat:25",
-      "type": "ident",
+      "type": "ident-loc",
     },
     {
       "branch": "Ziggurat",
       "data": {
-        "item": "+2 pair of boots of running (You found it on level 25 of a ziggurat)",
+        "item": "+2 pair of boots of running",
       },
       "level": "25",
       "location": "Ziggurat:25",

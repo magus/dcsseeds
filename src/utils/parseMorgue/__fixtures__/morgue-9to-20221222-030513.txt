@@ -1,0 +1,2242 @@
+ Dungeon Crawl Stone Soup version 0.29.1-2-gbd0b4ee654 (webtiles) character file.
+
+Game seed: 12360128747637419707
+
+1402390 9to the Sorcerer (level 27, 168/168 HPs)
+             Began as a Kobold Hedge Wizard on Dec 12, 2022.
+             Was the Champion of Ashenzari.
+             Escaped with the Orb
+             ... and 3 runes on Dec 22, 2022!
+
+             The game lasted 11:26:34 (104585 turns).
+
+9to the Sorcerer (Kobold Hedge Wizard)            Turns: 104585, Time: 11:26:34
+
+Health: 168/168    AC:  9    Str:  8    XL:     27
+Magic:  53/53      EV: 35    Int: 41    God:    Ashenzari [******]
+Gold:   3367       SH: 22    Dex: 22    Spells: 5/78 levels left
+
+rFire   + + .      SeeInvis +   a - +11 quick blade "Profound Seer" {vamp, rElec rCorr Dex+2 Stlth-, Elem, Fort} (curse)
+rCold   + + .      Faith    .   h - +7 kite shield "Shattered Soothsayer" {Contam Regen+ Str+4 Int+4 Dex+6, Bglg, Fort} (curse)
+rNeg    . . .      Spirit   .   X - +2 robe of Apeoromancy {rC+ rF+, Bglg, Self} (curse)
+rPois   .          Reflect  .   B - +2 helmet "Ennui of Ashenzari" {+Inv Int+4, Cun, Self} (curse)
+rElec   +          Harm     .   y - scarf "Oracle of Ashenzari" {rC+ rF+, Cun, Evo} (curse)
+rCorr   +          Rampage  .   U - +0 pair of gloves "Chained Annoyance" {Str-5 Int+5, Elem, Comp} (curse)
+Will    +++..      Clarity  +   t - +0 pair of boots of the All-seeing Welkin {Cun, Bglg} (curse)
+Stlth   ++++......              Y - amulet of Ashenzari's Annoyance {RegenMP, Fort, Bglg} (curse)
+HPRegen 1.18/turn               P - ring "Shackled Free Will" {Will+, Elem, Evo} (curse)
+MPRegen 0.73/turn               f - ring "Overhang to Understand" {Fly, Elem, Alch} (curse)
+
+@: flying
+A: small, no large weapons, nightstalker 3, camouflage 1
+0: Orb of Zot
+}: 3/15 runes: decaying, silver, gossamer
+a: Renounce Religion, Evoke Invisibility, Shatter the Chains
+
+
+You escaped.
+You worshipped Ashenzari.
+Ashenzari was exalted by your worship.
+You visited 11 branches of the dungeon, and saw 51 of its levels.
+You also visited: Ice Cave and Wizlab.
+
+You collected 7116 gold pieces.
+You spent 3749 gold pieces at shops.
+
+Inventory:
+
+Hand Weapons
+ a - the cursed +11 quick blade "Profound Seer" (weapon) {vamp, rElec rCorr Dex+2 Stlth-, Elem, Fort}
+   (You took it off a yellow draconian on level 2 of the Realm of Zot)
+
+   It occasionally heals its wielder for a portion of the damage dealt when it
+   wounds a living foe.
+
+   Dex:       It affects your dexterity (+2).
+   rElec:     It insulates you from electricity.
+   rCorr:     It protects you from acid and corrosion.
+   Stlth:     It makes you less stealthy.
+   It has a curse which improves the following skills:
+   Elements: Fire Magic, Ice Magic, Air Magic and Earth Magic.
+   Fortitude: Armour and Shields.
+Missiles
+ z - a throwing net
+Armour
+ h - the cursed +7 kite shield "Shattered Soothsayer" (worn) {Contam Regen+ Str+4 Int+4 Dex+6, Bglg, Fort}
+   (You acquired it on level 3 of the Spider Nest)
+
+   Str:       It affects your strength (+4).
+   Int:       It affects your intelligence (+4).
+   Dex:       It affects your dexterity (+6).
+   Contam:    It causes magical contamination when unequipped.
+   Regen:     It increases your rate of health regeneration.
+   It has a curse which improves the following skills:
+   Beguiling: Conjurations, Hexes and Translocations.
+   Fortitude: Armour and Shields.
+ t - the cursed +0 pair of boots of the All-seeing Welkin (worn) {Cun, Bglg}
+   (You bought it in a shop on level 2 of the Orcish Mines)
+   It has a curse which improves the following skills:
+   Cunning: Dodging and Stealth.
+   Beguiling: Conjurations, Hexes and Translocations.
+ y - the cursed scarf "Oracle of Ashenzari" (worn) {rC+ rF+, Cun, Evo}
+   (You found it on level 2 of the Dungeon)
+   It has a curse which improves the following skills:
+   Cunning: Dodging and Stealth.
+   Evocations: Evocations.
+ B - the cursed +2 helmet "Ennui of Ashenzari" (worn) {+Inv Int+4, Cun, Self}
+   (You found it on level 3 of the Dungeon)
+
+   Int:       It affects your intelligence (+4).
+   +Inv:      It lets you turn invisible.
+   It has a curse which improves the following skills:
+   Cunning: Dodging and Stealth.
+   Introspection: Fighting and Spellcasting.
+ U - the cursed +0 pair of gloves "Chained Annoyance" (worn) {Str-5 Int+5, Elem, Comp}
+   (You found it on level 5 of the Vaults)
+
+   Str:       It affects your strength (-5).
+   Int:       It affects your intelligence (+5).
+   It has a curse which improves the following skills:
+   Elements: Fire Magic, Ice Magic, Air Magic and Earth Magic.
+   Companions: Summonings and Necromancy.
+ X - the cursed +2 robe of Apeoromancy (worn) {rC+ rF+, Bglg, Self}
+   (You took it off an orc sorcerer on level 15 of the Dungeon)
+   It has a curse which improves the following skills:
+   Beguiling: Conjurations, Hexes and Translocations.
+   Introspection: Fighting and Spellcasting.
+Jewellery
+ f - the cursed ring "Overhang to Understand" (right hand) {Fly, Elem, Alch}
+   (You found it on level 1 of the Dungeon)
+
+   [ring of flight]
+
+   Fly:       It grants you flight.
+   It has a curse which improves the following skills:
+   Elements: Fire Magic, Ice Magic, Air Magic and Earth Magic.
+   Alchemy: Poison Magic and Transmutations.
+ n - a ring of poison resistance
+ P - the cursed ring "Shackled Free Will" (left hand) {Will+, Elem, Evo}
+   (You found it on level 9 of the Dungeon)
+
+   [ring of willpower]
+
+   Will:      It increases your willpower.
+   It has a curse which improves the following skills:
+   Elements: Fire Magic, Ice Magic, Air Magic and Earth Magic.
+   Evocations: Evocations.
+ Y - the cursed amulet of Ashenzari's Annoyance (around neck) {RegenMP, Fort, Bglg}
+   (You took it off a deep elf high priest on level 3 of the Elven Halls)
+
+   [amulet of magic regeneration]
+
+   It increases your rate of magic regeneration.
+   It has a curse which improves the following skills:
+   Fortitude: Armour and Shields.
+   Beguiling: Conjurations, Hexes and Translocations.
+Wands
+ d - a wand of roots (11)
+ A - a wand of acid (10)
+ F - a wand of digging (5)
+ H - a wand of mindburst (25)
+ J - a wand of paralysis (16)
+ K - a wand of polymorph (35)
+Scrolls
+ c - 10 scrolls of butterflies
+ e - 11 scrolls of vulnerability
+ g - 17 scrolls of teleportation
+ m - 8 scrolls of torment
+ C - 5 scrolls of blinking
+ D - 5 scrolls of fear (quivered)
+ L - 6 scrolls of magic mapping
+ Q - 3 scrolls of silence
+ S - 4 scrolls of poison
+ V - 10 scrolls of immolation
+ Z - 3 scrolls of summoning
+Potions
+ i - 8 potions of mutation
+ j - 3 potions of invisibility
+ l - 9 potions of brilliance
+ o - 21 potions of curing
+ p - 5 potions of haste
+ r - 10 potions of attraction
+ s - 12 potions of lignification
+ u - 5 potions of ambrosia
+ G - 8 potions of heal wounds
+ I - 7 potions of cancellation
+ M - 4 potions of magic
+ O - 5 potions of resistance
+ R - 9 potions of might
+Miscellaneous
+ v - a phantom mirror
+ w - a tin of tremorstones (2/2)
+ x - a phial of floods
+ N - a lightning rod (4/4)
+ T - a box of beasts
+ W - a condenser vane
+
+
+   Skills:
+ - Level 12.1(16.0) Fighting
+ - Level 10.0 Short Blades
+ + Level 18.7(23.5) Dodging
+ - Level 19.2(24.0) Stealth
+ - Level 10.0(15.1) Shields
+ + Level 22.5(26.0) Spellcasting
+ + Level 21.9(27) Conjurations
+ - Level 15.1(21.2) Hexes
+ - Level 7.3(10.0) Summonings
+ - Level 3.9(9.2) Translocations
+ - Level 5.7(8.3) Transmutations
+ - Level 11.9(18.1) Fire Magic
+ - Level 9.9(16.1) Ice Magic
+ - Level 5.2(10.9) Air Magic
+ - Level 8.5(14.6) Earth Magic
+ - Level 16.2(20.0) Evocations
+
+
+You had 5 spell levels left.
+You knew the following spells:
+
+ Your Spells              Type           Power      Damage    Failure   Level
+a - Freeze                Ice            100%       1d11      0%          1
+b - Iskenderun's Mystic   Conj/Tloc      100%       2d19      0%          4
+c - Searing Ray           Conj           100%       2d8       0%          2
+e - Enfeeble              Hex            61%        N/A       1%          7
+f - Fulminant Prism       Conj/Hex       64%        3d27      0%          4
+g - Conjure Flame         Conj/Fire      100%       6-21      0%          3
+h - Hailstorm             Conj/Ice       100%       3d20      0%          4
+i - Iron Shot             Conj/Erth      61%        9d11      1%          6
+j - Ensorcelled Hibernat  Hex/Ice        100%       N/A       0%          2
+l - Blink                 Tloc           100%       N/A       1%          2
+n - Lightning Bolt        Conj/Air       59%        1d81      0%          5
+r - Frozen Ramparts       Ice            100%       1d16      0%          3
+s - Slow                  Hex            100%       N/A       0%          1
+u - Starburst             Conj/Fire      63%        6d17      0%          6
+v - Spellforged Servitor  Conj/Summ      58%        N/A       1%          7
+y - Yara's Violent Unrav  Hex/Tmut       54%        3d21      1%          5
+C - Freezing Cloud        Conj/Ice/Air   58%        6-21      0%          5
+S - Statue Form           Tmut/Erth      66%        N/A       1%          6
+
+Your spell library contained the following spells:
+
+ Spells                   Type           Power      Damage    Failure   Level
+ Apportation              Tloc           100%       N/A       0%          1
+ Foxfire                  Conj/Fire      100%       2x1d9     0%          1
+ Magic Dart               Conj           100%       1d8       0%          1
+ Shock                    Conj/Air       100%       1d9       0%          1
+ Passwall                 Tmut/Erth      82%        N/A       0%          2
+ Static Discharge         Conj/Air       100%       3-16/arc  0%          2
+ Confusing Touch          Hex            100%       N/A       0%          3
+ Dazzling Flash           Conj/Hex       100%       N/A       0%          3
+ Inner Flame              Hex/Fire       100%       N/A       0%          3
+ Mephitic Cloud           Conj/Pois/Air  100%       N/A       0%          3
+ Ozocubu's Armour         Ice            100%       N/A       0%          3
+ Portal Projectile        Hex/Tloc       100%       N/A       0%          3
+ Tukima's Dance           Hex            100%       N/A       0%          3
+ Flame Wave               Conj/Fire      100%       2d21      0%          4
+ Iskenderun's Battlesphe  Conj           100%       2d15      0%          5
+ Metabolic Englaciation   Hex/Ice        58%        N/A       0%          5
+ Beastly Appendage        Tmut           100%       N/A       1%          1
+ Sting                    Tmut/Pois      100%       1d8       1%          1
+ Call Imp                 Summ           94%        N/A       1%          2
+ Poisonous Vapours        Pois/Air       100%       N/A       1%          2
+ Wereblood                Tmut           89%        N/A       1%          2
+ Gell's Gravitas          Tloc           92%        N/A       1%          3
+ Ignite Poison            Fire/Tmut/Pois 91%        N/A       1%          3
+ Lesser Beckoning         Tloc           92%        N/A       1%          3
+ Spider Form              Tmut/Pois      73%        N/A       1%          3
+ Swiftness                Air            97%        N/A       1%          3
+ Teleport Other           Tloc           92%        N/A       1%          3
+ Vampiric Draining        Necr           54%        2d9       1%          3
+ Airstrike                Air            48%        2d(7-23)  1%          4
+ Anguish                  Hex/Necr       48%        N/A       1%          4
+ Corpse Rot               Necr/Pois/Air  71%        N/A       1%          4
+ Passage of Golubria      Tloc           92%        N/A       1%          4
+ Petrify                  Tmut/Erth      99%        N/A       1%          4
+ Blade Hands              Tmut           44%        N/A       1%          5
+ Borgnjor's Vile Clutch   Necr/Erth      42%        N/A       1%          5
+ Summon Forest            Summ/Tloc      46%        N/A       1%          5
+ Alistair's Intoxication  Tmut/Pois      48%        N/A       3%          5
+ Animate Dead             Necr           54%        N/A       6%          4
+ Dispel Undead            Necr           54%        3d20      6%          4
+ Olgreb's Toxic Radiance  Pois           54%        N/A       6%          4
+ Agony                    Necr           54%        N/A       17%         5
+ Orb of Destruction       Conj           67%        9d16      0%          7
+ Ozocubu's Refrigeration  Ice            55%        4d19      1%          7
+ Dispersal                Tloc           46%        N/A       2%          6
+ Simulacrum               Ice/Necr       44%        N/A       3%          6
+ Summon Hydra             Summ           47%        N/A       10%         7
+ Storm Form               Tmut/Air       46%        N/A       12%         7
+ Eringya's Noxious Bog    Tmut/Pois      36%        N/A       19%         6
+ Maxwell's Capacitive Co  Air            48%        ∞         45%         8
+ Borgnjor's Revivificati  Necr           27%        N/A       100%        8
+
+
+Dungeon Overview and Level Annotations
+
+Branches:
+Dungeon (15/15)            Temple (1/1) D:5            Lair (5/5) D:10
+  Swamp (4/4) Lair:3       Spider (4/4) Lair:3        Slime (0/5) Lair:5
+    Orc (2/2) D:12            Elf (3/3) Orc:2        Vaults (5/5) D:14
+  Crypt (3/3) Vaults:2       Tomb (0/3) Crypt:3      Depths (4/4) D:15
+    Zot (5/5) Depths:4      IceCv (visited)          WizLab (visited)
+
+Altars:
+Ashenzari
+Cheibriados
+Dithmenos
+Elyvilon
+Fedhas
+Gozag
+Hepliaklqana
+Kikubaaqudgha
+Makhleb
+Nemelex Xobeh
+Okawaru
+Qazlal
+Ru
+Sif Muna
+Trog
+Uskayaw
+Vehumet
+Wu Jian
+Xom
+Yredelemnul
+Zin
+The Shining One
+Jiyva
+
+Shops:
+D:3 **?!   D:9 (   D:10 !   Orc:1 *(!   Orc:2 ?([[   Elf:2 :   Elf:3 =:**
+Vaults:2 (   Depths:1 !?*
+
+Portals:
+Hell: Depths:1 Depths:2 Depths:3 Depths:4
+Abyss: Zot:4 Depths:3 Depths:4
+Pandemonium: Depths:1 Depths:2 Depths:3
+Ziggurat: Depths:4
+
+Annotations:
+Elf:2 3 runed translucent doors
+Vaults:3 cool hat
+Vaults:4 70g behind dig vault
+Crypt:1 3 runed translucent doors, Ciwereex's ghost, veteran GrEE
+Depths:4 unseen horro dig vault
+Zot:4 2 transporters, Beclu's ghost, legendary GnSk
+Zot:5 1 exclusion
+
+
+Innate Abilities, Weirdness & Mutations
+
+You are small and have problems with some larger weapons.
+You are completely attuned to the shadows.
+Your skin changes colour to match your surroundings (Stealth+).
+
+Message History
+
+You feel yourself speed up.
+Casting: Hailstorm (safe; 0% risk of failure)
+Confirm with . or Enter, or press ? or * to list all spells.
+You summon a servant imbued with your destructive magic!
+You now have 46/53 mp.
+The red devil barely misses your spellforged servitor.
+The red devil hits your spellforged servitor with a +0 trident!
+Your spellforged servitor is skewered by barbed spikes.
+You swap places. You block the red devil's attack.
+There is an open door here.
+You hit the red devil but do no damage.
+Your spellforged servitor casts a spell at the red devil.
+The iron shot hits the red devil!!
+The red devil hits your spellforged servitor from afar with a +0 trident.
+Your spellforged servitor is skewered by barbed spikes.
+Casting: Spellforged Servitor (mildly dangerous; 1% risk of failure)
+Confirm with . or Enter, or press ? or * to list all spells.
+Aiming: Iron Shot (safe; 1% risk of failure)
+Press: ? - help, Shift-Dir - straight line, f - red devil
+Aim: a red devil, wielding a +0 trident (severely wounded, not watching you,
+ally target, 73% to hit)
+The iron shot hits the red devil!!!
+You kill the red devil!
+You now have 44/53 mp.
+There is a stone staircase leading up here.
+You fly upwards.
+There is a stone staircase leading down here.
+MP restored: 53
+Your extra speed is starting to run out.
+You feel yourself slow down.
+There is a stone staircase leading up here.
+You fly upwards.
+There is a stone staircase leading down here.
+There is a stone staircase leading up here.
+You fly upwards.
+There is a stone staircase leading down here.
+There is a stone staircase leading up here.
+You fly upwards.
+There is a stone staircase leading down here.
+There is a staircase leading out of the dungeon here.
+You have escaped!
+
+...).......................#....#
+..#...............####.....#.....
+..#...............####.###.#.....
+...............#.................
+........################.#.#.....
+.....{..################.........
+........################...#.....
+........####.........###...#.....
+........####[♣..@..♣.###.........
+........####.........###..###....
+.........######...######..###....
+..###....## ###...#######........
+..###....######...#######........
+..###....###.........###.........
+..##.....###.......>.###.........
+.........###.........###.........
+.........######...######...#.....
+
+
+There were no monsters in sight!
+
+Vanquished Creatures
+  7 dread liches
+  An ancient lich (Crypt:3)
+  4 orbs of fire
+  A juggernaut (Depths:3)
+  Josephina (Crypt:1)
+  2 Killer Klowns
+  Xtahua (Vaults:4)
+  3 curse toes
+  Jory (Vaults:2)
+  the Enchantress (Depths:2)
+  4 golden dragons
+  A bone dragon (Crypt:3)
+  Arachne (Spider:4)
+  4 electric golems
+  Jorgrun (Orc:1)
+  An Ice Fiend (Depths:4)
+  12 tentacled monstrosities
+  3 liches
+  18 Orb Guardians (Zot:5)
+  5 titans
+  2 deep elf master archers (Elf:3)
+  3 deep elf blademasters (Elf:3)
+  4 quicksilver dragons
+  A titan (shapeshifter) (Vaults:5)
+  The ghost of inkslinger the Fencer, an adept TeGl of Okawaru (Vaults:3)
+  2 ancient champions
+  8 death cobs
+  Gastronok (Lair:2)
+  5 sphinxes
+  2 thorn hunters (Swamp:4)
+  5 draconian monks
+  10 storm dragons
+  8 shadow dragons
+  2 revenants (Crypt:2)
+  Roxanne (D:15)
+  A fenstrider witch (Swamp:2)
+  13 tengu reavers
+  4 draconian knights
+  An azure jelly (IceCv)
+  An azure jelly (shapeshifter) (Vaults:5)
+  21 vault wardens
+  6 fire giants
+  3 draconian scorchers
+  7 frost giants
+  10 emperor scorpions
+  6 ghost moths
+  An iron dragon (Vaults:5)
+  Aizul (Vaults:2)
+  7 draconian shifters
+  3 draconian stormcallers
+  8 deep elf sorcerers
+  2 orc warlords
+  A ghoul (Swamp:3)
+  A curse skull (Crypt:2)
+  4 deep elf elementalists
+  15 ironbound preservers
+  7 spriggan defenders
+  7 war gargoyles
+  A broodmother (Spider:2)
+  A quicksilver ooze (IceCv)
+  7 draconian annihilators
+  A juggernaut skeleton (Depths:2)
+  21 very ugly things
+  The ghost of componib the Severer, a journeyman MiBe of Trog (Lair:4)
+  10 ironbound thunderhulks
+  2 deep elf demonologists (Elf:3)
+  6 green draconians
+  7 stone giants
+  3 eleionomae
+  6 deep elf annihilators (Elf:3)
+  4 entropy weavers
+  9 vampire knights
+  4 red draconians
+  21 dire elephants
+  4 black draconians
+  9 purple draconians
+  13 yellow draconians
+  7 bunyips
+  6 spark wasps
+  4 crystal guardians
+  2 eidola (Crypt:2)
+  12 deep elf death magi
+  7 white draconians
+  12 ettins
+  The ghost of Yqoodd the Thaumaturge, a journeyman GnWr of Kikubaaqudgha (D:13)
+  A quicksilver dragon zombie (Crypt:3)
+  8 jiangshi (Crypt:2)
+  9 fire dragons
+  5 deep elf high priests
+  16 yaktaur captains
+  5 rakshasas
+  3 spriggan zombies (Crypt:3)
+  6 great orbs of eyes
+  35 vault guards
+  3 ghost crabs
+  A peacekeeper (Vaults:4)
+  2 jorogumos (Spider:3)
+  18 hydras
+  A quicksilver dragon skeleton (Crypt:3)
+  A boulder beetle (Spider:1)
+  3 salamander tyrants (Depths:4)
+  9 ice dragons
+  An ogre mage (Vaults:5)
+  10 spriggan air magi
+  6 ironbound frosthearts
+  A catoblepas (Lair:2)
+  A spriggan skeleton (Crypt:3)
+  9 two-headed ogres
+  12 centaur warriors
+  2 radroaches
+  10 alligators
+  19 dancing weapons
+  A death yak (Lair:5)
+  A fenstrider witch skeleton (Crypt:3)
+  7 vampire magi
+  A death yak (shapeshifter) (Vaults:5)
+  7 deep troll earth magi
+  A soul eater (Depths:4)
+  6 deep troll shamans
+  5 tengu warriors
+  10 hell knights
+  6 spriggan berserkers
+  7 deep elf knights
+  2 sun demons (Depths:2)
+  A titan zombie (Depths:1)
+  A spectral death yak (Lair:5)
+  A titan skeleton (Crypt:1)
+  29 skeletal warriors
+  Sonja (Lair:1)
+  A shadow wraith (Vaults:5)
+  15 spriggans
+  Amaemon (D:8)
+  5 pharaoh ants
+  5 goliath frogs
+  3 iron trolls
+  A steelbarb worm (shapeshifter) (Vaults:5)
+  An iron troll (shapeshifter) (Vaults:5)
+  A salamander mystic (Depths:4)
+  A fire crab (shapeshifter) (Vaults:5)
+  8 orb spiders
+  A spectral anaconda (Lair:5)
+  2 sun moths
+  10 steelbarb worms
+  A deep troll (shapeshifter) (Vaults:5)
+  9 swamp dragons
+  4 spriggan druids
+  16 ironbound convokers
+  A flayed ghost (Depths:4)
+  45 deep trolls
+  15 phantasmal warriors
+  3 glowing orange brains
+  7 bog bodies
+  2 golden dragon zombies (Crypt:3)
+  A shadow demon (Depths:2)
+  A shadow dragon zombie (Crypt:3)
+  9 deep elf archers
+  10 orc knights
+  7 lindwurms
+  3 obsidian statues
+  4 wizards
+  A golden dragon skeleton (Depths:2)
+  4 harpies (Vaults:1)
+  A sphinx zombie (Crypt:1)
+  17 necromancers
+  14 wolf spiders
+  24 deep elf zephyrmancers
+  30 ugly things
+  30 deep elf pyromancers
+  2 manticores
+  A glowing shapeshifter (Vaults:5)
+  A frost giant zombie (Depths:1)
+  A faun (shapeshifter) (Depths:3)
+  A fire giant zombie (Depths:1)
+  3 orc sorcerers
+  A shadow dragon skeleton (Crypt:1)
+  6 will-o-the-wisps
+  8 salamanders (Depths:4)
+  A cyclops (D:12)
+  16 elephants
+  A cyclops (shapeshifter) (D:15)
+  35 moths of wrath
+  2 smoke demons (Depths:4)
+  2 iron dragon skeletons
+  An ice statue (IceCv)
+  2 fire giant skeletons
+  2 frost giant skeletons (Depths:1)
+  A green draconian zombie (Crypt:1)
+  16 vault sentinels
+  3 rust devils
+  A dire elephant zombie (Crypt:3)
+  4 torpor snails
+  2 hellions
+  2 gargoyles
+  3 orange demons
+  A minotaur zombie (Crypt:2)
+  8 cane toads
+  10 unseen horrors
+  2 naga skeletons (Crypt:3)
+  13 komodo dragons
+  3 rime drakes
+  10 demonic crawlers
+  An unseen horror skeleton (Crypt:1)
+  A yaktaur (shapeshifter) (D:14)
+  2 hellwings (Depths:3)
+  A purple draconian skeleton (Crypt:1)
+  A freezing wraith (Vaults:5)
+  39 yaktaurs
+  4 tengu conjurers
+  2 kobold demonologists
+  3 red devils
+  A tormentor (D:15)
+  A catoblepas skeleton (Crypt:2)
+  An ice devil (Depths:3)
+  An anaconda simulacrum (Crypt:1)
+  2 polar bears (Lair:3)
+  A harpy zombie (Crypt:3)
+  Grinder (D:5)
+  4 meliai
+  4 trolls
+  11 hornets
+  2 raiju (shapeshifter)
+  19 blink frogs
+  2 spectral elephants (Lair:5)
+  7 tyrant leeches
+  An ettin zombie (Crypt:1)
+  22 tarantellas
+  A harpy skeleton (Crypt:2)
+  A meliai zombie (Crypt:2)
+  35 slime creatures
+  13 dream sheep
+  A frost giant simulacrum (Depths:1)
+  18 culicivoras
+  18 jumping spiders
+  2 air elementals
+  2 shadows (D:12)
+  A vampire (D:12)
+  A culicivora (shapeshifter) (Vaults:5)
+  5 fire elementals
+  3 wyverns
+  38 flying skulls
+  Eustachio (D:5)
+  2 dire elephant simulacra (Crypt:1)
+  9 wraiths
+  45 yaks
+  A human (D:14)
+  2 basilisks
+  A steam dragon (Lair:1)
+  3 water elementals
+  2 fire bats (Depths:4)
+  A hog (shapeshifter) (D:13)
+  56 redbacks
+  2 chaos spawn
+  A neqoxec (Depths:3)
+  4 wargs
+  18 vampire mosquitoes
+  A demonspawn zombie (Crypt:3)
+  2 death yak simulacra (Lair:5)
+  A human zombie (Depths:1)
+  2 harpy simulacra (Crypt:1)
+  19 swamp worms
+  2 acid dragons
+  2 glowing shapeshifter zombies
+  12 water moccasins
+  A faun skeleton (Crypt:2)
+  2 floating eyes (Zot:2)
+  32 orc warriors
+  A sky beast (D:7)
+  11 swamp drakes
+  A cane toad zombie (Crypt:2)
+  A glowing shapeshifter skeleton (Depths:1)
+  A snapping turtle zombie (Crypt:1)
+  2 ice beasts (D:6)
+  2 elephant zombies (Lair:5)
+  A floating eye zombie (Depths:2)
+  2 meliai simulacra (D:14)
+  A fire dragon simulacrum (Crypt:1)
+  A black bear (shapeshifter) (Depths:3)
+  A black bear (D:5)
+  9 wolves
+  9 ogres
+  16 centaurs
+  A boggart (Lair:4)
+  A manticore skeleton (Crypt:1)
+  A phantom (D:7)
+  3 slime creature simulacra (IceCv)
+  A hog skeleton (Crypt:2)
+  2 kobold brigands
+  12 bullfrogs
+  2 earth elementals (Elf:3)
+  A gnoll sergeant (D:8)
+  A cane toad simulacrum (Lair:5)
+  4 necrophages
+  3 scorpions
+  6 glowing shapeshifter simulacra
+  4 wights (D:7)
+  14 killer bees
+  An elephant simulacrum (Lair:5)
+  13 howler monkeys
+  5 electric eels (Lair:3)
+  3 jellies
+  4 hounds
+  15 orc priests
+  2 iguanas
+  Terence (D:2)
+  3 gnoll boudas
+  17 orc wizards
+  9 adders
+  19 gnolls
+  2 shadow imps
+  A steam dragon skeleton (Crypt:2)
+  12 white imps (Lair:5)
+  An ufetubus (D:4)
+  A lava snake zombie (Crypt:2)
+  3 worms
+  2 dart slugs
+  50 orcs
+  7 endoplasms
+  2 giant cockroaches
+  4 goblins
+  11 hobgoblins
+  3 jackals (D:1)
+  18 kobolds
+  3 quokkas
+  7 ball pythons
+  8 bats
+  8 frilled lizards
+  A frilled lizard zombie (Crypt:2)
+  7 rats
+  3 fulminant prisms
+  A withered plant (Lair:5)
+2060 creatures vanquished.
+
+Vanquished Creatures (collateral kills)
+  5 orbs of fire (Zot:5)
+  3 Killer Klowns (Zot:5)
+  3 curse toes
+  4 golden dragons
+  4 tentacled monstrosities
+  A deep elf blademaster (Elf:3)
+  4 Orb Guardians (Zot:5)
+  2 quicksilver dragons
+  A draconian monk (Zot:3)
+  2 storm dragons (Zot:5)
+  3 shadow dragons
+  3 draconian scorchers
+  A draconian stormcaller (Zot:3)
+  A draconian annihilator (Zot:2)
+  A vampire knight (Zot:2)
+  2 black draconians
+  A green draconian (Zot:3)
+  2 white draconians (Zot:5)
+  2 yellow draconians (Zot:1)
+  3 purple draconians
+  2 ugly things (D:14)
+  4 moths of wrath
+  An elephant (Lair:3)
+  A jumping spider (Spider:3)
+  2 redbacks (Spider:4)
+  A bullfrog (Lair:4)
+  A necrophage (D:8)
+  A crimson imp (D:4)
+  2 hounds
+  An orc wizard (D:4)
+  2 gnolls (D:6)
+  4 adders
+  A worm (D:4)
+  An orc (D:4)
+  A hobgoblin (D:4)
+73 creatures vanquished.
+
+Vanquished Creatures (others)
+  Donald (Swamp:3)
+  A ghost moth (Zot:3)
+  A deep elf annihilator (Elf:3)
+  A deep elf knight (Elf:1)
+  2 bloated husks
+  A shapeshifter simulacrum (IceCv)
+  A bush (Lair:3)
+  4 foxfires
+  462 fulminant prisms
+  50 fungi
+  115 plants
+  A snaplasher vine (Spider:3)
+  26 withered plants (Lair:5)
+666 creatures vanquished.
+
+Grand Total: 2799 creatures vanquished
+
+Notes
+Turn   | Place    | Note
+-------+----------+-------------------------------------------
+     0 | D:1      | 9to the Kobold Hedge Wizard began the quest for the Orb.
+     0 | D:1      | Reached XP level 1. HP: 10/10 MP: 4/4
+   173 | D:1      | Reached XP level 2. HP: 15/15 MP: 4/6
+   269 | D:1      | Learned a level 1 spell: Freeze
+   451 | D:1      | Goal: Magic Dart and Freeze
+   465 | D:1      | Monitor ability to kill with current mana.
+   811 | D:1      | Reached XP level 3. HP: 10/19 MP: 2/7
+  1047 | D:1      | Reached skill level 1 in Ice Magic
+  2431 | D:2      | Noticed Terence
+  2868 | D:2      | Learned a level 2 spell: Call Imp
+  3097 | D:3      | Found Pid Onos's Assorted Antiques.
+  3161 | D:3      | Found Giumaycu's Assorted Antiques.
+  3332 | D:3      | Reached XP level 4. HP: 24/24 MP: 6/9
+  3367 | D:3      | Found Royr's Distillery.
+  3407 | D:3      | Identified the +2 helmet of Satisfaction {+Inv Int+4}
+  3428 | D:3      | Found a stormy altar of Qazlal.
+  3513 | D:3      | 9to: !lg . ktyp=winning cv=0.29 god=fedhas s=class
+  3513 | D:3      | beem: No games for 9to (ktyp=winning cv=0.29 god=fedhas).
+  3513 | D:3      | 9to: !lg * ktyp=winning cv=0.29 god=fedhas s=class
+  3513 | D:3      | beem: 24 games for * (ktyp=winning cv=0.29 god=fedhas): 5x
+                  | Monk, 4x Gladiator, 4x Hunter, 2x Artificer, 2x Delver, Air
+                  | Elementalist, Fighter, Fire Elementalist, Ice Elementalist,
+                  | Necromancer, Wanderer, Earth Elementalist
+  3513 | D:3      | 9to: !lg * ktyp=winning god=fedhas s=class
+  3513 | D:3      | beem: 1620 games for * (ktyp=winning god=fedhas): 188x
+                  | Hunter, 164x Gladiator, 125x Fighter, 100x Monk, 100x
+                  | Wanderer, 89x Arcane Marksman, 88x Brigand, 70x Transmuter,
+                  | 70x Artificer, 69x Ice Elementalist, 69x Skald, 60x Venom
+                  | Mage, 58x Warper, 43x Fire Elementalist, 41x Earth
+                  | Elementalist, 40x Enchanter, 39x Delver, 38x Hedge Wizard,
+                  | 36x Conjurer, 35x Air Elementalist, 34x Summoner, 24x
+                  | Necromancer,
+  3513 | D:3      | beem: 7x Reaver, 6x Chaos Knight, 6x Crusader, 5x Stalker,
+                  | 4x Cinder Acolyte, 4x Berserker, 3x Healer, 2x Death
+                  | Knight, Thief, Hexslinger, Abyssal Knight
+  3550 | D:3      | Found a faded altar of an unknown god.
+  4125 | D:3      | Found a bloodstained altar of Trog.
+  4234 | D:3      | Found Suewocu's Magic Scroll Shoppe.
+  4237 | D:3      | Bought a scroll of identify for 24 gold pieces
+  4237 | D:3      | Bought a scroll of blinking for 90 gold pieces
+  4237 | D:3      | Bought a scroll of noise for 12 gold pieces
+  4548 | D:1      | Learned a level 3 spell: Frozen Ramparts
+  5239 | D:2      | Reached XP level 5. HP: 28/28 MP: 5/10
+  5382 | D:4      | Learned a level 2 spell: Ensorcelled Hibernation
+  5962 | D:4      | Reached skill level 1 in Fighting
+  5962 | D:4      | Reached skill level 1 in Short Blades
+  6077 | D:4      | Reached XP level 6. HP: 34/34 MP: 5/11
+  6135 | D:4      | Reached skill level 1 in Hexes
+  6618 | D:4      | Found a shimmering altar of Xom.
+  6618 | D:4      | Found a burning altar of Makhleb.
+  6870 | D:5      | Entered Level 5 of the Dungeon
+  6999 | D:5      | Noticed Eustachio
+  7228 | D:5      | Noticed a black bear
+  7277 | D:5      | Learned a level 1 spell: Slow
+  7370 | D:5      | Reached skill level 4 in Spellcasting
+  7411 | D:5      | Reached XP level 7. HP: 30/38 MP: 4/13
+  7766 | D:5      | Learned a level 2 spell: Searing Ray
+  7906 | D:5      | Found a staircase to the Ecumenical Temple.
+  7920 | Temple   | Entered the Ecumenical Temple
+  7941 | Temple   | 9to: ??fedhas
+  7941 | Temple   | beem: fedhas[1/6]: God of plants. 0*: All plants become
+                  | friendly to you. You can walk through plants (at 50%
+                  | speed), fire through plants, and any non-melee effect of
+                  | yours that hits a plant won't harm it or cause pennance.
+                  | 1*: {Wall of Briars}. 3*: {Grow Ballistomycete}. 4*:
+                  | {Overgrow}. 5*: {Grow Oklob}. Piety gained from kills.
+  7941 | Temple   | 9to: ??fedhas[2
+  7941 | Temple   | beem: fedhas[2/6]: No longer uses fruit/rations. No longer
+                  | cares if you're undead. No longer cares about necromancy
+                  | spells / corpse violation.
+  7941 | Temple   | 9to: ??fedhas[3
+  7941 | Temple   | beem: fedhas[3/6]: <minqmay> beware the fruit cost
+  7941 | Temple   | 9to: ??fedhas[4
+  7941 | Temple   | beem: fedhas[4/6]: How not to do an oklob farm: !lg
+                  | causative fedhas zot:5 1 -tv:<4.0>
+                  | <lightred>ERROR: string above had unterminated tag</lightred>
+  7941 | Temple   | 9to: ??fedhas[5
+  7941 | Temple   | beem: fedhas[5/6]: Don't drown your oklob farm:
+                  | http://i.imgur.com/Uezq4bc.png
+  7941 | Temple   | 9to: ??fedhas[6
+  7941 | Temple   | beem: fedhas[6/6]:
+                  | https://www.youtube.com/watch?v=Er5mHItWvxc
+  7941 | Temple   | 9to: ??fedhas[1
+  7941 | Temple   | beem: fedhas[1/6]: God of plants. 0*: All plants become
+                  | friendly to you. You can walk through plants (at 50%
+                  | speed), fire through plants, and any non-melee effect of
+                  | yours that hits a plant won't harm it or cause pennance.
+                  | 1*: {Wall of Briars}. 3*: {Grow Ballistomycete}. 4*:
+                  | {Overgrow}. 5*: {Grow Oklob}. Piety gained from kills.
+  7941 | Temple   | 9to: ??grow ballistomycete
+  7941 | Temple   | beem: grow ballistomycete[1/1]: 3* Fedhas ability that
+                  | summons a friendly {ballistomycete} to a location of your
+                  | choosing within radius 2. Ballistomycetes frequently
+                  | release a {ballistomycete spore} that targets hostile
+                  | monsters; be careful to avoid the explosion. Invocations
+                  | increases the duration and HP of the ballistomycetes, and
+                  | the damage of their spores.
+  7941 | Temple   | 9to: ??ashenzari
+  7941 | Temple   | beem: ashenzari[1/3]: God of divinations, knowledge, and
+                  | curses. Likes it when you wear cursed gear, and gives you
+                  | curses when you explore the world. Curses enhance your
+                  | skills. Many passive bonuses: monster & item detection,
+                  | item ID, and eventually astral vision, letting you see
+                  | through walls.
+  7972 | Temple   | 9to: !lg . ktyp=winning s=god
+  7972 | Temple   | beem: 28 games for 9to (ktyp=winning): 5x Cheibriados, 3x
+                  | Gozag, 2x Sif Muna, 2x Ashenzari, 2x Ru, 2x Nemelex Xobeh,
+                  | 2x Trog, 2x Hepliaklqana, Wu Jian, Dithmenos, Makhleb,
+                  | Okawaru, Pakellas, The Shining One, Vehumet,
+  7975 | Temple   | Became a worshipper of Ashenzari the Shackled
+  8107 | D:5      | Found a hide-covered altar of Uskayaw.
+  8127 | D:5      | Noticed Grinder
+  8625 | D:6      | Reached XP level 8. HP: 44/44 MP: 14/14
+  8637 | D:6      | Reached skill level 5 in Ice Magic
+  9079 | D:6      | You are sucked into a shaft and drop 3 floors!
+  9623 | D:8      | Noticed a wraith
+  9725 | D:8      | Reached skill level 5 in Spellcasting
+ 10160 | D:6      | Reached * piety under Ashenzari
+ 10160 | D:6      | Identified a scroll of acquirement
+ 10161 | D:6      | Acquired 485 gold pieces
+ 10168 | D:6      | Gold acquirement
+ 10256 | D:6      | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 10336 | D:6      | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 10337 | D:6      | Reached XP level 9. HP: 48/48 MP: 9/17
+ 10510 | D:6      | Found the amulet of Elemental Vulnerability {rPois rF--
+                  | rC-- AC+8}
+ 11001 | D:6      | Learned a level 4 spell: Hailstorm
+ 11090 | D:2      | Killed Terence
+ 11748 | D:5      | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 11750 | D:5      | Killed Grinder
+ 11751 | D:5      | Reached skill level 6 in Spellcasting
+ 11751 | D:5      | Reached skill level 5 in Conjurations
+ 11751 | D:5      | Reached skill level 5 in Hexes
+ 11908 | D:5      | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 11910 | D:5      | Killed Eustachio
+ 11911 | D:5      | Reached skill level 1 in Evocations
+ 12105 | D:7      | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 12673 | D:7      | Reached ** piety under Ashenzari
+ 12679 | D:7      | Learned a level 4 spell: Fulminant Prism
+ 12685 | D:7      | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 13193 | D:7      | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 13210 | D:7      | Found a glowing silver altar of Zin.
+ 13428 | D:8      | Reached XP level 10. HP: 46/56 MP: 12/21
+ 13782 | D:8      | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 13859 | D:8      | Noticed an orange demon
+ 13867 | D:8      | Killed an orange demon
+ 13868 | D:8      | Noticed Amaemon
+ 13879 | D:8      | Killed Amaemon
+ 13901 | D:8      | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 13906 | D:8      | Reached skill level 7 in Spellcasting
+ 13944 | D:8      | Identified the cursed +0 robe of the Tethered Seer {Melee,
+                  | Elem}
+ 14443 | D:9      | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 14614 | D:9      | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 14770 | D:9      | Reached *** piety under Ashenzari
+ 14892 | D:9      | Found Damaf's Weapon Emporium.
+ 15742 | D:10     | Entered Level 10 of the Dungeon
+ 15828 | D:9      | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 15829 | D:9      | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 15982 | D:10     | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 15987 | D:10     | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 16143 | D:9      | Learned a level 3 spell: Conjure Flame
+ 16161 | D:10     | Reached XP level 11. HP: 52/64 MP: 20/23
+ 16259 | D:10     | Found a sacrificial altar of Ru.
+ 16306 | D:10     | Noticed a two-headed ogre
+ 16404 | D:10     | Found Wierett's Distillery.
+ 16409 | D:10     | Bought a potion of might for 40 gold pieces
+ 16666 | D:10     | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 16671 | D:10     | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 16673 | D:10     | Reached skill level 5 in Stealth
+ 16757 | D:10     | Found a staircase to the Lair.
+ 16793 | D:10     | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 16975 | D:10     | Killed a two-headed ogre
+ 16976 | D:10     | Reached skill level 5 in Fighting
+ 16976 | D:10     | Reached skill level 8 in Spellcasting
+ 17230 | D:10     | Learned a level 3 spell: Mephitic Cloud
+ 17398 | D:3      | Bought a pair of gloves for 135 gold pieces
+ 17415 | D:3      | Bought a scroll labelled LUOWIA VECVI for 25 gold pieces
+ 17589 | Lair:1   | Entered Level 1 of the Lair of Beasts
+ 17613 | Lair:1   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 17710 | Lair:1   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 17865 | Lair:1   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 18015 | Lair:1   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 18015 | Lair:1   | Noticed Sonja
+ 18019 | Lair:1   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 18021 | Lair:1   | Killed Sonja
+ 18172 | Lair:1   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 18176 | Lair:1   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 18181 | Lair:1   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 18190 | Lair:1   | Noticed a six-headed hydra
+ 18360 | Lair:1   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 18363 | Lair:1   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 18366 | Lair:1   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 18454 | Lair:1   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 18568 | Lair:2   | Reached XP level 12. HP: 65/75 MP: 19/27
+ 18569 | Lair:2   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 18577 | Lair:2   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 18758 | Lair:2   | Reached **** piety under Ashenzari
+ 18836 | Lair:2   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 18839 | Lair:2   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 18841 | Lair:2   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 18849 | Lair:2   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 19558 | Lair:1   | Noticed a four-headed hydra
+ 19562 | Lair:1   | Killed a four-headed hydra
+ 19641 | Lair:1   | Reached skill level 5 in Evocations
+ 19695 | Lair:1   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 19699 | Lair:1   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 19906 | Lair:2   | Noticed a catoblepas
+ 19945 | Lair:3   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 19947 | Lair:3   | Reached skill level 9 in Spellcasting
+ 20132 | Lair:3   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 20160 | Lair:3   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 20244 | Lair:3   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 20247 | Lair:3   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 20508 | Lair:3   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 20510 | Lair:3   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 20600 | Lair:3   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 20639 | Lair:3   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 20700 | Lair:3   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 20897 | Lair:3   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 21000 | Lair:3   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 21211 | Lair:3   | Reached XP level 13. HP: 82/82 MP: 7/29
+ 21230 | Lair:3   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 21286 | Lair:3   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 21290 | Lair:3   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 21305 | Lair:3   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 21475 | Lair:3   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 21723 | Lair:3   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 21743 | Lair:3   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 21789 | Lair:3   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 21809 | Lair:3   | Found a staircase to the Swamp.
+ 21897 | Lair:3   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 21899 | Lair:3   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 21903 | Lair:3   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 22184 | Lair:3   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 22188 | Lair:3   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 22317 | Lair:3   | Found a hole to the Spider Nest.
+ 22479 | Lair:3   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 22481 | Lair:3   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 22933 | Lair:4   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 22940 | Lair:4   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 23183 | Lair:4   | Found a runed translucent door.
+ 23183 | Lair:4   | Identified the +6 trident "Demon's Death Toll" {flame,
+                  | rPois rF+ Stlth+}
+ 23277 | Lair:4   | Learned a level 4 spell: Iskenderun's Mystic Blast
+ 23622 | Lair:4   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 23842 | Lair:4   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 24038 | Lair:4   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 24040 | Lair:4   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 24044 | Lair:4   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 24195 | Lair:4   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 24275 | Lair:4   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 24492 | Lair:4   | Noticed componib's ghost (journeyman MiBe)
+ 24567 | Lair:5   | Entered Level 5 of the Lair of Beasts
+ 24573 | Lair:5   | Reached skill level 1 in Fire Magic
+ 24701 | Lair:5   | Learned a level 6 spell: Starburst
+ 24701 | Lair:5   | Found a viscous altar of Jiyva.
+ 24712 | Lair:5   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 24716 | Lair:5   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 24725 | Lair:5   | Found a frozen archway.
+ 24730 | Lair:5   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 24735 | Lair:5   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 24740 | Lair:5   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 24753 | IceCv    | Entered an ice cave
+ 24854 | IceCv    | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 24865 | IceCv    | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 24866 | IceCv    | Reached skill level 10 in Spellcasting
+ 25169 | IceCv    | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 25270 | IceCv    | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 25279 | IceCv    | Noticed a quicksilver ooze
+ 25282 | IceCv    | Killed a quicksilver ooze
+ 25724 | IceCv    | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 25727 | IceCv    | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 25731 | IceCv    | Reached XP level 14. HP: 30/92 MP: 28/32
+ 25858 | IceCv    | Noticed an azure jelly
+ 25888 | IceCv    | Killed an azure jelly
+ 26128 | IceCv    | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 26131 | IceCv    | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 26189 | IceCv    | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 26354 | IceCv    | Reached skill level 5 in Fire Magic
+ 26495 | IceCv    | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 26632 | IceCv    | Found a viscous altar of Jiyva.
+ 26640 | IceCv    | Identified the ring of Plog {Ice rN+}
+ 26854 | Lair:5   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 27004 | Lair:5   | Identified the +0 ring mail of Lugonu's Inspiration {Harm
+                  | Drain Regen+ rCorr}
+ 27043 | Lair:5   | Learned a level 5 spell: Lightning Bolt
+ 27141 | Lair:5   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 27174 | Lair:5   | Reached skill level 10 in Conjurations
+ 27416 | Lair:5   | Found a staircase to the Slime Pits.
+ 27606 | Lair:5   | Reached skill level 5 in Dodging
+ 27799 | Lair:2   | Reached ***** piety under Ashenzari
+ 27920 | Lair:5   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 27980 | Lair:5   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 27985 | Lair:5   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 27997 | Lair:5   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 28002 | Lair:5   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 28439 | Lair:5   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 28764 | Lair:2   | Noticed Gastronok
+ 29007 | D:3      | Bought a scroll of enchant weapon for 90 gold pieces
+ 29007 | D:3      | Bought a scroll of summoning for 114 gold pieces
+ 29375 | D:11     | Reached skill level 1 in Air Magic
+ 29528 | D:11     | Reached skill level 11 in Spellcasting
+ 30133 | D:11     | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 30141 | D:11     | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 30857 | D:11     | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 31015 | D:12     | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 31124 | D:12     | Found a staircase to the Orcish Mines.
+ 31308 | D:12     | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 31310 | D:12     | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 31676 | D:12     | Identified the +2 giant spiked club of Quantum Leap
+                  | {vorpal, rPois rF+ Dex+3}
+ 31908 | D:12     | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 31912 | D:12     | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 32287 | D:12     | 9to: ??ashenzari
+ 32287 | D:12     | beem: ashenzari[1/3]: God of divinations, knowledge, and
+                  | curses. Likes it when you wear cursed gear, and gives you
+                  | curses when you explore the world. Curses enhance your
+                  | skills. Many passive bonuses: monster & item detection,
+                  | item ID, and eventually astral vision, letting you see
+                  | through walls.
+ 32287 | D:12     | 9to: ??ashenzari[2
+ 32287 | D:12     | beem: ashenzari[2/3]: God of bondage.
+ 32287 | D:12     | 9to: ??ashenzari[3
+ 32287 | D:12     | beem: ashenzari[3/3]: <Sky2> ash is sort of like a god of
+                  | shackles but they give you the key so what's the point
+ 32307 | D:13     | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 32411 | D:13     | Noticed Yqoodd's ghost (journeyman GnWr)
+ 32416 | D:13     | Found a runed translucent door.
+ 32427 | D:13     | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 32431 | D:13     | Killed Yqoodd's ghost
+ 32594 | D:13     | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 32828 | D:13     | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 32832 | D:13     | Reached XP level 15. HP: 52/97 MP: 27/34
+ 33580 | D:13     | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 33657 | D:14     | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 33736 | D:14     | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 33740 | D:14     | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 33880 | D:14     | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 33991 | D:14     | Reached skill level 1 in Shields
+ 34066 | D:14     | Found an iron altar of Okawaru.
+ 34247 | D:14     | Found a snail-covered altar of Cheibriados.
+ 34329 | D:14     | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 34444 | D:14     | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 34459 | D:14     | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 34462 | D:14     | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 34467 | D:14     | Reached skill level 5 in Short Blades
+ 34742 | D:14     | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 34770 | D:14     | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 35059 | D:14     | Found a gate to the Vaults.
+ 35059 | D:14     | Noticed an ironbound preserver
+ 35064 | D:14     | Killed an ironbound preserver
+ 35454 | D:14     | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 35823 | Orc:1    | Entered Level 1 of the Orcish Mines
+ 35827 | Orc:1    | Found Foets's General Store.
+ 35828 | Orc:1    | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 35837 | D:12     | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 35958 | D:12     | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 35969 | Orc:1    | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 36136 | Orc:1    | Found a bloodstained altar of Trog.
+ 36216 | Orc:1    | Noticed Jorgrun
+ 36227 | Orc:1    | Killed Jorgrun
+ 36520 | Orc:1    | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 36524 | Orc:1    | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 36531 | Orc:1    | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 36535 | Orc:1    | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 36648 | Orc:1    | Found Fiwuhog's Distillery.
+ 36655 | Orc:1    | Bought a potion of heal wounds for 75 gold pieces
+ 36713 | Orc:1    | Found Ada Utev's Weapon Shoppe.
+ 36754 | Orc:2    | Entered Level 2 of the Orcish Mines
+ 37263 | Orc:2    | Noticed an orc warlord
+ 37266 | Orc:1    | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 37378 | Orc:2    | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 37573 | Orc:2    | Found a staircase to the Elven Halls.
+ 37828 | Orc:2    | Killed an orc warlord
+ 37984 | Orc:2    | Reached skill level 12 in Spellcasting
+ 37984 | Orc:2    | Reached skill level 5 in Air Magic
+ 38065 | Orc:2    | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 38639 | Orc:2    | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 38933 | Orc:2    | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 39106 | Orc:2    | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 39146 | Orc:2    | Found Aloanauff's Antique Armour Emporium.
+ 39146 | Orc:2    | Found Tietax's Antique Weapon Boutique.
+ 39146 | Orc:2    | Found Ogreysm's Magic Scroll Shop.
+ 39147 | Orc:2    | Found Rutasoam's Antique Armour Shoppe.
+ 39159 | Orc:2    | Bought a pair of boots for 162 gold pieces
+ 39256 | Elf:1    | Entered Level 1 of the Elven Halls
+ 39360 | Elf:1    | Reached XP level 16. HP: 79/101 MP: 9/35
+ 39519 | Elf:1    | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 39731 | Elf:1    | Learned a level 2 spell: Blink
+ 39930 | Elf:1    | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 39934 | Elf:1    | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 40020 | Elf:1    | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 40067 | Elf:1    | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 40069 | Elf:1    | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 40303 | Elf:1    | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 40359 | Elf:1    | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 40456 | Elf:1    | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 40462 | Elf:1    | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 40492 | Elf:1    | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 40732 | Elf:1    | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 40890 | Elf:1    | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 41030 | Elf:1    | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 41540 | Elf:1    | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 41745 | Elf:1    | Paralysed by an air elemental for 1 turns
+ 41950 | Elf:1    | Reached skill level 10 in Dodging
+ 42072 | Elf:2    | Found a magical portal.
+ 42107 | WizLab   | Entered Wucad Mu's Monastery
+ 42134 | WizLab   | Noticed a grey draconian monk
+ 42136 | WizLab   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 42139 | WizLab   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 42141 | WizLab   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 42949 | Elf:1    | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 43191 | Swamp:1  | Entered Level 1 of the Swamp
+ 43198 | Swamp:1  | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 43237 | Swamp:1  | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 44147 | Swamp:1  | Identified the +1 robe of the Guilds {-Cast Rampage Dex+9}
+ 44177 | Swamp:1  | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 44712 | Swamp:1  | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 44716 | Swamp:1  | Reached skill level 5 in Shields
+ 44716 | Swamp:1  | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 44781 | Swamp:1  | Found a hazy altar of Hepliaklqana.
+ 44797 | Swamp:1  | Reached XP level 17. HP: 106/106 MP: 37/37
+ 45016 | Swamp:2  | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 45294 | Swamp:1  | HP: 5/106 [poison (poison gas)]
+ 45708 | Swamp:2  | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 45822 | Swamp:2  | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 45831 | Swamp:2  | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 45867 | Swamp:2  | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 45894 | Swamp:2  | Reached ****** piety under Ashenzari
+ 46047 | Swamp:2  | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 46177 | Swamp:2  | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 46181 | Swamp:2  | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 46314 | Swamp:2  | Reached skill level 13 in Spellcasting
+ 46346 | Swamp:2  | Noticed a tentacled monstrosity
+ 46350 | Swamp:2  | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 47027 | Swamp:2  | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 47082 | Swamp:2  | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 47271 | Swamp:2  | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 48249 | Swamp:2  | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 48256 | Swamp:2  | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 48697 | Swamp:2  | Killed a tentacled monstrosity
+ 49061 | Swamp:2  | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 49327 | Swamp:3  | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 49329 | Swamp:3  | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 49396 | Swamp:3  | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 49400 | Swamp:3  | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 49505 | Swamp:3  | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 49507 | Swamp:3  | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 49649 | Swamp:3  | Learned a level 5 spell: Summon Forest
+ 49725 | Swamp:3  | Noticed Donald
+ 49731 | Swamp:3  | Killed Donald
+ 50118 | Swamp:4  | Entered Level 4 of the Swamp
+ 50140 | Swamp:4  | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 50145 | Swamp:3  | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 50828 | Swamp:4  | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 50931 | Spider:1 | Entered Level 1 of the Spider Nest
+ 50932 | Spider:1 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 51540 | Lair:3   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 51905 | Spider:1 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 51923 | Spider:1 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 52088 | Spider:1 | Reached skill level 10 in Fire Magic
+ 52639 | Spider:1 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 52693 | Spider:1 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 52956 | Spider:1 | Identified the +2 robe "Mioseef" {+Inv rPois}
+ 52994 | Spider:1 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 53001 | Spider:1 | Reached XP level 18. HP: 92/115 MP: 3/39
+ 53541 | Spider:1 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 53550 | Spider:1 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 53554 | Spider:1 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 53791 | Spider:2 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 53862 | Spider:2 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 54192 | Spider:2 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 54322 | Spider:2 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 54344 | Spider:2 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 54469 | Spider:2 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 55110 | Spider:2 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 55120 | Spider:2 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 55123 | Spider:2 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 55277 | Spider:2 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 55401 | Spider:2 | Identified the +0 morningstar of Magnificence {elec, rPois
+                  | Str-3 Dex+2 SInv}
+ 55923 | Spider:2 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 55929 | Spider:2 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 56104 | Spider:2 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 56107 | Spider:2 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 56913 | Spider:3 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 56941 | Spider:3 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 56951 | Spider:3 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 57039 | Spider:3 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 57045 | Spider:3 | Reached skill level 10 in Fighting
+ 57129 | Spider:3 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 57226 | Spider:3 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 57228 | Spider:3 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 57272 | Spider:3 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 57305 | Spider:3 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 57700 | Spider:3 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 57882 | Spider:3 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 58215 | Spider:3 | Acquired the +7 kite shield of the Barber Surgeon {Contam
+                  | Regen+ Str+4 Int+4 Dex+6}
+ 58757 | Spider:4 | Entered Level 4 of the Spider Nest
+ 58760 | Spider:4 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 58861 | Spider:4 | Identified the +1 leather armour of the Beloved God {+Blink
+                  | Dex+4}
+ 58869 | Spider:4 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 59096 | Spider:4 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 59203 | Spider:4 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 59250 | Spider:4 | Identified the +11 broad axe of the Charming Enemy {drain,
+                  | Fly Str+7 Dex-3 Stlth+}
+ 59447 | Spider:4 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 59737 | Spider:4 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 59741 | Spider:4 | Reached skill level 10 in Evocations
+ 59929 | Spider:3 | 9to: !lg
+ 59929 | Spider:3 | beem: 2090. 9to the Spry (L27 KoMo of Makhleb), escaped
+                  | with the Orb and 3 runes on 2022-12-11 14:30:11, with
+                  | 1304599 points after 128932 turns and 11:31:16.
+ 59929 | Spider:3 | 9to: !lg .
+ 59929 | Spider:3 | beem: 2090. 9to the Spry (L27 KoMo of Makhleb), escaped
+                  | with the Orb and 3 runes on 2022-12-11 14:30:11, with
+                  | 1304599 points after 128932 turns and 11:31:16.
+ 60167 | Spider:4 | Reached skill level 14 in Spellcasting
+ 60434 | Spider:4 | Identified the +1 hat "Gaillis" {+Blink}
+ 60443 | Spider:4 | 9to: !lg . -2
+ 60443 | Spider:4 | beem: 2089/2090. 9to the Grand Master (L27 KoTm of Gozag),
+                  | escaped with the Orb and 10 runes on 2022-12-06 15:15:07,
+                  | with 6362693 points after 123306 turns and 14:22:17.
+ 60443 | Spider:4 | 9to: !lg . -3
+ 60443 | Spider:4 | beem: 2088/2090. 9to the Sensei (L25 DgTm), escaped with
+                  | the Orb and 3 runes on 2022-11-29 02:24:57, with 1512315
+                  | points after 87891 turns and 12:42:48.
+ 60443 | Spider:4 | 9to: !lg . -4
+ 60443 | Spider:4 | beem: 2087/2090. 9to the Grand Master (L27 DrTm of
+                  | Hepliaklqana), escaped with the Orb and 5 runes on
+                  | 2022-11-25 04:34:19, with 2411407 points after 109942 turns
+                  | and 13:39:53.
+ 60445 | Spider:4 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 60535 | Spider:4 | Noticed Arachne
+ 60541 | Spider:4 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 60542 | Spider:4 | Killed Arachne
+ 60568 | Spider:4 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 60740 | Spider:4 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 60745 | Spider:4 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 60748 | Spider:4 | Reached XP level 19. HP: 98/121 MP: 0/40
+ 60917 | Spider:4 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 61088 | Spider:4 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 61669 | Spider:4 | Got a gossamer rune of Zot
+ 61894 | Swamp:4  | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 61911 | Swamp:4  | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 62077 | Swamp:4  | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 62182 | Swamp:4  | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 62684 | Swamp:4  | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 62686 | Swamp:4  | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 62793 | Swamp:4  | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 62803 | Swamp:4  | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 62805 | Swamp:4  | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 62807 | Swamp:4  | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 63010 | Swamp:4  | Bellerephron: wow...I misread the name of that rapier at
+                  | first...
+ 63011 | Swamp:4  | 9to: Greetings!
+ 63011 | Swamp:4  | Bellerephron: yo
+ 63428 | Swamp:4  | Got a decaying rune of Zot
+ 63746 | Lair:2   | Killed Gastronok
+ 63844 | Lair:4   | Killed componib's ghost
+ 63888 | Lair:4   | Reached XP level 20. HP: 128/128 MP: 22/41
+ 64982 | Lair:5   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 64986 | Lair:5   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 64989 | Lair:5   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 64995 | Lair:5   | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 65273 | D:14     | Bellerephron: poor prisms..
+ 65273 | D:14     | 9to: <3 prisms>
+                  | <lightred>ERROR: string above had unterminated tag</lightred>
+ 65279 | D:14     | Bellerephron: born only to die
+ 65303 | D:14     | 9to: aren't we all?
+ 65303 | D:14     | 9to: born to die that is
+ 65306 | D:14     | Bellerephron: true but we don't all explode
+ 65306 | D:14     | 9to: good point
+ 65309 | D:14     | 9to: g'nite, thanks for watching!
+ 65309 | D:14     | Bellerephron: adios
+ 65319 | D:15     | Entered Level 15 of the Dungeon
+ 65448 | D:15     | Noticed Roxanne
+ 65840 | D:15     | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 65902 | D:15     | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 66480 | D:15     | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 66492 | D:15     | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 66497 | D:15     | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 66616 | D:15     | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 66623 | D:15     | Found a staircase to the Depths.
+ 66802 | D:15     | Killed Roxanne
+ 66953 | D:15     | Learned a level 6 spell: Iron Shot
+ 67605 | Orc:2    | Bought a translucent ring mail for 324 gold pieces
+ 67605 | Orc:2    | Identified the +2 ring mail of the Earth {Regen+} (You
+                  | bought it in a shop on level 2 of the Orcish Mines)
+ 67605 | Orc:2    | Bought a scorched scale mail for 324 gold pieces
+ 67605 | Orc:2    | Identified the +0 scale mail of Qonalopu {-Tele Rampage Fly
+                  | rF+} (You bought it in a shop on level 2 of the Orcish
+                  | Mines)
+ 67653 | Orc:2    | Bought a scroll of teleportation for 45 gold pieces
+ 67736 | Elf:2    | Identified the +3 halberd of Ysuptuam {vorpal, *Slow rC-
+                  | rCorr Int+6}
+ 67799 | Elf:2    | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 67810 | Elf:2    | Reached skill level 1 in Earth Magic
+ 67877 | Elf:2    | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 68209 | Elf:2    | Found Fuwura Odyu's Book Emporium.
+ 68267 | Elf:2    | Found a runed translucent gate.
+ 68267 | Elf:2    | Found a runed translucent gate.
+ 68267 | Elf:2    | Found a runed translucent gate.
+ 68376 | Orc:2    | Bought a scroll of amnesia for 60 gold pieces
+ 68466 | Elf:2    | Bought Great Wizards, Vol. VII for 600 gold pieces
+ 68472 | Elf:2    | Learned a level 5 spell: Yara's Violent Unravelling
+ 68506 | Elf:3    | Entered Level 3 of the Elven Halls
+ 68779 | Elf:3    | Reached skill level 1 in Transmutations
+ 68967 | Elf:3    | Reached XP level 21. HP: 134/134 MP: 29/43
+ 69224 | Elf:3    | Found Xileehaw's General Store.
+ 69226 | Elf:3    | Found Bagilu's General Store.
+ 69226 | Elf:3    | Found Emna's Jewellery Shoppe.
+ 69228 | Elf:3    | Bought a scroll of blinking for 112 gold pieces
+ 69228 | Elf:3    | Bought a potion of heal wounds for 75 gold pieces
+ 69229 | Elf:3    | Found Gofagoq's Book Shoppe.
+ 69515 | Elf:3    | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 70418 | Elf:3    | Reached skill level 15 in Spellcasting
+ 70757 | Elf:3    | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 70982 | Elf:3    | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 71285 | Elf:3    | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 71301 | Elf:3    | Identified Laviykam's Grimoire of Greatest Risks and
+                  | Utility
+ 71356 | Elf:3    | Identified the +4 hand axe of Uqixai {vorpal, rC++}
+ 71356 | Elf:3    | Identified the +8 plate armour of Baldness {Rampage rElec
+                  | Str-2 Stlth+}
+ 71359 | Elf:3    | Identified the +1 spear "Ytoss" {vorpal, Fragile Int+5
+                  | Dex+2}
+ 71527 | Elf:3    | Bought a Trismegistus Codex for 420 gold pieces
+ 71684 | D:14     | Learned a level 5 spell: Freezing Cloud
+ 71730 | Vaults:1 | Entered Level 1 of the Vaults
+ 71800 | Vaults:1 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 72097 | Vaults:1 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 72099 | Vaults:1 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 72234 | Vaults:1 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 72506 | Vaults:1 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 72613 | Vaults:1 | Reached skill level 15 in Conjurations
+ 72833 | Vaults:1 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 72834 | Vaults:1 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 72973 | Vaults:1 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 72989 | Vaults:1 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 72997 | Vaults:1 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 73000 | Vaults:1 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 73011 | Vaults:1 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 73021 | Vaults:1 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 73230 | Vaults:1 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 73236 | Vaults:1 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 73238 | Vaults:1 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 73461 | Vaults:1 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 73467 | Vaults:1 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 73574 | Vaults:1 | Reached XP level 22. HP: 136/136 MP: 26/43
+ 73804 | Vaults:1 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 73818 | Vaults:1 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 73954 | Vaults:1 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 74256 | Vaults:2 | Noticed Aizul
+ 74271 | Vaults:2 | Killed Aizul
+ 74532 | Vaults:2 | Reached skill level 16 in Spellcasting
+ 74857 | Vaults:2 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 74921 | Vaults:2 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 75050 | Vaults:2 | Found Wura's Antique Weapon Boutique.
+ 75184 | Vaults:2 | Noticed Jory
+ 75188 | Vaults:2 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 75191 | Vaults:2 | Killed Jory
+ 75353 | Vaults:2 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 75383 | Vaults:2 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 75613 | Vaults:2 | Found a staircase to the Crypt.
+ 76548 | Vaults:3 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 76620 | Vaults:3 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 76630 | Vaults:3 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 76631 | Vaults:3 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 76707 | Vaults:3 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 76722 | Vaults:3 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 76740 | Vaults:3 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 76756 | Vaults:3 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 76783 | Vaults:3 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 76789 | Vaults:3 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 76843 | Vaults:3 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 76857 | Vaults:3 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 76867 | Vaults:3 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 76869 | Vaults:3 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 76991 | Vaults:3 | Found a large runed translucent door.
+ 76991 | Vaults:3 | Found a large runed translucent door.
+ 76993 | Vaults:3 | Found a large runed translucent door.
+ 76993 | Vaults:3 | Found a large runed translucent door.
+ 76994 | Vaults:3 | Found a large runed translucent door.
+ 76994 | Vaults:3 | Found a large runed translucent door.
+ 76994 | Vaults:3 | Noticed inkslinger's ghost (adept TeGl)
+ 76994 | Vaults:3 | Identified the +1 hat of the Little Devil {Rampage Int+6}
+ 76995 | Vaults:3 | Found a large runed translucent door.
+ 76995 | Vaults:3 | Found a large runed translucent door.
+ 77017 | Vaults:3 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 77025 | Vaults:3 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 77233 | Vaults:3 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 77281 | Vaults:3 | Reached skill level 10 in Stealth
+ 77284 | Vaults:3 | Reached XP level 23. HP: 134/145 MP: 8/47
+ 77349 | Vaults:3 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 77353 | Vaults:3 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 77358 | Vaults:3 | Reached skill level 15 in Dodging
+ 77408 | Vaults:3 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 77470 | Vaults:3 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 77475 | Vaults:3 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 77478 | Vaults:3 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 77869 | Vaults:3 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 77873 | Vaults:3 | Reached skill level 17 in Spellcasting
+ 78077 | Vaults:3 | Killed inkslinger's ghost
+ 78246 | Vaults:4 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 78310 | Vaults:4 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 78325 | Vaults:4 | Noticed Xtahua
+ 78339 | Vaults:3 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 78350 | Vaults:4 | Killed Xtahua
+ 78604 | Vaults:4 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 78788 | Vaults:4 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 79063 | Vaults:4 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 79264 | Vaults:4 | Identified the cursed +3 rapier "Circumscribed Together"
+                  | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
+ 79443 | Vaults:4 | Learned a level 6 spell: Statue Form
+ 79444 | Vaults:4 | Identified the cursed +0 pair of gloves of Ashenzari's
+                  | Sorrow {Bglg, Evo} (You bought it in a shop on level 3 of
+                  | the Dungeon)
+ 79444 | Vaults:4 | Identified the cursed +0 pair of boots of the All-seeing
+                  | Welkin {Cun, Bglg} (You bought it in a shop on level 2 of
+                  | the Orcish Mines)
+ 79444 | Vaults:4 | Identified the cursed +2 robe of Apeoromancy {rC+ rF+,
+                  | Bglg, Self} (You took it off an orc sorcerer on level 15 of
+                  | the Dungeon)
+ 79967 | Depths:1 | Entered Level 1 of the Depths
+ 80138 | Depths:1 | Found a one-way gate leading to the halls of Pandemonium.
+ 80394 | Depths:1 | Found a gateway to Hell.
+ 80778 | Depths:1 | Found an opulent altar of Gozag.
+ 81081 | Depths:1 | Found Judduappa's Distillery.
+ 81082 | Depths:1 | Found Aceall's Magic Scroll Shoppe.
+ 81083 | Depths:1 | Found Aneulapp's Assorted Antiques.
+ 81090 | Depths:1 | Bought a twisted agate ring for 105 gold pieces
+ 81801 | Depths:2 | Noticed the Enchantress
+ 82056 | Depths:2 | Found a broken altar of Ashenzari.
+ 82188 | Depths:2 | Found a basalt altar of Yredelemnul.
+ 82421 | Depths:2 | Reached XP level 24. HP: 151/151 MP: 36/48
+ 82528 | Depths:2 | Reached skill level 5 in Transmutations
+ 82607 | Depths:2 | Killed the Enchantress
+ 83520 | D:9      | Bought the +11 dagger "Goidux Ritoa" {vorpal, Will+} for
+                  | 917 gold pieces
+ 84312 | Depths:3 | Noticed a golden dragon
+ 84316 | Depths:3 | Killed a golden dragon
+ 84593 | Depths:3 | Found a one-way gate to the infinite horrors of the Abyss.
+ 84911 | Depths:3 | Reached skill level 18 in Spellcasting
+ 85146 | Depths:3 | Noticed a juggernaut
+ 85186 | Depths:3 | Killed a juggernaut
+ 85201 | Depths:3 | Identified the +9 shortbow of the Beast {venom, MP+9}
+ 85201 | Depths:3 | Identified the +6 double sword "Houfees" {vorpal, rN+
+                  | Int+2}
+ 85201 | Depths:3 | Identified the ring "Efeimo" {*Slow rF++ Dex+6}
+ 85963 | Depths:3 | Found a one-way gate to the infinite horrors of the Abyss.
+ 86401 | Depths:4 | Entered Level 4 of the Depths
+ 86401 | Depths:4 | Found a one-way gateway to a ziggurat.
+ 86991 | Depths:4 | Found a gate to the Realm of Zot.
+ 87478 | Depths:4 | Reached skill level 10 in Short Blades
+ 87718 | Depths:4 | Reached XP level 25. HP: 156/156 MP: 24/48
+ 87792 | Depths:4 | 9to: ??stabbing
+ 87792 | Depths:4 | beem: stabbing[1/5]: A stab with a short blade does
+                  | increased damage: (dam+bonus)*mult, where bonus depends on
+                  | dex and stealth/weapon skills and is capped at 30, and mult
+                  | depends on your stealth/weapon skills and the type of stab
+                  | (sleep/paralysis is best). Non-short blades don't get a
+                  | bonus and have lower mult. Daggers get bonus doubled (but
+                  | still capped at 30).
+ 87792 | Depths:4 | 9to: ??stabbing[2
+ 87792 | Depths:4 | beem: stabbing[2/5]: If you are using short blades, stab
+                  | damage bonus is (DEX * (((stealth skill + sblade skill) /
+                  | 2) + 1)) / 5, halved if you are not wielding a dagger, and
+                  | then put through a stepdown function: halve the part over
+                  | 10, then halve the part over 20, then cap at 30.
+ 87909 | Depths:4 | Learned a level 7 spell: Enfeeble
+ 88475 | Crypt:1  | Entered Level 1 of the Crypt
+ 88522 | Crypt:1  | Identified the ring of Fait {Ice Will+ Slay+3 Stlth-}
+ 88522 | Crypt:1  | Noticed Josephina
+ 88581 | Crypt:1  | Reached skill level 10 in Hexes
+ 88583 | Crypt:1  | Killed Josephina
+ 88652 | Crypt:1  | Reached skill level 5 in Earth Magic
+ 88982 | Crypt:1  | Reached skill level 19 in Spellcasting
+ 89357 | Crypt:1  | Found a runed translucent gate.
+ 89358 | Crypt:1  | Found a runed translucent gate.
+ 89359 | Crypt:1  | Found a runed translucent gate.
+ 89361 | Crypt:1  | Noticed Ciwereex's ghost (veteran GrEE)
+ 89385 | Crypt:1  | Identified the +1 leather armour "Ixaokheu" {rPois Str+6
+                  | Dex-5}
+ 89936 | Crypt:2  | Reached skill level 15 in Stealth
+ 90196 | Crypt:2  | Reached skill level 10 in Shields
+ 90369 | Crypt:3  | Entered Level 3 of the Crypt
+ 90960 | Crypt:3  | Identified the +5 battleaxe "Jaumn" {flame, Int+4 Stlth+}
+ 91008 | Crypt:3  | Found a staircase to the Tomb.
+ 92123 | Crypt:3  | Found an ancient bone altar of Kikubaaqudgha.
+ 92124 | Crypt:3  | Noticed an ancient lich
+ 92133 | Crypt:3  | Killed an ancient lich
+ 92134 | Crypt:3  | Reached XP level 26. HP: 163/163 MP: 22/50
+ 92182 | Crypt:3  | Identified the Grimoire of Incorporation
+ 92638 | Vaults:5 | Entered Level 5 of the Vaults
+ 93302 | Vaults:5 | 9to: Greetings
+ 93319 | Vaults:5 | Bellerephron: yo
+ 93883 | Vaults:5 | Reached skill level 20 in Spellcasting
+ 93924 | Vaults:5 | Identified the +0 pair of gloves of a Labyrinth {Str-5
+                  | Int+5}
+ 94127 | Vaults:5 | Noticed a dread lich
+ 94300 | Vaults:5 | Identified the +0 ring mail of Hijiemaa {rPois Int+7 Dex+4}
+ 94410 | Vaults:5 | Killed a dread lich
+ 94525 | Vaults:5 | Got a silver rune of Zot
+ 94985 | Vaults:5 | Identified the +10 whip "Aget" {vorpal, rPois rC- rCorr
+                  | Str+6}
+ 95420 | Vaults:5 | Reached XP level 27. HP: 166/166 MP: 44/50
+ 95795 | Vaults:5 | Reached skill level 15 in Evocations
+ 95968 | Vaults:5 | Learned a level 7 spell: Spellforged Servitor
+ 96404 | Zot:1    | Entered Level 1 of the Realm of Zot
+ 97007 | Zot:1    | Noticed an orb of fire
+ 97025 | Zot:1    | Killed an orb of fire
+ 98040 | Zot:2    | Reached skill level 5 in Summonings
+ 98408 | Zot:2    | Noticed an orb of fire
+ 98411 | Zot:2    | Killed an orb of fire
+ 98560 | Zot:2    | Noticed a dread lich
+ 98566 | Zot:2    | Noticed a dread lich
+ 98571 | Zot:2    | Killed a dread lich
+ 98572 | Zot:2    | Killed a dread lich
+ 98682 | Zot:2    | Identified the +11 quick blade of the Boar {vamp, rElec
+                  | rCorr Dex+2 Stlth-}
+ 98985 | Zot:2    | Noticed a dread lich
+ 98988 | Zot:2    | Killed a dread lich
+ 99443 | Zot:3    | Reached skill level 21 in Spellcasting
+ 99630 | Zot:3    | Identified the +1 long sword "Transmigrator" {elec, rElec
+                  | rC+ Dex+2 Stlth+}
+100254 | Zot:4    | Noticed a Killer Klown
+100309 | Zot:4    | Killed a Killer Klown
+101268 | Zot:3    | 9to: gnite thanks for watching ^^
+101632 | Zot:4    | Found a transporter.
+101639 | Zot:4    | Found a transporter.
+101641 | Zot:4    | Identified the amulet of Fakhliys {Spirit Rampage rPois
+                  | rF-}
+101643 | Zot:4    | Noticed a Killer Klown
+101643 | Zot:4    | Identified the +0 helmet of the Soldier {Int+3}
+101656 | Zot:4    | Noticed Beclu's ghost (legendary GnSk)
+101681 | Zot:4    | Noticed an ancient lich
+102007 | Zot:5    | Entered Level 5 of the Realm of Zot
+102765 | Zot:5    | Noticed an orb of fire
+102813 | Zot:5    | Noticed a dread lich
+102824 | Zot:5    | Noticed an orb of fire
+102825 | Zot:5    | Gained mutation: Your skin changes colour to match your
+                  | surroundings (Stealth+). [an orb of fire]
+102832 | Zot:5    | Killed an orb of fire
+102861 | Zot:5    | Noticed a dread lich
+102868 | Zot:5    | Noticed a Killer Klown
+102871 | Zot:5    | Killed a Killer Klown
+102880 | Zot:5    | Killed an orb of fire
+102905 | Zot:5    | Noticed an orb of fire
+102910 | Zot:5    | Killed an orb of fire
+102911 | Zot:5    | Reached skill level 15 in Hexes
+103049 | Zot:5    | Noticed an orb of fire
+103050 | Zot:5    | Killed a dread lich
+103089 | Zot:5    | Killed a dread lich
+103101 | Zot:5    | Killed an orb of fire
+103106 | Zot:5    | Reached skill level 22 in Spellcasting
+103236 | Zot:5    | Noticed a Killer Klown
+103314 | Zot:5    | Killed a Killer Klown
+103500 | Zot:5    | Noticed an orb of fire
+103549 | Zot:5    | Noticed a Killer Klown
+103555 | Zot:5    | Killed an orb of fire
+103627 | Zot:5    | Noticed a Killer Klown
+103639 | Zot:5    | Killed a Killer Klown
+103666 | Zot:5    | Killed a Killer Klown
+103739 | Zot:5    | Noticed a dread lich
+103740 | Zot:5    | Killed a dread lich
+103754 | Zot:5    | Noticed an orb of fire
+103756 | Zot:5    | Killed an orb of fire
+103905 | Zot:5    | Noticed an orb of fire
+103911 | Zot:5    | Killed an orb of fire
+103976 | Zot:5    | Got the Orb of Zot
+104316 | D:8      | 9to: !lg . -1
+104316 | D:8      | beem: 2090. 9to the Spry (L27 KoMo of Makhleb), escaped
+                  | with the Orb and 3 runes on 2022-12-11 14:30:11, with
+                  | 1304599 points after 128932 turns and 11:31:16.
+104316 | D:8      | 9to: !lg . -2
+104316 | D:8      | 9to: !lg . -3
+104316 | D:8      | beem: 2089/2090. 9to the Grand Master (L27 KoTm of Gozag),
+                  | escaped with the Orb and 10 runes on 2022-12-06 15:15:07,
+                  | with 6362693 points after 123306 turns and 14:22:17.
+104316 | D:8      | 9to: !lg . -4
+104316 | D:8      | beem: 2088/2090. 9to the Sensei (L25 DgTm), escaped with
+                  | the Orb and 3 runes on 2022-11-29 02:24:57, with 1512315
+                  | points after 87891 turns and 12:42:48.
+104316 | D:8      | beem: 2087/2090. 9to the Grand Master (L27 DrTm of
+                  | Hepliaklqana), escaped with the Orb and 5 runes on
+                  | 2022-11-25 04:34:19, with 2411407 points after 109942 turns
+                  | and 13:39:53.
+104316 | D:8      | 9to: !lg . -5
+104316 | D:8      | beem: 2086/2090. 9to the Alchemist (L18 DrTm of
+                  | Hepliaklqana), annihilated by a minotaur simulacrum in
+                  | IceCv (ice_cave_caverns_01) on 2022-11-19 15:03:30, with
+                  | 195838 points after 38290 turns and 3:16:38.
+104585 | D:$      | Escaped with the Orb!
+
+Illustrated notes
+
+........†..  ......
+....................
+.......#....##......r
+#...)..#.............
+##...................
+ #....)...........†....g...
+###.....#.........)........
+..#.....#.#......#.........
+..#.......#.....@#.........
+###.......#.............!..
+.........##............####
+.......................#
+.......................#   ######
+.......................#   ......
+.......................#   [♣..<.
+....##.................##  ......
+######........†.........#  ###...
+
+Turn 451 on D:1: Goal: Magic Dart and Freeze
+
+  ....
+ ......
+........
+##......r  ........##
+.........  #.........
+..........##.........
+......†..............
+......).........@....
+.....#...............
+.....#...............
+..................#.!
+...........##########
+...........#
+...........#   ##########
+...........#   .........#
+...........#   [♣..<..♣.#
+
+Turn 465 on D:1: Monitor ability to kill with current mana.
+
+#..#.#...##
+.......###
+...#.#.#
+...#.#.#
+####.#.#
+.....#.#
+######      ######
+            .....#
+               #@#
+######         #.#
+..<..#         #.#
+##.#.#         #.#
+...#.#         #.#
+##.#.#         #.#
+####.#         #.#
+.....#         #.#
+######         #.#
+
+Turn 10168 on D:6: Gold acquirement
+
+Levels and vault maps discovered:
+D:1:      minmay_arrival_hallway, layout_basic, supply_closet_lemuel,
+          nicolae_grassy_gnolls
+D:2:      layout_basic, uniq_terence
+D:3:      layout_basic, trog_hazing_becter, mainiacjoe_overflow_catwalk,
+          dilly_ecumenical_altar_fadedgnrine, serial_shops,
+          nicolae_shop_overgrown_old_shop, nicolae_shop_behind_doors,
+          nicolae_shop_behind_doors, nicolae_shop_overgrown_old_shop
+D:4:      layout_cave_pods, grunt_temple_overflow_champion_of_chaos,
+          serial_column_ruins, column_ruins_columns_straight,
+          column_ruins_corridor_water, column_ruins_grid_4, column_ruins_grid_2,
+          column_ruins_open_small, eino_tiny_chamber
+D:5:      layout_basic, eat_drink_and_be_merry_uskayaw, temple_green,
+          uniq_grinder, uniq_eustachio
+D:6:      layout_basic
+D:7:      layout_loops_ring, marbit_many_paths, kennysheep_cluttered_room
+D:8:      layout_cave_pods, uniq_amaemon
+D:9:      layout_stronghold, serial_shops, shop, hangedman_decor_clover_reticule
+D:10:     layout_rooms, nicolae_ru_awakened_eye, erik_lair_orcish_takeover,
+          serial_shops, nicolae_diamond_shop
+D:11:     layout_layer_cave
+D:12:     layout_grid_maze, orc_0_dummy, kennysheep_potato
+D:13:     layout_gridville, hellmonk_ghost_happy_afterlife
+D:14:     layout_loops_ring, skrybe_vaults_entry_preservation,
+          okawaru_ov_weapons_minmay, minmay_misc_feat_alley, minivault_15,
+          grunt_livestock, minmay_tree_intersection, cheibriados_altar_2
+D:15:     gammafunk_enter_depths_forms, layout_basic, nicolae_wwwww,
+          uniq_roxanne
+Temple:   eino_wide_crystal_templ
+Lair:1:   layout_small_grid, serial_rivers, chequers_serial_rivers_micro_d,
+          chequers_serial_rivers_room_b, chequers_serial_rivers_micro_b,
+          chequers_serial_rivers_micro_b, chequers_serial_rivers_micro_a,
+          chequers_serial_rivers_large_b, beast_lair_carwin_9, uniq_sonja
+Lair:2:   layout_regular_city, minivault_27, grunt_megastairs_5, uniq_gastronok
+Lair:3:   layout_small_grid, minmay_swamp_entry_worms, spider_nest_entry_a,
+          serial_bayou, serial_bayou_pond_c, serial_bayou_shore_b,
+          serial_bayou_shore_b, serial_bayou_lagoon_b, lemuel_fruit_tree
+Lair:4:   layout_loops_ring, ebering_ghost_funeral_grove, minmay_holes,
+          grunt_megastairs_3, lemuel_fruit_fields
+Lair:5:   due_jungle_book, layout_loops_ring, slime_entry_1,
+          portal_ice_cave_entry_imps
+Swamp:1:  layout_falls_marsh, evilmike_swamp_ruin_house_2, swamp_pool1,
+          nicolae_swamp_godswood, infiniplex_staircase_pool
+Swamp:2:  nzn_winding_woodlands_cross [nzn_winding_woodlands_5x15_zeroes,
+          nzn_winding_woodlands_5x15_pockets,
+          nzn_winding_woodlands_5x15_concentric,
+          nzn_winding_woodlands_5x15_jagged,
+          nzn_winding_woodlands_15x15_boxy_spiral], layout_falls_marsh,
+          serial_swamp_ruin, evilmike_swamp_ruin_wall,
+          evilmike_swamp_ruin_house_3, evilmike_swamp_ruin_house_6, swamp_pool1
+Swamp:3:  layout_falls_marsh, evilmike_swamp_ruin_rubble_1, swamp_pool1,
+          uniq_donald
+Swamp:4:  swamp, layout_basic_swamp, swamp_pool1, lightli_tree_ring
+Spider:1: layout_spider_delve, drop_trap
+Spider:2: layout_chambers, hangedman_spider_tarantella_strand
+Spider:3: layout_chambers, drop_trap
+Spider:4: grunt_spider_rune_circles, drop_trap, uniq_arachne
+Orc:1:    layout_diamond_mine, serial_shops, shop, shop, shop, basic_altar,
+          uniq_jorgrun
+Orc:2:    st_orc_rangers, layout_diamond_mine
+Elf:1:    eino_elf_arrival_sip, layout_geoelf_octagon,
+          minmay_elf_crystal_hexagon
+Elf:2:    elven_hall_of_blades_hangedman_original
+          [nicolae_blade_entry_antechamber], layout_loops_cross,
+          mu_enter_wizlab_6, serial_shops, shop, uniq_saint_roka
+Elf:3:    minmay_elf_hall_furrowed, layout_gridlike, minmay_shoptagon
+Vaults:1: v_misc_16, hangedman_vaults_pinch, v_misc_10, vaults_room_fours,
+          hangedman_vaults_nails, nicolae_vaults_little_squares_5,
+          vaults_room_grunt_arrival_checkpoint, nicolae_vaults_minivaults,
+          v_misc_17, vaults_room_corners, nicolae_vaults_specimen_jars,
+          layout_vaults_omnicross
+Vaults:2: hangedman_vaults_variations, nicolae_vaults_little_squares_5,
+          minmay_crypt_entry_simple_walls, v_misc_8, grunt_vaults_hallway_long,
+          ontoclasm_vaults_shuriken, hangedman_vaults_cutoff, v_misc_25,
+          layout_vaults_omnigrid, serial_shops, shop, uniq_aizul, uniq_jory
+Vaults:3: advil_vaults_ghost_lines, hangedman_vaults_stagger, v_misc_18,
+          ontoclasm_vaults_claustrophobia, vaults_room_large_hall, v_misc_29,
+          v_alt_pattern_5, vaults_room_fours, ontoclasm_vaults_eye,
+          ontoclasm_vaults_gateway, ontoclasm_vaults_hangar,
+          vaults_dpeg_diagonal, ontoclasm_vaults_pinch,
+          layout_vaults_maze_snakey
+Vaults:4: nicolae_vaults_sealed_display, nicolae_vaults_puzzle_piece, v_misc_16,
+          vaults_room_grid, nicolae_vaults_little_squares_5, grunt_vaults_focal,
+          v_misc_30, nicolae_vaults_mini_display_case, layout_vaults_omnibox,
+          uniq_xtahua
+Vaults:5
+Crypt:1:  layout_rooms, gammafunk_ghost_fury_of_okawaru,
+          grunt_crypt_arrival_split, uniq_josephina
+Crypt:2:  layout_gridlike, serial_glass, glass_columns_a, glass_columns_a,
+          glass_columns_b, glass_columns_c, glass_columns_a, glass_columns_b
+Crypt:3:  cryptofortress_bobbens
+Depths:1: layout_cave_shapes, nicolae_concentric_dashed_squares_mild, pan_entry,
+          hell_entry, grunt_gozag_statues, grunt_megastairs_2,
+          serial_bayou_shore_b, minmay_shop_star
+Depths:2: nicolae_cairo_tiling_very_big, layout_small_grid, lemuel_doored_altar,
+          rand_demon_pan_entry_5, hangedman_geh_valley, nrook_mini_vaults,
+          ashenzari_conservatory_becter, infiniplex_staircase_pool_2,
+          uniq_enchantress
+Depths:3: minmay_rotating_shell, layout_basic, grunt_pan_entry_sceptre,
+          roderic_filled_cross, abyss_entry_crystal, hell_entry
+Depths:4: grunt_zot_entry_tricorne, layout_basic, enter_ziggurat_f, hellmouth_1,
+          abyss_entry, due_unseen_surprise
+Zot:1:    layout_gridlike, grunt_ministairs_15, grunt_megastairs_1
+Zot:2:    hellmonk_paralyzer, layout_cathedral_of_symmetry,
+          lemuel_baited_zot_trap
+Zot:3:    layout_onion
+Zot:4:    layout_misc_corridors, gammafunk_ghost_abyssal_escape
+Zot:5:    layout_concentric_octagons
+
+Skill      XL: |  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 |
+---------------+----------------------------------------------------------------------------------+-----
+Ice Magic      |        1  2     3  4  5  6  7  8  9                                              |  9.9
+Conjurations   |        2        3     4  5  6  7  8  9 10 11 12 13       14 15 16 17 18    19 21 | 21.9
+Summonings     |        2                                                                       7 |  7.3
+Fighting       |              1        2     4  5  7  8           9 10 11                12       | 12.1
+Short Blades   |              1  2                 4        6     8                   10          | 10.0
+Hexes          |                 2  3  4  5  6  7  8  9                                  11 12 15 | 15.1
+Spellcasting   |                 4     5  6  7  8  9 10 11 12    13 14       15 16 17 18 19 20 22 | 22.5
+Stealth        |                       3     4  7  8  9                         10 12 14 16 17 19 | 19.2
+Evocations     |                          3     4  6  7           8 10          12 14          16 | 16.2
+Dodging        |                                      3  7  8 10 11 12 14          16    17    18 | 18.7
+Fire Magic     |                                      4  6  8  9 10    11                         | 11.9
+Air Magic      |                                         3  5                                     |  5.2
+Shields        |                                            3  5  6  7     8  9          10       | 10.0
+Translocations |                                               3                                  |  3.9
+Earth Magic    |                                                           2  4           5  7  8 |  8.5
+Transmutations |                                                           1  4        5          |  5.7
+
+Action                   |  1- 3 |  4- 6 |  7- 9 | 10-12 | 13-15 | 16-18 | 19-21 | 22-24 | 25-27 || total
+-------------------------+-------+-------+-------+-------+-------+-------+-------+-------+-------++-------
+Melee: Dagger            |    49 |     6 |       |       |       |       |       |    32 |   367 ||   454
+       Punch             |     2 |     1 |       |     1 |     2 |       |       |       |       ||     6
+       Rapier            |       |    34 |    76 |   117 |   250 |   324 |   185 |   234 |       ||  1220
+       Quick blade       |       |       |       |       |       |       |       |       |   141 ||   141
+Throw: Dart              |     5 |    10 |     2 |       |     3 |       |       |       |       ||    20
+       Boomerang         |       |       |    12 |     7 |     4 |    18 |     4 |       |     1 ||    46
+ Cast: Magic Dart        |    72 |    42 |       |       |       |       |       |       |       ||   114
+       Freeze            |    19 |    27 |     5 |    14 |    36 |     9 |    25 |     5 |     9 ||   149
+       Call Imp          |     3 |    14 |    13 |     8 |     6 |     9 |     2 |     1 |       ||    56
+       Ensorcelled Hiber |       |     5 |    12 |     2 |     5 |     1 |       |    10 |     4 ||    39
+       Slow              |       |       |    42 |     8 |     3 |     2 |       |       |       ||    55
+       Frozen Ramparts   |       |       |    20 |     9 |     7 |    30 |     4 |     9 |       ||    79
+       Searing Ray       |       |       |    13 |     7 |     6 |     4 |    12 |     8 |       ||    50
+       Hailstorm         |       |       |    12 |    82 |   114 |    93 |    94 |   171 |   111 ||   677
+       Fulminant Prism   |       |       |     1 |    13 |    33 |    25 |   116 |   167 |   111 ||   466
+       Conjure Flame     |       |       |       |     1 |     1 |     2 |     8 |    12 |     3 ||    27
+       Mephitic Cloud    |       |       |       |     4 |       |       |       |       |       ||     4
+       Starburst         |       |       |       |       |   137 |   239 |   162 |   174 |   145 ||   857
+       Iskenderun's Myst |       |       |       |       |     9 |    33 |    13 |    43 |    22 ||   120
+       Lightning Bolt    |       |       |       |       |       |     3 |    10 |    13 |     2 ||    28
+       Blink             |       |       |       |       |       |     1 |       |     1 |       ||     2
+       Summon Forest     |       |       |       |       |       |     2 |       |       |       ||     2
+       Freezing Cloud    |       |       |       |       |       |       |     8 |    39 |    25 ||    72
+       Yara's Violent Un |       |       |       |       |       |       |     6 |     9 |    16 ||    31
+       Iron Shot         |       |       |       |       |       |       |     1 |    77 |   408 ||   486
+       Statue Form       |       |       |       |       |       |       |       |     1 |    11 ||    12
+       Enfeeble          |       |       |       |       |       |       |       |       |     8 ||     8
+       Spellforged Servi |       |       |       |       |       |       |       |       |    70 ||    70
+Invok: Curse Item        |       |       |     3 |     5 |     5 |     4 |     1 |     3 |     3 ||    24
+       Shatter the Chain |       |       |       |     2 |     4 |     2 |     2 |     2 |     2 ||    14
+ Abil: Evoke Invisibilit |       |       |       |       |       |       |     1 |       |       ||     1
+       End Transformatio |       |       |       |       |       |       |       |     1 |     9 ||    10
+Evoke: Wand              |       |       |     2 |       |     7 |     9 |     4 |     3 |    10 ||    35
+       Condenser vane    |       |       |       |     1 |     2 |       |     3 |       |       ||     6
+       Tin of tremorston |       |       |       |     1 |     2 |       |       |       |     2 ||     5
+       Box of beasts     |       |       |       |       |     1 |     2 |     1 |       |     1 ||     5
+       Phial of floods   |       |       |       |       |       |       |     1 |     3 |     1 ||     5
+  Use: Scroll            |       |    12 |     6 |       |     1 |     6 |     4 |     2 |     6 ||    37
+       Potion            |       |     1 |     1 |     2 |     1 |     5 |     3 |     1 |    13 ||    27
+ Stab: Sleeping          |     4 |     6 |    13 |    13 |    28 |    44 |     9 |    35 |    59 ||   211
+       Distracted        |       |     1 |     2 |       |     5 |     8 |     9 |     6 |    21 ||    52
+       Invisible         |       |       |     4 |     2 |       |       |     3 |       |     7 ||    16
+       Paralysed         |       |       |     3 |       |       |     3 |       |       |       ||     6
+       Confused          |       |       |       |     2 |       |       |       |       |       ||     2
+Armor: Robe              |     8 |    14 |     6 |    32 |    29 |    69 |    17 |    20 |    28 ||   223
+       Skin              |       |       |       |     3 |       |       |       |       |     2 ||     5
+Dodge: Dodged            |    49 |    52 |    44 |   104 |   259 |   472 |   155 |   178 |   378 ||  1691
+Block: Buckler           |       |       |       |       |    39 |   115 |       |       |       ||   154
+       Kite shield       |       |       |       |       |       |    57 |   222 |   296 |   510 ||  1085
