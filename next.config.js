@@ -44,13 +44,19 @@ const securityHeaders = [
 ];
 
 const moduleExports = {
+  env: {
+    // include all non-secret config constants
+    ...EnvConfig,
+  },
+
   images: {
     domains: ['raw.githubusercontent.com'],
   },
 
-  env: {
-    // include all non-secret config constants
-    ...EnvConfig,
+  eslint: {
+    // Warning: This allows production builds to successfully complete even if
+    // your project has ESLint errors.
+    ignoreDuringBuilds: false,
   },
 
   sentry: {
@@ -77,7 +83,11 @@ const moduleExports = {
     ];
   },
 
-  webpack: (config, { isServer, buildId }) => {
+  webpack: (config) => {
+    // optional second argument with build details
+    // const { isServer, buildId } = next_options;
+    // https://nextjs.org/docs/api-reference/next.config.js/custom-webpack-config
+
     config.plugins.push(
       new webpack.DefinePlugin({
         __DEV__: JSON.stringify(EnvConfig.DEV),
