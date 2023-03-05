@@ -137,7 +137,8 @@ export async function addMorgue(args) {
     GQL_ADD_PARSE_ERROR.run({ errors });
 
     // bubble error
-    return response('error', { message: error.message, extra: error.extra, stack: error.stack });
+    const error_data = { message: error.message, extra: error.extra, stack: error.stack.split('\n') };
+    return response('error', error_data);
   }
 }
 
