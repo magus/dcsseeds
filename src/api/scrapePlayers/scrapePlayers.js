@@ -6,7 +6,6 @@ import { Stopwatch } from 'src/server/Stopwatch';
 
 import { addMorgue } from './addMorgue';
 import { fetch_morgue_list } from './fetch_morgue_list';
-import { MAX_MORGUES_PER_PLAYER, MAX_ITERATIONS_PER_REQUEST } from './constants';
 
 // DCSS score overview with player morgues
 // http://crawl.akrasiac.org/scoring/overview.html

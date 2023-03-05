@@ -44,7 +44,7 @@ export async function fetch_morgue_list(player) {
     // keep moving forward until we run out of matches
     // this will return null when we cycle at end of matches
     while (next_match()) {
-      const [, filename, timeString] = match;
+      const [, filename] = match;
       const url = `${morgue_list_url}/${filename}`;
 
       const morgue = new Morgue(url);

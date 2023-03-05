@@ -1,6 +1,5 @@
 import * as React from 'react';
-import { gql } from '@apollo/client';
-import { useApolloClient } from '@apollo/client';
+import { gql, useApolloClient } from '@apollo/client';
 
 import * as Unrands from 'src/utils/Unrands';
 
