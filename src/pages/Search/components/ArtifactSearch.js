@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled, { css } from 'styled-components';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 import * as Unrands from 'src/utils/Unrands';
 import * as Spacer from 'src/components/Spacer';
@@ -44,9 +44,7 @@ export function ArtifactSearch(props) {
 }
 
 function ArtifactResults(props) {
-  const { result_list } = props;
-
-  return props.result_list.map((result, i) => {
+  return props.result_list.map((result) => {
     const key = [result.seed, result.version].join('-');
     return (
       <motion.div
@@ -61,7 +59,6 @@ function ArtifactResults(props) {
         <ArtifactSearchResult {...result} />
       </motion.div>
     );
-    return;
   });
 }
 

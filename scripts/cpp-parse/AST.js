@@ -34,11 +34,11 @@ function buildASTTypes(object) {
 
 function validateSpec(type, spec, fields) {
   Object.keys(spec).forEach((field) => {
-    if (!fields.hasOwnProperty(field)) throw new ASTError(type, field, fields);
+    if (!Object.prototype.hasOwnProperty.call(fields, field)) throw new ASTError(type, field, fields);
   });
 
   Object.keys(fields).forEach((field) => {
-    if (!spec.hasOwnProperty(field)) throw new ASTError(type, field, fields);
+    if (!Object.prototype.hasOwnProperty.call(spec, field)) throw new ASTError(type, field, fields);
   });
 }
 

@@ -1,6 +1,4 @@
 #!/usr/bin/env node
-
-const { filter } = require('lodash');
 const { TKNS } = require('./TKNS');
 const { AST } = require('./AST');
 

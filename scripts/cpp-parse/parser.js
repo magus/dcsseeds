@@ -1,9 +1,8 @@
 #!/usr/bin/env node
-
 const { TKNS } = require('./TKNS');
 const { AST } = require('./AST');
 
-exports.parser = function parser(tokens, options) {
+exports.parser = function parser(tokens) {
   let current = 0;
 
   function peek(i = 1) {
@@ -91,7 +90,7 @@ exports.parser = function parser(tokens, options) {
 
     while (!isTokenNext(TKNS.CurlyBracketEnd)) {
       switch (peek().type) {
-        case TKNS.Identifier.type:
+        case TKNS.Identifier.type: {
           const name = next();
 
           // look ahead for assignment (default value)
@@ -104,7 +103,9 @@ exports.parser = function parser(tokens, options) {
           } else {
             node.values.push({ name });
           }
+
           break;
+        }
 
         // skip commas between elements
         case TKNS.Comma.type:
@@ -159,11 +160,12 @@ exports.parser = function parser(tokens, options) {
         case TKNS.TypeBool.type:
         case TKNS.TypeInt.type:
         case TKNS.TypeString.type:
-        case TKNS.Identifier.type:
+        case TKNS.Identifier.type: {
           const name = next();
           node.values.push(name);
 
           break;
+        }
 
         // skip semicolons between elements
         case TKNS.Semicolon.type:
@@ -225,7 +227,6 @@ exports.parser = function parser(tokens, options) {
       switch (peek().type) {
         case TKNS.CurlyBracketStart.type:
           return parseObject();
-          break;
 
         // skip new lines so we can parse objects that start on next line
         case TKNS.NewLine.type:
@@ -485,8 +486,8 @@ exports.parser = function parser(tokens, options) {
       // skip these tokens
       case TKNS.NewLine.type:
       case TKNS.Semicolon.type:
-      // EOF continue to end
       case TKNS.EOF.type:
+        // EOF continue to end
         next();
         return;
 
@@ -548,7 +549,6 @@ function function_definition(statement) {
   });
 
   let identifier_paren = -1;
-  let function_brace = -1;
   let function_defintion_end = -1;
   let paren_count = 0;
 

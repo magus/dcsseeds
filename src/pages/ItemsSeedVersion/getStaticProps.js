@@ -1,8 +1,6 @@
 import { gql } from '@apollo/client';
 
-import fetch from 'src/utils/fetch';
 import { serverQuery } from 'src/graphql/serverQuery';
-import * as Unrands from 'src/utils/Unrands';
 
 export async function getStaticProps(context) {
   // context.res.setHeader('Cache-Control', 'public, s-maxage=300, stale-while-revalidate=1800');

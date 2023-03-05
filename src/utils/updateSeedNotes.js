@@ -49,7 +49,7 @@ async function getSeedNote({ seed, version, events }) {
     if (!NOTE_EVENT_TYPES[event.type]) return;
 
     const entry = getEventEntry(event);
-    if (!!~existingSeedNoteTrimmed.indexOf(entry)) {
+    if (~existingSeedNoteTrimmed.indexOf(entry)) {
       // skip, item already accounted for
       // this will preserve rows where we add extra information, e.g. shop price, monster, etc.
     } else {

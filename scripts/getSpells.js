@@ -62,7 +62,7 @@ async function getPlayerAvailableSpells() {
   const crawlBookData = await parseFile('./crawl/crawl-ref/source/book-data.h');
   crawlBookData.traverse({
     Assignment: {
-      enter(node, parent) {
+      enter(node) {
         let isTemplatesArray = node.name.value === 'spellbook_templates[]';
         let isObject = node.value.type === CPPCompiler.AST.Object.type;
         if (isTemplatesArray && isObject) {
@@ -104,7 +104,7 @@ async function getSpellData() {
   const crawlSpellData = await parseFile('./crawl/crawl-ref/source/spl-data.h');
   crawlSpellData.traverse({
     Assignment: {
-      enter(node, parent) {
+      enter(node) {
         let isSpellDataArray = node.name.value === 'spelldata[]';
         let isObject = node.value.type === CPPCompiler.AST.Object.type;
         if (isSpellDataArray && isObject) {
@@ -144,13 +144,6 @@ async function getSpellData() {
   });
 
   return spellData;
-}
-
-async function getSpellUtils() {
-  // TODO requires updates to lexer and parser to handle more tokens
-  debugger;
-  const spellUtils = await parseFile('./crawl/crawl-ref/source/spl-util.cc');
-  console.debug({ spellUtils });
 }
 
 async function getSpellTileMap() {

@@ -1,5 +1,4 @@
 import * as React from 'react';
-import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
 import { IconMessage } from 'src/components/IconMessage';

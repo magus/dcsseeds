@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { useRouter } from 'next/router';
-import { replace } from 'lodash';
 
 export function Sync(props) {
   const router = useRouter();
@@ -12,7 +11,6 @@ export function Sync(props) {
 
 function SyncInternal(props) {
   const { action, onChange, params, router } = props;
-  const router_url = router.asPath;
 
   // track first run to ensure we do not run sync too early
   const is_init = React.useRef(false);
@@ -107,6 +105,7 @@ function normalize_query_value(args) {
       }
     }
 
+    // falls through
     case 'string':
     default:
       return query_value;

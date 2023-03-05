@@ -18,7 +18,7 @@ function process_include_tokens(options) {
   for (const filepath of Object.keys(include)) {
     const source = include[filepath];
     const unprocessed_tokens = lexer(source, { omit_EOF: true });
-    let [tokens, { defines }] = preprocessor(unprocessed_tokens, { include_tokens });
+    let [tokens] = preprocessor(unprocessed_tokens, { include_tokens });
     include_tokens[filepath] = tokens;
   }
 

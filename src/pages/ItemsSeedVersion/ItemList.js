@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
 import CopyButton from 'src/components/CopyButton';
-import { TimeAgo } from 'src/components/TimeAgo';
 import * as Spacer from 'src/components/Spacer';
 
 export function ItemList(props) {
@@ -32,14 +31,6 @@ export function ItemList(props) {
 }
 
 function ItemListRows(props) {
-  const vertical_pad = (
-    <tr>
-      <td>
-        <Spacer.Vertical size="d2" />
-      </td>
-    </tr>
-  );
-
   return props.item_list.map((item, i) => {
     let vertical_pad = null;
 
@@ -55,7 +46,7 @@ function ItemListRows(props) {
 }
 
 function Item(props) {
-  const { seed, version, morgue } = props;
+  const { morgue } = props;
 
   const morgue_link = {
     pathname: '/api/parseMorgue',
@@ -130,12 +121,6 @@ const Container = styled(motion.div)`
 
 const Level = styled.span`
   font-size: var(--font-normal);
-`;
-
-const ItemDivider = styled.div`
-  background-color: var(--divider-color);
-  height: 1px;
-  width: 100%;
 `;
 
 const Branch = styled.span`

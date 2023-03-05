@@ -152,7 +152,7 @@ process.chdir(PROJ_ROOT);
 
   art_enum.traverse({
     Enum: {
-      enter(node, parent) {
+      enter(node) {
         if (node.name.value === 'unrand_type') {
           let start = false;
           for (const enum_entry of node.values) {

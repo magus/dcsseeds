@@ -25,14 +25,14 @@ const sorted_unrand_list = Array.from(unrand_map.entries()).sort(([, a], [, b]) 
 
 const output_lines = ['', `// Generated from \`scripts/build_unrand_list ${VERSION_LIST.join(' ')}\``, ''];
 output_lines.push('export const List = [');
-for (const [key, unrand] of sorted_unrand_list) {
+for (const [, unrand] of sorted_unrand_list) {
   output_lines.push(`  ${JSON.stringify(unrand.name)},`);
 }
 output_lines.push('];');
 output_lines.push('');
 output_lines.push('// prettier-ignore');
 output_lines.push('export const Metadata = [');
-for (const [key, unrand] of sorted_unrand_list) {
+for (const [, unrand] of sorted_unrand_list) {
   output_lines.push(`  ${JSON.stringify(unrand)},`);
 }
 output_lines.push('];');

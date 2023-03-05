@@ -59,8 +59,10 @@ for (let i = 0; i < 1000; i++) {
   }
 }
 
-// doing iterations of generateSeed to ensure it runs well
-for (let i = 0; i < 100; i++) {
-  const seed = generateSeed();
-  // console.debug('generateSeed', { seed });
-}
+test('does not fail during iteration', () => {
+  // doing iterations of generateSeed to ensure it runs well
+  for (let i = 0; i < 100; i++) {
+    const seed = generateSeed();
+    expect(typeof seed).toBe('string');
+  }
+});

@@ -9,7 +9,8 @@ module.exports = function zeitSend(res, statusCode, data, { prettyPrint } = {}) 
     data = new Error('JIT ERROR');
   }
 
-  console.debug('[zeitSend]', statusCode, isError ? data : JSON.stringify({ data }));
+  const log_data = isError ? data : JSON.stringify({ data });
+  console.info('[zeitSend]', statusCode, log_data);
 
   const responseJson = {};
 

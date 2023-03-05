@@ -450,13 +450,6 @@ const ilike = (i) => `%${safe_name(Unrands.List[i])}%`;
 const result_key = (i) => `result_${i}`;
 const seed_version_key = (seed, version) => `${seed}-${version}`;
 
-function set_key(set) {
-  const set_list = Array.from(set);
-  set_list.sort();
-  const key = set_list.join('');
-  return key;
-}
-
 function active_filter_query() {
   return `
     seed

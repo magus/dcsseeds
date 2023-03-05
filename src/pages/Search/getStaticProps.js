@@ -3,7 +3,7 @@ import { gql } from '@apollo/client';
 import { serverQuery } from 'src/graphql/serverQuery';
 import * as Unrands from 'src/utils/Unrands';
 
-export async function getStaticProps(context) {
+export async function getStaticProps() {
   // context.res.setHeader('Cache-Control', 'public, s-maxage=300, stale-while-revalidate=1800');
 
   const props = await GQL_SearchStaticProps.run();
@@ -95,7 +95,7 @@ const GQL_SearchStaticProps = serverQuery(GQL_SEARCH_STATIC_PROPS, (data) => {
   };
 });
 
-// debug query easily by writing it to disk
-function debug_gql(gql_query) {
-  require('fs').writeFileSync('query.graphql', gql_query.loc.source.body);
-}
+// // debug query easily by writing it to disk
+// function debug_gql(gql_query) {
+//   require('fs').writeFileSync('query.graphql', gql_query.loc.source.body);
+// }

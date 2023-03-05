@@ -1,8 +1,6 @@
 const send = require('src/server/zeitSend');
 const { randomElement } = require('src/server/random');
 const { generateSeed } = require('src/server/seed');
-const Species = require('src/utils/Species');
-const Backgrounds = require('src/utils/Backgrounds');
 const Version = require('src/Version');
 
 // returns the random seed values for /new

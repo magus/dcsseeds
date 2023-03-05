@@ -19,8 +19,3 @@ export function compare(semver_string_a, semver_string_b) {
 
   return 0;
 }
-
-const RE = {
-  // https://regexr.com/6ebro
-  semver: /(\d+)\.(\d+)(?:\.(\d+))?/,
-};

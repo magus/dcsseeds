@@ -1,6 +1,5 @@
 import * as React from 'react';
-import { gql } from '@apollo/client';
-import { useLazyQuery } from '@apollo/client';
+import { gql, useLazyQuery } from '@apollo/client';
 import _debounce from 'lodash/debounce';
 import _uniqBy from 'lodash/uniqBy';
 

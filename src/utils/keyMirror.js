@@ -5,7 +5,7 @@ module.exports = function keyMirror(obj) {
     throw new Error('keyMirror(...): Argument must be an object.');
   }
   for (key in obj) {
-    if (obj.hasOwnProperty(key)) {
+    if (Object.prototype.hasOwnProperty.call(obj, key)) {
       ret[key] = key;
     }
   }

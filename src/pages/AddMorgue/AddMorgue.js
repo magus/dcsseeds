@@ -4,13 +4,12 @@ import Link from 'next/link';
 
 import * as Spacer from 'src/components/Spacer';
 import { Input } from 'src/components/Input';
-import { set } from 'lodash';
 
 // items            http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20230226-012223.txt
 // no items (skip)  http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20230226-011455.txt
 // error            http://crawl.akrasiac.org/rawdata/magusnn/
 
-export default function AddMorgue(props) {
+export default function AddMorgue() {
   const [state, patch_state] = React.useReducer(
     (state, action) => {
       return { ...state, ...action };

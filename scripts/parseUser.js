@@ -49,16 +49,25 @@ async function run() {
   // console.debug(allMorgueFileContent[0]);
 
   if (search === '@time') {
-    const parseMorgueResults = await parseMorgues(
+    await parseMorgues(
       { spinner, allMorgueFileContent, hrStartTime },
       async (morgue) => {
         const timeSeconds = parseMorgueFile('@time', morgue.content);
         return timeSeconds;
       },
-      ({ results, searchTime }) => {
+      ({ results }) => {
         const totalTime = results.reduce((ts, r) => r.timeSeconds + ts, 0);
         const readableTime = secondsToTimeUnits(totalTime);
-        console.info(chalk.bold(chalk.yellow(readableTime)));
+
+        console.info(chalk.bold.magenta('Total playtime'));
+        console.info(chalk.yellow(readableTime));
+        console.info();
+
+        // const searchResultMessage = `${chalk.green(searchResults.length)} result${
+        //   searchResults.length > 1 ? 's' : ''
+        // } found in ${chalk.magenta(allMorgueFileContent.length)} morgue files (${chalk.dim(
+        //   `${parseMorgueResults.searchTime}ms`,
+        // )}).`;
       },
     );
 
@@ -68,23 +77,20 @@ async function run() {
       { spinner, allMorgueFileContent, hrStartTime },
       async (morgue, cacheMorguePath) => {
         return new Promise((resolve) => {
-          const grepOutput = exec(
-            `cat "${cacheMorguePath}" | grep -B 2 -A 2 -ie "${search}"`,
-            (err, stdout, stderr) => {
-              if (err) {
-                if (err.code === 1) {
-                  // Ignore non-zero exit code
-                  // grep returns a 1 exit code when there are no matches
-                } else {
-                  console.error(err);
-                }
-                return resolve(null);
+          exec(`cat "${cacheMorguePath}" | grep -B 2 -A 2 -ie "${search}"`, (err, stdout) => {
+            if (err) {
+              if (err.code === 1) {
+                // Ignore non-zero exit code
+                // grep returns a 1 exit code when there are no matches
+              } else {
+                console.error(err);
               }
+              return resolve(null);
+            }
 
-              const grep = stdout.toString();
-              resolve({ morgue, grep });
-            },
-          );
+            const grep = stdout.toString();
+            resolve({ morgue, grep });
+          });
         });
       },
       (parseMorgueResults) => {
@@ -197,7 +203,7 @@ async function getMorgueFilenames(username) {
   const morgueFilenames = [];
 
   // /href=\"(morgue-magusnn-[0-9\-]*\.txt)\"/g
-  const regex = new RegExp(`href=\"(morgue-${username}-[0-9\-]*\.txt)\"`, 'g');
+  const regex = new RegExp(`href="(morgue-${username}-[0-9-]*.txt)"`, 'g');
 
   let match = regex.exec(respText);
 
@@ -226,7 +232,6 @@ const hrTimeUnit = (hrTime, unit) => {
 };
 
 const toNumber = (value) => parseInt(value, 10);
-const zeroPad = (value) => (value < 10 ? `0${value}` : value);
 
 function secondsToTimeUnits(seconds) {
   const hourSeconds = 60 * 60;
@@ -237,8 +242,6 @@ function secondsToTimeUnits(seconds) {
   // therefor seconds leftover for minutes / minuteSeconds = minutes
   const minutes = Math.floor((seconds % hourSeconds) / minuteSeconds);
   const remainderSeconds = (seconds % hourSeconds) % minuteSeconds;
-
-  const totalHours = Math.floor(seconds / hourSeconds);
 
   const units = [];
 

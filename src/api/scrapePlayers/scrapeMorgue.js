@@ -1,6 +1,5 @@
 import { gql } from '@apollo/client';
 
-import { parseMorgue } from 'src/utils/parseMorgue';
 import send from 'src/server/zeitSend';
 import { serverQuery } from 'src/graphql/serverQuery';
 import { Stopwatch } from 'src/server/Stopwatch';
@@ -9,10 +8,6 @@ import { Morgue } from 'src/server/Morgue';
 import { SERVER_CONFIG } from './ServerConfig';
 import { addMorgue } from './addMorgue';
 
-const { HASURA_ADMIN_SECRET, GRAPHQL_ENDPOINT } = process.env;
-
-if (!HASURA_ADMIN_SECRET) throw new Error('HASURA_ADMIN_SECRET is required!');
-
 // force scrape a morgue file, storing results in scrapePlayers_item
 // http://localhost:3000/api/scrapeMorgue?morgue=http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20230114-084156.txt
 
@@ -20,7 +15,7 @@ if (!HASURA_ADMIN_SECRET) throw new Error('HASURA_ADMIN_SECRET is required!');
 // no items (skip)  http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20230226-011455.txt
 // error            http://crawl.akrasiac.org/rawdata/magusnn/
 
-module.exports = async function handler(req, res) {
+export default async function handler(req, res) {
   const stopwatch = new Stopwatch();
 
   const morgue_url = req.query.morgue;
@@ -70,7 +65,7 @@ module.exports = async function handler(req, res) {
       GQL_TrackError.run({ error_message, morgue_url });
     }
   }
-};
+}
 
 const GQL_ClearMorgueItems = serverQuery(
   gql`

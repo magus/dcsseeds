@@ -16,12 +16,21 @@ module.exports = {
       },
     },
   },
+
+  ignorePatterns: ['crawl/*'],
+
+  globals: {
+    '__DEV__': 'readonly',
+  },
+
   rules: {
     // e.g. allow console
-    'no-console': ['warn', { 'allow': ['warn', 'error'] }],
+    'no-console': ['warn', { 'allow': ['info', 'warn', 'error'] }],
 
     // this is really useless in ecma2020
     // https://github.com/eslint/eslint/issues/15576
     'no-inner-declarations': 'off',
+
+    'jest/valid-title': 'off',
   },
 };

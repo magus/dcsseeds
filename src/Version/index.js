@@ -94,11 +94,11 @@ module.exports = {
   get_metadata,
   Enum: Version,
   Recommended,
-  getSpecies: ({ version, background }, options) => getType('Species', version, background, options),
-  getBackgrounds: ({ version, species }, options) => getType('Backgrounds', version, species, options),
+  getSpecies: ({ version, background }) => getType('Species', version, background),
+  getBackgrounds: ({ version, species }) => getType('Backgrounds', version, species),
 };
 
-function getType(type, version, other, options = {}) {
+function getType(type, version, other) {
   const speciesBackgrounds = SpeciesBackgrounds[type];
   if (!speciesBackgrounds) throw new Error(`SpeciesBackgrounds missing type [${type}]`);
 

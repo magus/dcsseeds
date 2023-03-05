@@ -25,7 +25,7 @@ export default async function handler(req, res) {
 
     const GQL_UnrandQueryResults = serverQuery(gql`
       query UnrandQueryRange {
-        ${stale_unrand_list.map((unrand, i) => SeedVersionFilter(unrand))}
+        ${stale_unrand_list.map((unrand) => SeedVersionFilter(unrand))}
       }
 
       fragment UnrandResult on dcsseeds_scrapePlayers_item {

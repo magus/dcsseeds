@@ -1,4 +1,3 @@
-import styled from 'styled-components';
 import ErrorPage from 'src/components/ErrorPage';
 
 export default function NotFound() {

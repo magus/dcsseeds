@@ -1,6 +1,5 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import Link from 'next/link';
 
 import * as ScrapePlayers from 'src/graphql/scrapePlayers';
 import * as Spacer from 'src/components/Spacer';

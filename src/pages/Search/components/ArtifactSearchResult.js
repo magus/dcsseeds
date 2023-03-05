@@ -6,18 +6,9 @@ import { motion } from 'framer-motion';
 
 import * as Unrands from 'src/utils/Unrands';
 import CopyButton from 'src/components/CopyButton';
-import { TimeAgo } from 'src/components/TimeAgo';
 import * as Spacer from 'src/components/Spacer';
 
 function ItemListRows(props) {
-  const vertical_pad = (
-    <tr>
-      <td>
-        <Spacer.Vertical size="d2" />
-      </td>
-    </tr>
-  );
-
   return props.item_list.map((item, i) => {
     let vertical_pad = null;
 

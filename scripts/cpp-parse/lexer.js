@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-
 const { TKNS } = require('./TKNS');
 
 exports.lexer = function lexer(code, options = {}) {
@@ -94,6 +93,7 @@ exports.lexer = function lexer(code, options = {}) {
             switch (peek()) {
               case TKNS.NewLine.value:
                 handleNewLine();
+              // falls through
               default:
                 currentToken().value += next();
             }
@@ -279,8 +279,3 @@ const KYWRDS = [
   TKNS.PreprocessIfNotStart,
   TKNS.PreprocessIfEnd,
 ];
-
-async function readFile(filename) {
-  let buffer = await fs.readFile(filename, { encoding: 'utf8', flag: 'r' });
-  return buffer.toString();
-}

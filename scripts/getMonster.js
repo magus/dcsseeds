@@ -203,12 +203,12 @@ async function getMonsterData() {
   const monData = await parseFile('./crawl/crawl-ref/source/mon-data.h');
   monData.traverse({
     Assignment: {
-      enter(node, parent) {
+      enter(node) {
         let isTemplatesArray = node.name.value === 'mondata[]';
         let isObject = node.value.type === CPPCompiler.AST.Object.type;
         if (isTemplatesArray && isObject) {
           // each field of this array is a `monsterentry` struct
-          node.value.fields.forEach((monsterentry, i) => {
+          node.value.fields.forEach((monsterentry) => {
             const entry = {};
 
             // parse each field of this `monsterentry` struct
@@ -329,9 +329,11 @@ function expression(type, token) {
     case 'identifier':
     case 'string':
     case 'number':
-    case 'boolean':
+    case 'boolean': {
       const [firstParam] = token.params;
       return firstParam.value;
+    }
+
     case 'attacks':
       return token.fields.map((attack) => {
         const [typeToken, flavorToken, damageToken] = attack.fields;
@@ -351,9 +353,11 @@ function expression(type, token) {
         throw new Error(`Unhandled energy usage [${JSON.stringify(token, null, 2)}]`);
       }
 
-    case 'tile':
+    case 'tile': {
       const [tileToken] = token.fields;
       return expression('identifier', tileToken);
+    }
+
     default:
       throw new Error(`Unexpected expression type [${type}] = [${JSON.stringify(token, null, 2)}]`);
   }

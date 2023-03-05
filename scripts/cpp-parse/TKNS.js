@@ -5,7 +5,7 @@ exports.TKNS = buildTokenKinds({
   Whitespace: { value: null },
   Comment: { value: null },
   String: { value: null },
-  Number: { value: null, re: /[0-9\.\-]/ },
+  Number: { value: null, re: /[0-9.-]/ },
 
   // keywords
   If: { value: 'if' },

@@ -1,4 +1,4 @@
-import { uniqBy, set } from 'lodash';
+import { uniqBy } from 'lodash';
 
 import keyMirror from 'src/utils/keyMirror';
 import { toNumber } from 'src/utils/toNumber';
@@ -14,7 +14,7 @@ export async function parseMorgue(morgue) {
   const morgueText = await response.text();
 
   // https://regexr.com/5ed8a
-  const [, name] = await runRegex('name', morgue, /\/([^\/]+)\/+([^\/]+)\.txt(?:\.gz)?$/);
+  const [, name] = await runRegex('name', morgue, /\/([^/]+)\/+([^/]+)\.txt(?:\.gz)?$/);
 
   const morgueParsed = await parseMorgueText({ name, morgue, morgueText });
 
@@ -86,7 +86,7 @@ export const MORGUE_REGEX = {
         MORGUE_FIELD.Filename,
         morgue,
         // regex
-        new RegExp(`morgue-${name}-(\\d{8}-\\d{6})\.txt`),
+        new RegExp(`morgue-${name}-(\\d{8}-\\d{6}).txt`),
       );
 
       if (match) {
@@ -134,12 +134,7 @@ export const MORGUE_REGEX = {
   // https://regexr.com/6ebpa
   [MORGUE_FIELD.Trunk]: async ({ morgueText }) => {
     try {
-      const [, fullVersion, version] = await runRegex(
-        MORGUE_FIELD.Trunk,
-        morgueText,
-        /version ((\d+\.\d+\.\d+).*?)\s.*?character file./,
-      );
-
+      await runRegex(MORGUE_FIELD.Trunk, morgueText, /version ((\d+\.\d+\.\d+).*?)\s.*?character file./);
       return { isTrunk: false };
     } catch (err) {
       // unable to parse version because version is a trunk version
@@ -214,10 +209,10 @@ export const MORGUE_REGEX = {
 
   [MORGUE_FIELD.Runes]: async ({ morgueText }) => {
     try {
-      const [match, runeCountString, runeTotalString, runesString] = await runRegex(
+      const [, runeCountString, , runesString] = await runRegex(
         MORGUE_FIELD.Runes,
         morgueText,
-        /}: (\d+)\/(\d+) runes: ([a-z\, \n]+)a:/,
+        /}: (\d+)\/(\d+) runes: ([a-z, \n]+)a:/,
       );
 
       const runes = runesString.split(',').map((rune) => rune.trim());
@@ -478,7 +473,7 @@ function getAllMorgueNoteEvents(morgueNotes) {
       // Lost mutation: You have hidden genetic potential. [a cacodemon]
       // Lost mutation: You have an increased reservoir of magic. (+10% MP) [a cacodemon]
       const mutation = morgueNote.note.match(
-        /(?<kind>Gained|Lost) mutation: (?<desc>[^\(^\[]*?) (?:\((?<stat>.*?)\) )?\[(?<source>.*?)\]/,
+        /(?<kind>Gained|Lost) mutation: (?<desc>[^(^[]*?) (?:\((?<stat>.*?)\) )?\[(?<source>.*?)\]/,
       );
 
       if (noticed) {
@@ -499,14 +494,12 @@ function getAllMorgueNoteEvents(morgueNotes) {
         const [, god] = runRegex('god', leaveGod.groups.god, Gods.Regex);
         addEvent('leave-god', morgueNote.loc, { god });
       } else if (pietyLevel) {
-        const [, god] = runRegex('god', pietyLevel.groups.god, Gods.Regex);
         addEvent('piety-god', morgueNote.loc, { ...pietyLevel.groups });
       } else if (identGift) {
         const { item } = identGift.groups;
         const [, god] = runRegex('god', identGift.groups.god, Gods.Regex);
         addEvent('god-gift', morgueNote.loc, { item, god });
       } else if (spellGift) {
-        const [, god] = runRegex('god', spellGift.groups.god, Gods.Regex);
         addEvent('god-gift', morgueNote.loc, { ...spellGift.groups });
       } else if (experienceLevel) {
         const [, level, hp, mp] = experienceLevel;
@@ -535,7 +528,7 @@ function getAllMorgueNoteEvents(morgueNotes) {
         // https://regexr.com/5p55t
         const [, spellList] = spells;
         const [, commaSpells, lastSpell] = spellList.match(/(?:(.*) and )?(.*?)$/);
-        commaSpells.split(', ').forEach((spell, i) => {
+        commaSpells.split(', ').forEach((spell) => {
           addEvent('spell', morgueNote.loc, { spell });
         });
         addEvent('spell', morgueNote.loc, { spell: lastSpell });
@@ -629,7 +622,7 @@ function getAllMorgueNoteEvents(morgueNotes) {
         addEvent('ident-bought-loc', `${loc}:${level}`, { item, gold });
         addEvent('item', `${loc}:${level}`, { item, gold });
       } else if (identIgnore) {
-        const [, item] = identIgnore;
+        // const [, item] = identIgnore;
         // console.warn('ident-ignore', morgueNote.loc, { item });
       } else if (ident) {
         const [, item] = ident;

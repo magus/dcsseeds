@@ -8,7 +8,7 @@ function InputInternal(props, ref) {
 
   const local_input_ref = React.useRef();
   const input_ref = ref || local_input_ref;
-  const [local_value, set_local_value] = React.useState('');
+  const [, set_local_value] = React.useState('');
 
   function handle_key_down(event) {
     const key = event.key;

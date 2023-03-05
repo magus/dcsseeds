@@ -92,7 +92,7 @@ function ServerConfig(server) {
   }
 
   function morgueRegex(player_name) {
-    return new RegExp(`href=(?:\"|\').*?(morgue-${player_name}-([0-9\-]*?)\.txt(?:\.gz)?)(?:\"|\')`, 'g');
+    return new RegExp(`href=(?:"|').*?(morgue-${player_name}-([0-9-]*?).txt(?:.gz)?)(?:"|')`, 'g');
   }
 
   return {

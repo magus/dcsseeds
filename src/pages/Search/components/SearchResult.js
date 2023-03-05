@@ -150,10 +150,6 @@ const Match = styled.span`
   background-color: var(--orange-color-light);
 `;
 
-const Json = styled.div`
-  white-space: pre-wrap;
-`;
-
 const BottomRow = styled.div`
   display: flex;
   flex-direction: row;
