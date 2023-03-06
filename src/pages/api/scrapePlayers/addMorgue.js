@@ -41,14 +41,19 @@ export async function addMorgue(args) {
       return skip(`bcrawl runs not allowed`);
     }
 
-    // skip if trunk
-    if (data.isTrunk) {
-      return skip(`trunk seeds not allowed [${fullVersion}]`);
+    // skip if bloatcrawl
+    if (data.isBloatcrawl) {
+      return skip(`bloatcrawl runs not allowed`);
     }
 
     // skip if sprint
     if (data.isSprint) {
       return skip(`sprint runs not allowed`);
+    }
+
+    // skip if trunk
+    if (data.isTrunk) {
+      return skip(`trunk seeds not allowed [${fullVersion}]`);
     }
 
     // skip if below minimum allowed version
