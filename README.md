@@ -1,3 +1,4 @@
+[![Test](https://github.com/magus/dcsseeds/actions/workflows/test.yml/badge.svg)](https://github.com/magus/dcsseeds/actions/workflows/test.yml)
 
 # dcss-seeds
 track random seeds in dcss
