@@ -1,5 +1,9 @@
 const webpack = require('webpack');
 
+if (!process.env.HASURA_ADMIN_SECRET) {
+  throw new Error('Missing environment variable, did you set up an .env file?');
+}
+
 // https://nextjs.org/docs/api-reference/next.config.js/introduction
 // https://docs.sentry.io/platforms/javascript/guides/nextjs/
 const { withSentryConfig } = require('@sentry/nextjs');
