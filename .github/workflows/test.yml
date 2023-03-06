@@ -9,6 +9,11 @@ on:
   # allow manual trigger via github workflow ui
   workflow_dispatch:
 
+env:
+  HASURA_ADMIN_SECRET: ${{ secrets.HASURA_ADMIN_SECRET }}
+  GRAPHQL_ENDPOINT: ${{ env.GRAPHQL_ENDPOINT }}
+  SQL_ENDPOINT: ${{ env.SQL_ENDPOINT }}
+
 jobs:
   test:
     name: Test
