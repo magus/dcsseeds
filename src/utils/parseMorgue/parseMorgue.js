@@ -30,9 +30,9 @@ async function parseMorgueText({ name, morgue, morgueText }) {
   const args = { name, morgue, morgueText };
 
   return {
-    ...(await MORGUE_REGEX[MORGUE_FIELD.God](args)),
-    ...(await MORGUE_REGEX[MORGUE_FIELD.Filename](args)),
     ...(await MORGUE_REGEX[MORGUE_FIELD.Version](args)),
+    ...(await MORGUE_REGEX[MORGUE_FIELD.Filename](args)),
+    ...(await MORGUE_REGEX[MORGUE_FIELD.God](args)),
     ...(await MORGUE_REGEX[MORGUE_FIELD.Trunk](args)),
     ...(await MORGUE_REGEX[MORGUE_FIELD.Sprint](args)),
     ...(await MORGUE_REGEX[MORGUE_FIELD.Bloatcrawl](args)),
@@ -78,6 +78,21 @@ export const MORGUE_REGEX = {
     return { god };
   },
 
+  // https://regexr.com/6ebp7
+  [MORGUE_FIELD.Version]: async ({ morgueText }) => {
+    try {
+      const [, fullVersion, bcrawl, version] = await runRegex(
+        MORGUE_FIELD.Version,
+        morgueText,
+        /version ((bcrawl-)?(\d+(?:\.\d+)+).*?)\s.*?character file./,
+      );
+
+      return { fullVersion, version, is_bcrawl: Boolean(bcrawl) };
+    } catch (error) {
+      throw new Error('invalid morgue text when parsing version');
+    }
+  },
+
   [MORGUE_FIELD.Filename]: async function ({ name, morgue }) {
     let datetime = null;
     let isMorgue = false;
@@ -105,17 +120,6 @@ export const MORGUE_REGEX = {
     }
 
     return { isMorgue, datetime };
-  },
-
-  // https://regexr.com/6ebp7
-  [MORGUE_FIELD.Version]: async ({ morgueText }) => {
-    const [, fullVersion, bcrawl, version] = await runRegex(
-      MORGUE_FIELD.Version,
-      morgueText,
-      /version ((bcrawl-)?(\d+(?:\.\d+)+).*?)\s.*?character file./,
-    );
-
-    return { fullVersion, version, is_bcrawl: Boolean(bcrawl) };
   },
 
   // https://regexr.com/6ebqt
