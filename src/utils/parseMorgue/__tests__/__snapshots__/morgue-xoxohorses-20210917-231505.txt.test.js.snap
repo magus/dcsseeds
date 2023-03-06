@@ -3534,6 +3534,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
   ],
   "fullVersion": "0.27.1-1-g398f816",
   "god": "Gozag",
+  "isBloatcrawl": false,
   "isMorgue": true,
   "isSprint": false,
   "isTrunk": false,

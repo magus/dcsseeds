@@ -2091,6 +2091,7 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
   ],
   "fullVersion": "0.29.1-2-gbd0b4ee654",
   "god": "Ashenzari",
+  "isBloatcrawl": false,
   "isMorgue": true,
   "isSprint": false,
   "isTrunk": false,
