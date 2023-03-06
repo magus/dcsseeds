@@ -4,8 +4,21 @@
 name: Test
 
 on:
+
   push:
+    # push to master directly
+    branches:
+      - master
+    paths-ignore:
+      - README.md
+      - CHANGELOG.md
+      - docs/**
+
   pull_request:
+    # pull request against master
+    branches:
+      - master
+
   # manual trigger via github workflow ui
   workflow_dispatch:
 
@@ -37,3 +50,9 @@ jobs:
         cache: 'yarn'
     - run: yarn install --immutable
     - run: yarn test
+      env:
+        HASURA_ADMIN_SECRET: '${{ secrets.HASURA_ADMIN_SECRET }}'
+        GRAPHQL_ENDPOINT: '${{ vars.GRAPHQL_ENDPOINT }}'
+        SQL_ENDPOINT: '${{ vars.SQL_ENDPOINT }}'
+
+
