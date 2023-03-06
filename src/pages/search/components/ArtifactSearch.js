@@ -159,7 +159,7 @@ function ArtifactFilters(props) {
 
       <Filters>
         {props.filter_set.size === 0 ? null : (
-          <ButtonGroup
+          <ClearButton
             key="clear"
             layout="position"
             initial={{ opacity: 0 }}
@@ -168,7 +168,7 @@ function ArtifactFilters(props) {
             transition={spring_config}
           >
             <Button onClick={props.reset}>❌ Clear</Button>
-          </ButtonGroup>
+          </ClearButton>
         )}
 
         {button_list}
@@ -267,6 +267,11 @@ const Button = styled.button`
         return '';
     }
   }}
+`;
+
+const ClearButton = styled(ButtonGroup)`
+  flex: initial;
+  width: var(--spacer-14);
 `;
 
 const spring_config = {
