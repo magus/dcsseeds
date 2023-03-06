@@ -277,5 +277,6 @@ const ClearButton = styled(ButtonGroup)`
 const spring_config = {
   type: 'spring',
   mass: 0.25,
-  stiffness: 150,
+  stiffness: 290,
+  damping: 25,
 };
