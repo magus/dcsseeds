@@ -1,0 +1,39 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+
+name: Test
+
+on:
+  push:
+  pull_request:
+  # manual trigger via github workflow ui
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        submodules: true
+        # fetch-depth: 0
+        token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Sync crawl submodule
+      run: |
+        cd crawl
+        ls -lsah
+        git fetch --tags
+        git log --since="2021-08-01" --tags --decorate --simplify-by-decoration --oneline
+        cd ..
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'yarn'
+    - run: yarn install --immutable
+    - run: yarn test
