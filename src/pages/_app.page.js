@@ -63,6 +63,14 @@ const GlobalStyle = createGlobalStyle`
     --spacer-6: calc(var(--spacer) * 6);
     --spacer-7: calc(var(--spacer) * 7);
     --spacer-8: calc(var(--spacer) * 8);
+    --spacer-9: calc(var(--spacer) * 9);
+    --spacer-10: calc(var(--spacer) * 10);
+    --spacer-11: calc(var(--spacer) * 11);
+    --spacer-12: calc(var(--spacer) * 12);
+    --spacer-13: calc(var(--spacer) * 13);
+    --spacer-14: calc(var(--spacer) * 14);
+    --spacer-15: calc(var(--spacer) * 15);
+
 
     --font-tiny: 12px;
     --font-small: 14px;
