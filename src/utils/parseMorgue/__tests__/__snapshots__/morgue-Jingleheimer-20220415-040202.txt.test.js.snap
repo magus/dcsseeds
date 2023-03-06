@@ -2329,6 +2329,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
   ],
   "fullVersion": "0.28.0-45-g0d030f2227",
   "god": "Gozag",
+  "isBloatcrawl": false,
   "isMorgue": true,
   "isSprint": false,
   "isTrunk": false,

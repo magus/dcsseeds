@@ -1,0 +1,1982 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-20230301-012532.txt.gz 1`] = `
+{
+  "background": null,
+  "datetime": 2023-03-01T01:25:32.000Z,
+  "eventCount": 202,
+  "eventErrors": [],
+  "events": [
+    {
+      "branch": "Dungeon",
+      "data": "TsoeiynMaft the Robot Fighter began the quest for the Orb.",
+      "level": "1",
+      "location": "Dungeon:1",
+      "type": "first-event",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "hp": "18",
+        "level": "1",
+        "mp": "0",
+      },
+      "level": "1",
+      "location": "Dungeon:1",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "hp": "24",
+        "level": "2",
+        "mp": "1",
+      },
+      "level": "1",
+      "location": "Dungeon:1",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "hp": "29",
+        "level": "3",
+        "mp": "2",
+      },
+      "level": "1",
+      "location": "Dungeon:1",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Sigmund",
+      },
+      "level": "2",
+      "location": "Dungeon:2",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "hp": "35",
+        "level": "4",
+        "mp": "3",
+      },
+      "level": "1",
+      "location": "Dungeon:1",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "1",
+        "skill": "Dodging",
+      },
+      "level": "2",
+      "location": "Dungeon:2",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "desc": "You can shoot a disintegration laser from your mouth.",
+        "kind": "Gained",
+        "source": "Robot growth",
+        "stat": undefined,
+      },
+      "level": "3",
+      "location": "Dungeon:3",
+      "type": "mutation",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "hp": "41",
+        "level": "5",
+        "mp": "4",
+      },
+      "level": "3",
+      "location": "Dungeon:3",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "1",
+        "skill": "Stealth",
+      },
+      "level": "3",
+      "location": "Dungeon:3",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "hp": "48",
+        "level": "6",
+        "mp": "5",
+      },
+      "level": "4",
+      "location": "Dungeon:4",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "item": "cursed +13 scythe of Curses {drain, *Curse}",
+      },
+      "level": "4",
+      "location": "Dungeon:4",
+      "type": "found",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "item": "cursed +13 scythe of Curses {drain, *Curse}",
+      },
+      "level": "4",
+      "location": "Dungeon:4",
+      "type": "item",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "hp": "54",
+        "level": "7",
+        "mp": "6",
+      },
+      "level": "4",
+      "location": "Dungeon:4",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "hp": "61",
+        "level": "8",
+        "mp": "7",
+      },
+      "level": "4",
+      "location": "Dungeon:4",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "5",
+        "skill": "Fighting",
+      },
+      "level": "5",
+      "location": "Dungeon:5",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "5",
+        "skill": "Shields",
+      },
+      "level": "5",
+      "location": "Dungeon:5",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "5",
+        "skill": "Armour",
+      },
+      "level": "5",
+      "location": "Dungeon:5",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Temple",
+      "data": {
+        "god": "Gozag",
+      },
+      "level": undefined,
+      "location": "Temple",
+      "type": "join-god",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "hp": "68",
+        "level": "9",
+        "mp": "8",
+      },
+      "level": "5",
+      "location": "Dungeon:5",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "5",
+        "skill": "Long Blades",
+      },
+      "level": "6",
+      "location": "Dungeon:6",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "5",
+        "skill": "Dodging",
+      },
+      "level": "7",
+      "location": "Dungeon:7",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "hp": "76",
+        "level": "10",
+        "mp": "9",
+      },
+      "level": "7",
+      "location": "Dungeon:7",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Erica",
+      },
+      "level": "9",
+      "location": "Dungeon:9",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Erica",
+      },
+      "level": "9",
+      "location": "Dungeon:9",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Gastronok",
+      },
+      "level": "9",
+      "location": "Dungeon:9",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "hp": "84",
+        "level": "11",
+        "mp": "10",
+      },
+      "level": "10",
+      "location": "Dungeon:10",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "1",
+        "skill": "Throwing",
+      },
+      "level": "10",
+      "location": "Dungeon:10",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "item": "+8 rapier of Moral Flaws {venom, rC++}",
+      },
+      "level": "10",
+      "location": "Dungeon:10",
+      "type": "ident-loc",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "item": "+8 rapier of Moral Flaws {venom, rC++}",
+      },
+      "level": "10",
+      "location": "Dungeon:10",
+      "type": "item",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "item": "+10 plate armour of Inaction {rCorr Slay+3}",
+      },
+      "level": "10",
+      "location": "Dungeon:10",
+      "type": "ident",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "item": "+10 plate armour of Inaction {rCorr Slay+3}",
+      },
+      "level": "10",
+      "location": "Dungeon:10",
+      "type": "item",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "5",
+        "skill": "Stealth",
+      },
+      "level": "10",
+      "location": "Dungeon:10",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "gold": "225",
+        "item": "runed helmet",
+      },
+      "level": "10",
+      "location": "Dungeon:10",
+      "type": "bought",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "gold": "285",
+        "item": "twisted cloak",
+      },
+      "level": "10",
+      "location": "Dungeon:10",
+      "type": "bought",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "gold": "285",
+        "item": "+0 cloak of Lust {*Slow rC++}",
+      },
+      "level": "10",
+      "location": "Dungeon:10",
+      "type": "ident-bought-loc",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "gold": "285",
+        "item": "+0 cloak of Lust {*Slow rC++}",
+      },
+      "level": "10",
+      "location": "Dungeon:10",
+      "type": "item",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Gastronok",
+      },
+      "level": "9",
+      "location": "Dungeon:9",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "hp": "93",
+        "level": "12",
+        "mp": "11",
+      },
+      "level": "8",
+      "location": "Dungeon:8",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "who": "Grum",
+      },
+      "level": "1",
+      "location": "Lair:1",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "who": "Grum",
+      },
+      "level": "1",
+      "location": "Lair:1",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "who": "Urug",
+      },
+      "level": "2",
+      "location": "Lair:2",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "who": "Urug",
+      },
+      "level": "2",
+      "location": "Lair:2",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "hp": "101",
+        "level": "13",
+        "mp": "12",
+      },
+      "level": "3",
+      "location": "Lair:3",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "level": "1",
+        "skill": "Evocations",
+      },
+      "level": "4",
+      "location": "Lair:4",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "level": "2",
+        "skill": "Evocations",
+      },
+      "level": "4",
+      "location": "Lair:4",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "level": "3",
+        "skill": "Evocations",
+      },
+      "level": "5",
+      "location": "Lair:5",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "level": "10",
+        "skill": "Fighting",
+      },
+      "level": "5",
+      "location": "Lair:5",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "hp": "110",
+        "level": "14",
+        "mp": "15",
+      },
+      "level": "6",
+      "location": "Lair:6",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "level": "10",
+        "skill": "Armour",
+      },
+      "level": "6",
+      "location": "Lair:6",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "level": "10",
+        "skill": "Shields",
+      },
+      "level": "6",
+      "location": "Lair:6",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "level": "4",
+        "skill": "Evocations",
+      },
+      "level": "6",
+      "location": "Lair:6",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "level": "10",
+        "skill": "Long Blades",
+      },
+      "level": "6",
+      "location": "Lair:6",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "level": "5",
+        "skill": "Throwing",
+      },
+      "level": "6",
+      "location": "Lair:6",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "level": "10",
+        "skill": "Dodging",
+      },
+      "level": "6",
+      "location": "Lair:6",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "level": "5",
+        "skill": "Evocations",
+      },
+      "level": "6",
+      "location": "Lair:6",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "hp": "117",
+        "level": "15",
+        "mp": "18",
+      },
+      "level": "6",
+      "location": "Lair:6",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "level": "6",
+        "skill": "Evocations",
+      },
+      "level": "5",
+      "location": "Lair:5",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Sigmund",
+      },
+      "level": "2",
+      "location": "Dungeon:2",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "level": "7",
+        "skill": "Evocations",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "gold": "56",
+        "item": "scroll of fear",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "bought",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "gold": "368",
+        "item": "wand of disintegration (19)",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "bought",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "gold": "336",
+        "item": "wand of disintegration (17)",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "bought",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "hp": "126",
+        "level": "16",
+        "mp": "20",
+      },
+      "level": "11",
+      "location": "Dungeon:11",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Nergalle",
+      },
+      "level": "12",
+      "location": "Dungeon:12",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Nergalle",
+      },
+      "level": "12",
+      "location": "Dungeon:12",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "8",
+        "skill": "Evocations",
+      },
+      "level": "12",
+      "location": "Dungeon:12",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "item": "Wizejaat's Catalogue of Supportive Orientation",
+      },
+      "level": "13",
+      "location": "Dungeon:13",
+      "type": "ident",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "item": "Wizejaat's Catalogue of Supportive Orientation",
+      },
+      "level": "13",
+      "location": "Dungeon:13",
+      "type": "item",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "9",
+        "skill": "Evocations",
+      },
+      "level": "14",
+      "location": "Dungeon:14",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "branch": "Vaults",
+      },
+      "level": "14",
+      "location": "Dungeon:14",
+      "type": "portal",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "hp": "133",
+        "level": "17",
+        "mp": "22",
+      },
+      "level": "14",
+      "location": "Dungeon:14",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Kirke",
+      },
+      "level": "15",
+      "location": "Dungeon:15",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Kirke",
+      },
+      "level": "15",
+      "location": "Dungeon:15",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "gold": "105",
+        "item": "scroll of enchant armour",
+      },
+      "level": "1",
+      "location": "Lair:1",
+      "type": "bought",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "gold": "28",
+        "item": "scroll of fog",
+      },
+      "level": "1",
+      "location": "Lair:1",
+      "type": "bought",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "gold": "728",
+        "item": "scroll of acquirement",
+      },
+      "level": "1",
+      "location": "Lair:1",
+      "type": "bought",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "item": "+2 cloak of Muttered Phrases {-Cast rElec rF+} (You acquired it on level 1 of the Lair of Beasts)",
+      },
+      "level": "1",
+      "location": "Lair:1",
+      "type": "ident",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "item": "+2 cloak of Muttered Phrases {-Cast rElec rF+} (You acquired it on level 1 of the Lair of Beasts)",
+      },
+      "level": "1",
+      "location": "Lair:1",
+      "type": "item",
+    },
+    {
+      "branch": "Snake",
+      "data": {
+        "level": "10",
+        "skill": "Evocations",
+      },
+      "level": "2",
+      "location": "Snake:2",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Snake",
+      "data": {
+        "who": "Roxanne",
+      },
+      "level": "2",
+      "location": "Snake:2",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Snake",
+      "data": {
+        "who": "Azrael",
+      },
+      "level": "3",
+      "location": "Snake:3",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Snake",
+      "data": {
+        "who": "Azrael",
+      },
+      "level": "3",
+      "location": "Snake:3",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Snake",
+      "data": {
+        "hp": "142",
+        "level": "18",
+        "mp": "24",
+      },
+      "level": "3",
+      "location": "Snake:3",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Snake",
+      "data": {
+        "who": "Mara",
+      },
+      "level": "4",
+      "location": "Snake:4",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Shoals",
+      "data": {
+        "level": "11",
+        "skill": "Evocations",
+      },
+      "level": "2",
+      "location": "Shoals:2",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Shoals",
+      "data": {
+        "hp": "149",
+        "level": "19",
+        "mp": "26",
+      },
+      "level": "4",
+      "location": "Shoals:4",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "item": "+1 pair of boots of running",
+      },
+      "level": "1",
+      "location": "Vaults:1",
+      "type": "ident-loc",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "item": "+1 pair of boots of running",
+      },
+      "level": "1",
+      "location": "Vaults:1",
+      "type": "item",
+    },
+    {
+      "branch": "WizLab",
+      "data": {
+        "level": "12",
+        "skill": "Evocations",
+      },
+      "level": undefined,
+      "location": "WizLab",
+      "type": "skill-level",
+    },
+    {
+      "branch": "WizLab",
+      "data": {
+        "item": "Sif Muna's Reference Book on the Entourage",
+      },
+      "level": undefined,
+      "location": "WizLab",
+      "type": "ident",
+    },
+    {
+      "branch": "WizLab",
+      "data": {
+        "item": "Sif Muna's Reference Book on the Entourage",
+      },
+      "level": undefined,
+      "location": "WizLab",
+      "type": "item",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "level": "10",
+        "skill": "Stealth",
+      },
+      "level": "1",
+      "location": "Vaults:1",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "hp": "158",
+        "level": "20",
+        "mp": "28",
+      },
+      "level": "1",
+      "location": "Vaults:1",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "level": "13",
+        "skill": "Evocations",
+      },
+      "level": "3",
+      "location": "Vaults:3",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "item": "+1 scale mail of the Hundredfold Ghosts {rPois}",
+      },
+      "level": "3",
+      "location": "Vaults:3",
+      "type": "ident-loc",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "item": "+1 scale mail of the Hundredfold Ghosts {rPois}",
+      },
+      "level": "3",
+      "location": "Vaults:3",
+      "type": "item",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "hp": "165",
+        "level": "21",
+        "mp": "29",
+      },
+      "level": "3",
+      "location": "Vaults:3",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "who": "Mennas",
+      },
+      "level": "3",
+      "location": "Vaults:3",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "who": "Mennas",
+      },
+      "level": "3",
+      "location": "Vaults:3",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "gold": "560",
+        "item": "phial of floods",
+      },
+      "level": "4",
+      "location": "Vaults:4",
+      "type": "bought",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "gold": "42",
+        "item": "scroll of identify",
+      },
+      "level": "1",
+      "location": "Lair:1",
+      "type": "bought",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "gold": "220",
+        "item": "3 scrolls of fear",
+      },
+      "level": "1",
+      "location": "Lair:1",
+      "type": "bought",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "gold": "42",
+        "item": "scroll of identify",
+      },
+      "level": "1",
+      "location": "Lair:1",
+      "type": "bought",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "gold": "420",
+        "item": "box of beasts",
+      },
+      "level": "4",
+      "location": "Vaults:4",
+      "type": "bought",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "hp": "173",
+        "level": "22",
+        "mp": "31",
+      },
+      "level": "4",
+      "location": "Vaults:4",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "level": "14",
+        "skill": "Evocations",
+      },
+      "level": "4",
+      "location": "Vaults:4",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "gold": "170",
+        "item": "wand of paralysis (8)",
+      },
+      "level": "4",
+      "location": "Vaults:4",
+      "type": "bought",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "gold": "374",
+        "item": "wand of acid (7)",
+      },
+      "level": "4",
+      "location": "Vaults:4",
+      "type": "bought",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "gold": "374",
+        "item": "wand of digging (7)",
+      },
+      "level": "4",
+      "location": "Vaults:4",
+      "type": "bought",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "item": "cursed +0 chain mail "Niakh" {rPois rC- MP+9 Stlth+}",
+      },
+      "level": "4",
+      "location": "Vaults:4",
+      "type": "ident",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "item": "cursed +0 chain mail "Niakh" {rPois rC- MP+9 Stlth+}",
+      },
+      "level": "4",
+      "location": "Vaults:4",
+      "type": "item",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "gold": "759",
+        "item": "wand of scattershot (7)",
+      },
+      "level": "4",
+      "location": "Vaults:4",
+      "type": "bought",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "branch": "Hell",
+      },
+      "level": "1",
+      "location": "Depths:1",
+      "type": "portal",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "level": "15",
+        "skill": "Fighting",
+      },
+      "level": "1",
+      "location": "Depths:1",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "branch": "Abyss",
+      },
+      "level": "1",
+      "location": "Depths:1",
+      "type": "portal",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "level": "10",
+        "skill": "Throwing",
+      },
+      "level": "1",
+      "location": "Depths:1",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "level": "15",
+        "skill": "Shields",
+      },
+      "level": "1",
+      "location": "Depths:1",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "level": "15",
+        "skill": "Long Blades",
+      },
+      "level": "1",
+      "location": "Depths:1",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "level": "15",
+        "skill": "Armour",
+      },
+      "level": "1",
+      "location": "Depths:1",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "gold": "185",
+        "item": "serpentine glass ring",
+      },
+      "level": "2",
+      "location": "Depths:2",
+      "type": "bought",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "gold": "185",
+        "item": "ring "Fues" {rPois rC+ rN+ Str-2 Int+4}",
+      },
+      "level": "2",
+      "location": "Depths:2",
+      "type": "ident-bought-loc",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "gold": "185",
+        "item": "ring "Fues" {rPois rC+ rN+ Str-2 Int+4}",
+      },
+      "level": "2",
+      "location": "Depths:2",
+      "type": "item",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "who": "the Enchantress",
+      },
+      "level": "2",
+      "location": "Depths:2",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "who": "the Enchantress",
+      },
+      "level": "2",
+      "location": "Depths:2",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "hp": "181",
+        "level": "23",
+        "mp": "33",
+      },
+      "level": "2",
+      "location": "Depths:2",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "level": "15",
+        "skill": "Dodging",
+      },
+      "level": "2",
+      "location": "Depths:2",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "gold": "52",
+        "item": "scroll of magic mapping",
+      },
+      "level": "2",
+      "location": "Depths:2",
+      "type": "bought",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "gold": "52",
+        "item": "scroll of magic mapping",
+      },
+      "level": "2",
+      "location": "Depths:2",
+      "type": "bought",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "gold": "52",
+        "item": "scroll of magic mapping",
+      },
+      "level": "2",
+      "location": "Depths:2",
+      "type": "bought",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "level": "15",
+        "skill": "Evocations",
+      },
+      "level": "2",
+      "location": "Depths:2",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "hp": "190",
+        "level": "24",
+        "mp": "33",
+      },
+      "level": "3",
+      "location": "Depths:3",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "branch": "Pandemonium",
+      },
+      "level": "3",
+      "location": "Depths:3",
+      "type": "portal",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "branch": "Ziggurat",
+      },
+      "level": "3",
+      "location": "Depths:3",
+      "type": "portal",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "who": "Sojobo",
+      },
+      "level": "4",
+      "location": "Depths:4",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "who": "Margery",
+      },
+      "level": "4",
+      "location": "Depths:4",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "who": "Sojobo",
+      },
+      "level": "4",
+      "location": "Depths:4",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "who": "Margery",
+      },
+      "level": "4",
+      "location": "Depths:4",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "level": "16",
+        "skill": "Evocations",
+      },
+      "level": "4",
+      "location": "Depths:4",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "hp": "197",
+        "level": "25",
+        "mp": "34",
+      },
+      "level": "4",
+      "location": "Depths:4",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "branch": "Zot",
+      },
+      "level": "5",
+      "location": "Depths:5",
+      "type": "portal",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "gold": "480",
+        "item": "wand of scattershot (4)",
+      },
+      "level": "5",
+      "location": "Depths:5",
+      "type": "bought",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "gold": "400",
+        "item": "box of beasts",
+      },
+      "level": "5",
+      "location": "Depths:5",
+      "type": "bought",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "gold": "400",
+        "item": "box of beasts",
+      },
+      "level": "5",
+      "location": "Depths:5",
+      "type": "bought",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "gold": "440",
+        "item": "wand of acid (7)",
+      },
+      "level": "5",
+      "location": "Depths:5",
+      "type": "bought",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "gold": "480",
+        "item": "box of beasts",
+      },
+      "level": "5",
+      "location": "Depths:5",
+      "type": "bought",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "gold": "648",
+        "item": "wand of clouds (5)",
+      },
+      "level": "5",
+      "location": "Depths:5",
+      "type": "bought",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "item": "-3 kite shield of the Snail {rElec Dex+3} (You acquired it on level 5 of the Depths)",
+      },
+      "level": "5",
+      "location": "Depths:5",
+      "type": "ident",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "item": "-3 kite shield of the Snail {rElec Dex+3} (You acquired it on level 5 of the Depths)",
+      },
+      "level": "5",
+      "location": "Depths:5",
+      "type": "item",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "gold": "300",
+        "item": "runed cloak",
+      },
+      "level": "1",
+      "location": "Lair:1",
+      "type": "bought",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "hp": "206",
+        "level": "26",
+        "mp": "34",
+      },
+      "level": "5",
+      "location": "Vaults:5",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "level": "17",
+        "skill": "Evocations",
+      },
+      "level": "5",
+      "location": "Vaults:5",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "item": "cursed +2 falchion "Z" {vorpal, rPois rN+ Str-2 Dex+2}",
+      },
+      "level": "5",
+      "location": "Vaults:5",
+      "type": "ident",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "item": "cursed +2 falchion "Z" {vorpal, rPois rN+ Str-2 Dex+2}",
+      },
+      "level": "5",
+      "location": "Vaults:5",
+      "type": "item",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "item": "+1 battleaxe of Disaster {vamp, +Rage rPois rF- Stlth+}",
+      },
+      "level": "5",
+      "location": "Vaults:5",
+      "type": "ident",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "item": "+1 battleaxe of Disaster {vamp, +Rage rPois rF- Stlth+}",
+      },
+      "level": "5",
+      "location": "Vaults:5",
+      "type": "item",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "hp": "215",
+        "level": "27",
+        "mp": "34",
+      },
+      "level": "5",
+      "location": "Vaults:5",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "item": "Kegumy's Almanac of the Ageless People",
+      },
+      "level": "5",
+      "location": "Vaults:5",
+      "type": "ident",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "item": "Kegumy's Almanac of the Ageless People",
+      },
+      "level": "5",
+      "location": "Vaults:5",
+      "type": "item",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "item": "+10 rapier of Bloody Death {drain, rPois rF- MR+++}",
+      },
+      "level": "5",
+      "location": "Vaults:5",
+      "type": "ident",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "item": "+10 rapier of Bloody Death {drain, rPois rF- MR+++}",
+      },
+      "level": "5",
+      "location": "Vaults:5",
+      "type": "item",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "item": "+5 morningstar of Hepuoto {vorpal, *Noise +Fly rElec Dex+5}",
+      },
+      "level": "5",
+      "location": "Vaults:5",
+      "type": "ident",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "item": "+5 morningstar of Hepuoto {vorpal, *Noise +Fly rElec Dex+5}",
+      },
+      "level": "5",
+      "location": "Vaults:5",
+      "type": "item",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "item": "+2 pair of boots "Dezamohu" {MR- Str+2 Int+2 Dex+4}",
+      },
+      "level": "5",
+      "location": "Vaults:5",
+      "type": "ident-loc",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "item": "+2 pair of boots "Dezamohu" {MR- Str+2 Int+2 Dex+4}",
+      },
+      "level": "5",
+      "location": "Vaults:5",
+      "type": "item",
+    },
+    {
+      "branch": "Slime",
+      "data": {
+        "level": "18",
+        "skill": "Evocations",
+      },
+      "level": "2",
+      "location": "Slime:2",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Slime",
+      "data": {
+        "who": "Dissolution",
+      },
+      "level": "4",
+      "location": "Slime:4",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Slime",
+      "data": {
+        "who": "Dissolution",
+      },
+      "level": "3",
+      "location": "Slime:3",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Slime",
+      "data": {
+        "who": "the Royal Jelly",
+      },
+      "level": "5",
+      "location": "Slime:5",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Slime",
+      "data": {
+        "item": "+18 shield of the Gong {rElec rN+ MR+ EV-5}",
+      },
+      "level": "5",
+      "location": "Slime:5",
+      "type": "found",
+    },
+    {
+      "branch": "Slime",
+      "data": {
+        "item": "+18 shield of the Gong {rElec rN+ MR+ EV-5}",
+      },
+      "level": "5",
+      "location": "Slime:5",
+      "type": "item",
+    },
+    {
+      "branch": "Slime",
+      "data": {
+        "who": "the Royal Jelly",
+      },
+      "level": "5",
+      "location": "Slime:5",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Slime",
+      "data": {
+        "item": "amulet of Vitality {Regen+ HP+15}",
+      },
+      "level": "5",
+      "location": "Slime:5",
+      "type": "found",
+    },
+    {
+      "branch": "Slime",
+      "data": {
+        "item": "amulet of Vitality {Regen+ HP+15}",
+      },
+      "level": "5",
+      "location": "Slime:5",
+      "type": "item",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "gold": "790",
+        "item": "ring of Ydafu {rC+ MR+ Str+3}",
+      },
+      "level": "1",
+      "location": "Lair:1",
+      "type": "bought",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "item": "ring of Ydafu {rC+ MR+ Str+3}",
+      },
+      "level": "1",
+      "location": "Lair:1",
+      "type": "item",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "item": "+1 rapier "Hydraslayer" {vorpal, rElec rC+}",
+      },
+      "level": "3",
+      "location": "Elf:3",
+      "type": "ident",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "item": "+1 rapier "Hydraslayer" {vorpal, rElec rC+}",
+      },
+      "level": "3",
+      "location": "Elf:3",
+      "type": "item",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "item": "+8 flail of Midwinter {freeze, *Corrode Str+8}",
+      },
+      "level": "3",
+      "location": "Elf:3",
+      "type": "ident",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "item": "+8 flail of Midwinter {freeze, *Corrode Str+8}",
+      },
+      "level": "3",
+      "location": "Elf:3",
+      "type": "item",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "item": "ring of Equilibrium {rF+++ rCorr Dex-3 Stlth+}",
+      },
+      "level": "3",
+      "location": "Elf:3",
+      "type": "ident",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "item": "ring of Equilibrium {rF+++ rCorr Dex-3 Stlth+}",
+      },
+      "level": "3",
+      "location": "Elf:3",
+      "type": "item",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "item": "cursed +1 glaive of Light {freeze, rN++}",
+      },
+      "level": "3",
+      "location": "Elf:3",
+      "type": "ident",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "item": "cursed +1 glaive of Light {freeze, rN++}",
+      },
+      "level": "3",
+      "location": "Elf:3",
+      "type": "item",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "item": "+5 short sword "Killer Klown's Regret" {vorpal, +Blink rC+ SInv}",
+      },
+      "level": "3",
+      "location": "Elf:3",
+      "type": "ident",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "item": "+5 short sword "Killer Klown's Regret" {vorpal, +Blink rC+ SInv}",
+      },
+      "level": "3",
+      "location": "Elf:3",
+      "type": "item",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "level": "19",
+        "skill": "Evocations",
+      },
+      "level": "3",
+      "location": "Elf:3",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "item": "ring "Icinogh" {Int+2 Slay+6}",
+      },
+      "level": "3",
+      "location": "Elf:3",
+      "type": "ident-loc",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "item": "ring "Icinogh" {Int+2 Slay+6}",
+      },
+      "level": "3",
+      "location": "Elf:3",
+      "type": "item",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "gold": "624",
+        "item": "+2 demon blade of freezing",
+      },
+      "level": "1",
+      "location": "Lair:1",
+      "type": "bought",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "gold": "225",
+        "item": "pair of embroidered gloves",
+      },
+      "level": "10",
+      "location": "Dungeon:10",
+      "type": "bought",
+    },
+    {
+      "branch": "Zot",
+      "data": {
+        "level": "20",
+        "skill": "Evocations",
+      },
+      "level": "3",
+      "location": "Zot:3",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Zot",
+      "data": {
+        "level": "15",
+        "skill": "Stealth",
+      },
+      "level": "4",
+      "location": "Zot:4",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Ziggurat",
+      "data": {
+        "item": "cursed ring "Harosaeh" {rElec rPois MP+9 EV-4 Int-2}",
+      },
+      "level": "4",
+      "location": "Ziggurat:4",
+      "type": "ident-loc",
+    },
+    {
+      "branch": "Ziggurat",
+      "data": {
+        "item": "cursed ring "Harosaeh" {rElec rPois MP+9 EV-4 Int-2}",
+      },
+      "level": "4",
+      "location": "Ziggurat:4",
+      "type": "item",
+    },
+    {
+      "branch": "Ziggurat",
+      "data": {
+        "item": "ring "Lainwuga" {*Tele rPois rF+++ Str-4 Stlth-}",
+      },
+      "level": "5",
+      "location": "Ziggurat:5",
+      "type": "ident-loc",
+    },
+    {
+      "branch": "Ziggurat",
+      "data": {
+        "item": "ring "Lainwuga" {*Tele rPois rF+++ Str-4 Stlth-}",
+      },
+      "level": "5",
+      "location": "Ziggurat:5",
+      "type": "item",
+    },
+    {
+      "branch": "Ziggurat",
+      "data": {
+        "item": "+0 staff of Battle",
+      },
+      "level": "8",
+      "location": "Ziggurat:8",
+      "type": "found",
+    },
+    {
+      "branch": "Ziggurat",
+      "data": {
+        "item": "+0 staff of Battle",
+      },
+      "level": "8",
+      "location": "Ziggurat:8",
+      "type": "item",
+    },
+    {
+      "branch": "Ziggurat",
+      "data": {
+        "item": "+1 plate armour "Ehiogol" {Dex+4}",
+      },
+      "level": "8",
+      "location": "Ziggurat:8",
+      "type": "ident-loc",
+    },
+    {
+      "branch": "Ziggurat",
+      "data": {
+        "item": "+1 plate armour "Ehiogol" {Dex+4}",
+      },
+      "level": "8",
+      "location": "Ziggurat:8",
+      "type": "item",
+    },
+    {
+      "branch": "Zot",
+      "data": "Annihilated by an Orb Guardian",
+      "level": "5",
+      "location": "Zot:5",
+      "type": "last-event",
+    },
+  ],
+  "fullVersion": "2.3.0-a0-568-g763ebf1e5c",
+  "god": "Gozag",
+  "isBloatcrawl": true,
+  "isMorgue": true,
+  "isSprint": false,
+  "isTrunk": true,
+  "is_bcrawl": false,
+  "morgue": "https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-20230301-012532.txt.gz",
+  "name": "TsoeiynMaft",
+  "runeCount": 3,
+  "runes": [
+    "barnacled",
+    "slimy",
+    "silver",
+  ],
+  "score": "829441",
+  "species": null,
+  "timeSeconds": 38083,
+  "turns": 96603,
+  "value": "2706224121741616345",
+  "version": "2.3.0",
+}
+`;

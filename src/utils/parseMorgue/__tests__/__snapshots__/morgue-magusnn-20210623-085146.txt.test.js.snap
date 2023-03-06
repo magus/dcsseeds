@@ -14635,6 +14635,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
   ],
   "fullVersion": "0.26.1",
   "god": "Vehumet",
+  "isBloatcrawl": false,
   "isMorgue": true,
   "isSprint": false,
   "isTrunk": false,
