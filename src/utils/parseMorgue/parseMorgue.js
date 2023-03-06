@@ -132,15 +132,13 @@ export const MORGUE_REGEX = {
     }
   },
 
-  // https://regexr.com/6ebpa
+  // https://regexr.com/79j2c
   [MORGUE_FIELD.Trunk]: async ({ morgueText }) => {
     try {
-      await runRegex(MORGUE_FIELD.Trunk, morgueText, /version ((\d+\.\d+\.\d+).*?)\s.*?character file./);
-      return { isTrunk: false };
-    } catch (err) {
-      // unable to parse version because version is a trunk version
-      // e.g. 0.29-a0-23-ga79f92a
+      await runRegex(MORGUE_FIELD.Trunk, morgueText, /version ((\d+\.\d+(\.\d+)?)(-(a0|b1)-).*?)\s.*?character file./);
       return { isTrunk: true };
+    } catch (err) {
+      return { isTrunk: false };
     }
   },
 
