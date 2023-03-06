@@ -119,7 +119,13 @@ function ArtifactFilters(props) {
     }
   }
 
-  const filter_unrand_key_list = active_key_list.concat(inactive_key_list);
+  // when there is only one result, hide the other filter buttons, show the single result
+  let filter_unrand_key_list;
+  if (props.result_list.length === 1) {
+    filter_unrand_key_list = active_key_list;
+  } else {
+    filter_unrand_key_list = active_key_list.concat(inactive_key_list);
+  }
 
   for (const unrand_key of filter_unrand_key_list) {
     const name = Unrands.List[unrand_key];
