@@ -3,26 +3,19 @@ import fs from 'fs';
 import { execSync } from 'child_process';
 
 const PROJ_ROOT = execSync('git rev-parse --show-toplevel').toString().trim();
-const RESET_VERSION = '0.29.0';
 
 export function reset() {
-  // prepare crawl git submodule by checking out specific version for parsing
-  process.chdir(`${PROJ_ROOT}/crawl`);
-
-  // checkout the specified version for parsing
-  execSync(`git reset --hard`);
-  execSync(`git checkout ${RESET_VERSION}`);
+  // forcefully reset crawl submodule back to init state
+  execSync(`git submodule update --force`);
 }
 
 export function prepare(version: string) {
+  reset();
+
   // prepare crawl git submodule by checking out specific version for parsing
   process.chdir(`${PROJ_ROOT}/crawl`);
 
-  // sync tags with origin (e.g. version tags like 0.27.0)
-  // execSync('git fetch origin');
-
   // checkout the specified version for parsing
-  execSync(`git reset --hard`);
   execSync(`git checkout ${version}`);
 
   // run tasks to prepare files for processing (e.g. remove development items tagged with TAG_MAJOR_VERSION)
