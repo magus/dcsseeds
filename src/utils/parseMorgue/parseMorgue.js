@@ -35,6 +35,7 @@ async function parseMorgueText({ name, morgue, morgueText }) {
     ...(await MORGUE_REGEX[MORGUE_FIELD.Version](args)),
     ...(await MORGUE_REGEX[MORGUE_FIELD.Trunk](args)),
     ...(await MORGUE_REGEX[MORGUE_FIELD.Sprint](args)),
+    ...(await MORGUE_REGEX[MORGUE_FIELD.Bloatcrawl](args)),
     ...(await MORGUE_REGEX[MORGUE_FIELD.Seed](args)), // value
     ...(await MORGUE_REGEX[MORGUE_FIELD.Score](args)),
     ...(await MORGUE_REGEX[MORGUE_FIELD.SpeciesBackground](args)),
@@ -51,6 +52,7 @@ const MORGUE_FIELD = keyMirror({
   Version: true,
   Trunk: true,
   Sprint: true,
+  Bloatcrawl: true,
   Seed: true,
   Score: true,
   SpeciesBackground: true,
@@ -129,6 +131,16 @@ export const MORGUE_REGEX = {
       // Seeded DCSS version 0.27.1-34-g3ba077f (webtiles) character file.
       // Dungeon Crawl Stone Soup version 0.27.1-34-g3ba077f (webtiles) character file.
       return { isSprint: false };
+    }
+  },
+
+  // https://regexr.com/79j2o
+  [MORGUE_FIELD.Bloatcrawl]: async ({ morgueText }) => {
+    try {
+      await runRegex(MORGUE_FIELD.Bloatcrawl, morgueText, /(Bloatcrawl).*?version.*?character file/);
+      return { isBloatcrawl: true };
+    } catch (err) {
+      return { isBloatcrawl: false };
     }
   },
 
