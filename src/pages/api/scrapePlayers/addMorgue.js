@@ -72,14 +72,11 @@ export async function addMorgue(args) {
         }
       }
 
-      // do NOT wait, this is logging not critical path for request
-      GQL_ADD_PARSE_ERROR.run({ errors });
+      // write error into db
+      await GQL_ADD_PARSE_ERROR.run({ errors });
 
-      // throw error with all errors, this will include even non-scrape errors
-      // e.g. a real error such as a TypeError will be caught here too
-      const error = new Error(`parseMorgue::data.eventErrors`);
-      error.extra = data.eventErrors;
-      throw error;
+      // exit this morgue marking it locally only
+      return response('error', errors);
     }
 
     // collect items to send in a single mutation call
