@@ -8,6 +8,13 @@ track random seeds in dcss
 ## [events-refactor](docs/events-refactor.md)
 ## [item-search](docs/item-search.md)
 
+## performance
+
+when selecting a result with 100+ rows there is a noticeable jank
+animation and rendering results likely too much for frame
+can we break up so animation happens first then results after?
+can we virtualize or render top 10 results and show a "Show more" button to keep rendering 10 more etc.
+
 
 ## alternative graphql nested artifact query approach
 
