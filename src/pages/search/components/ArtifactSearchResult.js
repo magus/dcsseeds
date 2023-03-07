@@ -9,18 +9,48 @@ import CopyButton from 'src/components/CopyButton';
 import * as Spacer from 'src/components/Spacer';
 
 function ItemListRows(props) {
-  return props.item_list.map((item, i) => {
-    let vertical_pad = null;
+  let item_list;
 
-    const is_last = i !== props.item_list.length - 1;
+  if (!props.filter) {
+    item_list = props.item_list;
+  } else {
+    item_list = props.item_list.filter((item) => {
+      return item.branchName !== 'Ziggurat';
+    });
+  }
 
-    return (
-      <React.Fragment key={item.name}>
-        <Item {...props} {...item} />
-        {is_last ? null : vertical_pad}
-      </React.Fragment>
-    );
-  });
+  const show_more_count = props.item_list.length - item_list.length;
+
+  return (
+    <React.Fragment>
+      {item_list.map((item, i) => {
+        let vertical_pad = null;
+
+        const is_last = i !== props.item_list.length - 1;
+
+        return (
+          <React.Fragment key={item.name}>
+            <Item {...props} {...item} />
+            {is_last ? null : vertical_pad}
+          </React.Fragment>
+        );
+      })}
+
+      {show_more_count <= 0 ? null : (
+        <MoreItemsRow>
+          <td></td>
+          <td></td>
+          <td className="link">
+            <Spacer.Vertical size="3" />
+            <Spacer.Horizontal size="1" />
+            <ItemsSeedVersionLink {...props}>
+              See all <b>{show_more_count}</b> Ziggurat unrands
+            </ItemsSeedVersionLink>
+          </td>
+        </MoreItemsRow>
+      )}
+    </React.Fragment>
+  );
 }
 export function ArtifactSearchResult(props) {
   // console.debug('[ArtifactSearchResult]', props);
@@ -34,7 +64,7 @@ export function ArtifactSearchResult(props) {
 
   return (
     <Container>
-      <table>
+      <ItemTable>
         <tbody>
           <ItemListRows {...props} />
 
@@ -48,11 +78,11 @@ export function ArtifactSearchResult(props) {
                 </td>
               </tr>
 
-              <ItemListRows {...props} item_list={rest_item_list} />
+              <ItemListRows {...props} filter item_list={rest_item_list} />
             </>
           )}
         </tbody>
-      </table>
+      </ItemTable>
 
       <Spacer.Vertical size="2" />
 
@@ -69,7 +99,7 @@ export function ArtifactSearchResult(props) {
   );
 }
 
-function Item(props) {
+function ItemsSeedVersionLink(props) {
   const { seed, version } = props;
 
   const highlight = props.all_item_list.map((item) => item.name);
@@ -79,6 +109,14 @@ function Item(props) {
     query: { seed, version, highlight },
   };
 
+  return (
+    <Link passHref href={items_link}>
+      <a rel="noopener noreferrer">{props.children}</a>
+    </Link>
+  );
+}
+
+function Item(props) {
   const metadata = Unrands.Metadata[props.unrand_key];
 
   return (
@@ -94,20 +132,39 @@ function Item(props) {
 
       <ItemRight>
         <Name>
-          <Link passHref href={items_link}>
-            <a rel="noopener noreferrer">
-              <div className="image">
-                <Image alt={props.name} src={metadata.image_url} layout="fixed" width={24} height={24} />
-              </div>
-              <Spacer.Horizontal size="1" />
-              {props.name}
-            </a>
-          </Link>
+          <ItemsSeedVersionLink {...props}>
+            <Image alt={props.name} src={metadata.image_url} layout="fixed" {...image_size} />
+            <Spacer.Horizontal size="1" />
+            {props.name}
+          </ItemsSeedVersionLink>
         </Name>
       </ItemRight>
     </ItemRow>
   );
 }
+
+const image_size = { width: 24, height: 24 };
+
+const ItemTable = styled.table`
+  border-spacing: 0;
+  font-size: var(--font-small);
+
+  tr {
+    height: ${image_size.width}px;
+  }
+
+  td {
+    padding: 0;
+  }
+`;
+
+const MoreItemsRow = styled.tr`
+  .link {
+    display: flex;
+    align-items: flex-end;
+    padding-left: ${image_size.width}px;
+  }
+`;
 
 const ItemRow = styled.tr`
   vertical-align: top;
@@ -115,7 +172,9 @@ const ItemRow = styled.tr`
 
   .location {
     width: 120px;
-    display: inline-block;
+    height: inherit;
+    display: flex;
+    align-items: center;
     text-overflow: ellipsis;
     overflow: hidden;
   }
@@ -152,9 +211,7 @@ const Container = styled(motion.div)`
   flex-direction: column;
 `;
 
-const Level = styled.span`
-  font-size: var(--font-normal);
-`;
+const Level = styled.span``;
 
 const ItemDivider = styled.div`
   background-color: var(--divider-color);
@@ -163,17 +220,14 @@ const ItemDivider = styled.div`
 `;
 
 const Branch = styled.span`
-  font-size: var(--font-medium);
   font-weight: var(--font-bold);
 `;
 
 const Version = styled.span`
-  font-size: var(--font-small);
   font-weight: var(--font-bold);
 `;
 
 const Name = styled.div`
-  font-size: var(--font-small);
   /*
   white-space: nowrap;
   overflow: hidden;
