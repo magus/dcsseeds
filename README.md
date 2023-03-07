@@ -31,6 +31,23 @@ by the time you are even considering a ziggurat you are done with the run so it'
 also ziggurats drop so many items it becomes extremely noisy, you're essentially guaranteed to see many unrands
 
 
+# refactor crawl submodules
+
+consider setting up separate submodules for each version of crawl
+then the crawl.ts can just return the directory and ensure we call reset
+
+should shave about a minute off workflow since fetch tags takes 1 min
+document steps to create a new submodule, should be something like
+
+```sh
+git clone -b 0.27.1 --depth 1 git@github.com:crawl/crawl.git 0.27.1
+git reset 0.27.1
+git submodule add git@github.com:crawl/crawl.git 0.27.1
+```
+
+    1. (current) crawl/ + git fetch --tags
+    2. (idea) crawl/0.29.1 crawl/0.28.0 crawl/0.27.1
+
 
 ## alternative graphql nested artifact query approach
 
