@@ -17,6 +17,12 @@ seems to show results without the scales of dragon king
 octopus is the only artifact that can spawn multiple variants, maybe related
 debug the filter calculations on change
 
+## ziggurat spam
+
+ziggurat loot is cluttering results
+when selecting most artifacts, most filters remain due to ziggurat runs
+filter out ziggurat from results locally, should feel better for finding meaningful combinations
+
 
 ## alternative graphql nested artifact query approach
 
