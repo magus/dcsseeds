@@ -39,10 +39,6 @@ SERVER_CONFIG.morgue_server = function morgue_server(morgue_url) {
   for (const server_name of Object.keys(Server)) {
     const config = SERVER_CONFIG[server_name];
 
-    if (!config.origin_re) {
-      console.debug({ SERVER_CONFIG, server_name, morgue_url, config });
-    }
-
     if (config.origin_re.test(morgue_url)) {
       return server_name;
     }
