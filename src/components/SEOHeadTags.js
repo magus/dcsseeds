@@ -21,6 +21,7 @@ export default function SEOHeadTags(props) {
       <meta property="og:type" content="website" />
       <meta property="og:url" content={path} />
       <meta property="og:image" content={image_path} />
+      <meta name="twitter:maxage" content="300" />
       <meta property="twitter:card" content="summary_large_image" />
       <meta property="twitter:creator" content="magusnn" />
       <meta property="twitter:creator:id" content="23604692" />
