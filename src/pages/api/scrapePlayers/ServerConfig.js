@@ -36,17 +36,22 @@ for (const server of Object.keys(Server)) {
 
 // determine server from morgue_url
 SERVER_CONFIG.morgue_server = function morgue_server(morgue_url) {
-  for (const server_name of Object.keys(SERVER_CONFIG)) {
+  for (const server_name of Object.keys(Server)) {
     const config = SERVER_CONFIG[server_name];
-    const re = new RegExp(`^${config.rawdata_base}`);
 
-    if (re.test(morgue_url)) {
+    if (!config.origin_re) {
+      console.debug({ SERVER_CONFIG, server_name, morgue_url, config });
+    }
+
+    if (config.origin_re.test(morgue_url)) {
       return server_name;
     }
   }
 
   return null;
 };
+
+Object.freeze(SERVER_CONFIG);
 
 function ServerConfig(server) {
   const rawdata_base = (function () {
@@ -70,6 +75,30 @@ function ServerConfig(server) {
         throw new Error(`unrecognized server name [${server}]`);
     }
   })();
+
+  const origin_re = new RegExp(
+    (function () {
+      switch (server) {
+        case Server.akrasiac:
+          return '^http://crawl.akrasiac.org/rawdata';
+        case Server.xtahua:
+          return '^https://crawl.xtahua.com/crawl/morgue';
+        case Server.project357:
+          return '^https://crawl.project357.org/morgue';
+        case Server.berotato:
+          return '^https://cbro.berotato.org/morgue';
+        case Server.underhound:
+          return '^https://underhound.eu/crawl/morgue';
+        case Server.kelbi:
+          return '^https://crawl.kelbi.org/crawl/morgue';
+        case Server.webzook:
+          return '^https://webzook.net/soup/morgue';
+
+        default:
+          throw new Error(`unrecognized server name [${server}]`);
+      }
+    })(),
+  );
 
   function morgue_list_url_list(player_name, version_list) {
     const url_set = new Set();
@@ -97,6 +126,7 @@ function ServerConfig(server) {
 
   return {
     server,
+    origin_re,
     rawdata_base,
     morgue_list_url_list,
     morgueRegex,
