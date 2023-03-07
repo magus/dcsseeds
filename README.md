@@ -20,8 +20,16 @@ debug the filter calculations on change
 ## ziggurat spam
 
 ziggurat loot is cluttering results
-when selecting most artifacts, most filters remain due to ziggurat runs
 filter out ziggurat from results locally, should feel better for finding meaningful combinations
+
+https://dcss.vercel.app/?a=orange+crystal+plate+armour&a=lance+%22Wyrmbane%22
+
+try **captain's cutlass** which shows good results
+try **arc blade** which shows ziggurat results
+
+by the time you are even considering a ziggurat you are done with the run so it's not really interesting
+also ziggurats drop so many items it becomes extremely noisy, you're essentially guaranteed to see many unrands
+
 
 
 ## alternative graphql nested artifact query approach
