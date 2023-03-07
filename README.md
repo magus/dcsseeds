@@ -9,6 +9,15 @@ track random seeds in dcss
 ## [item-search](docs/item-search.md)
 
 
+## bug: octopus ring artifact filter
+
+https://dcss.vercel.app/?v=0.29.1&a=scales+of+the+Dragon+King&a=ring+of+the+Octopus+King
+
+seems to show results without the scales of dragon king
+octopus is the only artifact that can spawn multiple variants, maybe related
+debug the filter calculations on change
+
+
 ## alternative graphql nested artifact query approach
 
 ### `cache_unrand_query` (local artifact filters)
