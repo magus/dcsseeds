@@ -44,22 +44,38 @@ export function ArtifactSearch(props) {
 }
 
 function ArtifactResults(props) {
-  return props.result_list.map((result) => {
-    const key = [result.seed, result.version].join('-');
-    return (
-      <motion.div
-        // force line break
-        key={key}
-        layout="position"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={spring_config}
-      >
-        <ArtifactSearchResult {...result} />
-      </motion.div>
-    );
-  });
+  const [display_count, set_display_count] = React.useState(10);
+
+  const display_result_list = props.result_list.slice(0, display_count);
+  const show_more_count = props.result_list.length - display_count;
+
+  function handle_click() {
+    set_display_count((c) => c + 10);
+  }
+
+  return (
+    <React.Fragment>
+      {display_result_list.map((result) => {
+        const key = [result.seed, result.version].join('-');
+
+        return (
+          <motion.div
+            // force line break
+            key={key}
+            layout="position"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={spring_config}
+          >
+            <ArtifactSearchResult {...result} />
+          </motion.div>
+        );
+      })}
+
+      {show_more_count <= 0 ? null : <button onClick={handle_click}>Show more ({show_more_count})</button>}
+    </React.Fragment>
+  );
 }
 
 function FilterButton(props) {
