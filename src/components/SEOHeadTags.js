@@ -1,18 +1,21 @@
 import * as React from 'react';
 import Head from 'next/head';
 
+import MetaImage from 'public/images/dcss-search-artifacts.original.png';
+import Favicon from 'public/images/dcss-search-icon.png';
+
 export default function SEOHeadTags(props) {
-  const favicon = props.favicon || 'images/dcss-search-icon.png';
+  const favicon = props.favicon || Favicon.src;
   const title = props.title || process.env.APP_NAME || 'DCSS Search';
   const description = props.description || 'Discover artifacts by location and seed';
   const path = props.path || '';
-  const image_path = props.image || 'images/dcss-search-artifacts.original.png';
+  const image_path = props.image || MetaImage.src;
   const keywords = props.keywords || ['DCSS', 'Sarch', 'Artifacts', 'Seeds', 'Roguelike', 'Dungeon Crawler Stone Soup'];
 
   return (
     <Head>
       {/* seo & open graph tags */}
-      <link rel="shortcut icon" href={favicon} />
+      <link rel="shortcut icon" href={app_url(favicon)} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />
