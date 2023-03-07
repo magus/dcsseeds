@@ -2,6 +2,7 @@ import * as React from 'react';
 import Head from 'next/head';
 
 export default function SEOHeadTags(props) {
+  const favicon = props.favicon || 'images/dcss-search-icon.png';
   const title = props.title || process.env.APP_NAME || 'DCSS Search';
   const description = props.description || 'Discover artifacts by location and seed';
   const path = props.path || '';
@@ -11,6 +12,7 @@ export default function SEOHeadTags(props) {
   return (
     <Head>
       {/* seo & open graph tags */}
+      <link rel="shortcut icon" href={favicon} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />
