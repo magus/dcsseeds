@@ -1,0 +1,951 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-224217.txt.gz 1`] = `
+{
+  "background": "Gladiator",
+  "datetime": 2022-08-18T22:42:17.000Z,
+  "eventCount": 95,
+  "eventErrors": [],
+  "events": [
+    {
+      "branch": "Dungeon",
+      "data": "kareem the Merfolk Gladiator began the quest for the Orb.",
+      "level": "1",
+      "location": "Dungeon:1",
+      "type": "first-event",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "hp": "16",
+        "level": "1",
+        "mp": "1",
+      },
+      "level": "1",
+      "location": "Dungeon:1",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "hp": "23",
+        "level": "2",
+        "mp": "2",
+      },
+      "level": "1",
+      "location": "Dungeon:1",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "hp": "28",
+        "level": "3",
+        "mp": "3",
+      },
+      "level": "2",
+      "location": "Dungeon:2",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "5",
+        "skill": "Dodging",
+      },
+      "level": "2",
+      "location": "Dungeon:2",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Natasha",
+      },
+      "level": "2",
+      "location": "Dungeon:2",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Natasha",
+      },
+      "level": "2",
+      "location": "Dungeon:2",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "hp": "35",
+        "level": "4",
+        "mp": "4",
+      },
+      "level": "2",
+      "location": "Dungeon:2",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Natasha",
+      },
+      "level": "2",
+      "location": "Dungeon:2",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Natasha",
+      },
+      "level": "2",
+      "location": "Dungeon:2",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Crazy Yiuf",
+      },
+      "level": "2",
+      "location": "Dungeon:2",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Natasha",
+      },
+      "level": "2",
+      "location": "Dungeon:2",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Natasha",
+      },
+      "level": "2",
+      "location": "Dungeon:2",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "6",
+        "skill": "Dodging",
+      },
+      "level": "2",
+      "location": "Dungeon:2",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "hp": "41",
+        "level": "5",
+        "mp": "5",
+      },
+      "level": "2",
+      "location": "Dungeon:2",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Grinder",
+      },
+      "level": "3",
+      "location": "Dungeon:3",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Sigmund",
+      },
+      "level": "3",
+      "location": "Dungeon:3",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Jessica",
+      },
+      "level": "3",
+      "location": "Dungeon:3",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Jessica",
+      },
+      "level": "3",
+      "location": "Dungeon:3",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "hp": "48",
+        "level": "6",
+        "mp": "6",
+      },
+      "level": "3",
+      "location": "Dungeon:3",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Sigmund",
+      },
+      "level": "3",
+      "location": "Dungeon:3",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "5",
+        "skill": "Long Blades",
+      },
+      "level": "3",
+      "location": "Dungeon:3",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "7",
+        "skill": "Dodging",
+      },
+      "level": "3",
+      "location": "Dungeon:3",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Grinder",
+      },
+      "level": "3",
+      "location": "Dungeon:3",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "8",
+        "skill": "Dodging",
+      },
+      "level": "3",
+      "location": "Dungeon:3",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "hp": "55",
+        "level": "7",
+        "mp": "7",
+      },
+      "level": "3",
+      "location": "Dungeon:3",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Ossuary",
+      "data": {
+        "level": "5",
+        "skill": "Fighting",
+      },
+      "level": undefined,
+      "location": "Ossuary",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "gold": "330",
+        "item": "lightning rod (4/4)",
+      },
+      "level": "4",
+      "location": "Dungeon:4",
+      "type": "bought",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "9",
+        "skill": "Dodging",
+      },
+      "level": "5",
+      "location": "Dungeon:5",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "hp": "62",
+        "level": "8",
+        "mp": "8",
+      },
+      "level": "5",
+      "location": "Dungeon:5",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "1",
+        "skill": "Evocations",
+      },
+      "level": "5",
+      "location": "Dungeon:5",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Duvessa",
+      },
+      "level": "5",
+      "location": "Dungeon:5",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Duvessa",
+      },
+      "level": "5",
+      "location": "Dungeon:5",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Dowan",
+      },
+      "level": "5",
+      "location": "Dungeon:5",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Dowan",
+      },
+      "level": "5",
+      "location": "Dungeon:5",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "10",
+        "skill": "Dodging",
+      },
+      "level": "5",
+      "location": "Dungeon:5",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "hp": "69",
+        "level": "9",
+        "mp": "9",
+      },
+      "level": "6",
+      "location": "Dungeon:6",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "11",
+        "skill": "Dodging",
+      },
+      "level": "6",
+      "location": "Dungeon:6",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "12",
+        "skill": "Dodging",
+      },
+      "level": "7",
+      "location": "Dungeon:7",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "13",
+        "skill": "Dodging",
+      },
+      "level": "7",
+      "location": "Dungeon:7",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "5",
+        "skill": "Evocations",
+      },
+      "level": "7",
+      "location": "Dungeon:7",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Temple",
+      "data": {
+        "god": "Wu Jian",
+      },
+      "level": undefined,
+      "location": "Temple",
+      "type": "join-god",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Grum",
+      },
+      "level": "8",
+      "location": "Dungeon:8",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "who": "Grum",
+      },
+      "level": "8",
+      "location": "Dungeon:8",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "1",
+        "skill": "Shields",
+      },
+      "level": "8",
+      "location": "Dungeon:8",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "hp": "76",
+        "level": "10",
+        "mp": "10",
+      },
+      "level": "8",
+      "location": "Dungeon:8",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "5",
+        "skill": "Shields",
+      },
+      "level": "8",
+      "location": "Dungeon:8",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "bips": "*",
+        "god": "Wu Jian",
+      },
+      "level": "8",
+      "location": "Dungeon:8",
+      "type": "piety-god",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "item": "scroll of acquirement",
+      },
+      "level": "9",
+      "location": "Dungeon:9",
+      "type": "ident",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "item": "scroll of acquirement",
+      },
+      "level": "9",
+      "location": "Dungeon:9",
+      "type": "item",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "gold": "1070",
+        "item": "+18 shield of the Gong {rElec rN+ Will+ EV-5}",
+      },
+      "level": "7",
+      "location": "Dungeon:7",
+      "type": "bought",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "item": "+18 shield of the Gong {rElec rN+ Will+ EV-5}",
+      },
+      "level": "7",
+      "location": "Dungeon:7",
+      "type": "item",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "hp": "81",
+        "level": "11",
+        "mp": "11",
+      },
+      "level": "9",
+      "location": "Dungeon:9",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "level": "10",
+        "skill": "Shields",
+      },
+      "level": "9",
+      "location": "Dungeon:9",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "bips": "**",
+        "god": "Wu Jian",
+      },
+      "level": "9",
+      "location": "Dungeon:9",
+      "type": "piety-god",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "who": "Urug",
+      },
+      "level": "1",
+      "location": "Orc:1",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "who": "Nergalle",
+      },
+      "level": "1",
+      "location": "Lair:1",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "who": "Nergalle",
+      },
+      "level": "1",
+      "location": "Lair:1",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "level": "14",
+        "skill": "Dodging",
+      },
+      "level": "1",
+      "location": "Lair:1",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "hp": "93",
+        "level": "12",
+        "mp": "12",
+      },
+      "level": "1",
+      "location": "Lair:1",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "level": "15",
+        "skill": "Dodging",
+      },
+      "level": "1",
+      "location": "Lair:1",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "bips": "***",
+        "god": "Wu Jian",
+      },
+      "level": "1",
+      "location": "Lair:1",
+      "type": "piety-god",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "level": "1",
+        "skill": "Short Blades",
+      },
+      "level": "1",
+      "location": "Lair:1",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "item": "+4 buckler of the Slorg {rC+++ rN+++ MP-9 Int-2}",
+      },
+      "level": "2",
+      "location": "Lair:2",
+      "type": "ident",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "item": "+4 buckler of the Slorg {rC+++ rN+++ MP-9 Int-2}",
+      },
+      "level": "2",
+      "location": "Lair:2",
+      "type": "item",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "level": "5",
+        "skill": "Short Blades",
+      },
+      "level": "2",
+      "location": "Lair:2",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "bips": "****",
+        "god": "Wu Jian",
+      },
+      "level": "2",
+      "location": "Lair:2",
+      "type": "piety-god",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "level": "10",
+        "skill": "Fighting",
+      },
+      "level": "2",
+      "location": "Lair:2",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "level": "16",
+        "skill": "Dodging",
+      },
+      "level": "3",
+      "location": "Lair:3",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "hp": "103",
+        "level": "13",
+        "mp": "13",
+      },
+      "level": "3",
+      "location": "Lair:3",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "level": "10",
+        "skill": "Short Blades",
+      },
+      "level": "4",
+      "location": "Lair:4",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "bips": "*****",
+        "god": "Wu Jian",
+      },
+      "level": "3",
+      "location": "Lair:3",
+      "type": "piety-god",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "hp": "113",
+        "level": "14",
+        "mp": "14",
+      },
+      "level": "4",
+      "location": "Lair:4",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "level": "17",
+        "skill": "Dodging",
+      },
+      "level": "4",
+      "location": "Lair:4",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "item": "+12 flail of Duty {speed, rC+ MP+9 Int+5}",
+      },
+      "level": "5",
+      "location": "Lair:5",
+      "type": "ident",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "item": "+12 flail of Duty {speed, rC+ MP+9 Int+5}",
+      },
+      "level": "5",
+      "location": "Lair:5",
+      "type": "item",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "item": "+1 ring mail of Uripeeb {Dex+4}",
+      },
+      "level": "5",
+      "location": "Lair:5",
+      "type": "ident",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "item": "+1 ring mail of Uripeeb {Dex+4}",
+      },
+      "level": "5",
+      "location": "Lair:5",
+      "type": "item",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "who": "Urug",
+      },
+      "level": "1",
+      "location": "Orc:1",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "level": "18",
+        "skill": "Dodging",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "who": "Donald",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "who": "Donald",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "unique-killed",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "level": "19",
+        "skill": "Dodging",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "branch": "Pandemonium",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "portal",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "gold": "148",
+        "item": "creamy pearl robe",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "bought",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "gold": "148",
+        "item": "+1 robe "Woud" {Regen+ Int+3}",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "ident-bought-loc",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "gold": "148",
+        "item": "+1 robe "Woud" {Regen+ Int+3}",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "item",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "gold": "440",
+        "item": "tin of tremorstones (2/2)",
+      },
+      "level": "4",
+      "location": "Dungeon:4",
+      "type": "bought",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "hp": "125",
+        "level": "15",
+        "mp": "15",
+      },
+      "level": "2",
+      "location": "Lair:2",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "gold": "97",
+        "item": "scroll of enchant armour",
+      },
+      "level": "3",
+      "location": "Dungeon:3",
+      "type": "bought",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "gold": "97",
+        "item": "scroll of enchant weapon",
+      },
+      "level": "3",
+      "location": "Dungeon:3",
+      "type": "bought",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "gold": "97",
+        "item": "scroll of enchant armour",
+      },
+      "level": "3",
+      "location": "Dungeon:3",
+      "type": "bought",
+    },
+    {
+      "branch": "Swamp",
+      "data": {
+        "level": "20",
+        "skill": "Dodging",
+      },
+      "level": "1",
+      "location": "Swamp:1",
+      "type": "skill-level",
+    },
+    {
+      "branch": "Swamp",
+      "data": {
+        "who": "Nikola",
+      },
+      "level": "2",
+      "location": "Swamp:2",
+      "type": "unique-noticed",
+    },
+    {
+      "branch": "Swamp",
+      "data": "Killed from afar by Nikola",
+      "level": "2",
+      "location": "Swamp:2",
+      "type": "last-event",
+    },
+  ],
+  "fullVersion": "0.30-a0",
+  "god": "Wu Jian",
+  "isBloatcrawl": false,
+  "isMorgue": true,
+  "isSprint": false,
+  "isTrunk": true,
+  "is_bcrawl": false,
+  "morgue": "https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-224217.txt.gz",
+  "name": "kareem",
+  "runeCount": 0,
+  "runes": [],
+  "score": "72258",
+  "species": "Merfolk",
+  "timeSeconds": 5002,
+  "turns": 26211,
+  "value": "13998099872284306217",
+  "version": "0.30",
+}
+`;

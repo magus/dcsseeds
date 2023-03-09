@@ -1,0 +1,677 @@
+ Dungeon Crawl Stone Soup version 0.30-a0 (webtiles) character file.
+
+Game seed: 13998099872284306217
+
+72258 kareem the Spry (level 15, -38/125 (127) HPs)
+             Began as a Merfolk Gladiator on Aug 18, 2022.
+             Was an Elder of Wu Jian.
+             Killed from afar by Nikola (43 damage)
+             ... with an arc of chain lightning
+             ... on level 2 of the Swamp.
+             The game lasted 01:23:21 (26211 turns).
+
+kareem the Spry (Merfolk Gladiator)                Turns: 26211, Time: 01:23:22
+
+HP:   -38/125 (127) AC: 13    Str: 15    XL:     15   Next: 39%
+MP:   15/15         EV: 21    Int:  9    God:    Wu Jian [****..]
+Gold: 1315          SH: 31    Dex: 21    Spells: 11/14 levels left
+
+rFire   . . .      SeeInvis .   U - +3 scimitar
+rCold   . . .      Faith    .   R - +18 shield of the Gong {rElec rN+ Will+ EV-5}
+rNeg    + . .      Spirit   .   O - +0 troll leather armour
+rPois   +          Reflect  .   c - +2 helmet
+rElec   +          Harm     .   u - +0 cloak
+rCorr   .          Rampage  .   H - +0 pair of gloves
+Will    ++...                   (no boots)
+Stlth   ++........              S - amulet of the acrobat
+HPRegen 1.10/turn               o - +4 ring of protection
+MPRegen 0.14/turn               D - ring of poison resistance
+
+@: lightly drained, serpent's lash
+A: (nimble swimmer 2), mertail
+a: Renounce Religion, Wall Jump, Serpent's Lash
+
+
+You were on level 2 of the Swamp.
+You worshipped Wu Jian.
+Wu Jian was greatly pleased with you.
+You visited 5 branches of the dungeon, and saw 20 of its levels.
+You also visited: Ossuary.
+
+You collected 3594 gold pieces.
+You spent 2279 gold pieces at shops.
+
+Inventory:
+
+Hand Weapons
+ q - a +1 demon whip of venom
+ B - the +12 flail of Duty {speed, rC+ MP+9 Int+5}
+   (You found it on level 5 of the Lair of Beasts)
+
+   Attacks with this weapon are significantly faster.
+
+   Int:       It affects your intelligence (+5).
+   rC:        It protects you from cold.
+   MP:        It affects your magic capacity (+9).
+ U - a +3 scimitar (weapon)
+Missiles
+ d - 10 throwing nets (quivered)
+ w - 32 poisoned darts
+ E - 9 curare-tipped darts
+Armour
+ c - a +2 helmet (worn)
+ u - a +0 cloak (worn)
+ H - a +0 pair of gloves (worn)
+ O - a +0 troll leather armour (worn)
+ R - the +18 shield of the Gong (worn) {rElec rN+ Will+ EV-5}
+   (You bought it in a shop on level 7 of the Dungeon)
+
+   It is deafeningly noisy when blocking attacks.
+
+   EV:        It affects your evasion (-5).
+   rElec:     It insulates you from electricity.
+   rN:        It protects you from negative energy.
+   Will:      It increases your willpower.
+ Y - +0 swamp dragon scales
+ Z - the +4 buckler of the Slorg {rC+++ rN+++ MP-9 Int-2}
+   (You found it on level 2 of the Lair of Beasts)
+
+   Int:       It affects your intelligence (-2).
+   rC:        It renders you almost immune to cold.
+   rN:        It renders you almost immune to negative energy.
+   MP:        It affects your magic capacity (-9).
+Jewellery
+ o - a +4 ring of protection (left hand)
+ r - a ring of willpower
+ y - a +6 ring of dexterity
+ D - a ring of poison resistance (right hand)
+ I - a +4 ring of evasion
+ M - a +4 ring of protection
+ S - an amulet of the acrobat (around neck)
+Wands
+ e - a wand of iceblast (2)
+ j - a wand of light (8)
+ p - a wand of paralysis (13)
+ G - a wand of mindburst (11)
+ K - a wand of flame (33)
+ V - a wand of polymorph (4)
+Scrolls
+ a - a scroll of summoning {unknown}
+ b - 2 scrolls of amnesia
+ g - 5 scrolls of identify
+ i - 2 scrolls of teleportation
+ n - 2 scrolls of torment
+ v - 3 scrolls of silence
+ A - 3 scrolls of blinking
+ F - 2 scrolls of magic mapping
+ L - 5 scrolls of vulnerability
+ N - 2 scrolls of immolation
+ P - 4 scrolls of enchant weapon
+Potions
+ f - a potion of mutation
+ h - 4 potions of curing
+ k - 3 potions of invisibility
+ l - 5 potions of attraction
+ m - 6 potions of flight
+ s - 5 potions of lignification
+ t - a potion of berserk rage
+ x - 6 potions of brilliance
+ z - 2 potions of magic
+ J - a potion of resistance
+ T - a potion of cancellation
+Miscellaneous
+ C - a lightning rod (1/4)
+ Q - a box of beasts (inert)
+ W - a tin of tremorstones (inert)
+
+
+   Skills:
+ + Level 14.8 Fighting
+ - Level 12.9(14.0) Short Blades
+ - Level 8.7(12.0) Long Blades
+ - Level 2.0 Throwing
+ + Level 20.2 Dodging
+ - Level 10.0 Shields
+ - Level 7.3 Evocations
+
+
+You had 11 spell levels left.
+You knew the following spells:
+
+ Your Spells              Type           Power      Damage    Failure   Level
+a - Ozocubu's Armour      Ice            0%         N/A       98%         3
+
+Your spell library contained the following spells:
+
+ Spells                   Type           Power      Damage    Failure   Level
+ Foxfire                  Conj/Fire      0%         2x1d4     75%         1
+ Sandblast                Erth           0%         2d4       75%         1
+ Shock                    Conj/Air       0%         1d3       75%         1
+ Ensorcelled Hibernation  Hex/Ice        0%         N/A       86%         2
+ Passwall                 Tmut/Erth      0%         N/A       86%         2
+ Sublimation of Blood     Necr           0%         N/A       86%         2
+ Confusing Touch          Hex            0%         N/A       98%         3
+ Conjure Flame            Conj/Fire      0%         6-21      98%         3
+ Inner Flame              Hex/Fire       0%         N/A       98%         3
+ Stone Arrow              Conj/Erth      0%         3d7       98%         3
+ Swiftness                Air            0%         N/A       98%         3
+ Airstrike                Air            0%         2d(0-16)  100%        4
+ Flame Wave               Conj/Fire      0%         2d4       100%        4
+ Hailstorm                Conj/Ice       0%         3d3       100%        4
+ Ice Form                 Ice/Tmut       0%         N/A       100%        4
+ Leda's Liquefaction      Hex/Erth       0%         N/A       100%        4
+ Petrify                  Tmut/Erth      0%         N/A       100%        4
+ Summon Ice Beast         Ice/Summ       0%         N/A       100%        4
+ Alistair's Intoxication  Tmut/Pois      0%         N/A       100%        5
+ Blade Hands              Tmut           0%         N/A       100%        5
+ Borgnjor's Vile Clutch   Necr/Erth      0%         N/A       100%        5
+ Irradiate                Conj/Tmut      0%         3d11      100%        5
+ Lee's Rapid Deconstruct  Erth           0%         3d5*      100%        5
+ Summon Mana Viper        Hex/Summ       0%         N/A       100%        5
+ Yara's Violent Unravell  Hex/Tmut       0%         3d3       100%        5
+ Eringya's Noxious Bog    Tmut/Pois      0%         N/A       100%        6
+ Simulacrum               Ice/Necr       0%         N/A       100%        6
+ Statue Form              Tmut/Erth      0%         N/A       100%        6
+ Dragon Form              Tmut           0%         N/A       100%        7
+ Enfeeble                 Hex            0%         N/A       100%        7
+ Monstrous Menagerie      Summ           0%         N/A       100%        7
+ Ozocubu's Refrigeration  Ice            0%         4d7       100%        7
+
+
+Dungeon Overview and Level Annotations
+
+Branches:
+Dungeon (10/15)            Temple (1/1) D:7            Lair (5/5) D:9
+  Swamp (2/4) Lair:2        Snake (0/4) Lair:3        Slime (0/5) Lair:5
+    Orc (2/2) D:9             Elf (0/3) Orc:2       Ossuary (visited)
+
+Altars:
+Ashenzari
+Cheibriados
+Dithmenos
+Elyvilon
+Fedhas
+Gozag
+Hepliaklqana
+Kikubaaqudgha
+Makhleb
+Nemelex Xobeh
+Okawaru
+Qazlal
+Ru
+Sif Muna
+Trog
+Uskayaw
+Vehumet
+Wu Jian
+Xom
+Yredelemnul
+Zin
+The Shining One
+
+Shops:
+D:2 *   D:3 ?**[   D:4 *   D:7 [   Orc:2 **=[
+
+Portals:
+Pandemonium: Orc:2
+
+Annotations:
+D:2 1 runed translucent door, Crazy Yiuf
+D:8 1 exclusion
+Swamp:2 Nikola
+
+
+Innate Abilities, Weirdness & Mutations
+
+((You are very nimble when in or above water. (Stealth+, EV+, Speed+++)))
+Your lower body shifts to a powerful aquatic tail in water.
+
+Message History
+
+You hit Nikola.
+Nikola is severely wounded.
+Nikola completely misses you.
+Unknown command.
+You hit Nikola.
+Nikola is severely wounded.
+You block Nikola's attack.
+GONNNNG!
+Unknown command.
+You slash Nikola!
+Nikola is almost dead.
+Nikola mumbles some strange words.
+Lightning arcs from Nikola's hands! The bolt of lightning hits you!!!
+You resist.
+Ouch! That really hurt!
+A bolt of lightning appears from out of thin air!
+The bolt of lightning hits Nikola.
+Okay, then.
+You hit Nikola.
+Nikola is almost dead.
+Nikola gestures wildly while chanting.
+Lightning arcs from Nikola's hands! The bolt of lightning hits you!!!
+You resist.
+* * * LOW HITPOINT WARNING * * *
+A bolt of lightning appears from out of thin air!
+The bolt of lightning hits Nikola!
+Press: ? - help, v - describe, . - travel
+Here: Nikola, wielding a +1 rapier of electrocution, wearing a +1 cloak of
+stealth and wearing a +0 pair of gloves (almost dead)
+The floor, spattered with blood.
+Unknown command.
+Okay, then.
+Aiming: Thunderbolt
+Press: ? - help, Shift-Dir - straight line, f/p - Nikola
+Aim: Nikola, wielding a +1 rapier of electrocution, wearing a +1 cloak of
+stealth and wearing a +0 pair of gloves (almost dead)
+The thunderbolt hits Nikola!
+Nikola is almost dead.
+Nikola casts a spell.
+Lightning arcs from Nikola's hands! The bolt of lightning hits you!!!
+You resist.
+You die...
+
+.♣♣   ....♣.<     ♣~.♣♣♣.§§§§>♣♣♣
+~~♣♣  .......    ♣♣.....=§§§§..~♣
+..~♣  ~§.^~~§   ♣♣.~~~~~~§§§§§~.♣
+♣♣§..~~~~~~~~   ♣~~~§~~~~§§§§§~.♣
+♣  .~~~~~.~~~.  ♣.~~~~~~§§§§~~..♣
+    §~♣♣~~..(♣♣♣♣.~~~~~~§§§.♣♣♣♣♣
+  ♣♣♣♣♣♣).~....♣♣.~~..~~~~~.♣
+♣♣♣..~♣.........♣.~~.....~~.♣
+♣.....~.......~~@.~~~.......♣
+.~~~~...._..♣~.~.@.~........♣♣
+~~~~~~......♣♣♣♣♣~.~~~....~~.♣
+~~~~~~......♣   ♣.~~§~.....§~♣♣
+~~~~~..~~§~.♣  ♣♣..~~~....~~.~♣
+.♣♣♣♣..~~~~.♣  ♣.~§~.....♣.~.~♣
+.♣  ♣...~~~~♣♣ ♣♣~~~......♣♣...~
+~~  ♣♣.~~~~..♣ ♣♣~~~§~~§♣♣♣ ~..~
+♣.♣  ♣♣..~~..♣♣♣.§~~~~~.~♣   ♣..
+
+
+You could see Nikola.
+
+Vanquished Creatures
+  Donald (Orc:2)
+  2 eleionomae
+  A bunyip (Swamp:1)
+  A boulder beetle (Lair:5)
+  A demonspawn (Orc:2)
+  6 hydras
+  A ghost crab (Swamp:2)
+  4 orc high priests (Orc:2)
+  A soul eater (Orc:1)
+  Urug (Orc:1)
+  A sun demon (Orc:2)
+  Amaemon (Lair:1)
+  3 swamp dragons
+  A goliath frog (Swamp:2)
+  5 orc knights
+  5 bog bodies
+  A lindwurm (Lair:5)
+  9 orc sorcerers
+  A will-o-the-wisp (Swamp:2)
+  17 elephants
+  4 black mambas
+  An orange demon (Lair:1)
+  An ice statue (Swamp:1)
+  A smoke demon (Orc:1)
+  18 cane toads
+  3 komodo dragons
+  2 rime drakes
+  2 ice devils (Orc:2)
+  4 trolls
+  28 blink frogs
+  8 tyrant leeches
+  2 polar bears (Lair:3)
+  8 dream sheep
+  Grinder (D:3)
+  6 wyverns
+  36 yaks
+  Sigmund (D:3)
+  2 humans (D:7)
+  5 steam dragons
+  A neqoxec (Orc:2)
+  Grum (D:8)
+  10 vampire mosquitoes
+  A basilisk (Lair:3)
+  An acid dragon (D:9)
+  4 wargs
+  10 swamp worms
+  Duvessa (D:5)
+  6 water moccasins
+  28 orc warriors
+  2 sky beasts
+  2 ice beasts (D:6)
+  3 black bears
+  8 ogres
+  15 wolves
+  2 centaurs
+  A kobold brigand (D:7)
+  13 bullfrogs
+  3 gnoll sergeants
+  2 scorpions
+  3 necrophages
+  4 wights (D:8)
+  Dowan (D:5)
+  10 killer bees
+  2 howler monkeys
+  7 electric eels
+  6 hounds
+  15 orc priests
+  3 gnoll boudas
+  3 iguanas
+  Jessica (D:3)
+  13 orc wizards
+  Natasha (thrice) (D:2)
+  8 mummies (Ossuary)
+  29 gnolls
+  9 adders
+  3 white imps
+  An ufetubus (D:5)
+  3 dart slugs
+  50 orcs
+  7 ball pythons
+  6 bats
+  8 endoplasms
+  5 giant cockroaches
+  2 gnoll zombies (Ossuary)
+  5 goblins
+  5 hobgoblins
+  2 jackals (D:5)
+  5 quokkas
+  2 frilled lizards (D:1)
+  A hobgoblin zombie (Ossuary)
+  11 kobolds
+  2 kobold zombies (Ossuary)
+  3 orc zombies (Ossuary)
+  7 rats
+555 creatures vanquished.
+
+Vanquished Creatures (collateral kills)
+  Nergalle (Lair:1)
+  An orc knight (Orc:2)
+  3 orc sorcerers (Orc:2)
+  3 yaks (Lair:1)
+  2 orc warriors (Orc:2)
+  3 wolves (Lair:1)
+  An orc priest (Orc:2)
+  3 orcs (Orc:2)
+17 creatures vanquished.
+
+Vanquished Creatures (others)
+  An alligator (Swamp:2)
+  A bloated husk (Swamp:1)
+  A swamp worm (Swamp:2)
+  An orc wizard (Orc:1)
+  A gnoll (D:10)
+  27 fungi
+  76 plants
+108 creatures vanquished.
+
+Grand Total: 680 creatures vanquished
+
+Notes
+Turn   | Place    | Note
+-------+----------+-------------------------------------------
+     0 | D:1      | kareem the Merfolk Gladiator began the quest for the Orb.
+     0 | D:1      | Reached XP level 1. HP: 16/16 MP: 1/1
+   254 | D:1      | Reached XP level 2. HP: 23/23 MP: 2/2
+  1170 | D:2      | Found a faded altar of an unknown god.
+  1212 | D:2      | Found Mowitoev's Assorted Antiques.
+  1218 | D:2      | Reached XP level 3. HP: 28/28 MP: 3/3
+  1476 | D:2      | Reached skill level 5 in Dodging
+  1723 | D:2      | Noticed Natasha
+  1730 | D:2      | Killed Natasha
+  1731 | D:2      | Reached XP level 4. HP: 34/35 MP: 4/4
+  1908 | D:2      | Noticed Natasha
+  1926 | D:2      | Killed Natasha
+  2164 | D:2      | Found a runed translucent door.
+  2165 | D:2      | Noticed Crazy Yiuf
+  2250 | D:2      | Noticed Natasha
+  2263 | D:2      | Killed Natasha
+  2264 | D:2      | Reached skill level 6 in Dodging
+  2264 | D:2      | Reached XP level 5. HP: 18/41 MP: 5/5
+  2872 | D:3      | Learned a level 3 spell: Ozocubu's Armour
+  2930 | D:3      | Found Herouq's Antique Armour Boutique.
+  2997 | D:3      | Noticed Grinder
+  2999 | D:3      | Paralysed by Grinder for 2 turns
+  3007 | D:3      | Paralysed by Grinder for 2 turns
+  3077 | D:3      | Noticed Sigmund
+  3077 | D:3      | Found Lasoaju's General Store.
+  3077 | D:3      | Found Syatay's General Store.
+  3378 | D:3      | Noticed Jessica
+  3386 | D:3      | Killed Jessica
+  3442 | D:3      | Reached XP level 6. HP: 40/48 MP: 6/6
+  3572 | D:3      | Killed Sigmund
+  3573 | D:3      | Reached skill level 5 in Long Blades
+  3573 | D:3      | Reached skill level 7 in Dodging
+  3916 | D:3      | Killed Grinder
+  3917 | D:3      | Reached skill level 8 in Dodging
+  3917 | D:3      | Reached XP level 7. HP: 55/55 MP: 7/7
+  3965 | D:3      | Found Kenoem's Magic Scroll Boutique.
+  4554 | D:4      | Found a sand-covered staircase.
+  4562 | Ossuary  | Entered an ossuary
+  4598 | Ossuary  | Reached skill level 5 in Fighting
+  5491 | D:4      | Found Dimas's Elemental Accessories.
+  5498 | D:4      | Bought a lightning rod (4/4) for 330 gold pieces
+  6018 | D:5      | Entered Level 5 of the Dungeon
+  6065 | D:5      | Reached skill level 9 in Dodging
+  6065 | D:5      | Reached XP level 8. HP: 33/62 MP: 8/8
+  6632 | D:5      | Reached skill level 1 in Evocations
+  6751 | D:5      | Noticed Duvessa
+  6791 | D:5      | Killed Duvessa
+  6990 | D:5      | Noticed Dowan
+  7007 | D:5      | Killed Dowan
+  7306 | D:5      | Reached skill level 10 in Dodging
+  8231 | D:6      | Reached XP level 9. HP: 69/69 MP: 9/9
+  8248 | D:6      | Reached skill level 11 in Dodging
+  9228 | D:7      | Reached skill level 12 in Dodging
+  9619 | D:7      | Reached skill level 13 in Dodging
+  9619 | D:7      | Reached skill level 5 in Evocations
+  9620 | D:7      | Found an iron altar of Okawaru.
+  9725 | D:7      | Found a staircase to the Ecumenical Temple.
+  9749 | Temple   | Entered the Ecumenical Temple
+  9837 | Temple   | Became a worshipper of the Wu Jian Council
+  9911 | D:7      | Found Atomniv's Armour Shop.
+ 10077 | D:8      | Noticed Grum
+ 10089 | D:8      | Killed Grum
+ 10090 | D:8      | Reached skill level 1 in Shields
+ 10111 | D:8      | Reached XP level 10. HP: 45/76 MP: 10/10
+ 10510 | D:8      | Reached skill level 5 in Shields
+ 11233 | D:8      | Reached * piety under Wu Jian
+ 11337 | D:8      | Noticed a manticore
+ 12142 | D:8      | HP: 1/76 [troll (8)]
+ 12563 | D:9      | Found a staircase to the Lair.
+ 12916 | D:9      | Found a burning altar of Makhleb.
+ 12926 | D:9      | Found a bloodstained altar of Trog.
+ 12926 | D:9      | Found a white marble altar of Elyvilon.
+ 12927 | D:9      | Found a glowing golden altar of the Shining One.
+ 12928 | D:9      | Found an opulent altar of Gozag.
+ 12928 | D:9      | Found a hide-covered altar of Uskayaw.
+ 12928 | D:9      | Found a sparkling altar of Nemelex Xobeh.
+ 13048 | D:9      | Found a staircase to the Orcish Mines.
+ 13319 | D:9      | Identified a scroll of acquirement
+ 13320 | D:9      | Acquired 967 gold pieces
+ 13443 | D:7      | Bought the +18 shield of the Gong {rElec rN+ Will+ EV-5}
+                  | for 1070 gold pieces
+ 13443 | D:7      | Found the +18 shield of the Gong {rElec rN+ Will+ EV-5}
+ 13740 | D:10     | Entered Level 10 of the Dungeon
+ 13772 | D:9      | Reached XP level 11. HP: 81/81 MP: 11/11
+ 13794 | D:9      | Reached skill level 10 in Shields
+ 13975 | D:9      | Reached ** piety under Wu Jian
+ 14509 | Orc:1    | Entered Level 1 of the Orcish Mines
+ 14509 | Orc:1    | Noticed an orc knight
+ 14569 | D:9      | Killed an orc knight
+ 14788 | Orc:1    | Noticed Urug
+ 14820 | Orc:1    | Noticed an orc sorcerer
+ 14877 | Lair:1   | Entered Level 1 of the Lair of Beasts
+ 14898 | Lair:1   | Noticed Nergalle
+ 14911 | Lair:1   | Killed Nergalle
+ 14914 | Lair:1   | Reached skill level 14 in Dodging
+ 15041 | Lair:1   | Noticed Amaemon
+ 15229 | Lair:1   | Killed Amaemon
+ 15236 | Lair:1   | Reached XP level 12. HP: 93/93 MP: 12/12
+ 15985 | Lair:1   | Reached skill level 15 in Dodging
+ 16050 | Lair:1   | Reached *** piety under Wu Jian
+ 16113 | Lair:1   | Reached skill level 1 in Short Blades
+ 16229 | Lair:2   | Identified the +4 buckler of the Slorg {rC+++ rN+++ MP-9
+                  | Int-2}
+ 16484 | Lair:2   | Reached skill level 5 in Short Blades
+ 16916 | Lair:2   | Found a staircase to the Swamp.
+ 17274 | Lair:2   | Reached **** piety under Wu Jian
+ 17355 | Lair:2   | Reached skill level 10 in Fighting
+ 17377 | Lair:3   | Reached skill level 16 in Dodging
+ 17392 | Lair:3   | Reached XP level 13. HP: 79/103 MP: 13/13
+ 17616 | Lair:3   | Found a staircase to the Snake Pit.
+ 18347 | Lair:4   | Reached skill level 10 in Short Blades
+ 18491 | Lair:3   | Reached ***** piety under Wu Jian
+ 19013 | Lair:5   | Entered Level 5 of the Lair of Beasts
+ 19547 | Lair:4   | Reached XP level 14. HP: 113/113 MP: 14/14
+ 19581 | Lair:4   | Reached skill level 17 in Dodging
+ 19734 | Lair:5   | Identified the +12 flail of Duty {speed, rC+ MP+9 Int+5}
+ 19755 | Lair:5   | Found an ornate altar of the Wu Jian Council.
+ 19756 | Lair:5   | Found a hide-covered altar of Uskayaw.
+ 19871 | Lair:5   | Identified the +1 ring mail of Uripeeb {Dex+4}
+ 20281 | Lair:5   | Found a staircase to the Slime Pits.
+ 20609 | Orc:1    | Killed Urug
+ 20861 | Orc:2    | Entered Level 2 of the Orcish Mines
+ 21140 | Orc:2    | Found a staircase to the Elven Halls.
+ 21174 | Orc:2    | Found Cuatyt's General Store.
+ 21279 | Orc:2    | Reached skill level 18 in Dodging
+ 21303 | Orc:2    | Found Atonkoc's General Store.
+ 21382 | Orc:2    | Noticed Donald
+ 21658 | Orc:2    | Paralysed by an orc sorcerer for 3 turns
+ 22225 | Orc:2    | Killed Donald
+ 22798 | Orc:2    | Reached skill level 19 in Dodging
+ 22942 | Orc:2    | Found Zetzuo Viuh's Jewellery Boutique.
+ 22942 | Orc:2    | Found Lakez's Antique Armour Shop.
+ 22943 | Orc:2    | Found a one-way gate leading to the halls of Pandemonium.
+ 22948 | Orc:2    | Bought a creamy pearl robe for 148 gold pieces
+ 22948 | Orc:2    | Identified the +1 robe "Woud" {Regen+ Int+3} (You bought it
+                  | in a shop on level 2 of the Orcish Mines)
+ 23186 | D:4      | Bought a tin of tremorstones (2/2) for 440 gold pieces
+ 23395 | Swamp:1  | Entered Level 1 of the Swamp
+ 23532 | Lair:2   | Reached XP level 15. HP: 87/125 MP: 15/15
+ 24446 | D:3      | Bought a scroll of enchant armour for 97 gold pieces
+ 24446 | D:3      | Bought a scroll of enchant weapon for 97 gold pieces
+ 24446 | D:3      | Bought a scroll of enchant armour for 97 gold pieces
+ 24962 | Swamp:2  | Found an opulent altar of Gozag.
+ 25143 | Lair:2   | HP: 6/127 [seven-headed hydra (12)]
+ 25448 | Swamp:1  | Reached skill level 20 in Dodging
+ 25621 | Swamp:2  | Noticed Nikola
+ 26049 | Swamp:2  | HP: 4/125 [Nikola/arc of chain lightning (52)]
+ 26210 | Swamp:2  | HP: 4/125 [Nikola/arc of chain lightning (51)]
+ 26211 | Swamp:2  | Killed from afar by Nikola
+
+Illustrated notes
+
+Levels and vault maps discovered:
+D:1:      dpeg_arrival_radiant, layout_basic,
+          amcnicky_mini_rare_corridor_liquid, bh_walls_and_bars
+D:2:      layout_basic, serial_shops, nicolae_shop_stone,
+          ebering_ecumenical_altar_abandoned, kennysheep_minor_cross,
+          uniq_natasha, uniq_crazy_yiuf_cottage
+D:3:      layout_rooms, serial_shops, shop,
+          nicolae_shop_competitors_out_of_business, shop, shop, uniq_jessica,
+          uniq_grinder, uniq_sigmund
+D:4:      layout_layer_cave, nicolae_ossuary_entry_monument,
+          minmay_misc_feat_rugged, nicolae_elemental_shop
+D:5:      layout_basic, uniq_duvessa
+D:6:      layout_loops_ring, minmay_misc_feat_columns
+D:7:      layout_rooms, okawaru_humans, minmay_temple_entry_statues_pillars,
+          serial_shops, kennysheep_mini
+D:8:      layout_loops_ring, grunt_decor_one_mirror, grunt_ministairs_3,
+          uniq_grum
+D:9:      layout_basic, grunt_temple_overflow_open, erik_lair_island,
+          orc_0_dummy
+D:10:     layout_big_octagon, lemuel_flamethrower_2
+Temple:   nicolae_temple_great_sept
+Lair:1:   layout_loops_ring, uniq_nergalle, uniq_amaemon
+Lair:2:   layout_gridlike, nicolae_swamp_entry_splash_gauntlet, minivault_11,
+          wad_woods_river_01
+Lair:3:   layout_roguey, dummy_snake_entry, gammafunk_lair_bear_cave
+Lair:4:   wad_woods_structure_01, layout_gridlike
+Lair:5:   minmay_lair_end_frog_pond, layout_loops_ring, slime_entry_1,
+          chequers_serial_rivers_room_a, minmay_stone_trees_medium,
+          nzn_masters_of_martial_movement, infiniplex_staircase_pool
+Swamp:1:  layout_basic_swamp, portal_ice_cave_entry_ice_statue_one,
+          hangedman_swamp_blocks
+Swamp:2:  layout_basic_swamp, basic_altar, uniq_nikola
+Orc:1:    layout_caves, uniq_urug
+Orc:2:    pf_orc_diabolical, layout_diamond_mine, uniq_donald
+
+Skill      XL: |  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 |
+---------------+----------------------------------------------+-----
+Long Blades    |     4           5  6  7        8             |  8.7
+Dodging        |        5  6     8  9 10 13    14 16    19 20 | 20.2
+Fighting       |        3        4  5           8 10 11 13 14 | 14.8
+Evocations     |                       3  5     6  7          |  7.3
+Shields        |                          3  9 10             | 10.0
+Short Blades   |                                   7 12       | 12.9
+Throwing       |                                              |  2.0
+
+Action                   |  1- 3 |  4- 6 |  7- 9 | 10-12 | 13-15 || total
+-------------------------+-------+-------+-------+-------+-------++-------
+Melee: Long sword        |   103 |   167 |   547 |   666 |       ||  1483
+       Punch             |     2 |       |    10 |     1 |       ||    13
+       Tailslap          |       |       |       |     5 |    39 ||    44
+       Scimitar          |       |       |       |   528 |  1616 ||  2144
+       Demon whip        |       |       |       |       |    37 ||    37
+Throw: Throwing net      |       |       |       |       |     1 ||     1
+Invok: Lunge             |       |       |     3 |    27 |    50 ||    80
+       Whirlwind         |       |       |       |    60 |   218 ||   278
+       Serpent's Lash    |       |       |       |       |     3 ||     3
+       Heavenly Storm    |       |       |       |       |     2 ||     2
+Evoke: Wand              |       |     2 |       |    15 |    34 ||    51
+       Lightning rod     |       |       |     2 |     9 |    16 ||    27
+       Box of beasts     |       |       |       |     2 |     3 ||     5
+       Tin of tremorston |       |       |       |       |     2 ||     2
+  Use: Scroll            |       |       |    18 |     8 |    16 ||    42
+       Potion            |       |       |     4 |     9 |     4 ||    17
+ Stab: Sleeping          |     5 |     1 |       |       |       ||     6
+       Paralysed         |       |     6 |       |    20 |       ||    26
+       Distracted        |       |       |       |     2 |     2 ||     4
+Armor: Leather armour    |    33 |    49 |    49 |       |       ||   131
+       Ring mail         |       |       |   129 |    40 |       ||   169
+       Troll leather arm |       |       |       |   111 |   145 ||   256
+Dodge: Dodged            |    87 |   112 |   542 |   763 |   782 ||  2286
+Block: Kite shield       |       |       |       |  1541 |  2219 ||  3760
+       Buckler           |       |       |       |       |    90 ||    90
+
+Table legend: (Time is in decaauts)
+ A = Elapsed time spent in this place.
+ B = Non-inter-level travel time spent in this place.
+ C = Inter-level travel time spent in this place.
+ D = Time resting spent in this place.
+ E = Time spent auto-exploring this place.
+ F = Levels seen in this place.
+ G = Mean time per level.
+                   A        B        C        D        E      F       G
+               +--------+--------+--------+--------+--------+-----+--------+
+         Total |  26273 |  24208 |   2065 |   4756 |  11770 |  21 | 1251.1 |
+       Dungeon |  15364 |  13976 |   1388 |   3052 |   7551 |  10 | 1536.4 |
+        Temple |     97 |     70 |     27 |      0 |     57 |   1 |   97.0 |
+          Lair |   6288 |   5771 |    517 |    601 |   2939 |   5 | 1257.6 |
+         Swamp |   1646 |   1599 |     47 |    520 |    510 |   2 |  823.0 |
+  Orcish Mines |   2433 |   2348 |     85 |    385 |    662 |   2 | 1216.5 |
+       Ossuary |    440 |    440 |      0 |    198 |     50 |   1 |  440.0 |
+               +--------+--------+--------+--------+--------+-----+--------+
+
+Top non-repeatable levels by time:
+     D:9: 2553 daAuts
+  Lair:2: 1979 daAuts
+     D:4: 1972 daAuts
+     D:8: 1935 daAuts
+     D:2: 1851 daAuts
+     D:6: 1492 daAuts
+     D:5: 1487 daAuts
+   Orc:2: 1448 daAuts
+  Lair:1: 1244 daAuts
+     D:3: 1198 daAuts
+     D:1: 1180 daAuts
+     D:7: 1180 daAuts
+  Lair:4: 1148 daAuts
+ Swamp:1: 1111 daAuts
+  Lair:3: 1029 daAuts

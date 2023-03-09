@@ -148,10 +148,14 @@ export const MORGUE_REGEX = {
     }
   },
 
-  // https://regexr.com/79j2c
+  // https://regexr.com/79rsi
   [MORGUE_FIELD.Trunk]: async ({ morgueText }) => {
     try {
-      await runRegex(MORGUE_FIELD.Trunk, morgueText, /version ((\d+\.\d+(\.\d+)?)(-(a0|b1)-).*?)\s.*?character file./);
+      await runRegex(
+        MORGUE_FIELD.Trunk,
+        morgueText,
+        /version ((\d+\.\d+(\.\d+)?)(-(a0|b1)(-|\s)).*?)\s.*?character file./,
+      );
       return { isTrunk: true };
     } catch (err) {
       return { isTrunk: false };
