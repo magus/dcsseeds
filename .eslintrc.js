@@ -5,10 +5,12 @@ module.exports = {
     '@magusn/magusn/react',
     'next/core-web-vitals',
   ],
+
   parserOptions: {
     sourceType: 'module',
     ecmaVersion: 2020,
   },
+
   settings: {
     'import/resolver': {
       'node': {
@@ -33,5 +35,7 @@ module.exports = {
     'no-inner-declarations': 'off',
 
     'jest/valid-title': 'off',
+
+    'prettier/prettier': 'off',
   },
 };
