@@ -110,10 +110,10 @@ function ServerConfig(server) {
     // webzook has version specific morgue listing
     if (server === Server.webzook) {
       // e.g. https://webzook.net/soup/morgue/0.29/Coo1/
-      return `${rawdata_base}/${version}/${player_name}`;
+      return `${rawdata_base}/${version}/${player_name}/`;
     }
 
-    return `${rawdata_base}/${player_name}`;
+    return `${rawdata_base}/${player_name}/`;
   }
 
   function morgueRegex(player_name) {
