@@ -29,7 +29,7 @@ function ItemListRows(props) {
         const is_last = i !== props.item_list.length - 1;
 
         return (
-          <React.Fragment key={item.name}>
+          <React.Fragment key={[item.name, item.branchName, item.level].join('-')}>
             <Item {...props} {...item} />
             {is_last ? null : vertical_pad}
           </React.Fragment>
