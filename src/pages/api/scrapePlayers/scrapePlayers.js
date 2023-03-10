@@ -31,9 +31,14 @@ export default async function scrapePlayers(req, res) {
   try {
     const stopwatch = new Stopwatch();
 
+    // const player_list = await stopwatch
+    //   .time(GQL_SCRAPEPLAYERS_BY_NAME.run({ name: 'magusnn' }))
+    //   .record('fetch player list');
     const player_list = await stopwatch.time(GQL_SCRAPEPLAYERS.run()).record('fetch player list');
 
-    const promise_result_list = player_list.map((player) => scrape_morgue_list({ player, stopwatch }));
+    const promise_result_list = player_list.map((player) => {
+      return scrape_morgue_list({ player, stopwatch });
+    });
 
     const result_list = await Promise.all(promise_result_list);
 
@@ -157,6 +162,22 @@ function sum_list(list) {
   }
   return sum;
 }
+
+// this is optional to allow easily using above to run for specific player
+// eslint-disable-next-line no-unused-vars
+const GQL_SCRAPEPLAYERS_BY_NAME = serverQuery(
+  gql`
+    query ListScrapePlayers($name: String!) {
+      dcsseeds_scrapePlayers(limit: 15, order_by: { lastRun: asc_nulls_first }, where: { name: { _eq: $name } }) {
+        id
+        name
+        server
+        morgues
+      }
+    }
+  `,
+  (data) => data.dcsseeds_scrapePlayers,
+);
 
 const GQL_SCRAPEPLAYERS = serverQuery(
   gql`

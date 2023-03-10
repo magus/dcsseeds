@@ -102,9 +102,20 @@ export async function addMorgue(args) {
         on_conflict: { constraint: 'dcsseeds_scrapePlayers_seedVersion_pkey', update_columns: 'seed' },
       };
 
+      const branch_level = {
+        data: { name: event.branch },
+        on_conflict: { constraint: 'dcsseeds_scrapePlayers_branch_level_pkey', update_columns: 'name' },
+      };
+
+      // optionally include event.level
+      if (event.level) {
+        branch_level.data.level = parseInt(event.level, 10);
+      }
+
       const insertItem = {
         name: event.data.item,
         branch,
+        branch_level,
         location: event.location,
         morgue: morgue.url,
         playerId,
@@ -112,11 +123,6 @@ export async function addMorgue(args) {
         seedVersion,
         fullVersion,
       };
-
-      // optionally include event.level
-      if (event.level) {
-        insertItem.level = parseInt(event.level, 10);
-      }
 
       items.push(insertItem);
     });
