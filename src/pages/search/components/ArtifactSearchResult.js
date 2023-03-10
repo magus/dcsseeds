@@ -24,9 +24,9 @@ function ItemListRows(props) {
   return (
     <React.Fragment>
       {item_list.map((item, i) => {
-        let vertical_pad = null;
+        let vertical_pad = <Spacer.Vertical size="1" />;
 
-        const is_last = i !== props.item_list.length - 1;
+        const is_last = i === props.item_list.length - 1;
 
         return (
           <React.Fragment key={[item.name, item.branchName, item.level].join('-')}>
@@ -41,10 +41,9 @@ function ItemListRows(props) {
           <td></td>
           <td></td>
           <td className="link">
-            <Spacer.Vertical size="3" />
             <Spacer.Horizontal size="1" />
             <ItemsSeedVersionLink {...props}>
-              See all <b>{show_more_count}</b> Ziggurat unrands
+              +<b>{show_more_count}</b> Ziggurat unrand{show_more_count > 1 ? 's' : ''}
             </ItemsSeedVersionLink>
           </td>
         </MoreItemsRow>
@@ -74,7 +73,7 @@ export function ArtifactSearchResult(props) {
                 <td colSpan="999">
                   <Spacer.Vertical size="1" />
                   <ItemDivider />
-                  <Spacer.Vertical size="2" />
+                  <Spacer.Vertical size="1" />
                 </td>
               </tr>
 
@@ -127,15 +126,17 @@ function Item(props) {
       </td>
 
       <td>
-        <Spacer.Horizontal size="1" />
+        <Spacer.Horizontal size="2" />
       </td>
 
       <ItemRight>
         <Name>
           <ItemsSeedVersionLink {...props}>
-            <Image alt={props.name} src={metadata.image_url} layout="fixed" {...image_size} />
+            <span className="image">
+              <Image alt={props.name} src={metadata.image_url} {...image_size} />
+            </span>
             <Spacer.Horizontal size="1" />
-            {props.name}
+            <span className="name">{props.name}</span>
           </ItemsSeedVersionLink>
         </Name>
       </ItemRight>
@@ -143,14 +144,15 @@ function Item(props) {
   );
 }
 
-const image_size = { width: 24, height: 24 };
+const image_size = { width: 32, height: 32 };
 
 const ItemTable = styled.table`
   border-spacing: 0;
+  border-collapse: collapse;
   font-size: var(--font-small);
 
   tr {
-    height: ${image_size.width}px;
+    line-height: var(--spacer-4);
   }
 
   td {
@@ -162,19 +164,14 @@ const MoreItemsRow = styled.tr`
   .link {
     display: flex;
     align-items: flex-end;
-    padding-left: ${image_size.width}px;
+    padding-left: var(--spacer-4);
   }
 `;
 
 const ItemRow = styled.tr`
-  vertical-align: top;
-  margin: 0 0 var(--spacer-1) 0;
-
   .location {
-    width: 120px;
-    height: inherit;
-    display: flex;
-    align-items: center;
+    display: inline-block;
+    width: var(--spacer-11);
     text-overflow: ellipsis;
     overflow: hidden;
   }
@@ -228,12 +225,24 @@ const Version = styled.span`
 `;
 
 const Name = styled.div`
+  line-height: var(--spacer-2);
   /*
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   */
   a {
+    display: flex;
+  }
+
+  span.image {
+    min-width: var(--spacer-4);
+    max-width: var(--spacer-4);
+    min-height: var(--spacer-4);
+    max-height: var(--spacer-4);
+  }
+
+  .name {
     display: flex;
     align-items: center;
   }
