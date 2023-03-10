@@ -63,7 +63,11 @@ function Item(props) {
     <ItemRow className={class_list.join(' ')}>
       <td>
         <Branch>{props.branchName}</Branch>
-        &nbsp;<Level>{props.level}</Level>
+        {!props.level ? null : (
+          <React.Fragment>
+            &nbsp;<Level>{props.level}</Level>
+          </React.Fragment>
+        )}
       </td>
 
       <td>
