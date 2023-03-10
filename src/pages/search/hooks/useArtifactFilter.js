@@ -37,62 +37,77 @@ export function useArtifactFilter(props) {
 
   // build a lookup for the top-level artifact counts to quickly count
   // results for artifact_count array below
-  const [seedVersion_set_list, seedVersion_item_map, version_seed_map, version_item_map] = React.useMemo(() => {
-    const seedVersion_set_list = [];
-    const seedVersion_item_map = new Map();
+  const [seedVersion_set_list, seedVersion_item_map, version_seed_map, version_item_map, artifact_list] =
+    React.useMemo(() => {
+      // store the entire artifact_list filtered by branch filter
+      const artifact_list = [];
 
-    // { [version]: Set(seedVersion) } for each version store seedVersion set
-    const version_seed_map = new Map();
+      const seedVersion_set_list = [];
+      const seedVersion_item_map = new Map();
 
-    // { [version]: [count, count, ...] } for each version store count
-    const version_item_map = new Map();
+      // { [version]: Set(seedVersion) } for each version store seedVersion set
+      const version_seed_map = new Map();
 
-    // initialize version maps for all versions
-    for (const version of props.version_list) {
-      version_seed_map.set(version, new Set());
-      version_item_map.set(version, []);
-    }
+      // { [version]: [count, count, ...] } for each version store count
+      const version_item_map = new Map();
 
-    for (let i = 0; i < Unrands.List.length; i++) {
-      // init item count for each version
+      // initialize version maps for all versions
       for (const version of props.version_list) {
-        version_item_map.get(version)[i] = 0;
+        version_seed_map.set(version, new Set());
+        version_item_map.set(version, []);
       }
 
-      const result_list = props.artifact_list[i];
+      for (let i = 0; i < Unrands.List.length; i++) {
+        // init item count for each version
+        for (const version of props.version_list) {
+          version_item_map.get(version)[i] = 0;
+        }
 
-      const item_seedVersion_set = new Set();
+        // init artifact_list for this unrand
+        artifact_list[i] = [];
 
-      for (const result of result_list) {
-        const seedVersion = seed_version_key(result.seed, result.version);
+        const result_list = props.artifact_list[i];
 
-        // store count of this item for this version
-        version_item_map.get(result.version)[i]++;
+        const item_seedVersion_set = new Set();
 
-        // set the seedVersion key in the version lookup
-        version_seed_map.get(result.version).add(result.seed);
+        for (const result of result_list) {
+          if (DEFAULT_BRANCH_FILTER.has(result.branchName)) {
+            // console.debug('skip', { result });
+            continue;
+          }
 
-        // store seed version for this unrand
-        item_seedVersion_set.add(seedVersion);
+          // include this result in overall artifact list
+          artifact_list[i].push(result);
 
-        // store this unrand for this seed
-        const seedVersion_item_list = seedVersion_item_map.get(seedVersion) || [];
-        seedVersion_item_list.push({ ...result, unrand_key: i });
-        seedVersion_item_map.set(seedVersion, seedVersion_item_list);
+          const seedVersion = seed_version_key(result.seed, result.version);
+
+          // store count of this item for this version
+          version_item_map.get(result.version)[i]++;
+
+          // set the seedVersion key in the version lookup
+          version_seed_map.get(result.version).add(result.seed);
+
+          // store seed version for this unrand
+          item_seedVersion_set.add(seedVersion);
+
+          // store this unrand for this seed
+          const seedVersion_item_list = seedVersion_item_map.get(seedVersion) || [];
+          seedVersion_item_list.push({ ...result, unrand_key: i });
+          seedVersion_item_map.set(seedVersion, seedVersion_item_list);
+        }
+
+        seedVersion_set_list[i] = item_seedVersion_set;
       }
 
-      seedVersion_set_list[i] = item_seedVersion_set;
-    }
+      // console.debug('[build memoized seedVersion data structures]', {
+      //   seedVersion_set_list,
+      //   seedVersion_item_map,
+      //   version_seed_map,
+      //   version_item_map,
+      // });
 
-    // console.debug('[build memoized seedVersion data structures]', {
-    //   seedVersion_set_list,
-    //   seedVersion_item_map,
-    //   version_seed_map,
-    //   version_item_map,
-    // });
-
-    return [seedVersion_set_list, seedVersion_item_map, version_seed_map, version_item_map];
-  }, [props.artifact_list, props.version_list]);
+      return [seedVersion_set_list, seedVersion_item_map, version_seed_map, version_item_map, artifact_list];
+    }, [props.artifact_list, props.version_list]);
 
   function init_state() {
     const filter_list = [];
@@ -213,8 +228,8 @@ export function useArtifactFilter(props) {
     try {
       let query_result = await run_query_filter({
         client,
-        props,
         ...full_args,
+        artifact_list,
         seedVersion_set_list,
         seedVersion_item_map,
         version_seed_map,
@@ -322,7 +337,7 @@ async function local_filter(args) {
   const seed_map = new Map();
 
   for (const unrand_key of filter_list) {
-    const unrand_list = args.props.artifact_list[unrand_key];
+    const unrand_list = args.artifact_list[unrand_key];
 
     for (const result of unrand_list) {
       const { seed, version } = result;
@@ -490,3 +505,6 @@ function NestedFilter(filter_list, unrand_query) {
 
   return nested_query;
 }
+
+const DEFAULT_BRANCH_FILTER = new Set();
+DEFAULT_BRANCH_FILTER.add('Ziggurat');
