@@ -104,7 +104,7 @@ export async function addMorgue(args) {
 
       const branch_level = {
         data: { name: event.branch },
-        on_conflict: { constraint: 'dcsseeds_scrapePlayers_branch_level_pkey', update_columns: 'name' },
+        on_conflict: { constraint: 'dcsseeds_scrapePlayers_branch_level_name_level_key', update_columns: 'name' },
       };
 
       // optionally include event.level
