@@ -51,6 +51,19 @@ export function useArtifactFilter(props) {
       // { [version]: [count, count, ...] } for each version store count
       const version_item_map = new Map();
 
+      // duplicate filter
+      const unique_result = new Set();
+      function get_result_key(result) {
+        const parts = [result.seed, result.version, result.name, result.branchName];
+
+        // only include if level positive number
+        if (result.level) {
+          parts.push(result.level);
+        }
+
+        return parts.join('-');
+      }
+
       // initialize version maps for all versions
       for (const version of props.version_list) {
         version_seed_map.set(version, new Set());
@@ -71,6 +84,20 @@ export function useArtifactFilter(props) {
         const item_seedVersion_set = new Set();
 
         for (const result of result_list) {
+          const result_key = get_result_key(result);
+          // skip duplicate
+          // 🚨 we can remove this when we reset all items
+          // currently this prevents level null and level 0 from being distinct entries
+          // when we migrated to branch_level we introduced duplicates because
+          // level null is not counted in primary key, so level null and level 0
+          // are distinct and therefore show up twice which broke filtering
+          if (unique_result.has(result_key)) {
+            // console.debug('SKIP DUPLICATE', result);
+            continue;
+          }
+          // always track for duplicate detection
+          unique_result.add(result_key);
+
           const seedVersion = seed_version_key(result.seed, result.version);
 
           // always store this unrand for this seed
