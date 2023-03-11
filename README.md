@@ -10,14 +10,6 @@ track random seeds in dcss
 
 
 
-## branch_level order
-
-create branch level order table
-link to item table same as branch table, update queries to sort on its order field
-allow sorting levels of place before other levels
-dungeon 1-3, sewer, ossuary, dungeon 5, temple, etc. etc.
-
-
 ## refactor crawl submodules
 
 consider setting up separate submodules for each version of crawl
