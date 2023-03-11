@@ -68,7 +68,7 @@ only support `>` (not `>=` for simplicity)
 ```graphql
 query {
   dcsseeds_scrapePlayers_item(
-    order_by: [{ branch: { order: asc } }, { level: asc }]
+    order_by: [{ branch_level: { order: asc } }]
     where: {
       _or: [
         # (plus > 6 AND slay > 5) OR (rN > 2 AND Will > 2 AND !Contam)

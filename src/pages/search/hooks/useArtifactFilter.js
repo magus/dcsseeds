@@ -506,7 +506,7 @@ function KeyedUnrandResult(i) {
   const name_ilike = ilike(i);
 
   return `
-    ${key}: items(where: { name: { _ilike: "${name_ilike}" } }, limit: 1, order_by: { branch: { order: asc } }) {
+    ${key}: items(where: { name: { _ilike: "${name_ilike}" } }, limit: 1, order_by: { branch_level: { order: asc } }) {
       ...NestedUnrandResult
     }
   `;
@@ -523,7 +523,7 @@ function NestedFilter(filter_list, unrand_query) {
     const filter_ilike = ilike(filter_entry);
 
     nested_query = `
-      ${key}: items(where: { name: { _ilike: "${filter_ilike}" } }, limit: 1, order_by: { branch: { order: asc } }) {
+      ${key}: items(where: { name: { _ilike: "${filter_ilike}" } }, limit: 1, order_by: { branch_level: { order: asc } }) {
         seedVersion {
           ${nested_query}
         }

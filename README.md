@@ -78,7 +78,7 @@ query {
     version
     seed
     items(
-      order_by: [{ branch: { order: asc } }, { level: asc }]
+      order_by: [{ branch_level: { order: asc } }]
       where: {
         _or: [
           { name: { _ilike: "%amulet of Elemental Vulnerability%" } }

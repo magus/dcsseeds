@@ -34,7 +34,7 @@ export function useItemSearch({ limit = 10, delayMs = 250 } = {}) {
 
       const orderBy = [
         // sort in order of fields
-        { branch: { order: 'asc' } },
+        { branch_level: { order: 'asc' } },
         { level: 'asc' },
         { timestamp: 'desc' },
         { version: 'desc' },
