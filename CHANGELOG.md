@@ -1,5 +1,52 @@
 # CHANGELOG
 
+## 2023-03-11
+
+need to migrate all previous `NULL` level values to zero
+`NULL` is ignored for primary key which causes duplicate rows and cannot be sorted properly by `branch_level` table
+first, discover all duplicate rows where  `NULL` in them
+
+```sql
+select id from "public"."dcsseeds_scrapePlayers_item" outer_table
+where (
+    select count(*) from "public"."dcsseeds_scrapePlayers_item" inner_table
+    where (
+        inner_table.name = outer_table.name
+        AND inner_table."branchName" = outer_table."branchName"
+        AND inner_table.seed = outer_table.seed
+        AND inner_table.morgue = outer_table.morgue
+        AND inner_table."fullVersion" = outer_table."fullVersion"
+    )
+) > 1
+```
+
+then run `DELETE` over the select subquery
+
+```sql
+DELETE FROM "public"."dcsseeds_scrapePlayers_item" WHERE id IN (
+    select id from "public"."dcsseeds_scrapePlayers_item" outer_table
+    where (
+        select count(*) from "public"."dcsseeds_scrapePlayers_item" inner_table
+        where (
+            inner_table.name = outer_table.name
+            AND inner_table."branchName" = outer_table."branchName"
+            AND inner_table.seed = outer_table.seed
+            AND inner_table.morgue = outer_table.morgue
+            AND inner_table."fullVersion" = outer_table."fullVersion"
+        )
+    ) > 1
+```
+
+finally, now that duplicates are removed we can update all `NULL` values to `0` with mutation below
+
+```graphql
+mutation ConvertLevelNullZero {
+  update_dcsseeds_scrapePlayers_item(where: {level: {_is_null: true}}, _set: {level: 0}) {
+    affected_rows
+  }
+}
+```
+
 ## 2023-03-01
 
 - setting up foreign keys to control how updates and deletes impact related tables
