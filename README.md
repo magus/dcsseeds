@@ -10,6 +10,24 @@ track random seeds in dcss
 
 
 
+## lst files with parseMorgue
+
+do lst files exist on all servers?
+
+gozag shops cannot be distinguished from normal shops by lst alone
+morgue files note shops found, but do not note shops made by gozag
+so we can build list of all shops from lst, then cross reference to notes to see if we have a 'found' entry for them
+if found entry exists, it means it's a non-gozag shop
+
+parse lst file
+this will allow us to identify all shop items even when not bought
+cross reference identified items against items from lst
+maybe identified that aren't in lst should not be included
+
+> e.g. https://www.reddit.com/r/dcss/comments/11ohwvi/items_on_slime_3/?
+
+
+
 ## refactor crawl submodules
 
 consider setting up separate submodules for each version of crawl
