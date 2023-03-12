@@ -4,7 +4,7 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
 {
   "background": null,
   "datetime": 2023-03-01T01:25:32.000Z,
-  "eventCount": 202,
+  "eventCount": 223,
   "eventErrors": [],
   "events": [
     {
@@ -607,6 +607,42 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
     {
       "branch": "Orc",
       "data": {
+        "name": "Bixzaup's General Store",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "shop",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "name": "Suvvylam's Distillery",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "shop",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "name": "Keffuelu's Book Shop",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "shop",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "name": "Getro's Armour Shop",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "shop",
+    },
+    {
+      "branch": "Orc",
+      "data": {
         "gold": "56",
         "item": "scroll of fear",
       },
@@ -800,6 +836,24 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
     {
       "branch": "Snake",
       "data": {
+        "name": "Nulefunn's Distillery",
+      },
+      "level": "2",
+      "location": "Snake:2",
+      "type": "shop",
+    },
+    {
+      "branch": "Snake",
+      "data": {
+        "name": "Voinep's Food Emporium",
+      },
+      "level": "2",
+      "location": "Snake:2",
+      "type": "shop",
+    },
+    {
+      "branch": "Snake",
+      "data": {
         "who": "Roxanne",
       },
       "level": "2",
@@ -853,6 +907,15 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       "level": "2",
       "location": "Shoals:2",
       "type": "skill-level",
+    },
+    {
+      "branch": "Shoals",
+      "data": {
+        "name": "Wacunaop's Book Shop",
+      },
+      "level": "4",
+      "location": "Shoals:4",
+      "type": "shop",
     },
     {
       "branch": "Shoals",
@@ -992,6 +1055,24 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
     {
       "branch": "Vaults",
       "data": {
+        "name": "Ticevuy's Antique Weapon Boutique",
+      },
+      "level": "3",
+      "location": "Vaults:3",
+      "type": "shop",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "name": "Xisim's General Store",
+      },
+      "level": "4",
+      "location": "Vaults:4",
+      "type": "shop",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
         "gold": "560",
         "item": "phial of floods",
       },
@@ -1032,6 +1113,24 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
     {
       "branch": "Vaults",
       "data": {
+        "name": "Sid Vom's Armour Shoppe",
+      },
+      "level": "4",
+      "location": "Vaults:4",
+      "type": "shop",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "name": "Eduvime's Gadget Shop",
+      },
+      "level": "4",
+      "location": "Vaults:4",
+      "type": "shop",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
         "gold": "420",
         "item": "box of beasts",
       },
@@ -1059,6 +1158,15 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       "level": "4",
       "location": "Vaults:4",
       "type": "skill-level",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "name": "Ylaxeidgh's General Store",
+      },
+      "level": "4",
+      "location": "Vaults:4",
+      "type": "shop",
     },
     {
       "branch": "Vaults",
@@ -1107,6 +1215,15 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       "level": "4",
       "location": "Vaults:4",
       "type": "item",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "name": "Dodut's Gadget Emporium",
+      },
+      "level": "4",
+      "location": "Vaults:4",
+      "type": "shop",
     },
     {
       "branch": "Vaults",
@@ -1189,6 +1306,15 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
     {
       "branch": "Depths",
       "data": {
+        "name": "Beogyoha's Assorted Antiques",
+      },
+      "level": "2",
+      "location": "Depths:2",
+      "type": "shop",
+    },
+    {
+      "branch": "Depths",
+      "data": {
         "gold": "185",
         "item": "serpentine glass ring",
       },
@@ -1258,6 +1384,24 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
     {
       "branch": "Depths",
       "data": {
+        "name": "Viedasob's Jewellery Shop",
+      },
+      "level": "2",
+      "location": "Depths:2",
+      "type": "shop",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "name": "Nefan's Magic Scroll Shop",
+      },
+      "level": "2",
+      "location": "Depths:2",
+      "type": "shop",
+    },
+    {
+      "branch": "Depths",
+      "data": {
         "gold": "52",
         "item": "scroll of magic mapping",
       },
@@ -1294,6 +1438,24 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       "level": "2",
       "location": "Depths:2",
       "type": "skill-level",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "name": "Cyhunoik's Food Shop",
+      },
+      "level": "2",
+      "location": "Depths:2",
+      "type": "shop",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "name": "Unyighy's Food Boutique",
+      },
+      "level": "2",
+      "location": "Depths:2",
+      "type": "shop",
     },
     {
       "branch": "Depths",
@@ -1389,6 +1551,33 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       "level": "5",
       "location": "Depths:5",
       "type": "portal",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "name": "Doikh's Jewellery Shoppe",
+      },
+      "level": "5",
+      "location": "Depths:5",
+      "type": "shop",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "name": "Inimin's Gadget Boutique",
+      },
+      "level": "5",
+      "location": "Depths:5",
+      "type": "shop",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "name": "Vadghug's Gadget Boutique",
+      },
+      "level": "5",
+      "location": "Depths:5",
+      "type": "shop",
     },
     {
       "branch": "Depths",

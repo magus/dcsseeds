@@ -4,7 +4,7 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
 {
   "background": "Hedge Wizard",
   "datetime": 2022-12-22T03:05:13.000Z,
-  "eventCount": 216,
+  "eventCount": 238,
   "eventErrors": [],
   "events": [
     {
@@ -69,6 +69,24 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
     {
       "branch": "Dungeon",
       "data": {
+        "name": "Pid Onos's Assorted Antiques",
+      },
+      "level": "3",
+      "location": "Dungeon:3",
+      "type": "shop",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "name": "Giumaycu's Assorted Antiques",
+      },
+      "level": "3",
+      "location": "Dungeon:3",
+      "type": "shop",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
         "hp": "24",
         "level": "4",
         "mp": "9",
@@ -76,6 +94,15 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       "level": "3",
       "location": "Dungeon:3",
       "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "name": "Royr's Distillery",
+      },
+      "level": "3",
+      "location": "Dungeon:3",
+      "type": "shop",
     },
     {
       "branch": "Dungeon",
@@ -94,6 +121,15 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       "level": "3",
       "location": "Dungeon:3",
       "type": "item",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "name": "Suewocu's Magic Scroll Shoppe",
+      },
+      "level": "3",
+      "location": "Dungeon:3",
+      "type": "shop",
     },
     {
       "branch": "Dungeon",
@@ -424,6 +460,15 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
     {
       "branch": "Dungeon",
       "data": {
+        "name": "Damaf's Weapon Emporium",
+      },
+      "level": "9",
+      "location": "Dungeon:9",
+      "type": "shop",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
         "hp": "64",
         "level": "11",
         "mp": "23",
@@ -431,6 +476,15 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       "level": "10",
       "location": "Dungeon:10",
       "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "name": "Wierett's Distillery",
+      },
+      "level": "10",
+      "location": "Dungeon:10",
+      "type": "shop",
     },
     {
       "branch": "Dungeon",
@@ -797,6 +851,15 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
     {
       "branch": "Orc",
       "data": {
+        "name": "Foets's General Store",
+      },
+      "level": "1",
+      "location": "Orc:1",
+      "type": "shop",
+    },
+    {
+      "branch": "Orc",
+      "data": {
         "who": "Jorgrun",
       },
       "level": "1",
@@ -815,12 +878,30 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
     {
       "branch": "Orc",
       "data": {
+        "name": "Fiwuhog's Distillery",
+      },
+      "level": "1",
+      "location": "Orc:1",
+      "type": "shop",
+    },
+    {
+      "branch": "Orc",
+      "data": {
         "gold": "75",
         "item": "potion of heal wounds",
       },
       "level": "1",
       "location": "Orc:1",
       "type": "bought",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "name": "Ada Utev's Weapon Shoppe",
+      },
+      "level": "1",
+      "location": "Orc:1",
+      "type": "shop",
     },
     {
       "branch": "Orc",
@@ -841,6 +922,42 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       "level": "2",
       "location": "Orc:2",
       "type": "skill-level",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "name": "Aloanauff's Antique Armour Emporium",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "shop",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "name": "Tietax's Antique Weapon Boutique",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "shop",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "name": "Ogreysm's Magic Scroll Shop",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "shop",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "name": "Rutasoam's Antique Armour Shoppe",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "shop",
     },
     {
       "branch": "Orc",
@@ -1266,6 +1383,15 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       "type": "skill-level",
     },
     {
+      "branch": "Elf",
+      "data": {
+        "name": "Fuwura Odyu's Book Emporium",
+      },
+      "level": "2",
+      "location": "Elf:2",
+      "type": "shop",
+    },
+    {
       "branch": "Orc",
       "data": {
         "gold": "60",
@@ -1309,6 +1435,33 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
     {
       "branch": "Elf",
       "data": {
+        "name": "Xileehaw's General Store",
+      },
+      "level": "3",
+      "location": "Elf:3",
+      "type": "shop",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "name": "Bagilu's General Store",
+      },
+      "level": "3",
+      "location": "Elf:3",
+      "type": "shop",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "name": "Emna's Jewellery Shoppe",
+      },
+      "level": "3",
+      "location": "Elf:3",
+      "type": "shop",
+    },
+    {
+      "branch": "Elf",
+      "data": {
         "gold": "112",
         "item": "scroll of blinking",
       },
@@ -1325,6 +1478,15 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       "level": "3",
       "location": "Elf:3",
       "type": "bought",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "name": "Gofagoq's Book Shoppe",
+      },
+      "level": "3",
+      "location": "Elf:3",
+      "type": "shop",
     },
     {
       "branch": "Elf",
@@ -1470,6 +1632,15 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
     {
       "branch": "Vaults",
       "data": {
+        "name": "Wura's Antique Weapon Boutique",
+      },
+      "level": "2",
+      "location": "Vaults:2",
+      "type": "shop",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
         "who": "Jory",
       },
       "level": "2",
@@ -1579,6 +1750,33 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       "level": "1",
       "location": "Depths:1",
       "type": "portal",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "name": "Judduappa's Distillery",
+      },
+      "level": "1",
+      "location": "Depths:1",
+      "type": "shop",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "name": "Aceall's Magic Scroll Shoppe",
+      },
+      "level": "1",
+      "location": "Depths:1",
+      "type": "shop",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "name": "Aneulapp's Assorted Antiques",
+      },
+      "level": "1",
+      "location": "Depths:1",
+      "type": "shop",
     },
     {
       "branch": "Depths",

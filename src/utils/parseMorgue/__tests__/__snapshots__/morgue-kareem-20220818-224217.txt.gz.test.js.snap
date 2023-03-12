@@ -4,7 +4,7 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
 {
   "background": "Gladiator",
   "datetime": 2022-08-18T22:42:17.000Z,
-  "eventCount": 95,
+  "eventCount": 106,
   "eventErrors": [],
   "events": [
     {
@@ -35,6 +35,15 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       "level": "1",
       "location": "Dungeon:1",
       "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "name": "Mowitoev's Assorted Antiques",
+      },
+      "level": "2",
+      "location": "Dungeon:2",
+      "type": "shop",
     },
     {
       "branch": "Dungeon",
@@ -155,6 +164,15 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
     {
       "branch": "Dungeon",
       "data": {
+        "name": "Herouq's Antique Armour Boutique",
+      },
+      "level": "3",
+      "location": "Dungeon:3",
+      "type": "shop",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
         "who": "Grinder",
       },
       "level": "3",
@@ -169,6 +187,24 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       "level": "3",
       "location": "Dungeon:3",
       "type": "unique-noticed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "name": "Lasoaju's General Store",
+      },
+      "level": "3",
+      "location": "Dungeon:3",
+      "type": "shop",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "name": "Syatay's General Store",
+      },
+      "level": "3",
+      "location": "Dungeon:3",
+      "type": "shop",
     },
     {
       "branch": "Dungeon",
@@ -259,6 +295,15 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       "type": "experience-level",
     },
     {
+      "branch": "Dungeon",
+      "data": {
+        "name": "Kenoem's Magic Scroll Boutique",
+      },
+      "level": "3",
+      "location": "Dungeon:3",
+      "type": "shop",
+    },
+    {
       "branch": "Ossuary",
       "data": {
         "level": "5",
@@ -267,6 +312,15 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       "level": undefined,
       "location": "Ossuary",
       "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "name": "Dimas's Elemental Accessories",
+      },
+      "level": "4",
+      "location": "Dungeon:4",
+      "type": "shop",
     },
     {
       "branch": "Dungeon",
@@ -414,6 +468,15 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       "level": undefined,
       "location": "Temple",
       "type": "join-god",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "name": "Atomniv's Armour Shop",
+      },
+      "level": "7",
+      "location": "Dungeon:7",
+      "type": "shop",
     },
     {
       "branch": "Dungeon",
@@ -778,12 +841,30 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
     {
       "branch": "Orc",
       "data": {
+        "name": "Cuatyt's General Store",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "shop",
+    },
+    {
+      "branch": "Orc",
+      "data": {
         "level": "18",
         "skill": "Dodging",
       },
       "level": "2",
       "location": "Orc:2",
       "type": "skill-level",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "name": "Atonkoc's General Store",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "shop",
     },
     {
       "branch": "Orc",
@@ -812,6 +893,24 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       "level": "2",
       "location": "Orc:2",
       "type": "skill-level",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "name": "Zetzuo Viuh's Jewellery Boutique",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "shop",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "name": "Lakez's Antique Armour Shop",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "shop",
     },
     {
       "branch": "Orc",

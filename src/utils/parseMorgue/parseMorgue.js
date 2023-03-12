@@ -412,10 +412,13 @@ function getAllMorgueNoteEvents(morgueNotes) {
 
     function parseNote(morgueNote) {
       // check in this order to ensure we find most specific first
-      // Regex Tests
-      // Idenfitied: https://regexr.com/5csa7
-      // Found: https://regexr.com/5csaa
+      // found regex cases https://regexr.com/7a1q1
+      // artefacts
       const found = morgueNote.note.match(/Found the (.*)?/);
+      // altars, gates, portals, etc.
+      const found_an = morgueNote.note.match(/Found (a|an) (.*)?/);
+      // shops
+      const found_shop = morgueNote.note.match(/Found ((?!(the|a|an))[^.]*)/);
       const acquirement = morgueNote.note.match(/Acquired the (.*)?/);
 
       // gateway
@@ -593,6 +596,17 @@ function getAllMorgueNoteEvents(morgueNotes) {
       } else if (acquirement) {
         const [, item] = acquirement;
         addEvent('acquirement', morgueNote.loc, { item });
+      } else if (found_shop) {
+        // TODO note found shops
+        // this does not include gozag shops which is nice because they are random
+        // if we want gozag shops we can rely on
+        //   1. explicit `note_message` see https://github.com/magus/dcss/blob/3504e7f8600fc463b74bf948d59cf4ef08021291/compile-rc/parts/Morgue.rc#L156
+        //   2. `.lst` entries which are not found by this regex
+        const [, name] = found_shop;
+        // always log bought events
+        addEvent('shop', morgueNote.loc, { name });
+      } else if (found_an) {
+        // TODO note altars, portals, etc.
       } else if (found) {
         const [, item] = found;
 

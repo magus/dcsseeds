@@ -4,7 +4,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
 {
   "background": "Fighter",
   "datetime": 2022-08-10T03:44:03.000Z,
-  "eventCount": 326,
+  "eventCount": 350,
   "eventErrors": [],
   "events": [
     {
@@ -377,6 +377,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "level": "3",
       "location": "Dungeon:3",
       "type": "item",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "name": "Haleo's Antique Weapon Shop",
+      },
+      "level": "3",
+      "location": "Dungeon:3",
+      "type": "shop",
     },
     {
       "branch": "Dungeon",
@@ -1554,6 +1563,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
     {
       "branch": "Dungeon",
       "data": {
+        "name": "Unliur's Magic Scroll Shoppe",
+      },
+      "level": "13",
+      "location": "Dungeon:13",
+      "type": "shop",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
         "gold": "676",
         "item": "scroll of acquirement",
       },
@@ -1604,6 +1622,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
     {
       "branch": "Dungeon",
       "data": {
+        "name": "Tyxehol's Book Boutique",
+      },
+      "level": "13",
+      "location": "Dungeon:13",
+      "type": "shop",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
         "item": "Reference Book on Confrontation",
       },
       "level": "15",
@@ -1642,12 +1669,48 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
     {
       "branch": "Orc",
       "data": {
+        "name": "Diuvur's Antique Armour Shoppe",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "shop",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "name": "Bogaolue's Weapon Shoppe",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "shop",
+    },
+    {
+      "branch": "Orc",
+      "data": {
         "level": "14",
         "skill": "Staves",
       },
       "level": "2",
       "location": "Orc:2",
       "type": "skill-level",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "name": "Saymuive's Weapon Shop",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "shop",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "name": "Iwkeydufenn's Armour Shop",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "shop",
     },
     {
       "branch": "Orc",
@@ -1763,6 +1826,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "level": "2",
       "location": "Snake:2",
       "type": "god-gift",
+    },
+    {
+      "branch": "Snake",
+      "data": {
+        "name": "Beoniaz's Assorted Antiques",
+      },
+      "level": "2",
+      "location": "Snake:2",
+      "type": "shop",
     },
     {
       "branch": "Snake",
@@ -1946,6 +2018,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
     {
       "branch": "Snake",
       "data": {
+        "name": "Ygotzido's Distillery",
+      },
+      "level": "3",
+      "location": "Snake:3",
+      "type": "shop",
+    },
+    {
+      "branch": "Snake",
+      "data": {
         "gold": "112",
         "item": "potion of mutation",
       },
@@ -1972,6 +2053,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "level": "3",
       "location": "Snake:3",
       "type": "bought",
+    },
+    {
+      "branch": "Snake",
+      "data": {
+        "name": "Efihic's Antique Weapon Shop",
+      },
+      "level": "3",
+      "location": "Snake:3",
+      "type": "shop",
     },
     {
       "branch": "Snake",
@@ -2160,6 +2250,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "level": "1",
       "location": "Vaults:1",
       "type": "god-gift",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "name": "Xemoumat's Antique Armour Emporium",
+      },
+      "level": "2",
+      "location": "Vaults:2",
+      "type": "shop",
     },
     {
       "branch": "Vaults",
@@ -2615,6 +2714,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
     {
       "branch": "Depths",
       "data": {
+        "name": "Coannesch's Antique Weapon Boutique",
+      },
+      "level": "1",
+      "location": "Depths:1",
+      "type": "shop",
+    },
+    {
+      "branch": "Depths",
+      "data": {
         "who": "Asterion",
       },
       "level": "1",
@@ -2675,6 +2783,24 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "level": "1",
       "location": "Depths:1",
       "type": "unique-killed",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "name": "Ogeogo's Assorted Antiques",
+      },
+      "level": "1",
+      "location": "Depths:1",
+      "type": "shop",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "name": "Soqumi's Jewellery Shop",
+      },
+      "level": "1",
+      "location": "Depths:1",
+      "type": "shop",
     },
     {
       "branch": "Depths",
@@ -2744,6 +2870,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
     {
       "branch": "Depths",
       "data": {
+        "name": "Plog's Jewellery Shoppe",
+      },
+      "level": "2",
+      "location": "Depths:2",
+      "type": "shop",
+    },
+    {
+      "branch": "Depths",
+      "data": {
         "hp": "195",
         "level": "24",
         "mp": "43",
@@ -2751,6 +2886,87 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "level": "3",
       "location": "Depths:3",
       "type": "experience-level",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "name": "Severph's Jewellery Shop",
+      },
+      "level": "3",
+      "location": "Depths:3",
+      "type": "shop",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "name": "Ziyxolaz's Book Emporium",
+      },
+      "level": "3",
+      "location": "Depths:3",
+      "type": "shop",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "name": "Doqul's Jewellery Shop",
+      },
+      "level": "3",
+      "location": "Depths:3",
+      "type": "shop",
+    },
+    {
+      "branch": "Bazaar",
+      "data": {
+        "name": "Misorioj's Weapon Emporium",
+      },
+      "level": undefined,
+      "location": "Bazaar",
+      "type": "shop",
+    },
+    {
+      "branch": "Bazaar",
+      "data": {
+        "name": "Loelyr's Armour Shoppe",
+      },
+      "level": undefined,
+      "location": "Bazaar",
+      "type": "shop",
+    },
+    {
+      "branch": "Bazaar",
+      "data": {
+        "name": "Ofus's Antique Armour Emporium",
+      },
+      "level": undefined,
+      "location": "Bazaar",
+      "type": "shop",
+    },
+    {
+      "branch": "Bazaar",
+      "data": {
+        "name": "Pasoddoth's General Store",
+      },
+      "level": undefined,
+      "location": "Bazaar",
+      "type": "shop",
+    },
+    {
+      "branch": "Bazaar",
+      "data": {
+        "name": "Qaiha's Magic Scroll Shoppe",
+      },
+      "level": undefined,
+      "location": "Bazaar",
+      "type": "shop",
+    },
+    {
+      "branch": "Bazaar",
+      "data": {
+        "name": "Ruare's General Store",
+      },
+      "level": undefined,
+      "location": "Bazaar",
+      "type": "shop",
     },
     {
       "branch": "Bazaar",

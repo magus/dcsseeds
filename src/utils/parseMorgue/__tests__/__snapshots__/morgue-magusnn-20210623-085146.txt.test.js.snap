@@ -4,7 +4,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
 {
   "background": "Wanderer",
   "datetime": 2021-06-23T08:51:46.000Z,
-  "eventCount": 1500,
+  "eventCount": 1512,
   "eventErrors": [],
   "events": [
     {
@@ -1514,6 +1514,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
     {
       "branch": "Dungeon",
       "data": {
+        "name": "Zojacrecu's Antique Armour Boutique",
+      },
+      "level": "8",
+      "location": "Dungeon:8",
+      "type": "shop",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
         "level": "5",
         "skill": "Fighting",
       },
@@ -1767,6 +1776,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
       "level": "9",
       "location": "Dungeon:9",
       "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "name": "Fuuklux's Book Boutique",
+      },
+      "level": "9",
+      "location": "Dungeon:9",
+      "type": "shop",
     },
     {
       "branch": "Dungeon",
@@ -2028,6 +2046,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
       "level": "10",
       "location": "Dungeon:10",
       "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "name": "Pinud's Magic Scroll Emporium",
+      },
+      "level": "10",
+      "location": "Dungeon:10",
+      "type": "shop",
     },
     {
       "branch": "Dungeon",
@@ -3315,6 +3342,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
     {
       "branch": "Dungeon",
       "data": {
+        "name": "Madua's Antique Armour Emporium",
+      },
+      "level": "15",
+      "location": "Dungeon:15",
+      "type": "shop",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
         "level": "8",
         "skill": "Conjurations",
       },
@@ -3474,6 +3510,24 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
     {
       "branch": "Orc",
       "data": {
+        "name": "Awaasuh's Antique Weapon Boutique",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "shop",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "name": "Curghibri's General Store",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "shop",
+    },
+    {
+      "branch": "Orc",
+      "data": {
         "gold": "38",
         "item": "scroll of fear",
       },
@@ -3484,12 +3538,39 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
     {
       "branch": "Orc",
       "data": {
+        "name": "Mituill's Assorted Antiques",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "shop",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "name": "Nyvekon's Weapon Boutique",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "shop",
+    },
+    {
+      "branch": "Orc",
+      "data": {
         "level": "12",
         "skill": "Spellcasting",
       },
       "level": "2",
       "location": "Orc:2",
       "type": "skill-level",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "name": "Loetot's Jewellery Shoppe",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "shop",
     },
     {
       "branch": "Orc",
@@ -3669,6 +3750,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
       "level": "2",
       "location": "Orc:2",
       "type": "item",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "name": "Uleot's Antique Armour Shoppe",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "shop",
     },
     {
       "branch": "Orc",
@@ -5590,6 +5680,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
     {
       "branch": "Vaults",
       "data": {
+        "name": "Ilias's Gadget Shop",
+      },
+      "level": "1",
+      "location": "Vaults:1",
+      "type": "shop",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
         "desc": "You are weak.",
         "kind": "Gained",
         "source": "a shining eye",
@@ -5679,6 +5778,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
       "level": "3",
       "location": "Vaults:3",
       "type": "skill-level",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "name": "Hydimies's Antique Armour Shop",
+      },
+      "level": "3",
+      "location": "Vaults:3",
+      "type": "shop",
     },
     {
       "branch": "Vaults",

@@ -4,7 +4,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
 {
   "background": "Fighter",
   "datetime": 2022-04-15T04:02:02.000Z,
-  "eventCount": 237,
+  "eventCount": 264,
   "eventErrors": [],
   "events": [
     {
@@ -345,6 +345,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
     {
       "branch": "Dungeon",
       "data": {
+        "name": "Kiqy Okk's Assorted Antiques",
+      },
+      "level": "8",
+      "location": "Dungeon:8",
+      "type": "shop",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
         "level": "1",
         "skill": "Dodging",
       },
@@ -490,6 +499,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "level": "10",
       "location": "Dungeon:10",
       "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "name": "Reiheab's General Store",
+      },
+      "level": "11",
+      "location": "Dungeon:11",
+      "type": "shop",
     },
     {
       "branch": "Dungeon",
@@ -937,12 +955,39 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
     {
       "branch": "Orc",
       "data": {
+        "name": "Bucsurua's General Store",
+      },
+      "level": "1",
+      "location": "Orc:1",
+      "type": "shop",
+    },
+    {
+      "branch": "Orc",
+      "data": {
         "level": "15",
         "skill": "Dodging",
       },
       "level": "2",
       "location": "Orc:2",
       "type": "skill-level",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "name": "Taqieheg's Antique Armour Boutique",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "shop",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "name": "Alasek's Book Shop",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "shop",
     },
     {
       "branch": "Orc",
@@ -958,12 +1003,30 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
     {
       "branch": "Orc",
       "data": {
+        "name": "Jij Sur's Antique Armour Shoppe",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "shop",
+    },
+    {
+      "branch": "Orc",
+      "data": {
         "gold": "172",
         "item": "pair of runed boots",
       },
       "level": "2",
       "location": "Orc:2",
       "type": "bought",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "name": "Fomogynk's Antique Armour Shop",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "shop",
     },
     {
       "branch": "Orc",
@@ -1310,6 +1373,42 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
     {
       "branch": "Vaults",
       "data": {
+        "name": "Zaukki's Distillery",
+      },
+      "level": "1",
+      "location": "Vaults:1",
+      "type": "shop",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "name": "Qunylyc's Antique Weapon Boutique",
+      },
+      "level": "1",
+      "location": "Vaults:1",
+      "type": "shop",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "name": "Aridyan's Weapon Shop",
+      },
+      "level": "1",
+      "location": "Vaults:1",
+      "type": "shop",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "name": "Fapt's Book Emporium",
+      },
+      "level": "1",
+      "location": "Vaults:1",
+      "type": "shop",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
         "level": "10",
         "skill": "Shields",
       },
@@ -1325,6 +1424,42 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "level": "1",
       "location": "Vaults:1",
       "type": "portal",
+    },
+    {
+      "branch": "Bazaar",
+      "data": {
+        "name": "Idism's Weapon Shoppe",
+      },
+      "level": undefined,
+      "location": "Bazaar",
+      "type": "shop",
+    },
+    {
+      "branch": "Bazaar",
+      "data": {
+        "name": "Tynemefeik's Antique Armour Shop",
+      },
+      "level": undefined,
+      "location": "Bazaar",
+      "type": "shop",
+    },
+    {
+      "branch": "Bazaar",
+      "data": {
+        "name": "Qikli Keuf's Antique Weapon Boutique",
+      },
+      "level": undefined,
+      "location": "Bazaar",
+      "type": "shop",
+    },
+    {
+      "branch": "Bazaar",
+      "data": {
+        "name": "Hieng's General Store",
+      },
+      "level": undefined,
+      "location": "Bazaar",
+      "type": "shop",
     },
     {
       "branch": "Bazaar",
@@ -1390,6 +1525,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
     {
       "branch": "Vaults",
       "data": {
+        "name": "Ethre's General Store",
+      },
+      "level": "2",
+      "location": "Vaults:2",
+      "type": "shop",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
         "gold": "63",
         "item": "scroll of teleportation",
       },
@@ -1432,6 +1576,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "level": "3",
       "location": "Vaults:3",
       "type": "unique-killed",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "name": "Uhitilut's Antique Armour Boutique",
+      },
+      "level": "3",
+      "location": "Vaults:3",
+      "type": "shop",
     },
     {
       "branch": "Vaults",
@@ -1483,6 +1636,33 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "level": "6",
       "location": "Lair:6",
       "type": "bought",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "name": "Siam's Armour Emporium",
+      },
+      "level": "1",
+      "location": "Elf:1",
+      "type": "shop",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "name": "Pigraevu's General Store",
+      },
+      "level": "1",
+      "location": "Elf:1",
+      "type": "shop",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "name": "Qeameolia's Magic Scroll Emporium",
+      },
+      "level": "1",
+      "location": "Elf:1",
+      "type": "shop",
     },
     {
       "branch": "Elf",
@@ -1594,6 +1774,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
     {
       "branch": "Elf",
       "data": {
+        "name": "Keynwof's General Store",
+      },
+      "level": "3",
+      "location": "Elf:3",
+      "type": "shop",
+    },
+    {
+      "branch": "Elf",
+      "data": {
         "gold": "260",
         "item": "2 potions of haste",
       },
@@ -1610,6 +1799,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "level": "3",
       "location": "Elf:3",
       "type": "bought",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "name": "Boll's Armour Shoppe",
+      },
+      "level": "3",
+      "location": "Elf:3",
+      "type": "shop",
     },
     {
       "branch": "Elf",
@@ -1795,6 +1993,42 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "level": "2",
       "location": "Depths:2",
       "type": "item",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "name": "Sucur's Antique Weapon Emporium",
+      },
+      "level": "3",
+      "location": "Depths:3",
+      "type": "shop",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "name": "Qirefeg's Weapon Shoppe",
+      },
+      "level": "3",
+      "location": "Depths:3",
+      "type": "shop",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "name": "Iqeipuz's Magic Scroll Emporium",
+      },
+      "level": "3",
+      "location": "Depths:3",
+      "type": "shop",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "name": "Lucw's Weapon Shoppe",
+      },
+      "level": "3",
+      "location": "Depths:3",
+      "type": "shop",
     },
     {
       "branch": "Depths",
@@ -2010,6 +2244,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "level": "5",
       "location": "Vaults:5",
       "type": "item",
+    },
+    {
+      "branch": "Zot",
+      "data": {
+        "name": "Zock's Changing Room",
+      },
+      "level": "1",
+      "location": "Zot:1",
+      "type": "shop",
     },
     {
       "branch": "Zot",

@@ -4,7 +4,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
 {
   "background": "Fighter",
   "datetime": 2021-09-17T23:15:05.000Z,
-  "eventCount": 361,
+  "eventCount": 372,
   "eventErrors": [],
   "events": [
     {
@@ -752,12 +752,30 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
     {
       "branch": "Dungeon",
       "data": {
+        "name": "Ynooski's Distillery",
+      },
+      "level": "10",
+      "location": "Dungeon:10",
+      "type": "shop",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
         "level": "9",
         "skill": "Shields",
       },
       "level": "10",
       "location": "Dungeon:10",
       "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "name": "Sijuroas's Distillery",
+      },
+      "level": "10",
+      "location": "Dungeon:10",
+      "type": "shop",
     },
     {
       "branch": "Dungeon",
@@ -1771,6 +1789,15 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
     {
       "branch": "Swamp",
       "data": {
+        "name": "Liyhu's Island Escapes",
+      },
+      "level": "3",
+      "location": "Swamp:3",
+      "type": "shop",
+    },
+    {
+      "branch": "Swamp",
+      "data": {
         "gold": "105",
         "item": "scroll of blinking",
       },
@@ -1905,6 +1932,15 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
     {
       "branch": "Dungeon",
       "data": {
+        "name": "Zameiwur's Distillery",
+      },
+      "level": "13",
+      "location": "Dungeon:13",
+      "type": "shop",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
         "level": "12",
         "skill": "Evocations",
       },
@@ -2028,12 +2064,57 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
     {
       "branch": "Orc",
       "data": {
+        "name": "Xajir's Assorted Antiques",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "shop",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "name": "Abbesosch's Distillery",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "shop",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "name": "Rewkinoz's Gadget Gallery",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "shop",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "name": "Zuitz's Magic Scroll Shop",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "shop",
+    },
+    {
+      "branch": "Orc",
+      "data": {
         "level": "16",
         "skill": "Armour",
       },
       "level": "2",
       "location": "Orc:2",
       "type": "skill-level",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "name": "Feeruril's Distillery",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "shop",
     },
     {
       "branch": "Spider",
@@ -2762,6 +2843,15 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
     {
       "branch": "Vaults",
       "data": {
+        "name": "Kad Vur's Jewellery Emporium",
+      },
+      "level": "2",
+      "location": "Vaults:2",
+      "type": "shop",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
         "gold": "915",
         "item": "ring "Seiczeto" {rPois rC+ Dex+4 Slay+3}",
       },
@@ -3437,6 +3527,15 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "level": "1",
       "location": "Depths:1",
       "type": "acquirement",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "name": "Gucem's General Store",
+      },
+      "level": "2",
+      "location": "Depths:2",
+      "type": "shop",
     },
     {
       "branch": "Depths",
