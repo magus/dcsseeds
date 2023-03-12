@@ -294,7 +294,12 @@ function find_previous_bought_price(events, item) {
   // look back at previous events for a bought with item type
   const gold = find_list_backwards(events, (event) => {
     if (event.type === 'bought') {
-      const bought_type = !!~event.data.item.indexOf(item_type);
+      // does this bought event include the item type name
+      //   item_type = 'robe'
+      //   event.data.item = 'creamy pearl robe'
+      //   bought_type = true
+      const bought_type = event.data.item.includes(item_type);
+
       if (bought_type) {
         // console.debug('FOUND', { item, item_type, event });
         return event.data.gold;
