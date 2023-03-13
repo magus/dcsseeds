@@ -3,8 +3,8 @@ import { gql } from '@apollo/client';
 import send from 'src/server/zeitSend';
 import { serverQuery } from 'src/graphql/serverQuery';
 import { Stopwatch } from 'src/server/Stopwatch';
+import { Morgue } from 'src/utils/Morgue';
 
-import { Morgue } from './Morgue';
 import { SERVER_CONFIG } from './ServerConfig';
 import { addMorgue } from './addMorgue';
 

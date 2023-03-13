@@ -1,4 +1,4 @@
-import { Morgue } from './Morgue';
+import { Morgue } from 'src/utils/Morgue';
 import { SERVER_CONFIG } from './ServerConfig';
 import { VERSION_LIST, MINIMUM_ALLOWED_DATE } from './constants';
 
