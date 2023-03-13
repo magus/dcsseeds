@@ -122,9 +122,15 @@ async function scrape_morgue_list({ player, stopwatch }) {
   result.times = player_stopwatch.list();
 
   if (result.list.length === 0) {
+    // no results, we must manually mark last run
     await player_stopwatch
       .time(maybe_player_morgues({ player_id, morgue_map: {} }))
       .record('no new morgues, marking last run');
+  } else if (result.list.length && result.list.every((result) => result.status === 'error')) {
+    // all errors, we must manually mark last run
+    await player_stopwatch
+      .time(maybe_player_morgues({ player_id, morgue_map: {} }))
+      .record('all errors, marking last run');
   }
 
   return result;
