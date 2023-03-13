@@ -10,6 +10,12 @@ track random seeds in dcss
 
 
 
+## trove items
+
+trove contents are random
+need to clear all trove items and exclude the branch entirely from scrape player items
+
+
 ## lst files with parseMorgue
 
 do lst files exist on all servers?
