@@ -116,7 +116,7 @@ function ServerConfig(server) {
     return `${rawdata_base}/${player_name}/`;
   }
 
-  function morgueRegex(player_name) {
+  function player_morgue_regex(player_name) {
     return new RegExp(`href=(?:"|').*?(morgue-${player_name}-([0-9-]*?).txt(?:.gz)?)(?:"|')`, 'g');
   }
 
@@ -125,6 +125,6 @@ function ServerConfig(server) {
     origin_re,
     rawdata_base,
     morgue_list_url_list,
-    morgueRegex,
+    player_morgue_regex,
   };
 }

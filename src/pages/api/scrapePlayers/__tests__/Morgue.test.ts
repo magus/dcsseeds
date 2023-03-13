@@ -8,6 +8,16 @@ test('invalid throws clear error', () => {
 
 test.each([
   [
+    'http://crawl.akrasiac.org/rawdata/Lemuel/morgue-Lemuel-20070301-1552.txt',
+    {
+      'date': new Date('2007-03-01T15:52:00.000Z'),
+      'filename': 'morgue-Lemuel-20070301-1552.txt',
+      'player': 'Lemuel',
+      'timestamp': '1172764320000',
+      'url': 'http://crawl.akrasiac.org/rawdata/Lemuel/morgue-Lemuel-20070301-1552.txt',
+    },
+  ],
+  [
     'http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt',
     {
       'date': new Date('2022-12-22T03:05:13.000Z'),

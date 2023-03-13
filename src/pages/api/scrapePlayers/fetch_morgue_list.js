@@ -14,7 +14,7 @@ export async function fetch_morgue_list(player) {
     return { morgue_list, skip_morgue_set };
   }
 
-  const regex = server_config.morgueRegex(player.name);
+  const regex = server_config.player_morgue_regex(player.name);
   const morgue_list_url_list = server_config.morgue_list_url_list(player.name, VERSION_LIST);
 
   for (const morgue_list_url of morgue_list_url_list) {
