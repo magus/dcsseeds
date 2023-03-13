@@ -1,5 +1,4 @@
 import { find_list_backwards } from 'src/utils/find_list_backwards';
-import runRegex from 'src/utils/runRegex';
 import Uniques from 'src/utils/Uniques';
 import Gods from 'src/utils/Gods';
 import Branch from 'src/utils/Branch';
@@ -105,16 +104,16 @@ export function parse_note({ morgueNote, addEvent, events }) {
       addEvent('unique-killed', morgueNote.loc, { who });
     }
   } else if (joinGod) {
-    const [, god] = runRegex('god', joinGod.groups.god, Gods.Regex);
+    const god = Gods.parse_god(joinGod.groups.god);
     addEvent('join-god', morgueNote.loc, { god });
   } else if (leaveGod) {
-    const [, god] = runRegex('god', leaveGod.groups.god, Gods.Regex);
+    const god = Gods.parse_god(leaveGod.groups.god);
     addEvent('leave-god', morgueNote.loc, { god });
   } else if (pietyLevel) {
     addEvent('piety-god', morgueNote.loc, { ...pietyLevel.groups });
   } else if (identGift) {
     const { item } = identGift.groups;
-    const [, god] = runRegex('god', identGift.groups.god, Gods.Regex);
+    const god = Gods.parse_god(identGift.groups.god);
     addEvent('god-gift', morgueNote.loc, { item, god });
   } else if (spellGift) {
     addEvent('god-gift', morgueNote.loc, { ...spellGift.groups });
