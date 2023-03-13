@@ -13,6 +13,8 @@ track random seeds in dcss
 ## lst files with parseMorgue
 
 do lst files exist on all servers?
+every server seems to have them but akrasiac stores them as bz2
+we will have to decompress these
 
 gozag shops cannot be distinguished from normal shops by lst alone
 morgue files note shops found, but do not note shops made by gozag
