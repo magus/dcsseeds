@@ -75,7 +75,7 @@ export function Stopwatch() {
     function save_record(error) {
       const entry = [];
 
-      if (error instanceof StopwatchError && error.type === 'timeout') {
+      if (error instanceof Stopwatch.Error && error.type === 'timeout') {
         entry.push('TIMEOUT');
       }
 
@@ -97,7 +97,7 @@ export function Stopwatch() {
           promise,
 
           sleep_ms(timeout_ms).then(() => {
-            error = new StopwatchError('timeout');
+            error = new Stopwatch.Error('timeout');
           }),
         ]);
       }
@@ -112,6 +112,24 @@ export function Stopwatch() {
     }
   }
 }
+
+Stopwatch.Error = class StopwatchError extends Error {
+  constructor(type = 'Unknown', ...params) {
+    // Pass remaining arguments (including vendor specific ones) to parent constructor
+    super(...params);
+
+    // Maintains proper stack trace for where our error was thrown (only available on V8)
+    if (Error.captureStackTrace) {
+      Error.captureStackTrace(this, StopwatchError);
+    }
+
+    const [message] = params;
+
+    this.name = `StopwatchError`;
+    this.message = [type, message].join(' ');
+    this.type = type;
+  }
+};
 
 function time_record(start_time, unit = 'ms') {
   // capture delta hrtime since last start_time
@@ -135,19 +153,4 @@ function sleep_ms(ms) {
   return new Promise((resolve) => {
     setTimeout(resolve, ms);
   });
-}
-
-class StopwatchError extends Error {
-  constructor(type = 'Unknown', ...params) {
-    // Pass remaining arguments (including vendor specific ones) to parent constructor
-    super(...params);
-
-    // Maintains proper stack trace for where our error was thrown (only available on V8)
-    if (Error.captureStackTrace) {
-      Error.captureStackTrace(this, StopwatchError);
-    }
-
-    this.name = `[StopwatchError::${type}]`;
-    this.type = type;
-  }
 }

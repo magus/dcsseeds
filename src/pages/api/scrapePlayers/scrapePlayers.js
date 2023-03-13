@@ -115,11 +115,21 @@ async function scrape_morgue_list({ player, stopwatch }) {
       }
     }
   } catch (err) {
-    result.error = err.stack.split('\n');
+    switch (true) {
+      case err instanceof Stopwatch.Error: {
+        // stopwatch errors which are timeouts
+        result.error = err.mesage;
+        break;
+      }
 
-    const error = `scrape_morgue_list(${player.name}) [${err.message}]`;
-    const errors = [{ error }];
-    await player_stopwatch.time(GQL_ADD_PARSE_ERROR.run({ errors })).record('top level error');
+      default: {
+        result.error = err.stack.split('\n');
+
+        const error = `scrape_morgue_list(${player.name}) [${err.message}]`;
+        const errors = [{ error }];
+        await player_stopwatch.time(GQL_ADD_PARSE_ERROR.run({ errors })).record('top level error');
+      }
+    }
   }
 
   result.times = player_stopwatch.list();
