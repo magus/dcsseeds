@@ -14,7 +14,7 @@ export async function fetch_morgue_list(player) {
     return { morgue_list, skip_morgue_set };
   }
 
-  const regex = server_config.player_morgue_regex(player.name);
+  const morgue_regex = server_config.player_morgue_regex(player.name);
   const morgue_list_url_list = server_config.morgue_list_url_list(player.name, VERSION_LIST);
 
   for (const morgue_list_url of morgue_list_url_list) {
@@ -36,15 +36,23 @@ export async function fetch_morgue_list(player) {
 
     function next_match() {
       // move to next match
-      match = regex.exec(html);
+      match = morgue_regex.exec(html);
       return match;
     }
 
     // keep moving forward until we run out of matches
     // this will return null when we cycle at end of matches
     while (next_match()) {
-      const [, filename] = match;
-      const url = `${morgue_list_url}/${filename}`;
+      const { filename } = match.groups;
+
+      // safely join two urls regardless of traliing `/` characters
+      // previously this was line was
+      //     const url = `${morgue_list_url}/${filename}`;
+      // but this incorrectly generated `.../magusnn//morgue-magusnn-20230...`
+      // note the double `//` which is because we include trailing slash on morgue list url
+      // this is intentionally including the trailing slash because it's required for berato
+      // https://github.com/magus/dcsseeds/commit/4226d30bc116ac4675faec9cfa376134d747e3c6
+      const url = new URL(filename, morgue_list_url).href;
 
       const morgue = new Morgue(url);
 
