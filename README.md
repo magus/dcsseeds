@@ -7,6 +7,7 @@ track random seeds in dcss
 
 ## [events-refactor](docs/events-refactor.md)
 ## [item-search](docs/item-search.md)
+## [item-parsing](docs/item-parsing.md)
 
 
 
