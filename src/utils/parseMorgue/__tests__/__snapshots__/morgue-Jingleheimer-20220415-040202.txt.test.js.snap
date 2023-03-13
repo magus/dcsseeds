@@ -2730,7 +2730,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
   "isSprint": false,
   "isTrunk": false,
   "is_bcrawl": false,
-  "lst": "",
   "morgue": {
     "basename": "morgue-Jingleheimer-20220415-040202",
     "date": 2022-04-15T04:02:02.000Z,
@@ -2747,6 +2746,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
   ],
   "score": "586548",
   "species": "Minotaur",
+  "stash": "",
   "timeSeconds": 23808,
   "turns": 118782,
   "value": "13591998346360536447",

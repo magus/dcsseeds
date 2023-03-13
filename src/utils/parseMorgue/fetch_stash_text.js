@@ -1,30 +1,30 @@
 import bz2 from 'unbzip2-stream';
 import stream from 'stream';
 
-export async function fetch_lst({ morgue }) {
-  const lst_url = new URL(`${morgue.basename}.lst`, morgue.url).href;
+export async function fetch_stash_text({ morgue }) {
+  const stash_url = new URL(`${morgue.basename}.lst`, morgue.url).href;
 
-  const lst_response = await fetch(lst_url);
+  const stash_resp = await fetch(stash_url);
 
-  if (!lst_response.ok) {
-    throw new Error(`lst status code [${lst_response.status}]`);
+  if (!stash_resp.ok) {
+    throw new Error(`stash status code [${stash_resp.status}]`);
   }
 
   // convert ArrayBuffer into Buffer
-  const uint_array = new Uint8Array(await lst_response.arrayBuffer());
+  const uint_array = new Uint8Array(await stash_resp.arrayBuffer());
   const buffer = new Buffer(uint_array);
 
   try {
     // convert Buffer into ReadStream
-    const lst_stream = stream.Readable.from(buffer);
+    const stash_stream = stream.Readable.from(buffer);
     // attempt to decompress stream as .bz2
-    const decompressed_bz2 = lst_stream.pipe(bz2());
+    const decompressed_bz2 = stash_stream.pipe(bz2());
     // convert stream into string
     return await promise_stream_string(decompressed_bz2);
   } catch (error) {
     switch (error.message) {
       case 'No magic number found': {
-        // if the above attempt to decompress failed then the lst was raw string
+        // if the above attempt to decompress failed then the stash was raw string
         // we can convert the buffer from fetch into a string
         return String(buffer);
       }

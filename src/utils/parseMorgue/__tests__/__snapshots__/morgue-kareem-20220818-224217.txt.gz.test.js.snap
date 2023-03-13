@@ -1144,7 +1144,6 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
   "isSprint": false,
   "isTrunk": true,
   "is_bcrawl": false,
-  "lst": "",
   "morgue": {
     "basename": "morgue-kareem-20220818-224217",
     "date": 2022-08-18T22:42:17.000Z,
@@ -1157,6 +1156,7 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
   "runes": [],
   "score": "72258",
   "species": "Merfolk",
+  "stash": "",
   "timeSeconds": 5002,
   "turns": 26211,
   "value": "13998099872284306217",

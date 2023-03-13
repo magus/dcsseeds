@@ -2360,7 +2360,6 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
   "isSprint": false,
   "isTrunk": true,
   "is_bcrawl": false,
-  "lst": "",
   "morgue": {
     "basename": "morgue-TsoeiynMaft-20230301-012532",
     "date": 2023-03-01T01:25:32.000Z,
@@ -2377,6 +2376,7 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
   ],
   "score": "829441",
   "species": null,
+  "stash": "",
   "timeSeconds": 38083,
   "turns": 96603,
   "value": "2706224121741616345",

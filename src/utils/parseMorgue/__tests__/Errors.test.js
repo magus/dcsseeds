@@ -6,7 +6,7 @@ test('failure fetching .lst file does not interrupt morgue parsing', async () =>
 
   tester.mocks.fetch.lst = { ok: false, status: 500 };
 
-  await expect(() => tester.run()).rejects.toThrow('lst status code [500]');
+  await expect(() => tester.run()).rejects.toThrow('stash status code [500]');
 });
 
 test('failure parsing .lst file does not interrupt morgue parsing', async () => {

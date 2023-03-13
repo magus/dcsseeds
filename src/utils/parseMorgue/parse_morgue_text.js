@@ -15,9 +15,9 @@ export async function parse_morgue_text(params) {
   const name = params.morgue.player;
   const morgue = params.morgue.url;
   const morgueText = params.morgue_text;
-  const lst = params.lst;
+  const stash = params.stash;
 
-  const args = { name, morgue, morgueText, lst };
+  const args = { name, morgue, morgueText, stash };
 
   return {
     ...(await MORGUE_REGEX[MORGUE_FIELD.Version](args)),
