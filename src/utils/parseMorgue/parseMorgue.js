@@ -368,6 +368,10 @@ function getAllMorgueNoteEvents(morgueNotes) {
         addEvent('last-event', morgueNote.loc, morgueNote.note);
       }
     } catch (error) {
+      if (process.env.NODE_ENV !== 'production') {
+        console.error(error);
+      }
+
       eventErrors.push({ error: error.message, morgueNote });
     }
 
