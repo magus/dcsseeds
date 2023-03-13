@@ -12,7 +12,7 @@ export async function fetch_stash_text({ morgue }) {
 
   // convert ArrayBuffer into Buffer
   const uint_array = new Uint8Array(await stash_resp.arrayBuffer());
-  const buffer = new Buffer(uint_array);
+  const buffer = Buffer.from(uint_array);
 
   try {
     // convert Buffer into ReadStream

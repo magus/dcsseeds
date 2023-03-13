@@ -2376,7 +2376,11 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
   ],
   "score": "829441",
   "species": null,
-  "stash": "",
+  "stash": {
+    "artefact_list": [],
+    "branch": {},
+    "shop_list": [],
+  },
   "timeSeconds": 38083,
   "turns": 96603,
   "value": "2706224121741616345",

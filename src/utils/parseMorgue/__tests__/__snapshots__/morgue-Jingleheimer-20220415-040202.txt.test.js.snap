@@ -2746,7 +2746,11 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
   ],
   "score": "586548",
   "species": "Minotaur",
-  "stash": "",
+  "stash": {
+    "artefact_list": [],
+    "branch": {},
+    "shop_list": [],
+  },
   "timeSeconds": 23808,
   "turns": 118782,
   "value": "13591998346360536447",

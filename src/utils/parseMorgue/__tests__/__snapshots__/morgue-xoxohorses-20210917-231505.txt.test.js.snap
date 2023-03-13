@@ -3816,7 +3816,11 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
   ],
   "score": "477026",
   "species": "Minotaur",
-  "stash": "",
+  "stash": {
+    "artefact_list": [],
+    "branch": {},
+    "shop_list": [],
+  },
   "timeSeconds": 8873,
   "turns": 50758,
   "value": "2588374291142163642",

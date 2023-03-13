@@ -1,0 +1,3472 @@
+ Seeded DCSS version 0.26.1 (webtiles) character file.
+
+Game seed: 3677038311733153752 (custom seed)
+
+2441894 magusnn the Bringer of Law (level 27, 223/226 HPs)
+             Began as a Gnoll Fighter on Mar 29, 2021.
+             Was the Champion of Zin.
+             Escaped with the Orb
+             ... and 5 runes on Apr 5, 2021!
+
+             The game lasted 12:32:09 (113142 turns).
+
+magusnn the Bringer of Law (Gnoll Fighter)        Turns: 113142, Time: 12:32:10
+
+Health: 223/226    AC: 49    Str: 19    XL:     27
+Magic:  47/47      EV: 23    Int: 26    God:    Zin [******]
+Gold:   4422       SH: 19    Dex: 21    Spells: 35/66 levels left
+
+rFire    + + .     SeeInvis .   a - +5 broad axe of Imminent Death {vorpal, rF+ rN+ Int-4 Dex+4, axe}
+rCold    + + .     Faith    .   c - +2 kite shield {rN+}
+rNeg     + + .     Spirit   .   G - +8 orange crystal plate armour {Archmagi, Int+3 Clar, rare}
+rPois    .         Reflect  .   j - +4 helmet "Ucotuyxi" {rC+ Str-2 Int+5}
+rElec    +         Harm     .   x - +0 cloak of Noon {rC+ rCorr Int-3}
+rCorr    +         Rampage  .   f - +2 pair of gloves {archery}
+Will     +++++     Clarity  +   w - +1 pair of boots "Yfirip" {Str+2 Int+4}
+Stlth    +.........             T - amulet of the acrobat
+HPRegen  0.47/turn              R - ring "Resuw" {rElec rF+ Will+++ Str-4 Stlth+}
+MPRegen  0.30/turn              D - ring of the Hare {EV+8}
+
+@: no status effects
+A: distributed training, fangs 1, agile 1, strong 1, strong nose
+0: Orb of Zot
+}: 5/15 runes: decaying, slimy, silver, abyssal, gossamer
+a: Renounce Religion, Recite, Vitalisation, Imprison, Sanctuary, Donate Gold
+
+
+You escaped.
+You worshipped Zin.
+Zin was exalted by your worship.
+You visited 12 branches of the dungeon, and saw 56 of its levels.
+You visited the Abyss 3 times.
+You also visited: Bailey and Volcano.
+
+You collected 12886 gold pieces.
+You spent 4997 gold pieces at shops.
+You donated 3467 gold pieces to Zin.
+
+
+Innate Abilities, Weirdness & Mutations
+
+Your experience applies equally to all skills.
+You have very sharp teeth.
+Your uncanny sense of smell can sniff out nearby items.
+You are agile. (Dex +2)
+Your muscles are strong. (Str +2)
+
+
+   Skills:
+ + Level 20.7 Fighting
+ + Level 20.0 Short Blades
+ + Level 20.0 Long Blades
+ + Level 20.0 Axes
+ + Level 20.0 Maces & Flails
+ + Level 20.3 Polearms
+ + Level 20.0 Staves
+ + Level 20.0 Slings
+ + Level 20.0 Bows
+ + Level 20.0 Crossbows
+ + Level 20.0 Throwing
+ + Level 20.7 Armour
+ + Level 20.0 Dodging
+ + Level 20.0 Stealth
+ + Level 20.7 Shields
+ + Level 20.0 Unarmed Combat
+ + Level 20.0 Spellcasting
+ + Level 17.3 Conjurations
+ + Level 17.3 Hexes
+ + Level 17.3 Summonings
+ + Level 17.3 Necromancy
+ + Level 17.3 Translocations
+ + Level 17.3 Transmutations
+ + Level 17.3 Fire Magic
+ + Level 17.3 Ice Magic
+ + Level 17.3 Air Magic
+ + Level 17.3 Earth Magic
+ + Level 17.3 Poison Magic
+ + Level 21.4 Invocations
+ + Level 20.0 Evocations
+
+
+You had 35 spell levels left.
+You knew the following spells:
+
+ Your Spells              Type           Power        Failure   Level
+a - Apportation           Tloc           100%         1%          1
+b - Blink                 Tloc           N/A          1%          2
+i - Ignite Poison         Fire/Tmut/Pois 100%         1%          3
+o - Olgreb's Toxic Radia  Pois           100%         1%          4
+p - Passwall              Tmut/Erth      90%          1%          2
+s - Iron Shot             Conj/Erth      54%          6%          6
+v - Spellforged Servitor  Conj/Summ      54%          32%         7
+X - Starburst             Conj/Fire      54%          6%          6
+
+Your spell library contained the following spells:
+
+ Spells                   Type           Power        Failure   Level
+ Animate Skeleton         Necr           100%         1%          1
+ Beastly Appendage        Tmut           100%         1%          1
+ Corona                   Hex            100%         1%          1
+ Magic Dart               Conj           100%         1%          1
+ Pain                     Necr           100%         1%          1
+ Sandblast                Erth           100%         1%          1
+ Sting                    Tmut/Pois      100%         1%          1
+ Summon Small Mammal      Summ           100%         1%          1
+ Call Imp                 Summ           100%         1%          2
+ Corpse Rot               Necr/Air       N/A          1%          2
+ Ensorcelled Hibernation  Hex/Ice        100%         1%          2
+ Poisonous Vapours        Pois/Air       100%         1%          2
+ Slow                     Hex            100%         1%          2
+ Sublimation of Blood     Necr           54%          1%          2
+ Swiftness                Air            100%         1%          2
+ Wereblood                Tmut           100%         1%          2
+ Call Canine Familiar     Summ           100%         1%          3
+ Conjure Flame            Conj/Fire      100%         1%          3
+ Gell's Gravitas          Tloc           54%          1%          3
+ Lesser Beckoning         Tloc           54%          1%          3
+ Mephitic Cloud           Conj/Pois/Air  100%         1%          3
+ Spider Form              Tmut/Pois      54%          1%          3
+ Stone Arrow              Conj/Erth      100%         1%          3
+ Summon Guardian Golem    Hex/Summ       100%         1%          3
+ Tukima's Dance           Hex            100%         1%          3
+ Vampiric Draining        Necr           54%          1%          3
+ Animate Dead             Necr           54%          1%          4
+ Cause Fear               Hex            54%          1%          4
+ Dispel Undead            Necr           100%         1%          4
+ Ice Form                 Ice/Tmut       100%         1%          4
+ Leda's Liquefaction      Hex/Erth       54%          1%          4
+ Passage of Golubria      Tloc           N/A          1%          4
+ Petrify                  Tmut/Erth      100%         1%          4
+ Summon Ice Beast         Ice/Summ       100%         1%          4
+ Summon Lightning Spire   Summ/Air       100%         1%          4
+ Agony                    Necr           100%         1%          5
+ Alistair's Intoxication  Tmut/Pois      72%          1%          5
+ Blade Hands              Tmut           54%          1%          5
+ Bolt of Magma            Conj/Fire/Erth 54%          1%          5
+ Fireball                 Conj/Fire      54%          1%          5
+ Irradiate                Conj/Tmut      54%          1%          5
+ Iskenderun's Battlesphe  Conj           100%         1%          5
+ Lee's Rapid Deconstruct  Erth           54%          1%          5
+ Silence                  Hex/Air        54%          1%          5
+ Summon Forest            Summ/Tloc      54%          1%          5
+ Yara's Violent Unravell  Hex/Tmut       54%          1%          5
+ Death Channel            Necr           54%          6%          6
+ Eringya's Noxious Bog    Tmut/Pois      54%          6%          6
+ Freezing Cloud           Conj/Ice/Air   54%          6%          6
+ Hydra Form               Tmut           54%          6%          6
+ Invisibility             Hex            100%         6%          6
+ Simulacrum               Ice/Necr       54%          6%          6
+ Statue Form              Tmut/Erth      72%          6%          6
+ Haunt                    Necr/Summ      54%          32%         7
+ Malign Gateway           Summ/Tloc      54%          32%         7
+ Monstrous Menagerie      Summ           54%          32%         7
+ Orb of Destruction       Conj           54%          32%         7
+ Summon Greater Demon     Summ           54%          32%         7
+ Summon Hydra             Summ           54%          32%         7
+ Borgnjor's Revivificati  Necr           54%          94%         8
+ Discord                  Hex            54%          94%         8
+ Ignition                 Fire           54%          94%         8
+ Infestation              Necr           54%          94%         8
+ Necromutation            Tmut/Necr      54%          94%         8
+ Summon Horrible Things   Summ           54%          94%         8
+ Death's Door             Necr           54%          100%        9
+ Shatter                  Erth           54%          100%        9
+
+
+Inventory:
+
+Hand Weapons
+ a - the +5 broad axe of Imminent Death (weapon) {vorpal, rF+ rN+ Int-4 Dex+4, axe}
+   (You bought it in a shop on level 1 of the Elven Halls)
+
+   It inflicts extra damage upon your enemies.
+
+   It affects your intelligence (-4).
+   It affects your dexterity (+4).
+   It protects you from fire.
+   It protects you from negative energy.
+ b - the +10 hunting sling "Cebb" {vorpal, rPois rC+++ Stlth-, sling}
+   (Okawaru gifted it to you on level 3 of the Vaults)
+
+   Any stone fired from it inflicts extra damage.
+
+   It renders you almost immune to cold.
+   It protects you from poison.
+   It makes you less stealthy.
+Missiles
+ d - 246 sling bullets
+ g - 33 curare-tipped darts {=fthrowing}
+ q - a throwing net {=f!fthrowing}
+ z - 26 javelins (quivered) {throwing}
+ U - 5 silver javelins {throwing}
+Armour
+ c - a +2 kite shield of positive energy (worn)
+   (You took it off a tengu warrior on level 15 of the Dungeon)
+ f - a +2 pair of gloves of archery (worn)
+   (Okawaru gifted it to you on level 2 of the Swamp)
+ j - the +4 helmet "Ucotuyxi" (worn) {rC+ Str-2 Int+5}
+   (Okawaru gifted it to you on level 5 of the Vaults)
+
+   It affects your strength (-2).
+   It affects your intelligence (+5).
+   It protects you from cold.
+ s - the +2 robe of Vines {NoPotionHeal Regen+7}
+   (You found it on level 5 of the Vaults)
+
+   It increases your rate of regeneration.
+ w - the +1 pair of boots "Yfirip" (worn) {Str+2 Int+4}
+   (Okawaru gifted it to you on level 5 of the Realm of Zot)
+
+   It affects your strength (+2).
+   It affects your intelligence (+4).
+ x - the +0 cloak of Noon (worn) {rC+ rCorr Int-3}
+   (Okawaru gifted it to you on level 3 of the Realm of Zot)
+
+   It affects your intelligence (-3).
+   It protects you from cold.
+   It provides partial protection from all sources of acid and corrosion.
+ G - the +8 orange crystal plate armour (worn) {Archmagi, Int+3 Clar, rare}
+   (You found it on level 4 of the Spider Nest)
+
+   It affects your intelligence (+3).
+   It protects you against confusion.
+Jewellery
+ D - the ring of the Hare (right hand) {EV+8}
+   (You found it on level 1 of the Depths)
+
+   [ring of evasion]
+
+   It affects your evasion (+8).
+ N - a ring of the Octopus King {Wiz AC+1 EV+1 Str+1 Int+1 Dex+1}
+   (You found it on level 2 of the Depths)
+
+   [ring of wizardry]
+
+   It improves your spell success rate.
+   It affects your AC (+1).
+   It affects your evasion (+1).
+   It affects your strength (+1).
+   It affects your intelligence (+1).
+   It affects your dexterity (+1).
+ O - a ring of the Octopus King {rCorr AC+1 EV+1 Str+1 Int+1 Dex+1}
+   (You found it on level 9 of the Dungeon)
+
+   [ring of resist corrosion]
+
+   It affects your AC (+1).
+   It affects your evasion (+1).
+   It affects your strength (+1).
+   It affects your intelligence (+1).
+   It affects your dexterity (+1).
+   It provides partial protection from all sources of acid and corrosion.
+ R - the ring "Resuw" (left hand) {rElec rF+ Will+++ Str-4 Stlth+}
+   (You found it on level 3 of the Swamp)
+
+   [ring of protection from fire]
+
+   It affects your strength (-4).
+   It protects you from fire.
+   It insulates you from electricity.
+   It affects your willpower, your defense against some magical effects.
+   It makes you more stealthy.
+ T - an amulet of the acrobat (around neck)
+   (You found it on level 7 of the Dungeon)
+Wands
+ h - a wand of iceblast (54)
+   (You found it on level 3 of the Elven Halls)
+ p - a wand of digging (5)
+   (You found it on level 8 of the Dungeon)
+ L - a wand of enslavement (31)
+   (You found it on level 6 of the Dungeon)
+ M - a wand of paralysis (43)
+   (You found it on level 6 of the Dungeon)
+ S - a wand of disintegration (31)
+   (You took it off a big kobold on level 7 of the Dungeon)
+ X - a wand of acid (35)
+   (You took it off a gnoll on level 8 of the Dungeon)
+Scrolls
+ k - 14 scrolls of magic mapping {!r}
+ m - 5 scrolls of blinking {!r}
+ r - 3 scrolls of vulnerability {!r!r}
+ t - 17 scrolls of teleportation {@r4}
+ u - a scroll of acquirement
+ v - 7 scrolls of fear
+ B - 2 scrolls of holy word
+ C - 12 scrolls of immolation {!r!r}
+ H - 3 scrolls of summoning
+ K - a scroll of identify {@r1}
+ Y - 14 scrolls of fog
+Potions
+ e - 8 potions of might
+ i - 5 potions of berserk rage {!q}
+ l - 7 potions of heal wounds {@q2}
+ n - 7 potions of curing {@q1}
+ o - 5 potions of magic
+ A - 3 potions of mutation {!q}
+ J - a potion of invisibility
+ V - 8 potions of cancellation
+ W - 4 potions of haste {@q3}
+ Z - 7 potions of resistance
+Miscellaneous
+ y - a lightning rod (4/4)
+   (You found it on level 2 of the Swamp)
+ E - a phantom mirror
+   (You found it on level 2 of the Realm of Zot)
+ F - a phial of floods
+   (You found it on level 5 of the Vaults)
+ Q - a tin of tremorstones (2/2) {throwing}
+   (You found it on level 2 of the Spider Nest)
+
+
+Dungeon Overview and Level Annotations
+
+Branches:
+Dungeon (15/15)            Temple (1/1) D:6            Lair (6/6) D:9
+  Swamp (4/4) Lair:2       Spider (4/4) Lair:4        Slime (5/5) Lair:6
+    Orc (2/2) D:11            Elf (3/3) Orc:2        Vaults (5/5) D:14
+  Crypt (1/3) Vaults:3     Depths (5/5) D:15            Zot (5/5) Depths:5
+ Bailey (visited)         Volcano (visited)
+
+Altars:
+Ashenzari
+Cheibriados
+Dithmenos
+Elyvilon
+Fedhas
+Gozag
+Hepliaklqana
+Kikubaaqudgha
+Makhleb
+Nemelex Xobeh
+Okawaru
+Qazlal
+Ru
+Sif Muna
+Trog
+Uskayaw
+Vehumet
+Wu Jian
+Xom
+Yredelemnul
+Zin
+The Shining One
+Beogh
+
+Shops:
+D:8 (   D:10 [   D:11 [   D:12 (   Orc:2 [(*:   Elf:1 [(*=(   Vaults:1 (**
+Vaults:5 ?   Depths:1 }==
+
+Portals:
+Hell: Depths:1 Depths:2 Depths:3 Depths:4 Depths:5
+Abyss: Depths:1 Depths:2 Depths:4
+Pandemonium: Depths:3 Depths:4
+Ziggurat: Depths:4
+
+Annotations:
+Zot:2 exclusion: downstairs
+Zot:5 1 exclusion
+
+.###.#'......####......'##
+..#.##........##........#
+##.###)..##...##...##...#
+ ### #..####..##..####..#
+     #..####..##..####..#
+     #...##...##...##...#
+     #..................#
+     ##................##
+      ######..##@.######
+      ######..##..######
+     ##................##
+     #..................#
+     #...##...##...##...#
+     #..####..##..####..#
+     #..####..##..####..#
+     #...##...##^..##...#
+######).......##........#
+
+
+There were no monsters in sight!
+
+Message History
+
+You regained 18 hp, and now have 174/226 hp.
+
+😕 HP[+1]
+The hellion gestures at you.
+The sphere of damnation explodes! The damnation engulfs you!!
+
+😮 HP[-24]
+You take 24 damage, and now have 151/226 hp.
+
+😮 HP[+1]
+
+😮 HP[+1]
+The hellion gestures at you.
+The sphere of damnation explodes! The damnation engulfs you!
+
+😮 HP[-13]
+You take 13 damage, and now have 140/226 hp.
+
+😮 HP[+1]
+The hellion gestures at you.
+The sphere of damnation explodes! The damnation engulfs you!!
+There is a stone staircase leading up here.
+
+😮 HP[-24]
+You take 24 damage, and now have 117/226 hp.
+You climb upwards.
+There is a stone staircase leading down here.
+You see here a large rock {=fthrowing}.
+
+😮 HP[+2]
+You regained 2 hp, and now have 119/226 hp.
+(D) Dungeon        (T) Temple         (L) Lair           (S) Swamp
+(N) Spider Nest    (M) Slime Pits     (O) Orcish Mines   (E) Elven Halls
+(V) Vaults         (C) Crypt          (U) Depths         (H) Hell
+(Z) Zot
+Where to? (* - list waypoints, Enter - D:1, ? - help)
+What level of the Dungeon? (default 1, ? - help)
+There is a stone staircase leading up here.
+You climb upwards.
+There is a stone staircase leading down here.
+There is a stone staircase leading up, spattered with blood here.
+You climb upwards.
+A smoke demon comes into view.
+There is a stone staircase leading down, spattered with blood here.
+
+😮 HP[+17]
+You regained 17 hp, and now have 136/226 hp.
+
+😮 HP[+1]
+The smoke demon gestures at you.
+The ball of steam hits you but does no damage.
+An Orb Guardian comes into view.
+There is a stone staircase leading up here.
+
+😮 HP[+1]
+You climb upwards.
+There is a stone staircase leading down here.
+
+😮 HP[+1]
+(D) Dungeon        (T) Temple         (L) Lair           (S) Swamp
+(N) Spider Nest    (M) Slime Pits     (O) Orcish Mines   (E) Elven Halls
+(V) Vaults         (C) Crypt          (U) Depths         (H) Hell
+(Z) Zot
+Where to? (* - list waypoints, Enter - D:1, ? - help)
+What level of the Dungeon? (default 1, ? - help)
+There is a stone staircase leading up here.
+You climb upwards.
+There is a stone staircase leading down here.
+There is a stone staircase leading up here.
+You climb upwards.
+There is a stone staircase leading down here.
+There is an open door here.
+There is a stone staircase leading up here.
+You climb upwards.
+There is a stone staircase leading down here.
+You see here a dagger {short}.
+There is a stone staircase leading up here.
+You climb upwards.
+There is a stone staircase leading down here.
+There is a stone staircase leading up here.
+You climb upwards.
+There is a stone staircase leading down here.
+Things that are here:
+a cursed +0 chain mail; a +0 dagger {short}
+A Tzitzimitl comes into view.
+The Tzitzimitl roars!
+
+😕 HP[+62]
+You regained 62 hp, and now have 201/226 hp.
+There is a stone staircase leading up here.
+
+😕 HP[+1]
+You climb upwards.
+There is a stone staircase leading down here.
+
+😕 HP[+1]
+(D) Dungeon        (T) Temple         (L) Lair           (S) Swamp
+(N) Spider Nest    (M) Slime Pits     (O) Orcish Mines   (E) Elven Halls
+(V) Vaults         (C) Crypt          (U) Depths         (H) Hell
+(Z) Zot
+Where to? (* - list waypoints, Enter - D:1, ? - help)
+What level of the Dungeon? (default 1, ? - help)
+There is a stone staircase leading up here.
+You climb upwards.
+There is a stone staircase leading down here.
+There is a stone staircase leading up here.
+You climb upwards.
+There is a stone staircase leading down here.
+
+😕 HP[+9]
+You regained 9 hp, and now have 212/226 hp.
+There is an open door here.
+There is a staircase leading out of the dungeon here.
+
+😕 HP[+10]
+You regained 10 hp, and now have 222/226 hp.
+You have escaped!
+
+Skill      XL: |  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 |
+---------------+----------------------------------------------------------------------------------+-----
+Invocations    |        1     2     3  4  5  6  7  8  9 10 11 12    13    14 15    16    17 18 21 | 21.4
+Short Blades   |        1     2        3  4  5  6  7  8  9 10 11    12    13    14 15    16    20 | 20.0
+Long Blades    |        1     2        3  4  5  6  7  8  9 10 11    12    13    14 15    16    20 | 20.0
+Axes           |        1     2        3  4  5  6  7  8  9 10 11    12    13    14 15    16    20 | 20.0
+Maces & Flails |        1     2        3  4  5  6  7  8  9 10 11    12    13    14 15    16    20 | 20.0
+Staves         |        1     2        3  4  5  6  7  8  9 10 11    12    13    14 15    16    20 | 20.0
+Slings         |        1     2        3  4  5  6  7  8  9 10 11    12    13    14 15    16    20 | 20.0
+Bows           |        1     2        3  4  5  6  7  8  9 10 11    12    13    14 15    16    20 | 20.0
+Crossbows      |        1     2        3  4  5  6  7  8  9 10 11    12    13    14 15    16    20 | 20.0
+Throwing       |        1     2        3  4  5  6  7  8  9 10 11    12    13    14 15    16    20 | 20.0
+Dodging        |        1     2        3  4  5  6  7  8  9 10 11    12    13    14 15    16    20 | 20.0
+Stealth        |        1     2        3  4  5  6  7  8  9 10 11    12    13    14 15    16    20 | 20.0
+Unarmed Combat |        1     2        3  4  5  6  7  8  9 10 11    12    13    14 15    16    20 | 20.0
+Spellcasting   |        1     2        3  4  5  6  7  8  9 10 11    12    13    14 15    16    20 | 20.0
+Evocations     |        1     2        3  4  5  6  7  8  9 10 11    12    13    14 15    16    20 | 20.0
+Conjurations   |           1        2  3     4  5  6  7  8     9 10       11 12    13    14    17 | 17.3
+Hexes          |           1        2  3     4  5  6  7  8     9 10       11 12    13    14    17 | 17.3
+Summonings     |           1        2  3     4  5  6  7  8     9 10       11 12    13    14    17 | 17.3
+Necromancy     |           1        2  3     4  5  6  7  8     9 10       11 12    13    14    17 | 17.3
+Translocations |           1        2  3     4  5  6  7  8     9 10       11 12    13    14    17 | 17.3
+Transmutations |           1        2  3     4  5  6  7  8     9 10       11 12    13    14    17 | 17.3
+Fire Magic     |           1        2  3     4  5  6  7  8     9 10       11 12    13    14    17 | 17.3
+Ice Magic      |           1        2  3     4  5  6  7  8     9 10       11 12    13    14    17 | 17.3
+Air Magic      |           1        2  3     4  5  6  7  8     9 10       11 12    13    14    17 | 17.3
+Earth Magic    |           1        2  3     4  5  6  7  8     9 10       11 12    13    14    17 | 17.3
+Poison Magic   |           1        2  3     4  5  6  7  8     9 10       11 12    13    14    17 | 17.3
+Polearms       |              5        6     7  8  9    10 11 12    13       14 15    16    17 20 | 20.3
+Fighting       |                    7     8     9 10    11 12    13    14    15    16    17    20 | 20.7
+Armour         |                    7     8     9 10    11 12    13    14    15    16    17    20 | 20.7
+Shields        |                    7     8     9 10    11 12    13    14    15    16    17    20 | 20.7
+
+Action                   |  1- 3 |  4- 6 |  7- 9 | 10-12 | 13-15 | 16-18 | 19-21 | 22-24 | 25-27 || total
+-------------------------+-------+-------+-------+-------+-------+-------+-------+-------+-------++-------
+Melee: Trident           |    84 |   108 |   499 |  1201 |   700 |  2498 |  1175 |       |       ||  6265
+       Bite              |     7 |    12 |    62 |   235 |   327 |   326 |   306 |   364 |   937 ||  2576
+       Unarmed           |       |       |       |    98 |    45 |     8 |       |       |       ||   151
+       Falchion          |       |       |       |       |   892 |       |       |       |       ||   892
+       War axe           |       |       |       |       |   202 |       |  1043 |  1950 |  4223 ||  7418
+       Flail             |       |       |       |       |     7 |       |       |       |       ||     7
+       Broad axe         |       |       |       |       |       |       |       |       |  1654 ||  1654
+ Fire: Hunting sling     |       |       |    46 |     4 |       |       |       |   297 |  1318 ||  1665
+       Hand crossbow     |       |       |       |       |    62 |    24 |    18 |       |       ||   104
+Throw: Javelin           |       |     7 |     6 |     9 |    11 |     4 |       |    15 |    54 ||   106
+       Dart              |       |     5 |    12 |    30 |    59 |     9 |       |       |       ||   115
+       Stone             |       |       |     2 |       |       |       |       |       |       ||     2
+       Boomerang         |       |       |       |    12 |     3 |   163 |    70 |     7 |    49 ||   304
+       Throwing net      |       |       |       |       |       |       |       |       |     1 ||     1
+ Cast: Passwall          |       |       |       |       |       |     1 |       |       |     1 ||     2
+       Ignite Poison     |       |       |       |       |       |       |     1 |       |     1 ||     2
+       Blink             |       |       |       |       |       |       |     1 |       |     3 ||     4
+       Apportation       |       |       |       |       |       |       |       |     4 |       ||     4
+       Iron Shot         |       |       |       |       |       |       |       |       |    31 ||    31
+       Spellforged Servi |       |       |       |       |       |       |       |       |     1 ||     1
+       Starburst         |       |       |       |       |       |       |       |       |     1 ||     1
+Invok: Heroism           |       |       |     3 |     8 |    18 |     9 |     9 |    10 |    29 ||    86
+       Finesse           |       |       |       |       |     4 |     3 |     1 |     1 |     6 ||    15
+       Vitalisation      |       |       |       |       |       |       |       |       |    12 ||    12
+       Recite            |       |       |       |       |       |       |       |       |     2 ||     2
+       Sanctuary         |       |       |       |       |       |       |       |       |     1 ||     1
+       Donate Gold       |       |       |       |       |       |       |       |       |     1 ||     1
+ Abil: Evoke Flight      |       |       |       |       |       |     2 |       |       |       ||     2
+       Stop Flying       |       |       |       |       |       |       |     1 |       |       ||     1
+Evoke: Wand              |       |       |     2 |    29 |     7 |    27 |     9 |     5 |    28 ||   107
+       Tin of tremorston |       |       |       |       |       |     4 |     2 |       |    11 ||    17
+       Condenser vane    |       |       |       |       |       |     2 |     2 |     1 |     4 ||     9
+       Box of beasts     |       |       |       |       |       |     1 |       |       |     3 ||     4
+       Lightning rod     |       |       |       |       |       |       |     8 |       |    11 ||    19
+       Phial of floods   |       |       |       |       |       |       |       |     1 |     8 ||     9
+       Phantom mirror    |       |       |       |       |       |       |       |       |     3 ||     3
+  Use: Scroll            |       |       |     7 |    17 |    18 |    17 |    17 |    14 |    26 ||   116
+       Potion            |       |       |       |       |     9 |     2 |     1 |     5 |    64 ||    81
+ Stab: Invisible         |       |     1 |     3 |     1 |       |       |       |       |     1 ||     6
+       Distracted        |       |       |       |     1 |     1 |       |       |     1 |    15 ||    18
+       Paralysed         |       |       |       |       |     2 |     7 |       |     2 |    30 ||    41
+       Confused          |       |       |       |       |     2 |     3 |       |       |     5 ||    10
+       Held in net/web   |       |       |       |       |       |     4 |       |       |       ||     4
+       Sleeping          |       |       |       |       |       |       |       |       |     2 ||     2
+Armor: Scale mail        |    20 |     4 |       |       |       |       |       |       |       ||    24
+       Chain mail        |       |    44 |   123 |       |       |       |       |       |       ||   167
+       Plate armour      |       |       |    88 |   495 |   691 |  1121 |       |       |       ||  2395
+       Pearl dragon scal |       |       |       |       |    20 |       |       |       |       ||    20
+       Crystal plate arm |       |       |       |       |       |   579 |   939 |   921 |  2893 ||  5332
+       Swamp dragon scal |       |       |       |       |       |       |       |       |     1 ||     1
+Dodge: Dodged            |    10 |    24 |   117 |   382 |   715 |  1317 |   768 |   698 |  3318 ||  7349
+       Repelled          |       |       |     3 |       |       |       |       |       |       ||     3
+Block: Kite shield       |    34 |    45 |   229 |   720 |  1126 |  1819 |  1391 |  1330 |  4775 || 11469
+Rpst.: Falchion          |       |       |       |       |    80 |       |       |       |       ||    80
+
+Levels and vault maps discovered:
+D:1:      minmay_arrival_four_loops, layout_loops_ring, columned_hall_lemuel,
+          hangedman_decor_opposing, hangedman_feature_mirror
+D:2:      layout_loops_ring
+D:3:      minmay_general_purpose_star, layout_basic,
+          lemuel_coloured_pillars_altar, uniq_grinder, uniq_purgy
+D:4:      layout_loops_ring, okawaru_ov_weapons_minmay,
+          nicolae_ru_the_path_less_chosen, nzn_wu_jian_council_hall,
+          minmay_fractal_squares_gapless_5
+D:5:      layout_rooms, grunt_temple_overflow_cloverleaf, serial_rivers,
+          chequers_serial_rivers_micro_e, chequers_serial_rivers_micro_b,
+          chequers_serial_rivers_micro_a, chequers_serial_rivers_micro_b,
+          chequers_serial_rivers_micro_c, minmay_misc_feat_five
+D:6:      layout_loops_ring, minmay_temple_entry_glassed_door, tgw_kikubaaqudgha
+D:7:      layout_gridville, serial_bayou, serial_bayou_shore_b,
+          serial_bayou_pond_b, serial_bayou_crossing, serial_bayou_shore_a,
+          minmay_checkerbox, uniq_joseph, uniq_prince_ribbit1
+D:8:      layout_cave_pools, tgw_trog, serial_shops, shop
+D:9:      layout_loops_cross, old_standard_altar, david_lair_shrubbed,
+          gammafunk_ghost_grave, uniq_maggie
+D:10:     layout_irregular_city, serial_shops, nicolae_shop_behind_doors
+D:11:     layout_layer_cave, minmay_orc_entry_guard_dogs, serial_shops, shop,
+          uniq_grum
+D:12:     layout_basic, serial_shops, shop, gammafunk_ghost_spectres,
+          uniq_erolcha
+D:13:     layout_gridville
+D:14:     layout_cave_pools, david_vaults_3, yredelemnul_altar_generic,
+          gauntlet_entry_generic, ploomutoo_gammafunk_ghost_potion_laboratory
+D:15:     hangedman_depths_entry_civil_slaughter, layout_cross,
+          chequers_serial_rivers_micro_c, drop_trap, corexii_checkpoint_a
+Temple:   nicolae_temple_no_exploring_needed
+Lair:1:   layout_concentric_octagons
+Lair:2:   gammafunk_cloud_chamber, layout_big_grid, skrybe_swamp_entry_bodies,
+          serial_bayou_lagoon_b, infiniplex_staircase_pool_2
+Lair:3:   layout_small_grid, serial_bayou, serial_bayou_pond_d,
+          serial_bayou_pond_e, serial_bayou_shore_b, serial_bayou_ford_a,
+          serial_bayou_pond_e, grunt_megastairs_4
+Lair:4:   layout_roguey, spider_nest_entry_rubble
+Lair:5:   layout_concentric_octagons, nicolae_volcano_entry_vermiform,
+          minmay_lair_oklob_chamber, infiniplex_staircase_pool
+Lair:6:   guppyfry_lair_end_dragon, layout_regular_city, wormcave,
+          minmay_slime_entry_eyes
+Swamp:1:  layout_basic_swamp, serial_swamp_ruin, hangedman_swamp_ruin_wall,
+          evilmike_swamp_ruin_rubble_2, evilmike_swamp_ruin_house_6
+Swamp:2:  layout_basic_swamp, evilmike_swamp_ruin_house_4, uniq_aizul
+Swamp:3:  nzn_winding_woodlands_cross [nzn_winding_woodlands_5x15_lazy_stream,
+          nzn_winding_woodlands_5x15_jagged, nzn_winding_woodlands_5x15_eye,
+          nzn_winding_woodlands_5x15_split_checker,
+          nzn_winding_woodlands_15x15_witchcraft], layout_basic_swamp,
+          nicolae_swamp_rocky_clearing
+Swamp:4:  swamp, layout_basic_swamp, swamp_pool4, uniq_roxanne
+Spider:1: layout_spider_delve, uniq_donald
+Spider:2: layout_spider_delve, nicolae_looking_at_the_future
+Spider:3: layout_spider_delve, uniq_arachne
+Spider:4: guppyfry_spider_rune, hangedman_spider_tarantella_strand, uniq_agnes,
+          uniq_nikola
+Slime:1:  layout_caves
+Slime:2:  layout_caves
+Slime:3:  layout_caves
+Slime:4:  layout_caves
+Slime:5
+Orc:1:    layout_caves, enter_bailey_7
+Orc:2:    grunt_orc_gardens, layout_diamond_mine, grunt_orc_garden,
+          grunt_orc_garden, grunt_orc_garden, grunt_orc_garden, mines1_david
+Elf:1:    eino_elf_arrival_shootout, layout_loops_cross, serial_shops, shop,
+          hangedman_corner_corridor, minmay_shoptagon
+Elf:2:    layout_geoelf_octagon, glass_columns_b
+Elf:3:    minmay_elf_hall_spiked, layout_onion_city,
+          evilmike_spriggan_trog_shrine
+Vaults:1: hangedman_vaults_slither, vaults_room_door_hall,
+          nicolae_vaults_little_squares_2, nicolae_vaults_network_square,
+          kennysheep_vaults_gozag_temple, nicolae_vaults_three_branches,
+          vaults_room_hallway, ontoclasm_vaults_ring_square,
+          nicolae_vaults_yaktaur_gun_rack, v_misc_3, vaults_dpeg_encased_lava,
+          layout_vaults_omnicross
+Vaults:2: vaults_dpeg_hooks, hangedman_vaults_river_flow,
+          nicolae_vaults_circle_grid_a, vaults_room_door_hall,
+          nicolae_vaults_ring_of_whatevers, vaults_room_door_ring,
+          vaults_mumra_minichess, vaults_mumra_hexcomb, v_misc_5,
+          hangedman_vaults_snaps, ontoclasm_vaults_twist, st_spiral_rooms,
+          layout_vaults_omnigrid
+Vaults:3: hangedman_vaults_cutoff, nicolae_vaults_network_s, v_misc_29,
+          special_room_vaults [special_room_orc], vaults_room_grid,
+          v_alt_pattern_2, vaults_room_fancy_cross, ontoclasm_vaults_chip,
+          ontoclasm_vaults_hangar, vaults_room_semicircle, grunt_vaults_twisty,
+          vaults_mumra_lcd, layout_vaults_maze_bifur,
+          minmay_crypt_entry_simple_round
+Vaults:4: nicolae_vaults_network_quinsquares
+          [nicolae_vaults_network_quincunx_subvault,
+          nicolae_vaults_network_quincunx_subvault,
+          nicolae_vaults_network_quincunx_subvault,
+          nicolae_vaults_network_quincunx_subvault], v_misc_31, v_rooms_5,
+          grunt_vaults_hallway_long, nicolae_vaults_little_squares_2,
+          ontoclasm_vaults_fault, v_misc_18, v_misc_10, v_pattern_4, v_misc_24,
+          layout_vaults_ring
+Vaults:5: uniq_xtahua
+Crypt:1:  grunt_deathspiral_small, layout_rooms, uniq_bai_suzhen, uniq_jory
+Depths:1: layout_roguey, gammafunk_ghost_necromancy, abyss_entry,
+          kennysheep_small_spiral, hell_entry, st_stairs_5, evilmike_butchery,
+          minmay_shop_grove
+Depths:2: grunt_twisty_corner, layout_basic, roderic_lattice_a, hellmouth_1,
+          hangedman_abyss_entry_splay, tso_altar, infiniplex_staircase_diamond,
+          uniq_enchantress
+Depths:3: minmay_distorted_concentric_squares, layout_basic,
+          rand_demon_pan_entry_8, hell_entry, lemuel_flamethrower_2
+Depths:4: cheibrodos_hall_of_evolution, layout_cave_shapes, enter_ziggurat_d,
+          serial_sigils, serial_sigils_hangedman_gnaw,
+          serial_sigils_hangedman_etch, serial_sigils_hangedman_scratch,
+          serial_sigils_hangedman_scar, serial_sigils_hangedman_snap,
+          hell_entry, gammafunk_ghost_cemetery, abyss_entry,
+          grunt_pan_entry_in_and_out
+Depths:5: evilmike_zot_entry_round, layout_long_grid, nrook_mini_backslash,
+          hell_entry, nicolae_twisting_strands, uniq_sojobo
+Zot:1:    layout_gridlike
+Zot:2:    layout_twisted_circle
+Zot:3:    layout_misc_corridors
+Zot:4:    kennysheep_bubbly, layout_cathedral_of_symmetry
+Zot:5:    layout_cellular_growth
+
+Notes
+Turn   | Place    | Note
+-------+----------+-------------------------------------------
+     0 | D:1      | magusnn the Gnoll Fighter began the quest for the Orb.
+     0 | D:1      | Reached XP level 1. HP: 23/23 MP: 1/1
+     0 | D:1      | magus.rc [v1.9.5.2021-3-27.04:14:41AM]
+    69 | D:1      | Reached XP level 2. HP: 29/29 MP: 2/2
+   321 | D:1      | Reached XP level 3. HP: 35/35 MP: 3/3
+   581 | D:1      | Reached skill level 1 in Invocations
+   836 | D:2      | Reached skill level 1 in Short Blades
+   836 | D:2      | Reached skill level 1 in Long Blades
+   836 | D:2      | Reached skill level 1 in Axes
+   836 | D:2      | Reached skill level 1 in Maces & Flails
+   836 | D:2      | Reached skill level 1 in Staves
+   836 | D:2      | Reached skill level 1 in Slings
+   836 | D:2      | Reached skill level 1 in Bows
+   836 | D:2      | Reached skill level 1 in Crossbows
+   836 | D:2      | Reached skill level 1 in Throwing
+   836 | D:2      | Reached skill level 1 in Dodging
+   836 | D:2      | Reached skill level 1 in Stealth
+   836 | D:2      | Reached skill level 1 in Unarmed Combat
+   836 | D:2      | Reached skill level 1 in Spellcasting
+   836 | D:2      | Reached skill level 1 in Evocations
+   837 | D:2      | Reached XP level 4. HP: 41/41 MP: 5/5
+  1334 | D:2      | Reached skill level 1 in Conjurations
+  1334 | D:2      | Reached skill level 1 in Hexes
+  1334 | D:2      | Reached skill level 1 in Summonings
+  1334 | D:2      | Reached skill level 1 in Necromancy
+  1334 | D:2      | Reached skill level 1 in Translocations
+  1334 | D:2      | Reached skill level 1 in Transmutations
+  1334 | D:2      | Reached skill level 1 in Fire Magic
+  1334 | D:2      | Reached skill level 1 in Ice Magic
+  1334 | D:2      | Reached skill level 1 in Air Magic
+  1334 | D:2      | Reached skill level 1 in Earth Magic
+  1334 | D:2      | Reached skill level 1 in Poison Magic
+  1621 | D:3      | Noticed Purgy
+  1640 | D:3      | Killed Purgy
+  1641 | D:3      | Reached XP level 5. HP: 42/47 MP: 5/7
+  1874 | D:3      | Noticed Grinder
+  1877 | D:3      | Paralysed by Grinder for 7 turns
+  1893 | D:3      | Paralysed by Grinder for 4 turns
+  1898 | D:3      | Killed Grinder
+  1899 | D:3      | Reached skill level 2 in Short Blades
+  1899 | D:3      | Reached skill level 2 in Long Blades
+  1899 | D:3      | Reached skill level 2 in Axes
+  1899 | D:3      | Reached skill level 2 in Maces & Flails
+  1899 | D:3      | Reached skill level 5 in Polearms
+  1899 | D:3      | Reached skill level 2 in Staves
+  1899 | D:3      | Reached skill level 2 in Slings
+  1899 | D:3      | Reached skill level 2 in Bows
+  1899 | D:3      | Reached skill level 2 in Crossbows
+  1899 | D:3      | Reached skill level 2 in Throwing
+  1899 | D:3      | Reached skill level 2 in Dodging
+  1899 | D:3      | Reached skill level 2 in Stealth
+  1899 | D:3      | Reached skill level 2 in Unarmed Combat
+  1899 | D:3      | Reached skill level 2 in Spellcasting
+  1899 | D:3      | Reached skill level 2 in Invocations
+  1899 | D:3      | Reached skill level 2 in Evocations
+  1899 | D:3      | Reached XP level 6. HP: 48/53 MP: 7/9
+  2188 | D:3      | Found a glowing silver altar of Zin.
+  2293 | D:4      | Found an iron altar of Okawaru.
+  2308 | D:4      | Became a worshipper of Warmaster Okawaru
+  2380 | D:4      | Found a sacrificial altar of Ru.
+  2427 | D:4      | Reached XP level 7. HP: 59/59 MP: 10/10
+  2628 | D:4      | Reached skill level 7 in Fighting
+  2628 | D:4      | Reached skill level 7 in Armour
+  2628 | D:4      | Reached skill level 7 in Shields
+  2721 | D:4      | Reached skill level 2 in Conjurations
+  2721 | D:4      | Reached skill level 2 in Hexes
+  2721 | D:4      | Reached skill level 2 in Summonings
+  2721 | D:4      | Reached skill level 2 in Necromancy
+  2721 | D:4      | Reached skill level 2 in Translocations
+  2721 | D:4      | Reached skill level 2 in Transmutations
+  2721 | D:4      | Reached skill level 2 in Fire Magic
+  2721 | D:4      | Reached skill level 2 in Ice Magic
+  2721 | D:4      | Reached skill level 2 in Air Magic
+  2721 | D:4      | Reached skill level 2 in Earth Magic
+  2721 | D:4      | Reached skill level 2 in Poison Magic
+  2998 | D:4      | Found an ornate altar of the Wu Jian Council.
+  3074 | D:4      | Got a twitching jade ring
+  3379 | D:5      | Entered Level 5 of the Dungeon
+  3430 | D:5      | Reached skill level 3 in Invocations
+  3512 | D:4      | Reached * piety under Okawaru
+  3637 | D:5      | Reached XP level 8. HP: 53/67 MP: 12/12
+  3780 | D:5      | Reached skill level 3 in Short Blades
+  3780 | D:5      | Reached skill level 3 in Long Blades
+  3780 | D:5      | Reached skill level 3 in Axes
+  3780 | D:5      | Reached skill level 3 in Maces & Flails
+  3780 | D:5      | Reached skill level 3 in Staves
+  3780 | D:5      | Reached skill level 3 in Slings
+  3780 | D:5      | Reached skill level 3 in Bows
+  3780 | D:5      | Reached skill level 3 in Crossbows
+  3780 | D:5      | Reached skill level 3 in Throwing
+  3780 | D:5      | Reached skill level 3 in Dodging
+  3780 | D:5      | Reached skill level 3 in Stealth
+  3780 | D:5      | Reached skill level 3 in Unarmed Combat
+  3780 | D:5      | Reached skill level 3 in Spellcasting
+  3780 | D:5      | Reached skill level 3 in Evocations
+  3811 | D:5      | Found a shadowy altar of Dithmenos.
+  3959 | D:5      | Found a shimmering altar of Xom.
+  3969 | D:5      | Found a stormy altar of Qazlal.
+  3978 | D:5      | Found a glowing golden altar of the Shining One.
+  4057 | D:5      | You pick up a book of Minor Magic and begin reading...
+  4057 | D:5      | You add the spells Magic Dart, Blink, Call Imp, Slow,
+                  | Conjure Flame and Mephitic Cloud to your library.
+  4109 | D:5      | You pick up a book of Changes and begin reading...
+  4109 | D:5      | You add the spells Beastly Appendage, Wereblood, Spider
+                  | Form, Ice Form and Blade Hands to your library.
+  4496 | D:6      | Found an ancient bone altar of Kikubaaqudgha.
+  4604 | D:6      | Found a staircase to the Ecumenical Temple.
+  4615 | Temple   | Entered the Ecumenical Temple
+  4871 | D:6      | Reached ** piety under Okawaru
+  4941 | D:6      | Reached skill level 3 in Conjurations
+  4941 | D:6      | Reached skill level 3 in Hexes
+  4941 | D:6      | Reached skill level 3 in Summonings
+  4941 | D:6      | Reached skill level 3 in Necromancy
+  4941 | D:6      | Reached skill level 3 in Translocations
+  4941 | D:6      | Reached skill level 3 in Transmutations
+  4941 | D:6      | Reached skill level 3 in Fire Magic
+  4941 | D:6      | Reached skill level 3 in Ice Magic
+  4941 | D:6      | Reached skill level 3 in Air Magic
+  4941 | D:6      | Reached skill level 3 in Earth Magic
+  4941 | D:6      | Reached skill level 3 in Poison Magic
+  4941 | D:6      | Reached skill level 4 in Invocations
+  5359 | D:7      | Reached skill level 6 in Polearms
+  5456 | D:6      | Reached XP level 9. HP: 71/72 MP: 14/14
+  5545 | D:7      | Noticed Joseph
+  5583 | D:7      | Killed Joseph
+  5583 | D:7      | Reached *** piety under Okawaru
+  5584 | D:7      | Reached skill level 4 in Short Blades
+  5584 | D:7      | Reached skill level 4 in Long Blades
+  5584 | D:7      | Reached skill level 4 in Axes
+  5584 | D:7      | Reached skill level 4 in Maces & Flails
+  5584 | D:7      | Reached skill level 4 in Staves
+  5584 | D:7      | Reached skill level 4 in Slings
+  5584 | D:7      | Reached skill level 4 in Bows
+  5584 | D:7      | Reached skill level 4 in Crossbows
+  5584 | D:7      | Reached skill level 4 in Throwing
+  5584 | D:7      | Reached skill level 4 in Dodging
+  5584 | D:7      | Reached skill level 4 in Stealth
+  5584 | D:7      | Reached skill level 4 in Unarmed Combat
+  5584 | D:7      | Reached skill level 4 in Spellcasting
+  5584 | D:7      | Reached skill level 4 in Evocations
+  5952 | D:7      | Noticed Prince Ribbit
+  5952 | D:7      | Noticed a gargoyle
+  5957 | D:7      | Killed Prince Ribbit
+  6327 | D:7      | Killed a gargoyle
+  6328 | D:7      | Reached skill level 8 in Fighting
+  6328 | D:7      | Reached skill level 8 in Armour
+  6328 | D:7      | Reached skill level 8 in Shields
+  6499 | D:7      | Reached skill level 5 in Invocations
+  6673 | D:7      | Identified the ring "Sustem" {Ice *Contam Dex+5} (You found
+                  | it on level 4 of the Dungeon)
+  6702 | D:7      | Gained mutation: Your magical capacity is low. (-10% MP)
+                  | [mutagenic glow]
+  7361 | D:7      | Reached **** piety under Okawaru
+  8020 | D:7      | Reached XP level 10. HP: 80/80 MP: 15/15
+  8127 | D:7      | Reached skill level 4 in Conjurations
+  8127 | D:7      | Reached skill level 4 in Hexes
+  8127 | D:7      | Reached skill level 4 in Summonings
+  8127 | D:7      | Reached skill level 4 in Necromancy
+  8127 | D:7      | Reached skill level 4 in Translocations
+  8127 | D:7      | Reached skill level 4 in Transmutations
+  8127 | D:7      | Reached skill level 4 in Fire Magic
+  8127 | D:7      | Reached skill level 4 in Ice Magic
+  8127 | D:7      | Reached skill level 4 in Air Magic
+  8127 | D:7      | Reached skill level 4 in Earth Magic
+  8127 | D:7      | Reached skill level 4 in Poison Magic
+  8952 | D:8      | Reached skill level 5 in Short Blades
+  8952 | D:8      | Reached skill level 5 in Long Blades
+  8952 | D:8      | Reached skill level 5 in Axes
+  8952 | D:8      | Reached skill level 5 in Maces & Flails
+  8952 | D:8      | Reached skill level 5 in Staves
+  8952 | D:8      | Reached skill level 5 in Slings
+  8952 | D:8      | Reached skill level 5 in Bows
+  8952 | D:8      | Reached skill level 5 in Crossbows
+  8952 | D:8      | Reached skill level 5 in Throwing
+  8952 | D:8      | Reached skill level 5 in Dodging
+  8952 | D:8      | Reached skill level 5 in Stealth
+  8952 | D:8      | Reached skill level 5 in Unarmed Combat
+  8952 | D:8      | Reached skill level 5 in Spellcasting
+  8952 | D:8      | Reached skill level 5 in Evocations
+  9558 | D:8      | Found Ixzyuj's Weapon Boutique.
+  9653 | D:8      | Noticed a moth of wrath
+  9656 | D:8      | Found a bloodstained altar of Trog.
+ 10152 | D:8      | Killed a moth of wrath
+ 10153 | D:8      | Reached skill level 7 in Polearms
+ 10311 | D:9      | Noticed Maggie
+ 10326 | D:9      | Killed Maggie
+ 10398 | D:9      | Reached ***** piety under Okawaru
+ 10589 | D:9      | Received a gift from Okawaru
+ 10590 | D:9      | Reached skill level 6 in Invocations
+ 10956 | D:9      | Found a runed translucent door.
+ 10956 | D:9      | Noticed dcpryor's ghost (journeyman GrFi)
+ 10957 | D:9      | Found the ring of the Octopus King
+ 11150 | D:9      | Found an ancient bone altar of Kikubaaqudgha.
+ 11161 | D:9      | Noticed a two-headed ogre
+ 11168 | D:9      | Killed a two-headed ogre
+ 11330 | D:9      | Found a staircase to the Lair.
+ 11361 | D:9      | Reached XP level 11. HP: 36/87 MP: 14/17
+ 11816 | D:9      | Killed dcpryor's ghost
+ 11817 | D:9      | Reached skill level 9 in Fighting
+ 11817 | D:9      | Reached skill level 6 in Short Blades
+ 11817 | D:9      | Reached skill level 6 in Long Blades
+ 11817 | D:9      | Reached skill level 6 in Axes
+ 11817 | D:9      | Reached skill level 6 in Maces & Flails
+ 11817 | D:9      | Reached skill level 6 in Staves
+ 11817 | D:9      | Reached skill level 6 in Slings
+ 11817 | D:9      | Reached skill level 6 in Bows
+ 11817 | D:9      | Reached skill level 6 in Crossbows
+ 11817 | D:9      | Reached skill level 6 in Throwing
+ 11817 | D:9      | Reached skill level 9 in Armour
+ 11817 | D:9      | Reached skill level 6 in Dodging
+ 11817 | D:9      | Reached skill level 6 in Stealth
+ 11817 | D:9      | Reached skill level 9 in Shields
+ 11817 | D:9      | Reached skill level 6 in Unarmed Combat
+ 11817 | D:9      | Reached skill level 6 in Spellcasting
+ 11817 | D:9      | Reached skill level 6 in Evocations
+ 11888 | D:9      | Got a ring of the Octopus King
+ 11892 | D:9      | Identified a ring of the Octopus King {rCorr AC+1 EV+1
+                  | Str+1 Int+1 Dex+1} (You found it on level 9 of the Dungeon)
+ 11914 | D:10     | Entered Level 10 of the Dungeon
+ 12017 | D:10     | Found Pohiotti's Armour Boutique.
+ 12095 | D:10     | Reached skill level 5 in Conjurations
+ 12095 | D:10     | Reached skill level 5 in Hexes
+ 12095 | D:10     | Reached skill level 5 in Summonings
+ 12095 | D:10     | Reached skill level 5 in Necromancy
+ 12095 | D:10     | Reached skill level 5 in Translocations
+ 12095 | D:10     | Reached skill level 5 in Transmutations
+ 12095 | D:10     | Reached skill level 5 in Fire Magic
+ 12095 | D:10     | Reached skill level 5 in Ice Magic
+ 12095 | D:10     | Reached skill level 5 in Air Magic
+ 12095 | D:10     | Reached skill level 5 in Earth Magic
+ 12095 | D:10     | Reached skill level 5 in Poison Magic
+ 12836 | D:11     | Found a staircase to the Orcish Mines.
+ 12915 | D:11     | Noticed an orc knight
+ 13278 | D:11     | Noticed an orc sorcerer
+ 13684 | D:11     | Reached skill level 7 in Invocations
+ 14015 | D:11     | Reached skill level 8 in Polearms
+ 14022 | D:11     | Noticed a sun demon
+ 14022 | D:11     | Paralysed by an orc sorcerer for 4 turns
+ 14288 | D:11     | Killed an orc knight
+ 14288 | D:11     | Received a gift from Okawaru
+ 14456 | D:11     | Killed an orc sorcerer
+ 14478 | D:11     | Got a faintly humming plate armour
+ 14488 | D:11     | Identified the +5 plate armour of Upheh {Rampage +Fly rPois
+                  | rC-} (You found it on level 11 of the Dungeon)
+ 14784 | D:11     | Noticed a two-headed ogre
+ 14799 | D:11     | Killed a two-headed ogre
+ 14897 | D:11     | Noticed Grum
+ 14964 | D:11     | Killed Grum
+ 14964 | D:11     | Received a gift from Okawaru
+ 15164 | D:11     | Found Booba's Armour Emporium.
+ 15165 | D:11     | Noticed a cyclops
+ 15196 | D:11     | Killed a cyclops
+ 15759 | D:12     | Found Xeryrphyu's Weapon Shoppe.
+ 16139 | D:12     | Reached XP level 12. HP: 96/96 MP: 20/20
+ 16292 | D:12     | Noticed a two-headed ogre
+ 16306 | D:12     | Killed a two-headed ogre
+ 16307 | D:12     | Reached skill level 7 in Short Blades
+ 16307 | D:12     | Reached skill level 7 in Long Blades
+ 16307 | D:12     | Reached skill level 7 in Axes
+ 16307 | D:12     | Reached skill level 7 in Maces & Flails
+ 16307 | D:12     | Reached skill level 7 in Staves
+ 16307 | D:12     | Reached skill level 7 in Slings
+ 16307 | D:12     | Reached skill level 7 in Bows
+ 16307 | D:12     | Reached skill level 7 in Crossbows
+ 16307 | D:12     | Reached skill level 7 in Throwing
+ 16307 | D:12     | Reached skill level 7 in Dodging
+ 16307 | D:12     | Reached skill level 7 in Stealth
+ 16307 | D:12     | Reached skill level 7 in Unarmed Combat
+ 16307 | D:12     | Reached skill level 7 in Spellcasting
+ 16307 | D:12     | Reached skill level 7 in Evocations
+ 16453 | D:12     | Noticed Erolcha
+ 16457 | D:12     | Noticed a tengu warrior
+ 16465 | D:12     | Received a gift from Okawaru
+ 16479 | D:12     | Killed Erolcha
+ 16480 | D:12     | Reached skill level 6 in Conjurations
+ 16480 | D:12     | Reached skill level 6 in Hexes
+ 16480 | D:12     | Reached skill level 6 in Summonings
+ 16480 | D:12     | Reached skill level 6 in Necromancy
+ 16480 | D:12     | Reached skill level 6 in Translocations
+ 16480 | D:12     | Reached skill level 6 in Transmutations
+ 16480 | D:12     | Reached skill level 6 in Fire Magic
+ 16480 | D:12     | Reached skill level 6 in Ice Magic
+ 16480 | D:12     | Reached skill level 6 in Air Magic
+ 16480 | D:12     | Reached skill level 6 in Earth Magic
+ 16480 | D:12     | Reached skill level 6 in Poison Magic
+ 16484 | D:12     | Killed a tengu warrior
+ 16485 | D:12     | Reached skill level 8 in Invocations
+ 17001 | D:12     | Found a runed translucent gate.
+ 17002 | D:12     | Found a runed translucent gate.
+ 17003 | D:12     | Found a runed translucent gate.
+ 17009 | D:12     | Noticed lorentzforces's ghost (journeyman GrFi)
+ 17688 | D:13     | Reached skill level 10 in Fighting
+ 17688 | D:13     | Reached skill level 10 in Armour
+ 17688 | D:13     | Reached skill level 10 in Shields
+ 18077 | D:13     | Noticed an eight-headed hydra
+ 18093 | D:13     | Killed an eight-headed hydra
+ 18094 | D:13     | Reached skill level 9 in Polearms
+ 18898 | D:14     | Found a gate to the Vaults.
+ 18898 | D:14     | Noticed Urug
+ 18898 | D:14     | Noticed Rupert
+ 18898 | D:14     | Noticed a centaur warrior
+ 18898 | D:14     | Noticed a fire dragon
+ 18943 | D:13     | Received a gift from Okawaru
+ 19000 | D:13     | Reached XP level 13. HP: 100/103 MP: 22/22
+ 19105 | D:13     | Killed Urug
+ 19105 | D:13     | Received a gift from Okawaru
+ 19155 | D:14     | Paralysed by Rupert for 4 turns
+ 19273 | D:13     | Paralysed by Rupert for 5 turns
+ 19279 | D:13     | Killed Rupert
+ 19279 | D:13     | Received a gift from Okawaru
+ 19280 | D:13     | Reached skill level 8 in Short Blades
+ 19280 | D:13     | Reached skill level 8 in Long Blades
+ 19280 | D:13     | Reached skill level 8 in Axes
+ 19280 | D:13     | Reached skill level 8 in Maces & Flails
+ 19280 | D:13     | Reached skill level 8 in Staves
+ 19280 | D:13     | Reached skill level 8 in Slings
+ 19280 | D:13     | Reached skill level 8 in Bows
+ 19280 | D:13     | Reached skill level 8 in Crossbows
+ 19280 | D:13     | Reached skill level 8 in Throwing
+ 19280 | D:13     | Reached skill level 8 in Dodging
+ 19280 | D:13     | Reached skill level 8 in Stealth
+ 19280 | D:13     | Reached skill level 8 in Unarmed Combat
+ 19280 | D:13     | Reached skill level 8 in Spellcasting
+ 19280 | D:13     | Reached skill level 8 in Evocations
+ 19526 | D:14     | Killed a fire dragon
+ 19536 | D:14     | Reached skill level 9 in Invocations
+ 19725 | D:13     | Reached ****** piety under Okawaru
+ 19788 | D:13     | HP: 22/104 [cyan ugly thing (12)]
+ 20178 | D:14     | Reached skill level 7 in Conjurations
+ 20178 | D:14     | Reached skill level 7 in Hexes
+ 20178 | D:14     | Reached skill level 7 in Summonings
+ 20178 | D:14     | Reached skill level 7 in Necromancy
+ 20178 | D:14     | Reached skill level 7 in Translocations
+ 20178 | D:14     | Reached skill level 7 in Transmutations
+ 20178 | D:14     | Reached skill level 7 in Fire Magic
+ 20178 | D:14     | Reached skill level 7 in Ice Magic
+ 20178 | D:14     | Reached skill level 7 in Air Magic
+ 20178 | D:14     | Reached skill level 7 in Earth Magic
+ 20178 | D:14     | Reached skill level 7 in Poison Magic
+ 20262 | D:14     | You pick up a book of Burglary and begin reading...
+ 20262 | D:14     | You add the spells Swiftness, Passwall, Passage of
+                  | Golubria, Lee's Rapid Deconstruction and Invisibility to
+                  | your library.
+ 20694 | D:13     | Received a gift from Okawaru
+ 20696 | D:13     | Got a faintly humming animal skin {god gift}
+ 20707 | D:13     | Identified the +1 animal skin "Kutih" {Int+5} (Okawaru
+                  | gifted it to you on level 13 of the Dungeon)
+ 21148 | D:14     | Found a runed translucent gate.
+ 21148 | D:14     | Found a runed translucent gate.
+ 21148 | D:14     | Found a runed translucent gate.
+ 21152 | D:14     | Noticed a green very ugly thing
+ 21153 | D:14     | Noticed a green very ugly thing
+ 21179 | D:14     | Found a basalt altar of Yredelemnul.
+ 21553 | D:15     | Entered Level 15 of the Dungeon
+ 22066 | D:15     | Got a polished hunting sling {sling}
+ 22066 | D:15     | Identified the cursed +0 hunting sling of Tentacled
+                  | Absolution {vorpal, rPois, sling} (You found it on level 15
+                  | of the Dungeon)
+ 22084 | D:15     | Identified a +2 robe of the Archmagi
+ 22202 | D:15     | Noticed an ettin
+ 22251 | D:15     | Killed an ettin
+ 22252 | D:15     | Reached XP level 14. HP: 64/111 MP: 24/24
+ 22509 | D:15     | Found a staircase to the Depths.
+ 22856 | Lair:1   | Entered Level 1 of the Lair of Beasts
+ 22870 | D:9      | magus.rc [v1.9.5.2021-3-27.04:14:41AM]
+ 22876 | D:9      | magus.rc [v1.9.5.2021-3-27.04:14:41AM]
+ 22984 | Lair:1   | Reached skill level 10 in Polearms
+ 23197 | Lair:1   | Reached skill level 11 in Fighting
+ 23197 | Lair:1   | Reached skill level 11 in Armour
+ 23197 | Lair:1   | Reached skill level 11 in Shields
+ 23693 | Lair:2   | Reached skill level 9 in Short Blades
+ 23693 | Lair:2   | Reached skill level 9 in Long Blades
+ 23693 | Lair:2   | Reached skill level 9 in Axes
+ 23693 | Lair:2   | Reached skill level 9 in Maces & Flails
+ 23693 | Lair:2   | Reached skill level 9 in Staves
+ 23693 | Lair:2   | Reached skill level 9 in Slings
+ 23693 | Lair:2   | Reached skill level 9 in Bows
+ 23693 | Lair:2   | Reached skill level 9 in Crossbows
+ 23693 | Lair:2   | Reached skill level 9 in Throwing
+ 23693 | Lair:2   | Reached skill level 9 in Dodging
+ 23693 | Lair:2   | Reached skill level 9 in Stealth
+ 23693 | Lair:2   | Reached skill level 9 in Unarmed Combat
+ 23693 | Lair:2   | Reached skill level 9 in Spellcasting
+ 23693 | Lair:2   | Reached skill level 9 in Evocations
+ 24286 | Lair:2   | Found a staircase to the Swamp.
+ 24422 | Lair:2   | You pick up a book of Party Tricks and begin reading...
+ 24422 | Lair:2   | You add the spells Apportation, Lesser Beckoning, Tukima's
+                  | Dance and Alistair's Intoxication to your library.
+ 24431 | Lair:2   | Found a transporter.
+ 24468 | Lair:2   | Found a transporter.
+ 24663 | Lair:2   | You are cast into the Abyss!
+ 24663 | Lair:2   | Cast into level 3 of the Abyss (unwielding a weapon of
+                  | distortion)
+ 24673 | Abyss:3  | Noticed a starcursed mass
+ 24689 | Abyss:3  | Received a gift from Okawaru
+ 24701 | Abyss:3  | HP: 26/113 [starcursed mass/accursed screaming (8)]
+ 24706 | Abyss:3  | HP: 15/113 [starcursed mass/accursed screaming (8)]
+ 24711 | Abyss:3  | Got a jewelled falchion {god gift, long}
+ 24749 | Abyss:3  | Reached skill level 10 in Invocations
+ 24754 | Abyss:3  | Noticed a white very ugly thing
+ 24755 | Abyss:3  | Noticed a white very ugly thing
+ 24756 | Abyss:3  | Noticed a white very ugly thing
+ 24763 | Abyss:3  | Noticed a white very ugly thing
+ 24778 | Abyss:3  | Killed a white very ugly thing
+ 24788 | Abyss:3  | Killed a brown very ugly thing
+ 24789 | Abyss:3  | Killed a white very ugly thing
+ 24790 | Abyss:3  | Killed a white very ugly thing
+ 24792 | Lair:2   | You pass through the gate.
+ 24792 | Lair:2   | Escaped the Abyss
+ 25091 | Lair:2   | Identified the +8 falchion of Valour {vorpal, rF+ rN+,
+                  | long} (Okawaru gifted it to you on level 3 of the Abyss)
+ 25371 | Lair:3   | Received a gift from Okawaru
+ 26033 | Lair:3   | You fall into a shaft and drop 1 floor!
+ 26051 | Lair:4   | You pick up a book of Alchemy and begin reading...
+ 26051 | Lair:4   | You add the spells Sublimation of Blood, Ignite Poison,
+                  | Petrify, Irradiate and Eringya's Noxious Bog to your
+                  | library.
+ 26593 | Lair:4   | Reached skill level 8 in Conjurations
+ 26593 | Lair:4   | Reached skill level 8 in Hexes
+ 26593 | Lair:4   | Reached skill level 8 in Summonings
+ 26593 | Lair:4   | Reached skill level 8 in Necromancy
+ 26593 | Lair:4   | Reached skill level 8 in Translocations
+ 26593 | Lair:4   | Reached skill level 8 in Transmutations
+ 26593 | Lair:4   | Reached skill level 8 in Fire Magic
+ 26593 | Lair:4   | Reached skill level 8 in Ice Magic
+ 26593 | Lair:4   | Reached skill level 8 in Air Magic
+ 26593 | Lair:4   | Reached skill level 8 in Earth Magic
+ 26593 | Lair:4   | Reached skill level 8 in Poison Magic
+ 27014 | Lair:4   | Found a hole to the Spider Nest.
+ 27207 | Lair:5   | r - pearl dragon scales {rare=g}
+ 27272 | Lair:5   | Found a dark tunnel.
+ 27299 | Volcano  | Entered a volcano
+ 27310 | Volcano  | Identified +0 pearl dragon scales {rare} (You found it on
+                  | level 5 of the Lair of Beasts)
+ 27310 | Volcano  | You finish putting on your +0 pearl dragon scales {rare}.
+ 27520 | Volcano  | Received a gift from Okawaru
+ 27647 | Volcano  | Found a radiant altar of Vehumet.
+ 27810 | Volcano  | Reached XP level 15. HP: 119/119 MP: 25/25
+ 28095 | Lair:5   | You finish taking off your +0 pearl dragon scales {rare}.
+ 28270 | Lair:5   | your +0 pearl dragon scales {rare} glow green for a moment.
+ 29002 | Lair:6   | Entered Level 6 of the Lair of Beasts
+ 29096 | Lair:6   | Found a staircase to the Slime Pits.
+ 29132 | Lair:6   | Received a gift from Okawaru
+ 29962 | Lair:6   | Received a gift from Okawaru
+ 30125 | Lair:6   | Reached skill level 10 in Short Blades
+ 30125 | Lair:6   | Reached skill level 10 in Long Blades
+ 30125 | Lair:6   | Reached skill level 10 in Axes
+ 30125 | Lair:6   | Reached skill level 10 in Maces & Flails
+ 30125 | Lair:6   | Reached skill level 10 in Staves
+ 30125 | Lair:6   | Reached skill level 10 in Slings
+ 30125 | Lair:6   | Reached skill level 10 in Bows
+ 30125 | Lair:6   | Reached skill level 10 in Crossbows
+ 30125 | Lair:6   | Reached skill level 10 in Throwing
+ 30125 | Lair:6   | Reached skill level 10 in Dodging
+ 30125 | Lair:6   | Reached skill level 10 in Stealth
+ 30125 | Lair:6   | Reached skill level 10 in Unarmed Combat
+ 30125 | Lair:6   | Reached skill level 10 in Spellcasting
+ 30125 | Lair:6   | Reached skill level 10 in Evocations
+ 30547 | Lair:6   | Reached skill level 11 in Polearms
+ 31008 | Lair:6   | Found a runed translucent door.
+ 31158 | Lair:6   | Reached skill level 11 in Invocations
+ 32274 | Lair:6   | You finish putting on your +1 pearl dragon scales {rare}.
+ 32549 | D:9      | You finish taking off your +1 pearl dragon scales {rare}.
+ 32564 | D:9      | You finish putting on your +1 pearl dragon scales {rare}.
+ 32569 | D:9      | You finish taking off your +1 pearl dragon scales {rare}.
+ 32641 | D:8      | Bought a +1 vampiric trident for 227 gold pieces
+ 32719 | D:9      | Lost mutation: Your magical capacity is low. (-10% MP)
+                  | [potion of mutation]
+ 32719 | D:9      | Gained mutation: You have sharp toenails. [potion of
+                  | mutation]
+ 32719 | D:9      | Gained mutation: You have a pair of small horns on your
+                  | head. [potion of mutation]
+ 32719 | D:9      | Gained mutation: Your magical capacity is low. (-10% MP)
+                  | [potion of mutation]
+ 32719 | D:9      | Gained mutation: You expend magic power (3 MP) to
+                  | strengthen your wands. [potion of mutation]
+ 32720 | D:9      | Lost mutation: You have sharp toenails. [potion of
+                  | mutation]
+ 32720 | D:9      | Lost mutation: Your magical capacity is low. (-10% MP)
+                  | [potion of mutation]
+ 32720 | D:9      | Lost mutation: You have a pair of small horns on your head.
+                  | [potion of mutation]
+ 32720 | D:9      | Gained mutation: Your spells are a little easier to cast,
+                  | but a little less powerful. [potion of mutation]
+ 32720 | D:9      | Gained mutation: You are robust. (+10% HP) [potion of
+                  | mutation]
+ 32720 | D:9      | Gained mutation: Your movements are slightly less
+                  | encumbered by armour. (ER -2) [potion of mutation]
+ 32788 | Spider:1 | Entered Level 1 of the Spider Nest
+ 32806 | Spider:1 | Reached skill level 12 in Fighting
+ 32806 | Spider:1 | Reached skill level 12 in Armour
+ 32806 | Spider:1 | Reached skill level 12 in Shields
+ 33011 | Spider:1 | Noticed Donald
+ 33044 | Spider:1 | Killed Donald
+ 33372 | Spider:1 | Received a gift from Okawaru
+ 33383 | Spider:1 | Got an ichor-stained chain mail {god gift}
+ 33394 | Spider:1 | Identified the +0 chain mail of Conscience {rPois rF++
+                  | Int-3 SInv} (Okawaru gifted it to you on level 1 of the
+                  | Spider Nest)
+ 33468 | Spider:1 | Reached XP level 16. HP: 139/139 MP: 30/30
+ 33903 | Spider:1 | Reached skill level 9 in Conjurations
+ 33903 | Spider:1 | Reached skill level 9 in Hexes
+ 33903 | Spider:1 | Reached skill level 9 in Summonings
+ 33903 | Spider:1 | Reached skill level 9 in Necromancy
+ 33903 | Spider:1 | Reached skill level 9 in Translocations
+ 33903 | Spider:1 | Reached skill level 9 in Transmutations
+ 33903 | Spider:1 | Reached skill level 9 in Fire Magic
+ 33903 | Spider:1 | Reached skill level 9 in Ice Magic
+ 33903 | Spider:1 | Reached skill level 9 in Air Magic
+ 33903 | Spider:1 | Reached skill level 9 in Earth Magic
+ 33903 | Spider:1 | Reached skill level 9 in Poison Magic
+ 35175 | Spider:2 | Received a gift from Okawaru
+ 35251 | Spider:2 | HP: 34/141 [emperor scorpion (8)]
+ 35256 | Spider:2 | HP: 29/141 [poisoned by an emperor scorpion]
+ 36159 | Spider:3 | Noticed Arachne
+ 36260 | Spider:2 | Reached skill level 11 in Short Blades
+ 36260 | Spider:2 | Reached skill level 11 in Long Blades
+ 36260 | Spider:2 | Reached skill level 11 in Axes
+ 36260 | Spider:2 | Reached skill level 11 in Maces & Flails
+ 36260 | Spider:2 | Reached skill level 11 in Staves
+ 36260 | Spider:2 | Reached skill level 11 in Slings
+ 36260 | Spider:2 | Reached skill level 11 in Bows
+ 36260 | Spider:2 | Reached skill level 11 in Crossbows
+ 36260 | Spider:2 | Reached skill level 11 in Throwing
+ 36260 | Spider:2 | Reached skill level 11 in Dodging
+ 36260 | Spider:2 | Reached skill level 11 in Stealth
+ 36260 | Spider:2 | Reached skill level 11 in Unarmed Combat
+ 36260 | Spider:2 | Reached skill level 11 in Spellcasting
+ 36260 | Spider:2 | Reached skill level 11 in Evocations
+ 37004 | Spider:3 | Reached skill level 12 in Invocations
+ 37106 | Spider:3 | Killed Arachne
+ 37144 | Spider:3 | Reached skill level 12 in Polearms
+ 37343 | Spider:2 | Reached XP level 17. HP: 98/148 MP: 0/32
+ 37371 | Spider:2 | Received a gift from Okawaru
+ 38277 | Spider:4 | Entered Level 4 of the Spider Nest
+ 38277 | Spider:4 | Noticed Nikola
+ 38300 | Spider:3 | HP: 35/148 [Nikola/chain lightning (19)]
+ 38301 | Spider:3 | Killed Nikola
+ 38664 | Spider:4 | Noticed Agnes
+ 38683 | Spider:4 | Killed Agnes
+ 38986 | Spider:4 | Received a gift from Okawaru
+ 39059 | Spider:4 | Reached skill level 13 in Fighting
+ 39059 | Spider:4 | Reached skill level 13 in Armour
+ 39059 | Spider:4 | Reached skill level 13 in Shields
+ 39107 | Spider:4 | HP: 37/149 [poisoned by an emperor scorpion]
+ 39113 | Spider:4 | HP: 34/149 [poisoned by an emperor scorpion]
+ 39119 | Spider:4 | HP: 33/149 [poisoned by an emperor scorpion]
+ 39127 | Spider:4 | HP: 34/149 [poisoned by an emperor scorpion]
+ 39134 | Spider:4 | HP: 34/149 [poisoned by an emperor scorpion]
+ 39926 | Spider:4 | Found the +8 orange crystal plate armour {Archmagi, Int+3
+                  | Clar}
+ 39933 | Spider:4 | <white>G - the +8 orange crystal plate armour {Archmagi, Int+3
+                  | Clar, rare=g}</white>
+ 39944 | Spider:4 | You finish putting on the +8 orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}.
+ 40217 | Spider:4 | Reached skill level 10 in Conjurations
+ 40217 | Spider:4 | Reached skill level 10 in Hexes
+ 40217 | Spider:4 | Reached skill level 10 in Summonings
+ 40217 | Spider:4 | Reached skill level 10 in Necromancy
+ 40217 | Spider:4 | Reached skill level 10 in Translocations
+ 40217 | Spider:4 | Reached skill level 10 in Transmutations
+ 40217 | Spider:4 | Reached skill level 10 in Fire Magic
+ 40217 | Spider:4 | Reached skill level 10 in Ice Magic
+ 40217 | Spider:4 | Reached skill level 10 in Air Magic
+ 40217 | Spider:4 | Reached skill level 10 in Earth Magic
+ 40217 | Spider:4 | Reached skill level 10 in Poison Magic
+ 40285 | Spider:4 | Received a gift from Okawaru
+ 40374 | Spider:4 | Got a gossamer rune of Zot
+ 40750 | D:9      | Learned a level 2 spell: Blink
+ 40753 | D:9      | Learned a level 2 spell: Passwall
+ 40971 | D:9      | Learned a level 3 spell: Ignite Poison
+ 40971 | D:9      | magus.rc [v1.9.5.2021-3-27.04:14:41AM]
+ 41019 | Swamp:1  | Entered Level 1 of the Swamp
+ 41073 | Swamp:1  | Received a gift from Okawaru
+ 41898 | Swamp:2  | Noticed Aizul
+ 41948 | Swamp:2  | Killed Aizul
+ 41948 | Swamp:2  | Received a gift from Okawaru
+ 42049 | Swamp:2  | Reached XP level 18. HP: 149/157 MP: 33/33
+ 42249 | Swamp:2  | Received a gift from Okawaru
+ 42308 | Swamp:2  | Got an iridescent quick blade {shortrare=g}
+ 42308 | Swamp:2  | Identified the cursed +1 quick blade of Joschaxol {freeze,
+                  | *Corrode rPois Stlth+, shortrare=g} (You found it on level
+                  | 2 of the Swamp)
+ 42308 | Swamp:2  | the cursed +1 quick blade of Joschaxol {freeze, *Corrode
+                  | rPois Stlth+, shortrare=g} glows with a cold blue light!
+ 42308 | Swamp:2  | N - the cursed +1 quick blade of Joschaxol (weapon)
+                  | {freeze, *Corrode rPois Stlth+, shortrare=g}
+ 42401 | D:9      | the +1 quick blade of Joschaxol {freeze, *Corrode rPois
+                  | Stlth+, shortrare} stops glowing.
+ 42401 | D:9      | You drop the +1 quick blade of Joschaxol {freeze, *Corrode
+                  | rPois Stlth+, shortrare}.
+ 42588 | Swamp:2  | Reached skill level 12 in Short Blades
+ 42588 | Swamp:2  | Reached skill level 12 in Long Blades
+ 42588 | Swamp:2  | Reached skill level 12 in Axes
+ 42588 | Swamp:2  | Reached skill level 12 in Maces & Flails
+ 42588 | Swamp:2  | Reached skill level 12 in Staves
+ 42588 | Swamp:2  | Reached skill level 12 in Slings
+ 42588 | Swamp:2  | Reached skill level 12 in Bows
+ 42588 | Swamp:2  | Reached skill level 12 in Crossbows
+ 42588 | Swamp:2  | Reached skill level 12 in Throwing
+ 42588 | Swamp:2  | Reached skill level 12 in Dodging
+ 42588 | Swamp:2  | Reached skill level 12 in Stealth
+ 42588 | Swamp:2  | Reached skill level 12 in Unarmed Combat
+ 42588 | Swamp:2  | Reached skill level 12 in Spellcasting
+ 42588 | Swamp:2  | Reached skill level 12 in Evocations
+ 42934 | Swamp:3  | Reached skill level 13 in Invocations
+ 43049 | Swamp:3  | HP: 39/158 [seven-headed hydra (13)]
+ 43054 | Swamp:3  | HP: 34/158 [poison]
+ 43060 | Swamp:2  | HP: 31/158 [poison]
+ 43472 | Swamp:2  | Paralysed by a fenstrider witch for 4 turns
+ 43477 | Swamp:2  | HP: 39/158 [poison]
+ 43482 | Swamp:2  | HP: 33/158 [poison]
+ 43487 | Swamp:2  | HP: 28/158 [poison]
+ 43492 | Swamp:2  | HP: 23/158 [poison]
+ 43497 | Swamp:2  | HP: 21/158 [poison]
+ 43502 | Swamp:2  | HP: 20/158 [poison]
+ 43507 | Swamp:2  | HP: 20/158 [poison]
+ 43514 | Swamp:2  | HP: 20/158 [poison]
+ 43522 | Swamp:2  | HP: 21/158 [poison]
+ 44177 | Swamp:3  | Reached skill level 13 in Polearms
+ 44720 | Swamp:3  | You add the spells Corpse Rot, Stone Arrow, Summon Forest,
+                  | Hydra Form and Summon Hydra to your library.
+ 44956 | Swamp:3  | Received a gift from Okawaru
+ 45046 | Swamp:3  | Got a warped platinum ring
+ 45047 | Swamp:3  | Identified the ring "Resuw" {rElec rF+ Will+++ Str-4
+                  | Stlth+} (You found it on level 3 of the Swamp)
+ 45236 | Swamp:4  | Entered Level 4 of the Swamp
+ 45992 | Swamp:4  | Noticed Roxanne
+ 46070 | Swamp:4  | Reached XP level 19. HP: 166/166 MP: 35/35
+ 46325 | Swamp:4  | Got a decaying rune of Zot
+ 46740 | Swamp:4  | Killed Roxanne
+ 46743 | Swamp:4  | You pick up a book of the Earth and begin reading...
+ 46743 | Swamp:4  | You add the spells Leda's Liquefaction, Bolt of Magma,
+                  | Statue Form, Iron Shot and Shatter to your library.
+ 47003 | D:9      | You finish taking off the +8 orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}.
+ 47013 | D:9      | You finish putting on the +8 orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}.
+ 47085 | Orc:1    | Entered Level 1 of the Orcish Mines
+ 47257 | Orc:1    | Found a flagged portal.
+ 47275 | Bailey   | Entered a bailey
+ 47493 | Bailey   | Identified a potion of experience
+ 47493 | Bailey   | Reached skill level 14 in Fighting
+ 47493 | Bailey   | Reached skill level 14 in Armour
+ 47493 | Bailey   | Reached skill level 14 in Shields
+ 47493 | Bailey   | Reached XP level 20. HP: 174/174 MP: 36/36
+ 47917 | Orc:2    | Entered Level 2 of the Orcish Mines
+ 47930 | Orc:2    | Received a gift from Okawaru
+ 47962 | Orc:2    | Got a pitted plate armour {god gift}
+ 47986 | Orc:1    | You finish taking off the +8 orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}.
+ 47991 | Orc:1    | Identified the +1 plate armour "Basokun" {rF+ rCorr Str+4
+                  | Int+4} (Okawaru gifted it to you on level 2 of the Orcish
+                  | Mines)
+ 48001 | Orc:1    | You finish putting on the +8 orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}.
+ 48103 | D:9      | You drop +1 pearl dragon scales {rare}.
+ 48113 | D:9      | You finish taking off the +8 orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}.
+ 48128 | D:9      | You finish putting on the +8 orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}.
+ 48233 | Orc:2    | Found Keplaf's General Store.
+ 48270 | Orc:2    | Reached skill level 11 in Conjurations
+ 48270 | Orc:2    | Reached skill level 11 in Hexes
+ 48270 | Orc:2    | Reached skill level 11 in Summonings
+ 48270 | Orc:2    | Reached skill level 11 in Necromancy
+ 48270 | Orc:2    | Reached skill level 11 in Translocations
+ 48270 | Orc:2    | Reached skill level 11 in Transmutations
+ 48270 | Orc:2    | Reached skill level 11 in Fire Magic
+ 48270 | Orc:2    | Reached skill level 11 in Ice Magic
+ 48270 | Orc:2    | Reached skill level 11 in Air Magic
+ 48270 | Orc:2    | Reached skill level 11 in Earth Magic
+ 48270 | Orc:2    | Reached skill level 11 in Poison Magic
+ 48312 | Orc:2    | Found Yclapuoq's Book Boutique.
+ 48377 | Orc:2    | Bought a Young Poisoner's Handbook for 480 gold pieces
+ 48377 | Orc:2    | You add the spells Sting, Poisonous Vapours and Olgreb's
+                  | Toxic Radiance to your library.
+ 48382 | Orc:2    | Learned a level 4 spell: Olgreb's Toxic Radiance
+ 48504 | Orc:2    | Found Wilid's Antique Weapon Emporium.
+ 48791 | Orc:2    | Found Lyrredar's Antique Armour Shoppe.
+ 48837 | Orc:2    | Found a staircase to the Elven Halls.
+ 48883 | Orc:2    | Found a roughly hewn altar of Beogh.
+ 48981 | Orc:2    | Bought a scroll of blinking for 75 gold pieces
+ 49934 | Elf:1    | Entered Level 1 of the Elven Halls
+ 50146 | Elf:1    | Found Veseac's Antique Weapon Shoppe.
+ 50367 | Elf:1    | Found Teenwuat's Antique Weapon Shop.
+ 50370 | Elf:1    | Found Liwoic's Jewellery Boutique.
+ 50370 | Elf:1    | Found Odetion's Armour Shop.
+ 50375 | Elf:1    | Found Jiyrewuh's General Store.
+ 50384 | Elf:1    | Bought a scroll of magic mapping for 59 gold pieces
+ 50800 | Elf:1    | Reached skill level 14 in Invocations
+ 50814 | Elf:1    | Got a dazzling mace {mace}
+ 50815 | Elf:1    | Identified the +3 mace "Jizxyen" {freeze, rElec, mace} (You
+                  | found it on level 1 of the Elven Halls)
+ 50868 | Elf:1    | Reached skill level 13 in Short Blades
+ 50868 | Elf:1    | Reached skill level 13 in Long Blades
+ 50868 | Elf:1    | Reached skill level 13 in Axes
+ 50868 | Elf:1    | Reached skill level 13 in Maces & Flails
+ 50868 | Elf:1    | Reached skill level 13 in Staves
+ 50868 | Elf:1    | Reached skill level 13 in Slings
+ 50868 | Elf:1    | Reached skill level 13 in Bows
+ 50868 | Elf:1    | Reached skill level 13 in Crossbows
+ 50868 | Elf:1    | Reached skill level 13 in Throwing
+ 50868 | Elf:1    | Reached skill level 13 in Dodging
+ 50868 | Elf:1    | Reached skill level 13 in Stealth
+ 50868 | Elf:1    | Reached skill level 13 in Unarmed Combat
+ 50868 | Elf:1    | Reached skill level 13 in Spellcasting
+ 50868 | Elf:1    | Reached skill level 13 in Evocations
+ 52344 | Elf:2    | Found a runed translucent gate.
+ 52344 | Elf:2    | Found a runed translucent gate.
+ 52346 | Elf:2    | Found a runed translucent gate.
+ 52588 | Elf:2    | Received a gift from Okawaru
+ 52789 | Elf:2    | F - a +0 triple sword of pain {longrare=g}
+ 52790 | Elf:2    | You drop a +0 triple sword of pain {longrare}.
+ 52791 | Elf:2    | F - a +0 triple sword of pain {longrare}
+ 52792 | Elf:2    | You drop a +0 triple sword of pain {longrare}.
+ 52938 | Elf:2    | magus.rc [v1.9.6.2021-4-03.07:38:40PM]
+ 53301 | D:9      | magus.rc [v1.9.6.2021-4-03.07:46:48PM]
+ 53314 | D:9      | You finish taking off the +8 orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}.
+ 53343 | D:9      | magus.rc [v1.9.6.2021-4-03.07:52:48PM]
+ 53348 | D:9      | You drop the +8 orange crystal plate armour {Archmagi,
+                  | Int+3 Clar, rare}.
+ 53353 | D:9      | <white>G - the +8 orange crystal plate armour {Archmagi, Int+3
+                  | Clar, rare}</white>
+ 53437 | Orc:2    | You finish putting on the +8 orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}.
+ 53437 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53437 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53437 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53437 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53437 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53437 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53437 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53437 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53437 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53437 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53437 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53437 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53437 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53437 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53437 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53437 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53437 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53437 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53437 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53437 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53437 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53437 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53437 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53437 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53437 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53437 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53437 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53437 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53437 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53437 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53437 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53437 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53437 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53437 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53437 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53437 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53437 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53437 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53437 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53437 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53437 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53437 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53437 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53437 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53437 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53438 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53438 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53438 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53438 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53438 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53438 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53438 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53438 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53438 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53438 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53438 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53438 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53438 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53438 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53438 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53438 | Orc:2    | magus.rc [v1.9.6.2021-4-03.08:08:42PM]
+ 53446 | Orc:2    | You finish taking off the +8 orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}.
+ 53462 | Orc:2    | You finish putting on the +8 orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}.
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | magus.rc [v1.9.6.2021-4-03.08:09:23PM]
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53464 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53465 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53465 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53465 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53465 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53465 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53465 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53465 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53465 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53465 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53465 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53465 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53465 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53465 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53465 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53465 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53465 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53465 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53465 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53465 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53465 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53465 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53465 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53465 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53465 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53465 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53465 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53465 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53465 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53465 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53465 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53466 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53466 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53466 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53466 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53466 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53466 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53466 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53466 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53466 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53466 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53466 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53466 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53466 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53466 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53466 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53466 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53466 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53466 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53466 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53466 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53466 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53466 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53466 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53466 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53466 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53466 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53466 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53466 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53466 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53466 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53467 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53467 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53467 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53467 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53467 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53467 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53467 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53467 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53467 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53467 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53467 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53467 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53467 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53467 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53467 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53467 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53467 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53467 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53467 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53467 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53467 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53467 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53467 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53467 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53467 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53467 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53467 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53467 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53467 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53467 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53468 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53468 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53468 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53468 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53468 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53468 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53468 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53468 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53468 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53468 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53468 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53468 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53468 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53468 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53468 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53468 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53468 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53468 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53468 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53468 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53468 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53468 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53468 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53468 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53468 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53468 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53468 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53468 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53468 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53468 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53469 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53469 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53469 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53469 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53469 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53469 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53469 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53469 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53469 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53469 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53469 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53469 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53469 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53469 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53469 | Orc:2    | 🤖 <blue>[should_pickup] (cur): name: orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}; subtype: body, magical: true</blue>
+ 53469 | Orc:2    | You finish taking off the +8 orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}.
+ 53474 | Orc:2    | magus.rc [v1.9.7]
+ 53484 | Orc:2    | You finish putting on the +8 orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}.
+ 53851 | Elf:2    | Reached XP level 21. HP: 175/182 MP: 38/38
+ 54243 | Elf:2    | magus.rc [v1.9.8]
+ 54302 | Elf:3    | Entered Level 3 of the Elven Halls
+ 54484 | Elf:3    | Reached skill level 14 in Polearms
+ 54591 | Elf:3    | Received a gift from Okawaru
+ 54649 | Elf:3    | Got a scorched rapier {god gift, short}
+ 54653 | Elf:3    | Identified the +1 rapier of Context {elec, +Fly rC+ Will+++
+                  | Int-2, short} (Okawaru gifted it to you on level 3 of the
+                  | Elven Halls)
+ 55205 | Elf:3    | Identified the +5 chain mail "Irepliomn" {rElec rC+++ Str+3
+                  | Int-4} (You found it on level 3 of the Elven Halls)
+ 55847 | Elf:3    | Found a bloodstained altar of Trog.
+ 56371 | Elf:3    | Gained mutation: You tend to lose your temper in combat. [a
+                  | neqoxec]
+ 56377 | Elf:3    | Received a gift from Okawaru
+ 56926 | Elf:3    | Identified the +10 long sword of the Ship {vorpal, Int+3
+                  | Stlth+}
+ 57578 | Elf:3    | You pick up a book of Callings and begin reading...
+ 57578 | Elf:3    | You add the spells Summon Small Mammal, Call Canine
+                  | Familiar, Summon Guardian Golem, Summon Lightning Spire and
+                  | Summon Ice Beast to your library.
+ 57677 | Elf:3    | You pick up a book of Burglary and begin reading...
+ 57683 | Elf:3    | You pick up a book of Hexes and begin reading...
+ 57683 | Elf:3    | You add the spells Cause Fear, Yara's Violent Unravelling,
+                  | Silence and Discord to your library.
+ 57935 | Elf:3    | Identified the Volume of the Jabberwock
+ 57938 | Elf:3    | You pick up a book of Hexes and begin reading...
+ 57939 | Elf:3    | Identified the Papyrus of Sharkskin
+ 57947 | Elf:3    | Identified the Disquisition on Hurtful Feathers
+ 57948 | Elf:3    | You add the spells Iskenderun's Battlesphere and Starburst
+                  | to your library.
+ 59012 | D:9      | You finish taking off the +8 orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}.
+ 59022 | D:9      | You finish putting on the +8 orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}.
+ 59170 | Vaults:1 | Entered Level 1 of the Vaults
+ 59810 | Vaults:1 | Reached skill level 15 in Fighting
+ 59810 | Vaults:1 | Reached skill level 15 in Armour
+ 59810 | Vaults:1 | Reached skill level 15 in Shields
+ 59931 | Vaults:1 | Found Gozag's Antique Weapon Shoppe.
+ 59933 | Vaults:1 | Found an opulent altar of Gozag.
+ 59938 | Vaults:1 | Found Gozag's Assorted Antiques.
+ 59952 | Vaults:1 | Found Gozag's Assorted Antiques.
+ 60054 | Vaults:1 | Received a gift from Okawaru
+ 60300 | Vaults:1 | Reached skill level 15 in Invocations
+ 60304 | Vaults:1 | Reached skill level 12 in Conjurations
+ 60304 | Vaults:1 | Reached skill level 12 in Hexes
+ 60304 | Vaults:1 | Reached skill level 12 in Summonings
+ 60304 | Vaults:1 | Reached skill level 12 in Necromancy
+ 60304 | Vaults:1 | Reached skill level 12 in Translocations
+ 60304 | Vaults:1 | Reached skill level 12 in Transmutations
+ 60304 | Vaults:1 | Reached skill level 12 in Fire Magic
+ 60304 | Vaults:1 | Reached skill level 12 in Ice Magic
+ 60304 | Vaults:1 | Reached skill level 12 in Air Magic
+ 60304 | Vaults:1 | Reached skill level 12 in Earth Magic
+ 60304 | Vaults:1 | Reached skill level 12 in Poison Magic
+ 60346 | Vaults:1 | Reached XP level 22. HP: 192/192 MP: 39/39
+ 60370 | Vaults:1 | You fall into a shaft and drop 1 floor!
+ 60442 | Vaults:1 | Reached skill level 14 in Short Blades
+ 60442 | Vaults:1 | Reached skill level 14 in Long Blades
+ 60442 | Vaults:1 | Reached skill level 14 in Axes
+ 60442 | Vaults:1 | Reached skill level 14 in Maces & Flails
+ 60442 | Vaults:1 | Reached skill level 14 in Staves
+ 60442 | Vaults:1 | Reached skill level 14 in Slings
+ 60442 | Vaults:1 | Reached skill level 14 in Bows
+ 60442 | Vaults:1 | Reached skill level 14 in Crossbows
+ 60442 | Vaults:1 | Reached skill level 14 in Throwing
+ 60442 | Vaults:1 | Reached skill level 14 in Dodging
+ 60442 | Vaults:1 | Reached skill level 14 in Stealth
+ 60442 | Vaults:1 | Reached skill level 14 in Unarmed Combat
+ 60442 | Vaults:1 | Reached skill level 14 in Spellcasting
+ 60442 | Vaults:1 | Reached skill level 14 in Evocations
+ 61328 | Vaults:1 | Received a gift from Okawaru
+ 61337 | Vaults:1 | You finish taking off the +8 orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}.
+ 61352 | Vaults:1 | You finish putting on the +8 orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}.
+ 63213 | Vaults:2 | Reached skill level 15 in Polearms
+ 63480 | Vaults:3 | Found a staircase to the Crypt.
+ 63502 | Vaults:3 | Received a gift from Okawaru
+ 63922 | Vaults:3 | Received a gift from Okawaru
+ 63962 | Vaults:3 | Reached XP level 23. HP: 194/200 MP: 41/41
+ 64158 | Vaults:3 | Received a gift from Okawaru
+ 64160 | Vaults:3 | Identified the +10 hunting sling "Cebb" {vorpal, rPois
+                  | rC+++ Stlth-} (Okawaru gifted it to you on level 3 of the
+                  | Vaults)
+ 65665 | D:12     | Killed lorentzforces's ghost
+ 65729 | D:12     | You pick up a book of Burglary and begin reading...
+ 65837 | D:14     | Found a runed translucent gate.
+ 65837 | D:14     | Found a runed translucent gate.
+ 65843 | D:14     | Noticed Raics's ghost (journeyman GnWn)
+ 65845 | D:14     | Found a runed translucent gate.
+ 65916 | D:14     | Killed Raics's ghost
+ 65938 | D:14     | Gained mutation: Your body sometimes deteriorates upon
+                  | taking damage. [mutagenic glow]
+ 65961 | D:14     | Learned a level 1 spell: Apportation
+ 65968 | D:14     | Lost mutation: Your spells are a little easier to cast, but
+                  | a little less powerful. [potion of mutation]
+ 65968 | D:14     | Lost mutation: You are robust. (+10% HP) [potion of
+                  | mutation]
+ 65968 | D:14     | Lost mutation: You tend to lose your temper in combat.
+                  | [potion of mutation]
+ 65968 | D:14     | Lost mutation: You expend magic power (3 MP) to strengthen
+                  | your wands. [potion of mutation]
+ 65968 | D:14     | Lost mutation: Your body sometimes deteriorates upon taking
+                  | damage. [potion of mutation]
+ 65968 | D:14     | Gained mutation: Your magical capacity is low. (-10% MP)
+                  | [potion of mutation]
+ 65968 | D:14     | Gained mutation: Your muscles are strong. (Str +2) [potion
+                  | of mutation]
+ 65968 | D:14     | Gained mutation: You have sharp toenails. [potion of
+                  | mutation]
+ 67268 | Vaults:3 | Received a gift from Okawaru
+ 67909 | Vaults:3 | magus.rc [v1.9.8.2021-4-04.01:46:07AM]
+ 67909 | Vaults:3 | magus.rc [v1.9.8.2021-4-04.01:46:55AM]
+ 67909 | Vaults:3 | magus.rc [v1.9.8.2021-4-04.01:47:29AM]
+ 67909 | Vaults:3 | magus.rc [v1.9.8.2021-4-04.01:55:18AM]
+ 67918 | Vaults:3 | magus.rc [v1.9.8.2021-4-04.01:57:15AM]
+ 67918 | Vaults:3 | magus.rc [v1.9.8.2021-4-04.02:01:34AM]
+ 67918 | Vaults:3 | magus.rc [v1.9.8.2021-4-04.02:15:04AM]
+ 67974 | Vaults:3 | magus.rc [v1.9.8.2021-4-04.02:19:24AM]
+ 67976 | Vaults:3 | magus.rc [v1.9.8.2021-4-04.02:20:19AM]
+ 67985 | Vaults:3 | magus.rc [v1.9.8.2021-4-04.02:26:59AM]
+ 67987 | Vaults:3 | magus.rc [v1.9.8.2021-4-04.02:27:48AM]
+ 67989 | Vaults:3 | magus.rc [v1.9.8.2021-4-04.02:28:31AM]
+ 68381 | Vaults:3 | magus.rc [v1.9.8.2021-4-04.02:28:31AM]
+ 68512 | Vaults:4 | Received a gift from Okawaru
+ 68525 | Vaults:4 | Identified the +4 ring mail of the Maze {rF+ rC+ Int+3}
+                  | (Okawaru gifted it to you on level 4 of the Vaults)
+ 68597 | Vaults:4 | Reached skill level 16 in Invocations
+ 68604 | Vaults:4 | magus.rc [v1.9.8.2021-4-04.02:31:45AM]
+ 69518 | Vaults:4 | Reached skill level 16 in Fighting
+ 69518 | Vaults:4 | Reached skill level 16 in Armour
+ 69518 | Vaults:4 | Reached skill level 16 in Shields
+ 69773 | Vaults:4 | Reached skill level 15 in Short Blades
+ 69773 | Vaults:4 | Reached skill level 15 in Long Blades
+ 69773 | Vaults:4 | Reached skill level 15 in Axes
+ 69773 | Vaults:4 | Reached skill level 15 in Maces & Flails
+ 69773 | Vaults:4 | Reached skill level 15 in Staves
+ 69773 | Vaults:4 | Reached skill level 15 in Slings
+ 69773 | Vaults:4 | Reached skill level 15 in Bows
+ 69773 | Vaults:4 | Reached skill level 15 in Crossbows
+ 69773 | Vaults:4 | Reached skill level 15 in Throwing
+ 69773 | Vaults:4 | Reached skill level 15 in Dodging
+ 69773 | Vaults:4 | Reached skill level 15 in Stealth
+ 69773 | Vaults:4 | Reached skill level 15 in Unarmed Combat
+ 69773 | Vaults:4 | Reached skill level 15 in Spellcasting
+ 69773 | Vaults:4 | Reached skill level 15 in Evocations
+ 70563 | Vaults:5 | Entered Level 5 of the Vaults
+ 70574 | Vaults:5 | Reached skill level 13 in Conjurations
+ 70574 | Vaults:5 | Reached skill level 13 in Hexes
+ 70574 | Vaults:5 | Reached skill level 13 in Summonings
+ 70574 | Vaults:5 | Reached skill level 13 in Necromancy
+ 70574 | Vaults:5 | Reached skill level 13 in Translocations
+ 70574 | Vaults:5 | Reached skill level 13 in Transmutations
+ 70574 | Vaults:5 | Reached skill level 13 in Fire Magic
+ 70574 | Vaults:5 | Reached skill level 13 in Ice Magic
+ 70574 | Vaults:5 | Reached skill level 13 in Air Magic
+ 70574 | Vaults:5 | Reached skill level 13 in Earth Magic
+ 70574 | Vaults:5 | Reached skill level 13 in Poison Magic
+ 70577 | Vaults:5 | Received a gift from Okawaru
+ 70618 | Vaults:4 | Reached XP level 24. HP: 112/191 MP: 37/37
+ 70848 | Vaults:5 | Received a gift from Okawaru
+ 71205 | Vaults:5 | Found the +2 robe of Vines {NoPotionHeal Regen+7}
+ 71214 | Vaults:5 | Noticed Xtahua
+ 71237 | Vaults:5 | Killed Xtahua
+ 71341 | Vaults:5 | Identified the +3 chain mail of Cheibriados's Respect
+                  | {Rampage}
+ 71435 | Vaults:5 | Identified the Papyrus of Dark Magic
+ 71436 | Vaults:5 | You add the spells Dispel Undead, Simulacrum and Death
+                  | Channel to your library.
+ 71574 | Vaults:5 | Got a bloodstained plate armour
+ 71680 | Vaults:5 | Found Iluschoik's Magic Scroll Shop.
+ 71718 | Vaults:5 | Reached skill level 16 in Polearms
+ 71996 | Vaults:5 | Bought a scroll of summoning for 133 gold pieces
+ 71996 | Vaults:5 | Bought a scroll of immolation for 49 gold pieces
+ 71996 | Vaults:5 | Bought a scroll of summoning for 133 gold pieces
+ 72064 | Vaults:5 | Received a gift from Okawaru
+ 72157 | Vaults:5 | Got a heavily runed helmet {god gift}
+ 72407 | Vaults:5 | Found the +8 frozen axe "Frostbite" {freezing cloud, *Noise
+                  | +Fly rC+}
+ 72428 | Vaults:5 | Identified the +4 helmet "Ucotuyxi" {rC+ Str-2 Int+5}
+                  | (Okawaru gifted it to you on level 5 of the Vaults)
+ 72508 | Vaults:5 | Got a silver rune of Zot
+ 72625 | Vaults:5 | Found the +7 pair of quick blades "Gyre" and "Gimble"
+                  | {protect}
+ 72631 | Vaults:5 | <white>E - the +7 pair of quick blades "Gyre" and "Gimble"
+                  | {protect, shortrare}</white>
+ 72693 | Vaults:4 | You drop the +7 pair of quick blades "Gyre" and "Gimble"
+                  | {protect, shortrare}.
+ 72731 | Vaults:5 | Got a smoking scale mail
+ 72776 | Vaults:5 | You pick up a book of Clouds and begin reading...
+ 72792 | Vaults:5 | You add the spells Haunt, Borgnjor's Revivification,
+                  | Infestation, Necromutation and Death's Door to your
+                  | library.
+ 72896 | Vaults:5 | +0 shadow dragon scales {rare}; <darkgrey>a +0 giant club {mace}</darkgrey>; <darkgrey>a
+                  | +0 giant club {mace}</darkgrey>
+ 72913 | Vaults:5 | You pick up a book of Cantrips and begin reading...
+ 72913 | Vaults:5 | You add the spells Corona and Animate Skeleton to your
+                  | library.
+ 72926 | Vaults:5 | Found the +2 ratskin cloak {*Rats rPois rN+ Str-1 Int-1
+                  | Dex+1}
+ 73783 | Vaults:4 | <white>E - the +7 pair of quick blades "Gyre" and "Gimble"
+                  | {protect, shortrare}</white>
+ 74025 | D:9      | You finish taking off the +8 orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}.
+ 74030 | D:9      | Identified the cursed +1 plate armour of Amorality {-Tele
+                  | rElec rN+} (You found it on level 5 of the Vaults)
+ 74054 | D:9      | Identified the +4 scale mail of Hangman {*Drain rC+ Will++
+                  | Int+4} (You found it on level 5 of the Vaults)
+ 74064 | D:9      | You finish putting on the +8 orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}.
+ 74098 | D:9      | You drop the +7 pair of quick blades "Gyre" and "Gimble"
+                  | {protect, shortrare}.
+ 74314 | Crypt:1  | Entered Level 1 of the Crypt
+ 74314 | Crypt:1  | Noticed Jory
+ 74346 | Vaults:3 | Killed Jory
+ 74686 | Crypt:1  | Noticed an ancient lich
+ 74691 | Crypt:1  | Noticed an ancient lich
+ 74709 | Crypt:1  | Killed an ancient lich
+ 74712 | Crypt:1  | Killed an ancient lich
+ 74713 | Crypt:1  | Reached XP level 25. HP: 180/199 MP: 38/38
+ 74715 | Crypt:1  | Reached skill level 17 in Invocations
+ 74762 | Crypt:1  | Noticed an ancient lich
+ 74779 | Crypt:1  | HP: 37/198 [acid (13)]
+ 74780 | Crypt:1  | Killed an ancient lich
+ 74780 | Crypt:1  | Received a gift from Okawaru
+ 75220 | Crypt:1  | Noticed a curse skull
+ 75229 | Crypt:1  | HP: 44/200 [??? (27)]
+ 75234 | Crypt:1  | HP: 41/200 [something (4)]
+ 75237 | Crypt:1  | Killed a curse skull
+ 75951 | Crypt:1  | You pick up a book of Hexes and begin reading...
+ 76181 | Crypt:1  | Noticed Bai Suzhen
+ 76200 | Crypt:1  | Killed Bai Suzhen
+ 76210 | Crypt:1  | Received a gift from Okawaru
+ 76295 | Crypt:1  | You finish taking off the +8 orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}.
+ 76311 | Crypt:1  | You finish putting on the +8 orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}.
+ 76611 | D:9      | magus.rc [v1.9.8.2021-4-04.05:20:49AM]
+ 76613 | D:9      | magus.rc [v1.9.9]
+ 76711 | Slime:1  | Entered Level 1 of the Pits of Slime
+ 76851 | Slime:2  | Reached skill level 16 in Short Blades
+ 76851 | Slime:2  | Reached skill level 16 in Long Blades
+ 76851 | Slime:2  | Reached skill level 16 in Axes
+ 76851 | Slime:2  | Reached skill level 16 in Maces & Flails
+ 76851 | Slime:2  | Reached skill level 16 in Staves
+ 76851 | Slime:2  | Reached skill level 16 in Slings
+ 76851 | Slime:2  | Reached skill level 16 in Bows
+ 76851 | Slime:2  | Reached skill level 16 in Crossbows
+ 76851 | Slime:2  | Reached skill level 16 in Throwing
+ 76851 | Slime:2  | Reached skill level 16 in Dodging
+ 76851 | Slime:2  | Reached skill level 16 in Stealth
+ 76851 | Slime:2  | Reached skill level 16 in Unarmed Combat
+ 76851 | Slime:2  | Reached skill level 16 in Spellcasting
+ 76851 | Slime:2  | Reached skill level 16 in Evocations
+ 77215 | Slime:3  | Reached skill level 17 in Fighting
+ 77215 | Slime:3  | Reached skill level 17 in Armour
+ 77215 | Slime:3  | Reached skill level 17 in Shields
+ 77444 | Slime:5  | Entered Level 5 of the Pits of Slime
+ 77643 | Slime:5  | Noticed the Royal Jelly
+ 77667 | Slime:5  | Killed the Royal Jelly
+ 77791 | Slime:5  | HP: 47/201 [acid blob (22)]
+ 77792 | Slime:5  | HP: 22/201 [acid (4)]
+ 77793 | Slime:5  | Reached skill level 14 in Conjurations
+ 77793 | Slime:5  | Reached skill level 14 in Hexes
+ 77793 | Slime:5  | Reached skill level 14 in Summonings
+ 77793 | Slime:5  | Reached skill level 14 in Necromancy
+ 77793 | Slime:5  | Reached skill level 14 in Translocations
+ 77793 | Slime:5  | Reached skill level 14 in Transmutations
+ 77793 | Slime:5  | Reached skill level 14 in Fire Magic
+ 77793 | Slime:5  | Reached skill level 14 in Ice Magic
+ 77793 | Slime:5  | Reached skill level 14 in Air Magic
+ 77793 | Slime:5  | Reached skill level 14 in Earth Magic
+ 77793 | Slime:5  | Reached skill level 14 in Poison Magic
+ 78214 | Slime:5  | Got a crude tin ring
+ 78220 | Slime:5  | Identified the Guide on the Compass and Stones
+ 78291 | Slime:5  | Identified a scroll of acquirement
+ 78336 | Slime:5  | Got a distressingly furry plate armour
+ 78338 | Slime:5  | Got a slimy rune of Zot
+ 78348 | Slime:5  | Identified the ring "Funliwn Ojar" {rPois rC+++ Str-4 Dex+4
+                  | SInv} (You found it on level 5 of the Pits of Slime)
+ 78564 | D:9      | Identified the +4 plate armour of the Shining Light {Harm
+                  | rPois Slay+2 Stlth+} (You found it on level 5 of the Pits
+                  | of Slime)
+ 78711 | Elf:1    | Bought a glimmering broad axe for 333 gold pieces
+ 78711 | Elf:1    | Identified the +5 broad axe of Imminent Death {vorpal, rF+
+                  | rN+ Int-4 Dex+4, axe} (You bought it in a shop on level 1
+                  | of the Elven Halls)
+ 78890 | Vaults:1 | Bought a wand of acid (8) for 800 gold pieces
+ 78898 | Vaults:1 | Bought a wand of iceblast (9) for 400 gold pieces
+ 78898 | Vaults:1 | Bought a potion of heal wounds for 500 gold pieces
+ 78898 | Vaults:1 | Bought a wand of acid (6) for 800 gold pieces
+ 79234 | Depths:1 | Entered Level 1 of the Depths
+ 79250 | Depths:1 | Got a polished hand axe {axe}
+ 79415 | D:9      | Identified the +2 hand axe of the Pits of Slime {flame,
+                  | rElec Str+6 Dex-3 SInv Stlth+, axe} (You found it on level
+                  | 1 of the Depths)
+ 79603 | Depths:1 | Found a one-way gate to the infinite horrors of the Abyss.
+ 79687 | Depths:1 | Found a gateway to Hell.
+ 79831 | Depths:1 | Found Purphushrai's Jewellery Shop.
+ 79832 | Depths:1 | Found Jugegor's Gadget Shoppe.
+ 79833 | Depths:1 | Found Cyuczuv's Jewellery Shop.
+ 79858 | Depths:1 | Bought a wand of acid (7) for 462 gold pieces
+ 79858 | Depths:1 | Bought a wand of acid (9) for 546 gold pieces
+ 79881 | Depths:1 | Received a gift from Okawaru
+ 79921 | Depths:1 | Received a gift from Okawaru
+ 79949 | Depths:1 | Reached XP level 26. HP: 208/208 MP: 38/39
+ 79982 | Depths:1 | Identified the +10 triple crossbow "Bedous" {vorpal, +Blink
+                  | rN++ Str-3 Int+4, crossbow} (Okawaru gifted it to you on
+                  | level 1 of the Depths)
+ 80464 | Depths:1 | Found a runed translucent gate.
+ 80464 | Depths:1 | Found a runed translucent gate.
+ 80465 | Depths:1 | Found a runed translucent gate.
+ 80505 | Depths:1 | Noticed Guyrom's ghost (adept MiMo)
+ 80506 | Depths:1 | Found the ring of the Hare {EV+8}
+ 81162 | Depths:1 | Received a gift from Okawaru
+ 81193 | Depths:1 | Reached skill level 17 in Polearms
+ 81216 | Depths:1 | Killed Guyrom's ghost
+ 81231 | Depths:1 | Identified the +1 plate armour of Gravity {Rampage *Corrode
+                  | rC+ Dex+2} (Okawaru gifted it to you on level 1 of the
+                  | Depths)
+ 82187 | Depths:2 | Noticed a caustic shrike
+ 82192 | Depths:2 | Noticed a caustic shrike
+ 82200 | Depths:2 | Killed a caustic shrike
+ 82208 | Depths:2 | Killed a caustic shrike
+ 82226 | Depths:2 | Reached skill level 18 in Invocations
+ 82238 | Depths:2 | Noticed a caustic shrike
+ 82252 | Depths:2 | Killed a caustic shrike
+ 82266 | Depths:2 | Noticed a caustic shrike
+ 82279 | Depths:2 | Noticed a caustic shrike
+ 82282 | Depths:2 | Killed a caustic shrike
+ 82290 | Depths:2 | Killed a caustic shrike
+ 82504 | Depths:2 | You pick up a book of Geomancy and begin reading...
+ 82600 | Depths:2 | Received a gift from Okawaru
+ 82802 | Depths:2 | You pick up a book of Power and begin reading...
+ 82802 | Depths:2 | You add the spells Orb of Destruction and Spellforged
+                  | Servitor to your library.
+ 83038 | Depths:2 | Found a glowing golden altar of the Shining One.
+ 83540 | Depths:2 | Received a gift from Okawaru
+ 83568 | Depths:2 | Found the ring of the Octopus King
+ 83572 | Depths:2 | Identified the ring "Kouraim" {Fire +Inv Dex+3} (You found
+                  | it on level 2 of the Depths)
+ 83574 | Depths:2 | Got a ring of the Octopus King
+ 83576 | Depths:2 | Identified a ring of the Octopus King {Wiz AC+1 EV+1 Str+1
+                  | Int+1 Dex+1} (You found it on level 2 of the Depths)
+ 83642 | Depths:2 | Noticed the Enchantress
+ 83642 | Depths:2 | the Enchantress comes into view. She is wielding a +0 demon
+                  | whip of venom, wearing the +5 faerie dragon scales {rPois
+                  | rCorr Int+4 Dex+2} and wearing a +2 buckler of positive
+                  | energy.
+ 83645 | Depths:2 | Here: <lightgrey>the Enchantress, wielding a +0 demon whip of venom,
+                  | wearing the +5 faerie dragon scales {rPois rCorr Int+4
+                  | Dex+2} and wearing a +2 buckler of positive energy
+                  | (repelling missiles)</lightgrey>
+ 83645 | Depths:2 | Here: <lightgrey>the Enchantress, wielding a +0 demon whip of venom,
+                  | wearing the +5 faerie dragon scales {rPois rCorr Int+4
+                  | Dex+2} and wearing a +2 buckler of positive energy
+                  | (repelling missiles)</lightgrey>
+ 83673 | Depths:2 | Killed the Enchantress
+ 83673 | Depths:2 | Received a gift from Okawaru
+ 83679 | Depths:2 | Reached XP level 27. HP: 215/216 MP: 35/39
+ 83731 | Depths:2 | Got a slimy quarterstaff {god gift, staff}
+ 83737 | Depths:2 | Identified the +10 quarterstaff "Bykent" {chaos, SInv,
+                  | staff} (Okawaru gifted it to you on level 2 of the Depths)
+ 83753 | Depths:2 | a +4 quick blade {shortrare}; a +0 robe; a +0 buckler
+ 83758 | Depths:2 | a +4 quick blade {shortrare}; a +0 robe; a +0 buckler
+ 84101 | Depths:2 | You add the spells Monstrous Menagerie, Summon Greater
+                  | Demon, Malign Gateway and Summon Horrible Things to your
+                  | library.
+ 84138 | Depths:3 | Found a one-way gate leading to the halls of Pandemonium.
+ 84151 | Depths:3 | Reached skill level 17 in Short Blades
+ 84151 | Depths:3 | Reached skill level 17 in Long Blades
+ 84151 | Depths:3 | Reached skill level 17 in Axes
+ 84151 | Depths:3 | Reached skill level 17 in Maces & Flails
+ 84151 | Depths:3 | Reached skill level 17 in Staves
+ 84151 | Depths:3 | Reached skill level 17 in Slings
+ 84151 | Depths:3 | Reached skill level 17 in Bows
+ 84151 | Depths:3 | Reached skill level 17 in Crossbows
+ 84151 | Depths:3 | Reached skill level 17 in Throwing
+ 84151 | Depths:3 | Reached skill level 17 in Dodging
+ 84151 | Depths:3 | Reached skill level 17 in Stealth
+ 84151 | Depths:3 | Reached skill level 17 in Unarmed Combat
+ 84151 | Depths:3 | Reached skill level 17 in Spellcasting
+ 84151 | Depths:3 | Reached skill level 17 in Evocations
+ 84631 | Depths:3 | Reached skill level 18 in Fighting
+ 84631 | Depths:3 | Reached skill level 18 in Armour
+ 84631 | Depths:3 | Reached skill level 18 in Shields
+ 84992 | Depths:3 | Got a warped brass ring
+ 84994 | Depths:3 | Identified the ring of the Jester {*Tele Str+6 Dex+4
+                  | Stlth+} (You found it on level 3 of the Depths)
+ 85869 | Depths:4 | Received a gift from Okawaru
+ 85890 | Depths:4 | Found a gateway to a ziggurat.
+ 86021 | Depths:4 | You fall into a shaft and drop 1 floor!
+ 86021 | Depths:5 | Entered Level 5 of the Depths
+ 86057 | Depths:5 | Received a gift from Okawaru
+ 86081 | Depths:5 | HP: 52/217 [flayed ghost/flay_damage (26)]
+ 86327 | Depths:5 | You finish taking off the +8 orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}.
+ 86355 | Depths:5 | You finish putting on the +8 orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}.
+ 86812 | Depths:5 | Reached skill level 15 in Conjurations
+ 86812 | Depths:5 | Reached skill level 15 in Hexes
+ 86812 | Depths:5 | Reached skill level 15 in Summonings
+ 86812 | Depths:5 | Reached skill level 15 in Necromancy
+ 86812 | Depths:5 | Reached skill level 15 in Translocations
+ 86812 | Depths:5 | Reached skill level 15 in Transmutations
+ 86812 | Depths:5 | Reached skill level 15 in Fire Magic
+ 86812 | Depths:5 | Reached skill level 15 in Ice Magic
+ 86812 | Depths:5 | Reached skill level 15 in Air Magic
+ 86812 | Depths:5 | Reached skill level 15 in Earth Magic
+ 86812 | Depths:5 | Reached skill level 15 in Poison Magic
+ 86823 | Depths:5 | +0 shadow dragon scales {rare}; a +1 vorpal flail {mace}; <darkgrey>a
+                  | shadow dragon corpse</darkgrey>
+ 86824 | Depths:5 | Found a gate to the Realm of Zot.
+ 87083 | Depths:5 | Noticed Sojobo
+ 87135 | Depths:5 | Killed Sojobo
+ 87137 | Depths:5 | a +0 triple sword of electrocution {longrare}; a +1 scale
+                  | mail of fire resistance
+ 87888 | Depths:4 | Received a gift from Okawaru
+ 87893 | Depths:4 | Reached skill level 18 in Polearms
+ 87929 | Depths:4 | Got a pair of spiked boots {god gift}
+ 87940 | Depths:4 | Identified the -1 pair of boots "Lenkiuz" {Str+4} (Okawaru
+                  | gifted it to you on level 4 of the Depths)
+ 88193 | Depths:4 | Noticed a juggernaut
+ 88211 | Depths:4 | Killed a juggernaut
+ 88525 | Depths:4 | Paralysed by a floating eye for 4 turns
+ 88533 | Depths:4 | Paralysed by a floating eye for 2 turns
+ 88629 | Depths:4 | Found a runed translucent gate.
+ 88629 | Depths:4 | Found a runed translucent gate.
+ 88631 | Depths:4 | Found a runed translucent gate.
+ 88633 | Depths:4 | Noticed Uxupt's ghost (adept MiBe)
+ 88633 | Depths:4 | Noticed Hafru's ghost (adept GnFi)
+ 88719 | Depths:4 | Killed Uxupt's ghost
+ 88775 | Depths:4 | Killed Hafru's ghost
+ 88776 | Depths:4 | Reached skill level 19 in Invocations
+ 88827 | Depths:4 | Got a serpentine ruby amulet
+ 88838 | Depths:4 | Identified the amulet "Luonoy" {Faith rF+} (You found it on
+                  | level 4 of the Depths)
+ 89980 | D:9      | You finish taking off the +8 orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}.
+ 90038 | D:9      | You finish putting on the +8 orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}.
+ 90043 | D:9      | You finish taking off the +8 orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}.
+ 90059 | D:9      | You finish putting on the +8 orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}.
+ 90068 | D:9      | Learned a level 6 spell: Iron Shot
+ 90069 | D:9      | magus.rc [v1.9.9]
+ 90291 | Depths:5 | +0 shadow dragon scales {rare}; <lightgrey>a +4 ring of evasion</lightgrey>; a +1
+                  | vorpal flail {mace}
+ 90317 | Zot:1    | Entered Level 1 of the Realm of Zot
+ 90516 | Zot:1    | Identified +0 gold dragon scales
+ 90592 | Zot:1    | +0 gold dragon scales {rare}; <darkgrey>a golden dragon corpse</darkgrey>
+ 90592 | Zot:1    | w - +0 gold dragon scales {rare}
+ 90593 | Zot:1    | You drop +0 gold dragon scales {rare}.
+ 90598 | Zot:1    | +0 gold dragon scales {rare}; <darkgrey>a golden dragon corpse</darkgrey>
+ 90876 | Zot:1    | +0 storm dragon scales {rare}; <darkgrey>a storm dragon corpse</darkgrey>
+ 91301 | Zot:1    | You pick up a book of Necromancy and begin reading...
+ 91301 | Zot:1    | You add the spells Pain, Vampiric Draining, Animate Dead
+                  | and Agony to your library.
+ 91455 | Zot:1    | You fall into a shaft and drop 1 floor!
+ 91823 | Zot:1    | Received a gift from Okawaru
+ 92222 | Zot:2    | Received a gift from Okawaru
+ 92240 | Zot:2    | Noticed an orb of fire
+ 92246 | Zot:2    | Killed an orb of fire
+ 92247 | Zot:2    | Reached skill level 18 in Short Blades
+ 92247 | Zot:2    | Reached skill level 18 in Long Blades
+ 92247 | Zot:2    | Reached skill level 18 in Axes
+ 92247 | Zot:2    | Reached skill level 18 in Maces & Flails
+ 92247 | Zot:2    | Reached skill level 18 in Staves
+ 92247 | Zot:2    | Reached skill level 18 in Slings
+ 92247 | Zot:2    | Reached skill level 18 in Bows
+ 92247 | Zot:2    | Reached skill level 18 in Crossbows
+ 92247 | Zot:2    | Reached skill level 18 in Throwing
+ 92247 | Zot:2    | Reached skill level 18 in Dodging
+ 92247 | Zot:2    | Reached skill level 18 in Stealth
+ 92247 | Zot:2    | Reached skill level 18 in Unarmed Combat
+ 92247 | Zot:2    | Reached skill level 18 in Spellcasting
+ 92247 | Zot:2    | Reached skill level 18 in Evocations
+ 92614 | Zot:2    | You pick up a book of Fire and begin reading...
+ 92614 | Zot:2    | You add the spells Fireball and Ignition to your library.
+ 92880 | Zot:2    | +0 storm dragon scales {rare}; +0 shadow dragon scales
+                  | {rare}; quicksilver dragon scales {rare}
+ 93407 | Zot:3    | Received a gift from Okawaru
+ 93452 | Zot:3    | +0 storm dragon scales {rare}; <darkgrey>a storm dragon corpse</darkgrey>
+ 93579 | Zot:3    | Noticed an orb of fire
+ 93596 | Zot:3    | +0 storm dragon scales {rare}; <darkgrey>a storm dragon corpse</darkgrey>
+ 93693 | Zot:3    | Gained mutation: Your magical capacity is very low. (-20%
+                  | MP) [an orb of fire]
+ 93694 | Zot:3    | Gained mutation: Scrolls take you a little longer to read.
+                  | [an orb of fire]
+ 93696 | Zot:3    | Gained mutation: Scrolls take you longer to read. [an orb
+                  | of fire]
+ 93697 | Zot:3    | Killed an orb of fire
+ 93697 | Zot:3    | Received a gift from Okawaru
+ 93729 | Zot:3    | Got a steaming cloak {god gift}
+ 93740 | Zot:3    | Identified the +0 cloak of Noon {rC+ rCorr Int-3} (Okawaru
+                  | gifted it to you on level 3 of the Realm of Zot)
+ 93762 | Zot:3    | Reached skill level 19 in Fighting
+ 93762 | Zot:3    | Reached skill level 19 in Armour
+ 93762 | Zot:3    | Reached skill level 19 in Shields
+ 93851 | Zot:3    | +0 storm dragon scales {rare}; <darkgrey>a storm dragon skeleton</darkgrey>
+ 94055 | Zot:2    | Lost mutation: Scrolls take you longer to read. [potion of
+                  | mutation]
+ 94055 | Zot:2    | Lost mutation: Your movements are slightly less encumbered
+                  | by armour. (ER -2) [potion of mutation]
+ 94055 | Zot:2    | Gained mutation: You are clumsy. (Dex -2) [potion of
+                  | mutation]
+ 94055 | Zot:2    | Gained mutation: You evolve. [potion of mutation]
+ 94055 | Zot:2    | Gained mutation: You possess an exceptional clarity of
+                  | mind. [potion of mutation]
+ 94081 | Zot:2    | Lost mutation: Your magical capacity is very low. (-20% MP)
+                  | [potion of mutation]
+ 94081 | Zot:2    | Lost mutation: Your magical capacity is low. (-10% MP)
+                  | [potion of mutation]
+ 94081 | Zot:2    | Lost mutation: You evolve. [potion of mutation]
+ 94081 | Zot:2    | Gained mutation: You are partially covered in yellow
+                  | scales. (AC +2) [potion of mutation]
+ 94081 | Zot:2    | Gained mutation: You have a pair of small horns on your
+                  | head. [potion of mutation]
+ 94161 | Depths:5 | +0 shadow dragon scales {rare}; <lightgrey>a +4 ring of evasion</lightgrey>; a +1
+                  | vorpal flail {mace}
+ 94248 | Depths:1 | Lost mutation: You are clumsy. (Dex -2) [potion of
+                  | mutation]
+ 94248 | Depths:1 | Lost mutation: You possess an exceptional clarity of mind.
+                  | [potion of mutation]
+ 94248 | Depths:1 | Lost mutation: You have a pair of small horns on your head.
+                  | [potion of mutation]
+ 94248 | Depths:1 | Gained mutation: You are agile. (Dex +2) [potion of
+                  | mutation]
+ 94248 | Depths:1 | Gained mutation: You passively map a small area around you.
+                  | [potion of mutation]
+ 94426 | D:9      | Lost mutation: Your muscles are strong. (Str +2) [potion of
+                  | mutation]
+ 94426 | D:9      | Lost mutation: You have sharp toenails. [potion of
+                  | mutation]
+ 94426 | D:9      | Lost mutation: Scrolls take you a little longer to read.
+                  | [potion of mutation]
+ 94426 | D:9      | Gained mutation: Your body sometimes deteriorates upon
+                  | taking damage. [potion of mutation]
+ 94426 | D:9      | Gained mutation: Your spells are a little harder to cast,
+                  | but a little more powerful. [potion of mutation]
+ 94427 | D:9      | Lost mutation: You are agile. (Dex +2) [potion of mutation]
+ 94427 | D:9      | Lost mutation: Your body sometimes deteriorates upon taking
+                  | damage. [potion of mutation]
+ 94427 | D:9      | Gained mutation: You have a pair of small horns on your
+                  | head. [potion of mutation]
+ 94427 | D:9      | Gained mutation: Your mind is acute. (Int +2) [potion of
+                  | mutation]
+ 94428 | D:9      | Lost mutation: Your spells are a little harder to cast, but
+                  | a little more powerful. [potion of mutation]
+ 94428 | D:9      | Lost mutation: You have a pair of small horns on your head.
+                  | [potion of mutation]
+ 94428 | D:9      | Lost mutation: Your mind is acute. (Int +2) [potion of
+                  | mutation]
+ 94428 | D:9      | Lost mutation: You are partially covered in yellow scales.
+                  | (AC +2) [potion of mutation]
+ 94428 | D:9      | Gained mutation: Scrolls take you a little longer to read.
+                  | [potion of mutation]
+ 94428 | D:9      | Gained mutation: You are frail. (-10% HP) [potion of
+                  | mutation]
+ 94428 | D:9      | Lost mutation: You are frail. (-10% HP) [potion of
+                  | mutation]
+ 94428 | D:9      | Gained mutation: Your muscles are strong. (Str +2) [potion
+                  | of mutation]
+ 94429 | D:9      | Lost mutation: Scrolls take you a little longer to read.
+                  | [potion of mutation]
+ 94429 | D:9      | Lost mutation: You passively map a small area around you.
+                  | [potion of mutation]
+ 94429 | D:9      | Gained mutation: Your spells are a little harder to cast,
+                  | but a little more powerful. [potion of mutation]
+ 94429 | D:9      | Gained mutation: Your flesh is heat resistant. (rF+)
+                  | [potion of mutation]
+ 94658 | Depths:5 | +0 shadow dragon scales {rare}; <lightgrey>a +4 ring of evasion</lightgrey>; a +1
+                  | vorpal flail {mace}
+ 95245 | Zot:4    | Noticed an electric golem
+ 95251 | Zot:4    | Identified +0 gold dragon scales
+ 95272 | Zot:4    | Killed an electric golem
+ 95590 | Zot:4    | quicksilver dragon scales {rare}; <darkgrey>a quicksilver dragon
+                  | corpse</darkgrey>
+ 96029 | Zot:4    | +0 shadow dragon scales {rare}; <darkgrey>a shadow dragon corpse</darkgrey>
+ 96566 | Zot:4    | Got a transparent short sword {short}
+ 96967 | Zot:4    | Received a gift from Okawaru
+ 96971 | Zot:4    | Identified the +7 short sword of the Moth {antimagic, rElec
+                  | rF- rC+, short} (You found it on level 4 of the Realm of
+                  | Zot)
+ 96973 | Zot:4    | Got a translucent chain mail {god gift}
+ 96978 | Zot:4    | You finish taking off the +8 orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}.
+ 96983 | Zot:4    | Identified the +8 chain mail of Plasticity {Harm Str+4}
+                  | (Okawaru gifted it to you on level 4 of the Realm of Zot)
+ 96993 | Zot:4    | You finish putting on the +8 orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}.
+ 96998 | Zot:4    | You finish taking off the +8 orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}.
+ 97015 | Zot:4    | You finish putting on the +8 orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}.
+ 97124 | Zot:4    | +0 storm dragon scales {rare}; <darkgrey>a storm dragon corpse</darkgrey>
+ 97480 | Zot:5    | Entered Level 5 of the Realm of Zot
+ 98143 | Zot:5    | Reached skill level 16 in Conjurations
+ 98143 | Zot:5    | Reached skill level 16 in Hexes
+ 98143 | Zot:5    | Reached skill level 16 in Summonings
+ 98143 | Zot:5    | Reached skill level 16 in Necromancy
+ 98143 | Zot:5    | Reached skill level 16 in Translocations
+ 98143 | Zot:5    | Reached skill level 16 in Transmutations
+ 98143 | Zot:5    | Reached skill level 16 in Fire Magic
+ 98143 | Zot:5    | Reached skill level 16 in Ice Magic
+ 98143 | Zot:5    | Reached skill level 16 in Air Magic
+ 98143 | Zot:5    | Reached skill level 16 in Earth Magic
+ 98143 | Zot:5    | Reached skill level 16 in Poison Magic
+ 98497 | Zot:5    | Noticed an electric golem
+ 98508 | Zot:5    | Killed an electric golem
+ 98574 | Zot:5    | Reached skill level 19 in Polearms
+ 98670 | Zot:5    | Reached skill level 20 in Invocations
+ 98881 | Zot:5    | +0 storm dragon scales {rare}; <darkgrey>a storm dragon corpse</darkgrey>
+ 98941 | Zot:5    | Noticed an orb of fire
+ 98941 | Zot:5    | Noticed an ancient lich
+ 98947 | Zot:5    | Killed an ancient lich
+ 98949 | Zot:5    | Killed an orb of fire
+ 98949 | Zot:5    | Received a gift from Okawaru
+ 98965 | Zot:5    | Noticed an ancient lich
+ 98966 | Zot:5    | Noticed an electric golem
+ 98979 | Zot:5    | Killed an ancient lich
+ 99019 | Zot:5    | Killed an electric golem
+ 99140 | Zot:5    | Received a gift from Okawaru
+ 99145 | Zot:5    | +0 storm dragon scales {rare}; <darkgrey>a storm dragon skeleton</darkgrey>
+ 99215 | Zot:5    | Identified the +3 arbalest "Hizou" {venom, Str+2, crossbow}
+                  | (Okawaru gifted it to you on level 5 of the Realm of Zot)
+ 99220 | Zot:5    | +0 storm dragon scales {rare}; <darkgrey>a storm dragon skeleton</darkgrey>
+ 99416 | Zot:5    | quicksilver dragon scales {rare}; <darkgrey>a quicksilver dragon
+                  | corpse</darkgrey>
+ 99491 | Zot:5    | Noticed an orb of fire
+ 99506 | Zot:5    | Killed an orb of fire
+100401 | Zot:5    | Noticed an ancient lich
+100425 | Zot:5    | Noticed an orb of fire
+100435 | Zot:5    | Killed an orb of fire
+100448 | Zot:5    | Received a gift from Okawaru
+100465 | Zot:5    | Received a gift from Okawaru
+100466 | Zot:5    | Reached skill level 19 in Short Blades
+100466 | Zot:5    | Reached skill level 19 in Long Blades
+100466 | Zot:5    | Reached skill level 19 in Axes
+100466 | Zot:5    | Reached skill level 19 in Maces & Flails
+100466 | Zot:5    | Reached skill level 19 in Staves
+100466 | Zot:5    | Reached skill level 19 in Slings
+100466 | Zot:5    | Reached skill level 19 in Bows
+100466 | Zot:5    | Reached skill level 19 in Crossbows
+100466 | Zot:5    | Reached skill level 19 in Throwing
+100466 | Zot:5    | Reached skill level 19 in Dodging
+100466 | Zot:5    | Reached skill level 19 in Stealth
+100466 | Zot:5    | Reached skill level 19 in Unarmed Combat
+100466 | Zot:5    | Reached skill level 19 in Spellcasting
+100466 | Zot:5    | Reached skill level 19 in Evocations
+100467 | Zot:5    | Got a pair of ancient boots {god gift}
+100477 | Zot:5    | Identified the +1 pair of boots "Yfirip" {Str+2 Int+4}
+                  | (Okawaru gifted it to you on level 5 of the Realm of Zot)
+100482 | Zot:5    | quicksilver dragon scales {rare}; <darkgrey>a quicksilver dragon
+                  | corpse</darkgrey>
+100564 | Zot:5    | quicksilver dragon scales {rare}; <darkgrey>a quicksilver dragon
+                  | corpse</darkgrey>
+100605 | Zot:5    | Killed an ancient lich
+100930 | Zot:5    | Noticed an electric golem
+100944 | Zot:5    | Killed an electric golem
+101015 | Zot:5    | Paralysed by a Zot trap for 3 turns
+101045 | Zot:5    | Noticed an orb of fire
+101064 | Zot:5    | Gained mutation: You occasionally shout uncontrollably at
+                  | your foes. [an orb of fire]
+101067 | Zot:5    | Killed an orb of fire
+101720 | Zot:2    | +0 storm dragon scales {rare}; +0 shadow dragon scales
+                  | {rare}; quicksilver dragon scales {rare}
+101783 | Depths:5 | +0 shadow dragon scales {rare}; <lightgrey>a +4 ring of evasion</lightgrey>; a +1
+                  | vorpal flail {mace}
+102220 | Depths:5 | +0 shadow dragon scales {rare}; <lightgrey>a +4 ring of evasion</lightgrey>; a +1
+                  | vorpal flail {mace}
+102489 | Zot:2    | +0 storm dragon scales {rare}; +0 shadow dragon scales
+                  | {rare}; quicksilver dragon scales {rare}
+102552 | Depths:5 | +0 shadow dragon scales {rare}; <lightgrey>a +4 ring of evasion</lightgrey>; a +1
+                  | vorpal flail {mace}
+102778 | D:9      | Learned a level 6 spell: Starburst
+102786 | D:9      | Learned a level 7 spell: Spellforged Servitor
+102961 | Depths:1 | Voluntarily entered the Abyss.
+103459 | Abyss:3  | Paralysed by accursed screaming for 1 turns
+103482 | Abyss:3  | Reached skill level 20 in Fighting
+103482 | Abyss:3  | Reached skill level 20 in Armour
+103482 | Abyss:3  | Reached skill level 20 in Shields
+103505 | Abyss:3  | Received a gift from Okawaru
+103737 | Abyss:4  | Paralysed by accursed screaming for 1 turns
+103760 | Abyss:4  | Found a corrupted altar of Lugonu.
+103868 | Abyss:4  | Found a corrupted altar of Lugonu.
+103904 | Abyss:5  | Entered Level 5 of the Abyss
+104003 | Abyss:5  | Gained mutation: Armour fits poorly on your strangely
+                  | shaped body. [a neqoxec]
+104004 | Abyss:5  | Gained mutation: You are clumsy. (Dex -2) [a neqoxec]
+104026 | Abyss:5  | HP: 51/222 [poisoned by something (dark miasma)]
+104411 | Abyss:5  | HP: 39/224 [green death/poison arrow (39)]
+104416 | Abyss:5  | HP: 44/224 [angel/+1 sacred scourge of holy wrath (15)]
+104610 | Abyss:5  | Received a gift from Okawaru
+104618 | Abyss:5  | <cyan>D - a runed executioner's axe {god gift, axerare}</cyan>
+104659 | Abyss:5  | Gained mutation: Potions are less effective at restoring
+                  | your health. [a neqoxec]
+104667 | Abyss:5  | HP: 43/179 [meliai/divine providence (10)]
+104708 | Abyss:5  | Lost mutation: Your spells are a little harder to cast, but
+                  | a little more powerful. [a neqoxec]
+104730 | Depths:1 | You pass through the gate.
+104730 | Depths:1 | Escaped the Abyss
+104901 | D:9      | Lost mutation: Your flesh is heat resistant. (rF+) [potion
+                  | of mutation]
+104901 | D:9      | Lost mutation: Your muscles are strong. (Str +2) [potion of
+                  | mutation]
+104901 | D:9      | Gained mutation: You are partially covered in large bone
+                  | plates. (SH +4) [potion of mutation]
+104901 | D:9      | Gained mutation: You are partially covered in iridescent
+                  | scales. (AC +2) [potion of mutation]
+104902 | D:9      | Lost mutation: You occasionally shout uncontrollably at
+                  | your foes. [potion of mutation]
+104902 | D:9      | Lost mutation: You are clumsy. (Dex -2) [potion of
+                  | mutation]
+104902 | D:9      | Gained mutation: You are partially covered in slimy green
+                  | scales. (AC +2) [potion of mutation]
+104902 | D:9      | Gained mutation: You have supernaturally acute eyesight.
+                  | (SInv) [potion of mutation]
+104903 | D:9      | Lost mutation: You are partially covered in slimy green
+                  | scales. (AC +2) [potion of mutation]
+104903 | D:9      | Lost mutation: Armour fits poorly on your strangely shaped
+                  | body. [potion of mutation]
+104903 | D:9      | Lost mutation: You are partially covered in large bone
+                  | plates. (SH +4) [potion of mutation]
+104903 | D:9      | Gained mutation: You are strong-willed. (Will+) [potion of
+                  | mutation]
+104903 | D:9      | Gained mutation: You are somewhat resistant to further
+                  | mutation. [potion of mutation]
+104904 | D:9      | Lost mutation: You are strong-willed. (Will+) [potion of
+                  | mutation]
+104904 | D:9      | Lost mutation: You are somewhat resistant to further
+                  | mutation. [potion of mutation]
+104904 | D:9      | Lost mutation: You are partially covered in iridescent
+                  | scales. (AC +2) [potion of mutation]
+104904 | D:9      | Gained mutation: Your magical capacity is low. (-10% MP)
+                  | [potion of mutation]
+104904 | D:9      | Gained mutation: You expend magic power (3 MP) to
+                  | strengthen your wands. [potion of mutation]
+104904 | D:9      | Gained mutation: You have large cloven feet. [potion of
+                  | mutation]
+104904 | D:9      | Gained mutation: You have a pair of small horns on your
+                  | head. [potion of mutation]
+104905 | D:9      | Lost mutation: You have a pair of small horns on your head.
+                  | [potion of mutation]
+104905 | D:9      | Lost mutation: You expend magic power (3 MP) to strengthen
+                  | your wands. [potion of mutation]
+104905 | D:9      | Lost mutation: Your magical capacity is low. (-10% MP)
+                  | [potion of mutation]
+104905 | D:9      | Gained mutation: Your spells are a little harder to cast,
+                  | but a little more powerful. [potion of mutation]
+104905 | D:9      | Gained mutation: Your body sometimes deteriorates upon
+                  | taking damage. [potion of mutation]
+104905 | D:9      | Gained mutation: Your muscles are strong. (Str +2) [potion
+                  | of mutation]
+104905 | D:9      | Gained mutation: You are partially covered in rugged brown
+                  | scales. (AC +1, +3% HP) [potion of mutation]
+104906 | D:9      | Lost mutation: You have large cloven feet. [potion of
+                  | mutation]
+104906 | D:9      | Lost mutation: Your body sometimes deteriorates upon taking
+                  | damage. [potion of mutation]
+104906 | D:9      | Lost mutation: You are partially covered in rugged brown
+                  | scales. (AC +1, +3% HP) [potion of mutation]
+104906 | D:9      | Gained mutation: You are strong-willed. (Will+) [potion of
+                  | mutation]
+104906 | D:9      | Gained mutation: You are partially covered in large bone
+                  | plates. (SH +4) [potion of mutation]
+104907 | D:9      | Lost mutation: Your spells are a little harder to cast, but
+                  | a little more powerful. [potion of mutation]
+104907 | D:9      | Lost mutation: You are strong-willed. (Will+) [potion of
+                  | mutation]
+104907 | D:9      | Lost mutation: Potions are less effective at restoring your
+                  | health. [potion of mutation]
+104907 | D:9      | Lost mutation: You are partially covered in large bone
+                  | plates. (SH +4) [potion of mutation]
+104907 | D:9      | Gained mutation: You are dopey. (Int -2) [potion of
+                  | mutation]
+104907 | D:9      | Gained mutation: You are agile. (Dex +2) [potion of
+                  | mutation]
+104907 | D:9      | Gained mutation: Your natural rate of healing is unusually
+                  | fast. [potion of mutation]
+104940 | D:9      | D - a +5 executioner's axe of holy wrath {axerare}
+104941 | D:9      | You drop a +5 executioner's axe of holy wrath {axerare}.
+105162 | Depths:5 | +0 shadow dragon scales {rare}; <lightgrey>a +4 ring of evasion</lightgrey>; a +1
+                  | vorpal flail {mace}
+105422 | Zot:2    | +0 storm dragon scales {rare}; +0 shadow dragon scales
+                  | {rare}; quicksilver dragon scales {rare}
+105485 | Depths:5 | +0 shadow dragon scales {rare}; <lightgrey>a +4 ring of evasion</lightgrey>; a +1
+                  | vorpal flail {mace}
+106266 | D:9      | You finish taking off the +8 orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}.
+106281 | D:9      | You finish putting on the +8 orange crystal plate armour
+                  | {Archmagi, Int+3 Clar, rare}.
+106498 | D:3      | Fell from the grace of Okawaru
+106498 | D:3      | Became a worshipper of Zin the Law-Giver
+106498 | D:3      | Reached * piety under Zin
+106498 | D:3      | Reached ** piety under Zin
+106499 | D:3      | Donated 3281 gold pieces to Zin
+106541 | D:3      | Reached *** piety under Zin
+106697 | D:9      | Reached **** piety under Zin
+106741 | D:9      | Acquired 1064 gold pieces
+106744 | D:9      | Reached ***** piety under Zin
+106851 | D:14     | Reached ****** piety under Zin
+106918 | Depths:1 | Voluntarily entered the Abyss.
+107014 | Abyss:1  | Paralysed by accursed screaming for 1 turns
+107174 | Abyss:1  | Reached skill level 21 in Invocations
+107355 | Abyss:1  | Paralysed by accursed screaming for 1 turns
+107545 | Abyss:1  | HP: 54/224 [titan/the air[the fury of Okawaru] (6)]
+107565 | Abyss:1  | HP: 55/224 [deep elf blademaster/+0 rapier[the fury of
+                  | Okawaru] (10)]
+107706 | Abyss:1  | Reached skill level 20 in Polearms
+107841 | Abyss:2  | Reached skill level 17 in Conjurations
+107841 | Abyss:2  | Reached skill level 17 in Hexes
+107841 | Abyss:2  | Reached skill level 17 in Summonings
+107841 | Abyss:2  | Reached skill level 17 in Necromancy
+107841 | Abyss:2  | Reached skill level 17 in Translocations
+107841 | Abyss:2  | Reached skill level 17 in Transmutations
+107841 | Abyss:2  | Reached skill level 17 in Fire Magic
+107841 | Abyss:2  | Reached skill level 17 in Ice Magic
+107841 | Abyss:2  | Reached skill level 17 in Air Magic
+107841 | Abyss:2  | Reached skill level 17 in Earth Magic
+107841 | Abyss:2  | Reached skill level 17 in Poison Magic
+108225 | Abyss:2  | Lost mutation: You are dopey. (Int -2) [potion of mutation]
+108225 | Abyss:2  | Lost mutation: Your natural rate of healing is unusually
+                  | fast. [potion of mutation]
+108225 | Abyss:2  | Lost mutation: You have supernaturally acute eyesight.
+                  | (SInv) [potion of mutation]
+109714 | Abyss:3  | HP: 51/226 [stone giant/large rock[the fury of Okawaru]
+                  | (37)]
+109728 | Abyss:3  | HP: 55/226 [black draconian/bolt of lightning[the fury of
+                  | Okawaru] (10)]
+109761 | Abyss:3  | HP: 54/226 [starcursed mass/accursed screaming (7)]
+109767 | Abyss:3  | HP: 34/226 [starcursed mass/accursed screaming (9)]
+109774 | Abyss:3  | HP: 32/226 [starcursed mass/accursed screaming (4)]
+109780 | Abyss:3  | HP: 21/226 [starcursed mass/accursed screaming (6)]
+110934 | Abyss:3  | Found a corrupted altar of Lugonu.
+110970 | Abyss:3  | Got an abyssal rune of Zot
+111246 | Abyss:4  | Found a corrupted altar of Lugonu.
+111349 | Abyss:4  | HP: 47/226 [hellion/damnation (30)]
+111349 | Abyss:4  | HP: 20/226 [smoke demon/divine providence (16)]
+111349 | Abyss:4  | HP: 1/226 [hellion/damnation (19)]
+111376 | Abyss:4  | HP: 47/226 [starcursed mass/accursed screaming (10)]
+111392 | Abyss:5  | Entered Level 5 of the Abyss
+111537 | Abyss:5  | Found a corrupted altar of Lugonu.
+111571 | Abyss:5  | Reached skill level 20 in Short Blades
+111571 | Abyss:5  | Reached skill level 20 in Long Blades
+111571 | Abyss:5  | Reached skill level 20 in Axes
+111571 | Abyss:5  | Reached skill level 20 in Maces & Flails
+111571 | Abyss:5  | Reached skill level 20 in Staves
+111571 | Abyss:5  | Reached skill level 20 in Slings
+111571 | Abyss:5  | Reached skill level 20 in Bows
+111571 | Abyss:5  | Reached skill level 20 in Crossbows
+111571 | Abyss:5  | Reached skill level 20 in Throwing
+111571 | Abyss:5  | Reached skill level 20 in Dodging
+111571 | Abyss:5  | Reached skill level 20 in Stealth
+111571 | Abyss:5  | Reached skill level 20 in Unarmed Combat
+111571 | Abyss:5  | Reached skill level 20 in Spellcasting
+111571 | Abyss:5  | Reached skill level 20 in Evocations
+111660 | Depths:1 | You pass through the gate.
+111660 | Depths:1 | Escaped the Abyss
+112221 | Depths:5 | +0 shadow dragon scales {rare}; <lightgrey>a +4 ring of evasion</lightgrey>; a +1
+                  | vorpal flail {mace}
+112429 | Zot:5    | Got the Orb of Zot
+112562 | Zot:4    | Noticed Pioqeed the pandemonium lord
+112591 | Zot:2    | +0 storm dragon scales {rare}; +0 shadow dragon scales
+                  | {rare}; quicksilver dragon scales {rare}
+112660 | Depths:5 | Was forgiven by Okawaru
+112691 | Depths:5 | +0 shadow dragon scales {rare}; <lightgrey>a +4 ring of evasion</lightgrey>; a +1
+                  | vorpal flail {mace}
+112726 | Depths:3 | Noticed Metuw the pandemonium lord
+112750 | Depths:1 | Noticed Quchagre the pandemonium lord
+113142 | D:$      | Escaped with the Orb!
+
+Vanquished Creatures
+  the Royal Jelly (Slime:5)
+  5 orbs of fire
+  6 ancient liches
+  A juggernaut (Depths:4)
+  Sojobo (Depths:5)
+  8 Killer Klowns (Zot:5)
+  Bai Suzhen (Crypt:1)
+  Xtahua (Vaults:5)
+  5 caustic shrikes (Depths:2)
+  Jory (Vaults:3)
+  9 golden dragons
+  Nikola (Spider:3)
+  the Enchantress (Depths:2)
+  The ghost of Uxupt the Slayer, an adept MiBe of Trog (Depths:4)
+  Arachne (Spider:3)
+  The ghost of Hafru the Peltast, an adept GnFi of Okawaru (Depths:4)
+  4 bone dragons
+  21 tentacled monstrosities
+  4 electric golems
+  A Brimstone Fiend (Zot:1)
+  A Hell Sentinel (Abyss:3)
+  Rupert (D:13)
+  A hellephant (Abyss:5)
+  An Ice Fiend (Zot:4)
+  6 liches
+  24 Orb Guardians (Zot:5)
+  15 deep elf blademasters
+  12 quicksilver dragons
+  14 titans
+  16 acid blobs
+  11 death cobs
+  6 deep elf master archers
+  The ghost of Guyrom the Impaler, an adept MiMo of Okawaru (Depths:1)
+  9 tentacled starspawn
+  An Executioner (Abyss:2)
+  3 thorn hunters
+  3 sphinxes
+  7 tengu reavers
+  2 ancient champions (Crypt:1)
+  12 shadow dragons
+  18 storm dragons
+  Agnes (Spider:4)
+  2 revenants
+  Donald (Spider:1)
+  Roxanne (Swamp:4)
+  2 draconian monks
+  11 azure jellies
+  2 fenstrider witches
+  24 frost giants
+  22 fire giants
+  4 orc warlords
+  A nagaraja (Abyss:3)
+  2 daevas (Abyss:3)
+  3 iron dragons
+  3 draconian knights
+  7 deep elf sorcerers
+  2 cacodemons (Abyss:3)
+  6 ghost moths
+  The ghost of Raics the Protected, a journeyman GnWn of Okawaru (D:14)
+  4 ghouls (Crypt:1)
+  4 draconian scorchers
+  8 emperor scorpions
+  Aizul (Swamp:2)
+  6 deep elf elementalists
+  17 vault wardens
+  A spectral juggernaut (Depths:1)
+  A spectral caustic shrike (Depths:1)
+  A curse skull (Crypt:1)
+  3 draconian stormcallers
+  3 draconian annihilators (Zot:2)
+  7 draconian shifters
+  A reaper (Abyss:2)
+  4 spriggan defenders
+  A war gargoyle (Vaults:4)
+  22 ironheart preservers
+  37 very ugly things
+  41 stone giants
+  5 vampire knights
+  8 green draconians
+  9 red draconians
+  The ghost of lorentzforces the Peltast, a journeyman GrFi of Okawaru (D:12)
+  5 white draconians
+  7 purple draconians
+  7 deep elf demonologists
+  A lorocyproca (Abyss:3)
+  9 black draconians
+  5 spark wasps
+  8 bunyips
+  10 yellow draconians
+  12 deep elf annihilators
+  3 entropy weavers
+  11 eleionomae
+  An eidolon (Crypt:1)
+  5 deep elf death magi
+  12 ettins
+  A crystal guardian (Vaults:4)
+  4 blizzard demons
+  7 deep elf high priests
+  A green death (Abyss:5)
+  5 death oozes
+  13 fire dragons
+  A shambling mangrove (Swamp:2)
+  13 yaktaur captains
+  4 jiangshi (Crypt:1)
+  28 vault guards
+  17 great orbs of eyes
+  13 ice dragons
+  A spectral tengu (Depths:1)
+  A quicksilver dragon skeleton (Depths:2)
+  23 hydras
+  2 naga warriors (Abyss:2)
+  2 boulder beetles
+  14 rakshasas
+  A juggernaut simulacrum (Depths:1)
+  Erolcha (D:12)
+  A ghost crab (Swamp:2)
+  8 centaur warriors
+  2 caustic shrike simulacra (Depths:1)
+  12 spriggan air magi
+  The ghost of dcpryor the Basher, a journeyman GrFi of Makhleb (D:9)
+  8 alligators
+  A spectral shadow dragon (Depths:1)
+  7 death yaks
+  6 death knights
+  16 ogre magi
+  22 dancing weapons
+  A satyr (Abyss:3)
+  A two-headed ogre (shapeshifter) (Depths:2)
+  6 tengu warriors
+  36 thrashing horrors
+  38 two-headed ogres
+  10 deep troll shamans
+  5 vampire magi
+  10 deep troll earth magi
+  A spectral storm dragon (Depths:1)
+  17 hell hogs
+  Urug (D:13)
+  4 orc high priests
+  10 spriggan berserkers
+  13 hell knights
+  A sun demon (Volcano)
+  2 soul eaters
+  27 deep elf knights
+  21 wretched stars
+  A salamander mystic (Depths:3)
+  A fire crab (shapeshifter) (Vaults:1)
+  3 iron trolls
+  3 sixfirhies
+  7 spatial maelstroms
+  An unseen horror (shapeshifter) (Depths:1)
+  4 shadow wraiths
+  An unseen horror (Abyss:3)
+  13 skeletal warriors
+  4 flayed ghosts
+  3 goliath frogs
+  6 bog bodies
+  17 swamp dragons
+  A death drake (Abyss:4)
+  6 phantasmal warriors
+  5 spriggan druids
+  7 glowing orange brains
+  37 small abominations
+  3 wizards
+  A lindwurm (shapeshifter) (Depths:2)
+  A harpy (shapeshifter) (Vaults:2)
+  23 orc knights
+  2 shadow dragon zombies
+  An orange crystal statue (Zot:5)
+  33 deep trolls
+  16 ironbrand convokers
+  2 lindwurms
+  64 deep elf magi
+  5 harpies (Vaults:2)
+  26 deep elf archers
+  2 oklob plants (Lair:5)
+  A mana viper (shapeshifter) (Depths:1)
+  A sphinx skeleton (Crypt:1)
+  29 wolf spiders
+  6 cyclopes
+  6 will-o-the-wisps
+  21 orb spiders
+  A cyclops (shapeshifter) (D:14)
+  9 orc sorcerers
+  4 shining eyes
+  A shadow dragon skeleton (Depths:4)
+  60 ugly things
+  11 necromancers
+  27 moths of wrath
+  A manticore (D:12)
+  An elephant (shapeshifter) (Depths:5)
+  7 worldbinders
+  9 elephants
+  4 apocalypse crabs
+  6 salamanders
+  A stone giant skeleton (Crypt:1)
+  A guardian serpent (shapeshifter) (Vaults:2)
+  6 black mambas
+  Joseph (D:7)
+  3 guardian serpents
+  A rust devil (Depths:3)
+  18 smoke demons
+  7 eyes of devastation
+  11 cane toads
+  13 vault sentinels
+  A spectral elf (Depths:1)
+  2 molten gargoyles (Volcano)
+  2 titan simulacra (Depths:1)
+  3 centaur skeletons
+  9 torpor snails
+  A cane toad (shapeshifter) (Depths:3)
+  Maggie (D:9)
+  4 gargoyles
+  5 orange demons
+  2 hellions
+  5 efreet
+  3 ice devils
+  A komodo dragon (shapeshifter) (D:14)
+  2 tormentors
+  2 rime drakes
+  11 komodo dragons
+  An elf zombie (Depths:4)
+  18 demonic crawlers
+  9 freezing wraiths
+  48 yaktaurs
+  2 tengu conjurers
+  25 ancient zymes
+  3 red devils
+  4 hellwings
+  66 starcursed masses
+  3 polar bears
+  9 trolls
+  2 jumping spiders (shapeshifter)
+  A polar bear (shapeshifter) (Elf:2)
+  38 jumping spiders
+  A purple draconian skeleton (Crypt:1)
+  5 meliai
+  A queen bee (Spider:2)
+  A bloated husk (Swamp:2)
+  15 tyrant leeches
+  A hornet (shapeshifter) (Depths:3)
+  35 raiju
+  A shadow dragon simulacrum (Depths:1)
+  Grinder (D:3)
+  22 hornets
+  A slime creature (shapeshifter) (Vaults:3)
+  59 slime creatures
+  8 dream sheep
+  A sphinx simulacrum (Depths:1)
+  28 blink frogs
+  A meliai zombie (D:13)
+  A fire dragon zombie (Crypt:1)
+  46 large abominations
+  A raiju (shapeshifter) (Vaults:2)
+  3 air elementals
+  87 redbacks
+  13 flying skulls
+  4 shadows
+  2 spriggan simulacra
+  8 wraiths
+  9 ynoxinuls
+  2 tarantellas (shapeshifter)
+  3 water elementals (Depths:4)
+  7 fire bats
+  A black mamba skeleton (Abyss:2)
+  17 yaks
+  7 spriggans
+  24 tarantellas
+  2 wyverns (shapeshifter)
+  6 wyverns
+  Grum (D:11)
+  4 fire elementals
+  3 vampires
+  4 basilisks
+  12 chaos spawn
+  A hog (shapeshifter) (D:14)
+  A catoblepas simulacrum (Crypt:1)
+  A golden eye (shapeshifter) (Vaults:2)
+  2 humans (shapeshifter)
+  16 neqoxecs
+  16 humans
+  A human simulacrum (Vaults:1)
+  6 steam dragons
+  3 vampire mosquitoes (Swamp:1)
+  18 wargs
+  An elf skeleton (Depths:4)
+  8 spatial vortices
+  12 swamp worms
+  A hell hound (Volcano)
+  A merfolk skeleton (Crypt:1)
+  15 water moccasins
+  5 acid dragons
+  7 hydra simulacra (Depths:4)
+  A soldier ant (D:12)
+  7 sky beasts
+  Purgy (D:3)
+  A sky beast (shapeshifter) (Abyss:5)
+  13 swamp drakes
+  3 floating eyes
+  4 ice beasts
+  64 orc warriors
+  A phantom (D:5)
+  A black bear (shapeshifter) (Vaults:1)
+  5 eyes of draining
+  3 necrophages (Crypt:1)
+  4 black bears
+  An eye of draining (shapeshifter) (Depths:1)
+  3 boggarts (Depths:3)
+  9 wolves
+  A centaur (shapeshifter) (Vaults:3)
+  14 centaurs
+  A snapping turtle skeleton (Crypt:1)
+  22 ogres
+  5 big kobolds
+  19 bullfrogs
+  A bullfrog (shapeshifter) (D:14)
+  A glowing shapeshifter simulacrum (Depths:2)
+  A wyvern zombie (D:8)
+  6 earth elementals
+  A water moccasin zombie (D:9)
+  A shapeshifter zombie (Crypt:1)
+  21 killer bees
+  A yak zombie (Crypt:1)
+  15 wights
+  11 electric eels
+  3 howler monkeys
+  3 crimson imps
+  6 lava snakes (Volcano)
+  3 quasits
+  A basilisk zombie (Crypt:1)
+  2 bullfrog zombies
+  5 jellies
+  8 hounds
+  25 orc priests
+  3 bullfrog skeletons
+  A gnoll shaman (D:9)
+  3 iron imps
+  A black bear skeleton (Crypt:1)
+  9 iguanas
+  28 orc wizards
+  13 worker ants
+  A killer bee zombie (D:9)
+  A hound zombie (D:7)
+  A hound skeleton (Crypt:1)
+  A worker ant zombie (D:10)
+  26 gnolls
+  A howler monkey skeleton (D:6)
+  13 adders
+  8 white imps
+  5 ufetubi
+  4 oozes
+  An adder zombie (D:6)
+  2 adder skeletons
+  4 worms
+  A dart slug (D:3)
+  5 leopard geckos
+  97 orcs
+  5 giant cockroaches
+  11 goblins
+  15 hobgoblins
+  4 jackals (D:10)
+  34 kobolds
+  6 quokkas
+  8 bats
+  5 frilled lizards
+  A jackal skeleton (D:8)
+  A leopard gecko skeleton (D:4)
+  14 rats
+  7 crawling corpses
+  A lurking horror (Abyss:3)
+  10 starspawn tentacles
+3115 creatures vanquished.
+
+Vanquished Creatures (collateral kills)
+  An orb of fire (Zot:5)
+  An Orb Guardian (Zot:5)
+  3 acid blobs
+  A red draconian (Depths:5)
+  A yaktaur captain (Depths:5)
+  A spectral shadow dragon (Depths:1)
+  A flayed ghost (Depths:5)
+  A shining eye (Slime:1)
+  A meliai (Abyss:5)
+  4 slime creatures
+  Prince Ribbit (D:7)
+  A tarantella (Spider:3)
+17 creatures vanquished.
+
+Vanquished Creatures (others)
+  2 fire giants
+  A frost giant (Abyss:3)
+  An ironheart preserver (Vaults:1)
+  A purple draconian (Abyss:3)
+  An ettin (Depths:2)
+  A white draconian (Zot:1)
+  A vault guard (Vaults:1)
+  A thrashing horror (Abyss:3)
+  A hell hog (Abyss:2)
+  A sixfirhy (Abyss:3)
+  2 deep trolls (Depths:2)
+  A glowing orange brain (Abyss:3)
+  An ironbrand convoker (Vaults:1)
+  2 deep elf magi (Elf:1)
+  A bloated husk (Swamp:4)
+  A silent spectre (Abyss:3)
+  An ancient zyme (Abyss:3)
+  5 raiju (Abyss:3)
+  A red devil (Volcano)
+  A hornet (Lair:6)
+  A tyrant leech (Swamp:4)
+  A blink frog (Lair:6)
+  A slime creature (Vaults:1)
+  2 flying skulls (Abyss:5)
+  A vampire (Abyss:3)
+  A ynoxinul (Abyss:3)
+  6 large abominations
+  2 golden eyes (Abyss:3)
+  A chaos spawn (Abyss:3)
+  A neqoxec (Abyss:3)
+  A swamp worm (Swamp:1)
+  A hell hound (Volcano)
+  3 small abominations (Abyss:3)
+  A human (D:6)
+  An ogre (Vaults:3)
+  A crimson imp (Depths:4)
+  A quasit (Abyss:3)
+  An iguana (Lair:6)
+  A white imp (Abyss:3)
+  An ufetubus (Abyss:3)
+  2 orcs
+  A kobold (D:14)
+  15 bushes
+  10 demonic plants (Abyss:5)
+  18 foxfires
+  61 fungi
+  5 lurking horrors
+  3 pillars of salt (Abyss:3)
+  139 plants
+  14 starspawn tentacles
+  2 withered plants (D:9)
+326 creatures vanquished.
+
+Grand Total: 3458 creatures vanquished
+
+Table legend:
+ A = Non-vault XP
+ B = Vault XP
+ C = Vault XP percentage of total XP
+ D = Non-vault monster count
+ E = Vault monster count
+ F = Vault count percentage of total count
+
+                 A         B        C        D         E        F
+            +---------+---------+-------+---------+---------+-------
+      Total | 1168119 |  923870 |  44.2 |    2120 |     896 |  29.7
+            +---------+---------+-------+---------+---------+-------
+        D:1 |      49 |       8 |  14.0 |      24 |       4 |  14.3
+        D:2 |      71 |       0 |   0.0 |      21 |       0 |   0.0
+        D:3 |      42 |     408 |  90.7 |      14 |       2 |  12.5
+        D:4 |     293 |      28 |   8.7 |      13 |       5 |  27.8
+        D:5 |     771 |       0 |   0.0 |      17 |       0 |   0.0
+        D:6 |     622 |       0 |   0.0 |      22 |       0 |   0.0
+        D:7 |    1594 |     903 |  36.2 |      33 |       8 |  19.5
+        D:8 |     889 |     529 |  37.3 |      22 |       6 |  21.4
+        D:9 |    2418 |    1686 |  41.1 |      35 |       3 |   7.9
+       D:10 |    2438 |     331 |  12.0 |      34 |       2 |   5.6
+       D:11 |    3678 |     873 |  19.2 |      16 |       6 |  27.3
+       D:12 |    7150 |    3438 |  32.5 |      50 |       7 |  12.3
+       D:13 |   10726 |    6531 |  37.8 |      33 |      16 |  32.7
+       D:14 |    2855 |   11646 |  80.3 |       7 |      18 |  72.0
+       D:15 |    2462 |    5257 |  68.1 |      13 |       8 |  38.1
+     Lair:1 |    3141 |       0 |   0.0 |       8 |       0 |   0.0
+     Lair:2 |    4515 |    3748 |  45.4 |      20 |       7 |  25.9
+     Lair:3 |    6109 |     401 |   6.2 |      29 |       2 |   6.5
+     Lair:4 |    3625 |     205 |   5.4 |      16 |       1 |   5.9
+     Lair:5 |    6456 |    1875 |  22.5 |      17 |       4 |  19.0
+     Lair:6 |   12905 |   10260 |  44.3 |      34 |      31 |  47.7
+    Swamp:1 |    9692 |       0 |   0.0 |      20 |       0 |   0.0
+    Swamp:2 |   20724 |    9315 |  31.0 |      29 |       7 |  19.4
+    Swamp:3 |   14940 |   13614 |  47.7 |      27 |      15 |  35.7
+    Swamp:4 |   10014 |   18982 |  65.5 |      16 |      25 |  61.0
+   Spider:1 |   19772 |    1963 |   9.0 |      56 |       1 |   1.8
+   Spider:2 |   27759 |    1879 |   6.3 |      73 |      15 |  17.0
+   Spider:3 |   16907 |    7454 |  30.6 |      54 |       2 |   3.6
+   Spider:4 |    4408 |   28434 |  86.6 |      15 |      44 |  74.6
+    Slime:1 |    4886 |       0 |   0.0 |      15 |       0 |   0.0
+    Slime:2 |   12821 |       0 |   0.0 |      18 |       0 |   0.0
+    Slime:3 |    4624 |       0 |   0.0 |       7 |       0 |   0.0
+    Slime:4 |    8811 |       0 |   0.0 |       8 |       0 |   0.0
+    Slime:5 |    8840 |   28306 |  76.2 |       7 |      13 |  65.0
+      Orc:1 |    7329 |      20 |   0.3 |      60 |       4 |   6.2
+      Orc:2 |    6671 |    8607 |  56.3 |      41 |      27 |  39.7
+      Elf:1 |   18298 |    6884 |  27.3 |      23 |      13 |  36.1
+      Elf:2 |   22495 |   18441 |  45.0 |      36 |      25 |  41.0
+      Elf:3 |   19583 |   44912 |  69.6 |      30 |      31 |  50.8
+   Vaults:1 |   36461 |   28545 |  43.9 |      58 |      33 |  36.3
+   Vaults:2 |   29387 |   28556 |  49.3 |      44 |      33 |  42.9
+   Vaults:3 |   31643 |   35293 |  52.7 |      50 |      52 |  51.0
+   Vaults:4 |   20348 |   22246 |  52.2 |      34 |      23 |  40.4
+   Vaults:5 |   12553 |  118155 |  90.4 |      33 |      80 |  70.8
+    Crypt:1 |   11050 |   59749 |  84.4 |      21 |      39 |  65.0
+   Depths:1 |   57313 |   19845 |  25.7 |      68 |      20 |  22.7
+   Depths:2 |   16346 |   98299 |  85.7 |      25 |      78 |  75.7
+   Depths:3 |   38991 |    8270 |  17.5 |      51 |      10 |  16.4
+   Depths:4 |   27595 |   26101 |  48.6 |      33 |      35 |  51.5
+   Depths:5 |   55482 |   25129 |  31.2 |      65 |      15 |  18.8
+      Zot:1 |   60774 |       0 |   0.0 |      36 |       0 |   0.0
+      Zot:2 |   62955 |       0 |   0.0 |      34 |       0 |   0.0
+      Zot:3 |   28756 |       0 |   0.0 |      18 |       0 |   0.0
+      Zot:4 |   44762 |   21820 |  32.8 |      19 |      12 |  38.7
+      Zot:5 |   68369 |  174536 |  71.9 |      35 |      43 |  55.1
+    Abyss:1 |   46184 |       0 |   0.0 |      69 |       0 |   0.0
+    Abyss:2 |   41445 |       0 |   0.0 |      83 |       0 |   0.0
+    Abyss:3 |   94642 |    8769 |   8.5 |     197 |       9 |   4.4
+    Abyss:4 |   21784 |     360 |   1.6 |      44 |       1 |   2.2
+    Abyss:5 |   49896 |    7161 |  12.6 |      90 |      12 |  11.8
+     Bailey |       0 |     353 | 100.0 |       0 |      34 | 100.0
+    Volcano |       0 |    3745 | 100.0 |       0 |      15 | 100.0
+            +---------+---------+-------+---------+---------+-------
+
+Illustrated notes
+
+Table legend:
+ A = Kills in this place as a percentage of kills in entire the game.
+ B = Kills by you in this place as a percentage of kills by you in
+     the entire game.
+ C = Kills by friends in this place as a percentage of kills by
+     friends in the entire game.
+ D = Other kills in this place as a percentage of other kills in the
+     entire game.
+ E = Experience gained in this place as a percentage of experience
+     gained in the entire game.
+ F = Experience gained in this place divided by the number of levels of
+     this place that you have seen.
+
+                   A       B       C       D       E               F
+               +-------+-------+-------+-------+-------+----------------------
+         Total | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 |       30437.5
+       Dungeon |  14.6 |  14.7 |   5.9 |   5.0 |   3.3 |        4558.7
+          Lair |   5.6 |   5.6 |   0.0 |   5.0 |   2.5 |        8873.3
+         Swamp |   4.6 |   4.6 |   0.0 |  15.0 |   4.6 |       24320.2
+   Spider Nest |   8.6 |   8.7 |   5.9 |   0.0 |   5.2 |       27144.0
+    Slime Pits |   2.2 |   2.0 |  47.1 |   0.0 |   3.3 |       13657.6
+  Orcish Mines |   4.4 |   4.4 |   0.0 |   0.0 |   1.1 |       11313.5
+   Elven Halls |   5.2 |   5.2 |   0.0 |  10.0 |   6.2 |       43537.7
+        Vaults |  14.6 |  14.7 |   0.0 |  10.0 |  17.3 |       72637.4
+         Crypt |   2.0 |   2.0 |   0.0 |   0.0 |   3.4 |       70799.0
+        Depths |  13.3 |  13.2 |  23.5 |  20.0 |  17.8 |       74762.0
+           Zot |   6.6 |   6.6 |  11.8 |   5.0 |  22.3 |       93808.8
+         Abyss |  16.7 |  16.7 |   5.9 |  25.0 |  12.9 |       24567.4
+        Bailey |   1.1 |   1.1 |   0.0 |   0.0 |   0.0 |         353.0
+       Volcano |   0.5 |   0.5 |   0.0 |   5.0 |   0.2 |        3745.0
+               +-------+-------+-------+-------+-------+----------------------
+
+Table legend: (Time is in decaauts)
+ A = Elapsed time spent in this place.
+ B = Non-inter-level travel time spent in this place.
+ C = Inter-level travel time spent in this place.
+ D = Time resting spent in this place.
+ E = Time spent auto-exploring this place.
+ F = Levels seen in this place.
+ G = Mean time per level.
+                   A        B        C        D        E      F       G
+               +--------+--------+--------+--------+--------+-----+--------+
+         Total | 109025 |  89699 |  19326 |  18066 |  44691 |  69 | 1580.1 |
+       Dungeon |  31885 |  22655 |   9230 |   4315 |  12695 |  15 | 2125.7 |
+        Temple |      1 |      1 |      0 |      0 |      0 |   1 |    1.0 |
+          Lair |  10415 |   8701 |   1714 |   1828 |   5040 |   6 | 1735.8 |
+         Swamp |   6030 |   5468 |    562 |   1046 |   2819 |   4 | 1507.5 |
+   Spider Nest |   7422 |   6991 |    431 |   2151 |   2518 |   4 | 1855.5 |
+    Slime Pits |   1581 |   1532 |     49 |    861 |     74 |   5 |  316.2 |
+  Orcish Mines |   2661 |   1786 |    875 |    289 |    757 |   2 | 1330.5 |
+   Elven Halls |   7722 |   6394 |   1328 |   1125 |   3494 |   3 | 2574.0 |
+        Vaults |  11045 |   9371 |   1674 |   1140 |   5335 |   5 | 2209.0 |
+         Crypt |   1909 |   1868 |     41 |    857 |    729 |   1 | 1909.0 |
+        Depths |  10210 |   8343 |   1867 |    430 |   5315 |   5 | 2042.0 |
+           Zot |  11199 |   9647 |   1552 |   2155 |   4321 |   5 | 2239.8 |
+         Abyss |   5950 |   5950 |      0 |   1754 |   1030 |  11 |  540.9 |
+        Bailey |    216 |    216 |      0 |      0 |    115 |   1 |  216.0 |
+       Volcano |    773 |    773 |      0 |    112 |    445 |   1 |  773.0 |
+               +--------+--------+--------+--------+--------+-----+--------+
+
+Top non-repeatable levels by time:
+     D:9: 5108 daAuts
+   Zot:5: 4190 daAuts
+   Elf:3: 3702 daAuts
+    D:13: 3606 daAuts
+     D:7: 3331 daAuts
+    D:11: 3064 daAuts
+  Lair:6: 2950 daAuts
+    D:10: 2831 daAuts
+Vaults:1: 2826 daAuts
+Spider:2: 2621 daAuts
+Depths:2: 2502 daAuts
+ Abyss:3: 2455 daAuts
+    D:12: 2440 daAuts
+   Zot:4: 2397 daAuts
+Vaults:3: 2361 daAuts

@@ -2472,7 +2472,11 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
   ],
   "score": "1402390",
   "species": "Kobold",
-  "stash": "",
+  "stash": {
+    "artefact_list": [],
+    "branch": {},
+    "shop_list": [],
+  },
   "timeSeconds": 41194,
   "turns": 104585,
   "value": "12360128747637419707",

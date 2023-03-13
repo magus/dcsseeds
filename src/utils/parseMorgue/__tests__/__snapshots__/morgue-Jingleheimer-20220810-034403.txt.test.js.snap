@@ -3684,7 +3684,11 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
   ],
   "score": "589350",
   "species": "Gnoll",
-  "stash": "",
+  "stash": {
+    "artefact_list": [],
+    "branch": {},
+    "shop_list": [],
+  },
   "timeSeconds": 14617,
   "turns": 68338,
   "value": "11144789937400634826",

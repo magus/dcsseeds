@@ -1156,7 +1156,11 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
   "runes": [],
   "score": "72258",
   "species": "Merfolk",
-  "stash": "",
+  "stash": {
+    "artefact_list": [],
+    "branch": {},
+    "shop_list": [],
+  },
   "timeSeconds": 5002,
   "turns": 26211,
   "value": "13998099872284306217",
