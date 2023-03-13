@@ -1,9 +1,10 @@
-module.exports = runRegex;
+// legacy had module.exports before so this is backwards compatible for old usages
+export default runRegex;
 
 // throw error if no match to enforce match return type (no null)
 // guarantees that if this succeeds we have a full match and can parse groups
-function runRegex(id, content, regex) {
-  const match = runRegexSafe(id, content, regex);
+export function runRegex(id, content, regex) {
+  const match = runRegex_safe(id, content, regex);
 
   // return match if present and at least one matching group
   if (match) {
@@ -13,9 +14,8 @@ function runRegex(id, content, regex) {
   throw new Error(['runRegex', id, regex].join(' '));
 }
 
-// runRegex.safe can return null instead of throwing an error
-runRegex.safe = runRegexSafe;
-function runRegexSafe(id, content, regex) {
+// runRegex_safe can return null instead of throwing an error
+export function runRegex_safe(id, content, regex) {
   const match = content.match(regex);
 
   // return match if present and at least one matching group
