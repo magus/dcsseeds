@@ -31,9 +31,8 @@ export default async function scrapePlayers(req, res) {
   try {
     const stopwatch = new Stopwatch();
 
-    // const player_list = await stopwatch
-    //   .time(GQL_SCRAPEPLAYERS_BY_NAME.run({ name: 'magusnn' }))
-    //   .record('fetch player list');
+    // prettier-ignore
+    // const player_list = await stopwatch.time(GQL_SCRAPEPLAYERS_BY_NAME.run({ name: 'Lemuel' })).record('fetch player list');
     const player_list = await stopwatch.time(GQL_SCRAPEPLAYERS.run()).record('fetch player list');
 
     const promise_result_list = player_list.map((player) => {
@@ -115,8 +114,12 @@ async function scrape_morgue_list({ player, stopwatch }) {
         result.list.push(morgue_result);
       }
     }
-  } catch (error) {
-    result.error = error.stack.split('\n');
+  } catch (err) {
+    result.error = err.stack.split('\n');
+
+    const error = `scrape_morgue_list(${player.name}) [${err.message}]`;
+    const errors = [{ error }];
+    await player_stopwatch.time(GQL_ADD_PARSE_ERROR.run({ errors })).record('top level error');
   }
 
   result.times = player_stopwatch.list();
@@ -212,3 +215,14 @@ const GQL_PLAYER_MORGUES = serverQuery(
     }
   `,
 );
+
+const GQL_ADD_PARSE_ERROR = serverQuery(gql`
+  mutation AddParseError($errors: [dcsseeds_scrapePlayers_errors_insert_input!]!) {
+    insert_dcsseeds_scrapePlayers_errors(
+      objects: $errors
+      on_conflict: { constraint: dcsseeds_scrapePlayers_errors_error_morgue_turn_loc_note_key, update_columns: error }
+    ) {
+      affected_rows
+    }
+  }
+`);
