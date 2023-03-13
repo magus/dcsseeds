@@ -229,6 +229,22 @@ store `event.data.gold` in `item.gold` column for easy display with results
 - optional contact field that accepts email (validate it client-side)
  - write to database (text, email, created_at)
 
+
+ ## auto equip
+
+instructions: SHIFT+3 (#) to dump character file
+copy link and paste into input
+parse lst file and morgue to get current
+- floor stash items (lst)
+- current equipment (omrgue)
+- inventory equipment (morgue)
+- player stats (morgue)
+- player skills (morgue)
+
+information above can be used to find best equipment to wear
+show dropdown for each slot with best item selected
+allow changing selection and show relative difference versus suggested/optimal set
+
 ## self submit pastebin
 
 - allow pasting in literal raw text of a morgue file
@@ -241,6 +257,8 @@ store `event.data.gold` in `item.gold` column for easy display with results
 - `submission.created_at`   timestamp of submission
 - `submission.ip_address`   store so we can find and remove submissions from bad actors if we notice them
 - submit `submission` and `items` in one transaction to ensure atomic
+
+
 
 ## parse morgue visualization
 
