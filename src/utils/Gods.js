@@ -1,4 +1,5 @@
-const keyMirror = require('src/utils/keyMirror');
+import keyMirror from 'src/utils/keyMirror';
+import { runRegex_safe } from 'src/utils/runRegex';
 
 const Gods = keyMirror({
   Ashenzari: true,
@@ -58,9 +59,34 @@ const Names = {
   [Gods.ShiningOne]: 'Shining One',
 };
 
-module.exports = {
+const NAME_REGEX = new RegExp(`(?<god>${Object.values(Names).join('|')})`);
+
+function parse_god(god_string) {
+  let god;
+
+  if (god_string === 'an unknown god') {
+    god = 'Unknown';
+  } else {
+    const match = runRegex_safe('parse_god', god_string, NAME_REGEX);
+
+    if (match) {
+      god = match.groups.god;
+    }
+  }
+
+  if (!god) {
+    throw new Error('parse_god unrecognized god');
+  }
+
+  return god;
+}
+
+// backwards compatability with old module.exports
+// eslint-disable-next-line import/no-anonymous-default-export
+export default {
   ...Gods,
   Keys: Gods,
   Names,
-  Regex: new RegExp(`(${Object.values(Names).join('|')})`),
+  Regex: NAME_REGEX,
+  parse_god,
 };
