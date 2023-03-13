@@ -1,8 +1,8 @@
 // Branch name data
 // https://github.com/crawl/crawl/tree/master/crawl-ref/source/branch-data.h
 
-const keyMirror = require('src/utils/keyMirror');
-const runRegex = require('src/utils/runRegex');
+import keyMirror from 'src/utils/keyMirror';
+import runRegex from 'src/utils/runRegex';
 
 const Branch = keyMirror({
   Abyss: true,
@@ -125,7 +125,9 @@ function getBranch(branch) {
   return normalizeBranchName(parsedBranch);
 }
 
-module.exports = {
+// backwards compatability with old module.exports
+// eslint-disable-next-line import/no-anonymous-default-export
+export default {
   ...Branch,
   Lookup: BRANCH_ALIASES,
   Regex: BRANCH_NAME_ALIAS_REGEX,
