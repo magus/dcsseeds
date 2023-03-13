@@ -4,7 +4,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
 {
   "background": "Fighter",
   "datetime": 2022-04-15T04:02:02.000Z,
-  "eventCount": 264,
+  "eventCount": 281,
   "eventErrors": [],
   "events": [
     {
@@ -89,6 +89,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
     {
       "branch": "Dungeon",
       "data": {
+        "god": "Unknown",
+      },
+      "level": "2",
+      "location": "Dungeon:2",
+      "type": "altar",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
         "who": "Natasha",
       },
       "level": "2",
@@ -132,6 +141,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "level": "2",
       "location": "Dungeon:2",
       "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "god": "Shining One",
+      },
+      "level": "3",
+      "location": "Dungeon:3",
+      "type": "altar",
     },
     {
       "branch": "Dungeon",
@@ -201,6 +219,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
     {
       "branch": "Dungeon",
       "data": {
+        "god": "Okawaru",
+      },
+      "level": "5",
+      "location": "Dungeon:5",
+      "type": "altar",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
         "who": "Sigmund",
       },
       "level": "5",
@@ -227,6 +254,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "level": "4",
       "location": "Dungeon:4",
       "type": "piety-god",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "god": "Hepliaklqana",
+      },
+      "level": "4",
+      "location": "Dungeon:4",
+      "type": "altar",
     },
     {
       "branch": "Dungeon",
@@ -259,6 +295,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
     {
       "branch": "Dungeon",
       "data": {
+        "god": "Sif Muna",
+      },
+      "level": "5",
+      "location": "Dungeon:5",
+      "type": "altar",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
         "hp": "64",
         "level": "8",
         "mp": "7",
@@ -266,6 +311,24 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "level": "5",
       "location": "Dungeon:5",
       "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "god": "Gozag",
+      },
+      "level": "5",
+      "location": "Dungeon:5",
+      "type": "altar",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "god": "Qazlal",
+      },
+      "level": "5",
+      "location": "Dungeon:5",
+      "type": "altar",
     },
     {
       "branch": "Dungeon",
@@ -345,6 +408,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
     {
       "branch": "Dungeon",
       "data": {
+        "god": "Wu Jian",
+      },
+      "level": "7",
+      "location": "Dungeon:7",
+      "type": "altar",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
         "name": "Kiqy Okk's Assorted Antiques",
       },
       "level": "8",
@@ -411,6 +483,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "level": "8",
       "location": "Dungeon:8",
       "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "god": "Trog",
+      },
+      "level": "8",
+      "location": "Dungeon:8",
+      "type": "altar",
     },
     {
       "branch": "Dungeon",
@@ -945,6 +1026,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
     {
       "branch": "Dungeon",
       "data": {
+        "god": "Elyvilon",
+      },
+      "level": "15",
+      "location": "Dungeon:15",
+      "type": "altar",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
         "level": "5",
         "skill": "Evocations",
       },
@@ -1184,6 +1274,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "level": "2",
       "location": "Swamp:2",
       "type": "unique-killed",
+    },
+    {
+      "branch": "Swamp",
+      "data": {
+        "god": "Nemelex",
+      },
+      "level": "3",
+      "location": "Swamp:3",
+      "type": "altar",
     },
     {
       "branch": "Swamp",
@@ -1915,11 +2014,29 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
     {
       "branch": "Depths",
       "data": {
+        "god": "Xom",
+      },
+      "level": "1",
+      "location": "Depths:1",
+      "type": "altar",
+    },
+    {
+      "branch": "Depths",
+      "data": {
         "branch": "Pandemonium",
       },
       "level": "1",
       "location": "Depths:1",
       "type": "portal",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "god": "Shining One",
+      },
+      "level": "1",
+      "location": "Depths:1",
+      "type": "altar",
     },
     {
       "branch": "Depths",
@@ -1975,6 +2092,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "level": "2",
       "location": "Depths:2",
       "type": "skill-level",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "god": "Uskayaw",
+      },
+      "level": "2",
+      "location": "Depths:2",
+      "type": "altar",
     },
     {
       "branch": "Depths",
@@ -2159,6 +2285,33 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "level": "4",
       "location": "Depths:4",
       "type": "portal",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "god": "Uskayaw",
+      },
+      "level": "4",
+      "location": "Depths:4",
+      "type": "altar",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "god": "Sif Muna",
+      },
+      "level": "4",
+      "location": "Depths:4",
+      "type": "altar",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "god": "Ru",
+      },
+      "level": "4",
+      "location": "Depths:4",
+      "type": "altar",
     },
     {
       "branch": "Depths",

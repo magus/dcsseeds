@@ -4,7 +4,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
 {
   "background": "Wanderer",
   "datetime": 2021-06-23T08:51:46.000Z,
-  "eventCount": 1512,
+  "eventCount": 1531,
   "eventErrors": [],
   "events": [
     {
@@ -35,6 +35,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
       "level": "2",
       "location": "Dungeon:2",
       "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "god": "Vehumet",
+      },
+      "level": "2",
+      "location": "Dungeon:2",
+      "type": "altar",
     },
     {
       "branch": "Dungeon",
@@ -235,6 +244,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
       "level": "2",
       "location": "Dungeon:2",
       "type": "god-gift",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "god": "Elyvilon",
+      },
+      "level": "2",
+      "location": "Dungeon:2",
+      "type": "altar",
     },
     {
       "branch": "Dungeon",
@@ -633,6 +651,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
       "type": "experience-level",
     },
     {
+      "branch": "Dungeon",
+      "data": {
+        "god": "Dithmenos",
+      },
+      "level": "4",
+      "location": "Dungeon:4",
+      "type": "altar",
+    },
+    {
       "branch": "Sewer",
       "data": {
         "bips": "**",
@@ -741,6 +768,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
       "level": undefined,
       "location": "Sewer",
       "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "god": "Sif Muna",
+      },
+      "level": "4",
+      "location": "Dungeon:4",
+      "type": "altar",
     },
     {
       "branch": "Dungeon",
@@ -1195,6 +1231,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
     {
       "branch": "Dungeon",
       "data": {
+        "god": "Ashenzari",
+      },
+      "level": "6",
+      "location": "Dungeon:6",
+      "type": "altar",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
         "who": "Pikel",
       },
       "level": "6",
@@ -1403,6 +1448,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
     {
       "branch": "Dungeon",
       "data": {
+        "god": "Shining One",
+      },
+      "level": "7",
+      "location": "Dungeon:7",
+      "type": "altar",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
         "god": "Vehumet",
         "spell": "Hailstorm",
       },
@@ -1510,6 +1564,24 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
       "level": "7",
       "location": "Dungeon:7",
       "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "god": "Qazlal",
+      },
+      "level": "7",
+      "location": "Dungeon:7",
+      "type": "altar",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "8",
+      "location": "Dungeon:8",
+      "type": "altar",
     },
     {
       "branch": "Dungeon",
@@ -1806,6 +1878,24 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
       "level": "9",
       "location": "Dungeon:9",
       "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "god": "Ru",
+      },
+      "level": "9",
+      "location": "Dungeon:9",
+      "type": "altar",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "god": "Elyvilon",
+      },
+      "level": "10",
+      "location": "Dungeon:10",
+      "type": "altar",
     },
     {
       "branch": "Dungeon",
@@ -3519,6 +3609,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
     {
       "branch": "Orc",
       "data": {
+        "god": "Beogh",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "altar",
+    },
+    {
+      "branch": "Orc",
+      "data": {
         "name": "Curghibri's General Store",
       },
       "level": "2",
@@ -3815,6 +3914,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
       "level": "1",
       "location": "Orc:1",
       "type": "skill-level",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "god": "Beogh",
+      },
+      "level": "1",
+      "location": "Orc:1",
+      "type": "altar",
     },
     {
       "branch": "Lair",
@@ -6118,6 +6226,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
     {
       "branch": "Vaults",
       "data": {
+        "god": "Xom",
+      },
+      "level": "4",
+      "location": "Vaults:4",
+      "type": "altar",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
         "hp": "189",
         "level": "24",
         "mp": "43",
@@ -6542,6 +6659,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
     {
       "branch": "Slime",
       "data": {
+        "god": "Jiyva",
+      },
+      "level": "5",
+      "location": "Slime:5",
+      "type": "altar",
+    },
+    {
+      "branch": "Slime",
+      "data": {
         "who": "the Royal Jelly",
       },
       "level": "5",
@@ -6844,6 +6970,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
       "level": "3",
       "location": "Depths:3",
       "type": "item",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "3",
+      "location": "Depths:3",
+      "type": "altar",
     },
     {
       "branch": "Depths",
@@ -7866,6 +8001,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
       "type": "skill-level",
     },
     {
+      "branch": "Abyss",
+      "data": {
+        "god": "Lugonu",
+      },
+      "level": "5",
+      "location": "Abyss:5",
+      "type": "altar",
+    },
+    {
       "branch": "Zot",
       "data": {
         "level": "18",
@@ -8090,6 +8234,24 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
       "level": "4",
       "location": "Zot:4",
       "type": "skill-level",
+    },
+    {
+      "branch": "Zot",
+      "data": {
+        "god": "Cheibriados",
+      },
+      "level": "4",
+      "location": "Zot:4",
+      "type": "altar",
+    },
+    {
+      "branch": "Zot",
+      "data": {
+        "god": "Sif Muna",
+      },
+      "level": "4",
+      "location": "Zot:4",
+      "type": "altar",
     },
     {
       "branch": "Zot",
@@ -11057,6 +11219,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
       "level": "2",
       "location": "Crypt:2",
       "type": "mutation",
+    },
+    {
+      "branch": "Crypt",
+      "data": {
+        "god": "Kikubaaqudgha",
+      },
+      "level": "3",
+      "location": "Crypt:3",
+      "type": "altar",
     },
     {
       "branch": "Crypt",

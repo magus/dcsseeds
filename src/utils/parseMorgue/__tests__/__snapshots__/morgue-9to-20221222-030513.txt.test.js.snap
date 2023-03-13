@@ -4,7 +4,7 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
 {
   "background": "Hedge Wizard",
   "datetime": 2022-12-22T03:05:13.000Z,
-  "eventCount": 238,
+  "eventCount": 256,
   "eventErrors": [],
   "events": [
     {
@@ -125,6 +125,33 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
     {
       "branch": "Dungeon",
       "data": {
+        "god": "Qazlal",
+      },
+      "level": "3",
+      "location": "Dungeon:3",
+      "type": "altar",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "god": "Unknown",
+      },
+      "level": "3",
+      "location": "Dungeon:3",
+      "type": "altar",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "god": "Trog",
+      },
+      "level": "3",
+      "location": "Dungeon:3",
+      "type": "altar",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
         "name": "Suewocu's Magic Scroll Shoppe",
       },
       "level": "3",
@@ -216,6 +243,24 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
     {
       "branch": "Dungeon",
       "data": {
+        "god": "Xom",
+      },
+      "level": "4",
+      "location": "Dungeon:4",
+      "type": "altar",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "god": "Makhleb",
+      },
+      "level": "4",
+      "location": "Dungeon:4",
+      "type": "altar",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
         "who": "Eustachio",
       },
       "level": "5",
@@ -251,6 +296,15 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       "level": undefined,
       "location": "Temple",
       "type": "join-god",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "god": "Uskayaw",
+      },
+      "level": "5",
+      "location": "Dungeon:5",
+      "type": "altar",
     },
     {
       "branch": "Dungeon",
@@ -429,6 +483,15 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
     {
       "branch": "Dungeon",
       "data": {
+        "god": "Zin",
+      },
+      "level": "7",
+      "location": "Dungeon:7",
+      "type": "altar",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
         "hp": "56",
         "level": "10",
         "mp": "21",
@@ -476,6 +539,15 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       "level": "10",
       "location": "Dungeon:10",
       "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "god": "Ru",
+      },
+      "level": "10",
+      "location": "Dungeon:10",
+      "type": "altar",
     },
     {
       "branch": "Dungeon",
@@ -645,6 +717,15 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       "type": "skill-level",
     },
     {
+      "branch": "Lair",
+      "data": {
+        "god": "Jiyva",
+      },
+      "level": "5",
+      "location": "Lair:5",
+      "type": "altar",
+    },
+    {
       "branch": "IceCave",
       "data": {
         "level": "10",
@@ -674,6 +755,15 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       "level": undefined,
       "location": "IceCave",
       "type": "skill-level",
+    },
+    {
+      "branch": "IceCave",
+      "data": {
+        "god": "Jiyva",
+      },
+      "level": undefined,
+      "location": "IceCave",
+      "type": "altar",
     },
     {
       "branch": "IceCave",
@@ -832,6 +922,24 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
     {
       "branch": "Dungeon",
       "data": {
+        "god": "Okawaru",
+      },
+      "level": "14",
+      "location": "Dungeon:14",
+      "type": "altar",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "god": "Cheibriados",
+      },
+      "level": "14",
+      "location": "Dungeon:14",
+      "type": "altar",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
         "level": "5",
         "skill": "Short Blades",
       },
@@ -856,6 +964,15 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       "level": "1",
       "location": "Orc:1",
       "type": "shop",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "god": "Trog",
+      },
+      "level": "1",
+      "location": "Orc:1",
+      "type": "altar",
     },
     {
       "branch": "Orc",
@@ -1017,6 +1134,15 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       "level": "1",
       "location": "Swamp:1",
       "type": "skill-level",
+    },
+    {
+      "branch": "Swamp",
+      "data": {
+        "god": "Hepliaklqana",
+      },
+      "level": "1",
+      "location": "Swamp:1",
+      "type": "altar",
     },
     {
       "branch": "Swamp",
@@ -1754,6 +1880,15 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
     {
       "branch": "Depths",
       "data": {
+        "god": "Gozag",
+      },
+      "level": "1",
+      "location": "Depths:1",
+      "type": "altar",
+    },
+    {
+      "branch": "Depths",
+      "data": {
         "name": "Judduappa's Distillery",
       },
       "level": "1",
@@ -1796,6 +1931,24 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       "level": "2",
       "location": "Depths:2",
       "type": "unique-noticed",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "god": "Ashenzari",
+      },
+      "level": "2",
+      "location": "Depths:2",
+      "type": "altar",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "god": "Yredelemnul",
+      },
+      "level": "2",
+      "location": "Depths:2",
+      "type": "altar",
     },
     {
       "branch": "Depths",
@@ -2070,6 +2223,15 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       "level": "3",
       "location": "Crypt:3",
       "type": "item",
+    },
+    {
+      "branch": "Crypt",
+      "data": {
+        "god": "Kikubaaqudgha",
+      },
+      "level": "3",
+      "location": "Crypt:3",
+      "type": "altar",
     },
     {
       "branch": "Crypt",

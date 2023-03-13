@@ -4,7 +4,7 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
 {
   "background": "Gladiator",
   "datetime": 2022-08-18T22:42:17.000Z,
-  "eventCount": 106,
+  "eventCount": 118,
   "eventErrors": [],
   "events": [
     {
@@ -35,6 +35,15 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       "level": "1",
       "location": "Dungeon:1",
       "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "god": "Unknown",
+      },
+      "level": "2",
+      "location": "Dungeon:2",
+      "type": "altar",
     },
     {
       "branch": "Dungeon",
@@ -461,6 +470,15 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       "type": "skill-level",
     },
     {
+      "branch": "Dungeon",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "7",
+      "location": "Dungeon:7",
+      "type": "altar",
+    },
+    {
       "branch": "Temple",
       "data": {
         "god": "Wu Jian",
@@ -536,6 +554,69 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       "level": "8",
       "location": "Dungeon:8",
       "type": "piety-god",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "god": "Makhleb",
+      },
+      "level": "9",
+      "location": "Dungeon:9",
+      "type": "altar",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "god": "Trog",
+      },
+      "level": "9",
+      "location": "Dungeon:9",
+      "type": "altar",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "god": "Elyvilon",
+      },
+      "level": "9",
+      "location": "Dungeon:9",
+      "type": "altar",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "god": "Shining One",
+      },
+      "level": "9",
+      "location": "Dungeon:9",
+      "type": "altar",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "god": "Gozag",
+      },
+      "level": "9",
+      "location": "Dungeon:9",
+      "type": "altar",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "god": "Uskayaw",
+      },
+      "level": "9",
+      "location": "Dungeon:9",
+      "type": "altar",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "god": "Nemelex",
+      },
+      "level": "9",
+      "location": "Dungeon:9",
+      "type": "altar",
     },
     {
       "branch": "Dungeon",
@@ -814,6 +895,24 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
     {
       "branch": "Lair",
       "data": {
+        "god": "Wu Jian",
+      },
+      "level": "5",
+      "location": "Lair:5",
+      "type": "altar",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "god": "Uskayaw",
+      },
+      "level": "5",
+      "location": "Lair:5",
+      "type": "altar",
+    },
+    {
+      "branch": "Lair",
+      "data": {
         "item": "+1 ring mail of Uripeeb {Dex+4}",
       },
       "level": "5",
@@ -1001,6 +1100,15 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       "level": "3",
       "location": "Dungeon:3",
       "type": "bought",
+    },
+    {
+      "branch": "Swamp",
+      "data": {
+        "god": "Gozag",
+      },
+      "level": "2",
+      "location": "Swamp:2",
+      "type": "altar",
     },
     {
       "branch": "Swamp",

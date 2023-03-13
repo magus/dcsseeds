@@ -4,7 +4,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
 {
   "background": "Fighter",
   "datetime": 2022-08-10T03:44:03.000Z,
-  "eventCount": 350,
+  "eventCount": 373,
   "eventErrors": [],
   "events": [
     {
@@ -35,6 +35,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "level": "1",
       "location": "Dungeon:1",
       "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "god": "Unknown",
+      },
+      "level": "1",
+      "location": "Dungeon:1",
+      "type": "altar",
     },
     {
       "branch": "Dungeon",
@@ -419,6 +428,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
     {
       "branch": "Dungeon",
       "data": {
+        "god": "Qazlal",
+      },
+      "level": "4",
+      "location": "Dungeon:4",
+      "type": "altar",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
         "hp": "67",
         "level": "8",
         "mp": "12",
@@ -517,12 +535,93 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
     {
       "branch": "Dungeon",
       "data": {
+        "god": "Trog",
+      },
+      "level": "6",
+      "location": "Dungeon:6",
+      "type": "altar",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
         "level": "4",
         "skill": "Staves",
       },
       "level": "7",
       "location": "Dungeon:7",
       "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "god": "Xom",
+      },
+      "level": "7",
+      "location": "Dungeon:7",
+      "type": "altar",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "god": "Gozag",
+      },
+      "level": "7",
+      "location": "Dungeon:7",
+      "type": "altar",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "god": "Vehumet",
+      },
+      "level": "7",
+      "location": "Dungeon:7",
+      "type": "altar",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "god": "Hepliaklqana",
+      },
+      "level": "7",
+      "location": "Dungeon:7",
+      "type": "altar",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "god": "Ashenzari",
+      },
+      "level": "7",
+      "location": "Dungeon:7",
+      "type": "altar",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "god": "Fedhas",
+      },
+      "level": "7",
+      "location": "Dungeon:7",
+      "type": "altar",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "god": "Sif Muna",
+      },
+      "level": "7",
+      "location": "Dungeon:7",
+      "type": "altar",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "7",
+      "location": "Dungeon:7",
+      "type": "altar",
     },
     {
       "branch": "Dungeon",
@@ -564,6 +663,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "level": "7",
       "location": "Dungeon:7",
       "type": "skill-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "god": "Dithmenos",
+      },
+      "level": "8",
+      "location": "Dungeon:8",
+      "type": "altar",
     },
     {
       "branch": "Dungeon",
@@ -950,6 +1058,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
     {
       "branch": "Dungeon",
       "data": {
+        "god": "Shining One",
+      },
+      "level": "9",
+      "location": "Dungeon:9",
+      "type": "altar",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
         "item": "+1 leather armour of Ornamental Surprise {Contam rElec Str+4 Dex+3}",
       },
       "level": "9",
@@ -1314,6 +1431,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
     {
       "branch": "Lair",
       "data": {
+        "god": "Fedhas",
+      },
+      "level": "3",
+      "location": "Lair:3",
+      "type": "altar",
+    },
+    {
+      "branch": "Lair",
+      "data": {
         "item": "+1 ring mail "Bamukoag" {rC+ Str+4 Int+2}",
       },
       "level": "3",
@@ -1389,6 +1515,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "level": "3",
       "location": "Lair:3",
       "type": "god-gift",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "god": "Uskayaw",
+      },
+      "level": "5",
+      "location": "Lair:5",
+      "type": "altar",
     },
     {
       "branch": "Lair",
@@ -1711,6 +1846,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "level": "2",
       "location": "Orc:2",
       "type": "shop",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "god": "Xom",
+      },
+      "level": "1",
+      "location": "Orc:1",
+      "type": "altar",
     },
     {
       "branch": "Orc",
@@ -2062,6 +2206,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "level": "3",
       "location": "Snake:3",
       "type": "shop",
+    },
+    {
+      "branch": "Snake",
+      "data": {
+        "god": "Ru",
+      },
+      "level": "3",
+      "location": "Snake:3",
+      "type": "altar",
     },
     {
       "branch": "Snake",
@@ -2815,11 +2968,47 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
     {
       "branch": "Depths",
       "data": {
+        "god": "Xom",
+      },
+      "level": "1",
+      "location": "Depths:1",
+      "type": "altar",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "god": "Xom",
+      },
+      "level": "1",
+      "location": "Depths:1",
+      "type": "altar",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "god": "Xom",
+      },
+      "level": "1",
+      "location": "Depths:1",
+      "type": "altar",
+    },
+    {
+      "branch": "Depths",
+      "data": {
         "branch": "Abyss",
       },
       "level": "1",
       "location": "Depths:1",
       "type": "portal",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "god": "Sif Muna",
+      },
+      "level": "1",
+      "location": "Depths:1",
+      "type": "altar",
     },
     {
       "branch": "Depths",
@@ -3118,6 +3307,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
     {
       "branch": "Abyss",
       "data": {
+        "god": "Lugonu",
+      },
+      "level": "2",
+      "location": "Abyss:2",
+      "type": "altar",
+    },
+    {
+      "branch": "Abyss",
+      "data": {
         "desc": "You sometimes lose the ability to read scrolls when taking damage.",
         "kind": "Gained",
         "source": "a neqoxec",
@@ -3366,6 +3564,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "level": "2",
       "location": "Abyss:2",
       "type": "mutation",
+    },
+    {
+      "branch": "Abyss",
+      "data": {
+        "god": "Lugonu",
+      },
+      "level": "4",
+      "location": "Abyss:4",
+      "type": "altar",
     },
     {
       "branch": "Abyss",

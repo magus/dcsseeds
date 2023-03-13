@@ -6,13 +6,16 @@ import * as AshenzariCurses from 'src/utils/AshenzariCurses';
 
 export function parse_note({ morgueNote, addEvent, events }) {
   // check in this order to ensure we find most specific first
-  // found regex cases https://regexr.com/7a1q1
+
+  // found regex cases
+  // https://regexr.com/7a1qv
   // artefacts
   const found = morgueNote.note.match(/Found the (.*)?/);
-  // altars, gates, portals, etc.
-  const found_an = morgueNote.note.match(/Found (a|an) (.*)?/);
+  // altars, gates, portals, etc
+  const found_altar = morgueNote.note.match(/Found (?:a|an) (?:.*?altar of (?<god>[^.]*))/);
   // shops
   const found_shop = morgueNote.note.match(/Found ((?!(the|a|an))[^.]*)/);
+
   const acquirement = morgueNote.note.match(/Acquired the (.*)?/);
 
   // gateway
@@ -197,8 +200,9 @@ export function parse_note({ morgueNote, addEvent, events }) {
     const [, name] = found_shop;
     // always log bought events
     addEvent('shop', morgueNote.loc, { name });
-  } else if (found_an) {
-    // TODO note altars, portals, etc.
+  } else if (found_altar) {
+    const god = Gods.parse_god(found_altar.groups.god);
+    addEvent('altar', morgueNote.loc, { god });
   } else if (found) {
     const [, item] = found;
 
