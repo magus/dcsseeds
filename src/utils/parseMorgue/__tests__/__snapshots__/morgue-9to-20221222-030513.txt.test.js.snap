@@ -2456,8 +2456,15 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
   "isSprint": false,
   "isTrunk": false,
   "is_bcrawl": false,
-  "morgue": "http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt",
-  "name": "9to",
+  "lst": "",
+  "morgue": {
+    "basename": "morgue-9to-20221222-030513",
+    "date": 2022-12-22T03:05:13.000Z,
+    "filename": "morgue-9to-20221222-030513.txt",
+    "player": "9to",
+    "timestamp": "1671678313000",
+    "url": "http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt",
+  },
   "runeCount": 3,
   "runes": [
     "decaying",

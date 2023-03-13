@@ -3800,8 +3800,15 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
   "isSprint": false,
   "isTrunk": false,
   "is_bcrawl": false,
-  "morgue": "http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917-231505.txt",
-  "name": "xoxohorses",
+  "lst": "",
+  "morgue": {
+    "basename": "morgue-xoxohorses-20210917-231505",
+    "date": 2021-09-17T23:15:05.000Z,
+    "filename": "morgue-xoxohorses-20210917-231505.txt",
+    "player": "xoxohorses",
+    "timestamp": "1631920505000",
+    "url": "http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917-231505.txt",
+  },
   "runeCount": 3,
   "runes": [
     "decaying",

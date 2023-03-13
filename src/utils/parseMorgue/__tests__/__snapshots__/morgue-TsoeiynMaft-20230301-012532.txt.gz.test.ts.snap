@@ -2360,8 +2360,15 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
   "isSprint": false,
   "isTrunk": true,
   "is_bcrawl": false,
-  "morgue": "https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-20230301-012532.txt.gz",
-  "name": "TsoeiynMaft",
+  "lst": "",
+  "morgue": {
+    "basename": "morgue-TsoeiynMaft-20230301-012532",
+    "date": 2023-03-01T01:25:32.000Z,
+    "filename": "morgue-TsoeiynMaft-20230301-012532.txt.gz",
+    "player": "TsoeiynMaft",
+    "timestamp": "1677633932000",
+    "url": "https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-20230301-012532.txt.gz",
+  },
   "runeCount": 3,
   "runes": [
     "barnacled",

@@ -3668,8 +3668,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
   "isSprint": false,
   "isTrunk": false,
   "is_bcrawl": false,
-  "morgue": "https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220810-034403.txt",
-  "name": "Jingleheimer",
+  "lst": "",
+  "morgue": {
+    "basename": "morgue-Jingleheimer-20220810-034403",
+    "date": 2022-08-10T03:44:03.000Z,
+    "filename": "morgue-Jingleheimer-20220810-034403.txt",
+    "player": "Jingleheimer",
+    "timestamp": "1660103043000",
+    "url": "https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220810-034403.txt",
+  },
   "runeCount": 3,
   "runes": [
     "serpentine",

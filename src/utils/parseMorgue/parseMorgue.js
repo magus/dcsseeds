@@ -8,26 +8,41 @@ import Backgrounds from 'src/utils/Backgrounds';
 import Species from 'src/utils/Species';
 import Gods from 'src/utils/Gods';
 import Branch from 'src/utils/Branch';
+import { Morgue } from 'src/utils/Morgue';
+
 import { parse_note } from './parse_note';
+import { fetch_lst } from './fetch_lst';
 
-export async function parseMorgue(morgue) {
-  const response = await fetch(morgue);
-  const morgueText = await response.text();
+async function fetch_morgue_text(url) {
+  const response = await fetch(url);
+  return await response.text();
+}
 
-  // https://regexr.com/5ed8a
-  const [, name] = await runRegex('name', morgue, /\/([^/]+)\/+([^/]+)\.txt(?:\.gz)?$/);
+export async function parseMorgue(url) {
+  const morgue = new Morgue(url);
 
-  const morgueParsed = await parseMorgueText({ name, morgue, morgueText });
+  const [lst, morgue_text] = await Promise.all([
+    // parallel fetch lst and morgue file
+    fetch_lst({ morgue }),
+    fetch_morgue_text(morgue.url),
+  ]);
+
+  const parsed = await parseMorgueText({ morgue, morgue_text, lst });
 
   return {
-    name,
     morgue,
-    ...morgueParsed,
+    ...parsed,
+    lst,
   };
 }
 
-async function parseMorgueText({ name, morgue, morgueText }) {
-  const args = { name, morgue, morgueText };
+async function parseMorgueText(params) {
+  const name = params.morgue.player;
+  const morgue = params.morgue.url;
+  const morgueText = params.morgue_text;
+  const lst = params.lst;
+
+  const args = { name, morgue, morgueText, lst };
 
   return {
     ...(await MORGUE_REGEX[MORGUE_FIELD.Version](args)),
