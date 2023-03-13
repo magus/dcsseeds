@@ -1,5 +1,5 @@
 import { toNumber } from 'src/utils/toNumber';
-import runRegex from 'src/utils/runRegex';
+import { runRegex } from 'src/utils/runRegex';
 
 export function parts(semver_string) {
   const [, ...semver_string_parts] = runRegex('parse-semver', semver_string, RE.semver);

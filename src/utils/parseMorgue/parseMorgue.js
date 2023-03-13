@@ -3,7 +3,7 @@ import { uniqBy } from 'lodash';
 import keyMirror from 'src/utils/keyMirror';
 import { toNumber } from 'src/utils/toNumber';
 import { find_list_backwards } from 'src/utils/find_list_backwards';
-import runRegex from 'src/utils/runRegex';
+import { runRegex } from 'src/utils/runRegex';
 import Backgrounds from 'src/utils/Backgrounds';
 import Species from 'src/utils/Species';
 import Gods from 'src/utils/Gods';

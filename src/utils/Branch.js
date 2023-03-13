@@ -2,7 +2,7 @@
 // https://github.com/crawl/crawl/tree/master/crawl-ref/source/branch-data.h
 
 import keyMirror from 'src/utils/keyMirror';
-import runRegex from 'src/utils/runRegex';
+import { runRegex } from 'src/utils/runRegex';
 
 const Branch = keyMirror({
   Abyss: true,
