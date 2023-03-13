@@ -28,7 +28,7 @@ module.exports = {
 
   rules: {
     // e.g. allow console
-    'no-console': ['warn', { 'allow': ['info', 'warn', 'error'] }],
+    'no-console': ['warn', { 'allow': ['dir', 'info', 'warn', 'error'] }],
 
     // this is really useless in ecma2020
     // https://github.com/eslint/eslint/issues/15576
