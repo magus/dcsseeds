@@ -1,0 +1,170 @@
+Dungeon Crawl Stone Soup version 0.29.1-2-gbd0b4ee654 (webtiles) character file.
+
+Game seed: 2852967345243901272
+
+0 CKag the Magician (level 1, 0/15 HPs)
+             Began as a Djinni Fire Elementalist on Nov 13, 2022.
+             Slain by a quokka (4 damage)
+             ... on level 1 of the Dungeon.
+             The game lasted 00:00:12 (63 turns).
+
+CKag the Magician (Djinni Fire Elementalist)          Turns: 63, Time: 00:00:12
+
+Health: 0/15       AC:  2    Str:  7    XL:     1   Next: 0%
+Gold:   0          EV: 12    Int: 16    God:
+                   SH:  0    Dex: 13
+
+rFire   + + .      SeeInvis .   b - +0 dagger
+rCold   x . .      Faith    .   (no shield)
+rNeg    . . .      Spirit   .   a - +0 robe
+rPois   ∞          Reflect  .   (no helmet)
+rElec   .          Harm     .   (no cloak)
+rCorr   .          Rampage  .   (no gloves)
+Will    .....                   (boots unavailable)
+Stlth   ++........              (no amulet)
+HPRegen 0.05/turn               (no ring)
+MPRegen 0.00/turn               (no ring)
+
+@: flying
+A: sickness immunity, fire resistance 2, cold vulnerability 1, float, innate
+caster, HP casting, extra vitality 1
+a: no special abilities
+
+
+You were on level 1 of the Dungeon.
+You visited 1 branch of the dungeon, and saw 1 of its levels.
+
+Inventory:
+
+Hand Weapons
+ b - a +0 dagger (weapon)
+Armour
+ a - a +0 robe (worn)
+
+
+   Skills:
+ + Level 0.0 Fighting
+ - Level 2.1 Dodging
+ - Level 1.5 Stealth
+ * Level 2.4 Spellcasting
+
+
+You couldn't memorise any spells.
+You knew the following spells:
+
+ Your Spells              Type           Power      Damage    Failure   Level
+a - Foxfire               Conj/Fire      36%        2x1d5     8%          1
+b - Scorch                Fire           18%        2d5       11%         2
+c - Conjure Flame         Conj/Fire      9%         6-21      22%         3
+d - Inner Flame           Hex/Fire       9%         N/A       22%         3
+e - Flame Wave            Conj/Fire      9%         2d6       58%         4
+
+Your spell library was empty.
+
+Dungeon Overview and Level Annotations
+
+Branches:
+Dungeon (1/15)
+
+Altars:
+
+
+Innate Abilities, Weirdness & Mutations
+
+You are immune to sickness and miasma.
+You are immune to poison.
+Your flesh is very heat resistant. (rF++)
+You are vulnerable to cold. (rC-)
+You float through the air rather than walking.
+You learn spells naturally, not from books.
+Your magical power is your life essence.
+You have superior vitality. (+4 MHP)
+
+Message History
+
+You see here a +0 dagger.
+b - a +0 dagger
+b - a +0 dagger (weapon)
+You reach down and open the door.
+There is an open door here.
+You reach down and open the gate.
+There is an open gate here.
+A quokka comes into view.
+Cast which spell? (? or * to list)
+You conjure some foxfire!
+Casting: Foxfire (safe; 8% risk of failure)
+Confirm with . or Enter, or press ? or * to list all spells.
+You conjure some foxfire! The foxfire hits the quokka.
+The quokka is moderately wounded.
+The foxfire hits the quokka.
+The quokka is heavily wounded.
+The quokka misses you.
+Casting: Foxfire (safe; 8% risk of failure)
+Confirm with . or Enter, or press ? or * to list all spells.
+You aren't experienced enough to cast this spell.
+Unknown command.
+Unknown command.
+You hit the quokka.
+The quokka is severely wounded.
+The quokka closely misses you.
+You miss the quokka.
+The quokka is severely wounded.
+The quokka bites you.
+You hit the quokka.
+The quokka is almost dead.
+The quokka bites you.
+You closely miss the quokka.
+The quokka is almost dead.
+The quokka bites you.
+Casting: Foxfire (safe; 8% risk of failure)
+Confirm with . or Enter, or press ? or * to list all spells.
+You conjure some foxfire!
+* * * LOW HITPOINT WARNING * * *
+The quokka bites you.
+You die...
+
+########
+..#....#  ♣♣♣♣
+..'..<.#  ♣⌠.♣♣
+..#....# ♣♣...♣♣
+8.#....# ♣.....♣
+..#..###♣♣....♣♣
+..####♣♣♣......♣#
+..# ♣♣♣........§###
+###♣♣..........v@v#
+#♣♣♣.....♣♣######r#
+.....♣####       .#
+.♣♣♣##           .#
+♣♣               .#
+#                .#
+                 .#
+                 .#
+
+
+You could see a quokka (ally target).
+
+Vanquished Creatures (others)
+  2 foxfires (D:1)
+2 creatures vanquished.
+
+Notes
+Turn   | Place    | Note
+-------+----------+-------------------------------------------
+     0 | D:1      | CKag the Djinni Fire Elementalist began the quest for the
+                  | Orb.
+     0 | D:1      | CKag set off with the following spells memorised: Foxfire,
+                  | Scorch, Conjure Flame, Inner Flame, Flame Wave.
+     0 | D:1      | Reached XP level 1. HP: 15/15 MP: 0/0
+    63 | D:1      | Slain by a quokka
+
+Illustrated notes
+
+Levels and vault maps discovered:
+D:1:      sevenhm_arrival_forest_fort_large_2, layout_loops_ring,
+          shapermc_ecumenical_altar_acropolis
+
+Action                   || total
+-------------------------++-------
+Melee: Dagger            ||     4
+ Cast: Foxfire           ||     3
+Dodge: Dodged            ||     2

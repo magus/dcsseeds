@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`https://crawl.kelbi.org/crawl/morgue/CKag/morgue-CKag-20221113-181534.txt.gz 1`] = `
+{
+  "background": "Fire Elementalist",
+  "datetime": 2022-11-13T18:15:34.000Z,
+  "eventCount": 3,
+  "eventErrors": [],
+  "events": [
+    {
+      "branch": "Dungeon",
+      "data": "CKag the Djinni Fire Elementalist began the quest for the Orb.",
+      "level": "1",
+      "location": "Dungeon:1",
+      "type": "first-event",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "hp": "15",
+        "level": "1",
+        "mp": "0",
+      },
+      "level": "1",
+      "location": "Dungeon:1",
+      "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": "Slain by a quokka",
+      "level": "1",
+      "location": "Dungeon:1",
+      "type": "last-event",
+    },
+  ],
+  "fullVersion": "0.29.1-2-gbd0b4ee654",
+  "god": null,
+  "isBloatcrawl": false,
+  "isMorgue": true,
+  "isSprint": false,
+  "isTrunk": false,
+  "is_bcrawl": false,
+  "morgue": {
+    "basename": "morgue-CKag-20221113-181534",
+    "date": 2022-11-13T18:15:34.000Z,
+    "filename": "morgue-CKag-20221113-181534.txt.gz",
+    "player": "CKag",
+    "timestamp": "1668363334000",
+    "url": "https://crawl.kelbi.org/crawl/morgue/CKag/morgue-CKag-20221113-181534.txt.gz",
+  },
+  "runeCount": 0,
+  "runes": [],
+  "score": "0",
+  "species": "Djinni",
+  "stash": {
+    "artefact_list": [],
+    "branch": {},
+    "shop_list": [],
+  },
+  "timeSeconds": 12,
+  "turns": 63,
+  "value": "2852967345243901272",
+  "version": "0.29.1",
+}
+`;

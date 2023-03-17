@@ -59,6 +59,9 @@ export function parse_stash_text(stash_text) {
           break;
         }
 
+        case check('no_stash'):
+          break;
+
         case check('unseen'):
           break;
 
@@ -138,6 +141,10 @@ const PARSE = {
   },
 
   item_name: function item_name({ match, state }) {
+    if (!match) {
+      console.error({ match, state });
+      throw new Error('STOP');
+    }
     const properties = [];
     const name = match.groups.name;
 
@@ -222,6 +229,10 @@ const PARSE = {
     state.current.level_list.push({ type: 'unseen' });
     return true;
   },
+
+  no_stash: function no_stash() {
+    return true;
+  },
 };
 
 const RE = {
@@ -239,6 +250,8 @@ const RE = {
   shop: /\[Shop\] (?<name>.*)$/,
 
   unseen: / {2}\(unseen\)/,
+  no_stash: / {2}You have no stashes\./,
+
   // https://github.com/crawl/crawl/blob/master/crawl-ref/source/dat/database/randbook.txt
   spellbook: /^(book of |Almanac|Annotations|Anthology|Atlas|Book|Catalogue|Codex|Collected Works|Commentary|Compendium|Compilation|Cyclopedia|Directory|Discourse|Discursus|Disquisition|Dissertation|Elucidation|Enchiridion|Encyclopedia|Essays|Excursus|Exposition|Folio|Grimoire|Guide|Guidebook|Handbook|Incunable|Incunabulum|Information|Lectures|Lessons|Meditations|Monograph|Notes|Octavo|Omnibus|Opusculum|Papyrus|Parchment|Precepts|Quarto|Reference Book|Secrets|Spellbook|Teachings|Textbook|Thoughts|Tome|Tractate|Treatise|Vademecum|Vellum|Verses|Volume|Writings)/,
 };
