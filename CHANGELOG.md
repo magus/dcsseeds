@@ -1,5 +1,71 @@
 # CHANGELOG
 
+## 2023-03-16
+
+database backups are not working, the `pg_dump` `curl` returns a 502 status code + error page even after a hard restart
+
+after ssh into the machine noticed terminal felt laggy, fast.com showing slow speeds so many latency related?
+tried the commands below and was able to quickly generate a `43MB` `data.sql` so we can manually call `pg_dump` just fine
+
+```sh
+❯ dokku config:get hasura HASURA_GRAPHQL_DATABASE_URL
+<database_url>
+❯ dokku enter hasura
+root@459974224faf:/> pg_dump <database_url> --no-owner --no-acl --data-only --schema public -f data.sql
+root@459974224faf:/> ls -lsah data.sql
+43M -rw-r--r-- 1 root root 43M Mar 17 05:52 data.sql
+```
+
+now it's a matter of getting it setup so we can run this `pg_dump` remotely from github actions
+one idea is to expose the ports to run `pg_dump` remotely, but maybe we could try ssh and redirect to local machine stdout?
+
+
+```sh
+❯ ssh -T root@104.236.34.97 "dokku run hasura pg_dump postgres://postgres:96b2bda121c09c36d9db62ddf8bad5e3@dokku-postgres-hasura-db:5432/hasura_db --no-owner --no-acl --data-only --schema public" > data.sql
+```
+
+works but it's very slow for some reason, but it's a start
+worst case scenario we can ssh in, write to file locally (fast) and then upload to aws remotely
+
+in dokku droplet under **Access** clicked **Reset root password** to get root password
+to be used to ssh into box from github action
+
+generate a new ssh key for accessing DigitalOcean droplet from github action
+
+```bash
+❯ ssh-keygen -t ed25519
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/Users/noah/.ssh/id_ed25519): ./magic-auth-github-action
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in ./magic-auth-github-action
+Your public key has been saved in ./magic-auth-github-action.pub
+❯ cat magic-auth-github-action
+```
+
+**Github > Settings > Actions > Secrets**
+
+create **`MAGIC_AUTH_SSH_PRIVATE_KEY`** copying the output from command above
+create **`MAGIC_AUTH_SSH_HOST`** secret containing IP of host `104.236.34.97`
+create **`MAGIC_AUTH_SSH_USER`** secret containing IP of host `root`
+create **`MAGIC_AUTH_DATABASE_URL`** secret containing IP of host `postgres://postgres:P@55w0rd@dokku-postgres-hasura-db:5432/hasura_db`
+
+then adding it to the droplet **"Manually from the Droplet without Password-Based Access"**
+
+https://docs.digitalocean.com/products/droplets/how-to/add-ssh-keys/to-existing-droplet/#manually
+
+```bash
+❯ cat magic-auth-github-action.pub
+❯ ssh root@104.236.34.97
+root@magic-auth:~# mkdir -p ~/.ssh
+root@magic-auth:~# vim ~/.ssh/authorized_keys
+# paste in public key on new line
+# save and quit
+```
+
+
+
+
 ## 2023-03-11
 
 need to migrate all previous `NULL` level values to zero
@@ -153,7 +219,7 @@ AS $function$
     ```
 
 - can we setup a report policy for dokku hasura app to recover from this failure state?
-- updating dokku on digital ocean droplet with cron health check
+- updating dokku on DigitalOcean droplet with cron health check
 - https://dokku.com/docs/advanced-usage/deployment-tasks/
 - https://dokku.com/docs/processes/scheduled-cron-tasks/#using-run-for-cron-tasks
 
@@ -245,7 +311,7 @@ AS $function$
     # https://www.digitalocean.com/community/tutorials/how-to-use-cron-to-automate-tasks-ubuntu-1804
     crontab -e
     # paste in line below
-    */1 * * * * /home/dokku/hasura/health-check.sh 5 "https://magic-graphql.iamnoah.com/v1/graphql" '{"code":"not-found","error":"resource does not exist","path":"$"}' > /var/log/cronlog 2>&1
+    */5 * * * * /home/dokku/hasura/health-check.sh 5 "https://magic-graphql.iamnoah.com/v1/graphql" '{"code":"not-found","error":"resource does not exist","path":"$"}' > /var/log/cronlog 2>&1
 
     # tail logs for cron, without stdout from process
     journalctl -u cron.service -f
