@@ -9,7 +9,7 @@
     "build": "next build",
     "start": "NODE_ENV=production next start",
     "lint": "next lint",
-    "test": "jest",
+    "test": "jest --maxWorkers=50%",
     "test:debug": "node --inspect-brk node_modules/.bin/jest --runInBand",
     "deploy": "vercel",
     "deploy:prod": "vercel --prod",
