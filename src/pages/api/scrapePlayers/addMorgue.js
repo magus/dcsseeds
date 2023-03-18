@@ -24,6 +24,7 @@ export async function addMorgue(args) {
     await GQL_ADD_MORGUE.run({
       playerId,
       data: { [morgue.timestamp]: true },
+      morgue_url: morgue.url,
     });
 
     return response(`skip (${reason})`);
@@ -133,6 +134,7 @@ export async function addMorgue(args) {
         playerId,
         // remote (server) mark morgue as visited
         data: { [morgue.timestamp]: true },
+        morgue_url: morgue.url,
       });
 
       return response('done (items)', result);
@@ -152,12 +154,21 @@ export async function addMorgue(args) {
 
 const GQL_ADD_ITEM = serverQuery(
   gql`
-    mutation AddItem($playerId: uuid!, $data: jsonb!, $items: [dcsseeds_scrapePlayers_item_insert_input!]!) {
+    mutation AddItem(
+      $playerId: uuid!
+      $data: jsonb!
+      $items: [dcsseeds_scrapePlayers_item_insert_input!]!
+      $morgue_url: String!
+    ) {
       update_dcsseeds_scrapePlayers(
         _append: { morgues: $data }
         where: { id: { _eq: $playerId } }
         _set: { lastRun: "now()" }
       ) {
+        affected_rows
+      }
+
+      delete_dcsseeds_scrapePlayers_errors(where: { morgue: { _eq: $morgue_url } }) {
         affected_rows
       }
 
@@ -185,12 +196,16 @@ const GQL_ADD_ITEM = serverQuery(
 
 const GQL_ADD_MORGUE = serverQuery(
   gql`
-    mutation AddMorgue($playerId: uuid!, $data: jsonb!) {
+    mutation AddMorgue($playerId: uuid!, $data: jsonb!, $morgue_url: String!) {
       update_dcsseeds_scrapePlayers(
         _append: { morgues: $data }
         where: { id: { _eq: $playerId } }
         _set: { lastRun: "now()" }
       ) {
+        affected_rows
+      }
+
+      delete_dcsseeds_scrapePlayers_errors(where: { morgue: { _eq: $morgue_url } }) {
         affected_rows
       }
     }
