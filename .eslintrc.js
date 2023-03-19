@@ -20,7 +20,7 @@ module.exports = {
     },
   },
 
-  ignorePatterns: ['crawl/*'],
+  ignorePatterns: ['crawl/*', 'crawl-dir/*'],
 
   globals: {
     '__DEV__': 'readonly',
