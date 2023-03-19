@@ -1,16 +1,20 @@
-const { execSync } = require('child_process');
+import { read_file } from './read_file';
+import * as crawl_dir from './crawl_dir';
 
-const { read_file } = require('./read_file');
+type Args = {
+  file_list: Array<string>;
+  version: string;
+};
 
-const PROJ_ROOT = execSync('git rev-parse --show-toplevel').toString().trim();
-const LOCAL_TILE_DIR = `${PROJ_ROOT}/crawl`;
-const TILE_DIR = `crawl-ref/source/rltiles`;
+type Result = Map<string, Array<string>>;
 
-exports.get_tile_map = async function get_tile_map(file_list) {
+export async function get_tile_map(args: Args): Promise<Result> {
+  const TILE_DIR = crawl_dir.dir(args.version, 'crawl-ref/source/rltiles');
+
   const content_lines = [];
 
-  for (const file of file_list) {
-    const fileContent = await read_file(`${LOCAL_TILE_DIR}/${TILE_DIR}/${file}`);
+  for (const file of args.file_list) {
+    const fileContent = await read_file(`${TILE_DIR}/${file}`);
     content_lines.push(...fileContent.split('\n'));
   }
 
@@ -24,7 +28,7 @@ exports.get_tile_map = async function get_tile_map(file_list) {
     const include = re(line, RE.include);
 
     if (include) {
-      const content = await read_file(`${LOCAL_TILE_DIR}/${TILE_DIR}/${include}`);
+      const content = await read_file(`${TILE_DIR}/${include}`);
       include_lines.push(...content.split('\n'));
     } else {
       include_lines.push(line);
@@ -82,7 +86,7 @@ exports.get_tile_map = async function get_tile_map(file_list) {
   }
 
   return tileMap;
-};
+}
 
 const RE = {
   isPath: /(\/)/,
@@ -99,8 +103,8 @@ const RE = {
   include: /^%include (.*)$/,
 };
 
-function re(string, regex) {
-  const match = string.match(regex);
+function re(input: string, regex: RegExp) {
+  const match = input.match(regex);
   if (match) {
     let [, firstGroup] = match;
     return firstGroup;

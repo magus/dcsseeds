@@ -1,63 +1,18 @@
 #!/usr/bin/env node
+import fs from 'fs';
 
-const fs = require('fs').promises;
-const arrayToEnum = require('../src/utils/arrayToEnum');
-const { CPPCompiler } = require('./cpp-parse/CPPCompiler');
-const { execSync } = require('child_process');
+import arrayToEnum from 'src/utils/arrayToEnum';
+import { CPPCompiler } from 'scripts/cpp-parse/CPPCompiler';
+
+import * as crawl_dir from './crawl_dir';
+import { get_tile_map } from './get_tile_map';
 
 const VERSION = '0.27.1';
 // const VERSION = '0.26.1';
-const GITHUB_RAW = `https://raw.githubusercontent.com/crawl/crawl/${VERSION}`;
-
-// prepare crawl git submodule by checking out specific version for parsing
-// cd PROJ_ROOT/crawl
-const PROJ_ROOT = execSync('git rev-parse --show-toplevel').toString().trim();
-process.chdir(`${PROJ_ROOT}/crawl`);
-// // sync tags with origin (e.g. version tags like 0.27.0)
-// execSync('git fetch origin');
-// checkout the specified version for parsing
-execSync(`git reset --hard`);
-execSync(`git checkout ${VERSION}`);
-// return to PROJ_ROOT
-process.chdir(PROJ_ROOT);
-
-// `struct monsterentry` defines the fields of monster entries
-// See crawl/crawl-ref/source/mon-util.h
-// there are also some explanations in crawl/crawl-ref/source/mon-data.h as well
-const MONSTERENTRY_FIELDNAMES = [
-  'id',
-  'glyph',
-  'color',
-  'name',
-  'flags',
-  'resists',
-  'experienceModifier',
-  'genus',
-  'species',
-  'holiness',
-  'willpower',
-  'attacks',
-  'hitDice',
-  'hitPoints',
-  'armorClass',
-  'evasion',
-  'spells',
-  'leavesCorpse',
-  'shouts',
-  'intelligence',
-  'habitat',
-  'speed',
-  'energyUsage',
-  'itemUseType',
-  'size',
-  'shape',
-  'tileId',
-  'tileCorpseId',
-];
-
-const MONSTERENTRY = arrayToEnum(MONSTERENTRY_FIELDNAMES);
 
 (async function run() {
+  crawl_dir.prepare(VERSION);
+
   const monsters = await getMonstersWithTiles();
 
   // console.dir(monsters, { depth: null });
@@ -104,17 +59,34 @@ const MONSTERENTRY = arrayToEnum(MONSTERENTRY_FIELDNAMES);
   const uniquesSorted = Array.from(new Set(uniques)).sort();
   console.dir(uniquesSorted);
   console.debug('uniques', uniquesSorted.length);
+
+  crawl_dir.reset();
 })();
 
 async function getMonstersWithTiles() {
   const monsters = await getMonsterData();
-  const monTileMap = await getMonTileMap();
+
+  const monTileMap = await get_tile_map({
+    version: VERSION,
+    file_list: ['dc-mon.txt', 'dc-misc.txt', 'dc-player.txt'],
+  });
 
   const monstersWithTiles = [];
 
   const flags = {
     DRACO_BASE_MODE: 0,
   };
+
+  function monster_tilepaths(monster: any) {
+    let tilePaths = monTileMap.get(monster.tileId);
+
+    if (!tilePaths || tilePaths.length < 1) {
+      console.dir(monster, { depth: null });
+      throw new Error(`[${monster.id}] missing tilePaths`);
+    }
+
+    return tilePaths;
+  }
 
   for (let monster_i = 0; monster_i < monsters.length; monster_i++) {
     const monster = monsters[monster_i];
@@ -124,7 +96,7 @@ async function getMonstersWithTiles() {
     // handle DRACO_BASE special case (in order)
     if (flags.DRACO_BASE_MODE) {
       if (monster.tileId === 'DRACO_BASE') {
-        tilePaths = [tilePaths[flags.DRACO_BASE_MODE++]];
+        tilePaths = [monster_tilepaths(monster)[flags.DRACO_BASE_MODE++]];
         // console.debug('DRACO_BASE_MODE', { tilePaths });
       } else {
         // console.debug('ending', 'DRACO_BASE_MODE');
@@ -132,11 +104,15 @@ async function getMonstersWithTiles() {
       }
     } else if (monster.tileId === 'DRACO_BASE') {
       // console.debug('starting', 'DRACO_BASE_MODE');
-      tilePaths = [tilePaths[flags.DRACO_BASE_MODE++]];
+      tilePaths = [monster_tilepaths(monster)[flags.DRACO_BASE_MODE++]];
     } else if (monster.tileId === 'MONS_MERGED_SLIME_CREATURE') {
       // handle MONS_MERGED special case
       // See tileidx_monster_base in crawl/crawl-ref/source/tilepick.cc
-      tilePaths = monTileMap.get('MONS_SLIME_CREATURE').slice(1);
+      const slime_tiles = monTileMap.get('MONS_SLIME_CREATURE');
+      if (!slime_tiles) {
+        throw new Error('unable to get slime tiles');
+      }
+      tilePaths = slime_tiles.slice(1);
     } else if (monster.tileId === 'MONS_SNAPLASHER_VINE') {
       // handle tentacle special case
       // See crawl/crawl-ref/source/tilepick.cc
@@ -170,15 +146,15 @@ async function getMonstersWithTiles() {
 
     const monsterWithTile = {
       ...monster,
-      localTilePaths: tilePaths.map((tilePath) => `./crawl/${tilePath}`),
-      githubTilePaths: tilePaths.map((tilePath) => `${GITHUB_RAW}/${tilePath}`),
+      localTilePaths: tilePaths,
+      githubTilePaths: tilePaths.map((tilePath: string) => crawl_dir.github(tilePath)),
     };
 
     // ensure local tile paths exist (we have a valid tile)
     for (let tile_i = 0; tile_i < monsterWithTile.localTilePaths.length; tile_i++) {
       const localTilePath = monsterWithTile.localTilePaths[tile_i];
       try {
-        await fs.stat(localTilePath);
+        await fs.promises.stat(localTilePath);
       } catch (err) {
         throw new Error(`[${monster.id}] missing localTilePath [${localTilePath}]`);
       }
@@ -191,7 +167,7 @@ async function getMonstersWithTiles() {
 }
 
 async function getMonsterData() {
-  const monsters = [];
+  const monsters: any = [];
 
   const flags = {
     // flag to toggle when we are walking over the DRACO_BASE tile monsters
@@ -200,19 +176,19 @@ async function getMonsterData() {
     DRACO_BASE_MODE: false,
   };
 
-  const monData = await parseFile('./crawl/crawl-ref/source/mon-data.h');
+  const monData = await parseFile('crawl-ref/source/mon-data.h');
   monData.traverse({
     Assignment: {
-      enter(node) {
+      enter(node: any) {
         let isTemplatesArray = node.name.value === 'mondata[]';
         let isObject = node.value.type === CPPCompiler.AST.Object.type;
         if (isTemplatesArray && isObject) {
           // each field of this array is a `monsterentry` struct
-          node.value.fields.forEach((monsterentry) => {
-            const entry = {};
+          node.value.fields.forEach((monsterentry: any) => {
+            const entry: any = {};
 
             // parse each field of this `monsterentry` struct
-            monsterentry.fields.forEach((monsterentryField, i) => {
+            monsterentry.fields.forEach((monsterentryField: any, i: number) => {
               const fieldName = MONSTERENTRY_FIELDNAMES[i];
 
               switch (fieldName) {
@@ -313,8 +289,8 @@ async function getMonsterData() {
 const ENERGY_USAGE_FIELDS = ['move', 'swim', 'attack', 'missile', 'spell', 'special', 'item', 'pickupPercent'];
 const DEFAULT_ENERGY_USAGE = buildEnergyUsage([10, 10, 10, 10, 10, 10, 10, 100]);
 
-function buildEnergyUsage(energyUsageArray) {
-  const energyUsage = {};
+function buildEnergyUsage(energyUsageArray: Array<number>): any {
+  const energyUsage: any = {};
   for (let i = 0; i < ENERGY_USAGE_FIELDS.length; i++) {
     const energyUsageField = ENERGY_USAGE_FIELDS[i];
     energyUsage[energyUsageField] = energyUsageArray[i];
@@ -322,10 +298,10 @@ function buildEnergyUsage(energyUsageArray) {
   return energyUsage;
 }
 
-function expression(type, token) {
+function expression(type: string, token: any): any {
   switch (type) {
     case 'flags':
-      return token.params.filter((n) => n.type !== CPPCompiler.TKNS.BitwiseOr.type).map((node) => node.value);
+      return token.params.filter((n: any) => n.type !== CPPCompiler.TKNS.BitwiseOr.type).map((node: any) => node.value);
     case 'identifier':
     case 'string':
     case 'number':
@@ -335,7 +311,7 @@ function expression(type, token) {
     }
 
     case 'attacks':
-      return token.fields.map((attack) => {
+      return token.fields.map((attack: any) => {
         const [typeToken, flavorToken, damageToken] = attack.fields;
         return {
           type: expression('identifier', typeToken),
@@ -347,7 +323,7 @@ function expression(type, token) {
       if (token.type === CPPCompiler.AST.Expression.type && token.params.length === 1) {
         return DEFAULT_ENERGY_USAGE;
       } else if (token.type === CPPCompiler.AST.Object.type && token.fields.length === 8) {
-        const energyUsageArray = token.fields.map((field) => expression('number', field));
+        const energyUsageArray = token.fields.map((field: any) => expression('number', field));
         return buildEnergyUsage(energyUsageArray);
       } else {
         throw new Error(`Unhandled energy usage [${JSON.stringify(token, null, 2)}]`);
@@ -363,98 +339,18 @@ function expression(type, token) {
   }
 }
 
-async function getMonTileMap() {
-  const TILE_DIR = 'crawl-ref/source/rltiles';
-  const tileMap = new Map();
-  let currentDir = null;
-  let currentTileId = null;
-
-  // collect dc files with tile specs
-  const tileFiles = ['dc-mon.txt', 'dc-misc.txt', 'dc-player.txt'];
-  const contentLines = [];
-  for (let i = 0; i < tileFiles.length; i++) {
-    const fileContent = await readFile(`./crawl/${TILE_DIR}/${tileFiles[i]}`);
-    contentLines.push(...fileContent.split('\n'));
-  }
-
-  // first pass replace includes
-  const includedLines = [];
-  for (let i = 0; i < contentLines.length; i++) {
-    const line = contentLines[i];
-    const include = re(line, RE.include);
-    if (include) {
-      const includeContent = await readFile(`./crawl/${TILE_DIR}/${include}`);
-      includedLines.push(...includeContent.split('\n'));
-    } else {
-      includedLines.push(line);
-    }
-  }
-
-  includedLines.forEach((line) => {
-    // handle directory lines
-    // directory lines specify we are starting a new icon tile mapping
-    // e.g. %sdir mon/nonliving
-    let lineDir = re(line, RE.tileDir);
-    let outline = re(line, RE.outline);
-    let back = re(line, RE.back);
-    let backDir = re(line, RE.backDir);
-    let endCat = re(line, RE.endCat);
-    let corpse = re(line, RE.corpse);
-    let comment = re(line, RE.comment);
-
-    if (comment || outline || back || backDir || endCat || corpse) {
-      // ignore these lines
-    } else if (lineDir) {
-      currentDir = lineDir;
-    } else {
-      // handle tile mapping lines
-      // tile mapping lines specify the icon filename and the tile id
-      // e.g. tiamat_black MONS_TIAMAT
-      if (line) {
-        let [filename, tileId] = line.split(' ');
-
-        // handle path filenames and filename only
-        let tilePath;
-        if (re(filename, RE.isPath)) {
-          // e.g. mon/unique/grinder MONS_GRINDER
-          tilePath = `${TILE_DIR}/${filename}.png`;
-        } else {
-          // e.g. ufetubus MONS_UFETUBUS
-          tilePath = `${TILE_DIR}/${currentDir}/${filename}.png`;
-        }
-
-        if (tileId) {
-          // set currentTileId to the new tileId
-          currentTileId = tileId;
-          tileMap.set(currentTileId, [tilePath]);
-        } else {
-          // continue previous tileId (currentTileId)
-          tileMap.set(currentTileId, [...tileMap.get(currentTileId), tilePath]);
-        }
-
-        // console.debug({
-        //   currentTileId,
-        //   tilePaths: tileMap.get(currentTileId),
-        // });
-      }
-    }
-  });
-
-  return tileMap;
+async function parseFile(filepath: string) {
+  let source = await readFile(crawl_dir.dir(VERSION, filepath));
+  return CPPCompiler(source);
 }
 
-async function parseFile(filename) {
-  let source = await readFile(filename);
-  return new CPPCompiler(source);
-}
-
-async function readFile(filename) {
-  let buffer = await fs.readFile(filename, { encoding: 'utf8', flag: 'r' });
+async function readFile(filename: string) {
+  let buffer = await fs.promises.readFile(filename, { encoding: 'utf8', flag: 'r' });
   return buffer.toString();
 }
 
-function re(string, regex) {
-  const match = string.match(regex);
+function re(input: string, regex: RegExp) {
+  const match = input.match(regex);
   if (match) {
     let [, firstGroup] = match;
     return firstGroup;
@@ -476,3 +372,39 @@ const RE = {
   comment: /^#(.*)$/,
   include: /^%include (.*)$/,
 };
+
+// `struct monsterentry` defines the fields of monster entries
+// See crawl/crawl-ref/source/mon-util.h
+// there are also some explanations in crawl/crawl-ref/source/mon-data.h as well
+const MONSTERENTRY_FIELDNAMES = [
+  'id',
+  'glyph',
+  'color',
+  'name',
+  'flags',
+  'resists',
+  'experienceModifier',
+  'genus',
+  'species',
+  'holiness',
+  'willpower',
+  'attacks',
+  'hitDice',
+  'hitPoints',
+  'armorClass',
+  'evasion',
+  'spells',
+  'leavesCorpse',
+  'shouts',
+  'intelligence',
+  'habitat',
+  'speed',
+  'energyUsage',
+  'itemUseType',
+  'size',
+  'shape',
+  'tileId',
+  'tileCorpseId',
+];
+
+const MONSTERENTRY = arrayToEnum(MONSTERENTRY_FIELDNAMES);

@@ -6,9 +6,7 @@ import { execSync } from 'child_process';
 import { CPPCompiler } from 'scripts/cpp-parse/CPPCompiler';
 
 import { read_file } from './read_file';
-import * as crawl from './crawl';
-
-const PROJ_ROOT = execSync('git rev-parse --show-toplevel').toString().trim();
+import * as crawl_dir from './crawl_dir';
 
 (async function run() {
   const curse_result_list = await Promise.all([
@@ -59,13 +57,13 @@ const PROJ_ROOT = execSync('git rev-parse --show-toplevel').toString().trim();
   fs.writeFileSync(output_path, output_lines.join('\n'));
   execSync(`yarn prettier --write "${output_path}"`);
 
-  crawl.reset();
+  crawl_dir.reset();
 })();
 
 async function parse_curse_list(version: string): Promise<{ list: Array<Curse>; version: string }> {
-  crawl.prepare(version);
+  crawl_dir.prepare(version);
 
-  const god_abil_cc = CPPCompiler(await read_file(`${PROJ_ROOT}/crawl/crawl-ref/source/god-abil.cc`));
+  const god_abil_cc = CPPCompiler(await read_file(crawl_dir.dir(version, 'crawl-ref/source/god-abil.cc')));
 
   // static map<curse_type, curse_data> _ashenzari_curses =
   let curse_object_list: any;

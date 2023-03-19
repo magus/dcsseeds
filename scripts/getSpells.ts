@@ -1,10 +1,12 @@
 #!/usr/bin/env node
 
-const fs = require('fs').promises;
-const { CPPCompiler } = require('./cpp-parse/CPPCompiler');
+import { CPPCompiler } from 'scripts/cpp-parse/CPPCompiler';
 
-const VERSION = '0.26.1';
-const GITHUB_RAW = `https://raw.githubusercontent.com/crawl/crawl/${VERSION}`;
+import * as crawl_dir from './crawl_dir';
+import { read_file } from './read_file';
+import { get_tile_map } from './get_tile_map';
+
+const VERSION = '0.27.1';
 
 // cd projRoot/crawl
 // git checkout <version>
@@ -21,21 +23,28 @@ const GITHUB_RAW = `https://raw.githubusercontent.com/crawl/crawl/${VERSION}`;
   console.debug('spellData', Object.keys(spellData).length);
 
   // grab gui icon maps from crawl/crawl-ref/source/rltiles/dc-spells.txt
-  const spellTileMap = await getSpellTileMap();
+  const spellTileMap = await get_tile_map({ version: VERSION, file_list: ['dc-spells.txt'] });
   // console.debug({ spellTileMap });
 
   // build list of all spells currently available in spellbooks (available to players in the game)
   // if a spell is not available in spellbooks template we can exclude it for this consideration
-  const spells = {};
+  const spells: any = {};
+
   spellIds.sort().forEach((id) => {
     let spell = spellData[id];
 
     let tilePath = spellTileMap.get(spell.tileId);
 
+    // console.debug({ tilePath });
+
+    if (!tilePath) {
+      throw new Error(`missing tilepath for [${spell.tileId}]`);
+    }
+
     spell = spells[id] = {
       ...spell,
-      localTilePath: `./crawl/${tilePath}`,
-      githubTilePath: `${GITHUB_RAW}/${tilePath}`,
+      localTilePath: tilePath,
+      githubTilePath: tilePath.map((p) => crawl_dir.github(p)),
     };
 
     if (!spell.localTilePath) {
@@ -47,29 +56,31 @@ const GITHUB_RAW = `https://raw.githubusercontent.com/crawl/crawl/${VERSION}`;
   });
 
   console.debug('SPELL NAMES\n\n');
-  const spellNames = new Set();
-  Object.values(spells).forEach((spell) => {
+  const spellNames: Set<string> = new Set();
+  Object.values(spells).forEach((spell: any) => {
     spellNames.add(spell.name);
   });
   const spellNamesAlpha = Array.from(spellNames).sort();
-  spellNamesAlpha.forEach((spellName) => {
+  spellNamesAlpha.forEach((spellName: string) => {
     console.debug(`"${capitalize(spellName)}",`);
   });
 })();
 
 async function getPlayerAvailableSpells() {
-  const spellIdsSet = new Set();
-  const crawlBookData = await parseFile('./crawl/crawl-ref/source/book-data.h');
+  const spellIdsSet: Set<string> = new Set();
+
+  const crawlBookData = CPPCompiler(await read_file(crawl_dir.dir(VERSION, 'crawl-ref/source/book-data.h')));
+
   crawlBookData.traverse({
     Assignment: {
-      enter(node) {
+      enter(node: any) {
         let isTemplatesArray = node.name.value === 'spellbook_templates[]';
         let isObject = node.value.type === CPPCompiler.AST.Object.type;
         if (isTemplatesArray && isObject) {
           // each field of this array is a spellbook template object
-          node.value.fields.forEach((template) => {
+          node.value.fields.forEach((template: any) => {
             // each field of this spellbook template object is a spell name
-            template.fields.forEach((objVal) => {
+            template.fields.forEach((objVal: any) => {
               const [identifier] = objVal.params;
               // add spell name to spellbook set
               spellIdsSet.add(identifier.value);
@@ -99,29 +110,30 @@ const SPELL_DESC_FIELD = [
 ];
 
 async function getSpellData() {
-  const spellData = {};
+  const spellData: any = {};
 
-  const crawlSpellData = await parseFile('./crawl/crawl-ref/source/spl-data.h');
+  const crawlSpellData = CPPCompiler(await read_file(crawl_dir.dir(VERSION, 'crawl-ref/source/spl-data.h')));
+
   crawlSpellData.traverse({
     Assignment: {
-      enter(node) {
+      enter(node: any) {
         let isSpellDataArray = node.name.value === 'spelldata[]';
         let isObject = node.value.type === CPPCompiler.AST.Object.type;
         if (isSpellDataArray && isObject) {
           // each field of this array is a a `spell_desc` struct
-          node.value.fields.forEach((spell_desc) => {
+          node.value.fields.forEach((spell_desc: any) => {
             // create spell
-            const spell = {};
+            const spell: any = {};
 
-            spell_desc.fields.forEach((spell_desc_field, i) => {
+            spell_desc.fields.forEach((spell_desc_field: any, i: number) => {
               const spellDescFieldValues = spell_desc_field.params;
               if (spellDescFieldValues.length === 1) {
                 const [node] = spellDescFieldValues;
                 spell[SPELL_DESC_FIELD[i]] = node.value;
               } else {
                 spell[SPELL_DESC_FIELD[i]] = spellDescFieldValues
-                  .filter((n) => n.type !== CPPCompiler.TKNS.BitwiseOr.type)
-                  .map((node) => node.value);
+                  .filter((n: any) => n.type !== CPPCompiler.TKNS.BitwiseOr.type)
+                  .map((node: any) => node.value);
               }
             });
 
@@ -130,7 +142,7 @@ async function getSpellData() {
             ensureArrayField(spell, 'flags');
 
             // parse spell schools
-            spell.schools = spell.schools.map((school) => SPSCHOOL[school].name);
+            spell.schools = spell.schools.map((school: any) => SPSCHOOL[school].name);
 
             // correct tile id
             spell.tileId = re(spell.tileId, RE.tileId);
@@ -146,51 +158,13 @@ async function getSpellData() {
   return spellData;
 }
 
-async function getSpellTileMap() {
-  const TILE_DIR = 'crawl-ref/source/rltiles';
-  const tileMap = new Map();
-  let currentDir = null;
-  const spellTiles = await readFile(`./crawl/${TILE_DIR}/dc-spells.txt`);
-  spellTiles.split('\n').forEach((line) => {
-    // handle directory lines
-    // directory lines specify we are starting a new icon tile mapping
-    // e.g. %sdir gui/spells/conjuration
-    let lineDir = re(line, RE.tileDir);
-    if (lineDir) {
-      currentDir = lineDir;
-    } else {
-      // handle tile mapping lines
-      // tile mapping lines specify the icon filename and the spell tile id
-      // e.g. orb_of_destruction IOOD
-      if (line) {
-        const [filename, tileId] = line.split(' ');
-        const tilePath = `${TILE_DIR}/${currentDir}/${filename}.png`;
-        tileMap.set(tileId, tilePath);
-        // console.debug({ tileId, tilePath });
-      }
-    }
-  });
-
-  return tileMap;
+function capitalize(input: string) {
+  const firstChar = input.charAt(0);
+  return firstChar.toUpperCase() + input.toLowerCase().substring(1, input.length);
 }
 
-async function parseFile(filename) {
-  let source = await readFile(filename);
-  return new CPPCompiler(source);
-}
-
-async function readFile(filename) {
-  let buffer = await fs.readFile(filename, { encoding: 'utf8', flag: 'r' });
-  return buffer.toString();
-}
-
-function capitalize(string) {
-  const [firstChar] = string;
-  return firstChar.toUpperCase() + string.toLowerCase().substr(1, string.length);
-}
-
-function re(string, regex) {
-  const match = string.match(regex);
+function re(input: string, regex: RegExp) {
+  const match = input.match(regex);
   if (match) {
     let [, firstGroup] = match;
     return firstGroup;
@@ -206,7 +180,7 @@ const RE = {
 
 // enum class spschool
 // See crawl/crawl-ref/source/spl-util.cc
-const SPSCHOOL = Object.freeze(
+const SPSCHOOL: any = Object.freeze(
   [
     { name: 'Conjuration', id: 'conjuration' },
     { name: 'Hexes', id: 'hexes' },
@@ -221,7 +195,7 @@ const SPSCHOOL = Object.freeze(
     { name: 'Air', id: 'air' },
     { name: 'Random', id: 'random' },
     { name: 'None', id: 'none' },
-  ].reduce((spschools, data) => {
+  ].reduce((spschools: any, data) => {
     const { name, id } = data;
     const codeEnum = `spschool::${id}`;
     spschools[codeEnum] = { id, name, codeEnum };
@@ -229,7 +203,7 @@ const SPSCHOOL = Object.freeze(
   }, {}),
 );
 
-function ensureArrayField(object, field) {
+function ensureArrayField(object: any, field: string) {
   if (!Array.isArray(object[field])) {
     object[field] = [object[field]];
   }

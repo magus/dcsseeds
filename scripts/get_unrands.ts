@@ -1,11 +1,9 @@
 #!/usr/bin/env node
-const fs = require('fs');
-const { execSync } = require('child_process');
-
-const { pbcopy } = require('./pbcopy');
-const { read_file } = require('./read_file');
-const { get_tile_map } = require('./get_tile_map');
-const { CPPCompiler } = require('./cpp-parse/CPPCompiler');
+import { CPPCompiler } from 'scripts/cpp-parse/CPPCompiler';
+import { pbcopy } from './pbcopy';
+import { get_tile_map } from './get_tile_map';
+import { read_file } from './read_file';
+import * as crawl_dir from './crawl_dir';
 
 const [, , VERSION] = process.argv;
 
@@ -13,38 +11,19 @@ if (!VERSION) {
   throw new Error(['Must specify VERSION', '  Example', '  > get_unrands 0.27.1', ''].join('\n'));
 }
 
-const GITHUB_RAW = `https://raw.githubusercontent.com/crawl/crawl/${VERSION}`;
-const PROJ_ROOT = execSync('git rev-parse --show-toplevel').toString().trim();
-
-// prepare crawl git submodule by checking out specific version for parsing
-process.chdir(`${PROJ_ROOT}/crawl`);
-
-// sync tags with origin (e.g. version tags like 0.27.0)
-// execSync('git fetch origin');
-
-// checkout the specified version for parsing
-execSync(`git reset --hard`);
-execSync(`git checkout ${VERSION}`);
-
-// run tasks to prepare files for processing (e.g. remove development items tagged with TAG_MAJOR_VERSION)
-// see crawl/.github/workflows/ci.yml
-process.chdir(`${PROJ_ROOT}/crawl/crawl-ref/source`);
-execSync('util/tag-major-upgrade -t 35');
-if (fs.existsSync('util/tag-35-upgrade.py')) {
-  execSync('util/tag-35-upgrade.py');
-}
-
-// now we can generate `source/art-data.h`
-execSync('perl util/art-data.pl');
-
-// return to PROJ_ROOT
-process.chdir(PROJ_ROOT);
+// ignore sprint-only artifacts
+// http://crawl.chaosforge.org/Axe_of_Woe
+const IGNORE_UNRAND: Set<string> = new Set();
+IGNORE_UNRAND.add('UNRAND_INVISIBILITY');
+IGNORE_UNRAND.add('UNRAND_WOE');
 
 (async function run() {
-  const artefact_cc = await read_file(`${PROJ_ROOT}/crawl/crawl-ref/source/artefact.cc`);
-  const art_data_h = await read_file(`${PROJ_ROOT}/crawl/crawl-ref/source/art-data.h`);
+  crawl_dir.prepare(VERSION);
 
-  const parsed = new CPPCompiler(artefact_cc, {
+  const artefact_cc = await read_file(crawl_dir.dir(VERSION, 'crawl-ref/source/artefact.cc'));
+  const art_data_h = await read_file(crawl_dir.dir(VERSION, 'crawl-ref/source/art-data.h'));
+
+  const parsed = CPPCompiler(artefact_cc, {
     include: {
       'art-data.h': art_data_h,
     },
@@ -126,7 +105,7 @@ process.chdir(PROJ_ROOT);
       'targeted_evoke_func',
     ];
 
-    const unrand = {};
+    const unrand: any = {};
 
     for (let i = 0; i < field_list.length; i++) {
       const value = field_list[i];
@@ -140,7 +119,7 @@ process.chdir(PROJ_ROOT);
   // console.dir(unrand_list, { depth: null });
   console.debug('unrand_list', unrand_list.length);
 
-  const art_enum = new CPPCompiler(await read_file(`${PROJ_ROOT}/crawl/crawl-ref/source/art-enum.h`));
+  const art_enum = CPPCompiler(await read_file(crawl_dir.dir(VERSION, 'crawl-ref/source/art-enum.h')));
   const [num_unrandarts_token] = art_enum.defines.NUM_UNRANDARTS.tokens;
 
   // ensure we parsed the same number as crawl repo scripts
@@ -148,11 +127,11 @@ process.chdir(PROJ_ROOT);
     throw new Error('length of parsed unrands does not match expected length');
   }
 
-  let unrand_enum_list = [];
+  let unrand_enum_list: Array<string> = [];
 
   art_enum.traverse({
     Enum: {
-      enter(node) {
+      enter(node: any) {
         if (node.name.value === 'unrand_type') {
           let start = false;
           for (const enum_entry of node.values) {
@@ -179,7 +158,7 @@ process.chdir(PROJ_ROOT);
     throw new Error('art-enum.h contains different number of parsed unrands');
   }
 
-  const tile_map = await get_tile_map(['dc-unrand.txt']);
+  const tile_map = await get_tile_map({ version: VERSION, file_list: ['dc-unrand.txt'] });
 
   const filtered_unrand_list = [];
 
@@ -207,7 +186,7 @@ process.chdir(PROJ_ROOT);
     // normalize to first tile path
     const [first_tile_path] = unrand.tile_path;
     unrand.tile_path = first_tile_path;
-    unrand.image_url = `${GITHUB_RAW}/${first_tile_path}`;
+    unrand.image_url = crawl_dir.github(first_tile_path);
 
     filtered_unrand_list.push(unrand);
   }
@@ -223,9 +202,11 @@ process.chdir(PROJ_ROOT);
 
   pbcopy(output_lines.join('\n'));
   console.info('📋 Copied `UnrandList` export to clipboard.');
+
+  crawl_dir.reset();
 })();
 
-function extract_object_field(field) {
+function extract_object_field(field: any) {
   switch (field.type) {
     case 'Object': {
       return field.fields.map(extract_object_field);
@@ -233,7 +214,7 @@ function extract_object_field(field) {
 
     case 'Expression':
     default: {
-      const value_list = field.params.map((p) => p.value);
+      const value_list = field.params.map((p: any) => p.value);
       if (value_list.length === 1) {
         const [first_value] = value_list;
         return first_value;
@@ -242,9 +223,3 @@ function extract_object_field(field) {
     }
   }
 }
-
-// ignore sprint-only artifacts
-// http://crawl.chaosforge.org/Axe_of_Woe
-const IGNORE_UNRAND = new Set();
-IGNORE_UNRAND.add('UNRAND_INVISIBILITY');
-IGNORE_UNRAND.add('UNRAND_WOE');

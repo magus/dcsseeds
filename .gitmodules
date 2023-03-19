@@ -1,6 +1,3 @@
-[submodule "crawl"]
-	path = crawl
-	url = git@github.com:crawl/crawl.git
 [submodule "crawl-dir/0.27.1"]
 	path = crawl-dir/0.27.1
 	url = git@github.com:crawl/crawl.git

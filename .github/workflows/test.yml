@@ -36,19 +36,15 @@ jobs:
         submodules: true
         # fetch-depth: 0
         token: ${{ secrets.GITHUB_TOKEN }}
-    - name: Sync crawl submodule
-      run: |
-        cd crawl
-        ls -lsah
-        git fetch --tags
-        git log --since="2021-08-01" --tags --decorate --simplify-by-decoration --oneline
-        cd ..
+
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'yarn'
+
     - run: yarn install --immutable
+
     - run: yarn test:ci
       env:
         HASURA_ADMIN_SECRET: '${{ secrets.HASURA_ADMIN_SECRET }}'
