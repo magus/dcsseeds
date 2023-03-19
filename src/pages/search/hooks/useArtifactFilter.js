@@ -43,6 +43,7 @@ export function useArtifactFilter(props) {
     version_seed_map,
     version_item_map,
     filtered_artifact_list,
+    sort_item_list,
   ] = React.useMemo(() => {
     // store the entire artifact_list filtered by branch filter
     const filtered_artifact_list = [];
@@ -139,8 +140,40 @@ export function useArtifactFilter(props) {
     //   version_item_map,
     // });
 
-    return [seedVersion_set_list, seedVersion_item_map, version_seed_map, version_item_map, filtered_artifact_list];
-  }, [props.artifact_list, props.version_list]);
+    // build fast branch_level_order lookup by branch and level
+    const branch_level_order_lookup = {};
+    for (let i = 0; i < props.branch_level_order.length; i++) {
+      const entry = props.branch_level_order[i];
+
+      if (!branch_level_order_lookup[entry.branch]) {
+        branch_level_order_lookup[entry.branch] = [];
+      }
+
+      branch_level_order_lookup[entry.branch][entry.level] = i;
+    }
+
+    function sort_item_list(item_list) {
+      item_list.sort((a, b) => {
+        return branch_level_order_lookup[a.branchName][a.level] - branch_level_order_lookup[b.branchName][b.level];
+      });
+    }
+
+    // console.debug({ seedVersion_item_map, props, branch_level_order_lookup });
+
+    // sort the entries of seedVersion_item_map in place so all_item_list is sorted
+    for (const [, all_item_list] of seedVersion_item_map.entries()) {
+      sort_item_list(all_item_list);
+    }
+
+    return [
+      seedVersion_set_list,
+      seedVersion_item_map,
+      version_seed_map,
+      version_item_map,
+      filtered_artifact_list,
+      sort_item_list,
+    ];
+  }, [props.artifact_list, props.version_list, props.branch_level_order]);
 
   function init_state() {
     const filter_list = [];
@@ -267,6 +300,7 @@ export function useArtifactFilter(props) {
         seedVersion_item_map,
         version_seed_map,
         version_item_map,
+        sort_item_list,
       });
 
       patch_state({ loading: false, ...args, ...query_result });
@@ -334,7 +368,7 @@ function get_counts(result_list, args) {
 const QUERY_FILTER_TYPE = 'local';
 
 async function run_query_filter(args) {
-  const unfiltered_result_list = await (async function () {
+  const unprocessed_result_list = await (async function () {
     switch (QUERY_FILTER_TYPE) {
       case 'graphql':
         return await graphql_filter(args);
@@ -344,16 +378,27 @@ async function run_query_filter(args) {
     }
   })();
 
-  const counts = get_counts(unfiltered_result_list, args);
+  const counts = get_counts(unprocessed_result_list, args);
 
-  // filter result_list by state.version_set
-  const result_list = unfiltered_result_list.filter((result) => {
-    if (args.version_set.size === 0) {
-      return true;
+  const result_list = [];
+
+  for (const result of unprocessed_result_list) {
+    // sort result_list item_list
+    args.sort_item_list(result.item_list);
+
+    // filter result_list by state.version_set
+    const version_filter = (function maybe_filter_version() {
+      if (args.version_set.size === 0) {
+        return true;
+      }
+
+      return args.version_set.has(result.version);
+    })();
+
+    if (version_filter) {
+      result_list.push(result);
     }
-
-    return args.version_set.has(result.version);
-  });
+  }
 
   return { result_list, ...counts };
 }

@@ -29,6 +29,11 @@ const GQL_SEARCH_STATIC_PROPS = gql`
       }
     }
 
+    branch_level_order: dcsseeds_scrapePlayers_branch_level(order_by: [{ order: asc }, { level: asc }]) {
+      branch: name
+      level
+    }
+
     recent_run_list: dcsseeds_scrapePlayers_item(
       limit: 1
       order_by: [{ timestamp: desc }, { morgue: asc }]
@@ -61,6 +66,7 @@ const GQL_SEARCH_STATIC_PROPS = gql`
 const GQL_SearchStaticProps = serverQuery(GQL_SEARCH_STATIC_PROPS, (data) => {
   const total_item_count = data.total_items.aggregate.count;
   const version_list = data.seed_version.nodes.map((node) => node.version);
+  const branch_level_order = data.branch_level_order;
 
   // last updated seed version
   const [{ timestamp, seed, version, player, seedVersion }] = data.recent_run_list;
@@ -90,6 +96,7 @@ const GQL_SearchStaticProps = serverQuery(GQL_SEARCH_STATIC_PROPS, (data) => {
   return {
     total_item_count,
     version_list,
+    branch_level_order,
     recent_run,
     artifact_list,
   };

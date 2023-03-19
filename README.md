@@ -12,18 +12,6 @@ track random seeds in dcss
 
 
 
-### artefact filter branch_level sort
-
-when combining two or more artifacts, results are out of order
-this is unavoidable at a query level since they are all done individually and cached
-we can fix this client-side though
-add a query for `branch_level order` to static props, so we have `branch_level order` client side
-use order to sort the `all_item_list` within each result, after list is fully populated
-use order to sort `item_list` after all filtering and aggregations are done
-ensure we do the sorting outside the `local` specific logic, so `graphql` can also benefit
-
-
-
 ## exclude bought items without valid shop
 
 for bought event, walk events backward for shop event
