@@ -8,7 +8,7 @@
     "prod": "yarn build && yarn start",
     "build": "next build",
     "start": "NODE_ENV=production next start",
-    "lint": "next lint",
+    "lint": "next lint --dir .",
     "test": "jest --maxWorkers=50%",
     "test:debug": "node --inspect-brk node_modules/.bin/jest --runInBand",
     "deploy": "vercel",
