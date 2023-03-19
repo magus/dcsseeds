@@ -1728,21 +1728,21 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
     {
       "branch": "Dungeon",
       "data": {
+        "name": "Ixzyuj's Weapon Boutique",
+      },
+      "level": "8",
+      "location": "Dungeon:8",
+      "type": "shop",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
         "gold": 783,
         "item": "+6 quarterstaff of World's End {holy, rPois rC- Str+3 Dex+6}",
       },
       "level": "8",
       "location": "Dungeon:8",
       "type": "item",
-    },
-    {
-      "branch": "Dungeon",
-      "data": {
-        "name": "Ixzyuj's Weapon Boutique",
-      },
-      "level": "8",
-      "location": "Dungeon:8",
-      "type": "shop",
     },
     {
       "branch": "Dungeon",
@@ -2012,6 +2012,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
     {
       "branch": "Dungeon",
       "data": {
+        "name": "Pohiotti's Armour Boutique",
+      },
+      "level": "10",
+      "location": "Dungeon:10",
+      "type": "shop",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
         "gold": 678,
         "item": "cursed +1 plate armour "Soareg" {Will+ Dex-3 Slay+6}",
       },
@@ -2028,15 +2037,6 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
       "level": "10",
       "location": "Dungeon:10",
       "type": "item",
-    },
-    {
-      "branch": "Dungeon",
-      "data": {
-        "name": "Pohiotti's Armour Boutique",
-      },
-      "level": "10",
-      "location": "Dungeon:10",
-      "type": "shop",
     },
     {
       "branch": "Dungeon",
@@ -2216,21 +2216,21 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
     {
       "branch": "Dungeon",
       "data": {
+        "name": "Xeryrphyu's Weapon Shoppe",
+      },
+      "level": "12",
+      "location": "Dungeon:12",
+      "type": "shop",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
         "gold": 580,
         "item": "+5 shortbow of Aperazuf {flame, *Drain Str+10}",
       },
       "level": "12",
       "location": "Dungeon:12",
       "type": "item",
-    },
-    {
-      "branch": "Dungeon",
-      "data": {
-        "name": "Xeryrphyu's Weapon Shoppe",
-      },
-      "level": "12",
-      "location": "Dungeon:12",
-      "type": "shop",
     },
     {
       "branch": "Dungeon",
@@ -3591,6 +3591,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
       "branch": "Dungeon",
       "data": {
         "gold": "227",
+        "is_valid_shop": true,
         "item": "+1 vampiric trident",
       },
       "level": "8",
@@ -4824,6 +4825,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
       "branch": "Orc",
       "data": {
         "gold": "480",
+        "is_valid_shop": true,
         "item": "Young Poisoner's Handbook",
       },
       "level": "2",
@@ -4888,11 +4890,21 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
       "branch": "Orc",
       "data": {
         "gold": "75",
+        "is_valid_shop": true,
         "item": "scroll of blinking",
       },
       "level": "2",
       "location": "Orc:2",
       "type": "bought",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "name": "Veseac's Antique Weapon Shoppe",
+      },
+      "level": "1",
+      "location": "Elf:1",
+      "type": "shop",
     },
     {
       "branch": "Elf",
@@ -4917,7 +4929,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
     {
       "branch": "Elf",
       "data": {
-        "name": "Veseac's Antique Weapon Shoppe",
+        "name": "Teenwuat's Antique Weapon Shop",
       },
       "level": "1",
       "location": "Elf:1",
@@ -4926,7 +4938,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
     {
       "branch": "Elf",
       "data": {
-        "name": "Teenwuat's Antique Weapon Shop",
+        "name": "Liwoic's Jewellery Boutique",
       },
       "level": "1",
       "location": "Elf:1",
@@ -4941,15 +4953,6 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
       "level": "1",
       "location": "Elf:1",
       "type": "item",
-    },
-    {
-      "branch": "Elf",
-      "data": {
-        "name": "Liwoic's Jewellery Boutique",
-      },
-      "level": "1",
-      "location": "Elf:1",
-      "type": "shop",
     },
     {
       "branch": "Elf",
@@ -4973,6 +4976,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
       "branch": "Elf",
       "data": {
         "gold": "59",
+        "is_valid_shop": true,
         "item": "scroll of magic mapping",
       },
       "level": "1",
@@ -5367,21 +5371,21 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
     {
       "branch": "Vaults",
       "data": {
+        "name": "Gozag's Antique Weapon Shoppe",
+      },
+      "level": "1",
+      "location": "Vaults:1",
+      "type": "shop",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
         "gold": 3320,
         "item": "cursed +3 morningstar of Xaresoco {freeze, rElec}",
       },
       "level": "1",
       "location": "Vaults:1",
       "type": "item",
-    },
-    {
-      "branch": "Vaults",
-      "data": {
-        "name": "Gozag's Antique Weapon Shoppe",
-      },
-      "level": "1",
-      "location": "Vaults:1",
-      "type": "shop",
     },
     {
       "branch": "Vaults",
@@ -6223,6 +6227,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
       "branch": "Vaults",
       "data": {
         "gold": "133",
+        "is_valid_shop": true,
         "item": "scroll of summoning",
       },
       "level": "5",
@@ -6233,6 +6238,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
       "branch": "Vaults",
       "data": {
         "gold": "49",
+        "is_valid_shop": true,
         "item": "scroll of immolation",
       },
       "level": "5",
@@ -6243,6 +6249,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
       "branch": "Vaults",
       "data": {
         "gold": "133",
+        "is_valid_shop": true,
         "item": "scroll of summoning",
       },
       "level": "5",
@@ -6825,6 +6832,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
       "branch": "Elf",
       "data": {
         "gold": "333",
+        "is_valid_shop": true,
         "item": "glimmering broad axe",
       },
       "level": "1",
@@ -6855,6 +6863,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
       "branch": "Vaults",
       "data": {
         "gold": "800",
+        "is_valid_shop": true,
         "item": "wand of acid (8)",
       },
       "level": "1",
@@ -6865,6 +6874,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
       "branch": "Vaults",
       "data": {
         "gold": "400",
+        "is_valid_shop": true,
         "item": "wand of iceblast (9)",
       },
       "level": "1",
@@ -6875,6 +6885,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
       "branch": "Vaults",
       "data": {
         "gold": "500",
+        "is_valid_shop": true,
         "item": "potion of heal wounds",
       },
       "level": "1",
@@ -6885,6 +6896,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
       "branch": "Vaults",
       "data": {
         "gold": "800",
+        "is_valid_shop": true,
         "item": "wand of acid (6)",
       },
       "level": "1",
@@ -6948,6 +6960,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
     {
       "branch": "Depths",
       "data": {
+        "name": "Cyuczuv's Jewellery Shop",
+      },
+      "level": "1",
+      "location": "Depths:1",
+      "type": "shop",
+    },
+    {
+      "branch": "Depths",
+      "data": {
         "gold": 646,
         "item": "ring "Hag Gont" {Ice Str+4}",
       },
@@ -6958,16 +6979,8 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
     {
       "branch": "Depths",
       "data": {
-        "name": "Cyuczuv's Jewellery Shop",
-      },
-      "level": "1",
-      "location": "Depths:1",
-      "type": "shop",
-    },
-    {
-      "branch": "Depths",
-      "data": {
         "gold": "462",
+        "is_valid_shop": true,
         "item": "wand of acid (7)",
       },
       "level": "1",
@@ -6978,6 +6991,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
       "branch": "Depths",
       "data": {
         "gold": "546",
+        "is_valid_shop": true,
         "item": "wand of acid (9)",
       },
       "level": "1",

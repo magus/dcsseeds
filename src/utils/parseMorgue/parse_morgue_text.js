@@ -329,7 +329,8 @@ function getAllMorgueNotes({ morgueText, morgue }) {
         }
         // start new note for thisLine
         const [turn, loc, note] = parseNoteLine(thisLine);
-        currentNote = { morgue, turn, loc, note };
+        const location_data = get_location_data(loc);
+        currentNote = { morgue, turn, loc, note, ...location_data };
       }
     }
 
@@ -413,9 +414,24 @@ function getAllMorgueNoteEvents({ morgueNotes, stash }) {
   // for example `noticed` (uniques noticed) can be registered multiple times
   // e.g. Mennas in the morgue below
   //      http://crawl.akrasiac.org/rawdata/KarmaDistortion/morgue-KarmaDistortion-20220206-104358.txt
-  uniqBy(events, (i) => `__T${i.type}____N${i.name}____L${i.location}__`);
+  uniqBy(events, (i) => [i.type, i?.data?.name, i.location].join('-'));
+
+  post_process_events(events);
 
   return { events, eventErrors };
+}
+
+function post_process_events(event_list) {
+  for (let i = 0; i < event_list.length; i++) {
+    // const event = event_list[i];
+    // const prev_event = event_list[i - 1];
+    // const next_event = event_list[i + 1];
+
+    switch (true) {
+      default:
+      // noop
+    }
+  }
 }
 
 function MorgueEvent(type, raw_location, data) {

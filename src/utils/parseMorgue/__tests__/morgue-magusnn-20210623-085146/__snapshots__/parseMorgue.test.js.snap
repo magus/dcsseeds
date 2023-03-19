@@ -2711,6 +2711,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
       "branch": "Dungeon",
       "data": {
         "gold": "22",
+        "is_valid_shop": true,
         "item": "scroll of identify",
       },
       "level": "10",
@@ -2721,6 +2722,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
       "branch": "Dungeon",
       "data": {
         "gold": "38",
+        "is_valid_shop": true,
         "item": "scroll of fear",
       },
       "level": "10",
@@ -2731,6 +2733,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
       "branch": "Dungeon",
       "data": {
         "gold": "22",
+        "is_valid_shop": true,
         "item": "scroll of identify",
       },
       "level": "10",
@@ -2741,6 +2744,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
       "branch": "Dungeon",
       "data": {
         "gold": "33",
+        "is_valid_shop": true,
         "item": "scroll of teleportation",
       },
       "level": "10",
@@ -2751,6 +2755,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
       "branch": "Dungeon",
       "data": {
         "gold": "38",
+        "is_valid_shop": true,
         "item": "scroll of immolation",
       },
       "level": "10",
@@ -2761,6 +2766,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
       "branch": "Dungeon",
       "data": {
         "gold": "22",
+        "is_valid_shop": true,
         "item": "scroll of identify",
       },
       "level": "10",
@@ -2771,6 +2777,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
       "branch": "Dungeon",
       "data": {
         "gold": "360",
+        "is_valid_shop": true,
         "item": "book of Conjurations",
       },
       "level": "9",
@@ -3600,21 +3607,21 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
     {
       "branch": "Orc",
       "data": {
+        "name": "Awaasuh's Antique Weapon Boutique",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "shop",
+    },
+    {
+      "branch": "Orc",
+      "data": {
         "gold": 1980,
         "item": "+7 arbalest of Summer {venom, Str+6}",
       },
       "level": "2",
       "location": "Orc:2",
       "type": "item",
-    },
-    {
-      "branch": "Orc",
-      "data": {
-        "name": "Awaasuh's Antique Weapon Boutique",
-      },
-      "level": "2",
-      "location": "Orc:2",
-      "type": "shop",
     },
     {
       "branch": "Orc",
@@ -3638,11 +3645,21 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
       "branch": "Orc",
       "data": {
         "gold": "38",
+        "is_valid_shop": true,
         "item": "scroll of fear",
       },
       "level": "2",
       "location": "Orc:2",
       "type": "bought",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "name": "Mituill's Assorted Antiques",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "shop",
     },
     {
       "branch": "Orc",
@@ -3653,15 +3670,6 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
       "level": "2",
       "location": "Orc:2",
       "type": "item",
-    },
-    {
-      "branch": "Orc",
-      "data": {
-        "name": "Mituill's Assorted Antiques",
-      },
-      "level": "2",
-      "location": "Orc:2",
-      "type": "shop",
     },
     {
       "branch": "Orc",
@@ -3685,21 +3693,21 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
     {
       "branch": "Orc",
       "data": {
+        "name": "Loetot's Jewellery Shoppe",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "shop",
+    },
+    {
+      "branch": "Orc",
+      "data": {
         "gold": 451,
         "item": "ring of Secrets {rElec rC+ rN+ rCorr Str-5}",
       },
       "level": "2",
       "location": "Orc:2",
       "type": "item",
-    },
-    {
-      "branch": "Orc",
-      "data": {
-        "name": "Loetot's Jewellery Shoppe",
-      },
-      "level": "2",
-      "location": "Orc:2",
-      "type": "shop",
     },
     {
       "branch": "Orc",
@@ -3865,6 +3873,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
       "branch": "Orc",
       "data": {
         "gold": "642",
+        "is_valid_shop": true,
         "item": "ring of New Discoveries {rElec rC++ rN+ Int+2 Dex-3}",
       },
       "level": "2",
@@ -3874,17 +3883,8 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
     {
       "branch": "Orc",
       "data": {
+        "gold": "642",
         "item": "ring of New Discoveries {rElec rC++ rN+ Int+2 Dex-3}",
-      },
-      "level": "2",
-      "location": "Orc:2",
-      "type": "item",
-    },
-    {
-      "branch": "Orc",
-      "data": {
-        "gold": 1575,
-        "item": "+4 chain mail "Usheodos" {rPois Str+4 Int-4 Dex+8}",
       },
       "level": "2",
       "location": "Orc:2",
@@ -3898,6 +3898,16 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
       "level": "2",
       "location": "Orc:2",
       "type": "shop",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "gold": 1575,
+        "item": "+4 chain mail "Usheodos" {rPois Str+4 Int-4 Dex+8}",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "item",
     },
     {
       "branch": "Orc",
@@ -4371,6 +4381,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
       "branch": "Orc",
       "data": {
         "gold": "110",
+        "is_valid_shop": true,
         "item": "knobbly opal ring",
       },
       "level": "2",
@@ -4381,6 +4392,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
       "branch": "Orc",
       "data": {
         "gold": "110",
+        "is_valid_shop": true,
         "item": "potion of heal wounds",
       },
       "level": "2",
@@ -4391,6 +4403,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
       "branch": "Orc",
       "data": {
         "gold": "171",
+        "is_valid_shop": true,
         "item": "smoking robe",
       },
       "level": "2",
@@ -4421,6 +4434,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
       "branch": "Dungeon",
       "data": {
         "gold": "217",
+        "is_valid_shop": true,
         "item": "pair of glowing boots",
       },
       "level": "8",
@@ -5881,6 +5895,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
       "branch": "Orc",
       "data": {
         "gold": "220",
+        "is_valid_shop": true,
         "item": "potion of resistance",
       },
       "level": "2",
@@ -5891,6 +5906,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
       "branch": "Orc",
       "data": {
         "gold": "77",
+        "is_valid_shop": true,
         "item": "scroll of amnesia",
       },
       "level": "2",
@@ -5901,6 +5917,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
       "branch": "Orc",
       "data": {
         "gold": "220",
+        "is_valid_shop": true,
         "item": "potion of haste",
       },
       "level": "2",
@@ -5911,6 +5928,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
       "branch": "Orc",
       "data": {
         "gold": "88",
+        "is_valid_shop": true,
         "item": "wand of disintegration (8)",
       },
       "level": "2",
@@ -6827,6 +6845,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
       "branch": "Dungeon",
       "data": {
         "gold": "600",
+        "is_valid_shop": true,
         "item": "book of Party Tricks",
       },
       "level": "9",
@@ -7976,6 +7995,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
       "branch": "Orc",
       "data": {
         "gold": "165",
+        "is_valid_shop": true,
         "item": "scroll of enchant armour",
       },
       "level": "2",
@@ -7986,6 +8006,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
       "branch": "Orc",
       "data": {
         "gold": "88",
+        "is_valid_shop": true,
         "item": "potion of mutation",
       },
       "level": "2",

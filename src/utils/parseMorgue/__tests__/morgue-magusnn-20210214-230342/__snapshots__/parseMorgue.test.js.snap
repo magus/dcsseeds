@@ -4,7 +4,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210214-23034
 {
   "background": "Wanderer",
   "datetime": 2021-02-14T23:03:42.000Z,
-  "eventCount": 873,
+  "eventCount": 870,
   "eventErrors": [],
   "events": [
     {
@@ -2582,6 +2582,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210214-23034
       "branch": "Dungeon",
       "data": {
         "gold": "42",
+        "is_valid_shop": true,
         "item": "scroll of teleportation",
       },
       "level": "8",
@@ -2592,6 +2593,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210214-23034
       "branch": "Dungeon",
       "data": {
         "gold": "42",
+        "is_valid_shop": true,
         "item": "scroll of teleportation",
       },
       "level": "8",
@@ -2602,6 +2604,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210214-23034
       "branch": "Dungeon",
       "data": {
         "gold": "140",
+        "is_valid_shop": true,
         "item": "potion of haste",
       },
       "level": "8",
@@ -2612,6 +2615,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210214-23034
       "branch": "Dungeon",
       "data": {
         "gold": "105",
+        "is_valid_shop": true,
         "item": "scroll of blinking",
       },
       "level": "8",
@@ -2622,6 +2626,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210214-23034
       "branch": "Dungeon",
       "data": {
         "gold": "105",
+        "is_valid_shop": true,
         "item": "scroll of blinking",
       },
       "level": "8",
@@ -2632,6 +2637,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210214-23034
       "branch": "Dungeon",
       "data": {
         "gold": "42",
+        "is_valid_shop": true,
         "item": "scroll of teleportation",
       },
       "level": "8",
@@ -2642,6 +2648,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210214-23034
       "branch": "Dungeon",
       "data": {
         "gold": "105",
+        "is_valid_shop": true,
         "item": "scroll of blinking",
       },
       "level": "8",
@@ -3482,6 +3489,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210214-23034
     {
       "branch": "Orc",
       "data": {
+        "name": "Zipann's Jewellery Shoppe",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "shop",
+    },
+    {
+      "branch": "Orc",
+      "data": {
         "gold": 591,
         "item": "ring of Sedur {AC+4 Dex+3}",
       },
@@ -3492,7 +3508,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210214-23034
     {
       "branch": "Orc",
       "data": {
-        "name": "Zipann's Jewellery Shoppe",
+        "name": "Sesith's Armour Emporium",
       },
       "level": "2",
       "location": "Orc:2",
@@ -3511,17 +3527,20 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210214-23034
     {
       "branch": "Orc",
       "data": {
-        "name": "Sesith's Armour Emporium",
+        "gold": "24",
+        "is_valid_shop": true,
+        "item": "cursed amulet of inaccuracy",
       },
       "level": "2",
       "location": "Orc:2",
-      "type": "shop",
+      "type": "bought",
     },
     {
       "branch": "Orc",
       "data": {
-        "gold": "24",
-        "item": "cursed amulet of inaccuracy",
+        "gold": "1012",
+        "is_valid_shop": true,
+        "item": "+14 chain mail of Intuition {Regen+ Int+5}",
       },
       "level": "2",
       "location": "Orc:2",
@@ -3535,21 +3554,13 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210214-23034
       },
       "level": "2",
       "location": "Orc:2",
-      "type": "bought",
-    },
-    {
-      "branch": "Orc",
-      "data": {
-        "item": "+14 chain mail of Intuition {Regen+ Int+5}",
-      },
-      "level": "2",
-      "location": "Orc:2",
       "type": "item",
     },
     {
       "branch": "Orc",
       "data": {
         "gold": "181",
+        "is_valid_shop": true,
         "item": "+1 buckler of cold resistance",
       },
       "level": "2",
@@ -3560,6 +3571,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210214-23034
       "branch": "Orc",
       "data": {
         "gold": "149",
+        "is_valid_shop": true,
         "item": "+0 pair of gloves of dexterity",
       },
       "level": "2",
@@ -3570,6 +3582,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210214-23034
       "branch": "Orc",
       "data": {
         "gold": "150",
+        "is_valid_shop": true,
         "item": "wand of paralysis (8)",
       },
       "level": "2",
@@ -3580,6 +3593,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210214-23034
       "branch": "Orc",
       "data": {
         "gold": "150",
+        "is_valid_shop": true,
         "item": "wand of paralysis (8)",
       },
       "level": "2",
@@ -3590,6 +3604,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210214-23034
       "branch": "Orc",
       "data": {
         "gold": "390",
+        "is_valid_shop": true,
         "item": "wand of acid (9)",
       },
       "level": "2",
@@ -3600,6 +3615,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210214-23034
       "branch": "Orc",
       "data": {
         "gold": "180",
+        "is_valid_shop": true,
         "item": "wand of disintegration (8)",
       },
       "level": "2",
@@ -3610,6 +3626,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210214-23034
       "branch": "Orc",
       "data": {
         "gold": "135",
+        "is_valid_shop": true,
         "item": "wand of iceblast (5)",
       },
       "level": "2",
@@ -3881,6 +3898,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210214-23034
       "branch": "Dungeon",
       "data": {
         "gold": "40",
+        "is_valid_shop": true,
         "item": "potion of brilliance",
       },
       "level": "15",
@@ -3891,6 +3909,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210214-23034
       "branch": "Dungeon",
       "data": {
         "gold": "40",
+        "is_valid_shop": true,
         "item": "potion of brilliance",
       },
       "level": "15",
@@ -3901,6 +3920,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210214-23034
       "branch": "Dungeon",
       "data": {
         "gold": "50",
+        "is_valid_shop": true,
         "item": "potion of heal wounds",
       },
       "level": "15",
@@ -3911,6 +3931,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210214-23034
       "branch": "Dungeon",
       "data": {
         "gold": "30",
+        "is_valid_shop": true,
         "item": "potion of curing",
       },
       "level": "15",
@@ -3921,6 +3942,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210214-23034
       "branch": "Dungeon",
       "data": {
         "gold": "50",
+        "is_valid_shop": true,
         "item": "potion of heal wounds",
       },
       "level": "15",
@@ -3931,6 +3953,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210214-23034
       "branch": "Dungeon",
       "data": {
         "gold": "50",
+        "is_valid_shop": true,
         "item": "potion of heal wounds",
       },
       "level": "15",
@@ -3941,6 +3964,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210214-23034
       "branch": "Dungeon",
       "data": {
         "gold": "50",
+        "is_valid_shop": true,
         "item": "potion of heal wounds",
       },
       "level": "15",
@@ -3951,6 +3975,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210214-23034
       "branch": "Dungeon",
       "data": {
         "gold": "30",
+        "is_valid_shop": true,
         "item": "potion of curing",
       },
       "level": "15",
@@ -5115,6 +5140,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210214-23034
       "branch": "Vaults",
       "data": {
         "gold": "30",
+        "is_valid_shop": true,
         "item": "scroll of fog",
       },
       "level": "3",
@@ -5125,6 +5151,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210214-23034
       "branch": "Vaults",
       "data": {
         "gold": "45",
+        "is_valid_shop": true,
         "item": "scroll of teleportation",
       },
       "level": "3",
@@ -5236,6 +5263,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210214-23034
       "branch": "Dungeon",
       "data": {
         "gold": "1793",
+        "is_valid_shop": false,
         "item": "-2 hat of the Alchemist {rElec rPois rF+ rC+ rN+ Will+ rMut rCorr}",
       },
       "level": "7",
@@ -5245,16 +5273,8 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210214-23034
     {
       "branch": "Dungeon",
       "data": {
-        "item": "-2 hat of the Alchemist {rElec rPois rF+ rC+ rN+ Will+ rMut rCorr}",
-      },
-      "level": "7",
-      "location": "Dungeon:7",
-      "type": "item",
-    },
-    {
-      "branch": "Dungeon",
-      "data": {
         "gold": "361",
+        "is_valid_shop": false,
         "item": "pair of steaming boots",
       },
       "level": "7",
@@ -5285,6 +5305,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210214-23034
       "branch": "Dungeon",
       "data": {
         "gold": "342",
+        "is_valid_shop": false,
         "item": "faintly humming ring mail",
       },
       "level": "7",
@@ -5295,6 +5316,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210214-23034
       "branch": "Dungeon",
       "data": {
         "gold": "342",
+        "is_valid_shop": false,
         "item": "jewelled scale mail",
       },
       "level": "7",
@@ -5305,6 +5327,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210214-23034
       "branch": "Dungeon",
       "data": {
         "gold": "361",
+        "is_valid_shop": false,
         "item": "twisted helmet",
       },
       "level": "7",
@@ -5449,21 +5472,21 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210214-23034
     {
       "branch": "Elf",
       "data": {
+        "name": "Dezurrad's Weapon Emporium",
+      },
+      "level": "2",
+      "location": "Elf:2",
+      "type": "shop",
+    },
+    {
+      "branch": "Elf",
+      "data": {
         "gold": 333,
         "item": "cursed +0 morningstar of Kismet {drain, +Blink Will+}",
       },
       "level": "2",
       "location": "Elf:2",
       "type": "item",
-    },
-    {
-      "branch": "Elf",
-      "data": {
-        "name": "Dezurrad's Weapon Emporium",
-      },
-      "level": "2",
-      "location": "Elf:2",
-      "type": "shop",
     },
     {
       "branch": "Elf",
@@ -5637,6 +5660,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210214-23034
       "branch": "Elf",
       "data": {
         "gold": "390",
+        "is_valid_shop": true,
         "item": "book of Callings",
       },
       "level": "3",
@@ -5692,6 +5716,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210214-23034
       "branch": "Elf",
       "data": {
         "gold": "455",
+        "is_valid_shop": true,
         "item": "book of Geomancy",
       },
       "level": "3",
@@ -5729,6 +5754,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210214-23034
       "branch": "Elf",
       "data": {
         "gold": "845",
+        "is_valid_shop": true,
         "item": "book of Unlife",
       },
       "level": "3",
@@ -6684,20 +6710,12 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210214-23034
       "branch": "Dungeon",
       "data": {
         "gold": "816",
+        "is_valid_shop": false,
         "item": "amulet of the Manifold Knives {Acrobat rElec rF+}",
       },
       "level": "7",
       "location": "Dungeon:7",
       "type": "bought",
-    },
-    {
-      "branch": "Dungeon",
-      "data": {
-        "item": "amulet of the Manifold Knives {Acrobat rElec rF+}",
-      },
-      "level": "7",
-      "location": "Dungeon:7",
-      "type": "item",
     },
     {
       "branch": "Slime",
@@ -7567,20 +7585,12 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210214-23034
       "branch": "Dungeon",
       "data": {
         "gold": "1240",
+        "is_valid_shop": false,
         "item": "ring of the Mage {Wiz Will++ Int+3}",
       },
       "level": "7",
       "location": "Dungeon:7",
       "type": "bought",
-    },
-    {
-      "branch": "Dungeon",
-      "data": {
-        "item": "ring of the Mage {Wiz Will++ Int+3}",
-      },
-      "level": "7",
-      "location": "Dungeon:7",
-      "type": "item",
     },
     {
       "branch": "Spider",
@@ -7820,6 +7830,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210214-23034
       "branch": "Elf",
       "data": {
         "gold": "1435",
+        "is_valid_shop": true,
         "item": "book of Annihilations",
       },
       "level": "3",

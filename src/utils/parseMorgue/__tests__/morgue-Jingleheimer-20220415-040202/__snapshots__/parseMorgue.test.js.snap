@@ -4,7 +4,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
 {
   "background": "Fighter",
   "datetime": 2022-04-15T04:02:02.000Z,
-  "eventCount": 281,
+  "eventCount": 277,
   "eventErrors": [],
   "events": [
     {
@@ -458,6 +458,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Dungeon",
       "data": {
         "gold": "56",
+        "is_valid_shop": true,
         "item": "scroll of identify",
       },
       "level": "8",
@@ -468,6 +469,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Dungeon",
       "data": {
         "gold": "126",
+        "is_valid_shop": true,
         "item": "cloak",
       },
       "level": "8",
@@ -497,6 +499,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Dungeon",
       "data": {
         "gold": "256",
+        "is_valid_shop": false,
         "item": "fine buckler",
       },
       "level": "6",
@@ -527,20 +530,12 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Dungeon",
       "data": {
         "gold": "1080",
+        "is_valid_shop": false,
         "item": "+3 pair of seven-league boots {Rampage+âˆž}",
       },
       "level": "6",
       "location": "Dungeon:6",
       "type": "bought",
-    },
-    {
-      "branch": "Dungeon",
-      "data": {
-        "item": "+3 pair of seven-league boots {Rampage+âˆž}",
-      },
-      "level": "6",
-      "location": "Dungeon:6",
-      "type": "item",
     },
     {
       "branch": "Dungeon",
@@ -594,6 +589,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Dungeon",
       "data": {
         "gold": "624",
+        "is_valid_shop": true,
         "item": "scroll of acquirement",
       },
       "level": "11",
@@ -604,6 +600,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Dungeon",
       "data": {
         "gold": "24",
+        "is_valid_shop": true,
         "item": "scroll of identify",
       },
       "level": "11",
@@ -614,6 +611,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Dungeon",
       "data": {
         "gold": "24",
+        "is_valid_shop": true,
         "item": "scroll of identify",
       },
       "level": "11",
@@ -859,6 +857,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Dungeon",
       "data": {
         "gold": "702",
+        "is_valid_shop": false,
         "item": "runed plate armour",
       },
       "level": "6",
@@ -869,6 +868,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Dungeon",
       "data": {
         "gold": "702",
+        "is_valid_shop": false,
         "item": "shiny plate armour",
       },
       "level": "6",
@@ -967,6 +967,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Lair",
       "data": {
         "gold": "255",
+        "is_valid_shop": false,
         "item": "pair of glowing gloves",
       },
       "level": "6",
@@ -977,6 +978,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Lair",
       "data": {
         "gold": "884",
+        "is_valid_shop": false,
         "item": "runed plate armour",
       },
       "level": "6",
@@ -987,6 +989,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Lair",
       "data": {
         "gold": "255",
+        "is_valid_shop": false,
         "item": "pair of glowing gloves",
       },
       "level": "6",
@@ -997,6 +1000,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Lair",
       "data": {
         "gold": "323",
+        "is_valid_shop": false,
         "item": "masterwork chain mail",
       },
       "level": "6",
@@ -1103,6 +1107,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Orc",
       "data": {
         "gold": "172",
+        "is_valid_shop": true,
         "item": "pair of runed boots",
       },
       "level": "2",
@@ -1122,6 +1127,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Orc",
       "data": {
         "gold": "849",
+        "is_valid_shop": true,
         "item": "+2 hat of the Bear Spirit {Spirit, *Rage Will++}",
       },
       "level": "2",
@@ -1131,6 +1137,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
     {
       "branch": "Orc",
       "data": {
+        "gold": "849",
         "item": "+2 hat of the Bear Spirit {Spirit, *Rage Will++}",
       },
       "level": "2",
@@ -1231,20 +1238,12 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Lair",
       "data": {
         "gold": "523",
+        "is_valid_shop": false,
         "item": "ring "Uwke" {Fly rN++ Str-2}",
       },
       "level": "6",
       "location": "Lair:6",
       "type": "bought",
-    },
-    {
-      "branch": "Lair",
-      "data": {
-        "item": "ring "Uwke" {Fly rN++ Str-2}",
-      },
-      "level": "6",
-      "location": "Lair:6",
-      "type": "item",
     },
     {
       "branch": "Swamp",
@@ -1443,6 +1442,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Lair",
       "data": {
         "gold": "180",
+        "is_valid_shop": false,
         "item": "potion of heal wounds",
       },
       "level": "6",
@@ -1453,6 +1453,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Lair",
       "data": {
         "gold": "180",
+        "is_valid_shop": false,
         "item": "potion of heal wounds",
       },
       "level": "6",
@@ -1463,6 +1464,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Lair",
       "data": {
         "gold": "36",
+        "is_valid_shop": false,
         "item": "scroll labelled ASICSIE DUXT",
       },
       "level": "6",
@@ -1564,6 +1566,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Bazaar",
       "data": {
         "gold": "165",
+        "is_valid_shop": true,
         "item": "pair of runed boots",
       },
       "level": undefined,
@@ -1574,6 +1577,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Bazaar",
       "data": {
         "gold": "572",
+        "is_valid_shop": true,
         "item": "glowing plate armour",
       },
       "level": undefined,
@@ -1594,6 +1598,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Vaults",
       "data": {
         "gold": "120",
+        "is_valid_shop": true,
         "item": "2 potions of heal wounds",
       },
       "level": "1",
@@ -1604,6 +1609,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Vaults",
       "data": {
         "gold": "96",
+        "is_valid_shop": true,
         "item": "potion of invisibility",
       },
       "level": "1",
@@ -1634,6 +1640,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Vaults",
       "data": {
         "gold": "63",
+        "is_valid_shop": true,
         "item": "scroll of teleportation",
       },
       "level": "2",
@@ -1710,6 +1717,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Lair",
       "data": {
         "gold": "277",
+        "is_valid_shop": false,
         "item": "scroll of silence",
       },
       "level": "6",
@@ -1720,6 +1728,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Lair",
       "data": {
         "gold": "296",
+        "is_valid_shop": false,
         "item": "glowing scarf",
       },
       "level": "6",
@@ -1730,6 +1739,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Lair",
       "data": {
         "gold": "72",
+        "is_valid_shop": false,
         "item": "scroll of identify",
       },
       "level": "6",
@@ -1767,6 +1777,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Elf",
       "data": {
         "gold": "171",
+        "is_valid_shop": true,
         "item": "scroll of summoning",
       },
       "level": "1",
@@ -1777,6 +1788,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Elf",
       "data": {
         "gold": "142",
+        "is_valid_shop": true,
         "item": "scroll of enchant weapon",
       },
       "level": "1",
@@ -1787,6 +1799,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Elf",
       "data": {
         "gold": "142",
+        "is_valid_shop": true,
         "item": "scroll of enchant weapon",
       },
       "level": "1",
@@ -1797,6 +1810,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Elf",
       "data": {
         "gold": "66",
+        "is_valid_shop": true,
         "item": "scroll of fear",
       },
       "level": "1",
@@ -1807,6 +1821,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Elf",
       "data": {
         "gold": "57",
+        "is_valid_shop": true,
         "item": "scroll of teleportation",
       },
       "level": "1",
@@ -1883,6 +1898,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Elf",
       "data": {
         "gold": "260",
+        "is_valid_shop": true,
         "item": "2 potions of haste",
       },
       "level": "3",
@@ -1893,6 +1909,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Elf",
       "data": {
         "gold": "45",
+        "is_valid_shop": true,
         "item": "scroll of fear",
       },
       "level": "3",
@@ -1966,39 +1983,23 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Lair",
       "data": {
         "gold": "699",
+        "is_valid_shop": false,
         "item": "amulet "Cicaam" {Acrobat rF+ rN+ Will+}",
       },
       "level": "6",
       "location": "Lair:6",
       "type": "bought",
-    },
-    {
-      "branch": "Lair",
-      "data": {
-        "item": "amulet "Cicaam" {Acrobat rF+ rN+ Will+}",
-      },
-      "level": "6",
-      "location": "Lair:6",
-      "type": "item",
     },
     {
       "branch": "Lair",
       "data": {
         "gold": "477",
+        "is_valid_shop": false,
         "item": "ring "Dinuowe" {Fly rN++ Str-2 Dex+3 SInv}",
       },
       "level": "6",
       "location": "Lair:6",
       "type": "bought",
-    },
-    {
-      "branch": "Lair",
-      "data": {
-        "item": "ring "Dinuowe" {Fly rN++ Str-2 Dex+3 SInv}",
-      },
-      "level": "6",
-      "location": "Lair:6",
-      "type": "item",
     },
     {
       "branch": "Depths",
@@ -2160,6 +2161,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Depths",
       "data": {
         "gold": "72",
+        "is_valid_shop": true,
         "item": "scroll of teleportation",
       },
       "level": "3",
@@ -2181,6 +2183,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Lair",
       "data": {
         "gold": "2142",
+        "is_valid_shop": false,
         "item": "runed fire dragon scales",
       },
       "level": "6",
@@ -2458,6 +2461,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Elf",
       "data": {
         "gold": "380",
+        "is_valid_shop": true,
         "item": "scroll of brand weapon",
       },
       "level": "1",

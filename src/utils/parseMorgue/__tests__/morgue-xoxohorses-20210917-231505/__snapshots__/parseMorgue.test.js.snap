@@ -1218,6 +1218,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "branch": "Dungeon",
       "data": {
         "gold": "868",
+        "is_valid_shop": false,
         "item": "fading plate armour",
       },
       "level": "8",
@@ -1743,6 +1744,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "branch": "Dungeon",
       "data": {
         "gold": "2075",
+        "is_valid_shop": false,
         "item": "runed gold dragon scales",
       },
       "level": "8",
@@ -1943,6 +1945,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "branch": "Swamp",
       "data": {
         "gold": "105",
+        "is_valid_shop": true,
         "item": "scroll of blinking",
       },
       "level": "3",
@@ -1953,6 +1956,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "branch": "Swamp",
       "data": {
         "gold": "105",
+        "is_valid_shop": true,
         "item": "scroll of blinking",
       },
       "level": "3",
@@ -1963,6 +1967,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "branch": "Swamp",
       "data": {
         "gold": "105",
+        "is_valid_shop": true,
         "item": "scroll of blinking",
       },
       "level": "3",
@@ -1973,6 +1978,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "branch": "Swamp",
       "data": {
         "gold": "105",
+        "is_valid_shop": true,
         "item": "scroll of blinking",
       },
       "level": "3",
@@ -1983,6 +1989,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "branch": "Swamp",
       "data": {
         "gold": "105",
+        "is_valid_shop": true,
         "item": "scroll of blinking",
       },
       "level": "3",
@@ -1993,6 +2000,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "branch": "Swamp",
       "data": {
         "gold": "28",
+        "is_valid_shop": true,
         "item": "scroll of fog",
       },
       "level": "3",
@@ -2198,6 +2206,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "branch": "Dungeon",
       "data": {
         "gold": "247",
+        "is_valid_shop": false,
         "item": "+1 cloak of preservation",
       },
       "level": "8",
@@ -2480,6 +2489,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "branch": "Orc",
       "data": {
         "gold": "63",
+        "is_valid_shop": true,
         "item": "scroll of magic mapping",
       },
       "level": "2",
@@ -2490,6 +2500,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "branch": "Orc",
       "data": {
         "gold": "135",
+        "is_valid_shop": true,
         "item": "scroll of enchant weapon",
       },
       "level": "2",
@@ -2500,6 +2511,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "branch": "Orc",
       "data": {
         "gold": "36",
+        "is_valid_shop": true,
         "item": "scroll of fog",
       },
       "level": "2",
@@ -2510,6 +2522,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "branch": "Orc",
       "data": {
         "gold": "54",
+        "is_valid_shop": true,
         "item": "scroll of teleportation",
       },
       "level": "2",
@@ -2520,6 +2533,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "branch": "Orc",
       "data": {
         "gold": "135",
+        "is_valid_shop": true,
         "item": "scroll of enchant armour",
       },
       "level": "2",
@@ -2530,6 +2544,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "branch": "Orc",
       "data": {
         "gold": "256",
+        "is_valid_shop": true,
         "item": "2 potions of invisibility",
       },
       "level": "2",
@@ -2540,6 +2555,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "branch": "Orc",
       "data": {
         "gold": "48",
+        "is_valid_shop": true,
         "item": "potion of curing",
       },
       "level": "2",
@@ -2550,6 +2566,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "branch": "Orc",
       "data": {
         "gold": "128",
+        "is_valid_shop": true,
         "item": "potion of invisibility",
       },
       "level": "2",
@@ -2560,6 +2577,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "branch": "Orc",
       "data": {
         "gold": "48",
+        "is_valid_shop": true,
         "item": "potion of curing",
       },
       "level": "2",
@@ -2570,6 +2588,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "branch": "Orc",
       "data": {
         "gold": "48",
+        "is_valid_shop": true,
         "item": "potion of curing",
       },
       "level": "2",
@@ -2580,6 +2599,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "branch": "Orc",
       "data": {
         "gold": "48",
+        "is_valid_shop": true,
         "item": "potion of curing",
       },
       "level": "2",
@@ -2590,6 +2610,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "branch": "Orc",
       "data": {
         "gold": "128",
+        "is_valid_shop": true,
         "item": "potion of mutation",
       },
       "level": "2",
@@ -2600,6 +2621,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "branch": "Orc",
       "data": {
         "gold": "64",
+        "is_valid_shop": true,
         "item": "potion of might",
       },
       "level": "2",
@@ -2610,6 +2632,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "branch": "Orc",
       "data": {
         "gold": "90",
+        "is_valid_shop": true,
         "item": "scroll of teleportation",
       },
       "level": "2",
@@ -2620,6 +2643,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "branch": "Orc",
       "data": {
         "gold": "90",
+        "is_valid_shop": true,
         "item": "potion of curing",
       },
       "level": "2",
@@ -2630,6 +2654,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "branch": "Orc",
       "data": {
         "gold": "90",
+        "is_valid_shop": true,
         "item": "scroll of teleportation",
       },
       "level": "2",
@@ -2640,6 +2665,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "branch": "Orc",
       "data": {
         "gold": "70",
+        "is_valid_shop": true,
         "item": "potion of heal wounds",
       },
       "level": "2",
@@ -2650,6 +2676,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "branch": "Orc",
       "data": {
         "gold": "42",
+        "is_valid_shop": true,
         "item": "potion of curing",
       },
       "level": "2",
@@ -2660,6 +2687,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "branch": "Orc",
       "data": {
         "gold": "70",
+        "is_valid_shop": true,
         "item": "potion of berserk rage",
       },
       "level": "2",
@@ -2670,6 +2698,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "branch": "Orc",
       "data": {
         "gold": "42",
+        "is_valid_shop": true,
         "item": "potion of lignification",
       },
       "level": "2",
@@ -2680,6 +2709,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "branch": "Orc",
       "data": {
         "gold": "42",
+        "is_valid_shop": true,
         "item": "potion of lignification",
       },
       "level": "2",
@@ -2690,6 +2720,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "branch": "Orc",
       "data": {
         "gold": "42",
+        "is_valid_shop": true,
         "item": "potion of lignification",
       },
       "level": "2",
@@ -2700,6 +2731,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "branch": "Orc",
       "data": {
         "gold": "140",
+        "is_valid_shop": true,
         "item": "potion of haste",
       },
       "level": "2",
@@ -2710,6 +2742,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "branch": "Orc",
       "data": {
         "gold": "140",
+        "is_valid_shop": true,
         "item": "potion of haste",
       },
       "level": "2",
@@ -2720,6 +2753,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "branch": "Orc",
       "data": {
         "gold": "112",
+        "is_valid_shop": true,
         "item": "potion of cancellation",
       },
       "level": "2",
@@ -2730,6 +2764,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "branch": "Orc",
       "data": {
         "gold": "182",
+        "is_valid_shop": true,
         "item": "wand of iceblast (9)",
       },
       "level": "2",
@@ -2740,6 +2775,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "branch": "Dungeon",
       "data": {
         "gold": "237",
+        "is_valid_shop": false,
         "item": "pair of heavily runed gloves",
       },
       "level": "8",
@@ -2770,6 +2806,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "branch": "Dungeon",
       "data": {
         "gold": "60",
+        "is_valid_shop": true,
         "item": "potion of might",
       },
       "level": "10",
@@ -2780,6 +2817,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "branch": "Dungeon",
       "data": {
         "gold": "45",
+        "is_valid_shop": true,
         "item": "potion of lignification",
       },
       "level": "10",
@@ -2790,6 +2828,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "branch": "Dungeon",
       "data": {
         "gold": "120",
+        "is_valid_shop": true,
         "item": "potion of ambrosia",
       },
       "level": "10",
@@ -2800,6 +2839,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "branch": "Dungeon",
       "data": {
         "gold": "45",
+        "is_valid_shop": true,
         "item": "potion of curing",
       },
       "level": "10",
@@ -2810,6 +2850,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "branch": "Dungeon",
       "data": {
         "gold": "128",
+        "is_valid_shop": true,
         "item": "potion of cancellation",
       },
       "level": "10",
@@ -2820,6 +2861,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "branch": "Dungeon",
       "data": {
         "gold": "128",
+        "is_valid_shop": true,
         "item": "potion of ambrosia",
       },
       "level": "10",
@@ -2830,6 +2872,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "branch": "Dungeon",
       "data": {
         "gold": "128",
+        "is_valid_shop": true,
         "item": "potion of mutation",
       },
       "level": "10",
@@ -2840,6 +2883,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "branch": "Dungeon",
       "data": {
         "gold": "48",
+        "is_valid_shop": true,
         "item": "potion of lignification",
       },
       "level": "10",
@@ -2850,6 +2894,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "branch": "Dungeon",
       "data": {
         "gold": "80",
+        "is_valid_shop": true,
         "item": "potion of heal wounds",
       },
       "level": "10",
@@ -2860,6 +2905,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "branch": "Dungeon",
       "data": {
         "gold": "128",
+        "is_valid_shop": true,
         "item": "potion of mutation",
       },
       "level": "10",
@@ -2870,6 +2916,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "branch": "Dungeon",
       "data": {
         "gold": "160",
+        "is_valid_shop": true,
         "item": "potion of haste",
       },
       "level": "10",
@@ -2880,6 +2927,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "branch": "Dungeon",
       "data": {
         "gold": "160",
+        "is_valid_shop": true,
         "item": "potion of haste",
       },
       "level": "10",
@@ -3015,6 +3063,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "branch": "Vaults",
       "data": {
         "gold": "915",
+        "is_valid_shop": true,
         "item": "ring "Seiczeto" {rPois rC+ Dex+4 Slay+3}",
       },
       "level": "2",
@@ -3024,6 +3073,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
     {
       "branch": "Vaults",
       "data": {
+        "gold": "915",
         "item": "ring "Seiczeto" {rPois rC+ Dex+4 Slay+3}",
       },
       "level": "2",
@@ -3703,6 +3753,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "branch": "Depths",
       "data": {
         "gold": "396",
+        "is_valid_shop": true,
         "item": "wand of acid (14)",
       },
       "level": "2",
@@ -3713,6 +3764,7 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "branch": "Depths",
       "data": {
         "gold": "38",
+        "is_valid_shop": true,
         "item": "scroll of magic mapping",
       },
       "level": "2",

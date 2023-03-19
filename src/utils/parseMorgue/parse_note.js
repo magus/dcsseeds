@@ -180,19 +180,35 @@ export function parse_note({ morgueNote, addEvent, events, stash }) {
     }
   } else if (bought) {
     const [, item, gold] = bought;
-    // always log bought events
-    addEvent('bought', morgueNote.loc, { item, gold });
 
-    // but only log item if it's an artefact
-    const artefactMatch = item.match(/{.*?}/);
-    if (artefactMatch) {
-      addEvent('item', morgueNote.loc, { item });
+    // find valid shop event (not gozag call merchant shop)
+    const shop_event = find_list_backwards(events, (event) => {
+      if (event.type === 'shop') {
+        if (event.branch === morgueNote.branch && event.level === morgueNote.level) {
+          return event;
+        }
+      }
+    });
+
+    // mark bought event so we can log subsequent found event
+    const is_valid_shop = Boolean(shop_event);
+
+    // always log bought items
+    addEvent('bought', morgueNote.loc, { item, gold, is_valid_shop });
+
+    // log item event if artefact and valid shop purchase
+    const is_artefact = /{[^{^}]*?}/.test(item);
+    if (is_valid_shop && is_artefact) {
+      addEvent('item', morgueNote.loc, { item, gold });
     }
   } else if (acquirement) {
     const [, item] = acquirement;
     addEvent('acquirement', morgueNote.loc, { item });
   } else if (found_shop) {
     const [, name] = found_shop;
+
+    // always log the shop event
+    addEvent('shop', morgueNote.loc, { name });
 
     // find matching shop in stash and parse out artefacts
     // this does not include gozag shops which is nice because they are random
@@ -224,8 +240,6 @@ export function parse_note({ morgueNote, addEvent, events, stash }) {
         break;
       }
     }
-
-    addEvent('shop', morgueNote.loc, { name });
   } else if (found_altar) {
     const god = Gods.parse_god(found_altar.groups.god);
     addEvent('altar', morgueNote.loc, { god });
@@ -240,10 +254,25 @@ export function parse_note({ morgueNote, addEvent, events, stash }) {
       return;
     }
 
-    // check if this item was logged immediately before this event
+    // check if this item was bought in immediate preceding event
+    if (last_event.type === 'bought' && last_event.data.item === item) {
+      if (!last_event.data.is_valid_shop) {
+        // skip this found item since it was bought from invalid shop
+        // e.g. gozag call merchant
+        // console.debug('SKIP PREVIOUS BOUGHT', { morgueNote, last_event });
+      } else {
+        const { gold } = last_event.data;
+        // console.debug('FOUND PREVIOUS BOUGHT', { morgueNote, last_event });
+        addEvent('item', morgueNote.loc, { item, gold });
+      }
+
+      return;
+    }
+
+    // check if this item was logged in previous bought event
     if (last_event.type === 'item' && last_event.data.item === item) {
-      // skip this found item since it was bought
-      // console.debug('skipping found bought', { item });
+      // skip this found item since it was already logged
+      // console.debug('SKIP PREVIOUS BOUGHT', { morgueNote, last_event });
       return;
     }
 

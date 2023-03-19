@@ -162,6 +162,7 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       "branch": "Dungeon",
       "data": {
         "gold": "24",
+        "is_valid_shop": true,
         "item": "scroll of identify",
       },
       "level": "3",
@@ -172,6 +173,7 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       "branch": "Dungeon",
       "data": {
         "gold": "90",
+        "is_valid_shop": true,
         "item": "scroll of blinking",
       },
       "level": "3",
@@ -182,6 +184,7 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       "branch": "Dungeon",
       "data": {
         "gold": "12",
+        "is_valid_shop": true,
         "item": "scroll of noise",
       },
       "level": "3",
@@ -562,6 +565,7 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       "branch": "Dungeon",
       "data": {
         "gold": "40",
+        "is_valid_shop": true,
         "item": "potion of might",
       },
       "level": "10",
@@ -602,6 +606,7 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       "branch": "Dungeon",
       "data": {
         "gold": "135",
+        "is_valid_shop": true,
         "item": "pair of gloves",
       },
       "level": "3",
@@ -612,6 +617,7 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       "branch": "Dungeon",
       "data": {
         "gold": "25",
+        "is_valid_shop": true,
         "item": "scroll labelled LUOWIA VECVI",
       },
       "level": "3",
@@ -844,6 +850,7 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       "branch": "Dungeon",
       "data": {
         "gold": "90",
+        "is_valid_shop": true,
         "item": "scroll of enchant weapon",
       },
       "level": "3",
@@ -854,6 +861,7 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       "branch": "Dungeon",
       "data": {
         "gold": "114",
+        "is_valid_shop": true,
         "item": "scroll of summoning",
       },
       "level": "3",
@@ -1005,6 +1013,7 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       "branch": "Orc",
       "data": {
         "gold": "75",
+        "is_valid_shop": true,
         "item": "potion of heal wounds",
       },
       "level": "1",
@@ -1080,6 +1089,7 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       "branch": "Orc",
       "data": {
         "gold": "162",
+        "is_valid_shop": true,
         "item": "pair of boots",
       },
       "level": "2",
@@ -1414,6 +1424,7 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       "branch": "Orc",
       "data": {
         "gold": "324",
+        "is_valid_shop": true,
         "item": "translucent ring mail",
       },
       "level": "2",
@@ -1444,6 +1455,7 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       "branch": "Orc",
       "data": {
         "gold": "324",
+        "is_valid_shop": true,
         "item": "scorched scale mail",
       },
       "level": "2",
@@ -1474,6 +1486,7 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       "branch": "Orc",
       "data": {
         "gold": "45",
+        "is_valid_shop": true,
         "item": "scroll of teleportation",
       },
       "level": "2",
@@ -1521,6 +1534,7 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       "branch": "Orc",
       "data": {
         "gold": "60",
+        "is_valid_shop": true,
         "item": "scroll of amnesia",
       },
       "level": "2",
@@ -1531,6 +1545,7 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       "branch": "Elf",
       "data": {
         "gold": "600",
+        "is_valid_shop": true,
         "item": "Great Wizards, Vol. VII",
       },
       "level": "2",
@@ -1589,6 +1604,7 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       "branch": "Elf",
       "data": {
         "gold": "112",
+        "is_valid_shop": true,
         "item": "scroll of blinking",
       },
       "level": "3",
@@ -1599,6 +1615,7 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       "branch": "Elf",
       "data": {
         "gold": "75",
+        "is_valid_shop": true,
         "item": "potion of heal wounds",
       },
       "level": "3",
@@ -1700,6 +1717,7 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       "branch": "Elf",
       "data": {
         "gold": "420",
+        "is_valid_shop": true,
         "item": "Trismegistus Codex",
       },
       "level": "3",
@@ -1917,6 +1935,7 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       "branch": "Depths",
       "data": {
         "gold": "105",
+        "is_valid_shop": true,
         "item": "twisted agate ring",
       },
       "level": "1",
@@ -1984,6 +2003,7 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       "branch": "Dungeon",
       "data": {
         "gold": "917",
+        "is_valid_shop": true,
         "item": "+11 dagger "Goidux Ritoa" {vorpal, Will+}",
       },
       "level": "9",
@@ -1993,6 +2013,7 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
     {
       "branch": "Dungeon",
       "data": {
+        "gold": "917",
         "item": "+11 dagger "Goidux Ritoa" {vorpal, Will+}",
       },
       "level": "9",

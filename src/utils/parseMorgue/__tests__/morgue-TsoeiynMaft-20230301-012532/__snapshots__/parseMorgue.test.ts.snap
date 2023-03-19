@@ -4,7 +4,7 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
 {
   "background": null,
   "datetime": 2023-03-01T01:25:32.000Z,
-  "eventCount": 246,
+  "eventCount": 245,
   "eventErrors": [],
   "events": [
     {
@@ -493,6 +493,7 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       "branch": "Dungeon",
       "data": {
         "gold": "225",
+        "is_valid_shop": false,
         "item": "runed helmet",
       },
       "level": "10",
@@ -503,6 +504,7 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       "branch": "Dungeon",
       "data": {
         "gold": "285",
+        "is_valid_shop": false,
         "item": "twisted cloak",
       },
       "level": "10",
@@ -815,6 +817,7 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       "branch": "Orc",
       "data": {
         "gold": "56",
+        "is_valid_shop": true,
         "item": "scroll of fear",
       },
       "level": "2",
@@ -825,6 +828,7 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       "branch": "Orc",
       "data": {
         "gold": "368",
+        "is_valid_shop": true,
         "item": "wand of disintegration (19)",
       },
       "level": "2",
@@ -835,6 +839,7 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       "branch": "Orc",
       "data": {
         "gold": "336",
+        "is_valid_shop": true,
         "item": "wand of disintegration (17)",
       },
       "level": "2",
@@ -950,6 +955,7 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       "branch": "Lair",
       "data": {
         "gold": "105",
+        "is_valid_shop": false,
         "item": "scroll of enchant armour",
       },
       "level": "1",
@@ -960,6 +966,7 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       "branch": "Lair",
       "data": {
         "gold": "28",
+        "is_valid_shop": false,
         "item": "scroll of fog",
       },
       "level": "1",
@@ -970,6 +977,7 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       "branch": "Lair",
       "data": {
         "gold": "728",
+        "is_valid_shop": false,
         "item": "scroll of acquirement",
       },
       "level": "1",
@@ -1254,6 +1262,7 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       "branch": "Vaults",
       "data": {
         "gold": "560",
+        "is_valid_shop": true,
         "item": "phial of floods",
       },
       "level": "4",
@@ -1264,6 +1273,7 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       "branch": "Lair",
       "data": {
         "gold": "42",
+        "is_valid_shop": false,
         "item": "scroll of identify",
       },
       "level": "1",
@@ -1274,6 +1284,7 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       "branch": "Lair",
       "data": {
         "gold": "220",
+        "is_valid_shop": false,
         "item": "3 scrolls of fear",
       },
       "level": "1",
@@ -1284,6 +1295,7 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       "branch": "Lair",
       "data": {
         "gold": "42",
+        "is_valid_shop": false,
         "item": "scroll of identify",
       },
       "level": "1",
@@ -1312,6 +1324,7 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       "branch": "Vaults",
       "data": {
         "gold": "420",
+        "is_valid_shop": true,
         "item": "box of beasts",
       },
       "level": "4",
@@ -1352,6 +1365,7 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       "branch": "Vaults",
       "data": {
         "gold": "170",
+        "is_valid_shop": true,
         "item": "wand of paralysis (8)",
       },
       "level": "4",
@@ -1362,6 +1376,7 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       "branch": "Vaults",
       "data": {
         "gold": "374",
+        "is_valid_shop": true,
         "item": "wand of acid (7)",
       },
       "level": "4",
@@ -1372,6 +1387,7 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       "branch": "Vaults",
       "data": {
         "gold": "374",
+        "is_valid_shop": true,
         "item": "wand of digging (7)",
       },
       "level": "4",
@@ -1409,6 +1425,7 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       "branch": "Vaults",
       "data": {
         "gold": "759",
+        "is_valid_shop": true,
         "item": "wand of scattershot (7)",
       },
       "level": "4",
@@ -1496,6 +1513,7 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       "branch": "Depths",
       "data": {
         "gold": "185",
+        "is_valid_shop": true,
         "item": "serpentine glass ring",
       },
       "level": "2",
@@ -1583,6 +1601,7 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       "branch": "Depths",
       "data": {
         "gold": "52",
+        "is_valid_shop": true,
         "item": "scroll of magic mapping",
       },
       "level": "2",
@@ -1593,6 +1612,7 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       "branch": "Depths",
       "data": {
         "gold": "52",
+        "is_valid_shop": true,
         "item": "scroll of magic mapping",
       },
       "level": "2",
@@ -1603,6 +1623,7 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       "branch": "Depths",
       "data": {
         "gold": "52",
+        "is_valid_shop": true,
         "item": "scroll of magic mapping",
       },
       "level": "2",
@@ -1763,6 +1784,7 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       "branch": "Depths",
       "data": {
         "gold": "480",
+        "is_valid_shop": true,
         "item": "wand of scattershot (4)",
       },
       "level": "5",
@@ -1773,6 +1795,7 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       "branch": "Depths",
       "data": {
         "gold": "400",
+        "is_valid_shop": true,
         "item": "box of beasts",
       },
       "level": "5",
@@ -1783,6 +1806,7 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       "branch": "Depths",
       "data": {
         "gold": "400",
+        "is_valid_shop": true,
         "item": "box of beasts",
       },
       "level": "5",
@@ -1793,6 +1817,7 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       "branch": "Depths",
       "data": {
         "gold": "440",
+        "is_valid_shop": true,
         "item": "wand of acid (7)",
       },
       "level": "5",
@@ -1803,6 +1828,7 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       "branch": "Depths",
       "data": {
         "gold": "480",
+        "is_valid_shop": true,
         "item": "box of beasts",
       },
       "level": "5",
@@ -1813,6 +1839,7 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       "branch": "Depths",
       "data": {
         "gold": "648",
+        "is_valid_shop": true,
         "item": "wand of clouds (5)",
       },
       "level": "5",
@@ -1841,6 +1868,7 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       "branch": "Lair",
       "data": {
         "gold": "300",
+        "is_valid_shop": false,
         "item": "runed cloak",
       },
       "level": "1",
@@ -2082,20 +2110,12 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       "branch": "Lair",
       "data": {
         "gold": "790",
+        "is_valid_shop": false,
         "item": "ring of Ydafu {rC+ MR+ Str+3}",
       },
       "level": "1",
       "location": "Lair:1",
       "type": "bought",
-    },
-    {
-      "branch": "Lair",
-      "data": {
-        "item": "ring of Ydafu {rC+ MR+ Str+3}",
-      },
-      "level": "1",
-      "location": "Lair:1",
-      "type": "item",
     },
     {
       "branch": "Elf",
@@ -2228,6 +2248,7 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       "branch": "Lair",
       "data": {
         "gold": "624",
+        "is_valid_shop": false,
         "item": "+2 demon blade of freezing",
       },
       "level": "1",
@@ -2238,6 +2259,7 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       "branch": "Dungeon",
       "data": {
         "gold": "225",
+        "is_valid_shop": false,
         "item": "pair of embroidered gloves",
       },
       "level": "10",

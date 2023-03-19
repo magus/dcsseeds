@@ -1342,6 +1342,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Dungeon",
       "data": {
         "gold": "212",
+        "is_valid_shop": true,
         "item": "fine long sword",
       },
       "level": "3",
@@ -1372,6 +1373,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Dungeon",
       "data": {
         "gold": "162",
+        "is_valid_shop": true,
         "item": "bone hunting sling",
       },
       "level": "3",
@@ -1402,6 +1404,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Dungeon",
       "data": {
         "gold": "200",
+        "is_valid_shop": true,
         "item": "bloodstained short sword",
       },
       "level": "3",
@@ -1708,6 +1711,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Dungeon",
       "data": {
         "gold": "676",
+        "is_valid_shop": true,
         "item": "scroll of acquirement",
       },
       "level": "13",
@@ -1718,6 +1722,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Dungeon",
       "data": {
         "gold": "39",
+        "is_valid_shop": true,
         "item": "scroll of teleportation",
       },
       "level": "13",
@@ -1728,6 +1733,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Dungeon",
       "data": {
         "gold": "39",
+        "is_valid_shop": true,
         "item": "scroll of teleportation",
       },
       "level": "13",
@@ -1738,6 +1744,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Dungeon",
       "data": {
         "gold": "97",
+        "is_valid_shop": true,
         "item": "scroll of blinking",
       },
       "level": "13",
@@ -1748,6 +1755,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Dungeon",
       "data": {
         "gold": "97",
+        "is_valid_shop": true,
         "item": "scroll of silence",
       },
       "level": "13",
@@ -1870,6 +1878,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Orc",
       "data": {
         "gold": "264",
+        "is_valid_shop": true,
         "item": "embroidered scarf",
       },
       "level": "2",
@@ -1880,6 +1889,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Orc",
       "data": {
         "gold": "732",
+        "is_valid_shop": true,
         "item": "+10 scimitar of Doom {vamp, SInv}",
       },
       "level": "2",
@@ -1889,6 +1899,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
     {
       "branch": "Orc",
       "data": {
+        "gold": "732",
         "item": "+10 scimitar of Doom {vamp, SInv}",
       },
       "level": "2",
@@ -1984,6 +1995,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Snake",
       "data": {
         "gold": "165",
+        "is_valid_shop": true,
         "item": "blackened copper ring",
       },
       "level": "2",
@@ -1994,6 +2006,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Snake",
       "data": {
         "gold": "247",
+        "is_valid_shop": true,
         "item": "scroll of enchant armour",
       },
       "level": "2",
@@ -2172,6 +2185,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Snake",
       "data": {
         "gold": "112",
+        "is_valid_shop": true,
         "item": "potion of mutation",
       },
       "level": "3",
@@ -2182,6 +2196,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Snake",
       "data": {
         "gold": "70",
+        "is_valid_shop": true,
         "item": "potion of heal wounds",
       },
       "level": "3",
@@ -2192,6 +2207,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Snake",
       "data": {
         "gold": "70",
+        "is_valid_shop": true,
         "item": "potion of heal wounds",
       },
       "level": "3",
@@ -2367,6 +2383,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Snake",
       "data": {
         "gold": "115",
+        "is_valid_shop": true,
         "item": "scroll of fear",
       },
       "level": "2",
@@ -2959,6 +2976,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Depths",
       "data": {
         "gold": "270",
+        "is_valid_shop": true,
         "item": "scroll of enchant armour",
       },
       "level": "1",
@@ -3023,6 +3041,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Snake",
       "data": {
         "gold": "2064",
+        "is_valid_shop": true,
         "item": "+7 great mace "Firestarter" {inner flame, rF++}",
       },
       "level": "3",
@@ -3032,6 +3051,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
     {
       "branch": "Snake",
       "data": {
+        "gold": "2064",
         "item": "+7 great mace "Firestarter" {inner flame, rF++}",
       },
       "level": "3",
@@ -3161,6 +3181,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Bazaar",
       "data": {
         "gold": "18",
+        "is_valid_shop": true,
         "item": "scroll of teleportation",
       },
       "level": undefined,
@@ -3171,6 +3192,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Bazaar",
       "data": {
         "gold": "45",
+        "is_valid_shop": true,
         "item": "scroll of blinking",
       },
       "level": undefined,
@@ -3181,6 +3203,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Bazaar",
       "data": {
         "gold": "45",
+        "is_valid_shop": true,
         "item": "scroll of silence",
       },
       "level": undefined,
@@ -3191,6 +3214,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Bazaar",
       "data": {
         "gold": "60",
+        "is_valid_shop": true,
         "item": "potion of might",
       },
       "level": undefined,
@@ -3201,6 +3225,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Bazaar",
       "data": {
         "gold": "112",
+        "is_valid_shop": true,
         "item": "scroll of silence",
       },
       "level": undefined,
@@ -3211,6 +3236,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Bazaar",
       "data": {
         "gold": "784",
+        "is_valid_shop": true,
         "item": "heavily runed plate armour",
       },
       "level": undefined,
@@ -3241,6 +3267,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Bazaar",
       "data": {
         "gold": "784",
+        "is_valid_shop": true,
         "item": "faintly humming plate armour",
       },
       "level": undefined,

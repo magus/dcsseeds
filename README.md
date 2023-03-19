@@ -11,18 +11,6 @@ track random seeds in dcss
 
 
 
-
-## exclude bought items without valid shop
-
-for bought event, walk events backward for shop event
-if there is no shop on level it means it's call merchant and we should ignore this event (gozag)
-
- 70459 | Slime:4  | Bought the ring of Syveosotz {+Blink rF++ Will++ Str+6
-                  | Dex-2} for 850 gold pieces
-
-https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-20221021-200116.txt
-
-
 ## exclude god gift same turn or within 1 turn should be ignored
 
 > gift message comes after item received ... oof

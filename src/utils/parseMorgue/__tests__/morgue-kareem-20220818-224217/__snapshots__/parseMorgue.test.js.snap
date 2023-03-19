@@ -335,6 +335,7 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       "branch": "Dungeon",
       "data": {
         "gold": "330",
+        "is_valid_shop": true,
         "item": "lightning rod (4/4)",
       },
       "level": "4",
@@ -640,6 +641,7 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       "branch": "Dungeon",
       "data": {
         "gold": "1070",
+        "is_valid_shop": true,
         "item": "+18 shield of the Gong {rElec rN+ Will+ EV-5}",
       },
       "level": "7",
@@ -649,6 +651,7 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
     {
       "branch": "Dungeon",
       "data": {
+        "gold": "1070",
         "item": "+18 shield of the Gong {rElec rN+ Will+ EV-5}",
       },
       "level": "7",
@@ -1024,6 +1027,7 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       "branch": "Orc",
       "data": {
         "gold": "148",
+        "is_valid_shop": true,
         "item": "creamy pearl robe",
       },
       "level": "2",
@@ -1054,6 +1058,7 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       "branch": "Dungeon",
       "data": {
         "gold": "440",
+        "is_valid_shop": true,
         "item": "tin of tremorstones (2/2)",
       },
       "level": "4",
@@ -1075,6 +1080,7 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       "branch": "Dungeon",
       "data": {
         "gold": "97",
+        "is_valid_shop": true,
         "item": "scroll of enchant armour",
       },
       "level": "3",
@@ -1085,6 +1091,7 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       "branch": "Dungeon",
       "data": {
         "gold": "97",
+        "is_valid_shop": true,
         "item": "scroll of enchant weapon",
       },
       "level": "3",
@@ -1095,6 +1102,7 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       "branch": "Dungeon",
       "data": {
         "gold": "97",
+        "is_valid_shop": true,
         "item": "scroll of enchant armour",
       },
       "level": "3",
