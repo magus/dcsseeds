@@ -11,6 +11,7 @@
     "lint": "next lint --dir .",
     "test": "jest --maxWorkers=50%",
     "test:debug": "node --inspect-brk node_modules/.bin/jest --runInBand",
+    "test:ci": "yarn lint && yarn test",
     "deploy": "vercel",
     "deploy:prod": "vercel --prod",
     "deploy:purge": "vercel rm dcsseeds --safe"

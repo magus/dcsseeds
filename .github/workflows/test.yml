@@ -49,7 +49,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'yarn'
     - run: yarn install --immutable
-    - run: yarn test
+    - run: yarn test:ci
       env:
         HASURA_ADMIN_SECRET: '${{ secrets.HASURA_ADMIN_SECRET }}'
         GRAPHQL_ENDPOINT: '${{ vars.GRAPHQL_ENDPOINT }}'
