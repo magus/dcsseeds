@@ -37,105 +37,110 @@ export function useArtifactFilter(props) {
 
   // build a lookup for the top-level artifact counts to quickly count
   // results for artifact_count array below
-  const [seedVersion_set_list, seedVersion_item_map, version_seed_map, version_item_map, filtered_artifact_list] =
-    React.useMemo(() => {
-      // store the entire artifact_list filtered by branch filter
-      const filtered_artifact_list = [];
+  const [
+    seedVersion_set_list,
+    seedVersion_item_map,
+    version_seed_map,
+    version_item_map,
+    filtered_artifact_list,
+  ] = React.useMemo(() => {
+    // store the entire artifact_list filtered by branch filter
+    const filtered_artifact_list = [];
 
-      const seedVersion_set_list = [];
-      const seedVersion_item_map = new Map();
+    const seedVersion_set_list = [];
+    const seedVersion_item_map = new Map();
 
-      // { [version]: Set(seedVersion) } for each version store seedVersion set
-      const version_seed_map = new Map();
+    // { [version]: Set(seedVersion) } for each version store seedVersion set
+    const version_seed_map = new Map();
 
-      // { [version]: [count, count, ...] } for each version store count
-      const version_item_map = new Map();
+    // { [version]: [count, count, ...] } for each version store count
+    const version_item_map = new Map();
 
-      // duplicate filter
-      const unique_result = new Set();
-      function get_result_key(result) {
-        const parts = [result.seed, result.version, result.name, result.branchName];
+    // duplicate filter
+    const unique_result = new Set();
+    function get_result_key(result) {
+      const parts = [result.seed, result.version, result.name, result.branchName];
 
-        // only include if level positive number
-        if (result.level) {
-          parts.push(result.level);
-        }
-
-        return parts.join('-');
+      // only include if level positive number
+      if (result.level) {
+        parts.push(result.level);
       }
 
-      // initialize version maps for all versions
+      return parts.join('-');
+    }
+
+    // initialize version maps for all versions
+    for (const version of props.version_list) {
+      version_seed_map.set(version, new Set());
+      version_item_map.set(version, []);
+    }
+
+    for (let i = 0; i < Unrands.List.length; i++) {
+      // init item count for each version
       for (const version of props.version_list) {
-        version_seed_map.set(version, new Set());
-        version_item_map.set(version, []);
+        version_item_map.get(version)[i] = 0;
       }
 
-      for (let i = 0; i < Unrands.List.length; i++) {
-        // init item count for each version
-        for (const version of props.version_list) {
-          version_item_map.get(version)[i] = 0;
+      // init artifact_list for this unrand
+      filtered_artifact_list[i] = [];
+
+      const result_list = props.artifact_list[i];
+
+      const item_seedVersion_set = new Set();
+
+      for (const result of result_list) {
+        const result_key = get_result_key(result);
+        // skip duplicate
+        // 🚨 we can remove this when we reset all items
+        // currently this prevents level null and level 0 from being distinct entries
+        // when we migrated to branch_level we introduced duplicates because
+        // level null is not counted in primary key, so level null and level 0
+        // are distinct and therefore show up twice which broke filtering
+        if (unique_result.has(result_key)) {
+          // console.debug('SKIP DUPLICATE', result);
+          continue;
+        }
+        // always track for duplicate detection
+        unique_result.add(result_key);
+
+        const seedVersion = seed_version_key(result.seed, result.version);
+
+        // always store this unrand for this seed
+        const seedVersion_item_list = seedVersion_item_map.get(seedVersion) || [];
+        seedVersion_item_list.push({ ...result, unrand_key: i });
+        seedVersion_item_map.set(seedVersion, seedVersion_item_list);
+
+        // skip if we are filtering this branch
+        if (DEFAULT_BRANCH_FILTER.has(result.branchName)) {
+          // console.debug('skip', { result });
+          continue;
         }
 
-        // init artifact_list for this unrand
-        filtered_artifact_list[i] = [];
+        // include this result in overall artifact list
+        filtered_artifact_list[i].push(result);
 
-        const result_list = props.artifact_list[i];
+        // store count of this item for this version
+        version_item_map.get(result.version)[i]++;
 
-        const item_seedVersion_set = new Set();
+        // set the seedVersion key in the version lookup
+        version_seed_map.get(result.version).add(result.seed);
 
-        for (const result of result_list) {
-          const result_key = get_result_key(result);
-          // skip duplicate
-          // 🚨 we can remove this when we reset all items
-          // currently this prevents level null and level 0 from being distinct entries
-          // when we migrated to branch_level we introduced duplicates because
-          // level null is not counted in primary key, so level null and level 0
-          // are distinct and therefore show up twice which broke filtering
-          if (unique_result.has(result_key)) {
-            // console.debug('SKIP DUPLICATE', result);
-            continue;
-          }
-          // always track for duplicate detection
-          unique_result.add(result_key);
-
-          const seedVersion = seed_version_key(result.seed, result.version);
-
-          // always store this unrand for this seed
-          const seedVersion_item_list = seedVersion_item_map.get(seedVersion) || [];
-          seedVersion_item_list.push({ ...result, unrand_key: i });
-          seedVersion_item_map.set(seedVersion, seedVersion_item_list);
-
-          // skip if we are filtering this branch
-          if (DEFAULT_BRANCH_FILTER.has(result.branchName)) {
-            // console.debug('skip', { result });
-            continue;
-          }
-
-          // include this result in overall artifact list
-          filtered_artifact_list[i].push(result);
-
-          // store count of this item for this version
-          version_item_map.get(result.version)[i]++;
-
-          // set the seedVersion key in the version lookup
-          version_seed_map.get(result.version).add(result.seed);
-
-          // store seed version for this unrand
-          item_seedVersion_set.add(seedVersion);
-        }
-
-        seedVersion_set_list[i] = item_seedVersion_set;
+        // store seed version for this unrand
+        item_seedVersion_set.add(seedVersion);
       }
 
-      // console.debug('[build memoized seedVersion data structures]', {
-      //   seedVersion_set_list,
-      //   seedVersion_item_map,
-      //   version_seed_map,
-      //   version_item_map,
-      // });
+      seedVersion_set_list[i] = item_seedVersion_set;
+    }
 
-      return [seedVersion_set_list, seedVersion_item_map, version_seed_map, version_item_map, filtered_artifact_list];
-    }, [props.artifact_list, props.version_list]);
+    // console.debug('[build memoized seedVersion data structures]', {
+    //   seedVersion_set_list,
+    //   seedVersion_item_map,
+    //   version_seed_map,
+    //   version_item_map,
+    // });
+
+    return [seedVersion_set_list, seedVersion_item_map, version_seed_map, version_item_map, filtered_artifact_list];
+  }, [props.artifact_list, props.version_list]);
 
   function init_state() {
     const filter_list = [];
