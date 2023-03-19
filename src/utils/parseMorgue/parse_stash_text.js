@@ -218,7 +218,8 @@ const PARSE = {
   shop: function shop({ match, state }) {
     const items = [];
     const name = match.groups.name;
-    state.current.shop = { type: 'shop', name, items };
+    const location = { ...state.current.location };
+    state.current.shop = { type: 'shop', name, location, items };
     state.stash.shop_list.push(state.current.shop);
     state.current.level_list.push(state.current.shop);
 

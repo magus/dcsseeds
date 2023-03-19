@@ -217,7 +217,12 @@ export function parse_note({ morgueNote, addEvent, events, stash }) {
     //   2. stash shop entries which are not found by this regex
     //
     for (const shop of stash.shop_list) {
-      if (shop.name === name) {
+      // there may be multiple matches so DO NOT break, go through entire shop_list
+      if (
+        shop.name === name &&
+        shop.location.branch === morgueNote.branch &&
+        shop.location.level === morgueNote.level
+      ) {
         // console.debug('FOUND SHOP INVENTORY', { shop });
         for (const shop_item of shop.items) {
           if (shop_item.type === 'artefact') {
@@ -237,7 +242,6 @@ export function parse_note({ morgueNote, addEvent, events, stash }) {
             addEvent('item', location, { item, gold });
           }
         }
-        break;
       }
     }
   } else if (found_altar) {
