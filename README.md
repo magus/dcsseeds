@@ -23,6 +23,53 @@ use order to sort `item_list` after all filtering and aggregations are done
 ensure we do the sorting outside the `local` specific logic, so `graphql` can also benefit
 
 
+
+## exclude bought items without valid shop
+
+for bought event, walk events backward for shop event
+if there is no shop on level it means it's call merchant and we should ignore this event (gozag)
+
+ 70459 | Slime:4  | Bought the ring of Syveosotz {+Blink rF++ Will++ Str+6
+                  | Dex-2} for 850 gold pieces
+
+https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-20221021-200116.txt
+
+
+## exclude god gift same turn or within 1 turn should be ignored
+
+> gift message comes after item received ... oof
+
+ 70779 | Dis:3    | Identified a +9 broad axe of holy wrath (a +9 broad axe of
+                  | flaming blessed by the Shining One)
+ 70779 | Dis:3    | Received a gift from the Shining One
+
+http://crawl.akrasiac.org/rawdata/bfarrick/morgue-bfarrick-20220226-174407.txt
+
+> gift message comes turn before found message
+
+ 39531 | Slime:3  | Received a gift from Okawaru
+ 39532 | Slime:3  | Found the +2 shield of Resistance {rF++ rC++ Will++}
+
+https://crawl.xtahua.com/crawl/morgue/Garym//morgue-Garym-20211025-131321.txt
+
+> same turn god gift
+
+ 38532 | Slime:4  | Received a gift from Okawaru
+ 38532 | Slime:4  | Found the +7 Kryia's mail coat {PotionHeal*2 rC+}
+
+https://crawl.xtahua.com/crawl/morgue/p0werm0de/morgue-p0werm0de-20230220-203337.txt
+
+ 72267 | Slime:4  | Received a gift from Trog
+ 72267 | Slime:4  | Found the +7 captain's cutlass {speed, disarm}
+
+http://crawl.akrasiac.org/rawdata/wrentha/morgue-wrentha-20230120-204835.txt
+
+122167 | Slime:2  | Received a gift from Okawaru
+122167 | Slime:2  | Found the +8 orange crystal plate armour {Archmagi, Int+3
+                  | Clar}
+
+http://crawl.akrasiac.org/rawdata/KarmaDistortion/morgue-KarmaDistortion-20220817-011408.txt
+
 ## alternative graphql nested artifact query approach
 ### `useArtifactFilter`
 
