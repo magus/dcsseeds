@@ -4,7 +4,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
 {
   "background": "Wanderer",
   "datetime": 2021-06-23T08:51:46.000Z,
-  "eventCount": 1531,
+  "eventCount": 1535,
   "eventErrors": [],
   "events": [
     {
@@ -3600,6 +3600,16 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
     {
       "branch": "Orc",
       "data": {
+        "gold": 1980,
+        "item": "+7 arbalest of Summer {venom, Str+6}",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "item",
+    },
+    {
+      "branch": "Orc",
+      "data": {
         "name": "Awaasuh's Antique Weapon Boutique",
       },
       "level": "2",
@@ -3637,6 +3647,16 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
     {
       "branch": "Orc",
       "data": {
+        "gold": 1687,
+        "item": "+12 glaive of Prune {vorpal}",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "item",
+    },
+    {
+      "branch": "Orc",
+      "data": {
         "name": "Mituill's Assorted Antiques",
       },
       "level": "2",
@@ -3661,6 +3681,16 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
       "level": "2",
       "location": "Orc:2",
       "type": "skill-level",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "gold": 451,
+        "item": "ring of Secrets {rElec rC+ rN+ rCorr Str-5}",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "item",
     },
     {
       "branch": "Orc",
@@ -3845,6 +3875,16 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-08514
       "branch": "Orc",
       "data": {
         "item": "ring of New Discoveries {rElec rC++ rN+ Int+2 Dex-3}",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "item",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "gold": 1575,
+        "item": "+4 chain mail "Usheodos" {rPois Str+4 Int-4 Dex+8}",
       },
       "level": "2",
       "location": "Orc:2",

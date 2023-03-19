@@ -235,10 +235,10 @@ const MORGUE_REGEX = {
     }
   },
 
-  [MORGUE_FIELD.Notes]: async ({ morgue, morgueText }) => {
+  [MORGUE_FIELD.Notes]: async ({ morgue, morgueText, stash }) => {
     try {
       const morgueNotes = getAllMorgueNotes({ morgueText, morgue });
-      const { events, eventErrors } = getAllMorgueNoteEvents(morgueNotes);
+      const { events, eventErrors } = getAllMorgueNoteEvents({ morgueNotes, stash });
       const eventCount = events.length;
 
       return { eventCount, events, eventErrors };
@@ -342,7 +342,7 @@ function getAllMorgueNotes({ morgueText, morgue }) {
   return notes;
 }
 
-function getAllMorgueNoteEvents(morgueNotes) {
+function getAllMorgueNoteEvents({ morgueNotes, stash }) {
   const eventErrors = [];
   const events = [];
 
@@ -351,7 +351,7 @@ function getAllMorgueNoteEvents(morgueNotes) {
     const morgueNote = morgueNotes[note_index];
 
     try {
-      parse_note({ morgueNote, addEvent, events });
+      parse_note({ morgueNote, addEvent, events, stash });
 
       // first note
       if (note_index === 0) {

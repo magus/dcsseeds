@@ -4,7 +4,7 @@ import Gods from 'src/utils/Gods';
 import Branch from 'src/utils/Branch';
 import * as AshenzariCurses from 'src/utils/AshenzariCurses';
 
-export function parse_note({ morgueNote, addEvent, events }) {
+export function parse_note({ morgueNote, addEvent, events, stash }) {
   // check in this order to ensure we find most specific first
 
   // found regex cases
@@ -192,13 +192,39 @@ export function parse_note({ morgueNote, addEvent, events }) {
     const [, item] = acquirement;
     addEvent('acquirement', morgueNote.loc, { item });
   } else if (found_shop) {
-    // TODO note found shops
+    const [, name] = found_shop;
+
+    // find matching shop in stash and parse out artefacts
     // this does not include gozag shops which is nice because they are random
     // if we want gozag shops we can rely on
     //   1. explicit `note_message` see https://github.com/magus/dcss/blob/3504e7f8600fc463b74bf948d59cf4ef08021291/compile-rc/parts/Morgue.rc#L156
-    //   2. `.lst` entries which are not found by this regex
-    const [, name] = found_shop;
-    // always log bought events
+    //   2. stash shop entries which are not found by this regex
+    //
+    for (const shop of stash.shop_list) {
+      if (shop.name === name) {
+        // console.debug('FOUND SHOP INVENTORY', { shop });
+        for (const shop_item of shop.items) {
+          if (shop_item.type === 'artefact') {
+            // console.debug('FOUND ARTEFACT IN SHOP', { shop_item });
+
+            let location;
+
+            if (shop_item.location.level) {
+              location = `${shop_item.location.branch}:${shop_item.location.level}`;
+            } else {
+              location = shop_item.location.branch;
+            }
+
+            const item = shop_item.name;
+            const gold = shop_item.gold;
+
+            addEvent('item', location, { item, gold });
+          }
+        }
+        break;
+      }
+    }
+
     addEvent('shop', morgueNote.loc, { name });
   } else if (found_altar) {
     const god = Gods.parse_god(found_altar.groups.god);
