@@ -10,6 +10,13 @@ track random seeds in dcss
 ## [item-parsing](docs/item-parsing.md)
 
 
+## stash shop_list location
+
+include branch and level in store list
+when matching stores in parse_note we should match branch and level
+we should also NOT stop on first match, there can be two shops with same name even on the same level
+see `morgue-magusnn-20210405-052131` and look for `Gozag's Assorted Antiques`
+
 
 ## exclude god gift same turn or within 1 turn should be ignored
 
