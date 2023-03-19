@@ -12,28 +12,6 @@ track random seeds in dcss
 
 
 
-## lst files with parseMorgue
-
-every server seems to have lst files but akrasiac stores them as bz2
-we will have to be able to detect and decompress bz2 filetype
-
-lst is equivalent to floor stash
-
-lst shops
-  gozag shops cannot be distinguished from normal shops by lst alone
-  keep set of found 'shop' events from parse morgue notes
-  cross-reference lst shops against morgue not shops
-  if we have seen shop in notes, we can create item events for artefact items in shops
-  if we have NOT seen shop in notes it may be a Gozag call merchant shop, skip it
-
-
-we cannot rely on lst as a source of truth for all items because items can be missing
-for example items left in portals, abyss, pandemonium, etc., or items being worn
-maybe this is a tradeoff? we could cross-reference and know sometimes we might rarely exclude valid items
-> e.g. https://www.reddit.com/r/dcss/comments/11ohwvi/items_on_slime_3/?
-
-
-
 ## alternative graphql nested artifact query approach
 
 ### `cache_unrand_query` (local artifact filters)
