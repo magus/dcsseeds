@@ -1,4 +1,4 @@
-import { test_parseMorgue } from './test_parseMorgue';
+import { test_parseMorgue } from '../test_parseMorgue';
 
 // multiple shops with same name
 const morgue_url = 'http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-052131.txt';

@@ -1,4 +1,4 @@
-import { test_parseMorgue } from './test_parseMorgue';
+import { test_parseMorgue } from '../test_parseMorgue';
 
 // Gozag Call Merchant generated shops are ignored
 const morgue_url = 'http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210214-230342.txt';

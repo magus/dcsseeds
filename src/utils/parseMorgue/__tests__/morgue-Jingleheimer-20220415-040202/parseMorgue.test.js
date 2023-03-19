@@ -1,4 +1,4 @@
-import { test_parseMorgue } from './test_parseMorgue';
+import { test_parseMorgue } from '../test_parseMorgue';
 
 // Bought items automatically identify artefacts
 // So we want to avoid double logging when we hit the Found note

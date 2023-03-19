@@ -24,7 +24,7 @@ export function setup_test_parseMorgue(morgue_url) {
     ok: true,
     status: 200,
     text: async function text() {
-      const morgue_filepath = path.join(__dirname, '..', '__fixtures__', morgue.filename);
+      const morgue_filepath = path.join(__dirname, morgue.basename, morgue.filename);
       const morgue_buffer = fs.readFileSync(morgue_filepath);
       const morgue_content = String(morgue_buffer);
 
@@ -36,7 +36,7 @@ export function setup_test_parseMorgue(morgue_url) {
     ok: true,
     status: 200,
     arrayBuffer: async function arrayBuffer() {
-      const lst_filepath = path.join(__dirname, '..', '__fixtures__', lst_filename);
+      const lst_filepath = path.join(__dirname, morgue.basename, lst_filename);
       const lst_buffer = fs.readFileSync(lst_filepath);
       const lst_arraybuffer = lst_buffer.buffer.slice(
         lst_buffer.byteOffset,

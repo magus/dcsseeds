@@ -1,4 +1,4 @@
-import { test_parseMorgue } from './test_parseMorgue';
+import { test_parseMorgue } from '../test_parseMorgue';
 
 // gold dragon scales bought in shop parsed oddly
 // 20405 | D:8      | Bought runed gold dragon scales for 2075 gold pieces

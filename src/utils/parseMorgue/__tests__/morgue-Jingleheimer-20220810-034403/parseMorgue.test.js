@@ -1,4 +1,4 @@
-import { test_parseMorgue } from './test_parseMorgue';
+import { test_parseMorgue } from '../test_parseMorgue';
 
 // Okawaru Arena should be parsed as previous branch
 // 35175 | Snake:3  | Found a sacrificial altar of Ru.

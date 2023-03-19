@@ -1,4 +1,4 @@
-import { test_parseMorgue } from './test_parseMorgue';
+import { test_parseMorgue } from '../test_parseMorgue';
 
 // Ashenzari cursed items spam identify into notes but we should skip them
 // since they are invalid and a unique god gift, not a notable item

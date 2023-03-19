@@ -1,5 +1,5 @@
 import { expect, test } from '@jest/globals';
-import { test_parseMorgue } from './test_parseMorgue';
+import { test_parseMorgue } from '../test_parseMorgue';
 
 // detect bloatware crawl versions
 const morgue_url = 'https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-20230301-012532.txt.gz';
