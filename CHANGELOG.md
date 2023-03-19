@@ -1,5 +1,23 @@
 # CHANGELOG
 
+## 2023-03-18
+
+Cleaning up Ashenzari items in database
+
+```graphql
+query FindInvalidAshenzariItems {
+  dcsseeds_scrapePlayers_item(where: {name: {_iregex: "(Melee|Range|Elem|Alch|Comp|Bglg|Self|Fort|Cun|Evo)(,|})"}}) {
+    name
+  }
+}
+
+mutation DeleteInvalidAshenzariItems {
+  delete_dcsseeds_scrapePlayers_item(where: {name: {_iregex: "(Melee|Range|Elem|Alch|Comp|Bglg|Self|Fort|Cun|Evo)(,|})"}}) {
+    affected_rows
+  }
+}
+```
+
 ## 2023-03-16
 
 database backups are not working, the `pg_dump` `curl` returns a 502 status code + error page even after a hard restart
