@@ -9,7 +9,6 @@ exports[`https://crawl.xtahua.com/crawl/morgue/Garym//morgue-Garym-20211025-1313
   "events": [
     {
       "branch": "Dungeon",
-      "data": "Garym the Minotaur Fighter began the quest for the Orb.",
       "level": "1",
       "location": "Dungeon:1",
       "note": "Garym the Minotaur Fighter began the quest for the Orb.",
@@ -2314,7 +2313,6 @@ exports[`https://crawl.xtahua.com/crawl/morgue/Garym//morgue-Garym-20211025-1313
     },
     {
       "branch": "Slime",
-      "data": "Slain by an azure jelly",
       "level": "4",
       "location": "Slime:4",
       "note": "Slain by an azure jelly",

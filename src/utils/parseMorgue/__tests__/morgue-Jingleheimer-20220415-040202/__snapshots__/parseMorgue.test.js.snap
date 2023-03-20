@@ -9,7 +9,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
   "events": [
     {
       "branch": "Dungeon",
-      "data": "Jingleheimer the Minotaur Fighter began the quest for the Orb.",
       "level": "1",
       "location": "Dungeon:1",
       "note": "Jingleheimer the Minotaur Fighter began the quest for the Orb.",
@@ -3250,7 +3249,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
     },
     {
       "branch": "Zot",
-      "data": "Slain by an Orb Guardian",
       "level": "5",
       "location": "Zot:5",
       "note": "Slain by an Orb Guardian",

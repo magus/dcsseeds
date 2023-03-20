@@ -9,7 +9,6 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
   "events": [
     {
       "branch": "Dungeon",
-      "data": "9to the Kobold Hedge Wizard began the quest for the Orb.",
       "level": "1",
       "location": "Dungeon:1",
       "note": "9to the Kobold Hedge Wizard began the quest for the Orb.",
@@ -2967,7 +2966,6 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
     },
     {
       "branch": "Dungeon",
-      "data": "Escaped with the Orb!",
       "level": "$",
       "location": "Dungeon:$",
       "note": "Escaped with the Orb!",

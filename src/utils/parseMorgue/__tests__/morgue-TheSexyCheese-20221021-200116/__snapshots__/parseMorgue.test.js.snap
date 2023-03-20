@@ -9,7 +9,6 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
   "events": [
     {
       "branch": "Dungeon",
-      "data": "TheSexyCheese the Minotaur Fighter began the quest for the Orb.",
       "level": "1",
       "location": "Dungeon:1",
       "note": "TheSexyCheese the Minotaur Fighter began the quest for the Orb.",
@@ -1942,7 +1941,6 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
     },
     {
       "branch": "Slime",
-      "data": "Slain by an azure jelly",
       "level": "4",
       "location": "Slime:4",
       "note": "Slain by an azure jelly",

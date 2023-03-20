@@ -9,7 +9,6 @@ exports[`https://crawl.kelbi.org/crawl/morgue/CKag/morgue-CKag-20221113-181534.t
   "events": [
     {
       "branch": "Dungeon",
-      "data": "CKag the Djinni Fire Elementalist began the quest for the Orb.",
       "level": "1",
       "location": "Dungeon:1",
       "note": "CKag the Djinni Fire Elementalist began the quest for the Orb.",
@@ -31,7 +30,6 @@ exports[`https://crawl.kelbi.org/crawl/morgue/CKag/morgue-CKag-20221113-181534.t
     },
     {
       "branch": "Dungeon",
-      "data": "Slain by a quokka",
       "level": "1",
       "location": "Dungeon:1",
       "note": "Slain by a quokka",

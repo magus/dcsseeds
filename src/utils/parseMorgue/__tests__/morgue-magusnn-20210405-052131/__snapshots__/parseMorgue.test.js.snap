@@ -9,7 +9,6 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
   "events": [
     {
       "branch": "Dungeon",
-      "data": "magusnn the Gnoll Fighter began the quest for the Orb.",
       "level": "1",
       "location": "Dungeon:1",
       "note": "magusnn the Gnoll Fighter began the quest for the Orb.",
@@ -12185,7 +12184,6 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
     },
     {
       "branch": "Dungeon",
-      "data": "Escaped with the Orb!",
       "level": "$",
       "location": "Dungeon:$",
       "note": "Escaped with the Orb!",

@@ -9,7 +9,6 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
   "events": [
     {
       "branch": "Dungeon",
-      "data": "xoxohorses the Minotaur Fighter began the quest for the Orb.",
       "level": "1",
       "location": "Dungeon:1",
       "note": "xoxohorses the Minotaur Fighter began the quest for the Orb.",
@@ -4610,7 +4609,6 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
     },
     {
       "branch": "Depths",
-      "data": "Mangled by a vampire knight",
       "level": "2",
       "location": "Depths:2",
       "note": "Mangled by a vampire knight",

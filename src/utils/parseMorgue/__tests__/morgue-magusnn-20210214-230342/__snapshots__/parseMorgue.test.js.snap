@@ -21,7 +21,6 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210214-23034
     },
     {
       "branch": "Dungeon",
-      "data": "Reached skill level 9 in Stealth",
       "level": "1",
       "location": "Dungeon:1",
       "note": "Reached skill level 9 in Stealth",
@@ -10226,7 +10225,6 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210214-23034
     },
     {
       "branch": "Gehenna",
-      "data": "Killed from afar by a blizzard demon",
       "level": "1",
       "location": "Gehenna:1",
       "note": "Killed from afar by a blizzard demon",

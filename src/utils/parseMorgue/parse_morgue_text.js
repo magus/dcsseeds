@@ -356,11 +356,11 @@ function getAllMorgueNoteEvents({ morgueNotes, stash }) {
 
       // first note
       if (note_index === 0) {
-        addEvent('first-event', morgueNote, morgueNote.note);
+        addEvent('first-event', morgueNote);
       }
       // last note
       if (note_index === morgueNotes.length - 1) {
-        addEvent('last-event', morgueNote, morgueNote.note);
+        addEvent('last-event', morgueNote);
       }
     } catch (error) {
       if (process.env.NODE_ENV !== 'production') {

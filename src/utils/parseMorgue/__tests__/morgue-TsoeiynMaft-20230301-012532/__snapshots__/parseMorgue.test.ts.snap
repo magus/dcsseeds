@@ -9,7 +9,6 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
   "events": [
     {
       "branch": "Dungeon",
-      "data": "TsoeiynMaft the Robot Fighter began the quest for the Orb.",
       "level": "1",
       "location": "Dungeon:1",
       "note": "TsoeiynMaft the Robot Fighter began the quest for the Orb.",
@@ -2852,7 +2851,6 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
     },
     {
       "branch": "Zot",
-      "data": "Annihilated by an Orb Guardian",
       "level": "5",
       "location": "Zot:5",
       "note": "Annihilated by an Orb Guardian",

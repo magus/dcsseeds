@@ -9,7 +9,6 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
   "events": [
     {
       "branch": "Dungeon",
-      "data": "kareem the Merfolk Gladiator began the quest for the Orb.",
       "level": "1",
       "location": "Dungeon:1",
       "note": "kareem the Merfolk Gladiator began the quest for the Orb.",
@@ -1371,7 +1370,6 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
     },
     {
       "branch": "Swamp",
-      "data": "Killed from afar by Nikola",
       "level": "2",
       "location": "Swamp:2",
       "note": "Killed from afar by Nikola",
