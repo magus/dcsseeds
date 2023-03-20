@@ -4,7 +4,7 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
 {
   "background": "Fighter",
   "datetime": 2021-04-05T05:21:31.000Z,
-  "eventCount": 962,
+  "eventCount": 1020,
   "eventErrors": [],
   "events": [
     {
@@ -1794,6 +1794,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
     {
       "branch": "Dungeon",
       "data": {
+        "god": "Okawaru",
+      },
+      "level": "9",
+      "location": "Dungeon:9",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
         "level": "6",
         "skill": "Invocations",
       },
@@ -2171,6 +2180,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
     {
       "branch": "Dungeon",
       "data": {
+        "god": "Okawaru",
+      },
+      "level": "11",
+      "location": "Dungeon:11",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
         "item": "+5 plate armour of Upheh {Rampage +Fly rPois rC-}",
       },
       "level": "11",
@@ -2203,6 +2221,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
       "level": "11",
       "location": "Dungeon:11",
       "type": "unique-killed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "11",
+      "location": "Dungeon:11",
+      "type": "god-gift",
     },
     {
       "branch": "Dungeon",
@@ -2391,6 +2418,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
       "level": "12",
       "location": "Dungeon:12",
       "type": "unique-noticed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "12",
+      "location": "Dungeon:12",
+      "type": "god-gift",
     },
     {
       "branch": "Dungeon",
@@ -2591,6 +2627,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
     {
       "branch": "Dungeon",
       "data": {
+        "god": "Okawaru",
+      },
+      "level": "13",
+      "location": "Dungeon:13",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
         "hp": "103",
         "level": "13",
         "mp": "22",
@@ -2611,11 +2656,29 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
     {
       "branch": "Dungeon",
       "data": {
+        "god": "Okawaru",
+      },
+      "level": "13",
+      "location": "Dungeon:13",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
         "who": "Rupert",
       },
       "level": "13",
       "location": "Dungeon:13",
       "type": "unique-killed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "13",
+      "location": "Dungeon:13",
+      "type": "god-gift",
     },
     {
       "branch": "Dungeon",
@@ -2936,6 +2999,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
       "branch": "Dungeon",
       "data": {
         "god": "Okawaru",
+      },
+      "level": "13",
+      "location": "Dungeon:13",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "god": "Okawaru",
         "item": "+1 animal skin "Kutih" {Int+5}",
       },
       "level": "13",
@@ -3217,6 +3289,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
     {
       "branch": "Abyss",
       "data": {
+        "god": "Okawaru",
+      },
+      "level": "3",
+      "location": "Abyss:3",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Abyss",
+      "data": {
         "level": "10",
         "skill": "Invocations",
       },
@@ -3232,6 +3313,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
       },
       "level": "2",
       "location": "Lair:2",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "3",
+      "location": "Lair:3",
       "type": "god-gift",
     },
     {
@@ -3410,6 +3500,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
     {
       "branch": "Volcano",
       "data": {
+        "god": "Okawaru",
+      },
+      "level": undefined,
+      "location": "Volcano",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Volcano",
+      "data": {
         "god": "Vehumet",
       },
       "level": undefined,
@@ -3426,6 +3525,24 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
       "level": undefined,
       "location": "Volcano",
       "type": "experience-level",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "6",
+      "location": "Lair:6",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "6",
+      "location": "Lair:6",
+      "type": "god-gift",
     },
     {
       "branch": "Lair",
@@ -3770,6 +3887,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
       "branch": "Spider",
       "data": {
         "god": "Okawaru",
+      },
+      "level": "1",
+      "location": "Spider:1",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Spider",
+      "data": {
+        "god": "Okawaru",
         "item": "+0 chain mail of Conscience {rPois rF++ Int-3 SInv}",
       },
       "level": "1",
@@ -3896,6 +4022,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
       "level": "1",
       "location": "Spider:1",
       "type": "skill-level",
+    },
+    {
+      "branch": "Spider",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "2",
+      "location": "Spider:2",
+      "type": "god-gift",
     },
     {
       "branch": "Spider",
@@ -4089,6 +4224,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
     {
       "branch": "Spider",
       "data": {
+        "god": "Okawaru",
+      },
+      "level": "2",
+      "location": "Spider:2",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Spider",
+      "data": {
         "who": "Nikola",
       },
       "level": "4",
@@ -4121,6 +4265,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
       "level": "4",
       "location": "Spider:4",
       "type": "unique-killed",
+    },
+    {
+      "branch": "Spider",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "4",
+      "location": "Spider:4",
+      "type": "god-gift",
     },
     {
       "branch": "Spider",
@@ -4281,6 +4434,24 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
       "type": "skill-level",
     },
     {
+      "branch": "Spider",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "4",
+      "location": "Spider:4",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Swamp",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "1",
+      "location": "Swamp:1",
+      "type": "god-gift",
+    },
+    {
       "branch": "Swamp",
       "data": {
         "who": "Aizul",
@@ -4301,6 +4472,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
     {
       "branch": "Swamp",
       "data": {
+        "god": "Okawaru",
+      },
+      "level": "2",
+      "location": "Swamp:2",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Swamp",
+      "data": {
         "hp": "157",
         "level": "18",
         "mp": "33",
@@ -4308,6 +4488,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
       "level": "2",
       "location": "Swamp:2",
       "type": "experience-level",
+    },
+    {
+      "branch": "Swamp",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "2",
+      "location": "Swamp:2",
+      "type": "god-gift",
     },
     {
       "branch": "Swamp",
@@ -4535,6 +4724,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
     {
       "branch": "Swamp",
       "data": {
+        "god": "Okawaru",
+      },
+      "level": "3",
+      "location": "Swamp:3",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Swamp",
+      "data": {
         "item": "ring "Resuw" {rElec rF+ Will+++ Str-4 Stlth+}",
       },
       "level": "3",
@@ -4682,6 +4880,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
       "level": undefined,
       "location": "Bailey",
       "type": "experience-level",
+    },
+    {
+      "branch": "Orc",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "2",
+      "location": "Orc:2",
+      "type": "god-gift",
     },
     {
       "branch": "Orc",
@@ -5154,6 +5361,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
     {
       "branch": "Elf",
       "data": {
+        "god": "Okawaru",
+      },
+      "level": "2",
+      "location": "Elf:2",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Elf",
+      "data": {
         "hp": "182",
         "level": "21",
         "mp": "38",
@@ -5171,6 +5387,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
       "level": "3",
       "location": "Elf:3",
       "type": "skill-level",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "3",
+      "location": "Elf:3",
+      "type": "god-gift",
     },
     {
       "branch": "Elf",
@@ -5220,6 +5445,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
       "level": "3",
       "location": "Elf:3",
       "type": "mutation",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "3",
+      "location": "Elf:3",
+      "type": "god-gift",
     },
     {
       "branch": "Elf",
@@ -5413,6 +5647,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
       "level": "1",
       "location": "Vaults:1",
       "type": "shop",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "1",
+      "location": "Vaults:1",
+      "type": "god-gift",
     },
     {
       "branch": "Vaults",
@@ -5688,12 +5931,39 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
     {
       "branch": "Vaults",
       "data": {
+        "god": "Okawaru",
+      },
+      "level": "1",
+      "location": "Vaults:1",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
         "level": "15",
         "skill": "Polearms",
       },
       "level": "2",
       "location": "Vaults:2",
       "type": "skill-level",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "3",
+      "location": "Vaults:3",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "3",
+      "location": "Vaults:3",
+      "type": "god-gift",
     },
     {
       "branch": "Vaults",
@@ -5705,6 +5975,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
       "level": "3",
       "location": "Vaults:3",
       "type": "experience-level",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "3",
+      "location": "Vaults:3",
+      "type": "god-gift",
     },
     {
       "branch": "Vaults",
@@ -5811,6 +6090,24 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
       "level": "14",
       "location": "Dungeon:14",
       "type": "mutation",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "3",
+      "location": "Vaults:3",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "4",
+      "location": "Vaults:4",
+      "type": "god-gift",
     },
     {
       "branch": "Vaults",
@@ -6115,6 +6412,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
     {
       "branch": "Vaults",
       "data": {
+        "god": "Okawaru",
+      },
+      "level": "5",
+      "location": "Vaults:5",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
         "hp": "191",
         "level": "24",
         "mp": "37",
@@ -6122,6 +6428,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
       "level": "4",
       "location": "Vaults:4",
       "type": "experience-level",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "5",
+      "location": "Vaults:5",
+      "type": "god-gift",
     },
     {
       "branch": "Vaults",
@@ -6255,6 +6570,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
       "level": "5",
       "location": "Vaults:5",
       "type": "bought",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "5",
+      "location": "Vaults:5",
+      "type": "god-gift",
     },
     {
       "branch": "Vaults",
@@ -6461,6 +6785,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
     {
       "branch": "Crypt",
       "data": {
+        "god": "Okawaru",
+      },
+      "level": "1",
+      "location": "Crypt:1",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Crypt",
+      "data": {
         "who": "Bai Suzhen",
       },
       "level": "1",
@@ -6475,6 +6808,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
       "level": "1",
       "location": "Crypt:1",
       "type": "unique-killed",
+    },
+    {
+      "branch": "Crypt",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "1",
+      "location": "Crypt:1",
+      "type": "god-gift",
     },
     {
       "branch": "Slime",
@@ -7001,6 +7343,24 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
     {
       "branch": "Depths",
       "data": {
+        "god": "Okawaru",
+      },
+      "level": "1",
+      "location": "Depths:1",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "1",
+      "location": "Depths:1",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Depths",
+      "data": {
         "hp": "208",
         "level": "26",
         "mp": "39",
@@ -7040,6 +7400,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
     {
       "branch": "Depths",
       "data": {
+        "god": "Okawaru",
+      },
+      "level": "1",
+      "location": "Depths:1",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Depths",
+      "data": {
         "level": "17",
         "skill": "Polearms",
       },
@@ -7070,6 +7439,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
     {
       "branch": "Depths",
       "data": {
+        "god": "Okawaru",
+      },
+      "level": "2",
+      "location": "Depths:2",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Depths",
+      "data": {
         "spell": "Orb of Destruction",
       },
       "level": "2",
@@ -7093,6 +7471,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
       "level": "2",
       "location": "Depths:2",
       "type": "altar",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "2",
+      "location": "Depths:2",
+      "type": "god-gift",
     },
     {
       "branch": "Depths",
@@ -7166,6 +7553,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
       "level": "2",
       "location": "Depths:2",
       "type": "unique-killed",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "2",
+      "location": "Depths:2",
+      "type": "god-gift",
     },
     {
       "branch": "Depths",
@@ -7424,11 +7820,29 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
     {
       "branch": "Depths",
       "data": {
+        "god": "Okawaru",
+      },
+      "level": "4",
+      "location": "Depths:4",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Depths",
+      "data": {
         "branch": "Ziggurat",
       },
       "level": "4",
       "location": "Depths:4",
       "type": "portal",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "5",
+      "location": "Depths:5",
+      "type": "god-gift",
     },
     {
       "branch": "Depths",
@@ -7570,6 +7984,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
     {
       "branch": "Depths",
       "data": {
+        "god": "Okawaru",
+      },
+      "level": "4",
+      "location": "Depths:4",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Depths",
+      "data": {
         "level": "18",
         "skill": "Polearms",
       },
@@ -7668,6 +8091,24 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
       "level": "1",
       "location": "Zot:1",
       "type": "spell",
+    },
+    {
+      "branch": "Zot",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "1",
+      "location": "Zot:1",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Zot",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "2",
+      "location": "Zot:2",
+      "type": "god-gift",
     },
     {
       "branch": "Zot",
@@ -7830,6 +8271,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
     {
       "branch": "Zot",
       "data": {
+        "god": "Okawaru",
+      },
+      "level": "3",
+      "location": "Zot:3",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Zot",
+      "data": {
         "desc": "Your magical capacity is very low.",
         "kind": "Gained",
         "source": "an orb of fire",
@@ -7862,6 +8312,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
       "level": "3",
       "location": "Zot:3",
       "type": "mutation",
+    },
+    {
+      "branch": "Zot",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "3",
+      "location": "Zot:3",
+      "type": "god-gift",
     },
     {
       "branch": "Zot",
@@ -8356,6 +8815,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
     {
       "branch": "Zot",
       "data": {
+        "god": "Okawaru",
+      },
+      "level": "4",
+      "location": "Zot:4",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Zot",
+      "data": {
         "item": "+7 short sword of the Moth {antimagic, rElec rF- rC+, short}",
       },
       "level": "4",
@@ -8515,7 +8983,43 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
       "branch": "Zot",
       "data": {
         "god": "Okawaru",
+      },
+      "level": "5",
+      "location": "Zot:5",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Zot",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "5",
+      "location": "Zot:5",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Zot",
+      "data": {
+        "god": "Okawaru",
         "item": "+3 arbalest "Hizou" {venom, Str+2, crossbow}",
+      },
+      "level": "5",
+      "location": "Zot:5",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Zot",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "5",
+      "location": "Zot:5",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Zot",
+      "data": {
+        "god": "Okawaru",
       },
       "level": "5",
       "location": "Zot:5",
@@ -8716,6 +9220,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
     {
       "branch": "Abyss",
       "data": {
+        "god": "Okawaru",
+      },
+      "level": "3",
+      "location": "Abyss:3",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Abyss",
+      "data": {
         "god": "Lugonu",
       },
       "level": "4",
@@ -8754,6 +9267,15 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
       "level": "5",
       "location": "Abyss:5",
       "type": "mutation",
+    },
+    {
+      "branch": "Abyss",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "5",
+      "location": "Abyss:5",
+      "type": "god-gift",
     },
     {
       "branch": "Abyss",

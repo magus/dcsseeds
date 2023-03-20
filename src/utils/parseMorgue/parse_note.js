@@ -67,10 +67,11 @@ export function parse_note({ morgueNote, addEvent, events, stash }) {
   const noticed = morgueNote.note.match(/Noticed (.*)$/);
   const killed = morgueNote.note.match(/Killed (.*)$/);
 
-  // gods joined and left
+  // gods
   const joinGod = morgueNote.note.match(/Became a worshipper of (?<god>.*)$/);
   const leaveGod = morgueNote.note.match(/Fell from the grace of (?<god>.*)$/);
   const pietyLevel = morgueNote.note.match(/Reached (?<bips>\*+) piety under (?<god>.*)/);
+  const god_gift = morgueNote.note.match(/Received a gift from (?<god>.*)/);
   const spellGift = morgueNote.note.match(/Offered knowledge of (?<spell>.*) by (?<god>.*?)\./);
   // https://regexr.com/6equf
   const identGift = morgueNote.note.match(
@@ -114,6 +115,9 @@ export function parse_note({ morgueNote, addEvent, events, stash }) {
     addEvent('leave-god', morgueNote.loc, { god });
   } else if (pietyLevel) {
     addEvent('piety-god', morgueNote.loc, { ...pietyLevel.groups });
+  } else if (god_gift) {
+    const { god } = god_gift.groups;
+    addEvent('god-gift', morgueNote.loc, { god });
   } else if (identGift) {
     const { item } = identGift.groups;
     const god = Gods.parse_god(identGift.groups.god);

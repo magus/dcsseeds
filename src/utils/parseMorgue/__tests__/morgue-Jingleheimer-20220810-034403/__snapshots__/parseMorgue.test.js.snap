@@ -4,7 +4,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
 {
   "background": "Fighter",
   "datetime": 2022-08-10T03:44:03.000Z,
-  "eventCount": 373,
+  "eventCount": 424,
   "eventErrors": [],
   "events": [
     {
@@ -917,6 +917,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
     {
       "branch": "Dungeon",
       "data": {
+        "god": "Okawaru",
+      },
+      "level": "8",
+      "location": "Dungeon:8",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
         "hp": "87",
         "level": "11",
         "mp": "19",
@@ -1141,6 +1150,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
     {
       "branch": "Dungeon",
       "data": {
+        "god": "Okawaru",
+      },
+      "level": "11",
+      "location": "Dungeon:11",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
         "who": "Urug",
       },
       "level": "11",
@@ -1173,6 +1191,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "level": "10",
       "location": "Dungeon:10",
       "type": "unique-killed",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "10",
+      "location": "Dungeon:10",
+      "type": "god-gift",
     },
     {
       "branch": "Dungeon",
@@ -1256,6 +1283,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
     {
       "branch": "Dungeon",
       "data": {
+        "god": "Okawaru",
+      },
+      "level": "10",
+      "location": "Dungeon:10",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
         "hp": "103",
         "level": "13",
         "mp": "24",
@@ -1303,6 +1339,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
     {
       "branch": "Lair",
       "data": {
+        "god": "Okawaru",
+      },
+      "level": "1",
+      "location": "Lair:1",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Lair",
+      "data": {
         "item": "2 scrolls of acquirement",
       },
       "level": "2",
@@ -1333,6 +1378,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "data": {
         "god": "Okawaru",
         "item": "+7 great mace "Venlofopp" {flame, rN+ Dex+2}",
+      },
+      "level": "2",
+      "location": "Lair:2",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "god": "Okawaru",
       },
       "level": "2",
       "location": "Lair:2",
@@ -1482,6 +1536,24 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
     {
       "branch": "Lair",
       "data": {
+        "god": "Okawaru",
+      },
+      "level": "4",
+      "location": "Lair:4",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "3",
+      "location": "Lair:3",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Lair",
+      "data": {
         "level": "10",
         "skill": "Invocations",
       },
@@ -1522,11 +1594,38 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
     {
       "branch": "Lair",
       "data": {
+        "god": "Okawaru",
+      },
+      "level": "3",
+      "location": "Lair:3",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Lair",
+      "data": {
         "god": "Uskayaw",
       },
       "level": "5",
       "location": "Lair:5",
       "type": "altar",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "6",
+      "location": "Lair:6",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "6",
+      "location": "Lair:6",
+      "type": "god-gift",
     },
     {
       "branch": "Lair",
@@ -1544,6 +1643,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "data": {
         "god": "Okawaru",
         "item": "+8 ring mail of the Snake Pit {+Inv Regen+ Int+3 Dex+4}",
+      },
+      "level": "6",
+      "location": "Lair:6",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Lair",
+      "data": {
+        "god": "Okawaru",
       },
       "level": "6",
       "location": "Lair:6",
@@ -1783,6 +1891,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
     {
       "branch": "Dungeon",
       "data": {
+        "god": "Okawaru",
+      },
+      "level": "15",
+      "location": "Dungeon:15",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
         "who": "Azrael",
       },
       "level": "15",
@@ -1877,6 +1994,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
     {
       "branch": "Orc",
       "data": {
+        "god": "Okawaru",
+      },
+      "level": "1",
+      "location": "Orc:1",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Orc",
+      "data": {
         "gold": "264",
         "is_valid_shop": true,
         "item": "embroidered scarf",
@@ -1954,6 +2080,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
     {
       "branch": "Snake",
       "data": {
+        "god": "Okawaru",
+      },
+      "level": "1",
+      "location": "Snake:1",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Snake",
+      "data": {
         "level": "15",
         "skill": "Staves",
       },
@@ -1976,7 +2111,25 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Snake",
       "data": {
         "god": "Okawaru",
+      },
+      "level": "2",
+      "location": "Snake:2",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Snake",
+      "data": {
+        "god": "Okawaru",
         "item": "+10 glaive "Xinysm" {venom, rC+ Str+5}",
+      },
+      "level": "2",
+      "location": "Snake:2",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Snake",
+      "data": {
+        "god": "Okawaru",
       },
       "level": "2",
       "location": "Snake:2",
@@ -2036,6 +2189,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "data": {
         "god": "Okawaru",
         "item": "+7 short sword of the Blowfly {flame, rElec rF+}",
+      },
+      "level": "2",
+      "location": "Snake:2",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Snake",
+      "data": {
+        "god": "Okawaru",
       },
       "level": "2",
       "location": "Snake:2",
@@ -2164,6 +2326,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
     {
       "branch": "Snake",
       "data": {
+        "god": "Okawaru",
+      },
+      "level": "3",
+      "location": "Snake:3",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Snake",
+      "data": {
         "hp": "144",
         "level": "18",
         "mp": "34",
@@ -2253,6 +2424,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
     {
       "branch": "Arena",
       "data": {
+        "god": "Okawaru",
+      },
+      "level": undefined,
+      "location": "Arena",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Arena",
+      "data": {
         "item": "+7 Kryia's mail coat {PotionHeal*2 rC+}",
       },
       "level": undefined,
@@ -2285,6 +2465,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "level": "4",
       "location": "Snake:4",
       "type": "item",
+    },
+    {
+      "branch": "Snake",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "4",
+      "location": "Snake:4",
+      "type": "god-gift",
     },
     {
       "branch": "Snake",
@@ -2346,6 +2535,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
     {
       "branch": "Shoals",
       "data": {
+        "god": "Okawaru",
+      },
+      "level": "2",
+      "location": "Shoals:2",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Shoals",
+      "data": {
         "who": "Kirke",
       },
       "level": "2",
@@ -2378,6 +2576,24 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "level": "3",
       "location": "Shoals:3",
       "type": "item",
+    },
+    {
+      "branch": "Shoals",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "4",
+      "location": "Shoals:4",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Shoals",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "4",
+      "location": "Shoals:4",
+      "type": "god-gift",
     },
     {
       "branch": "Snake",
@@ -2415,7 +2631,25 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "branch": "Vaults",
       "data": {
         "god": "Okawaru",
+      },
+      "level": "1",
+      "location": "Vaults:1",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "god": "Okawaru",
         "item": "+8 glaive of Anxiety {venom, Stlth+}",
+      },
+      "level": "1",
+      "location": "Vaults:1",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "god": "Okawaru",
       },
       "level": "1",
       "location": "Vaults:1",
@@ -2463,12 +2697,57 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
     {
       "branch": "Vaults",
       "data": {
+        "god": "Okawaru",
+      },
+      "level": "2",
+      "location": "Vaults:2",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "2",
+      "location": "Vaults:2",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
         "level": "15",
         "skill": "Invocations",
       },
       "level": "3",
       "location": "Vaults:3",
       "type": "skill-level",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "3",
+      "location": "Vaults:3",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "3",
+      "location": "Vaults:3",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "3",
+      "location": "Vaults:3",
+      "type": "god-gift",
     },
     {
       "branch": "Vaults",
@@ -2494,6 +2773,24 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
     {
       "branch": "Vaults",
       "data": {
+        "god": "Okawaru",
+      },
+      "level": "3",
+      "location": "Vaults:3",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "4",
+      "location": "Vaults:4",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Vaults",
+      "data": {
         "level": "15",
         "skill": "Short Blades",
       },
@@ -2512,10 +2809,28 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "type": "god-gift",
     },
     {
+      "branch": "Vaults",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "4",
+      "location": "Vaults:4",
+      "type": "god-gift",
+    },
+    {
       "branch": "Elf",
       "data": {
         "god": "Okawaru",
         "item": "+0 scale mail "Vedwaoj" {rN+++ Dex+7 Slay-6}",
+      },
+      "level": "1",
+      "location": "Elf:1",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "god": "Okawaru",
       },
       "level": "1",
       "location": "Elf:1",
@@ -2765,6 +3080,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
     {
       "branch": "Elf",
       "data": {
+        "god": "Okawaru",
+      },
+      "level": "3",
+      "location": "Elf:3",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Elf",
+      "data": {
         "item": "+9 plate armour of the Clam {rPois Regen+}",
       },
       "level": "3",
@@ -2801,6 +3125,24 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
     {
       "branch": "Elf",
       "data": {
+        "god": "Okawaru",
+      },
+      "level": "3",
+      "location": "Elf:3",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "3",
+      "location": "Elf:3",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Elf",
+      "data": {
         "item": "+6 falchion of Qyrucudeo {freeze, rF+ Str+2 Int+5 Dex-2}",
       },
       "level": "3",
@@ -2815,6 +3157,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "level": "3",
       "location": "Elf:3",
       "type": "item",
+    },
+    {
+      "branch": "Elf",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "3",
+      "location": "Elf:3",
+      "type": "god-gift",
     },
     {
       "branch": "Elf",
@@ -2880,6 +3231,24 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "level": "15",
       "location": "Dungeon:15",
       "type": "experience-level",
+    },
+    {
+      "branch": "Dungeon",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "15",
+      "location": "Dungeon:15",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "1",
+      "location": "Depths:1",
+      "type": "god-gift",
     },
     {
       "branch": "Depths",
@@ -3061,6 +3430,24 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
     {
       "branch": "Depths",
       "data": {
+        "god": "Okawaru",
+      },
+      "level": "2",
+      "location": "Depths:2",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "2",
+      "location": "Depths:2",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Depths",
+      "data": {
         "branch": "Hell",
       },
       "level": "2",
@@ -3084,6 +3471,24 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "level": "2",
       "location": "Depths:2",
       "type": "shop",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "2",
+      "location": "Depths:2",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "3",
+      "location": "Depths:3",
+      "type": "god-gift",
     },
     {
       "branch": "Depths",
@@ -3297,6 +3702,24 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
     {
       "branch": "Depths",
       "data": {
+        "god": "Okawaru",
+      },
+      "level": "4",
+      "location": "Depths:4",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "4",
+      "location": "Depths:4",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Depths",
+      "data": {
         "level": "22",
         "skill": "Staves",
       },
@@ -3321,6 +3744,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "level": undefined,
       "location": "Arena",
       "type": "unique-killed",
+    },
+    {
+      "branch": "Depths",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "4",
+      "location": "Depths:4",
+      "type": "god-gift",
     },
     {
       "branch": "Depths",
@@ -3626,6 +4058,24 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
     {
       "branch": "Zot",
       "data": {
+        "god": "Okawaru",
+      },
+      "level": "1",
+      "location": "Zot:1",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Zot",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "2",
+      "location": "Zot:2",
+      "type": "god-gift",
+    },
+    {
+      "branch": "Zot",
+      "data": {
         "hp": "195",
         "level": "27",
         "mp": "43",
@@ -3679,6 +4129,15 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "level": "3",
       "location": "Zot:3",
       "type": "item",
+    },
+    {
+      "branch": "Zot",
+      "data": {
+        "god": "Okawaru",
+      },
+      "level": "3",
+      "location": "Zot:3",
+      "type": "god-gift",
     },
     {
       "branch": "Zot",
