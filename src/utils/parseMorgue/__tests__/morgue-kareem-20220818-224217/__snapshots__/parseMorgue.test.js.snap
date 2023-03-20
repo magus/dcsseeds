@@ -12,6 +12,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       "data": "kareem the Merfolk Gladiator began the quest for the Orb.",
       "level": "1",
       "location": "Dungeon:1",
+      "note": "kareem the Merfolk Gladiator began the quest for the Orb.",
+      "turn": "0",
       "type": "first-event",
     },
     {
@@ -23,6 +25,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "1",
       "location": "Dungeon:1",
+      "note": "Reached XP level 1. HP: 16/16 MP: 1/1",
+      "turn": "0",
       "type": "experience-level",
     },
     {
@@ -34,6 +38,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "1",
       "location": "Dungeon:1",
+      "note": "Reached XP level 2. HP: 23/23 MP: 2/2",
+      "turn": "254",
       "type": "experience-level",
     },
     {
@@ -43,6 +49,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "2",
       "location": "Dungeon:2",
+      "note": "Found a faded altar of an unknown god.",
+      "turn": "1170",
       "type": "altar",
     },
     {
@@ -52,6 +60,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "2",
       "location": "Dungeon:2",
+      "note": "Found Mowitoev's Assorted Antiques.",
+      "turn": "1212",
       "type": "shop",
     },
     {
@@ -63,6 +73,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "2",
       "location": "Dungeon:2",
+      "note": "Reached XP level 3. HP: 28/28 MP: 3/3",
+      "turn": "1218",
       "type": "experience-level",
     },
     {
@@ -73,6 +85,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "2",
       "location": "Dungeon:2",
+      "note": "Reached skill level 5 in Dodging",
+      "turn": "1476",
       "type": "skill-level",
     },
     {
@@ -82,6 +96,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "2",
       "location": "Dungeon:2",
+      "note": "Noticed Natasha",
+      "turn": "1723",
       "type": "unique-noticed",
     },
     {
@@ -91,6 +107,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "2",
       "location": "Dungeon:2",
+      "note": "Killed Natasha",
+      "turn": "1730",
       "type": "unique-killed",
     },
     {
@@ -102,6 +120,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "2",
       "location": "Dungeon:2",
+      "note": "Reached XP level 4. HP: 34/35 MP: 4/4",
+      "turn": "1731",
       "type": "experience-level",
     },
     {
@@ -111,6 +131,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "2",
       "location": "Dungeon:2",
+      "note": "Noticed Natasha",
+      "turn": "1908",
       "type": "unique-noticed",
     },
     {
@@ -120,6 +142,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "2",
       "location": "Dungeon:2",
+      "note": "Killed Natasha",
+      "turn": "1926",
       "type": "unique-killed",
     },
     {
@@ -129,6 +153,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "2",
       "location": "Dungeon:2",
+      "note": "Noticed Crazy Yiuf",
+      "turn": "2165",
       "type": "unique-noticed",
     },
     {
@@ -138,6 +164,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "2",
       "location": "Dungeon:2",
+      "note": "Noticed Natasha",
+      "turn": "2250",
       "type": "unique-noticed",
     },
     {
@@ -147,6 +175,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "2",
       "location": "Dungeon:2",
+      "note": "Killed Natasha",
+      "turn": "2263",
       "type": "unique-killed",
     },
     {
@@ -157,6 +187,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "2",
       "location": "Dungeon:2",
+      "note": "Reached skill level 6 in Dodging",
+      "turn": "2264",
       "type": "skill-level",
     },
     {
@@ -168,6 +200,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "2",
       "location": "Dungeon:2",
+      "note": "Reached XP level 5. HP: 18/41 MP: 5/5",
+      "turn": "2264",
       "type": "experience-level",
     },
     {
@@ -177,6 +211,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Found Herouq's Antique Armour Boutique.",
+      "turn": "2930",
       "type": "shop",
     },
     {
@@ -186,6 +222,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Noticed Grinder",
+      "turn": "2997",
       "type": "unique-noticed",
     },
     {
@@ -195,6 +233,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Noticed Sigmund",
+      "turn": "3077",
       "type": "unique-noticed",
     },
     {
@@ -204,6 +244,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Found Lasoaju's General Store.",
+      "turn": "3077",
       "type": "shop",
     },
     {
@@ -213,6 +255,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Found Syatay's General Store.",
+      "turn": "3077",
       "type": "shop",
     },
     {
@@ -222,6 +266,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Noticed Jessica",
+      "turn": "3378",
       "type": "unique-noticed",
     },
     {
@@ -231,6 +277,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Killed Jessica",
+      "turn": "3386",
       "type": "unique-killed",
     },
     {
@@ -242,6 +290,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Reached XP level 6. HP: 40/48 MP: 6/6",
+      "turn": "3442",
       "type": "experience-level",
     },
     {
@@ -251,6 +301,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Killed Sigmund",
+      "turn": "3572",
       "type": "unique-killed",
     },
     {
@@ -261,6 +313,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Reached skill level 5 in Long Blades",
+      "turn": "3573",
       "type": "skill-level",
     },
     {
@@ -271,6 +325,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Reached skill level 7 in Dodging",
+      "turn": "3573",
       "type": "skill-level",
     },
     {
@@ -280,6 +336,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Killed Grinder",
+      "turn": "3916",
       "type": "unique-killed",
     },
     {
@@ -290,6 +348,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Reached skill level 8 in Dodging",
+      "turn": "3917",
       "type": "skill-level",
     },
     {
@@ -301,6 +361,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Reached XP level 7. HP: 55/55 MP: 7/7",
+      "turn": "3917",
       "type": "experience-level",
     },
     {
@@ -310,6 +372,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Found Kenoem's Magic Scroll Boutique.",
+      "turn": "3965",
       "type": "shop",
     },
     {
@@ -320,6 +384,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": undefined,
       "location": "Ossuary",
+      "note": "Reached skill level 5 in Fighting",
+      "turn": "4598",
       "type": "skill-level",
     },
     {
@@ -329,6 +395,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "4",
       "location": "Dungeon:4",
+      "note": "Found Dimas's Elemental Accessories.",
+      "turn": "5491",
       "type": "shop",
     },
     {
@@ -340,6 +408,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "4",
       "location": "Dungeon:4",
+      "note": "Bought a lightning rod (4/4) for 330 gold pieces",
+      "turn": "5498",
       "type": "bought",
     },
     {
@@ -350,6 +420,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Reached skill level 9 in Dodging",
+      "turn": "6065",
       "type": "skill-level",
     },
     {
@@ -361,6 +433,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Reached XP level 8. HP: 33/62 MP: 8/8",
+      "turn": "6065",
       "type": "experience-level",
     },
     {
@@ -371,6 +445,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Reached skill level 1 in Evocations",
+      "turn": "6632",
       "type": "skill-level",
     },
     {
@@ -380,6 +456,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Noticed Duvessa",
+      "turn": "6751",
       "type": "unique-noticed",
     },
     {
@@ -389,6 +467,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Killed Duvessa",
+      "turn": "6791",
       "type": "unique-killed",
     },
     {
@@ -398,6 +478,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Noticed Dowan",
+      "turn": "6990",
       "type": "unique-noticed",
     },
     {
@@ -407,6 +489,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Killed Dowan",
+      "turn": "7007",
       "type": "unique-killed",
     },
     {
@@ -417,6 +501,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Reached skill level 10 in Dodging",
+      "turn": "7306",
       "type": "skill-level",
     },
     {
@@ -428,6 +514,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "6",
       "location": "Dungeon:6",
+      "note": "Reached XP level 9. HP: 69/69 MP: 9/9",
+      "turn": "8231",
       "type": "experience-level",
     },
     {
@@ -438,6 +526,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "6",
       "location": "Dungeon:6",
+      "note": "Reached skill level 11 in Dodging",
+      "turn": "8248",
       "type": "skill-level",
     },
     {
@@ -448,6 +538,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "7",
       "location": "Dungeon:7",
+      "note": "Reached skill level 12 in Dodging",
+      "turn": "9228",
       "type": "skill-level",
     },
     {
@@ -458,6 +550,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "7",
       "location": "Dungeon:7",
+      "note": "Reached skill level 13 in Dodging",
+      "turn": "9619",
       "type": "skill-level",
     },
     {
@@ -468,6 +562,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "7",
       "location": "Dungeon:7",
+      "note": "Reached skill level 5 in Evocations",
+      "turn": "9619",
       "type": "skill-level",
     },
     {
@@ -477,6 +573,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "7",
       "location": "Dungeon:7",
+      "note": "Found an iron altar of Okawaru.",
+      "turn": "9620",
       "type": "altar",
     },
     {
@@ -486,6 +584,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": undefined,
       "location": "Temple",
+      "note": "Became a worshipper of the Wu Jian Council",
+      "turn": "9837",
       "type": "join-god",
     },
     {
@@ -495,6 +595,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "7",
       "location": "Dungeon:7",
+      "note": "Found Atomniv's Armour Shop.",
+      "turn": "9911",
       "type": "shop",
     },
     {
@@ -504,6 +606,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Noticed Grum",
+      "turn": "10077",
       "type": "unique-noticed",
     },
     {
@@ -513,6 +617,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Killed Grum",
+      "turn": "10089",
       "type": "unique-killed",
     },
     {
@@ -523,6 +629,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Reached skill level 1 in Shields",
+      "turn": "10090",
       "type": "skill-level",
     },
     {
@@ -534,6 +642,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Reached XP level 10. HP: 45/76 MP: 10/10",
+      "turn": "10111",
       "type": "experience-level",
     },
     {
@@ -544,6 +654,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Reached skill level 5 in Shields",
+      "turn": "10510",
       "type": "skill-level",
     },
     {
@@ -554,6 +666,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Reached * piety under Wu Jian",
+      "turn": "11233",
       "type": "piety-god",
     },
     {
@@ -563,6 +677,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Found a burning altar of Makhleb.",
+      "turn": "12916",
       "type": "altar",
     },
     {
@@ -572,6 +688,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Found a bloodstained altar of Trog.",
+      "turn": "12926",
       "type": "altar",
     },
     {
@@ -581,6 +699,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Found a white marble altar of Elyvilon.",
+      "turn": "12926",
       "type": "altar",
     },
     {
@@ -590,6 +710,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Found a glowing golden altar of the Shining One.",
+      "turn": "12927",
       "type": "altar",
     },
     {
@@ -599,6 +721,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Found an opulent altar of Gozag.",
+      "turn": "12928",
       "type": "altar",
     },
     {
@@ -608,6 +732,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Found a hide-covered altar of Uskayaw.",
+      "turn": "12928",
       "type": "altar",
     },
     {
@@ -617,6 +743,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Found a sparkling altar of Nemelex Xobeh.",
+      "turn": "12928",
       "type": "altar",
     },
     {
@@ -626,6 +754,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Identified a scroll of acquirement",
+      "turn": "13319",
       "type": "ident",
     },
     {
@@ -635,6 +765,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Identified a scroll of acquirement",
+      "turn": "13319",
       "type": "item",
     },
     {
@@ -646,6 +778,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "7",
       "location": "Dungeon:7",
+      "note": "Bought the +18 shield of the Gong {rElec rN+ Will+ EV-5} for 1070 gold pieces",
+      "turn": "13443",
       "type": "bought",
     },
     {
@@ -656,6 +790,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "7",
       "location": "Dungeon:7",
+      "note": "Bought the +18 shield of the Gong {rElec rN+ Will+ EV-5} for 1070 gold pieces",
+      "turn": "13443",
       "type": "item",
     },
     {
@@ -667,6 +803,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Reached XP level 11. HP: 81/81 MP: 11/11",
+      "turn": "13772",
       "type": "experience-level",
     },
     {
@@ -677,6 +815,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Reached skill level 10 in Shields",
+      "turn": "13794",
       "type": "skill-level",
     },
     {
@@ -687,6 +827,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Reached ** piety under Wu Jian",
+      "turn": "13975",
       "type": "piety-god",
     },
     {
@@ -696,6 +838,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "1",
       "location": "Orc:1",
+      "note": "Noticed Urug",
+      "turn": "14788",
       "type": "unique-noticed",
     },
     {
@@ -705,6 +849,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "1",
       "location": "Lair:1",
+      "note": "Noticed Nergalle",
+      "turn": "14898",
       "type": "unique-noticed",
     },
     {
@@ -714,6 +860,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "1",
       "location": "Lair:1",
+      "note": "Killed Nergalle",
+      "turn": "14911",
       "type": "unique-killed",
     },
     {
@@ -724,6 +872,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "1",
       "location": "Lair:1",
+      "note": "Reached skill level 14 in Dodging",
+      "turn": "14914",
       "type": "skill-level",
     },
     {
@@ -735,6 +885,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "1",
       "location": "Lair:1",
+      "note": "Reached XP level 12. HP: 93/93 MP: 12/12",
+      "turn": "15236",
       "type": "experience-level",
     },
     {
@@ -745,6 +897,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "1",
       "location": "Lair:1",
+      "note": "Reached skill level 15 in Dodging",
+      "turn": "15985",
       "type": "skill-level",
     },
     {
@@ -755,6 +909,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "1",
       "location": "Lair:1",
+      "note": "Reached *** piety under Wu Jian",
+      "turn": "16050",
       "type": "piety-god",
     },
     {
@@ -765,6 +921,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "1",
       "location": "Lair:1",
+      "note": "Reached skill level 1 in Short Blades",
+      "turn": "16113",
       "type": "skill-level",
     },
     {
@@ -774,6 +932,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "2",
       "location": "Lair:2",
+      "note": "Identified the +4 buckler of the Slorg {rC+++ rN+++ MP-9 Int-2}",
+      "turn": "16229",
       "type": "ident",
     },
     {
@@ -783,6 +943,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "2",
       "location": "Lair:2",
+      "note": "Identified the +4 buckler of the Slorg {rC+++ rN+++ MP-9 Int-2}",
+      "turn": "16229",
       "type": "item",
     },
     {
@@ -793,6 +955,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "2",
       "location": "Lair:2",
+      "note": "Reached skill level 5 in Short Blades",
+      "turn": "16484",
       "type": "skill-level",
     },
     {
@@ -803,6 +967,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "2",
       "location": "Lair:2",
+      "note": "Reached **** piety under Wu Jian",
+      "turn": "17274",
       "type": "piety-god",
     },
     {
@@ -813,6 +979,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "2",
       "location": "Lair:2",
+      "note": "Reached skill level 10 in Fighting",
+      "turn": "17355",
       "type": "skill-level",
     },
     {
@@ -823,6 +991,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "3",
       "location": "Lair:3",
+      "note": "Reached skill level 16 in Dodging",
+      "turn": "17377",
       "type": "skill-level",
     },
     {
@@ -834,6 +1004,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "3",
       "location": "Lair:3",
+      "note": "Reached XP level 13. HP: 79/103 MP: 13/13",
+      "turn": "17392",
       "type": "experience-level",
     },
     {
@@ -844,6 +1016,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "4",
       "location": "Lair:4",
+      "note": "Reached skill level 10 in Short Blades",
+      "turn": "18347",
       "type": "skill-level",
     },
     {
@@ -854,6 +1028,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "3",
       "location": "Lair:3",
+      "note": "Reached ***** piety under Wu Jian",
+      "turn": "18491",
       "type": "piety-god",
     },
     {
@@ -865,6 +1041,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "4",
       "location": "Lair:4",
+      "note": "Reached XP level 14. HP: 113/113 MP: 14/14",
+      "turn": "19547",
       "type": "experience-level",
     },
     {
@@ -875,6 +1053,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "4",
       "location": "Lair:4",
+      "note": "Reached skill level 17 in Dodging",
+      "turn": "19581",
       "type": "skill-level",
     },
     {
@@ -884,6 +1064,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "5",
       "location": "Lair:5",
+      "note": "Identified the +12 flail of Duty {speed, rC+ MP+9 Int+5}",
+      "turn": "19734",
       "type": "ident",
     },
     {
@@ -893,6 +1075,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "5",
       "location": "Lair:5",
+      "note": "Identified the +12 flail of Duty {speed, rC+ MP+9 Int+5}",
+      "turn": "19734",
       "type": "item",
     },
     {
@@ -902,6 +1086,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "5",
       "location": "Lair:5",
+      "note": "Found an ornate altar of the Wu Jian Council.",
+      "turn": "19755",
       "type": "altar",
     },
     {
@@ -911,6 +1097,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "5",
       "location": "Lair:5",
+      "note": "Found a hide-covered altar of Uskayaw.",
+      "turn": "19756",
       "type": "altar",
     },
     {
@@ -920,6 +1108,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "5",
       "location": "Lair:5",
+      "note": "Identified the +1 ring mail of Uripeeb {Dex+4}",
+      "turn": "19871",
       "type": "ident",
     },
     {
@@ -929,6 +1119,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "5",
       "location": "Lair:5",
+      "note": "Identified the +1 ring mail of Uripeeb {Dex+4}",
+      "turn": "19871",
       "type": "item",
     },
     {
@@ -938,6 +1130,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "1",
       "location": "Orc:1",
+      "note": "Killed Urug",
+      "turn": "20609",
       "type": "unique-killed",
     },
     {
@@ -947,6 +1141,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Found Cuatyt's General Store.",
+      "turn": "21174",
       "type": "shop",
     },
     {
@@ -957,6 +1153,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Reached skill level 18 in Dodging",
+      "turn": "21279",
       "type": "skill-level",
     },
     {
@@ -966,6 +1164,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Found Atonkoc's General Store.",
+      "turn": "21303",
       "type": "shop",
     },
     {
@@ -975,6 +1175,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Noticed Donald",
+      "turn": "21382",
       "type": "unique-noticed",
     },
     {
@@ -984,6 +1186,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Killed Donald",
+      "turn": "22225",
       "type": "unique-killed",
     },
     {
@@ -994,6 +1198,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Reached skill level 19 in Dodging",
+      "turn": "22798",
       "type": "skill-level",
     },
     {
@@ -1003,6 +1209,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Found Zetzuo Viuh's Jewellery Boutique.",
+      "turn": "22942",
       "type": "shop",
     },
     {
@@ -1012,6 +1220,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Found Lakez's Antique Armour Shop.",
+      "turn": "22942",
       "type": "shop",
     },
     {
@@ -1021,6 +1231,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Found a one-way gate leading to the halls of Pandemonium.",
+      "turn": "22943",
       "type": "portal",
     },
     {
@@ -1032,6 +1244,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Bought a creamy pearl robe for 148 gold pieces",
+      "turn": "22948",
       "type": "bought",
     },
     {
@@ -1042,6 +1256,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Identified the +1 robe "Woud" {Regen+ Int+3} (You bought it in a shop on level 2 of the Orcish Mines)",
+      "turn": "22948",
       "type": "ident-bought-loc",
     },
     {
@@ -1052,6 +1268,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Identified the +1 robe "Woud" {Regen+ Int+3} (You bought it in a shop on level 2 of the Orcish Mines)",
+      "turn": "22948",
       "type": "item",
     },
     {
@@ -1063,6 +1281,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "4",
       "location": "Dungeon:4",
+      "note": "Bought a tin of tremorstones (2/2) for 440 gold pieces",
+      "turn": "23186",
       "type": "bought",
     },
     {
@@ -1074,6 +1294,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "2",
       "location": "Lair:2",
+      "note": "Reached XP level 15. HP: 87/125 MP: 15/15",
+      "turn": "23532",
       "type": "experience-level",
     },
     {
@@ -1085,6 +1307,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Bought a scroll of enchant armour for 97 gold pieces",
+      "turn": "24446",
       "type": "bought",
     },
     {
@@ -1096,6 +1320,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Bought a scroll of enchant weapon for 97 gold pieces",
+      "turn": "24446",
       "type": "bought",
     },
     {
@@ -1107,6 +1333,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Bought a scroll of enchant armour for 97 gold pieces",
+      "turn": "24446",
       "type": "bought",
     },
     {
@@ -1116,6 +1344,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "2",
       "location": "Swamp:2",
+      "note": "Found an opulent altar of Gozag.",
+      "turn": "24962",
       "type": "altar",
     },
     {
@@ -1126,6 +1356,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "1",
       "location": "Swamp:1",
+      "note": "Reached skill level 20 in Dodging",
+      "turn": "25448",
       "type": "skill-level",
     },
     {
@@ -1135,6 +1367,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       },
       "level": "2",
       "location": "Swamp:2",
+      "note": "Noticed Nikola",
+      "turn": "25621",
       "type": "unique-noticed",
     },
     {
@@ -1142,6 +1376,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       "data": "Killed from afar by Nikola",
       "level": "2",
       "location": "Swamp:2",
+      "note": "Killed from afar by Nikola",
+      "turn": "26211",
       "type": "last-event",
     },
   ],

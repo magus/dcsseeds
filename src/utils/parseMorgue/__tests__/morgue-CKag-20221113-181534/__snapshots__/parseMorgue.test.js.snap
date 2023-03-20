@@ -12,6 +12,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/CKag/morgue-CKag-20221113-181534.t
       "data": "CKag the Djinni Fire Elementalist began the quest for the Orb.",
       "level": "1",
       "location": "Dungeon:1",
+      "note": "CKag the Djinni Fire Elementalist began the quest for the Orb.",
+      "turn": "0",
       "type": "first-event",
     },
     {
@@ -23,6 +25,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/CKag/morgue-CKag-20221113-181534.t
       },
       "level": "1",
       "location": "Dungeon:1",
+      "note": "Reached XP level 1. HP: 15/15 MP: 0/0",
+      "turn": "0",
       "type": "experience-level",
     },
     {
@@ -30,6 +34,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/CKag/morgue-CKag-20221113-181534.t
       "data": "Slain by a quokka",
       "level": "1",
       "location": "Dungeon:1",
+      "note": "Slain by a quokka",
+      "turn": "63",
       "type": "last-event",
     },
   ],

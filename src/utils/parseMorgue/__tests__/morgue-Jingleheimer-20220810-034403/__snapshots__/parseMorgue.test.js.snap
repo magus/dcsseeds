@@ -12,6 +12,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "data": "Jingleheimer the Gnoll Fighter began the quest for the Orb.",
       "level": "1",
       "location": "Dungeon:1",
+      "note": "Jingleheimer the Gnoll Fighter began the quest for the Orb.",
+      "turn": "0",
       "type": "first-event",
     },
     {
@@ -23,6 +25,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Dungeon:1",
+      "note": "Reached XP level 1. HP: 23/23 MP: 1/1",
+      "turn": "0",
       "type": "experience-level",
     },
     {
@@ -34,6 +38,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Dungeon:1",
+      "note": "Reached XP level 2. HP: 29/29 MP: 2/2",
+      "turn": "165",
       "type": "experience-level",
     },
     {
@@ -43,6 +49,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Dungeon:1",
+      "note": "Found a faded altar of an unknown god.",
+      "turn": "331",
       "type": "altar",
     },
     {
@@ -54,6 +62,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Dungeon:2",
+      "note": "Reached XP level 3. HP: 35/35 MP: 3/3",
+      "turn": "753",
       "type": "experience-level",
     },
     {
@@ -64,6 +74,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Dungeon:1",
+      "note": "Reached skill level 1 in Invocations",
+      "turn": "910",
       "type": "skill-level",
     },
     {
@@ -74,6 +86,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Dungeon:1",
+      "note": "Reached skill level 1 in Long Blades",
+      "turn": "930",
       "type": "skill-level",
     },
     {
@@ -84,6 +98,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Dungeon:1",
+      "note": "Reached skill level 1 in Axes",
+      "turn": "930",
       "type": "skill-level",
     },
     {
@@ -94,6 +110,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Dungeon:1",
+      "note": "Reached skill level 1 in Maces & Flails",
+      "turn": "930",
       "type": "skill-level",
     },
     {
@@ -104,6 +122,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Dungeon:1",
+      "note": "Reached skill level 1 in Polearms",
+      "turn": "930",
       "type": "skill-level",
     },
     {
@@ -114,6 +134,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Dungeon:1",
+      "note": "Reached skill level 1 in Staves",
+      "turn": "930",
       "type": "skill-level",
     },
     {
@@ -124,6 +146,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Dungeon:1",
+      "note": "Reached skill level 1 in Slings",
+      "turn": "930",
       "type": "skill-level",
     },
     {
@@ -134,6 +158,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Dungeon:1",
+      "note": "Reached skill level 1 in Bows",
+      "turn": "930",
       "type": "skill-level",
     },
     {
@@ -144,6 +170,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Dungeon:1",
+      "note": "Reached skill level 1 in Crossbows",
+      "turn": "930",
       "type": "skill-level",
     },
     {
@@ -154,6 +182,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Dungeon:1",
+      "note": "Reached skill level 1 in Throwing",
+      "turn": "930",
       "type": "skill-level",
     },
     {
@@ -164,6 +194,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Dungeon:1",
+      "note": "Reached skill level 1 in Dodging",
+      "turn": "930",
       "type": "skill-level",
     },
     {
@@ -174,6 +206,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Dungeon:1",
+      "note": "Reached skill level 1 in Stealth",
+      "turn": "930",
       "type": "skill-level",
     },
     {
@@ -184,6 +218,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Dungeon:1",
+      "note": "Reached skill level 1 in Unarmed Combat",
+      "turn": "930",
       "type": "skill-level",
     },
     {
@@ -194,6 +230,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Dungeon:1",
+      "note": "Reached skill level 1 in Spellcasting",
+      "turn": "930",
       "type": "skill-level",
     },
     {
@@ -204,6 +242,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Dungeon:1",
+      "note": "Reached skill level 1 in Evocations",
+      "turn": "930",
       "type": "skill-level",
     },
     {
@@ -215,6 +255,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Dungeon:1",
+      "note": "Reached XP level 4. HP: 9/41 MP: 5/5",
+      "turn": "935",
       "type": "experience-level",
     },
     {
@@ -225,6 +267,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Dungeon:1",
+      "note": "Reached skill level 1 in Conjurations",
+      "turn": "1249",
       "type": "skill-level",
     },
     {
@@ -235,6 +279,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Dungeon:1",
+      "note": "Reached skill level 1 in Hexes",
+      "turn": "1249",
       "type": "skill-level",
     },
     {
@@ -245,6 +291,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Dungeon:1",
+      "note": "Reached skill level 1 in Summonings",
+      "turn": "1249",
       "type": "skill-level",
     },
     {
@@ -255,6 +303,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Dungeon:1",
+      "note": "Reached skill level 1 in Necromancy",
+      "turn": "1249",
       "type": "skill-level",
     },
     {
@@ -265,6 +315,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Dungeon:1",
+      "note": "Reached skill level 1 in Translocations",
+      "turn": "1249",
       "type": "skill-level",
     },
     {
@@ -275,6 +327,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Dungeon:1",
+      "note": "Reached skill level 1 in Transmutations",
+      "turn": "1249",
       "type": "skill-level",
     },
     {
@@ -285,6 +339,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Dungeon:1",
+      "note": "Reached skill level 1 in Fire Magic",
+      "turn": "1249",
       "type": "skill-level",
     },
     {
@@ -295,6 +351,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Dungeon:1",
+      "note": "Reached skill level 1 in Ice Magic",
+      "turn": "1249",
       "type": "skill-level",
     },
     {
@@ -305,6 +363,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Dungeon:1",
+      "note": "Reached skill level 1 in Air Magic",
+      "turn": "1249",
       "type": "skill-level",
     },
     {
@@ -315,6 +375,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Dungeon:1",
+      "note": "Reached skill level 1 in Earth Magic",
+      "turn": "1249",
       "type": "skill-level",
     },
     {
@@ -325,6 +387,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Dungeon:1",
+      "note": "Reached skill level 1 in Poison Magic",
+      "turn": "1249",
       "type": "skill-level",
     },
     {
@@ -336,6 +400,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Dungeon:1",
+      "note": "Reached XP level 5. HP: 21/47 MP: 5/7",
+      "turn": "1400",
       "type": "experience-level",
     },
     {
@@ -347,6 +413,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Dungeon:2",
+      "note": "Reached XP level 6. HP: 47/53 MP: 8/8",
+      "turn": "2543",
       "type": "experience-level",
     },
     {
@@ -357,6 +425,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Reached skill level 5 in Short Blades",
+      "turn": "3010",
       "type": "skill-level",
     },
     {
@@ -367,6 +437,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Reached skill level 2 in Staves",
+      "turn": "3111",
       "type": "skill-level",
     },
     {
@@ -376,6 +448,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Identified the +7 mace "Tiud" {pain, Int+3}",
+      "turn": "3147",
       "type": "ident",
     },
     {
@@ -385,6 +459,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Identified the +7 mace "Tiud" {pain, Int+3}",
+      "turn": "3147",
       "type": "item",
     },
     {
@@ -394,6 +470,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Found Haleo's Antique Weapon Shop.",
+      "turn": "3304",
       "type": "shop",
     },
     {
@@ -403,6 +481,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "4",
       "location": "Dungeon:4",
+      "note": "Noticed Grinder",
+      "turn": "3814",
       "type": "unique-noticed",
     },
     {
@@ -412,6 +492,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "4",
       "location": "Dungeon:4",
+      "note": "Killed Grinder",
+      "turn": "4154",
       "type": "unique-killed",
     },
     {
@@ -423,6 +505,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "4",
       "location": "Dungeon:4",
+      "note": "Reached XP level 7. HP: 41/60 MP: 10/10",
+      "turn": "4155",
       "type": "experience-level",
     },
     {
@@ -432,6 +516,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "4",
       "location": "Dungeon:4",
+      "note": "Found a stormy altar of Qazlal.",
+      "turn": "4883",
       "type": "altar",
     },
     {
@@ -443,6 +529,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "4",
       "location": "Dungeon:4",
+      "note": "Reached XP level 8. HP: 67/67 MP: 12/12",
+      "turn": "4897",
       "type": "experience-level",
     },
     {
@@ -453,6 +541,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Reached skill level 3 in Staves",
+      "turn": "5303",
       "type": "skill-level",
     },
     {
@@ -462,6 +552,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Identified the +10 dagger of Givorer {vorpal, rPois rC- rCorr Str+3}",
+      "turn": "6174",
       "type": "ident",
     },
     {
@@ -471,6 +563,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Identified the +10 dagger of Givorer {vorpal, rPois rC- rCorr Str+3}",
+      "turn": "6174",
       "type": "item",
     },
     {
@@ -480,6 +574,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Noticed Ijyb",
+      "turn": "6205",
       "type": "unique-noticed",
     },
     {
@@ -489,6 +585,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Killed Ijyb",
+      "turn": "6212",
       "type": "unique-killed",
     },
     {
@@ -501,6 +599,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "6",
       "location": "Dungeon:6",
+      "note": "Gained mutation: You have hidden genetic potential. [potion of mutation]",
+      "turn": "6549",
       "type": "mutation",
     },
     {
@@ -510,6 +610,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "6",
       "location": "Dungeon:6",
+      "note": "Identified the +8 trident "Yxtigos" {vorpal, rC++}",
+      "turn": "6622",
       "type": "ident",
     },
     {
@@ -519,6 +621,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "6",
       "location": "Dungeon:6",
+      "note": "Identified the +8 trident "Yxtigos" {vorpal, rC++}",
+      "turn": "6622",
       "type": "item",
     },
     {
@@ -530,6 +634,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "6",
       "location": "Dungeon:6",
+      "note": "Reached XP level 9. HP: 53/72 MP: 14/14",
+      "turn": "7225",
       "type": "experience-level",
     },
     {
@@ -539,6 +645,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "6",
       "location": "Dungeon:6",
+      "note": "Found a bloodstained altar of Trog.",
+      "turn": "7337",
       "type": "altar",
     },
     {
@@ -549,6 +657,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "7",
       "location": "Dungeon:7",
+      "note": "Reached skill level 4 in Staves",
+      "turn": "7885",
       "type": "skill-level",
     },
     {
@@ -558,6 +668,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "7",
       "location": "Dungeon:7",
+      "note": "Found a shimmering altar of Xom.",
+      "turn": "7907",
       "type": "altar",
     },
     {
@@ -567,6 +679,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "7",
       "location": "Dungeon:7",
+      "note": "Found an opulent altar of Gozag.",
+      "turn": "7908",
       "type": "altar",
     },
     {
@@ -576,6 +690,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "7",
       "location": "Dungeon:7",
+      "note": "Found a radiant altar of Vehumet.",
+      "turn": "7909",
       "type": "altar",
     },
     {
@@ -585,6 +701,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "7",
       "location": "Dungeon:7",
+      "note": "Found a hazy altar of Hepliaklqana.",
+      "turn": "7910",
       "type": "altar",
     },
     {
@@ -594,6 +712,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "7",
       "location": "Dungeon:7",
+      "note": "Found a broken altar of Ashenzari.",
+      "turn": "7910",
       "type": "altar",
     },
     {
@@ -603,6 +723,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "7",
       "location": "Dungeon:7",
+      "note": "Found a blossoming altar of Fedhas.",
+      "turn": "7912",
       "type": "altar",
     },
     {
@@ -612,6 +734,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "7",
       "location": "Dungeon:7",
+      "note": "Found a shimmering blue altar of Sif Muna.",
+      "turn": "7912",
       "type": "altar",
     },
     {
@@ -621,6 +745,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "7",
       "location": "Dungeon:7",
+      "note": "Found an iron altar of Okawaru.",
+      "turn": "7913",
       "type": "altar",
     },
     {
@@ -630,6 +756,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "7",
       "location": "Dungeon:7",
+      "note": "Became a worshipper of Warmaster Okawaru",
+      "turn": "7921",
       "type": "join-god",
     },
     {
@@ -642,6 +770,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "7",
       "location": "Dungeon:7",
+      "note": "Gained mutation: You are agile. (Dex +2) [hidden potential]",
+      "turn": "7953",
       "type": "mutation",
     },
     {
@@ -652,6 +782,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "7",
       "location": "Dungeon:7",
+      "note": "Reached * piety under Okawaru",
+      "turn": "8299",
       "type": "piety-god",
     },
     {
@@ -662,6 +794,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "7",
       "location": "Dungeon:7",
+      "note": "Reached skill level 5 in Invocations",
+      "turn": "8325",
       "type": "skill-level",
     },
     {
@@ -671,6 +805,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Found a shadowy altar of Dithmenos.",
+      "turn": "8960",
       "type": "altar",
     },
     {
@@ -681,6 +817,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Reached skill level 5 in Staves",
+      "turn": "9073",
       "type": "skill-level",
     },
     {
@@ -692,6 +830,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Reached XP level 10. HP: 58/80 MP: 15/17",
+      "turn": "9073",
       "type": "experience-level",
     },
     {
@@ -702,6 +842,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Reached skill level 5 in Long Blades",
+      "turn": "9090",
       "type": "skill-level",
     },
     {
@@ -712,6 +854,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Reached skill level 5 in Axes",
+      "turn": "9090",
       "type": "skill-level",
     },
     {
@@ -722,6 +866,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Reached skill level 5 in Maces & Flails",
+      "turn": "9090",
       "type": "skill-level",
     },
     {
@@ -732,6 +878,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Reached skill level 5 in Polearms",
+      "turn": "9090",
       "type": "skill-level",
     },
     {
@@ -742,6 +890,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Reached skill level 5 in Slings",
+      "turn": "9090",
       "type": "skill-level",
     },
     {
@@ -752,6 +902,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Reached skill level 5 in Bows",
+      "turn": "9090",
       "type": "skill-level",
     },
     {
@@ -762,6 +914,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Reached skill level 5 in Crossbows",
+      "turn": "9090",
       "type": "skill-level",
     },
     {
@@ -772,6 +926,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Reached skill level 5 in Throwing",
+      "turn": "9090",
       "type": "skill-level",
     },
     {
@@ -782,6 +938,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Reached skill level 5 in Dodging",
+      "turn": "9090",
       "type": "skill-level",
     },
     {
@@ -792,6 +950,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Reached skill level 5 in Stealth",
+      "turn": "9090",
       "type": "skill-level",
     },
     {
@@ -802,6 +962,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Reached skill level 5 in Unarmed Combat",
+      "turn": "9090",
       "type": "skill-level",
     },
     {
@@ -812,6 +974,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Reached skill level 5 in Spellcasting",
+      "turn": "9090",
       "type": "skill-level",
     },
     {
@@ -822,6 +986,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Reached skill level 5 in Evocations",
+      "turn": "9090",
       "type": "skill-level",
     },
     {
@@ -832,6 +998,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Reached ** piety under Okawaru",
+      "turn": "9093",
       "type": "piety-god",
     },
     {
@@ -844,6 +1012,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Gained mutation: Your system is resistant to poisons. (rPois) [hidden potential]",
+      "turn": "9118",
       "type": "mutation",
     },
     {
@@ -856,6 +1026,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Lost mutation: You have hidden genetic potential. [hidden potential expressed]",
+      "turn": "9118",
       "type": "mutation",
     },
     {
@@ -865,6 +1037,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Noticed Joseph",
+      "turn": "9405",
       "type": "unique-noticed",
     },
     {
@@ -874,6 +1048,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Killed Joseph",
+      "turn": "9423",
       "type": "unique-killed",
     },
     {
@@ -884,6 +1060,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Reached skill level 6 in Staves",
+      "turn": "9424",
       "type": "skill-level",
     },
     {
@@ -894,6 +1072,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Reached *** piety under Okawaru",
+      "turn": "9699",
       "type": "piety-god",
     },
     {
@@ -903,6 +1083,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Noticed Harold",
+      "turn": "9818",
       "type": "unique-noticed",
     },
     {
@@ -912,6 +1094,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Killed Harold",
+      "turn": "9824",
       "type": "unique-killed",
     },
     {
@@ -921,6 +1105,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Received a gift from Okawaru",
+      "turn": "9824",
       "type": "god-gift",
     },
     {
@@ -932,6 +1118,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Reached XP level 11. HP: 48/87 MP: 19/19",
+      "turn": "10602",
       "type": "experience-level",
     },
     {
@@ -942,6 +1130,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Reached skill level 7 in Staves",
+      "turn": "10614",
       "type": "skill-level",
     },
     {
@@ -952,6 +1142,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Reached **** piety under Okawaru",
+      "turn": "10914",
       "type": "piety-god",
     },
     {
@@ -962,6 +1154,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Reached skill level 5 in Conjurations",
+      "turn": "11128",
       "type": "skill-level",
     },
     {
@@ -972,6 +1166,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Reached skill level 5 in Hexes",
+      "turn": "11128",
       "type": "skill-level",
     },
     {
@@ -982,6 +1178,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Reached skill level 5 in Summonings",
+      "turn": "11128",
       "type": "skill-level",
     },
     {
@@ -992,6 +1190,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Reached skill level 5 in Necromancy",
+      "turn": "11128",
       "type": "skill-level",
     },
     {
@@ -1002,6 +1202,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Reached skill level 5 in Translocations",
+      "turn": "11128",
       "type": "skill-level",
     },
     {
@@ -1012,6 +1214,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Reached skill level 5 in Transmutations",
+      "turn": "11128",
       "type": "skill-level",
     },
     {
@@ -1022,6 +1226,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Reached skill level 5 in Fire Magic",
+      "turn": "11128",
       "type": "skill-level",
     },
     {
@@ -1032,6 +1238,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Reached skill level 5 in Ice Magic",
+      "turn": "11128",
       "type": "skill-level",
     },
     {
@@ -1042,6 +1250,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Reached skill level 5 in Air Magic",
+      "turn": "11128",
       "type": "skill-level",
     },
     {
@@ -1052,6 +1262,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Reached skill level 5 in Earth Magic",
+      "turn": "11128",
       "type": "skill-level",
     },
     {
@@ -1062,6 +1274,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Reached skill level 5 in Poison Magic",
+      "turn": "11128",
       "type": "skill-level",
     },
     {
@@ -1071,6 +1285,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Found a glowing golden altar of the Shining One.",
+      "turn": "11741",
       "type": "altar",
     },
     {
@@ -1080,6 +1296,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Identified the +1 leather armour of Ornamental Surprise {Contam rElec Str+4 Dex+3}",
+      "turn": "12223",
       "type": "ident",
     },
     {
@@ -1089,6 +1307,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Identified the +1 leather armour of Ornamental Surprise {Contam rElec Str+4 Dex+3}",
+      "turn": "12223",
       "type": "item",
     },
     {
@@ -1099,6 +1319,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Reached ***** piety under Okawaru",
+      "turn": "13286",
       "type": "piety-god",
     },
     {
@@ -1108,6 +1330,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "10",
       "location": "Dungeon:10",
+      "note": "Found the +18 shield of the Gong {rElec rN+ Will+ EV-5}",
+      "turn": "13497",
       "type": "found",
     },
     {
@@ -1117,6 +1341,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "10",
       "location": "Dungeon:10",
+      "note": "Found the +18 shield of the Gong {rElec rN+ Will+ EV-5}",
+      "turn": "13497",
       "type": "item",
     },
     {
@@ -1127,6 +1353,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "11",
       "location": "Dungeon:11",
+      "note": "Reached skill level 8 in Staves",
+      "turn": "13607",
       "type": "skill-level",
     },
     {
@@ -1136,6 +1364,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "11",
       "location": "Dungeon:11",
+      "note": "Noticed Maurice",
+      "turn": "13622",
       "type": "unique-noticed",
     },
     {
@@ -1145,6 +1375,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "11",
       "location": "Dungeon:11",
+      "note": "Killed Maurice",
+      "turn": "13647",
       "type": "unique-killed",
     },
     {
@@ -1154,6 +1386,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "11",
       "location": "Dungeon:11",
+      "note": "Received a gift from Okawaru",
+      "turn": "13704",
       "type": "god-gift",
     },
     {
@@ -1163,6 +1397,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "11",
       "location": "Dungeon:11",
+      "note": "Noticed Urug",
+      "turn": "13976",
       "type": "unique-noticed",
     },
     {
@@ -1172,6 +1408,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "11",
       "location": "Dungeon:11",
+      "note": "Killed Urug",
+      "turn": "13996",
       "type": "unique-killed",
     },
     {
@@ -1181,6 +1419,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "11",
       "location": "Dungeon:11",
+      "note": "Noticed Fannar",
+      "turn": "14132",
       "type": "unique-noticed",
     },
     {
@@ -1190,6 +1430,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "10",
       "location": "Dungeon:10",
+      "note": "Killed Fannar",
+      "turn": "14153",
       "type": "unique-killed",
     },
     {
@@ -1199,6 +1441,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "10",
       "location": "Dungeon:10",
+      "note": "Received a gift from Okawaru",
+      "turn": "14155",
       "type": "god-gift",
     },
     {
@@ -1210,6 +1454,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "10",
       "location": "Dungeon:10",
+      "note": "Reached XP level 12. HP: 79/96 MP: 22/22",
+      "turn": "14156",
       "type": "experience-level",
     },
     {
@@ -1219,6 +1465,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "12",
       "location": "Dungeon:12",
+      "note": "Noticed Snorg",
+      "turn": "14965",
       "type": "unique-noticed",
     },
     {
@@ -1229,6 +1477,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "12",
       "location": "Dungeon:12",
+      "note": "Reached skill level 9 in Staves",
+      "turn": "15118",
       "type": "skill-level",
     },
     {
@@ -1238,6 +1488,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "11",
       "location": "Dungeon:11",
+      "note": "Killed Snorg",
+      "turn": "15304",
       "type": "unique-killed",
     },
     {
@@ -1248,6 +1500,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "14",
       "location": "Dungeon:14",
+      "note": "Reached skill level 10 in Fighting",
+      "turn": "15558",
       "type": "skill-level",
     },
     {
@@ -1258,6 +1512,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "14",
       "location": "Dungeon:14",
+      "note": "Reached skill level 10 in Armour",
+      "turn": "15558",
       "type": "skill-level",
     },
     {
@@ -1268,6 +1524,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "14",
       "location": "Dungeon:14",
+      "note": "Reached skill level 10 in Shields",
+      "turn": "15558",
       "type": "skill-level",
     },
     {
@@ -1278,6 +1536,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "12",
       "location": "Dungeon:12",
+      "note": "Reached skill level 10 in Staves",
+      "turn": "15846",
       "type": "skill-level",
     },
     {
@@ -1287,6 +1547,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "10",
       "location": "Dungeon:10",
+      "note": "Received a gift from Okawaru",
+      "turn": "16112",
       "type": "god-gift",
     },
     {
@@ -1298,6 +1560,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "10",
       "location": "Dungeon:10",
+      "note": "Reached XP level 13. HP: 75/103 MP: 24/24",
+      "turn": "16113",
       "type": "experience-level",
     },
     {
@@ -1307,6 +1571,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Lair:1",
+      "note": "Noticed Sonja",
+      "turn": "16316",
       "type": "unique-noticed",
     },
     {
@@ -1316,6 +1582,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": undefined,
       "location": "Arena",
+      "note": "Killed Sonja",
+      "turn": "16334",
       "type": "unique-killed",
     },
     {
@@ -1325,6 +1593,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Lair:1",
+      "note": "Noticed Gastronok",
+      "turn": "16375",
       "type": "unique-noticed",
     },
     {
@@ -1334,6 +1604,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Lair:1",
+      "note": "Killed Gastronok",
+      "turn": "16508",
       "type": "unique-killed",
     },
     {
@@ -1343,6 +1615,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Lair:1",
+      "note": "Received a gift from Okawaru",
+      "turn": "16683",
       "type": "god-gift",
     },
     {
@@ -1352,6 +1626,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Lair:2",
+      "note": "Identified 2 scrolls of acquirement",
+      "turn": "17399",
       "type": "ident",
     },
     {
@@ -1361,6 +1637,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Lair:2",
+      "note": "Identified 2 scrolls of acquirement",
+      "turn": "17399",
       "type": "item",
     },
     {
@@ -1371,6 +1649,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Lair:2",
+      "note": "Reached skill level 11 in Staves",
+      "turn": "17470",
       "type": "skill-level",
     },
     {
@@ -1381,6 +1661,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Lair:2",
+      "note": "Identified the +7 great mace "Venlofopp" {flame, rN+ Dex+2} (Okawaru gifted it to you on level 2 of the Lair of Beasts)",
+      "turn": "17656",
       "type": "god-gift",
     },
     {
@@ -1390,6 +1672,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Lair:2",
+      "note": "Received a gift from Okawaru",
+      "turn": "17656",
       "type": "god-gift",
     },
     {
@@ -1401,6 +1685,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Bought a fine long sword for 212 gold pieces",
+      "turn": "18389",
       "type": "bought",
     },
     {
@@ -1411,6 +1697,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Identified the +0 long sword of Teludgh {speed, Str+4 Int+4 Dex+2} (You bought it in a shop on level 3 of the Dungeon)",
+      "turn": "18389",
       "type": "ident-bought-loc",
     },
     {
@@ -1421,6 +1709,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Identified the +0 long sword of Teludgh {speed, Str+4 Int+4 Dex+2} (You bought it in a shop on level 3 of the Dungeon)",
+      "turn": "18389",
       "type": "item",
     },
     {
@@ -1432,6 +1722,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Bought a bone hunting sling for 162 gold pieces",
+      "turn": "18389",
       "type": "bought",
     },
     {
@@ -1442,6 +1734,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Identified the +8 hunting sling of Weak Integrity {freeze, rC+} (You bought it in a shop on level 3 of the Dungeon)",
+      "turn": "18389",
       "type": "ident-bought-loc",
     },
     {
@@ -1452,6 +1746,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Identified the +8 hunting sling of Weak Integrity {freeze, rC+} (You bought it in a shop on level 3 of the Dungeon)",
+      "turn": "18389",
       "type": "item",
     },
     {
@@ -1463,6 +1759,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Bought a bloodstained short sword for 200 gold pieces",
+      "turn": "18389",
       "type": "bought",
     },
     {
@@ -1473,6 +1771,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Identified the +8 short sword of Ikhly {vamp, +Blink rElec rPois} (You bought it in a shop on level 3 of the Dungeon)",
+      "turn": "18389",
       "type": "ident-bought-loc",
     },
     {
@@ -1483,6 +1783,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Identified the +8 short sword of Ikhly {vamp, +Blink rElec rPois} (You bought it in a shop on level 3 of the Dungeon)",
+      "turn": "18389",
       "type": "item",
     },
     {
@@ -1492,6 +1794,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Lair:3",
+      "note": "Found a blossoming altar of Fedhas.",
+      "turn": "19468",
       "type": "altar",
     },
     {
@@ -1501,6 +1805,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Lair:3",
+      "note": "Identified the +1 ring mail "Bamukoag" {rC+ Str+4 Int+2}",
+      "turn": "19606",
       "type": "ident",
     },
     {
@@ -1510,6 +1816,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Lair:3",
+      "note": "Identified the +1 ring mail "Bamukoag" {rC+ Str+4 Int+2}",
+      "turn": "19606",
       "type": "item",
     },
     {
@@ -1520,6 +1828,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Lair:3",
+      "note": "Reached skill level 10 in Short Blades",
+      "turn": "19919",
       "type": "skill-level",
     },
     {
@@ -1531,6 +1841,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "4",
       "location": "Lair:4",
+      "note": "Reached XP level 14. HP: 113/113 MP: 26/26",
+      "turn": "19961",
       "type": "experience-level",
     },
     {
@@ -1540,6 +1852,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "4",
       "location": "Lair:4",
+      "note": "Received a gift from Okawaru",
+      "turn": "20028",
       "type": "god-gift",
     },
     {
@@ -1549,6 +1863,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Lair:3",
+      "note": "Received a gift from Okawaru",
+      "turn": "20196",
       "type": "god-gift",
     },
     {
@@ -1559,6 +1875,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Lair:3",
+      "note": "Reached skill level 10 in Invocations",
+      "turn": "20339",
       "type": "skill-level",
     },
     {
@@ -1569,6 +1887,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Lair:3",
+      "note": "Reached ****** piety under Okawaru",
+      "turn": "20361",
       "type": "piety-god",
     },
     {
@@ -1579,6 +1899,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Lair:3",
+      "note": "Reached skill level 12 in Staves",
+      "turn": "20362",
       "type": "skill-level",
     },
     {
@@ -1589,6 +1911,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Lair:3",
+      "note": "Identified the +1 short sword of the Pyrrhic Victory {vorpal, rPois SInv} (Okawaru gifted it to you on level 3 of the Lair of Beasts)",
+      "turn": "20425",
       "type": "god-gift",
     },
     {
@@ -1598,6 +1922,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Lair:3",
+      "note": "Received a gift from Okawaru",
+      "turn": "20425",
       "type": "god-gift",
     },
     {
@@ -1607,6 +1933,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "5",
       "location": "Lair:5",
+      "note": "Found a hide-covered altar of Uskayaw.",
+      "turn": "21642",
       "type": "altar",
     },
     {
@@ -1616,6 +1944,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "6",
       "location": "Lair:6",
+      "note": "Received a gift from Okawaru",
+      "turn": "22482",
       "type": "god-gift",
     },
     {
@@ -1625,6 +1955,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "6",
       "location": "Lair:6",
+      "note": "Received a gift from Okawaru",
+      "turn": "23004",
       "type": "god-gift",
     },
     {
@@ -1636,6 +1968,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "6",
       "location": "Lair:6",
+      "note": "Reached XP level 15. HP: 115/120 MP: 28/28",
+      "turn": "23092",
       "type": "experience-level",
     },
     {
@@ -1646,6 +1980,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "6",
       "location": "Lair:6",
+      "note": "Identified the +8 ring mail of the Snake Pit {+Inv Regen+ Int+3 Dex+4} (Okawaru gifted it to you on level 6 of the Lair of Beasts)",
+      "turn": "23433",
       "type": "god-gift",
     },
     {
@@ -1655,6 +1991,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "6",
       "location": "Lair:6",
+      "note": "Received a gift from Okawaru",
+      "turn": "23433",
       "type": "god-gift",
     },
     {
@@ -1665,6 +2003,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "12",
       "location": "Dungeon:12",
+      "note": "Reached skill level 13 in Staves",
+      "turn": "24273",
       "type": "skill-level",
     },
     {
@@ -1675,6 +2015,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "12",
       "location": "Dungeon:12",
+      "note": "Reached skill level 10 in Long Blades",
+      "turn": "24420",
       "type": "skill-level",
     },
     {
@@ -1685,6 +2027,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "12",
       "location": "Dungeon:12",
+      "note": "Reached skill level 10 in Axes",
+      "turn": "24420",
       "type": "skill-level",
     },
     {
@@ -1695,6 +2039,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "12",
       "location": "Dungeon:12",
+      "note": "Reached skill level 10 in Maces & Flails",
+      "turn": "24420",
       "type": "skill-level",
     },
     {
@@ -1705,6 +2051,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "12",
       "location": "Dungeon:12",
+      "note": "Reached skill level 10 in Polearms",
+      "turn": "24420",
       "type": "skill-level",
     },
     {
@@ -1715,6 +2063,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "12",
       "location": "Dungeon:12",
+      "note": "Reached skill level 10 in Slings",
+      "turn": "24420",
       "type": "skill-level",
     },
     {
@@ -1725,6 +2075,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "12",
       "location": "Dungeon:12",
+      "note": "Reached skill level 10 in Bows",
+      "turn": "24420",
       "type": "skill-level",
     },
     {
@@ -1735,6 +2087,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "12",
       "location": "Dungeon:12",
+      "note": "Reached skill level 10 in Crossbows",
+      "turn": "24420",
       "type": "skill-level",
     },
     {
@@ -1745,6 +2099,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "12",
       "location": "Dungeon:12",
+      "note": "Reached skill level 10 in Throwing",
+      "turn": "24420",
       "type": "skill-level",
     },
     {
@@ -1755,6 +2111,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "12",
       "location": "Dungeon:12",
+      "note": "Reached skill level 10 in Dodging",
+      "turn": "24420",
       "type": "skill-level",
     },
     {
@@ -1765,6 +2123,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "12",
       "location": "Dungeon:12",
+      "note": "Reached skill level 10 in Stealth",
+      "turn": "24420",
       "type": "skill-level",
     },
     {
@@ -1775,6 +2135,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "12",
       "location": "Dungeon:12",
+      "note": "Reached skill level 10 in Unarmed Combat",
+      "turn": "24420",
       "type": "skill-level",
     },
     {
@@ -1785,6 +2147,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "12",
       "location": "Dungeon:12",
+      "note": "Reached skill level 10 in Spellcasting",
+      "turn": "24420",
       "type": "skill-level",
     },
     {
@@ -1795,6 +2159,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "12",
       "location": "Dungeon:12",
+      "note": "Reached skill level 10 in Evocations",
+      "turn": "24420",
       "type": "skill-level",
     },
     {
@@ -1804,6 +2170,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "13",
       "location": "Dungeon:13",
+      "note": "Found a gate to the Vaults.",
+      "turn": "24623",
       "type": "portal",
     },
     {
@@ -1813,6 +2181,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "13",
       "location": "Dungeon:13",
+      "note": "Found Unliur's Magic Scroll Shoppe.",
+      "turn": "24651",
       "type": "shop",
     },
     {
@@ -1824,6 +2194,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "13",
       "location": "Dungeon:13",
+      "note": "Bought a scroll of acquirement for 676 gold pieces",
+      "turn": "24660",
       "type": "bought",
     },
     {
@@ -1835,6 +2207,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "13",
       "location": "Dungeon:13",
+      "note": "Bought a scroll of teleportation for 39 gold pieces",
+      "turn": "24660",
       "type": "bought",
     },
     {
@@ -1846,6 +2220,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "13",
       "location": "Dungeon:13",
+      "note": "Bought a scroll of teleportation for 39 gold pieces",
+      "turn": "24660",
       "type": "bought",
     },
     {
@@ -1857,6 +2233,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "13",
       "location": "Dungeon:13",
+      "note": "Bought a scroll of blinking for 97 gold pieces",
+      "turn": "24660",
       "type": "bought",
     },
     {
@@ -1868,6 +2246,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "13",
       "location": "Dungeon:13",
+      "note": "Bought a scroll of silence for 97 gold pieces",
+      "turn": "24660",
       "type": "bought",
     },
     {
@@ -1877,6 +2257,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "13",
       "location": "Dungeon:13",
+      "note": "Found Tyxehol's Book Boutique.",
+      "turn": "25089",
       "type": "shop",
     },
     {
@@ -1886,6 +2268,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "15",
       "location": "Dungeon:15",
+      "note": "Acquired the Reference Book on Confrontation",
+      "turn": "25920",
       "type": "acquirement",
     },
     {
@@ -1895,6 +2279,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "15",
       "location": "Dungeon:15",
+      "note": "Received a gift from Okawaru",
+      "turn": "26060",
       "type": "god-gift",
     },
     {
@@ -1904,6 +2290,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "15",
       "location": "Dungeon:15",
+      "note": "Noticed Azrael",
+      "turn": "26134",
       "type": "unique-noticed",
     },
     {
@@ -1913,6 +2301,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": undefined,
       "location": "Arena",
+      "note": "Killed Azrael",
+      "turn": "26668",
       "type": "unique-killed",
     },
     {
@@ -1924,6 +2314,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Reached XP level 16. HP: 95/128 MP: 25/30",
+      "turn": "28078",
       "type": "experience-level",
     },
     {
@@ -1933,6 +2325,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Found Diuvur's Antique Armour Shoppe.",
+      "turn": "28097",
       "type": "shop",
     },
     {
@@ -1942,6 +2336,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Found Bogaolue's Weapon Shoppe.",
+      "turn": "28097",
       "type": "shop",
     },
     {
@@ -1952,6 +2348,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Reached skill level 14 in Staves",
+      "turn": "28137",
       "type": "skill-level",
     },
     {
@@ -1961,6 +2359,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Found Saymuive's Weapon Shop.",
+      "turn": "28142",
       "type": "shop",
     },
     {
@@ -1970,6 +2370,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Found Iwkeydufenn's Armour Shop.",
+      "turn": "28142",
       "type": "shop",
     },
     {
@@ -1979,6 +2381,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Orc:1",
+      "note": "Found a shimmering altar of Xom.",
+      "turn": "29076",
       "type": "altar",
     },
     {
@@ -1989,6 +2393,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Orc:1",
+      "note": "Identified the +3 tower shield of Insatiable Hunger {rF+ rC++} (Okawaru gifted it to you on level 1 of the Orcish Mines)",
+      "turn": "29217",
       "type": "god-gift",
     },
     {
@@ -1998,6 +2404,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Orc:1",
+      "note": "Received a gift from Okawaru",
+      "turn": "29217",
       "type": "god-gift",
     },
     {
@@ -2009,6 +2417,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Bought an embroidered scarf for 264 gold pieces",
+      "turn": "29339",
       "type": "bought",
     },
     {
@@ -2020,6 +2430,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Bought the +10 scimitar of Doom {vamp, SInv} for 732 gold pieces",
+      "turn": "29362",
       "type": "bought",
     },
     {
@@ -2030,6 +2442,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Bought the +10 scimitar of Doom {vamp, SInv} for 732 gold pieces",
+      "turn": "29362",
       "type": "item",
     },
     {
@@ -2039,6 +2453,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Acquired the ring "Maularir" {rF+ Str+3 Slay+4}",
+      "turn": "29499",
       "type": "acquirement",
     },
     {
@@ -2048,6 +2464,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Snake:1",
+      "note": "Noticed Aizul",
+      "turn": "30478",
       "type": "unique-noticed",
     },
     {
@@ -2057,6 +2475,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": undefined,
       "location": "Arena",
+      "note": "Killed Aizul",
+      "turn": "30542",
       "type": "unique-killed",
     },
     {
@@ -2066,6 +2486,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Snake:1",
+      "note": "Noticed Louise",
+      "turn": "31006",
       "type": "unique-noticed",
     },
     {
@@ -2075,6 +2497,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": undefined,
       "location": "Arena",
+      "note": "Killed Louise",
+      "turn": "31036",
       "type": "unique-killed",
     },
     {
@@ -2084,6 +2508,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Snake:1",
+      "note": "Received a gift from Okawaru",
+      "turn": "31753",
       "type": "god-gift",
     },
     {
@@ -2094,6 +2520,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Snake:1",
+      "note": "Reached skill level 15 in Staves",
+      "turn": "32615",
       "type": "skill-level",
     },
     {
@@ -2105,6 +2533,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Snake:2",
+      "note": "Reached XP level 17. HP: 136/136 MP: 24/32",
+      "turn": "32647",
       "type": "experience-level",
     },
     {
@@ -2114,6 +2544,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Snake:2",
+      "note": "Received a gift from Okawaru",
+      "turn": "32672",
       "type": "god-gift",
     },
     {
@@ -2124,6 +2556,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Snake:2",
+      "note": "Identified the +10 glaive "Xinysm" {venom, rC+ Str+5} (Okawaru gifted it to you on level 2 of the Snake Pit)",
+      "turn": "32914",
       "type": "god-gift",
     },
     {
@@ -2133,6 +2567,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Snake:2",
+      "note": "Received a gift from Okawaru",
+      "turn": "32914",
       "type": "god-gift",
     },
     {
@@ -2142,6 +2578,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Snake:2",
+      "note": "Found Beoniaz's Assorted Antiques.",
+      "turn": "33114",
       "type": "shop",
     },
     {
@@ -2153,6 +2591,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Snake:2",
+      "note": "Bought a blackened copper ring for 165 gold pieces",
+      "turn": "33125",
       "type": "bought",
     },
     {
@@ -2164,6 +2604,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Snake:2",
+      "note": "Bought a scroll of enchant armour for 247 gold pieces",
+      "turn": "33126",
       "type": "bought",
     },
     {
@@ -2173,6 +2615,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Snake:2",
+      "note": "Noticed Vashnia",
+      "turn": "33503",
       "type": "unique-noticed",
     },
     {
@@ -2182,6 +2626,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": undefined,
       "location": "Arena",
+      "note": "Killed Vashnia",
+      "turn": "33521",
       "type": "unique-killed",
     },
     {
@@ -2192,6 +2638,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Snake:2",
+      "note": "Identified the +7 short sword of the Blowfly {flame, rElec rF+} (Okawaru gifted it to you on level 2 of the Snake Pit)",
+      "turn": "33589",
       "type": "god-gift",
     },
     {
@@ -2201,6 +2649,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Snake:2",
+      "note": "Received a gift from Okawaru",
+      "turn": "33589",
       "type": "god-gift",
     },
     {
@@ -2211,6 +2661,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Snake:2",
+      "note": "Reached skill level 10 in Conjurations",
+      "turn": "34112",
       "type": "skill-level",
     },
     {
@@ -2221,6 +2673,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Snake:2",
+      "note": "Reached skill level 10 in Hexes",
+      "turn": "34112",
       "type": "skill-level",
     },
     {
@@ -2231,6 +2685,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Snake:2",
+      "note": "Reached skill level 10 in Summonings",
+      "turn": "34112",
       "type": "skill-level",
     },
     {
@@ -2241,6 +2697,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Snake:2",
+      "note": "Reached skill level 10 in Necromancy",
+      "turn": "34112",
       "type": "skill-level",
     },
     {
@@ -2251,6 +2709,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Snake:2",
+      "note": "Reached skill level 10 in Translocations",
+      "turn": "34112",
       "type": "skill-level",
     },
     {
@@ -2261,6 +2721,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Snake:2",
+      "note": "Reached skill level 10 in Transmutations",
+      "turn": "34112",
       "type": "skill-level",
     },
     {
@@ -2271,6 +2733,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Snake:2",
+      "note": "Reached skill level 10 in Fire Magic",
+      "turn": "34112",
       "type": "skill-level",
     },
     {
@@ -2281,6 +2745,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Snake:2",
+      "note": "Reached skill level 10 in Ice Magic",
+      "turn": "34112",
       "type": "skill-level",
     },
     {
@@ -2291,6 +2757,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Snake:2",
+      "note": "Reached skill level 10 in Air Magic",
+      "turn": "34112",
       "type": "skill-level",
     },
     {
@@ -2301,6 +2769,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Snake:2",
+      "note": "Reached skill level 10 in Earth Magic",
+      "turn": "34112",
       "type": "skill-level",
     },
     {
@@ -2311,6 +2781,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Snake:2",
+      "note": "Reached skill level 10 in Poison Magic",
+      "turn": "34112",
       "type": "skill-level",
     },
     {
@@ -2321,6 +2793,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Snake:3",
+      "note": "Reached skill level 16 in Staves",
+      "turn": "34697",
       "type": "skill-level",
     },
     {
@@ -2330,6 +2804,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Snake:3",
+      "note": "Received a gift from Okawaru",
+      "turn": "34798",
       "type": "god-gift",
     },
     {
@@ -2341,6 +2817,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Snake:3",
+      "note": "Reached XP level 18. HP: 141/144 MP: 34/34",
+      "turn": "34799",
       "type": "experience-level",
     },
     {
@@ -2350,6 +2828,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Snake:3",
+      "note": "Found Ygotzido's Distillery.",
+      "turn": "35128",
       "type": "shop",
     },
     {
@@ -2361,6 +2841,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Snake:3",
+      "note": "Bought a potion of mutation for 112 gold pieces",
+      "turn": "35136",
       "type": "bought",
     },
     {
@@ -2372,6 +2854,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Snake:3",
+      "note": "Bought a potion of heal wounds for 70 gold pieces",
+      "turn": "35136",
       "type": "bought",
     },
     {
@@ -2383,6 +2867,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Snake:3",
+      "note": "Bought a potion of heal wounds for 70 gold pieces",
+      "turn": "35136",
       "type": "bought",
     },
     {
@@ -2392,6 +2878,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Snake:3",
+      "note": "Found Efihic's Antique Weapon Shop.",
+      "turn": "35136",
       "type": "shop",
     },
     {
@@ -2401,6 +2889,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Snake:3",
+      "note": "Found a sacrificial altar of Ru.",
+      "turn": "35175",
       "type": "altar",
     },
     {
@@ -2410,6 +2900,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "4",
       "location": "Snake:4",
+      "note": "Noticed Mara",
+      "turn": "35592",
       "type": "unique-noticed",
     },
     {
@@ -2419,6 +2911,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": undefined,
       "location": "Arena",
+      "note": "Killed Mara",
+      "turn": "35867",
       "type": "unique-killed",
     },
     {
@@ -2428,6 +2922,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": undefined,
       "location": "Arena",
+      "note": "Received a gift from Okawaru",
+      "turn": "35867",
       "type": "god-gift",
     },
     {
@@ -2437,6 +2933,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": undefined,
       "location": "Arena",
+      "note": "Found the +7 Kryia's mail coat {PotionHeal*2 rC+}",
+      "turn": "35867",
       "type": "found",
     },
     {
@@ -2446,6 +2944,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "4",
       "location": "Snake:4",
+      "note": "Found the +7 Kryia's mail coat {PotionHeal*2 rC+}",
+      "turn": "35867",
       "type": "item",
     },
     {
@@ -2455,6 +2955,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "4",
       "location": "Snake:4",
+      "note": "Identified the +7 fustibalus "Fisov" {speed, Int+4}",
+      "turn": "36737",
       "type": "ident",
     },
     {
@@ -2464,6 +2966,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "4",
       "location": "Snake:4",
+      "note": "Identified the +7 fustibalus "Fisov" {speed, Int+4}",
+      "turn": "36737",
       "type": "item",
     },
     {
@@ -2473,6 +2977,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "4",
       "location": "Snake:4",
+      "note": "Received a gift from Okawaru",
+      "turn": "37166",
       "type": "god-gift",
     },
     {
@@ -2482,6 +2988,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "4",
       "location": "Snake:4",
+      "note": "Identified the +8 plate armour of Xywnuy {Dex+5}",
+      "turn": "37563",
       "type": "ident",
     },
     {
@@ -2491,6 +2999,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "4",
       "location": "Snake:4",
+      "note": "Identified the +8 plate armour of Xywnuy {Dex+5}",
+      "turn": "37563",
       "type": "item",
     },
     {
@@ -2501,6 +3011,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "4",
       "location": "Lair:4",
+      "note": "Reached skill level 17 in Staves",
+      "turn": "38110",
       "type": "skill-level",
     },
     {
@@ -2510,6 +3022,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Shoals:2",
+      "note": "Noticed Polyphemus",
+      "turn": "38649",
       "type": "unique-noticed",
     },
     {
@@ -2521,6 +3035,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Shoals:1",
+      "note": "Reached XP level 19. HP: 151/152 MP: 35/35",
+      "turn": "38676",
       "type": "experience-level",
     },
     {
@@ -2530,6 +3046,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": undefined,
       "location": "Arena",
+      "note": "Killed Polyphemus",
+      "turn": "38688",
       "type": "unique-killed",
     },
     {
@@ -2539,6 +3057,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Shoals:2",
+      "note": "Received a gift from Okawaru",
+      "turn": "38755",
       "type": "god-gift",
     },
     {
@@ -2548,6 +3068,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Shoals:2",
+      "note": "Noticed Kirke",
+      "turn": "39111",
       "type": "unique-noticed",
     },
     {
@@ -2557,6 +3079,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Shoals:2",
+      "note": "Killed Kirke",
+      "turn": "39935",
       "type": "unique-killed",
     },
     {
@@ -2566,6 +3090,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Shoals:3",
+      "note": "Identified the +0 buckler of Serendipity {+Inv rPois Dex+2}",
+      "turn": "41102",
       "type": "ident",
     },
     {
@@ -2575,6 +3101,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Shoals:3",
+      "note": "Identified the +0 buckler of Serendipity {+Inv rPois Dex+2}",
+      "turn": "41102",
       "type": "item",
     },
     {
@@ -2584,6 +3112,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "4",
       "location": "Shoals:4",
+      "note": "Received a gift from Okawaru",
+      "turn": "41793",
       "type": "god-gift",
     },
     {
@@ -2593,6 +3123,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "4",
       "location": "Shoals:4",
+      "note": "Received a gift from Okawaru",
+      "turn": "42105",
       "type": "god-gift",
     },
     {
@@ -2604,6 +3136,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Snake:2",
+      "note": "Bought a scroll of fear for 115 gold pieces",
+      "turn": "43462",
       "type": "bought",
     },
     {
@@ -2614,6 +3148,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Vaults:1",
+      "note": "Reached skill level 18 in Staves",
+      "turn": "43806",
       "type": "skill-level",
     },
     {
@@ -2625,6 +3161,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Vaults:1",
+      "note": "Reached XP level 20. HP: 161/161 MP: 34/37",
+      "turn": "43998",
       "type": "experience-level",
     },
     {
@@ -2634,6 +3172,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Vaults:1",
+      "note": "Received a gift from Okawaru",
+      "turn": "43999",
       "type": "god-gift",
     },
     {
@@ -2644,6 +3184,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Vaults:1",
+      "note": "Identified the +8 glaive of Anxiety {venom, Stlth+} (Okawaru gifted it to you on level 1 of the Vaults)",
+      "turn": "44021",
       "type": "god-gift",
     },
     {
@@ -2653,6 +3195,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Vaults:1",
+      "note": "Received a gift from Okawaru",
+      "turn": "44021",
       "type": "god-gift",
     },
     {
@@ -2662,6 +3206,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Vaults:2",
+      "note": "Found Xemoumat's Antique Armour Emporium.",
+      "turn": "44951",
       "type": "shop",
     },
     {
@@ -2672,6 +3218,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Vaults:2",
+      "note": "Reached skill level 15 in Fighting",
+      "turn": "45157",
       "type": "skill-level",
     },
     {
@@ -2682,6 +3230,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Vaults:2",
+      "note": "Reached skill level 15 in Armour",
+      "turn": "45157",
       "type": "skill-level",
     },
     {
@@ -2692,6 +3242,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Vaults:2",
+      "note": "Reached skill level 15 in Shields",
+      "turn": "45157",
       "type": "skill-level",
     },
     {
@@ -2701,6 +3253,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Vaults:2",
+      "note": "Received a gift from Okawaru",
+      "turn": "45470",
       "type": "god-gift",
     },
     {
@@ -2710,6 +3264,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Vaults:2",
+      "note": "Received a gift from Okawaru",
+      "turn": "45801",
       "type": "god-gift",
     },
     {
@@ -2720,6 +3276,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Vaults:3",
+      "note": "Reached skill level 15 in Invocations",
+      "turn": "46469",
       "type": "skill-level",
     },
     {
@@ -2729,6 +3287,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Vaults:3",
+      "note": "Received a gift from Okawaru",
+      "turn": "46696",
       "type": "god-gift",
     },
     {
@@ -2738,6 +3298,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Vaults:3",
+      "note": "Received a gift from Okawaru",
+      "turn": "46857",
       "type": "god-gift",
     },
     {
@@ -2747,6 +3309,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Vaults:3",
+      "note": "Received a gift from Okawaru",
+      "turn": "46907",
       "type": "god-gift",
     },
     {
@@ -2758,6 +3322,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Vaults:3",
+      "note": "Reached XP level 21. HP: 169/169 MP: 10/39",
+      "turn": "46979",
       "type": "experience-level",
     },
     {
@@ -2768,6 +3334,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Vaults:3",
+      "note": "Reached skill level 19 in Staves",
+      "turn": "46985",
       "type": "skill-level",
     },
     {
@@ -2777,6 +3345,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Vaults:3",
+      "note": "Received a gift from Okawaru",
+      "turn": "47322",
       "type": "god-gift",
     },
     {
@@ -2786,6 +3356,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "4",
       "location": "Vaults:4",
+      "note": "Received a gift from Okawaru",
+      "turn": "48215",
       "type": "god-gift",
     },
     {
@@ -2796,6 +3368,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "4",
       "location": "Vaults:4",
+      "note": "Reached skill level 15 in Short Blades",
+      "turn": "48220",
       "type": "skill-level",
     },
     {
@@ -2806,6 +3380,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "4",
       "location": "Vaults:4",
+      "note": "Identified the +0 plate armour of Zomief {*Slow rElec Dex+4} (Okawaru gifted it to you on level 4 of the Vaults)",
+      "turn": "48344",
       "type": "god-gift",
     },
     {
@@ -2815,6 +3391,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "4",
       "location": "Vaults:4",
+      "note": "Received a gift from Okawaru",
+      "turn": "48344",
       "type": "god-gift",
     },
     {
@@ -2825,6 +3403,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Elf:1",
+      "note": "Identified the +0 scale mail "Vedwaoj" {rN+++ Dex+7 Slay-6} (Okawaru gifted it to you on level 1 of the Elven Halls)",
+      "turn": "49892",
       "type": "god-gift",
     },
     {
@@ -2834,6 +3414,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Elf:1",
+      "note": "Received a gift from Okawaru",
+      "turn": "49892",
       "type": "god-gift",
     },
     {
@@ -2845,6 +3427,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Elf:2",
+      "note": "Reached XP level 22. HP: 178/178 MP: 31/40",
+      "turn": "50699",
       "type": "experience-level",
     },
     {
@@ -2855,6 +3439,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Elf:2",
+      "note": "Reached skill level 20 in Staves",
+      "turn": "50775",
       "type": "skill-level",
     },
     {
@@ -2864,6 +3450,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Elf:2",
+      "note": "Identified the ring "Qusk" {AC+4 Stlth+}",
+      "turn": "50975",
       "type": "ident",
     },
     {
@@ -2873,6 +3461,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Elf:2",
+      "note": "Identified the ring "Qusk" {AC+4 Stlth+}",
+      "turn": "50975",
       "type": "item",
     },
     {
@@ -2883,6 +3473,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Elf:2",
+      "note": "Reached skill level 15 in Long Blades",
+      "turn": "51183",
       "type": "skill-level",
     },
     {
@@ -2893,6 +3485,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Elf:2",
+      "note": "Reached skill level 15 in Axes",
+      "turn": "51183",
       "type": "skill-level",
     },
     {
@@ -2903,6 +3497,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Elf:2",
+      "note": "Reached skill level 15 in Maces & Flails",
+      "turn": "51183",
       "type": "skill-level",
     },
     {
@@ -2913,6 +3509,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Elf:2",
+      "note": "Reached skill level 15 in Polearms",
+      "turn": "51183",
       "type": "skill-level",
     },
     {
@@ -2923,6 +3521,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Elf:2",
+      "note": "Reached skill level 15 in Slings",
+      "turn": "51183",
       "type": "skill-level",
     },
     {
@@ -2933,6 +3533,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Elf:2",
+      "note": "Reached skill level 15 in Bows",
+      "turn": "51183",
       "type": "skill-level",
     },
     {
@@ -2943,6 +3545,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Elf:2",
+      "note": "Reached skill level 15 in Crossbows",
+      "turn": "51183",
       "type": "skill-level",
     },
     {
@@ -2953,6 +3557,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Elf:2",
+      "note": "Reached skill level 15 in Throwing",
+      "turn": "51183",
       "type": "skill-level",
     },
     {
@@ -2963,6 +3569,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Elf:2",
+      "note": "Reached skill level 15 in Dodging",
+      "turn": "51183",
       "type": "skill-level",
     },
     {
@@ -2973,6 +3581,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Elf:2",
+      "note": "Reached skill level 15 in Stealth",
+      "turn": "51183",
       "type": "skill-level",
     },
     {
@@ -2983,6 +3593,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Elf:2",
+      "note": "Reached skill level 15 in Unarmed Combat",
+      "turn": "51183",
       "type": "skill-level",
     },
     {
@@ -2993,6 +3605,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Elf:2",
+      "note": "Reached skill level 15 in Spellcasting",
+      "turn": "51183",
       "type": "skill-level",
     },
     {
@@ -3003,6 +3617,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Elf:2",
+      "note": "Reached skill level 15 in Evocations",
+      "turn": "51183",
       "type": "skill-level",
     },
     {
@@ -3012,6 +3628,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Elf:3",
+      "note": "Identified the +5 hand crossbow "Xungek" {flame, Int+2}",
+      "turn": "51984",
       "type": "ident",
     },
     {
@@ -3021,6 +3639,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Elf:3",
+      "note": "Identified the +5 hand crossbow "Xungek" {flame, Int+2}",
+      "turn": "51984",
       "type": "item",
     },
     {
@@ -3030,6 +3650,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Elf:3",
+      "note": "Identified the +1 leather armour of Filth {Contam rPois rC+ Int+3}",
+      "turn": "52000",
       "type": "ident",
     },
     {
@@ -3039,6 +3661,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Elf:3",
+      "note": "Identified the +1 leather armour of Filth {Contam rPois rC+ Int+3}",
+      "turn": "52000",
       "type": "item",
     },
     {
@@ -3048,6 +3672,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Elf:3",
+      "note": "Identified the +9 hand axe "Gefaicof" {speed, Str+4}",
+      "turn": "52029",
       "type": "ident",
     },
     {
@@ -3057,6 +3683,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Elf:3",
+      "note": "Identified the +9 hand axe "Gefaicof" {speed, Str+4}",
+      "turn": "52029",
       "type": "item",
     },
     {
@@ -3066,6 +3694,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Elf:3",
+      "note": "Identified the +12 short sword "Noejal" {speed, Fragile rN+ Int+4}",
+      "turn": "52031",
       "type": "ident",
     },
     {
@@ -3075,6 +3705,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Elf:3",
+      "note": "Identified the +12 short sword "Noejal" {speed, Fragile rN+ Int+4}",
+      "turn": "52031",
       "type": "item",
     },
     {
@@ -3084,6 +3716,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Elf:3",
+      "note": "Received a gift from Okawaru",
+      "turn": "52074",
       "type": "god-gift",
     },
     {
@@ -3093,6 +3727,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Elf:3",
+      "note": "Identified the +9 plate armour of the Clam {rPois Regen+}",
+      "turn": "52074",
       "type": "ident",
     },
     {
@@ -3102,6 +3738,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Elf:3",
+      "note": "Identified the +9 plate armour of the Clam {rPois Regen+}",
+      "turn": "52074",
       "type": "item",
     },
     {
@@ -3111,6 +3749,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Elf:3",
+      "note": "Identified the ring of Otus {Wiz Int+4 Stlth+}",
+      "turn": "52087",
       "type": "ident",
     },
     {
@@ -3120,6 +3760,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Elf:3",
+      "note": "Identified the ring of Otus {Wiz Int+4 Stlth+}",
+      "turn": "52087",
       "type": "item",
     },
     {
@@ -3129,6 +3771,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Elf:3",
+      "note": "Received a gift from Okawaru",
+      "turn": "52122",
       "type": "god-gift",
     },
     {
@@ -3138,6 +3782,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Elf:3",
+      "note": "Received a gift from Okawaru",
+      "turn": "52346",
       "type": "god-gift",
     },
     {
@@ -3147,6 +3793,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Elf:3",
+      "note": "Identified the +6 falchion of Qyrucudeo {freeze, rF+ Str+2 Int+5 Dex-2}",
+      "turn": "52397",
       "type": "ident",
     },
     {
@@ -3156,6 +3804,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Elf:3",
+      "note": "Identified the +6 falchion of Qyrucudeo {freeze, rF+ Str+2 Int+5 Dex-2}",
+      "turn": "52397",
       "type": "item",
     },
     {
@@ -3165,6 +3815,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Elf:3",
+      "note": "Received a gift from Okawaru",
+      "turn": "52469",
       "type": "god-gift",
     },
     {
@@ -3174,6 +3826,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Elf:3",
+      "note": "Identified the +6 morningstar "Rudergha" {venom, Dex+4}",
+      "turn": "52471",
       "type": "ident",
     },
     {
@@ -3183,6 +3837,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Elf:3",
+      "note": "Identified the +6 morningstar "Rudergha" {venom, Dex+4}",
+      "turn": "52471",
       "type": "item",
     },
     {
@@ -3192,6 +3848,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Elf:3",
+      "note": "Identified the +1 robe of Repulsion {Int+4}",
+      "turn": "52792",
       "type": "ident",
     },
     {
@@ -3201,6 +3859,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Elf:3",
+      "note": "Identified the +1 robe of Repulsion {Int+4}",
+      "turn": "52792",
       "type": "item",
     },
     {
@@ -3210,6 +3870,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Elf:3",
+      "note": "Identified the +12 quarterstaff of an ossuary {spect, rElec Dex+3 Stlth+}",
+      "turn": "52804",
       "type": "ident",
     },
     {
@@ -3219,6 +3881,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Elf:3",
+      "note": "Identified the +12 quarterstaff of an ossuary {spect, rElec Dex+3 Stlth+}",
+      "turn": "52804",
       "type": "item",
     },
     {
@@ -3230,6 +3894,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "15",
       "location": "Dungeon:15",
+      "note": "Reached XP level 23. HP: 153/186 MP: 42/42",
+      "turn": "53250",
       "type": "experience-level",
     },
     {
@@ -3239,6 +3905,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "15",
       "location": "Dungeon:15",
+      "note": "Received a gift from Okawaru",
+      "turn": "53311",
       "type": "god-gift",
     },
     {
@@ -3248,6 +3916,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Depths:1",
+      "note": "Received a gift from Okawaru",
+      "turn": "53382",
       "type": "god-gift",
     },
     {
@@ -3257,6 +3927,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Depths:1",
+      "note": "Found Coannesch's Antique Weapon Boutique.",
+      "turn": "53393",
       "type": "shop",
     },
     {
@@ -3266,6 +3938,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Depths:1",
+      "note": "Noticed Asterion",
+      "turn": "53551",
       "type": "unique-noticed",
     },
     {
@@ -3275,6 +3949,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Depths:1",
+      "note": "Killed Asterion",
+      "turn": "53567",
       "type": "unique-killed",
     },
     {
@@ -3285,6 +3961,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Depths:1",
+      "note": "Reached skill level 21 in Staves",
+      "turn": "53641",
       "type": "skill-level",
     },
     {
@@ -3294,6 +3972,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Depths:1",
+      "note": "Noticed Bai Suzhen",
+      "turn": "53641",
       "type": "unique-noticed",
     },
     {
@@ -3303,6 +3983,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": undefined,
       "location": "Arena",
+      "note": "Killed Bai Suzhen",
+      "turn": "53658",
       "type": "unique-killed",
     },
     {
@@ -3312,6 +3994,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Depths:1",
+      "note": "Noticed Sojobo",
+      "turn": "53676",
       "type": "unique-noticed",
     },
     {
@@ -3321,6 +4005,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Depths:1",
+      "note": "Killed Sojobo",
+      "turn": "53686",
       "type": "unique-killed",
     },
     {
@@ -3330,6 +4016,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Depths:1",
+      "note": "Found Ogeogo's Assorted Antiques.",
+      "turn": "53805",
       "type": "shop",
     },
     {
@@ -3339,6 +4027,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Depths:1",
+      "note": "Found Soqumi's Jewellery Shop.",
+      "turn": "53807",
       "type": "shop",
     },
     {
@@ -3350,6 +4040,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Depths:1",
+      "note": "Bought a scroll of enchant armour for 270 gold pieces",
+      "turn": "53813",
       "type": "bought",
     },
     {
@@ -3359,6 +4051,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Depths:1",
+      "note": "Found a shimmering altar of Xom.",
+      "turn": "53847",
       "type": "altar",
     },
     {
@@ -3368,6 +4062,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Depths:1",
+      "note": "Found a shimmering altar of Xom.",
+      "turn": "53848",
       "type": "altar",
     },
     {
@@ -3377,6 +4073,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Depths:1",
+      "note": "Found a shimmering altar of Xom.",
+      "turn": "53851",
       "type": "altar",
     },
     {
@@ -3386,6 +4084,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Depths:1",
+      "note": "Found a one-way gate to the infinite horrors of the Abyss.",
+      "turn": "53947",
       "type": "portal",
     },
     {
@@ -3395,6 +4095,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Depths:1",
+      "note": "Found a shimmering blue altar of Sif Muna.",
+      "turn": "54009",
       "type": "altar",
     },
     {
@@ -3404,6 +4106,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Depths:1",
+      "note": "Found a one-way gateway to a ziggurat.",
+      "turn": "54214",
       "type": "portal",
     },
     {
@@ -3415,6 +4119,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Snake:3",
+      "note": "Bought the +7 great mace "Firestarter" {inner flame, rF++} for 2064 gold pieces",
+      "turn": "54971",
       "type": "bought",
     },
     {
@@ -3425,6 +4131,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Snake:3",
+      "note": "Bought the +7 great mace "Firestarter" {inner flame, rF++} for 2064 gold pieces",
+      "turn": "54971",
       "type": "item",
     },
     {
@@ -3434,6 +4142,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Depths:2",
+      "note": "Received a gift from Okawaru",
+      "turn": "55807",
       "type": "god-gift",
     },
     {
@@ -3443,6 +4153,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Depths:2",
+      "note": "Received a gift from Okawaru",
+      "turn": "55975",
       "type": "god-gift",
     },
     {
@@ -3452,6 +4164,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Depths:2",
+      "note": "Found a gateway to Hell.",
+      "turn": "56187",
       "type": "portal",
     },
     {
@@ -3461,6 +4175,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Depths:2",
+      "note": "Found a one-way gate leading to the halls of Pandemonium.",
+      "turn": "56277",
       "type": "portal",
     },
     {
@@ -3470,6 +4186,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Depths:2",
+      "note": "Found Plog's Jewellery Shoppe.",
+      "turn": "56332",
       "type": "shop",
     },
     {
@@ -3479,6 +4197,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Depths:2",
+      "note": "Received a gift from Okawaru",
+      "turn": "56362",
       "type": "god-gift",
     },
     {
@@ -3488,6 +4208,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Depths:3",
+      "note": "Received a gift from Okawaru",
+      "turn": "57099",
       "type": "god-gift",
     },
     {
@@ -3499,6 +4221,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Depths:3",
+      "note": "Reached XP level 24. HP: 195/195 MP: 43/43",
+      "turn": "57130",
       "type": "experience-level",
     },
     {
@@ -3508,6 +4232,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Depths:3",
+      "note": "Found Severph's Jewellery Shop.",
+      "turn": "57972",
       "type": "shop",
     },
     {
@@ -3517,6 +4243,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Depths:3",
+      "note": "Found Ziyxolaz's Book Emporium.",
+      "turn": "57972",
       "type": "shop",
     },
     {
@@ -3526,6 +4254,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Depths:3",
+      "note": "Found Doqul's Jewellery Shop.",
+      "turn": "57974",
       "type": "shop",
     },
     {
@@ -3535,6 +4265,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": undefined,
       "location": "Bazaar",
+      "note": "Found Misorioj's Weapon Emporium.",
+      "turn": "58213",
       "type": "shop",
     },
     {
@@ -3544,6 +4276,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": undefined,
       "location": "Bazaar",
+      "note": "Found Loelyr's Armour Shoppe.",
+      "turn": "58213",
       "type": "shop",
     },
     {
@@ -3553,6 +4287,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": undefined,
       "location": "Bazaar",
+      "note": "Found Ofus's Antique Armour Emporium.",
+      "turn": "58235",
       "type": "shop",
     },
     {
@@ -3562,6 +4298,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": undefined,
       "location": "Bazaar",
+      "note": "Found Pasoddoth's General Store.",
+      "turn": "58235",
       "type": "shop",
     },
     {
@@ -3571,6 +4309,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": undefined,
       "location": "Bazaar",
+      "note": "Found Qaiha's Magic Scroll Shoppe.",
+      "turn": "58257",
       "type": "shop",
     },
     {
@@ -3580,6 +4320,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": undefined,
       "location": "Bazaar",
+      "note": "Found Ruare's General Store.",
+      "turn": "58273",
       "type": "shop",
     },
     {
@@ -3591,6 +4333,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": undefined,
       "location": "Bazaar",
+      "note": "Bought a scroll of teleportation for 18 gold pieces",
+      "turn": "58329",
       "type": "bought",
     },
     {
@@ -3602,6 +4346,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": undefined,
       "location": "Bazaar",
+      "note": "Bought a scroll of blinking for 45 gold pieces",
+      "turn": "58329",
       "type": "bought",
     },
     {
@@ -3613,6 +4359,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": undefined,
       "location": "Bazaar",
+      "note": "Bought a scroll of silence for 45 gold pieces",
+      "turn": "58329",
       "type": "bought",
     },
     {
@@ -3624,6 +4372,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": undefined,
       "location": "Bazaar",
+      "note": "Bought a potion of might for 60 gold pieces",
+      "turn": "58349",
       "type": "bought",
     },
     {
@@ -3635,6 +4385,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": undefined,
       "location": "Bazaar",
+      "note": "Bought a scroll of silence for 112 gold pieces",
+      "turn": "58349",
       "type": "bought",
     },
     {
@@ -3646,6 +4398,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": undefined,
       "location": "Bazaar",
+      "note": "Bought a heavily runed plate armour for 784 gold pieces",
+      "turn": "58389",
       "type": "bought",
     },
     {
@@ -3656,6 +4410,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": undefined,
       "location": "Bazaar",
+      "note": "Identified the +10 plate armour of the Blizzard {rPois Str+4 Stlth+} (You bought it in a shop in a bazaar)",
+      "turn": "58389",
       "type": "ident-bought-portal",
     },
     {
@@ -3666,6 +4422,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": undefined,
       "location": "Bazaar",
+      "note": "Identified the +10 plate armour of the Blizzard {rPois Str+4 Stlth+} (You bought it in a shop in a bazaar)",
+      "turn": "58389",
       "type": "item",
     },
     {
@@ -3677,6 +4435,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": undefined,
       "location": "Bazaar",
+      "note": "Bought a faintly humming plate armour for 784 gold pieces",
+      "turn": "58389",
       "type": "bought",
     },
     {
@@ -3687,6 +4447,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": undefined,
       "location": "Bazaar",
+      "note": "Identified the +1 plate armour of Seracan {-Tele rF+ Str+4} (You bought it in a shop in a bazaar)",
+      "turn": "58389",
       "type": "ident-bought-portal",
     },
     {
@@ -3697,6 +4459,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": undefined,
       "location": "Bazaar",
+      "note": "Identified the +1 plate armour of Seracan {-Tele rF+ Str+4} (You bought it in a shop in a bazaar)",
+      "turn": "58389",
       "type": "item",
     },
     {
@@ -3706,6 +4470,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "4",
       "location": "Depths:4",
+      "note": "Received a gift from Okawaru",
+      "turn": "58514",
       "type": "god-gift",
     },
     {
@@ -3715,6 +4481,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "4",
       "location": "Depths:4",
+      "note": "Received a gift from Okawaru",
+      "turn": "58606",
       "type": "god-gift",
     },
     {
@@ -3725,6 +4493,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "4",
       "location": "Depths:4",
+      "note": "Reached skill level 22 in Staves",
+      "turn": "58853",
       "type": "skill-level",
     },
     {
@@ -3734,6 +4504,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "4",
       "location": "Depths:4",
+      "note": "Noticed Xtahua",
+      "turn": "59168",
       "type": "unique-noticed",
     },
     {
@@ -3743,6 +4515,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": undefined,
       "location": "Arena",
+      "note": "Killed Xtahua",
+      "turn": "59183",
       "type": "unique-killed",
     },
     {
@@ -3752,6 +4526,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "4",
       "location": "Depths:4",
+      "note": "Received a gift from Okawaru",
+      "turn": "59214",
       "type": "god-gift",
     },
     {
@@ -3761,6 +4537,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "4",
       "location": "Depths:4",
+      "note": "Found a gate to the Realm of Zot.",
+      "turn": "59441",
       "type": "portal",
     },
     {
@@ -3770,6 +4548,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Abyss:2",
+      "note": "Found a corrupted altar of Lugonu.",
+      "turn": "60988",
       "type": "altar",
     },
     {
@@ -3782,6 +4562,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Abyss:2",
+      "note": "Gained mutation: You sometimes lose the ability to read scrolls when taking damage. [a neqoxec]",
+      "turn": "61116",
       "type": "mutation",
     },
     {
@@ -3794,6 +4576,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Abyss:2",
+      "note": "Lost mutation: Your system is resistant to poisons. (rPois) [potion of mutation]",
+      "turn": "61118",
       "type": "mutation",
     },
     {
@@ -3806,6 +4590,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Abyss:2",
+      "note": "Lost mutation: You are agile. (Dex +2) [potion of mutation]",
+      "turn": "61118",
       "type": "mutation",
     },
     {
@@ -3818,6 +4604,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Abyss:2",
+      "note": "Gained mutation: You have large cloven feet. [potion of mutation]",
+      "turn": "61118",
       "type": "mutation",
     },
     {
@@ -3830,6 +4618,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Abyss:2",
+      "note": "Gained mutation: You tend to lose your temper in combat. [potion of mutation]",
+      "turn": "61118",
       "type": "mutation",
     },
     {
@@ -3842,6 +4632,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Abyss:2",
+      "note": "Gained mutation: You are dopey. (Int -2) [potion of mutation]",
+      "turn": "61118",
       "type": "mutation",
     },
     {
@@ -3854,6 +4646,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Abyss:2",
+      "note": "Lost mutation: You tend to lose your temper in combat. [potion of mutation]",
+      "turn": "61119",
       "type": "mutation",
     },
     {
@@ -3866,6 +4660,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Abyss:2",
+      "note": "Lost mutation: You are dopey. (Int -2) [potion of mutation]",
+      "turn": "61119",
       "type": "mutation",
     },
     {
@@ -3878,6 +4674,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Abyss:2",
+      "note": "Lost mutation: You have large cloven feet. [potion of mutation]",
+      "turn": "61119",
       "type": "mutation",
     },
     {
@@ -3890,6 +4688,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Abyss:2",
+      "note": "Gained mutation: You are weak. (Str -2) [potion of mutation]",
+      "turn": "61119",
       "type": "mutation",
     },
     {
@@ -3902,6 +4702,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Abyss:2",
+      "note": "Gained mutation: You have a pair of small horns on your head. [potion of mutation]",
+      "turn": "61119",
       "type": "mutation",
     },
     {
@@ -3914,6 +4716,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Abyss:2",
+      "note": "Gained mutation: Potions are less effective at restoring your health. [potion of mutation]",
+      "turn": "61119",
       "type": "mutation",
     },
     {
@@ -3926,6 +4730,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Abyss:2",
+      "note": "Lost mutation: You sometimes lose the ability to read scrolls when taking damage. [potion of mutation]",
+      "turn": "61120",
       "type": "mutation",
     },
     {
@@ -3938,6 +4744,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Abyss:2",
+      "note": "Lost mutation: Potions are less effective at restoring your health. [potion of mutation]",
+      "turn": "61120",
       "type": "mutation",
     },
     {
@@ -3950,6 +4758,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Abyss:2",
+      "note": "Lost mutation: You have a pair of small horns on your head. [potion of mutation]",
+      "turn": "61120",
       "type": "mutation",
     },
     {
@@ -3962,6 +4772,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Abyss:2",
+      "note": "Gained mutation: You do not regenerate when monsters are visible. [potion of mutation]",
+      "turn": "61120",
       "type": "mutation",
     },
     {
@@ -3974,6 +4786,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Abyss:2",
+      "note": "Gained mutation: You have large cloven feet. [potion of mutation]",
+      "turn": "61120",
       "type": "mutation",
     },
     {
@@ -3986,6 +4800,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Abyss:2",
+      "note": "Lost mutation: You have large cloven feet. [potion of mutation]",
+      "turn": "61121",
       "type": "mutation",
     },
     {
@@ -3998,6 +4814,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Abyss:2",
+      "note": "Lost mutation: You are weak. (Str -2) [potion of mutation]",
+      "turn": "61121",
       "type": "mutation",
     },
     {
@@ -4010,6 +4828,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Abyss:2",
+      "note": "Lost mutation: You do not regenerate when monsters are visible. [potion of mutation]",
+      "turn": "61121",
       "type": "mutation",
     },
     {
@@ -4022,6 +4842,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Abyss:2",
+      "note": "Gained mutation: You are frail. (-10% HP) [potion of mutation]",
+      "turn": "61121",
       "type": "mutation",
     },
     {
@@ -4031,6 +4853,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "4",
       "location": "Abyss:4",
+      "note": "Found a corrupted altar of Lugonu.",
+      "turn": "61501",
       "type": "altar",
     },
     {
@@ -4042,6 +4866,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "4",
       "location": "Abyss:4",
+      "note": "Reached XP level 25. HP: 164/164 MP: 43/43",
+      "turn": "62103",
       "type": "experience-level",
     },
     {
@@ -4053,6 +4879,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "4",
       "location": "Abyss:4",
+      "note": "Reached XP level 26. HP: 171/171 MP: 43/43",
+      "turn": "62103",
       "type": "experience-level",
     },
     {
@@ -4062,6 +4890,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "1",
       "location": "Zot:1",
+      "note": "Received a gift from Okawaru",
+      "turn": "63382",
       "type": "god-gift",
     },
     {
@@ -4071,6 +4901,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Zot:2",
+      "note": "Received a gift from Okawaru",
+      "turn": "64409",
       "type": "god-gift",
     },
     {
@@ -4082,6 +4914,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Zot:2",
+      "note": "Reached XP level 27. HP: 195/195 MP: 43/43",
+      "turn": "64464",
       "type": "experience-level",
     },
     {
@@ -4091,6 +4925,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Zot:2",
+      "note": "Identified the +8 rapier of Exquisite Torment {vorpal, rElec rC- Int+7}",
+      "turn": "64972",
       "type": "ident",
     },
     {
@@ -4100,6 +4936,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "2",
       "location": "Zot:2",
+      "note": "Identified the +8 rapier of Exquisite Torment {vorpal, rElec rC- Int+7}",
+      "turn": "64972",
       "type": "item",
     },
     {
@@ -4110,6 +4948,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Zot:3",
+      "note": "Reached skill level 23 in Staves",
+      "turn": "66304",
       "type": "skill-level",
     },
     {
@@ -4119,6 +4959,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Zot:3",
+      "note": "Identified the +4 robe of Guixieta {rElec rPois rF+}",
+      "turn": "67325",
       "type": "ident",
     },
     {
@@ -4128,6 +4970,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Zot:3",
+      "note": "Identified the +4 robe of Guixieta {rElec rPois rF+}",
+      "turn": "67325",
       "type": "item",
     },
     {
@@ -4137,6 +4981,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       },
       "level": "3",
       "location": "Zot:3",
+      "note": "Received a gift from Okawaru",
+      "turn": "67578",
       "type": "god-gift",
     },
     {
@@ -4144,6 +4990,8 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "data": "Killed from afar by a red draconian scorcher",
       "level": "4",
       "location": "Zot:4",
+      "note": "Killed from afar by a red draconian scorcher",
+      "turn": "68338",
       "type": "last-event",
     },
   ],

@@ -12,6 +12,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       "data": "9to the Kobold Hedge Wizard began the quest for the Orb.",
       "level": "1",
       "location": "Dungeon:1",
+      "note": "9to the Kobold Hedge Wizard began the quest for the Orb.",
+      "turn": "0",
       "type": "first-event",
     },
     {
@@ -23,6 +25,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "1",
       "location": "Dungeon:1",
+      "note": "Reached XP level 1. HP: 10/10 MP: 4/4",
+      "turn": "0",
       "type": "experience-level",
     },
     {
@@ -34,6 +38,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "1",
       "location": "Dungeon:1",
+      "note": "Reached XP level 2. HP: 15/15 MP: 4/6",
+      "turn": "173",
       "type": "experience-level",
     },
     {
@@ -45,6 +51,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "1",
       "location": "Dungeon:1",
+      "note": "Reached XP level 3. HP: 10/19 MP: 2/7",
+      "turn": "811",
       "type": "experience-level",
     },
     {
@@ -55,6 +63,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "1",
       "location": "Dungeon:1",
+      "note": "Reached skill level 1 in Ice Magic",
+      "turn": "1047",
       "type": "skill-level",
     },
     {
@@ -64,6 +74,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "2",
       "location": "Dungeon:2",
+      "note": "Noticed Terence",
+      "turn": "2431",
       "type": "unique-noticed",
     },
     {
@@ -73,6 +85,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Found Pid Onos's Assorted Antiques.",
+      "turn": "3097",
       "type": "shop",
     },
     {
@@ -82,6 +96,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Found Giumaycu's Assorted Antiques.",
+      "turn": "3161",
       "type": "shop",
     },
     {
@@ -93,6 +109,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Reached XP level 4. HP: 24/24 MP: 6/9",
+      "turn": "3332",
       "type": "experience-level",
     },
     {
@@ -102,6 +120,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Found Royr's Distillery.",
+      "turn": "3367",
       "type": "shop",
     },
     {
@@ -111,6 +131,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Identified the +2 helmet of Satisfaction {+Inv Int+4}",
+      "turn": "3407",
       "type": "ident",
     },
     {
@@ -120,6 +142,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Identified the +2 helmet of Satisfaction {+Inv Int+4}",
+      "turn": "3407",
       "type": "item",
     },
     {
@@ -129,6 +153,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Found a stormy altar of Qazlal.",
+      "turn": "3428",
       "type": "altar",
     },
     {
@@ -138,6 +164,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Found a faded altar of an unknown god.",
+      "turn": "3550",
       "type": "altar",
     },
     {
@@ -147,6 +175,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Found a bloodstained altar of Trog.",
+      "turn": "4125",
       "type": "altar",
     },
     {
@@ -156,6 +186,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Found Suewocu's Magic Scroll Shoppe.",
+      "turn": "4234",
       "type": "shop",
     },
     {
@@ -167,6 +199,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Bought a scroll of identify for 24 gold pieces",
+      "turn": "4237",
       "type": "bought",
     },
     {
@@ -178,6 +212,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Bought a scroll of blinking for 90 gold pieces",
+      "turn": "4237",
       "type": "bought",
     },
     {
@@ -189,6 +225,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Bought a scroll of noise for 12 gold pieces",
+      "turn": "4237",
       "type": "bought",
     },
     {
@@ -200,6 +238,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "2",
       "location": "Dungeon:2",
+      "note": "Reached XP level 5. HP: 28/28 MP: 5/10",
+      "turn": "5239",
       "type": "experience-level",
     },
     {
@@ -210,6 +250,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "4",
       "location": "Dungeon:4",
+      "note": "Reached skill level 1 in Fighting",
+      "turn": "5962",
       "type": "skill-level",
     },
     {
@@ -220,6 +262,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "4",
       "location": "Dungeon:4",
+      "note": "Reached skill level 1 in Short Blades",
+      "turn": "5962",
       "type": "skill-level",
     },
     {
@@ -231,6 +275,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "4",
       "location": "Dungeon:4",
+      "note": "Reached XP level 6. HP: 34/34 MP: 5/11",
+      "turn": "6077",
       "type": "experience-level",
     },
     {
@@ -241,6 +287,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "4",
       "location": "Dungeon:4",
+      "note": "Reached skill level 1 in Hexes",
+      "turn": "6135",
       "type": "skill-level",
     },
     {
@@ -250,6 +298,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "4",
       "location": "Dungeon:4",
+      "note": "Found a shimmering altar of Xom.",
+      "turn": "6618",
       "type": "altar",
     },
     {
@@ -259,6 +309,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "4",
       "location": "Dungeon:4",
+      "note": "Found a burning altar of Makhleb.",
+      "turn": "6618",
       "type": "altar",
     },
     {
@@ -268,6 +320,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Noticed Eustachio",
+      "turn": "6999",
       "type": "unique-noticed",
     },
     {
@@ -278,6 +332,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Reached skill level 4 in Spellcasting",
+      "turn": "7370",
       "type": "skill-level",
     },
     {
@@ -289,6 +345,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Reached XP level 7. HP: 30/38 MP: 4/13",
+      "turn": "7411",
       "type": "experience-level",
     },
     {
@@ -298,6 +356,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": undefined,
       "location": "Temple",
+      "note": "Became a worshipper of Ashenzari the Shackled",
+      "turn": "7975",
       "type": "join-god",
     },
     {
@@ -307,6 +367,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Found a hide-covered altar of Uskayaw.",
+      "turn": "8107",
       "type": "altar",
     },
     {
@@ -316,6 +378,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Noticed Grinder",
+      "turn": "8127",
       "type": "unique-noticed",
     },
     {
@@ -327,6 +391,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "6",
       "location": "Dungeon:6",
+      "note": "Reached XP level 8. HP: 44/44 MP: 14/14",
+      "turn": "8625",
       "type": "experience-level",
     },
     {
@@ -337,6 +403,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "6",
       "location": "Dungeon:6",
+      "note": "Reached skill level 5 in Ice Magic",
+      "turn": "8637",
       "type": "skill-level",
     },
     {
@@ -347,6 +415,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Reached skill level 5 in Spellcasting",
+      "turn": "9725",
       "type": "skill-level",
     },
     {
@@ -357,6 +427,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "6",
       "location": "Dungeon:6",
+      "note": "Reached * piety under Ashenzari",
+      "turn": "10160",
       "type": "piety-god",
     },
     {
@@ -366,6 +438,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "6",
       "location": "Dungeon:6",
+      "note": "Identified a scroll of acquirement",
+      "turn": "10160",
       "type": "ident",
     },
     {
@@ -375,6 +449,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "6",
       "location": "Dungeon:6",
+      "note": "Identified a scroll of acquirement",
+      "turn": "10160",
       "type": "item",
     },
     {
@@ -386,6 +462,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "6",
       "location": "Dungeon:6",
+      "note": "Reached XP level 9. HP: 48/48 MP: 9/17",
+      "turn": "10337",
       "type": "experience-level",
     },
     {
@@ -395,6 +473,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "6",
       "location": "Dungeon:6",
+      "note": "Found the amulet of Elemental Vulnerability {rPois rF-- rC-- AC+8}",
+      "turn": "10510",
       "type": "found",
     },
     {
@@ -404,6 +484,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "6",
       "location": "Dungeon:6",
+      "note": "Found the amulet of Elemental Vulnerability {rPois rF-- rC-- AC+8}",
+      "turn": "10510",
       "type": "item",
     },
     {
@@ -413,6 +495,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "2",
       "location": "Dungeon:2",
+      "note": "Killed Terence",
+      "turn": "11090",
       "type": "unique-killed",
     },
     {
@@ -422,6 +506,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Killed Grinder",
+      "turn": "11750",
       "type": "unique-killed",
     },
     {
@@ -432,6 +518,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Reached skill level 6 in Spellcasting",
+      "turn": "11751",
       "type": "skill-level",
     },
     {
@@ -442,6 +530,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Reached skill level 5 in Conjurations",
+      "turn": "11751",
       "type": "skill-level",
     },
     {
@@ -452,6 +542,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Reached skill level 5 in Hexes",
+      "turn": "11751",
       "type": "skill-level",
     },
     {
@@ -461,6 +553,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Killed Eustachio",
+      "turn": "11910",
       "type": "unique-killed",
     },
     {
@@ -471,6 +565,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Reached skill level 1 in Evocations",
+      "turn": "11911",
       "type": "skill-level",
     },
     {
@@ -481,6 +577,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "7",
       "location": "Dungeon:7",
+      "note": "Reached ** piety under Ashenzari",
+      "turn": "12673",
       "type": "piety-god",
     },
     {
@@ -490,6 +588,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "7",
       "location": "Dungeon:7",
+      "note": "Found a glowing silver altar of Zin.",
+      "turn": "13210",
       "type": "altar",
     },
     {
@@ -501,6 +601,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Reached XP level 10. HP: 46/56 MP: 12/21",
+      "turn": "13428",
       "type": "experience-level",
     },
     {
@@ -511,6 +613,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Reached skill level 7 in Spellcasting",
+      "turn": "13906",
       "type": "skill-level",
     },
     {
@@ -521,6 +625,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Reached *** piety under Ashenzari",
+      "turn": "14770",
       "type": "piety-god",
     },
     {
@@ -530,6 +636,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Found Damaf's Weapon Emporium.",
+      "turn": "14892",
       "type": "shop",
     },
     {
@@ -541,6 +649,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "10",
       "location": "Dungeon:10",
+      "note": "Reached XP level 11. HP: 52/64 MP: 20/23",
+      "turn": "16161",
       "type": "experience-level",
     },
     {
@@ -550,6 +660,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "10",
       "location": "Dungeon:10",
+      "note": "Found a sacrificial altar of Ru.",
+      "turn": "16259",
       "type": "altar",
     },
     {
@@ -559,6 +671,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "10",
       "location": "Dungeon:10",
+      "note": "Found Wierett's Distillery.",
+      "turn": "16404",
       "type": "shop",
     },
     {
@@ -570,6 +684,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "10",
       "location": "Dungeon:10",
+      "note": "Bought a potion of might for 40 gold pieces",
+      "turn": "16409",
       "type": "bought",
     },
     {
@@ -580,6 +696,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "10",
       "location": "Dungeon:10",
+      "note": "Reached skill level 5 in Stealth",
+      "turn": "16673",
       "type": "skill-level",
     },
     {
@@ -590,6 +708,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "10",
       "location": "Dungeon:10",
+      "note": "Reached skill level 5 in Fighting",
+      "turn": "16976",
       "type": "skill-level",
     },
     {
@@ -600,6 +720,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "10",
       "location": "Dungeon:10",
+      "note": "Reached skill level 8 in Spellcasting",
+      "turn": "16976",
       "type": "skill-level",
     },
     {
@@ -611,6 +733,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Bought a pair of gloves for 135 gold pieces",
+      "turn": "17398",
       "type": "bought",
     },
     {
@@ -622,6 +746,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Bought a scroll labelled LUOWIA VECVI for 25 gold pieces",
+      "turn": "17415",
       "type": "bought",
     },
     {
@@ -631,6 +757,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "1",
       "location": "Lair:1",
+      "note": "Noticed Sonja",
+      "turn": "18015",
       "type": "unique-noticed",
     },
     {
@@ -640,6 +768,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "1",
       "location": "Lair:1",
+      "note": "Killed Sonja",
+      "turn": "18021",
       "type": "unique-killed",
     },
     {
@@ -651,6 +781,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "2",
       "location": "Lair:2",
+      "note": "Reached XP level 12. HP: 65/75 MP: 19/27",
+      "turn": "18568",
       "type": "experience-level",
     },
     {
@@ -661,6 +793,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "2",
       "location": "Lair:2",
+      "note": "Reached **** piety under Ashenzari",
+      "turn": "18758",
       "type": "piety-god",
     },
     {
@@ -671,6 +805,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "1",
       "location": "Lair:1",
+      "note": "Reached skill level 5 in Evocations",
+      "turn": "19641",
       "type": "skill-level",
     },
     {
@@ -681,6 +817,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Lair:3",
+      "note": "Reached skill level 9 in Spellcasting",
+      "turn": "19947",
       "type": "skill-level",
     },
     {
@@ -692,6 +830,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Lair:3",
+      "note": "Reached XP level 13. HP: 82/82 MP: 7/29",
+      "turn": "21211",
       "type": "experience-level",
     },
     {
@@ -701,6 +841,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "4",
       "location": "Lair:4",
+      "note": "Identified the +6 trident "Demon's Death Toll" {flame, rPois rF+ Stlth+}",
+      "turn": "23183",
       "type": "ident",
     },
     {
@@ -710,6 +852,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "4",
       "location": "Lair:4",
+      "note": "Identified the +6 trident "Demon's Death Toll" {flame, rPois rF+ Stlth+}",
+      "turn": "23183",
       "type": "item",
     },
     {
@@ -720,6 +864,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "5",
       "location": "Lair:5",
+      "note": "Reached skill level 1 in Fire Magic",
+      "turn": "24573",
       "type": "skill-level",
     },
     {
@@ -729,6 +875,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "5",
       "location": "Lair:5",
+      "note": "Found a viscous altar of Jiyva.",
+      "turn": "24701",
       "type": "altar",
     },
     {
@@ -739,6 +887,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": undefined,
       "location": "IceCave",
+      "note": "Reached skill level 10 in Spellcasting",
+      "turn": "24866",
       "type": "skill-level",
     },
     {
@@ -750,6 +900,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": undefined,
       "location": "IceCave",
+      "note": "Reached XP level 14. HP: 30/92 MP: 28/32",
+      "turn": "25731",
       "type": "experience-level",
     },
     {
@@ -760,6 +912,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": undefined,
       "location": "IceCave",
+      "note": "Reached skill level 5 in Fire Magic",
+      "turn": "26354",
       "type": "skill-level",
     },
     {
@@ -769,6 +923,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": undefined,
       "location": "IceCave",
+      "note": "Found a viscous altar of Jiyva.",
+      "turn": "26632",
       "type": "altar",
     },
     {
@@ -778,6 +934,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": undefined,
       "location": "IceCave",
+      "note": "Identified the ring of Plog {Ice rN+}",
+      "turn": "26640",
       "type": "ident",
     },
     {
@@ -787,6 +945,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": undefined,
       "location": "IceCave",
+      "note": "Identified the ring of Plog {Ice rN+}",
+      "turn": "26640",
       "type": "item",
     },
     {
@@ -796,6 +956,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "5",
       "location": "Lair:5",
+      "note": "Identified the +0 ring mail of Lugonu's Inspiration {Harm Drain Regen+ rCorr}",
+      "turn": "27004",
       "type": "ident",
     },
     {
@@ -805,6 +967,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "5",
       "location": "Lair:5",
+      "note": "Identified the +0 ring mail of Lugonu's Inspiration {Harm Drain Regen+ rCorr}",
+      "turn": "27004",
       "type": "item",
     },
     {
@@ -815,6 +979,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "5",
       "location": "Lair:5",
+      "note": "Reached skill level 10 in Conjurations",
+      "turn": "27174",
       "type": "skill-level",
     },
     {
@@ -825,6 +991,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "5",
       "location": "Lair:5",
+      "note": "Reached skill level 5 in Dodging",
+      "turn": "27606",
       "type": "skill-level",
     },
     {
@@ -835,6 +1003,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "2",
       "location": "Lair:2",
+      "note": "Reached ***** piety under Ashenzari",
+      "turn": "27799",
       "type": "piety-god",
     },
     {
@@ -844,6 +1014,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "2",
       "location": "Lair:2",
+      "note": "Noticed Gastronok",
+      "turn": "28764",
       "type": "unique-noticed",
     },
     {
@@ -855,6 +1027,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Bought a scroll of enchant weapon for 90 gold pieces",
+      "turn": "29007",
       "type": "bought",
     },
     {
@@ -866,6 +1040,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Bought a scroll of summoning for 114 gold pieces",
+      "turn": "29007",
       "type": "bought",
     },
     {
@@ -876,6 +1052,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "11",
       "location": "Dungeon:11",
+      "note": "Reached skill level 1 in Air Magic",
+      "turn": "29375",
       "type": "skill-level",
     },
     {
@@ -886,6 +1064,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "11",
       "location": "Dungeon:11",
+      "note": "Reached skill level 11 in Spellcasting",
+      "turn": "29528",
       "type": "skill-level",
     },
     {
@@ -895,6 +1075,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "12",
       "location": "Dungeon:12",
+      "note": "Identified the +2 giant spiked club of Quantum Leap {vorpal, rPois rF+ Dex+3}",
+      "turn": "31676",
       "type": "ident",
     },
     {
@@ -904,6 +1086,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "12",
       "location": "Dungeon:12",
+      "note": "Identified the +2 giant spiked club of Quantum Leap {vorpal, rPois rF+ Dex+3}",
+      "turn": "31676",
       "type": "item",
     },
     {
@@ -915,6 +1099,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "13",
       "location": "Dungeon:13",
+      "note": "Reached XP level 15. HP: 52/97 MP: 27/34",
+      "turn": "32832",
       "type": "experience-level",
     },
     {
@@ -925,6 +1111,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "14",
       "location": "Dungeon:14",
+      "note": "Reached skill level 1 in Shields",
+      "turn": "33991",
       "type": "skill-level",
     },
     {
@@ -934,6 +1122,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "14",
       "location": "Dungeon:14",
+      "note": "Found an iron altar of Okawaru.",
+      "turn": "34066",
       "type": "altar",
     },
     {
@@ -943,6 +1133,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "14",
       "location": "Dungeon:14",
+      "note": "Found a snail-covered altar of Cheibriados.",
+      "turn": "34247",
       "type": "altar",
     },
     {
@@ -953,6 +1145,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "14",
       "location": "Dungeon:14",
+      "note": "Reached skill level 5 in Short Blades",
+      "turn": "34467",
       "type": "skill-level",
     },
     {
@@ -962,6 +1156,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "14",
       "location": "Dungeon:14",
+      "note": "Found a gate to the Vaults.",
+      "turn": "35059",
       "type": "portal",
     },
     {
@@ -971,6 +1167,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "1",
       "location": "Orc:1",
+      "note": "Found Foets's General Store.",
+      "turn": "35827",
       "type": "shop",
     },
     {
@@ -980,6 +1178,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "1",
       "location": "Orc:1",
+      "note": "Found a bloodstained altar of Trog.",
+      "turn": "36136",
       "type": "altar",
     },
     {
@@ -989,6 +1189,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "1",
       "location": "Orc:1",
+      "note": "Noticed Jorgrun",
+      "turn": "36216",
       "type": "unique-noticed",
     },
     {
@@ -998,6 +1200,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "1",
       "location": "Orc:1",
+      "note": "Killed Jorgrun",
+      "turn": "36227",
       "type": "unique-killed",
     },
     {
@@ -1007,6 +1211,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "1",
       "location": "Orc:1",
+      "note": "Found Fiwuhog's Distillery.",
+      "turn": "36648",
       "type": "shop",
     },
     {
@@ -1018,6 +1224,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "1",
       "location": "Orc:1",
+      "note": "Bought a potion of heal wounds for 75 gold pieces",
+      "turn": "36655",
       "type": "bought",
     },
     {
@@ -1027,6 +1235,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "1",
       "location": "Orc:1",
+      "note": "Found Ada Utev's Weapon Shoppe.",
+      "turn": "36713",
       "type": "shop",
     },
     {
@@ -1037,6 +1247,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Reached skill level 12 in Spellcasting",
+      "turn": "37984",
       "type": "skill-level",
     },
     {
@@ -1047,6 +1259,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Reached skill level 5 in Air Magic",
+      "turn": "37984",
       "type": "skill-level",
     },
     {
@@ -1056,6 +1270,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Found Aloanauff's Antique Armour Emporium.",
+      "turn": "39146",
       "type": "shop",
     },
     {
@@ -1065,6 +1281,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Found Tietax's Antique Weapon Boutique.",
+      "turn": "39146",
       "type": "shop",
     },
     {
@@ -1074,6 +1292,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Found Ogreysm's Magic Scroll Shop.",
+      "turn": "39146",
       "type": "shop",
     },
     {
@@ -1083,6 +1303,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Found Rutasoam's Antique Armour Shoppe.",
+      "turn": "39147",
       "type": "shop",
     },
     {
@@ -1094,6 +1316,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Bought a pair of boots for 162 gold pieces",
+      "turn": "39159",
       "type": "bought",
     },
     {
@@ -1105,6 +1329,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "1",
       "location": "Elf:1",
+      "note": "Reached XP level 16. HP: 79/101 MP: 9/35",
+      "turn": "39360",
       "type": "experience-level",
     },
     {
@@ -1115,6 +1341,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "1",
       "location": "Elf:1",
+      "note": "Reached skill level 10 in Dodging",
+      "turn": "41950",
       "type": "skill-level",
     },
     {
@@ -1124,6 +1352,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "1",
       "location": "Swamp:1",
+      "note": "Identified the +1 robe of the Guilds {-Cast Rampage Dex+9}",
+      "turn": "44147",
       "type": "ident",
     },
     {
@@ -1133,6 +1363,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "1",
       "location": "Swamp:1",
+      "note": "Identified the +1 robe of the Guilds {-Cast Rampage Dex+9}",
+      "turn": "44147",
       "type": "item",
     },
     {
@@ -1143,6 +1375,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "1",
       "location": "Swamp:1",
+      "note": "Reached skill level 5 in Shields",
+      "turn": "44716",
       "type": "skill-level",
     },
     {
@@ -1152,6 +1386,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "1",
       "location": "Swamp:1",
+      "note": "Found a hazy altar of Hepliaklqana.",
+      "turn": "44781",
       "type": "altar",
     },
     {
@@ -1163,6 +1399,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "1",
       "location": "Swamp:1",
+      "note": "Reached XP level 17. HP: 106/106 MP: 37/37",
+      "turn": "44797",
       "type": "experience-level",
     },
     {
@@ -1173,6 +1411,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "2",
       "location": "Swamp:2",
+      "note": "Reached ****** piety under Ashenzari",
+      "turn": "45894",
       "type": "piety-god",
     },
     {
@@ -1183,6 +1423,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "2",
       "location": "Swamp:2",
+      "note": "Reached skill level 13 in Spellcasting",
+      "turn": "46314",
       "type": "skill-level",
     },
     {
@@ -1192,6 +1434,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Swamp:3",
+      "note": "Noticed Donald",
+      "turn": "49725",
       "type": "unique-noticed",
     },
     {
@@ -1201,6 +1445,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Swamp:3",
+      "note": "Killed Donald",
+      "turn": "49731",
       "type": "unique-killed",
     },
     {
@@ -1211,6 +1457,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "1",
       "location": "Spider:1",
+      "note": "Reached skill level 10 in Fire Magic",
+      "turn": "52088",
       "type": "skill-level",
     },
     {
@@ -1220,6 +1468,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "1",
       "location": "Spider:1",
+      "note": "Identified the +2 robe "Mioseef" {+Inv rPois}",
+      "turn": "52956",
       "type": "ident",
     },
     {
@@ -1229,6 +1479,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "1",
       "location": "Spider:1",
+      "note": "Identified the +2 robe "Mioseef" {+Inv rPois}",
+      "turn": "52956",
       "type": "item",
     },
     {
@@ -1240,6 +1492,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "1",
       "location": "Spider:1",
+      "note": "Reached XP level 18. HP: 92/115 MP: 3/39",
+      "turn": "53001",
       "type": "experience-level",
     },
     {
@@ -1249,6 +1503,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "2",
       "location": "Spider:2",
+      "note": "Identified the +0 morningstar of Magnificence {elec, rPois Str-3 Dex+2 SInv}",
+      "turn": "55401",
       "type": "ident",
     },
     {
@@ -1258,6 +1514,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "2",
       "location": "Spider:2",
+      "note": "Identified the +0 morningstar of Magnificence {elec, rPois Str-3 Dex+2 SInv}",
+      "turn": "55401",
       "type": "item",
     },
     {
@@ -1268,6 +1526,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Spider:3",
+      "note": "Reached skill level 10 in Fighting",
+      "turn": "57045",
       "type": "skill-level",
     },
     {
@@ -1277,6 +1537,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Spider:3",
+      "note": "Acquired the +7 kite shield of the Barber Surgeon {Contam Regen+ Str+4 Int+4 Dex+6}",
+      "turn": "58215",
       "type": "acquirement",
     },
     {
@@ -1286,6 +1548,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "4",
       "location": "Spider:4",
+      "note": "Identified the +1 leather armour of the Beloved God {+Blink Dex+4}",
+      "turn": "58861",
       "type": "ident",
     },
     {
@@ -1295,6 +1559,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "4",
       "location": "Spider:4",
+      "note": "Identified the +1 leather armour of the Beloved God {+Blink Dex+4}",
+      "turn": "58861",
       "type": "item",
     },
     {
@@ -1304,6 +1570,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "4",
       "location": "Spider:4",
+      "note": "Identified the +11 broad axe of the Charming Enemy {drain, Fly Str+7 Dex-3 Stlth+}",
+      "turn": "59250",
       "type": "ident",
     },
     {
@@ -1313,6 +1581,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "4",
       "location": "Spider:4",
+      "note": "Identified the +11 broad axe of the Charming Enemy {drain, Fly Str+7 Dex-3 Stlth+}",
+      "turn": "59250",
       "type": "item",
     },
     {
@@ -1323,6 +1593,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "4",
       "location": "Spider:4",
+      "note": "Reached skill level 10 in Evocations",
+      "turn": "59741",
       "type": "skill-level",
     },
     {
@@ -1333,6 +1605,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "4",
       "location": "Spider:4",
+      "note": "Reached skill level 14 in Spellcasting",
+      "turn": "60167",
       "type": "skill-level",
     },
     {
@@ -1342,6 +1616,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "4",
       "location": "Spider:4",
+      "note": "Identified the +1 hat "Gaillis" {+Blink}",
+      "turn": "60434",
       "type": "ident",
     },
     {
@@ -1351,6 +1627,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "4",
       "location": "Spider:4",
+      "note": "Identified the +1 hat "Gaillis" {+Blink}",
+      "turn": "60434",
       "type": "item",
     },
     {
@@ -1360,6 +1638,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "4",
       "location": "Spider:4",
+      "note": "Noticed Arachne",
+      "turn": "60535",
       "type": "unique-noticed",
     },
     {
@@ -1369,6 +1649,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "4",
       "location": "Spider:4",
+      "note": "Killed Arachne",
+      "turn": "60542",
       "type": "unique-killed",
     },
     {
@@ -1380,6 +1662,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "4",
       "location": "Spider:4",
+      "note": "Reached XP level 19. HP: 98/121 MP: 0/40",
+      "turn": "60748",
       "type": "experience-level",
     },
     {
@@ -1389,6 +1673,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "2",
       "location": "Lair:2",
+      "note": "Killed Gastronok",
+      "turn": "63746",
       "type": "unique-killed",
     },
     {
@@ -1400,6 +1686,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "4",
       "location": "Lair:4",
+      "note": "Reached XP level 20. HP: 128/128 MP: 22/41",
+      "turn": "63888",
       "type": "experience-level",
     },
     {
@@ -1409,6 +1697,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "15",
       "location": "Dungeon:15",
+      "note": "Noticed Roxanne",
+      "turn": "65448",
       "type": "unique-noticed",
     },
     {
@@ -1418,6 +1708,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "15",
       "location": "Dungeon:15",
+      "note": "Killed Roxanne",
+      "turn": "66802",
       "type": "unique-killed",
     },
     {
@@ -1429,6 +1721,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Bought a translucent ring mail for 324 gold pieces",
+      "turn": "67605",
       "type": "bought",
     },
     {
@@ -1439,6 +1733,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Identified the +2 ring mail of the Earth {Regen+} (You bought it in a shop on level 2 of the Orcish Mines)",
+      "turn": "67605",
       "type": "ident-bought-loc",
     },
     {
@@ -1449,6 +1745,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Identified the +2 ring mail of the Earth {Regen+} (You bought it in a shop on level 2 of the Orcish Mines)",
+      "turn": "67605",
       "type": "item",
     },
     {
@@ -1460,6 +1758,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Bought a scorched scale mail for 324 gold pieces",
+      "turn": "67605",
       "type": "bought",
     },
     {
@@ -1470,6 +1770,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Identified the +0 scale mail of Qonalopu {-Tele Rampage Fly rF+} (You bought it in a shop on level 2 of the Orcish Mines)",
+      "turn": "67605",
       "type": "ident-bought-loc",
     },
     {
@@ -1480,6 +1782,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Identified the +0 scale mail of Qonalopu {-Tele Rampage Fly rF+} (You bought it in a shop on level 2 of the Orcish Mines)",
+      "turn": "67605",
       "type": "item",
     },
     {
@@ -1491,6 +1795,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Bought a scroll of teleportation for 45 gold pieces",
+      "turn": "67653",
       "type": "bought",
     },
     {
@@ -1500,6 +1806,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "2",
       "location": "Elf:2",
+      "note": "Identified the +3 halberd of Ysuptuam {vorpal, *Slow rC- rCorr Int+6}",
+      "turn": "67736",
       "type": "ident",
     },
     {
@@ -1509,6 +1817,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "2",
       "location": "Elf:2",
+      "note": "Identified the +3 halberd of Ysuptuam {vorpal, *Slow rC- rCorr Int+6}",
+      "turn": "67736",
       "type": "item",
     },
     {
@@ -1519,6 +1829,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "2",
       "location": "Elf:2",
+      "note": "Reached skill level 1 in Earth Magic",
+      "turn": "67810",
       "type": "skill-level",
     },
     {
@@ -1528,6 +1840,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "2",
       "location": "Elf:2",
+      "note": "Found Fuwura Odyu's Book Emporium.",
+      "turn": "68209",
       "type": "shop",
     },
     {
@@ -1539,6 +1853,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Bought a scroll of amnesia for 60 gold pieces",
+      "turn": "68376",
       "type": "bought",
     },
     {
@@ -1550,6 +1866,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "2",
       "location": "Elf:2",
+      "note": "Bought Great Wizards, Vol. VII for 600 gold pieces",
+      "turn": "68466",
       "type": "bought",
     },
     {
@@ -1560,6 +1878,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Elf:3",
+      "note": "Reached skill level 1 in Transmutations",
+      "turn": "68779",
       "type": "skill-level",
     },
     {
@@ -1571,6 +1891,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Elf:3",
+      "note": "Reached XP level 21. HP: 134/134 MP: 29/43",
+      "turn": "68967",
       "type": "experience-level",
     },
     {
@@ -1580,6 +1902,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Elf:3",
+      "note": "Found Xileehaw's General Store.",
+      "turn": "69224",
       "type": "shop",
     },
     {
@@ -1589,6 +1913,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Elf:3",
+      "note": "Found Bagilu's General Store.",
+      "turn": "69226",
       "type": "shop",
     },
     {
@@ -1598,6 +1924,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Elf:3",
+      "note": "Found Emna's Jewellery Shoppe.",
+      "turn": "69226",
       "type": "shop",
     },
     {
@@ -1609,6 +1937,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Elf:3",
+      "note": "Bought a scroll of blinking for 112 gold pieces",
+      "turn": "69228",
       "type": "bought",
     },
     {
@@ -1620,6 +1950,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Elf:3",
+      "note": "Bought a potion of heal wounds for 75 gold pieces",
+      "turn": "69228",
       "type": "bought",
     },
     {
@@ -1629,6 +1961,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Elf:3",
+      "note": "Found Gofagoq's Book Shoppe.",
+      "turn": "69229",
       "type": "shop",
     },
     {
@@ -1639,6 +1973,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Elf:3",
+      "note": "Reached skill level 15 in Spellcasting",
+      "turn": "70418",
       "type": "skill-level",
     },
     {
@@ -1648,6 +1984,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Elf:3",
+      "note": "Identified Laviykam's Grimoire of Greatest Risks and Utility",
+      "turn": "71301",
       "type": "ident",
     },
     {
@@ -1657,6 +1995,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Elf:3",
+      "note": "Identified Laviykam's Grimoire of Greatest Risks and Utility",
+      "turn": "71301",
       "type": "item",
     },
     {
@@ -1666,6 +2006,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Elf:3",
+      "note": "Identified the +4 hand axe of Uqixai {vorpal, rC++}",
+      "turn": "71356",
       "type": "ident",
     },
     {
@@ -1675,6 +2017,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Elf:3",
+      "note": "Identified the +4 hand axe of Uqixai {vorpal, rC++}",
+      "turn": "71356",
       "type": "item",
     },
     {
@@ -1684,6 +2028,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Elf:3",
+      "note": "Identified the +8 plate armour of Baldness {Rampage rElec Str-2 Stlth+}",
+      "turn": "71356",
       "type": "ident",
     },
     {
@@ -1693,6 +2039,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Elf:3",
+      "note": "Identified the +8 plate armour of Baldness {Rampage rElec Str-2 Stlth+}",
+      "turn": "71356",
       "type": "item",
     },
     {
@@ -1702,6 +2050,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Elf:3",
+      "note": "Identified the +1 spear "Ytoss" {vorpal, Fragile Int+5 Dex+2}",
+      "turn": "71359",
       "type": "ident",
     },
     {
@@ -1711,6 +2061,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Elf:3",
+      "note": "Identified the +1 spear "Ytoss" {vorpal, Fragile Int+5 Dex+2}",
+      "turn": "71359",
       "type": "item",
     },
     {
@@ -1722,6 +2074,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Elf:3",
+      "note": "Bought a Trismegistus Codex for 420 gold pieces",
+      "turn": "71527",
       "type": "bought",
     },
     {
@@ -1732,6 +2086,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "1",
       "location": "Vaults:1",
+      "note": "Reached skill level 15 in Conjurations",
+      "turn": "72613",
       "type": "skill-level",
     },
     {
@@ -1743,6 +2099,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "1",
       "location": "Vaults:1",
+      "note": "Reached XP level 22. HP: 136/136 MP: 26/43",
+      "turn": "73574",
       "type": "experience-level",
     },
     {
@@ -1752,6 +2110,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "2",
       "location": "Vaults:2",
+      "note": "Noticed Aizul",
+      "turn": "74256",
       "type": "unique-noticed",
     },
     {
@@ -1761,6 +2121,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "2",
       "location": "Vaults:2",
+      "note": "Killed Aizul",
+      "turn": "74271",
       "type": "unique-killed",
     },
     {
@@ -1771,6 +2133,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "2",
       "location": "Vaults:2",
+      "note": "Reached skill level 16 in Spellcasting",
+      "turn": "74532",
       "type": "skill-level",
     },
     {
@@ -1780,6 +2144,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "2",
       "location": "Vaults:2",
+      "note": "Found Wura's Antique Weapon Boutique.",
+      "turn": "75050",
       "type": "shop",
     },
     {
@@ -1789,6 +2155,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "2",
       "location": "Vaults:2",
+      "note": "Noticed Jory",
+      "turn": "75184",
       "type": "unique-noticed",
     },
     {
@@ -1798,6 +2166,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "2",
       "location": "Vaults:2",
+      "note": "Killed Jory",
+      "turn": "75191",
       "type": "unique-killed",
     },
     {
@@ -1807,6 +2177,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Vaults:3",
+      "note": "Identified the +1 hat of the Little Devil {Rampage Int+6}",
+      "turn": "76994",
       "type": "ident",
     },
     {
@@ -1816,6 +2188,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Vaults:3",
+      "note": "Identified the +1 hat of the Little Devil {Rampage Int+6}",
+      "turn": "76994",
       "type": "item",
     },
     {
@@ -1826,6 +2200,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Vaults:3",
+      "note": "Reached skill level 10 in Stealth",
+      "turn": "77281",
       "type": "skill-level",
     },
     {
@@ -1837,6 +2213,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Vaults:3",
+      "note": "Reached XP level 23. HP: 134/145 MP: 8/47",
+      "turn": "77284",
       "type": "experience-level",
     },
     {
@@ -1847,6 +2225,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Vaults:3",
+      "note": "Reached skill level 15 in Dodging",
+      "turn": "77358",
       "type": "skill-level",
     },
     {
@@ -1857,6 +2237,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Vaults:3",
+      "note": "Reached skill level 17 in Spellcasting",
+      "turn": "77873",
       "type": "skill-level",
     },
     {
@@ -1866,6 +2248,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "4",
       "location": "Vaults:4",
+      "note": "Noticed Xtahua",
+      "turn": "78325",
       "type": "unique-noticed",
     },
     {
@@ -1875,6 +2259,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "4",
       "location": "Vaults:4",
+      "note": "Killed Xtahua",
+      "turn": "78350",
       "type": "unique-killed",
     },
     {
@@ -1884,6 +2270,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "1",
       "location": "Depths:1",
+      "note": "Found a one-way gate leading to the halls of Pandemonium.",
+      "turn": "80138",
       "type": "portal",
     },
     {
@@ -1893,6 +2281,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "1",
       "location": "Depths:1",
+      "note": "Found a gateway to Hell.",
+      "turn": "80394",
       "type": "portal",
     },
     {
@@ -1902,6 +2292,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "1",
       "location": "Depths:1",
+      "note": "Found an opulent altar of Gozag.",
+      "turn": "80778",
       "type": "altar",
     },
     {
@@ -1911,6 +2303,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "1",
       "location": "Depths:1",
+      "note": "Found Judduappa's Distillery.",
+      "turn": "81081",
       "type": "shop",
     },
     {
@@ -1920,6 +2314,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "1",
       "location": "Depths:1",
+      "note": "Found Aceall's Magic Scroll Shoppe.",
+      "turn": "81082",
       "type": "shop",
     },
     {
@@ -1929,6 +2325,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "1",
       "location": "Depths:1",
+      "note": "Found Aneulapp's Assorted Antiques.",
+      "turn": "81083",
       "type": "shop",
     },
     {
@@ -1940,6 +2338,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "1",
       "location": "Depths:1",
+      "note": "Bought a twisted agate ring for 105 gold pieces",
+      "turn": "81090",
       "type": "bought",
     },
     {
@@ -1949,6 +2349,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "2",
       "location": "Depths:2",
+      "note": "Noticed the Enchantress",
+      "turn": "81801",
       "type": "unique-noticed",
     },
     {
@@ -1958,6 +2360,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "2",
       "location": "Depths:2",
+      "note": "Found a broken altar of Ashenzari.",
+      "turn": "82056",
       "type": "altar",
     },
     {
@@ -1967,6 +2371,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "2",
       "location": "Depths:2",
+      "note": "Found a basalt altar of Yredelemnul.",
+      "turn": "82188",
       "type": "altar",
     },
     {
@@ -1978,6 +2384,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "2",
       "location": "Depths:2",
+      "note": "Reached XP level 24. HP: 151/151 MP: 36/48",
+      "turn": "82421",
       "type": "experience-level",
     },
     {
@@ -1988,6 +2396,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "2",
       "location": "Depths:2",
+      "note": "Reached skill level 5 in Transmutations",
+      "turn": "82528",
       "type": "skill-level",
     },
     {
@@ -1997,6 +2407,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "2",
       "location": "Depths:2",
+      "note": "Killed the Enchantress",
+      "turn": "82607",
       "type": "unique-killed",
     },
     {
@@ -2008,6 +2420,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Bought the +11 dagger "Goidux Ritoa" {vorpal, Will+} for 917 gold pieces",
+      "turn": "83520",
       "type": "bought",
     },
     {
@@ -2018,6 +2432,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Bought the +11 dagger "Goidux Ritoa" {vorpal, Will+} for 917 gold pieces",
+      "turn": "83520",
       "type": "item",
     },
     {
@@ -2027,6 +2443,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Depths:3",
+      "note": "Found a one-way gate to the infinite horrors of the Abyss.",
+      "turn": "84593",
       "type": "portal",
     },
     {
@@ -2037,6 +2455,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Depths:3",
+      "note": "Reached skill level 18 in Spellcasting",
+      "turn": "84911",
       "type": "skill-level",
     },
     {
@@ -2046,6 +2466,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Depths:3",
+      "note": "Identified the +9 shortbow of the Beast {venom, MP+9}",
+      "turn": "85201",
       "type": "ident",
     },
     {
@@ -2055,6 +2477,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Depths:3",
+      "note": "Identified the +9 shortbow of the Beast {venom, MP+9}",
+      "turn": "85201",
       "type": "item",
     },
     {
@@ -2064,6 +2488,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Depths:3",
+      "note": "Identified the +6 double sword "Houfees" {vorpal, rN+ Int+2}",
+      "turn": "85201",
       "type": "ident",
     },
     {
@@ -2073,6 +2499,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Depths:3",
+      "note": "Identified the +6 double sword "Houfees" {vorpal, rN+ Int+2}",
+      "turn": "85201",
       "type": "item",
     },
     {
@@ -2082,6 +2510,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Depths:3",
+      "note": "Identified the ring "Efeimo" {*Slow rF++ Dex+6}",
+      "turn": "85201",
       "type": "ident",
     },
     {
@@ -2091,6 +2521,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Depths:3",
+      "note": "Identified the ring "Efeimo" {*Slow rF++ Dex+6}",
+      "turn": "85201",
       "type": "item",
     },
     {
@@ -2100,6 +2532,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Depths:3",
+      "note": "Found a one-way gate to the infinite horrors of the Abyss.",
+      "turn": "85963",
       "type": "portal",
     },
     {
@@ -2109,6 +2543,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "4",
       "location": "Depths:4",
+      "note": "Found a one-way gateway to a ziggurat.",
+      "turn": "86401",
       "type": "portal",
     },
     {
@@ -2118,6 +2554,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "4",
       "location": "Depths:4",
+      "note": "Found a gate to the Realm of Zot.",
+      "turn": "86991",
       "type": "portal",
     },
     {
@@ -2128,6 +2566,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "4",
       "location": "Depths:4",
+      "note": "Reached skill level 10 in Short Blades",
+      "turn": "87478",
       "type": "skill-level",
     },
     {
@@ -2139,6 +2579,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "4",
       "location": "Depths:4",
+      "note": "Reached XP level 25. HP: 156/156 MP: 24/48",
+      "turn": "87718",
       "type": "experience-level",
     },
     {
@@ -2148,6 +2590,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "1",
       "location": "Crypt:1",
+      "note": "Identified the ring of Fait {Ice Will+ Slay+3 Stlth-}",
+      "turn": "88522",
       "type": "ident",
     },
     {
@@ -2157,6 +2601,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "1",
       "location": "Crypt:1",
+      "note": "Identified the ring of Fait {Ice Will+ Slay+3 Stlth-}",
+      "turn": "88522",
       "type": "item",
     },
     {
@@ -2167,6 +2613,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "1",
       "location": "Crypt:1",
+      "note": "Reached skill level 10 in Hexes",
+      "turn": "88581",
       "type": "skill-level",
     },
     {
@@ -2177,6 +2625,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "1",
       "location": "Crypt:1",
+      "note": "Reached skill level 5 in Earth Magic",
+      "turn": "88652",
       "type": "skill-level",
     },
     {
@@ -2187,6 +2637,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "1",
       "location": "Crypt:1",
+      "note": "Reached skill level 19 in Spellcasting",
+      "turn": "88982",
       "type": "skill-level",
     },
     {
@@ -2196,6 +2648,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "1",
       "location": "Crypt:1",
+      "note": "Identified the +1 leather armour "Ixaokheu" {rPois Str+6 Dex-5}",
+      "turn": "89385",
       "type": "ident",
     },
     {
@@ -2205,6 +2659,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "1",
       "location": "Crypt:1",
+      "note": "Identified the +1 leather armour "Ixaokheu" {rPois Str+6 Dex-5}",
+      "turn": "89385",
       "type": "item",
     },
     {
@@ -2215,6 +2671,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "2",
       "location": "Crypt:2",
+      "note": "Reached skill level 15 in Stealth",
+      "turn": "89936",
       "type": "skill-level",
     },
     {
@@ -2225,6 +2683,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "2",
       "location": "Crypt:2",
+      "note": "Reached skill level 10 in Shields",
+      "turn": "90196",
       "type": "skill-level",
     },
     {
@@ -2234,6 +2694,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Crypt:3",
+      "note": "Identified the +5 battleaxe "Jaumn" {flame, Int+4 Stlth+}",
+      "turn": "90960",
       "type": "ident",
     },
     {
@@ -2243,6 +2705,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Crypt:3",
+      "note": "Identified the +5 battleaxe "Jaumn" {flame, Int+4 Stlth+}",
+      "turn": "90960",
       "type": "item",
     },
     {
@@ -2252,6 +2716,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Crypt:3",
+      "note": "Found an ancient bone altar of Kikubaaqudgha.",
+      "turn": "92123",
       "type": "altar",
     },
     {
@@ -2263,6 +2729,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Crypt:3",
+      "note": "Reached XP level 26. HP: 163/163 MP: 22/50",
+      "turn": "92134",
       "type": "experience-level",
     },
     {
@@ -2273,6 +2741,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "5",
       "location": "Vaults:5",
+      "note": "Reached skill level 20 in Spellcasting",
+      "turn": "93883",
       "type": "skill-level",
     },
     {
@@ -2282,6 +2752,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "5",
       "location": "Vaults:5",
+      "note": "Identified the +0 pair of gloves of a Labyrinth {Str-5 Int+5}",
+      "turn": "93924",
       "type": "ident",
     },
     {
@@ -2291,6 +2763,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "5",
       "location": "Vaults:5",
+      "note": "Identified the +0 pair of gloves of a Labyrinth {Str-5 Int+5}",
+      "turn": "93924",
       "type": "item",
     },
     {
@@ -2300,6 +2774,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "5",
       "location": "Vaults:5",
+      "note": "Identified the +0 ring mail of Hijiemaa {rPois Int+7 Dex+4}",
+      "turn": "94300",
       "type": "ident",
     },
     {
@@ -2309,6 +2785,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "5",
       "location": "Vaults:5",
+      "note": "Identified the +0 ring mail of Hijiemaa {rPois Int+7 Dex+4}",
+      "turn": "94300",
       "type": "item",
     },
     {
@@ -2318,6 +2796,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "5",
       "location": "Vaults:5",
+      "note": "Identified the +10 whip "Aget" {vorpal, rPois rC- rCorr Str+6}",
+      "turn": "94985",
       "type": "ident",
     },
     {
@@ -2327,6 +2807,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "5",
       "location": "Vaults:5",
+      "note": "Identified the +10 whip "Aget" {vorpal, rPois rC- rCorr Str+6}",
+      "turn": "94985",
       "type": "item",
     },
     {
@@ -2338,6 +2820,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "5",
       "location": "Vaults:5",
+      "note": "Reached XP level 27. HP: 166/166 MP: 44/50",
+      "turn": "95420",
       "type": "experience-level",
     },
     {
@@ -2348,6 +2832,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "5",
       "location": "Vaults:5",
+      "note": "Reached skill level 15 in Evocations",
+      "turn": "95795",
       "type": "skill-level",
     },
     {
@@ -2358,6 +2844,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "2",
       "location": "Zot:2",
+      "note": "Reached skill level 5 in Summonings",
+      "turn": "98040",
       "type": "skill-level",
     },
     {
@@ -2367,6 +2855,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "2",
       "location": "Zot:2",
+      "note": "Identified the +11 quick blade of the Boar {vamp, rElec rCorr Dex+2 Stlth-}",
+      "turn": "98682",
       "type": "ident",
     },
     {
@@ -2376,6 +2866,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "2",
       "location": "Zot:2",
+      "note": "Identified the +11 quick blade of the Boar {vamp, rElec rCorr Dex+2 Stlth-}",
+      "turn": "98682",
       "type": "item",
     },
     {
@@ -2386,6 +2878,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Zot:3",
+      "note": "Reached skill level 21 in Spellcasting",
+      "turn": "99443",
       "type": "skill-level",
     },
     {
@@ -2395,6 +2889,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Zot:3",
+      "note": "Identified the +1 long sword "Transmigrator" {elec, rElec rC+ Dex+2 Stlth+}",
+      "turn": "99630",
       "type": "ident",
     },
     {
@@ -2404,6 +2900,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "3",
       "location": "Zot:3",
+      "note": "Identified the +1 long sword "Transmigrator" {elec, rElec rC+ Dex+2 Stlth+}",
+      "turn": "99630",
       "type": "item",
     },
     {
@@ -2413,6 +2911,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "4",
       "location": "Zot:4",
+      "note": "Identified the amulet of Fakhliys {Spirit Rampage rPois rF-}",
+      "turn": "101641",
       "type": "ident",
     },
     {
@@ -2422,6 +2922,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "4",
       "location": "Zot:4",
+      "note": "Identified the amulet of Fakhliys {Spirit Rampage rPois rF-}",
+      "turn": "101641",
       "type": "item",
     },
     {
@@ -2431,6 +2933,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "4",
       "location": "Zot:4",
+      "note": "Identified the +0 helmet of the Soldier {Int+3}",
+      "turn": "101643",
       "type": "ident",
     },
     {
@@ -2440,6 +2944,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "4",
       "location": "Zot:4",
+      "note": "Identified the +0 helmet of the Soldier {Int+3}",
+      "turn": "101643",
       "type": "item",
     },
     {
@@ -2450,6 +2956,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "5",
       "location": "Zot:5",
+      "note": "Reached skill level 15 in Hexes",
+      "turn": "102911",
       "type": "skill-level",
     },
     {
@@ -2460,6 +2968,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       },
       "level": "5",
       "location": "Zot:5",
+      "note": "Reached skill level 22 in Spellcasting",
+      "turn": "103106",
       "type": "skill-level",
     },
     {
@@ -2467,6 +2977,8 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       "data": "Escaped with the Orb!",
       "level": "$",
       "location": "Dungeon:$",
+      "note": "Escaped with the Orb!",
+      "turn": "104585",
       "type": "last-event",
     },
   ],

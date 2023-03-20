@@ -12,6 +12,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "data": "xoxohorses the Minotaur Fighter began the quest for the Orb.",
       "level": "1",
       "location": "Dungeon:1",
+      "note": "xoxohorses the Minotaur Fighter began the quest for the Orb.",
+      "turn": "0",
       "type": "first-event",
     },
     {
@@ -23,6 +25,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "1",
       "location": "Dungeon:1",
+      "note": "Reached XP level 1. HP: 19/19 MP: 0/0",
+      "turn": "0",
       "type": "experience-level",
     },
     {
@@ -33,6 +37,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "1",
       "location": "Dungeon:1",
+      "note": "Reached skill level 3 in Axes",
+      "turn": "102",
       "type": "skill-level",
     },
     {
@@ -42,6 +48,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "1",
       "location": "Dungeon:1",
+      "note": "Found a faded altar of an unknown god.",
+      "turn": "211",
       "type": "altar",
     },
     {
@@ -53,6 +61,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "1",
       "location": "Dungeon:1",
+      "note": "Reached XP level 2. HP: 26/26 MP: 1/1",
+      "turn": "215",
       "type": "experience-level",
     },
     {
@@ -63,6 +73,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Dungeon:2",
+      "note": "Reached skill level 4 in Axes",
+      "turn": "514",
       "type": "skill-level",
     },
     {
@@ -74,6 +86,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Dungeon:2",
+      "note": "Reached XP level 3. HP: 14/31 MP: 2/2",
+      "turn": "519",
       "type": "experience-level",
     },
     {
@@ -84,6 +98,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Dungeon:2",
+      "note": "Reached skill level 5 in Axes",
+      "turn": "885",
       "type": "skill-level",
     },
     {
@@ -95,6 +111,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Dungeon:2",
+      "note": "Reached XP level 4. HP: 35/39 MP: 3/3",
+      "turn": "1205",
       "type": "experience-level",
     },
     {
@@ -104,6 +122,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Dungeon:2",
+      "note": "You add the spells Sublimation of Blood, Petrify and Irradiate to your library.",
+      "turn": "1331",
       "type": "spell",
     },
     {
@@ -113,6 +133,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Dungeon:2",
+      "note": "You add the spells Sublimation of Blood, Petrify and Irradiate to your library.",
+      "turn": "1331",
       "type": "spell",
     },
     {
@@ -122,6 +144,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Dungeon:2",
+      "note": "You add the spells Sublimation of Blood, Petrify and Irradiate to your library.",
+      "turn": "1331",
       "type": "spell",
     },
     {
@@ -131,6 +155,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Dungeon:2",
+      "note": "Found a radiant altar of Vehumet.",
+      "turn": "1375",
       "type": "altar",
     },
     {
@@ -141,6 +167,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Reached skill level 6 in Axes",
+      "turn": "1847",
       "type": "skill-level",
     },
     {
@@ -150,6 +178,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Found an iron altar of Okawaru.",
+      "turn": "2482",
       "type": "altar",
     },
     {
@@ -161,6 +191,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Dungeon:4",
+      "note": "Reached XP level 5. HP: 44/45 MP: 4/4",
+      "turn": "2726",
       "type": "experience-level",
     },
     {
@@ -171,6 +203,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Dungeon:4",
+      "note": "Reached skill level 7 in Axes",
+      "turn": "2746",
       "type": "skill-level",
     },
     {
@@ -180,6 +214,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Dungeon:4",
+      "note": "You add the spells Ensorcelled Hibernation, Spider Form and Shadow Creatures to your library.",
+      "turn": "2837",
       "type": "spell",
     },
     {
@@ -189,6 +225,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Dungeon:4",
+      "note": "You add the spells Ensorcelled Hibernation, Spider Form and Shadow Creatures to your library.",
+      "turn": "2837",
       "type": "spell",
     },
     {
@@ -198,6 +236,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Dungeon:4",
+      "note": "You add the spells Ensorcelled Hibernation, Spider Form and Shadow Creatures to your library.",
+      "turn": "2837",
       "type": "spell",
     },
     {
@@ -209,6 +249,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Dungeon:4",
+      "note": "Reached XP level 6. HP: 40/51 MP: 5/5",
+      "turn": "3082",
       "type": "experience-level",
     },
     {
@@ -219,6 +261,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Dungeon:4",
+      "note": "Reached skill level 8 in Axes",
+      "turn": "3461",
       "type": "skill-level",
     },
     {
@@ -228,6 +272,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Dungeon:4",
+      "note": "Found a hide-covered altar of Uskayaw.",
+      "turn": "3563",
       "type": "altar",
     },
     {
@@ -237,6 +283,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": undefined,
       "location": "Temple",
+      "note": "Became a worshipper of Gozag Ym Sagoz the Greedy",
+      "turn": "3694",
       "type": "join-god",
     },
     {
@@ -246,6 +294,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Dungeon:4",
+      "note": "Identified the +9 dagger "Arcanum" {elec, rF+ Int+4}",
+      "turn": "4094",
       "type": "ident",
     },
     {
@@ -255,6 +305,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Dungeon:4",
+      "note": "Identified the +9 dagger "Arcanum" {elec, rF+ Int+4}",
+      "turn": "4094",
       "type": "item",
     },
     {
@@ -264,6 +316,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Found an ancient bone altar of Kikubaaqudgha.",
+      "turn": "4171",
       "type": "altar",
     },
     {
@@ -273,6 +327,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Noticed Grinder",
+      "turn": "4233",
       "type": "unique-noticed",
     },
     {
@@ -282,6 +338,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Killed Grinder",
+      "turn": "4247",
       "type": "unique-killed",
     },
     {
@@ -292,6 +350,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Reached skill level 9 in Axes",
+      "turn": "4248",
       "type": "skill-level",
     },
     {
@@ -303,6 +363,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Reached XP level 7. HP: 35/57 MP: 6/6",
+      "turn": "4248",
       "type": "experience-level",
     },
     {
@@ -313,6 +375,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Reached skill level 10 in Axes",
+      "turn": "4249",
       "type": "skill-level",
     },
     {
@@ -323,6 +387,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Reached skill level 1 in Short Blades",
+      "turn": "4651",
       "type": "skill-level",
     },
     {
@@ -332,6 +398,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Found a shimmering altar of Xom.",
+      "turn": "4737",
       "type": "altar",
     },
     {
@@ -342,6 +410,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Reached skill level 2 in Short Blades",
+      "turn": "4774",
       "type": "skill-level",
     },
     {
@@ -351,6 +421,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Noticed Duvessa",
+      "turn": "4823",
       "type": "unique-noticed",
     },
     {
@@ -360,6 +432,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Noticed Dowan",
+      "turn": "4823",
       "type": "unique-noticed",
     },
     {
@@ -369,6 +443,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Killed Duvessa",
+      "turn": "4828",
       "type": "unique-killed",
     },
     {
@@ -378,6 +454,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Killed Dowan",
+      "turn": "4832",
       "type": "unique-killed",
     },
     {
@@ -388,6 +466,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Reached skill level 3 in Short Blades",
+      "turn": "4833",
       "type": "skill-level",
     },
     {
@@ -399,6 +479,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Reached XP level 8. HP: 54/64 MP: 7/7",
+      "turn": "4833",
       "type": "experience-level",
     },
     {
@@ -408,6 +490,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Noticed Sigmund",
+      "turn": "5017",
       "type": "unique-noticed",
     },
     {
@@ -417,6 +501,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Killed Sigmund",
+      "turn": "5020",
       "type": "unique-killed",
     },
     {
@@ -427,6 +513,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Reached skill level 11 in Axes",
+      "turn": "5021",
       "type": "skill-level",
     },
     {
@@ -437,6 +525,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Reached skill level 4 in Short Blades",
+      "turn": "5036",
       "type": "skill-level",
     },
     {
@@ -446,6 +536,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "6",
       "location": "Dungeon:6",
+      "note": "You add the spells Sting, Poisonous Vapours and Olgreb's Toxic Radiance to your library.",
+      "turn": "5260",
       "type": "spell",
     },
     {
@@ -455,6 +547,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "6",
       "location": "Dungeon:6",
+      "note": "You add the spells Sting, Poisonous Vapours and Olgreb's Toxic Radiance to your library.",
+      "turn": "5260",
       "type": "spell",
     },
     {
@@ -464,6 +558,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "6",
       "location": "Dungeon:6",
+      "note": "You add the spells Sting, Poisonous Vapours and Olgreb's Toxic Radiance to your library.",
+      "turn": "5260",
       "type": "spell",
     },
     {
@@ -474,6 +570,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "6",
       "location": "Dungeon:6",
+      "note": "Reached skill level 5 in Short Blades",
+      "turn": "5273",
       "type": "skill-level",
     },
     {
@@ -484,6 +582,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "6",
       "location": "Dungeon:6",
+      "note": "Reached skill level 6 in Short Blades",
+      "turn": "5347",
       "type": "skill-level",
     },
     {
@@ -494,6 +594,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "6",
       "location": "Dungeon:6",
+      "note": "Reached skill level 12 in Axes",
+      "turn": "5363",
       "type": "skill-level",
     },
     {
@@ -505,6 +607,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "6",
       "location": "Dungeon:6",
+      "note": "Reached XP level 9. HP: 39/70 MP: 8/8",
+      "turn": "5366",
       "type": "experience-level",
     },
     {
@@ -515,6 +619,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "6",
       "location": "Dungeon:6",
+      "note": "Reached skill level 7 in Short Blades",
+      "turn": "5374",
       "type": "skill-level",
     },
     {
@@ -524,6 +630,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "6",
       "location": "Dungeon:6",
+      "note": "Found a radiant altar of Vehumet.",
+      "turn": "5544",
       "type": "altar",
     },
     {
@@ -533,6 +641,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "6",
       "location": "Dungeon:6",
+      "note": "Found a broken altar of Ashenzari.",
+      "turn": "5572",
       "type": "altar",
     },
     {
@@ -543,6 +653,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "7",
       "location": "Dungeon:7",
+      "note": "Reached skill level 8 in Short Blades",
+      "turn": "5865",
       "type": "skill-level",
     },
     {
@@ -553,6 +665,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "7",
       "location": "Dungeon:7",
+      "note": "Reached skill level 13 in Axes",
+      "turn": "5865",
       "type": "skill-level",
     },
     {
@@ -563,6 +677,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "7",
       "location": "Dungeon:7",
+      "note": "Reached skill level 9 in Short Blades",
+      "turn": "5893",
       "type": "skill-level",
     },
     {
@@ -572,6 +688,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "7",
       "location": "Dungeon:7",
+      "note": "Found a blossoming altar of Fedhas.",
+      "turn": "5945",
       "type": "altar",
     },
     {
@@ -581,6 +699,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "7",
       "location": "Dungeon:7",
+      "note": "Found a hazy altar of Hepliaklqana.",
+      "turn": "6087",
       "type": "altar",
     },
     {
@@ -592,6 +712,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "7",
       "location": "Dungeon:7",
+      "note": "Reached XP level 10. HP: 77/77 MP: 9/9",
+      "turn": "6291",
       "type": "experience-level",
     },
     {
@@ -601,6 +723,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Found a glowing golden altar of the Shining One.",
+      "turn": "6318",
       "type": "altar",
     },
     {
@@ -611,6 +735,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Reached skill level 14 in Axes",
+      "turn": "6794",
       "type": "skill-level",
     },
     {
@@ -620,6 +746,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "You add the spells Alistair's Intoxication, Borgnjor's Vile Clutch and Eringya's Noxious Bog to your library.",
+      "turn": "6837",
       "type": "spell",
     },
     {
@@ -629,6 +757,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "You add the spells Alistair's Intoxication, Borgnjor's Vile Clutch and Eringya's Noxious Bog to your library.",
+      "turn": "6837",
       "type": "spell",
     },
     {
@@ -638,6 +768,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "You add the spells Alistair's Intoxication, Borgnjor's Vile Clutch and Eringya's Noxious Bog to your library.",
+      "turn": "6837",
       "type": "spell",
     },
     {
@@ -647,6 +779,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Noticed Maurice",
+      "turn": "7168",
       "type": "unique-noticed",
     },
     {
@@ -656,6 +790,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Killed Maurice",
+      "turn": "7182",
       "type": "unique-killed",
     },
     {
@@ -666,6 +802,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Reached skill level 10 in Short Blades",
+      "turn": "7183",
       "type": "skill-level",
     },
     {
@@ -675,6 +813,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Found a bloodstained altar of Trog.",
+      "turn": "7320",
       "type": "altar",
     },
     {
@@ -685,6 +825,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Reached skill level 15 in Axes",
+      "turn": "7410",
       "type": "skill-level",
     },
     {
@@ -694,6 +836,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Noticed Erolcha",
+      "turn": "7832",
       "type": "unique-noticed",
     },
     {
@@ -703,6 +847,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Killed Erolcha",
+      "turn": "7888",
       "type": "unique-killed",
     },
     {
@@ -713,6 +859,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Reached skill level 16 in Axes",
+      "turn": "7889",
       "type": "skill-level",
     },
     {
@@ -723,6 +871,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Reached skill level 4 in Shields",
+      "turn": "7889",
       "type": "skill-level",
     },
     {
@@ -734,6 +884,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Reached XP level 11. HP: 69/82 MP: 10/10",
+      "turn": "7889",
       "type": "experience-level",
     },
     {
@@ -743,6 +895,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Noticed Grum",
+      "turn": "7970",
       "type": "unique-noticed",
     },
     {
@@ -753,6 +907,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Reached skill level 5 in Shields",
+      "turn": "7997",
       "type": "skill-level",
     },
     {
@@ -762,6 +918,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Killed Grum",
+      "turn": "8006",
       "type": "unique-killed",
     },
     {
@@ -771,6 +929,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Noticed Pikel",
+      "turn": "8059",
       "type": "unique-noticed",
     },
     {
@@ -780,6 +940,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Killed Pikel",
+      "turn": "8086",
       "type": "unique-killed",
     },
     {
@@ -790,6 +952,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Reached skill level 6 in Shields",
+      "turn": "8087",
       "type": "skill-level",
     },
     {
@@ -799,6 +963,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Noticed Joseph",
+      "turn": "8193",
       "type": "unique-noticed",
     },
     {
@@ -808,6 +974,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Killed Joseph",
+      "turn": "8207",
       "type": "unique-killed",
     },
     {
@@ -817,6 +985,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Found a white marble altar of Elyvilon.",
+      "turn": "8300",
       "type": "altar",
     },
     {
@@ -826,6 +996,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "10",
       "location": "Dungeon:10",
+      "note": "Found a glowing silver altar of Zin.",
+      "turn": "8439",
       "type": "altar",
     },
     {
@@ -836,6 +1008,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "10",
       "location": "Dungeon:10",
+      "note": "Reached skill level 7 in Shields",
+      "turn": "8451",
       "type": "skill-level",
     },
     {
@@ -845,6 +1019,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "10",
       "location": "Dungeon:10",
+      "note": "You add the spells Lesser Beckoning, Gell's Gravitas and Teleport Other to your library.",
+      "turn": "8470",
       "type": "spell",
     },
     {
@@ -854,6 +1030,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "10",
       "location": "Dungeon:10",
+      "note": "You add the spells Lesser Beckoning, Gell's Gravitas and Teleport Other to your library.",
+      "turn": "8470",
       "type": "spell",
     },
     {
@@ -863,6 +1041,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "10",
       "location": "Dungeon:10",
+      "note": "You add the spells Lesser Beckoning, Gell's Gravitas and Teleport Other to your library.",
+      "turn": "8470",
       "type": "spell",
     },
     {
@@ -873,6 +1053,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "10",
       "location": "Dungeon:10",
+      "note": "Reached skill level 8 in Shields",
+      "turn": "8589",
       "type": "skill-level",
     },
     {
@@ -882,6 +1064,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "10",
       "location": "Dungeon:10",
+      "note": "Found Ynooski's Distillery.",
+      "turn": "8802",
       "type": "shop",
     },
     {
@@ -892,6 +1076,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "10",
       "location": "Dungeon:10",
+      "note": "Reached skill level 9 in Shields",
+      "turn": "8986",
       "type": "skill-level",
     },
     {
@@ -901,6 +1087,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "10",
       "location": "Dungeon:10",
+      "note": "Found Sijuroas's Distillery.",
+      "turn": "9025",
       "type": "shop",
     },
     {
@@ -910,6 +1098,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "10",
       "location": "Dungeon:10",
+      "note": "You add the spells Sandblast, Passwall and Lee's Rapid Deconstruction to your library.",
+      "turn": "9264",
       "type": "spell",
     },
     {
@@ -919,6 +1109,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "10",
       "location": "Dungeon:10",
+      "note": "You add the spells Sandblast, Passwall and Lee's Rapid Deconstruction to your library.",
+      "turn": "9264",
       "type": "spell",
     },
     {
@@ -928,6 +1120,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "10",
       "location": "Dungeon:10",
+      "note": "You add the spells Sandblast, Passwall and Lee's Rapid Deconstruction to your library.",
+      "turn": "9264",
       "type": "spell",
     },
     {
@@ -937,6 +1131,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "14",
       "location": "Dungeon:14",
+      "note": "Found a shimmering blue altar of Sif Muna.",
+      "turn": "9533",
       "type": "altar",
     },
     {
@@ -947,6 +1143,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "13",
       "location": "Dungeon:13",
+      "note": "Reached skill level 10 in Shields",
+      "turn": "9582",
       "type": "skill-level",
     },
     {
@@ -957,6 +1155,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "13",
       "location": "Dungeon:13",
+      "note": "Reached skill level 11 in Shields",
+      "turn": "9645",
       "type": "skill-level",
     },
     {
@@ -967,6 +1167,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "13",
       "location": "Dungeon:13",
+      "note": "Reached skill level 12 in Shields",
+      "turn": "9738",
       "type": "skill-level",
     },
     {
@@ -978,6 +1180,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "11",
       "location": "Dungeon:11",
+      "note": "Reached XP level 12. HP: 51/90 MP: 11/11",
+      "turn": "9994",
       "type": "experience-level",
     },
     {
@@ -987,6 +1191,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "11",
       "location": "Dungeon:11",
+      "note": "Identified the +2 dire flail "Ceddomm" {freeze, rElec rCorr Int-5 SInv}",
+      "turn": "10107",
       "type": "ident",
     },
     {
@@ -996,6 +1202,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "11",
       "location": "Dungeon:11",
+      "note": "Identified the +2 dire flail "Ceddomm" {freeze, rElec rCorr Int-5 SInv}",
+      "turn": "10107",
       "type": "item",
     },
     {
@@ -1006,6 +1214,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "11",
       "location": "Dungeon:11",
+      "note": "Reached skill level 13 in Shields",
+      "turn": "10167",
       "type": "skill-level",
     },
     {
@@ -1016,6 +1226,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "12",
       "location": "Dungeon:12",
+      "note": "Reached skill level 14 in Shields",
+      "turn": "10621",
       "type": "skill-level",
     },
     {
@@ -1026,6 +1238,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "11",
       "location": "Dungeon:11",
+      "note": "Reached skill level 1 in Throwing",
+      "turn": "10856",
       "type": "skill-level",
     },
     {
@@ -1036,6 +1250,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "12",
       "location": "Dungeon:12",
+      "note": "Reached skill level 2 in Throwing",
+      "turn": "10931",
       "type": "skill-level",
     },
     {
@@ -1046,6 +1262,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "12",
       "location": "Dungeon:12",
+      "note": "Reached skill level 15 in Shields",
+      "turn": "10993",
       "type": "skill-level",
     },
     {
@@ -1056,6 +1274,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "12",
       "location": "Dungeon:12",
+      "note": "Reached skill level 3 in Throwing",
+      "turn": "11001",
       "type": "skill-level",
     },
     {
@@ -1066,6 +1286,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "12",
       "location": "Dungeon:12",
+      "note": "Reached skill level 4 in Throwing",
+      "turn": "11084",
       "type": "skill-level",
     },
     {
@@ -1076,6 +1298,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "12",
       "location": "Dungeon:12",
+      "note": "Reached skill level 5 in Throwing",
+      "turn": "11158",
       "type": "skill-level",
     },
     {
@@ -1086,6 +1310,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "12",
       "location": "Dungeon:12",
+      "note": "Reached skill level 6 in Throwing",
+      "turn": "11429",
       "type": "skill-level",
     },
     {
@@ -1096,6 +1322,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "12",
       "location": "Dungeon:12",
+      "note": "Reached skill level 4 in Fighting",
+      "turn": "11470",
       "type": "skill-level",
     },
     {
@@ -1106,6 +1334,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "12",
       "location": "Dungeon:12",
+      "note": "Reached skill level 1 in Dodging",
+      "turn": "11470",
       "type": "skill-level",
     },
     {
@@ -1116,6 +1346,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "12",
       "location": "Dungeon:12",
+      "note": "Reached skill level 4 in Armour",
+      "turn": "11742",
       "type": "skill-level",
     },
     {
@@ -1127,6 +1359,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "1",
       "location": "Lair:1",
+      "note": "Reached XP level 13. HP: 97/99 MP: 12/12",
+      "turn": "11962",
       "type": "experience-level",
     },
     {
@@ -1137,6 +1371,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "1",
       "location": "Lair:1",
+      "note": "Reached skill level 2 in Dodging",
+      "turn": "11967",
       "type": "skill-level",
     },
     {
@@ -1147,6 +1383,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "1",
       "location": "Lair:1",
+      "note": "Reached skill level 5 in Fighting",
+      "turn": "12077",
       "type": "skill-level",
     },
     {
@@ -1156,6 +1394,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "1",
       "location": "Lair:1",
+      "note": "You add the spells Swiftness and Invisibility to your library.",
+      "turn": "12087",
       "type": "spell",
     },
     {
@@ -1165,6 +1405,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "1",
       "location": "Lair:1",
+      "note": "You add the spells Swiftness and Invisibility to your library.",
+      "turn": "12087",
       "type": "spell",
     },
     {
@@ -1175,6 +1417,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "1",
       "location": "Lair:1",
+      "note": "Reached skill level 5 in Armour",
+      "turn": "12156",
       "type": "skill-level",
     },
     {
@@ -1185,6 +1429,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "1",
       "location": "Lair:1",
+      "note": "Reached skill level 3 in Dodging",
+      "turn": "12165",
       "type": "skill-level",
     },
     {
@@ -1194,6 +1440,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "1",
       "location": "Lair:1",
+      "note": "Noticed Sonja",
+      "turn": "12231",
       "type": "unique-noticed",
     },
     {
@@ -1203,6 +1451,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "1",
       "location": "Lair:1",
+      "note": "Noticed Sonja",
+      "turn": "12232",
       "type": "unique-noticed",
     },
     {
@@ -1212,6 +1462,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "1",
       "location": "Lair:1",
+      "note": "Found a blossoming altar of Fedhas.",
+      "turn": "12687",
       "type": "altar",
     },
     {
@@ -1223,6 +1475,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Bought a fading plate armour for 868 gold pieces",
+      "turn": "12951",
       "type": "bought",
     },
     {
@@ -1233,6 +1487,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Identified the +10 plate armour "Defod" {Dex+3} (You bought it in a shop on level 8 of the Dungeon)",
+      "turn": "12951",
       "type": "ident-bought-loc",
     },
     {
@@ -1243,6 +1499,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Identified the +10 plate armour "Defod" {Dex+3} (You bought it in a shop on level 8 of the Dungeon)",
+      "turn": "12951",
       "type": "item",
     },
     {
@@ -1252,6 +1510,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Lair:2",
+      "note": "Identified the +2 long sword "Heivu" {protect, rF+ Str+3}",
+      "turn": "13243",
       "type": "ident",
     },
     {
@@ -1261,6 +1521,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Lair:2",
+      "note": "Identified the +2 long sword "Heivu" {protect, rF+ Str+3}",
+      "turn": "13243",
       "type": "item",
     },
     {
@@ -1270,6 +1532,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Lair:2",
+      "note": "Identified the +10 dagger "Lifebane" {drain, *Rage *Slow rC+ Dex+7}",
+      "turn": "13373",
       "type": "ident",
     },
     {
@@ -1279,6 +1543,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Lair:2",
+      "note": "Identified the +10 dagger "Lifebane" {drain, *Rage *Slow rC+ Dex+7}",
+      "turn": "13373",
       "type": "item",
     },
     {
@@ -1289,6 +1555,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Lair:2",
+      "note": "Reached skill level 4 in Dodging",
+      "turn": "13514",
       "type": "skill-level",
     },
     {
@@ -1299,6 +1567,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Lair:2",
+      "note": "Reached skill level 6 in Fighting",
+      "turn": "13518",
       "type": "skill-level",
     },
     {
@@ -1309,6 +1579,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Lair:2",
+      "note": "Reached skill level 6 in Armour",
+      "turn": "13518",
       "type": "skill-level",
     },
     {
@@ -1319,6 +1591,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": undefined,
       "location": "IceCave",
+      "note": "Reached skill level 5 in Dodging",
+      "turn": "14040",
       "type": "skill-level",
     },
     {
@@ -1329,6 +1603,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": undefined,
       "location": "IceCave",
+      "note": "Reached skill level 7 in Fighting",
+      "turn": "14138",
       "type": "skill-level",
     },
     {
@@ -1339,6 +1615,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": undefined,
       "location": "IceCave",
+      "note": "Reached skill level 7 in Armour",
+      "turn": "14184",
       "type": "skill-level",
     },
     {
@@ -1349,6 +1627,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": undefined,
       "location": "IceCave",
+      "note": "Reached skill level 6 in Dodging",
+      "turn": "14493",
       "type": "skill-level",
     },
     {
@@ -1358,6 +1638,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": undefined,
       "location": "IceCave",
+      "note": "You add the spells Ozocubu's Armour and Ozocubu's Refrigeration to your library.",
+      "turn": "14502",
       "type": "spell",
     },
     {
@@ -1367,6 +1649,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": undefined,
       "location": "IceCave",
+      "note": "You add the spells Ozocubu's Armour and Ozocubu's Refrigeration to your library.",
+      "turn": "14502",
       "type": "spell",
     },
     {
@@ -1377,6 +1661,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "3",
       "location": "Lair:3",
+      "note": "Reached skill level 8 in Fighting",
+      "turn": "14655",
       "type": "skill-level",
     },
     {
@@ -1387,6 +1673,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "3",
       "location": "Lair:3",
+      "note": "Reached skill level 8 in Armour",
+      "turn": "14681",
       "type": "skill-level",
     },
     {
@@ -1397,6 +1685,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Lair:4",
+      "note": "Reached skill level 7 in Dodging",
+      "turn": "15090",
       "type": "skill-level",
     },
     {
@@ -1406,6 +1696,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Lair:4",
+      "note": "Noticed Rupert",
+      "turn": "15210",
       "type": "unique-noticed",
     },
     {
@@ -1415,6 +1707,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Lair:4",
+      "note": "Noticed Josephine",
+      "turn": "15219",
       "type": "unique-noticed",
     },
     {
@@ -1426,6 +1720,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Lair:4",
+      "note": "Reached XP level 14. HP: 116/116 MP: 13/13",
+      "turn": "15394",
       "type": "experience-level",
     },
     {
@@ -1436,6 +1732,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Lair:4",
+      "note": "Reached skill level 9 in Fighting",
+      "turn": "15445",
       "type": "skill-level",
     },
     {
@@ -1446,6 +1744,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Lair:4",
+      "note": "Reached skill level 9 in Armour",
+      "turn": "15475",
       "type": "skill-level",
     },
     {
@@ -1455,6 +1755,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Lair:4",
+      "note": "Killed Josephine",
+      "turn": "15516",
       "type": "unique-killed",
     },
     {
@@ -1464,6 +1766,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Lair:4",
+      "note": "Killed Rupert",
+      "turn": "15607",
       "type": "unique-killed",
     },
     {
@@ -1473,6 +1777,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Lair:4",
+      "note": "You add the spells Frozen Ramparts, Ice Form and Summon Ice Beast to your library.",
+      "turn": "15635",
       "type": "spell",
     },
     {
@@ -1482,6 +1788,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Lair:4",
+      "note": "You add the spells Frozen Ramparts, Ice Form and Summon Ice Beast to your library.",
+      "turn": "15635",
       "type": "spell",
     },
     {
@@ -1491,6 +1799,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Lair:4",
+      "note": "You add the spells Frozen Ramparts, Ice Form and Summon Ice Beast to your library.",
+      "turn": "15635",
       "type": "spell",
     },
     {
@@ -1501,6 +1811,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "3",
       "location": "Lair:3",
+      "note": "Reached skill level 8 in Dodging",
+      "turn": "15888",
       "type": "skill-level",
     },
     {
@@ -1511,6 +1823,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "3",
       "location": "Lair:3",
+      "note": "Reached skill level 10 in Fighting",
+      "turn": "16150",
       "type": "skill-level",
     },
     {
@@ -1521,6 +1835,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "3",
       "location": "Lair:3",
+      "note": "Reached skill level 10 in Armour",
+      "turn": "16164",
       "type": "skill-level",
     },
     {
@@ -1530,6 +1846,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "3",
       "location": "Lair:3",
+      "note": "Identified the +1 long sword "Ykhlotoi" {vorpal, Drain MP+9 SInv Stlth+}",
+      "turn": "16367",
       "type": "ident",
     },
     {
@@ -1539,6 +1857,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "3",
       "location": "Lair:3",
+      "note": "Identified the +1 long sword "Ykhlotoi" {vorpal, Drain MP+9 SInv Stlth+}",
+      "turn": "16367",
       "type": "item",
     },
     {
@@ -1549,6 +1869,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "5",
       "location": "Lair:5",
+      "note": "Reached skill level 9 in Dodging",
+      "turn": "16501",
       "type": "skill-level",
     },
     {
@@ -1559,6 +1881,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "5",
       "location": "Lair:5",
+      "note": "Reached skill level 1 in Evocations",
+      "turn": "16947",
       "type": "skill-level",
     },
     {
@@ -1569,6 +1893,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "6",
       "location": "Lair:6",
+      "note": "Reached skill level 10 in Dodging",
+      "turn": "17407",
       "type": "skill-level",
     },
     {
@@ -1579,6 +1905,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "6",
       "location": "Lair:6",
+      "note": "Reached skill level 2 in Evocations",
+      "turn": "17410",
       "type": "skill-level",
     },
     {
@@ -1589,6 +1917,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "6",
       "location": "Lair:6",
+      "note": "Reached skill level 3 in Evocations",
+      "turn": "17594",
       "type": "skill-level",
     },
     {
@@ -1599,6 +1929,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "6",
       "location": "Lair:6",
+      "note": "Reached skill level 4 in Evocations",
+      "turn": "17680",
       "type": "skill-level",
     },
     {
@@ -1609,6 +1941,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "6",
       "location": "Lair:6",
+      "note": "Reached skill level 5 in Evocations",
+      "turn": "17746",
       "type": "skill-level",
     },
     {
@@ -1619,6 +1953,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "6",
       "location": "Lair:6",
+      "note": "Reached skill level 6 in Evocations",
+      "turn": "17948",
       "type": "skill-level",
     },
     {
@@ -1629,6 +1965,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "6",
       "location": "Lair:6",
+      "note": "Reached skill level 1 in Long Blades",
+      "turn": "18051",
       "type": "skill-level",
     },
     {
@@ -1639,6 +1977,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "6",
       "location": "Lair:6",
+      "note": "Reached skill level 2 in Long Blades",
+      "turn": "18164",
       "type": "skill-level",
     },
     {
@@ -1648,6 +1988,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "6",
       "location": "Lair:6",
+      "note": "Noticed Kirke",
+      "turn": "18171",
       "type": "unique-noticed",
     },
     {
@@ -1658,6 +2000,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "6",
       "location": "Lair:6",
+      "note": "Reached skill level 3 in Long Blades",
+      "turn": "18336",
       "type": "skill-level",
     },
     {
@@ -1669,6 +2013,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "6",
       "location": "Lair:6",
+      "note": "Reached XP level 15. HP: 126/126 MP: 14/14",
+      "turn": "18358",
       "type": "experience-level",
     },
     {
@@ -1678,6 +2024,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "6",
       "location": "Lair:6",
+      "note": "Killed Kirke",
+      "turn": "18389",
       "type": "unique-killed",
     },
     {
@@ -1688,6 +2036,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "6",
       "location": "Lair:6",
+      "note": "Reached skill level 4 in Long Blades",
+      "turn": "18390",
       "type": "skill-level",
     },
     {
@@ -1698,6 +2048,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "6",
       "location": "Lair:6",
+      "note": "Reached skill level 7 in Evocations",
+      "turn": "18390",
       "type": "skill-level",
     },
     {
@@ -1708,6 +2060,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "6",
       "location": "Lair:6",
+      "note": "Reached skill level 5 in Long Blades",
+      "turn": "18894",
       "type": "skill-level",
     },
     {
@@ -1718,6 +2072,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "6",
       "location": "Lair:6",
+      "note": "Reached skill level 6 in Long Blades",
+      "turn": "19088",
       "type": "skill-level",
     },
     {
@@ -1728,6 +2084,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "6",
       "location": "Lair:6",
+      "note": "Reached skill level 8 in Evocations",
+      "turn": "19225",
       "type": "skill-level",
     },
     {
@@ -1738,6 +2096,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "6",
       "location": "Lair:6",
+      "note": "Reached skill level 7 in Long Blades",
+      "turn": "19529",
       "type": "skill-level",
     },
     {
@@ -1749,6 +2109,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Bought runed gold dragon scales for 2075 gold pieces",
+      "turn": "20405",
       "type": "bought",
     },
     {
@@ -1759,6 +2121,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Identified +1 gold dragon scales (You bought it in a shop on level 8 of the Dungeon)",
+      "turn": "20405",
       "type": "ident-bought-loc",
     },
     {
@@ -1769,6 +2133,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Identified +1 gold dragon scales (You bought it in a shop on level 8 of the Dungeon)",
+      "turn": "20405",
       "type": "item",
     },
     {
@@ -1779,6 +2145,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Lair:2",
+      "note": "Reached skill level 8 in Long Blades",
+      "turn": "20543",
       "type": "skill-level",
     },
     {
@@ -1789,6 +2157,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Lair:2",
+      "note": "Reached skill level 9 in Evocations",
+      "turn": "20619",
       "type": "skill-level",
     },
     {
@@ -1798,6 +2168,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Swamp:2",
+      "note": "You add the spells Summon Mana Viper and Monstrous Menagerie to your library.",
+      "turn": "21520",
       "type": "spell",
     },
     {
@@ -1807,6 +2179,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Swamp:2",
+      "note": "You add the spells Summon Mana Viper and Monstrous Menagerie to your library.",
+      "turn": "21520",
       "type": "spell",
     },
     {
@@ -1817,6 +2191,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Swamp:2",
+      "note": "Reached skill level 11 in Armour",
+      "turn": "21600",
       "type": "skill-level",
     },
     {
@@ -1827,6 +2203,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Swamp:2",
+      "note": "Reached skill level 10 in Evocations",
+      "turn": "21912",
       "type": "skill-level",
     },
     {
@@ -1838,6 +2216,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "3",
       "location": "Swamp:3",
+      "note": "Reached XP level 16. HP: 117/134 MP: 15/15",
+      "turn": "22282",
       "type": "experience-level",
     },
     {
@@ -1848,6 +2228,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "3",
       "location": "Swamp:3",
+      "note": "Reached skill level 12 in Armour",
+      "turn": "22438",
       "type": "skill-level",
     },
     {
@@ -1857,6 +2239,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "3",
       "location": "Swamp:3",
+      "note": "You add the spells Shock and Airstrike to your library.",
+      "turn": "22597",
       "type": "spell",
     },
     {
@@ -1866,6 +2250,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "3",
       "location": "Swamp:3",
+      "note": "You add the spells Shock and Airstrike to your library.",
+      "turn": "22597",
       "type": "spell",
     },
     {
@@ -1875,6 +2261,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "3",
       "location": "Swamp:3",
+      "note": "Identified the +1 leather armour of Pessimism {Str+3}",
+      "turn": "22797",
       "type": "ident",
     },
     {
@@ -1884,6 +2272,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "3",
       "location": "Swamp:3",
+      "note": "Identified the +1 leather armour of Pessimism {Str+3}",
+      "turn": "22797",
       "type": "item",
     },
     {
@@ -1893,6 +2283,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "3",
       "location": "Swamp:3",
+      "note": "You add the spells Corona, Animate Skeleton, Summon Small Mammal and Apportation to your library.",
+      "turn": "23231",
       "type": "spell",
     },
     {
@@ -1902,6 +2294,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "3",
       "location": "Swamp:3",
+      "note": "You add the spells Corona, Animate Skeleton, Summon Small Mammal and Apportation to your library.",
+      "turn": "23231",
       "type": "spell",
     },
     {
@@ -1911,6 +2305,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "3",
       "location": "Swamp:3",
+      "note": "You add the spells Corona, Animate Skeleton, Summon Small Mammal and Apportation to your library.",
+      "turn": "23231",
       "type": "spell",
     },
     {
@@ -1920,6 +2316,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "3",
       "location": "Swamp:3",
+      "note": "You add the spells Corona, Animate Skeleton, Summon Small Mammal and Apportation to your library.",
+      "turn": "23231",
       "type": "spell",
     },
     {
@@ -1930,6 +2328,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "3",
       "location": "Swamp:3",
+      "note": "Reached skill level 11 in Evocations",
+      "turn": "23457",
       "type": "skill-level",
     },
     {
@@ -1939,6 +2339,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "3",
       "location": "Swamp:3",
+      "note": "Found Liyhu's Island Escapes.",
+      "turn": "23701",
       "type": "shop",
     },
     {
@@ -1950,6 +2352,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "3",
       "location": "Swamp:3",
+      "note": "Bought a scroll of blinking for 105 gold pieces",
+      "turn": "23716",
       "type": "bought",
     },
     {
@@ -1961,6 +2365,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "3",
       "location": "Swamp:3",
+      "note": "Bought a scroll of blinking for 105 gold pieces",
+      "turn": "23716",
       "type": "bought",
     },
     {
@@ -1972,6 +2378,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "3",
       "location": "Swamp:3",
+      "note": "Bought a scroll of blinking for 105 gold pieces",
+      "turn": "23716",
       "type": "bought",
     },
     {
@@ -1983,6 +2391,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "3",
       "location": "Swamp:3",
+      "note": "Bought a scroll of blinking for 105 gold pieces",
+      "turn": "23716",
       "type": "bought",
     },
     {
@@ -1994,6 +2404,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "3",
       "location": "Swamp:3",
+      "note": "Bought a scroll of blinking for 105 gold pieces",
+      "turn": "23716",
       "type": "bought",
     },
     {
@@ -2005,6 +2417,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "3",
       "location": "Swamp:3",
+      "note": "Bought a scroll of fog for 28 gold pieces",
+      "turn": "23716",
       "type": "bought",
     },
     {
@@ -2015,6 +2429,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "3",
       "location": "Swamp:3",
+      "note": "Reached skill level 13 in Armour",
+      "turn": "23778",
       "type": "skill-level",
     },
     {
@@ -2024,6 +2440,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Swamp:4",
+      "note": "Noticed Louise",
+      "turn": "23881",
       "type": "unique-noticed",
     },
     {
@@ -2033,6 +2451,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Swamp:4",
+      "note": "Noticed Roxanne",
+      "turn": "23981",
       "type": "unique-noticed",
     },
     {
@@ -2042,6 +2462,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Swamp:4",
+      "note": "Killed Louise",
+      "turn": "24347",
       "type": "unique-killed",
     },
     {
@@ -2052,6 +2474,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "13",
       "location": "Dungeon:13",
+      "note": "Reached skill level 14 in Armour",
+      "turn": "25723",
       "type": "skill-level",
     },
     {
@@ -2061,6 +2485,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "13",
       "location": "Dungeon:13",
+      "note": "You add the spells Leda's Liquefaction, Bolt of Magma and Statue Form to your library.",
+      "turn": "25831",
       "type": "spell",
     },
     {
@@ -2070,6 +2496,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "13",
       "location": "Dungeon:13",
+      "note": "You add the spells Leda's Liquefaction, Bolt of Magma and Statue Form to your library.",
+      "turn": "25831",
       "type": "spell",
     },
     {
@@ -2079,6 +2507,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "13",
       "location": "Dungeon:13",
+      "note": "You add the spells Leda's Liquefaction, Bolt of Magma and Statue Form to your library.",
+      "turn": "25831",
       "type": "spell",
     },
     {
@@ -2088,6 +2518,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "13",
       "location": "Dungeon:13",
+      "note": "Found Zameiwur's Distillery.",
+      "turn": "25873",
       "type": "shop",
     },
     {
@@ -2098,6 +2530,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "13",
       "location": "Dungeon:13",
+      "note": "Reached skill level 12 in Evocations",
+      "turn": "25967",
       "type": "skill-level",
     },
     {
@@ -2107,6 +2541,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "13",
       "location": "Dungeon:13",
+      "note": "Found a gate to the Vaults.",
+      "turn": "26184",
       "type": "portal",
     },
     {
@@ -2116,6 +2552,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "14",
       "location": "Dungeon:14",
+      "note": "Noticed Frances",
+      "turn": "26824",
       "type": "unique-noticed",
     },
     {
@@ -2125,6 +2563,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "14",
       "location": "Dungeon:14",
+      "note": "Killed Frances",
+      "turn": "26845",
       "type": "unique-killed",
     },
     {
@@ -2134,6 +2574,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "14",
       "location": "Dungeon:14",
+      "note": "You add the spells Summon Lightning Spire and Lightning Bolt to your library.",
+      "turn": "26906",
       "type": "spell",
     },
     {
@@ -2143,6 +2585,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "14",
       "location": "Dungeon:14",
+      "note": "You add the spells Summon Lightning Spire and Lightning Bolt to your library.",
+      "turn": "26906",
       "type": "spell",
     },
     {
@@ -2152,6 +2596,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "14",
       "location": "Dungeon:14",
+      "note": "Found a stormy altar of Qazlal.",
+      "turn": "27132",
       "type": "altar",
     },
     {
@@ -2163,6 +2609,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "15",
       "location": "Dungeon:15",
+      "note": "Reached XP level 17. HP: 140/140 MP: 16/16",
+      "turn": "27759",
       "type": "experience-level",
     },
     {
@@ -2172,6 +2620,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "15",
       "location": "Dungeon:15",
+      "note": "You add the spells Fireball, Starburst and Ignition to your library.",
+      "turn": "27794",
       "type": "spell",
     },
     {
@@ -2181,6 +2631,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "15",
       "location": "Dungeon:15",
+      "note": "You add the spells Fireball, Starburst and Ignition to your library.",
+      "turn": "27794",
       "type": "spell",
     },
     {
@@ -2190,6 +2642,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "15",
       "location": "Dungeon:15",
+      "note": "You add the spells Fireball, Starburst and Ignition to your library.",
+      "turn": "27794",
       "type": "spell",
     },
     {
@@ -2200,6 +2654,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "15",
       "location": "Dungeon:15",
+      "note": "Reached skill level 15 in Armour",
+      "turn": "28145",
       "type": "skill-level",
     },
     {
@@ -2211,6 +2667,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Bought a +1 cloak of preservation for 247 gold pieces",
+      "turn": "28659",
       "type": "bought",
     },
     {
@@ -2221,6 +2679,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "1",
       "location": "Orc:1",
+      "note": "Reached skill level 13 in Evocations",
+      "turn": "29272",
       "type": "skill-level",
     },
     {
@@ -2230,6 +2690,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "1",
       "location": "Orc:1",
+      "note": "Found a radiant altar of Vehumet.",
+      "turn": "29449",
       "type": "altar",
     },
     {
@@ -2239,6 +2701,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Found Xajir's Assorted Antiques.",
+      "turn": "29542",
       "type": "shop",
     },
     {
@@ -2248,6 +2712,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Found Abbesosch's Distillery.",
+      "turn": "29542",
       "type": "shop",
     },
     {
@@ -2257,6 +2723,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Found Rewkinoz's Gadget Gallery.",
+      "turn": "29753",
       "type": "shop",
     },
     {
@@ -2266,6 +2734,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Found Zuitz's Magic Scroll Shop.",
+      "turn": "29762",
       "type": "shop",
     },
     {
@@ -2276,6 +2746,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Reached skill level 16 in Armour",
+      "turn": "29772",
       "type": "skill-level",
     },
     {
@@ -2285,6 +2757,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Found Feeruril's Distillery.",
+      "turn": "29780",
       "type": "shop",
     },
     {
@@ -2294,6 +2768,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "1",
       "location": "Spider:1",
+      "note": "You add the spells Summon Guardian Golem, Orb of Destruction and Spellforged Servitor to your library.",
+      "turn": "31027",
       "type": "spell",
     },
     {
@@ -2303,6 +2779,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "1",
       "location": "Spider:1",
+      "note": "You add the spells Summon Guardian Golem, Orb of Destruction and Spellforged Servitor to your library.",
+      "turn": "31027",
       "type": "spell",
     },
     {
@@ -2312,6 +2790,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "1",
       "location": "Spider:1",
+      "note": "You add the spells Summon Guardian Golem, Orb of Destruction and Spellforged Servitor to your library.",
+      "turn": "31027",
       "type": "spell",
     },
     {
@@ -2321,6 +2801,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Spider:2",
+      "note": "You add the spells Dispersal and Disjunction to your library.",
+      "turn": "32017",
       "type": "spell",
     },
     {
@@ -2330,6 +2812,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Spider:2",
+      "note": "You add the spells Dispersal and Disjunction to your library.",
+      "turn": "32017",
       "type": "spell",
     },
     {
@@ -2340,6 +2824,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Spider:2",
+      "note": "Reached skill level 1 in Translocations",
+      "turn": "32401",
       "type": "skill-level",
     },
     {
@@ -2349,6 +2835,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Spider:2",
+      "note": "Noticed Asterion",
+      "turn": "32535",
       "type": "unique-noticed",
     },
     {
@@ -2358,6 +2846,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Spider:2",
+      "note": "Killed Asterion",
+      "turn": "32564",
       "type": "unique-killed",
     },
     {
@@ -2368,6 +2858,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "3",
       "location": "Spider:3",
+      "note": "Reached skill level 14 in Evocations",
+      "turn": "33404",
       "type": "skill-level",
     },
     {
@@ -2378,6 +2870,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "3",
       "location": "Spider:3",
+      "note": "Reached skill level 2 in Translocations",
+      "turn": "33610",
       "type": "skill-level",
     },
     {
@@ -2388,6 +2882,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "3",
       "location": "Spider:3",
+      "note": "Reached skill level 17 in Armour",
+      "turn": "34067",
       "type": "skill-level",
     },
     {
@@ -2399,6 +2895,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "3",
       "location": "Spider:3",
+      "note": "Reached XP level 18. HP: 139/147 MP: 17/17",
+      "turn": "34659",
       "type": "experience-level",
     },
     {
@@ -2409,6 +2907,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Spider:4",
+      "note": "Reached skill level 3 in Translocations",
+      "turn": "34752",
       "type": "skill-level",
     },
     {
@@ -2418,6 +2918,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Spider:4",
+      "note": "Noticed Bai Suzhen",
+      "turn": "34825",
       "type": "unique-noticed",
     },
     {
@@ -2427,6 +2929,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "3",
       "location": "Spider:3",
+      "note": "Killed Bai Suzhen",
+      "turn": "34984",
       "type": "unique-killed",
     },
     {
@@ -2436,6 +2940,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Spider:4",
+      "note": "Noticed Donald",
+      "turn": "35037",
       "type": "unique-noticed",
     },
     {
@@ -2445,6 +2951,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "3",
       "location": "Spider:3",
+      "note": "Killed Donald",
+      "turn": "35063",
       "type": "unique-killed",
     },
     {
@@ -2455,6 +2963,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Spider:4",
+      "note": "Reached skill level 4 in Translocations",
+      "turn": "35500",
       "type": "skill-level",
     },
     {
@@ -2464,6 +2974,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Spider:4",
+      "note": "You add the spells Corpse Rot and Freezing Cloud to your library.",
+      "turn": "35637",
       "type": "spell",
     },
     {
@@ -2473,6 +2985,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Spider:4",
+      "note": "You add the spells Corpse Rot and Freezing Cloud to your library.",
+      "turn": "35637",
       "type": "spell",
     },
     {
@@ -2483,6 +2997,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Spider:4",
+      "note": "Reached skill level 5 in Translocations",
+      "turn": "36637",
       "type": "skill-level",
     },
     {
@@ -2494,6 +3010,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Bought a scroll of magic mapping for 63 gold pieces",
+      "turn": "37172",
       "type": "bought",
     },
     {
@@ -2505,6 +3023,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Bought a scroll of enchant weapon for 135 gold pieces",
+      "turn": "37172",
       "type": "bought",
     },
     {
@@ -2516,6 +3036,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Bought a scroll of fog for 36 gold pieces",
+      "turn": "37172",
       "type": "bought",
     },
     {
@@ -2527,6 +3049,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Bought a scroll of teleportation for 54 gold pieces",
+      "turn": "37172",
       "type": "bought",
     },
     {
@@ -2538,6 +3062,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Bought a scroll of enchant armour for 135 gold pieces",
+      "turn": "37172",
       "type": "bought",
     },
     {
@@ -2549,6 +3075,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Bought 2 potions of invisibility for 256 gold pieces",
+      "turn": "37180",
       "type": "bought",
     },
     {
@@ -2560,6 +3088,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Bought a potion of curing for 48 gold pieces",
+      "turn": "37180",
       "type": "bought",
     },
     {
@@ -2571,6 +3101,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Bought a potion of invisibility for 128 gold pieces",
+      "turn": "37180",
       "type": "bought",
     },
     {
@@ -2582,6 +3114,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Bought a potion of curing for 48 gold pieces",
+      "turn": "37180",
       "type": "bought",
     },
     {
@@ -2593,6 +3127,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Bought a potion of curing for 48 gold pieces",
+      "turn": "37180",
       "type": "bought",
     },
     {
@@ -2604,6 +3140,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Bought a potion of curing for 48 gold pieces",
+      "turn": "37180",
       "type": "bought",
     },
     {
@@ -2615,6 +3153,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Bought a potion of mutation for 128 gold pieces",
+      "turn": "37180",
       "type": "bought",
     },
     {
@@ -2626,6 +3166,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Bought a potion of might for 64 gold pieces",
+      "turn": "37180",
       "type": "bought",
     },
     {
@@ -2637,6 +3179,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Bought a scroll of teleportation for 90 gold pieces",
+      "turn": "37186",
       "type": "bought",
     },
     {
@@ -2648,6 +3192,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Bought a potion of curing for 90 gold pieces",
+      "turn": "37186",
       "type": "bought",
     },
     {
@@ -2659,6 +3205,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Bought a scroll of teleportation for 90 gold pieces",
+      "turn": "37186",
       "type": "bought",
     },
     {
@@ -2670,6 +3218,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Bought a potion of heal wounds for 70 gold pieces",
+      "turn": "37197",
       "type": "bought",
     },
     {
@@ -2681,6 +3231,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Bought a potion of curing for 42 gold pieces",
+      "turn": "37197",
       "type": "bought",
     },
     {
@@ -2692,6 +3244,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Bought a potion of berserk rage for 70 gold pieces",
+      "turn": "37197",
       "type": "bought",
     },
     {
@@ -2703,6 +3257,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Bought a potion of lignification for 42 gold pieces",
+      "turn": "37197",
       "type": "bought",
     },
     {
@@ -2714,6 +3270,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Bought a potion of lignification for 42 gold pieces",
+      "turn": "37197",
       "type": "bought",
     },
     {
@@ -2725,6 +3283,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Bought a potion of lignification for 42 gold pieces",
+      "turn": "37197",
       "type": "bought",
     },
     {
@@ -2736,6 +3296,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Bought a potion of haste for 140 gold pieces",
+      "turn": "37197",
       "type": "bought",
     },
     {
@@ -2747,6 +3309,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Bought a potion of haste for 140 gold pieces",
+      "turn": "37197",
       "type": "bought",
     },
     {
@@ -2758,6 +3322,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Bought a potion of cancellation for 112 gold pieces",
+      "turn": "37197",
       "type": "bought",
     },
     {
@@ -2769,6 +3335,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Bought a wand of iceblast (9) for 182 gold pieces",
+      "turn": "37212",
       "type": "bought",
     },
     {
@@ -2780,6 +3348,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Bought a pair of heavily runed gloves for 237 gold pieces",
+      "turn": "37338",
       "type": "bought",
     },
     {
@@ -2790,6 +3360,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Identified the -2 pair of gloves of Boklytt {Will+ Slay+3} (You bought it in a shop on level 8 of the Dungeon)",
+      "turn": "37338",
       "type": "ident-bought-loc",
     },
     {
@@ -2800,6 +3372,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Identified the -2 pair of gloves of Boklytt {Will+ Slay+3} (You bought it in a shop on level 8 of the Dungeon)",
+      "turn": "37338",
       "type": "item",
     },
     {
@@ -2811,6 +3385,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "10",
       "location": "Dungeon:10",
+      "note": "Bought a potion of might for 60 gold pieces",
+      "turn": "37440",
       "type": "bought",
     },
     {
@@ -2822,6 +3398,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "10",
       "location": "Dungeon:10",
+      "note": "Bought a potion of lignification for 45 gold pieces",
+      "turn": "37440",
       "type": "bought",
     },
     {
@@ -2833,6 +3411,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "10",
       "location": "Dungeon:10",
+      "note": "Bought a potion of ambrosia for 120 gold pieces",
+      "turn": "37440",
       "type": "bought",
     },
     {
@@ -2844,6 +3424,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "10",
       "location": "Dungeon:10",
+      "note": "Bought a potion of curing for 45 gold pieces",
+      "turn": "37440",
       "type": "bought",
     },
     {
@@ -2855,6 +3437,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "10",
       "location": "Dungeon:10",
+      "note": "Bought a potion of cancellation for 128 gold pieces",
+      "turn": "37474",
       "type": "bought",
     },
     {
@@ -2866,6 +3450,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "10",
       "location": "Dungeon:10",
+      "note": "Bought a potion of ambrosia for 128 gold pieces",
+      "turn": "37474",
       "type": "bought",
     },
     {
@@ -2877,6 +3463,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "10",
       "location": "Dungeon:10",
+      "note": "Bought a potion of mutation for 128 gold pieces",
+      "turn": "37474",
       "type": "bought",
     },
     {
@@ -2888,6 +3476,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "10",
       "location": "Dungeon:10",
+      "note": "Bought a potion of lignification for 48 gold pieces",
+      "turn": "37474",
       "type": "bought",
     },
     {
@@ -2899,6 +3489,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "10",
       "location": "Dungeon:10",
+      "note": "Bought a potion of heal wounds for 80 gold pieces",
+      "turn": "37474",
       "type": "bought",
     },
     {
@@ -2910,6 +3502,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "10",
       "location": "Dungeon:10",
+      "note": "Bought a potion of mutation for 128 gold pieces",
+      "turn": "37474",
       "type": "bought",
     },
     {
@@ -2921,6 +3515,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "10",
       "location": "Dungeon:10",
+      "note": "Bought a potion of haste for 160 gold pieces",
+      "turn": "37474",
       "type": "bought",
     },
     {
@@ -2932,6 +3528,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "10",
       "location": "Dungeon:10",
+      "note": "Bought a potion of haste for 160 gold pieces",
+      "turn": "37474",
       "type": "bought",
     },
     {
@@ -2942,6 +3540,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "1",
       "location": "Vaults:1",
+      "note": "Reached skill level 18 in Armour",
+      "turn": "37722",
       "type": "skill-level",
     },
     {
@@ -2952,6 +3552,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "1",
       "location": "Vaults:1",
+      "note": "Reached skill level 15 in Evocations",
+      "turn": "37828",
       "type": "skill-level",
     },
     {
@@ -2961,6 +3563,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "3",
       "location": "Abyss:3",
+      "note": "Identified the +7 war axe "Var Pua" {drain, rElec SInv}",
+      "turn": "38098",
       "type": "ident",
     },
     {
@@ -2970,6 +3574,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "3",
       "location": "Abyss:3",
+      "note": "Identified the +7 war axe "Var Pua" {drain, rElec SInv}",
+      "turn": "38098",
       "type": "item",
     },
     {
@@ -2980,6 +3586,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "3",
       "location": "Abyss:3",
+      "note": "Reached skill level 6 in Translocations",
+      "turn": "38112",
       "type": "skill-level",
     },
     {
@@ -2990,6 +3598,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "1",
       "location": "Vaults:1",
+      "note": "Reached skill level 19 in Armour",
+      "turn": "38547",
       "type": "skill-level",
     },
     {
@@ -3001,6 +3611,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "1",
       "location": "Vaults:1",
+      "note": "Reached XP level 19. HP: 149/154 MP: 18/18",
+      "turn": "38642",
       "type": "experience-level",
     },
     {
@@ -3011,6 +3623,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Vaults:2",
+      "note": "Reached skill level 20 in Armour",
+      "turn": "39580",
       "type": "skill-level",
     },
     {
@@ -3020,6 +3634,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Vaults:2",
+      "note": "You add the spells Dazzling Flash, Agony and Silence to your library.",
+      "turn": "40029",
       "type": "spell",
     },
     {
@@ -3029,6 +3645,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Vaults:2",
+      "note": "You add the spells Dazzling Flash, Agony and Silence to your library.",
+      "turn": "40029",
       "type": "spell",
     },
     {
@@ -3038,6 +3656,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Vaults:2",
+      "note": "You add the spells Dazzling Flash, Agony and Silence to your library.",
+      "turn": "40029",
       "type": "spell",
     },
     {
@@ -3048,6 +3668,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Vaults:2",
+      "note": "Reached skill level 21 in Armour",
+      "turn": "40109",
       "type": "skill-level",
     },
     {
@@ -3057,6 +3679,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Vaults:2",
+      "note": "Found Kad Vur's Jewellery Emporium.",
+      "turn": "40541",
       "type": "shop",
     },
     {
@@ -3068,6 +3692,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Vaults:2",
+      "note": "Bought the ring "Seiczeto" {rPois rC+ Dex+4 Slay+3} for 915 gold pieces",
+      "turn": "40588",
       "type": "bought",
     },
     {
@@ -3078,6 +3704,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Vaults:2",
+      "note": "Bought the ring "Seiczeto" {rPois rC+ Dex+4 Slay+3} for 915 gold pieces",
+      "turn": "40588",
       "type": "item",
     },
     {
@@ -3088,6 +3716,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Vaults:2",
+      "note": "Reached skill level 22 in Armour",
+      "turn": "40903",
       "type": "skill-level",
     },
     {
@@ -3099,6 +3729,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "3",
       "location": "Vaults:3",
+      "note": "Reached XP level 20. HP: 161/161 MP: 19/19",
+      "turn": "41815",
       "type": "experience-level",
     },
     {
@@ -3109,6 +3741,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "3",
       "location": "Vaults:3",
+      "note": "Reached skill level 23 in Armour",
+      "turn": "42191",
       "type": "skill-level",
     },
     {
@@ -3118,6 +3752,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "3",
       "location": "Vaults:3",
+      "note": "You add the spells Iskenderun's Battlesphere and Iron Shot to your library.",
+      "turn": "42536",
       "type": "spell",
     },
     {
@@ -3127,6 +3763,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "3",
       "location": "Vaults:3",
+      "note": "You add the spells Iskenderun's Battlesphere and Iron Shot to your library.",
+      "turn": "42536",
       "type": "spell",
     },
     {
@@ -3137,6 +3775,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "3",
       "location": "Vaults:3",
+      "note": "Reached skill level 24 in Armour",
+      "turn": "42877",
       "type": "skill-level",
     },
     {
@@ -3146,6 +3786,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "3",
       "location": "Vaults:3",
+      "note": "Identified the +1 leather armour of the Loofah {Will+++ Regen+ Str-5 Int+3}",
+      "turn": "43025",
       "type": "ident",
     },
     {
@@ -3155,6 +3797,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "3",
       "location": "Vaults:3",
+      "note": "Identified the +1 leather armour of the Loofah {Will+++ Regen+ Str-5 Int+3}",
+      "turn": "43025",
       "type": "item",
     },
     {
@@ -3167,6 +3811,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Abyss:4",
+      "note": "Gained mutation: You sometimes lose the ability to read scrolls when taking damage. [a neqoxec]",
+      "turn": "43317",
       "type": "mutation",
     },
     {
@@ -3177,6 +3823,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Vaults:4",
+      "note": "Reached skill level 25 in Armour",
+      "turn": "43715",
       "type": "skill-level",
     },
     {
@@ -3187,6 +3835,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Vaults:4",
+      "note": "Reached skill level 7 in Throwing",
+      "turn": "43743",
       "type": "skill-level",
     },
     {
@@ -3197,6 +3847,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Vaults:4",
+      "note": "Reached skill level 8 in Throwing",
+      "turn": "43909",
       "type": "skill-level",
     },
     {
@@ -3208,6 +3860,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Vaults:4",
+      "note": "Reached XP level 21. HP: 151/168 MP: 20/20",
+      "turn": "43922",
       "type": "experience-level",
     },
     {
@@ -3218,6 +3872,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Vaults:4",
+      "note": "Reached skill level 9 in Throwing",
+      "turn": "44073",
       "type": "skill-level",
     },
     {
@@ -3227,6 +3883,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Vaults:4",
+      "note": "Noticed Saint Roka",
+      "turn": "44169",
       "type": "unique-noticed",
     },
     {
@@ -3236,6 +3894,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Vaults:4",
+      "note": "Killed Saint Roka",
+      "turn": "44188",
       "type": "unique-killed",
     },
     {
@@ -3246,6 +3906,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Vaults:4",
+      "note": "Reached skill level 10 in Throwing",
+      "turn": "44372",
       "type": "skill-level",
     },
     {
@@ -3256,6 +3918,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Vaults:4",
+      "note": "Reached skill level 11 in Throwing",
+      "turn": "44535",
       "type": "skill-level",
     },
     {
@@ -3268,6 +3932,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Vaults:4",
+      "note": "Lost mutation: You sometimes lose the ability to read scrolls when taking damage. [potion of mutation]",
+      "turn": "44538",
       "type": "mutation",
     },
     {
@@ -3280,6 +3946,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Vaults:4",
+      "note": "Gained mutation: You have an increased reservoir of magic. (+10% MP) [potion of mutation]",
+      "turn": "44538",
       "type": "mutation",
     },
     {
@@ -3292,6 +3960,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Vaults:4",
+      "note": "Gained mutation: Armour fits poorly on your strangely shaped body. [potion of mutation]",
+      "turn": "44538",
       "type": "mutation",
     },
     {
@@ -3304,6 +3974,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Vaults:4",
+      "note": "Gained mutation: You are dopey. (Int -2) [potion of mutation]",
+      "turn": "44538",
       "type": "mutation",
     },
     {
@@ -3316,6 +3988,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Vaults:4",
+      "note": "Gained mutation: Your muscles are strong. (Str +2) [potion of mutation]",
+      "turn": "44538",
       "type": "mutation",
     },
     {
@@ -3328,6 +4002,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Vaults:4",
+      "note": "Lost mutation: Your muscles are strong. (Str +2) [potion of mutation]",
+      "turn": "44539",
       "type": "mutation",
     },
     {
@@ -3340,6 +4016,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Vaults:4",
+      "note": "Lost mutation: You are dopey. (Int -2) [potion of mutation]",
+      "turn": "44539",
       "type": "mutation",
     },
     {
@@ -3352,6 +4030,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Vaults:4",
+      "note": "Lost mutation: Armour fits poorly on your strangely shaped body. [potion of mutation]",
+      "turn": "44539",
       "type": "mutation",
     },
     {
@@ -3364,6 +4044,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Vaults:4",
+      "note": "Gained mutation: Your body sometimes deteriorates upon taking damage. [potion of mutation]",
+      "turn": "44539",
       "type": "mutation",
     },
     {
@@ -3376,6 +4058,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Vaults:4",
+      "note": "Lost mutation: Your body sometimes deteriorates upon taking damage. [potion of mutation]",
+      "turn": "44540",
       "type": "mutation",
     },
     {
@@ -3388,6 +4072,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Vaults:4",
+      "note": "Gained mutation: Potions are less effective at restoring your health. [potion of mutation]",
+      "turn": "44540",
       "type": "mutation",
     },
     {
@@ -3400,6 +4086,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Vaults:4",
+      "note": "Gained mutation: Your muscles are strong. (Str +2) [potion of mutation]",
+      "turn": "44540",
       "type": "mutation",
     },
     {
@@ -3409,6 +4097,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Vaults:4",
+      "note": "Identified the +1 scale mail of the Maze {-Cast rPois Str+6 Stlth+}",
+      "turn": "44681",
       "type": "ident",
     },
     {
@@ -3418,6 +4108,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Vaults:4",
+      "note": "Identified the +1 scale mail of the Maze {-Cast rPois Str+6 Stlth+}",
+      "turn": "44681",
       "type": "item",
     },
     {
@@ -3428,6 +4120,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Vaults:4",
+      "note": "Reached skill level 12 in Throwing",
+      "turn": "44898",
       "type": "skill-level",
     },
     {
@@ -3437,6 +4131,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Vaults:4",
+      "note": "Noticed Mennas",
+      "turn": "45344",
       "type": "unique-noticed",
     },
     {
@@ -3446,6 +4142,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Vaults:4",
+      "note": "Killed Mennas",
+      "turn": "45358",
       "type": "unique-killed",
     },
     {
@@ -3456,6 +4154,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Vaults:4",
+      "note": "Reached skill level 1 in Polearms",
+      "turn": "45627",
       "type": "skill-level",
     },
     {
@@ -3466,6 +4166,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Vaults:4",
+      "note": "Reached skill level 2 in Polearms",
+      "turn": "45675",
       "type": "skill-level",
     },
     {
@@ -3476,6 +4178,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Vaults:4",
+      "note": "Reached skill level 3 in Polearms",
+      "turn": "45737",
       "type": "skill-level",
     },
     {
@@ -3486,6 +4190,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Vaults:4",
+      "note": "Reached skill level 11 in Fighting",
+      "turn": "45829",
       "type": "skill-level",
     },
     {
@@ -3496,6 +4202,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Vaults:4",
+      "note": "Reached skill level 11 in Dodging",
+      "turn": "45974",
       "type": "skill-level",
     },
     {
@@ -3506,6 +4214,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "4",
       "location": "Vaults:4",
+      "note": "Reached skill level 4 in Polearms",
+      "turn": "45995",
       "type": "skill-level",
     },
     {
@@ -3517,6 +4227,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "5",
       "location": "Vaults:5",
+      "note": "Reached XP level 22. HP: 179/179 MP: 23/23",
+      "turn": "46181",
       "type": "experience-level",
     },
     {
@@ -3527,6 +4239,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "5",
       "location": "Vaults:5",
+      "note": "Reached skill level 5 in Polearms",
+      "turn": "46212",
       "type": "skill-level",
     },
     {
@@ -3537,6 +4251,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "5",
       "location": "Vaults:5",
+      "note": "Reached skill level 13 in Throwing",
+      "turn": "46382",
       "type": "skill-level",
     },
     {
@@ -3546,6 +4262,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "5",
       "location": "Vaults:5",
+      "note": "You add the spells Summon Forest and Summon Hydra to your library.",
+      "turn": "46456",
       "type": "spell",
     },
     {
@@ -3555,6 +4273,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "5",
       "location": "Vaults:5",
+      "note": "You add the spells Summon Forest and Summon Hydra to your library.",
+      "turn": "46456",
       "type": "spell",
     },
     {
@@ -3565,6 +4285,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "5",
       "location": "Vaults:5",
+      "note": "Reached skill level 12 in Fighting",
+      "turn": "46493",
       "type": "skill-level",
     },
     {
@@ -3575,6 +4297,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "5",
       "location": "Vaults:5",
+      "note": "Reached skill level 6 in Polearms",
+      "turn": "46493",
       "type": "skill-level",
     },
     {
@@ -3585,6 +4309,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "5",
       "location": "Vaults:5",
+      "note": "Reached skill level 12 in Dodging",
+      "turn": "46765",
       "type": "skill-level",
     },
     {
@@ -3595,6 +4321,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "5",
       "location": "Vaults:5",
+      "note": "Reached skill level 7 in Polearms",
+      "turn": "46862",
       "type": "skill-level",
     },
     {
@@ -3605,6 +4333,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "5",
       "location": "Vaults:5",
+      "note": "a deep elf high priest comes into view. It is wielding a +0 short sword and wearing the +27 Lear's hauberk.",
+      "turn": "46970",
       "type": "wearing-who",
     },
     {
@@ -3614,6 +4344,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "5",
       "location": "Vaults:5",
+      "note": "a deep elf high priest comes into view. It is wielding a +0 short sword and wearing the +27 Lear's hauberk.",
+      "turn": "46970",
       "type": "item",
     },
     {
@@ -3624,6 +4356,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "5",
       "location": "Vaults:5",
+      "note": "Reached skill level 8 in Polearms",
+      "turn": "47212",
       "type": "skill-level",
     },
     {
@@ -3634,6 +4368,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "5",
       "location": "Vaults:5",
+      "note": "Reached skill level 13 in Fighting",
+      "turn": "47390",
       "type": "skill-level",
     },
     {
@@ -3643,6 +4379,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "5",
       "location": "Vaults:5",
+      "note": "You add the spells Malign Gateway and Summon Horrible Things to your library.",
+      "turn": "47447",
       "type": "spell",
     },
     {
@@ -3652,6 +4390,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "5",
       "location": "Vaults:5",
+      "note": "You add the spells Malign Gateway and Summon Horrible Things to your library.",
+      "turn": "47447",
       "type": "spell",
     },
     {
@@ -3661,6 +4401,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "5",
       "location": "Vaults:5",
+      "note": "You add the spells Static Discharge, Sticky Flame and Dispel Undead to your library.",
+      "turn": "47465",
       "type": "spell",
     },
     {
@@ -3670,6 +4412,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "5",
       "location": "Vaults:5",
+      "note": "You add the spells Static Discharge, Sticky Flame and Dispel Undead to your library.",
+      "turn": "47465",
       "type": "spell",
     },
     {
@@ -3679,6 +4423,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "5",
       "location": "Vaults:5",
+      "note": "You add the spells Static Discharge, Sticky Flame and Dispel Undead to your library.",
+      "turn": "47465",
       "type": "spell",
     },
     {
@@ -3688,6 +4434,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "1",
       "location": "Depths:1",
+      "note": "Found a gateway to Hell.",
+      "turn": "48291",
       "type": "portal",
     },
     {
@@ -3698,6 +4446,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "1",
       "location": "Depths:1",
+      "note": "Reached skill level 14 in Throwing",
+      "turn": "48310",
       "type": "skill-level",
     },
     {
@@ -3708,6 +4458,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "1",
       "location": "Depths:1",
+      "note": "Reached skill level 9 in Polearms",
+      "turn": "48326",
       "type": "skill-level",
     },
     {
@@ -3718,6 +4470,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "1",
       "location": "Depths:1",
+      "note": "Reached skill level 13 in Dodging",
+      "turn": "48421",
       "type": "skill-level",
     },
     {
@@ -3729,6 +4483,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "1",
       "location": "Depths:1",
+      "note": "Reached XP level 23. HP: 194/194 MP: 24/24",
+      "turn": "48806",
       "type": "experience-level",
     },
     {
@@ -3738,6 +4494,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "1",
       "location": "Depths:1",
+      "note": "Acquired the amulet of Wuitaikh {Reflect Int+3 SH+5}",
+      "turn": "49302",
       "type": "acquirement",
     },
     {
@@ -3747,6 +4505,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Depths:2",
+      "note": "Found Gucem's General Store.",
+      "turn": "49410",
       "type": "shop",
     },
     {
@@ -3758,6 +4518,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Depths:2",
+      "note": "Bought a wand of acid (14) for 396 gold pieces",
+      "turn": "49418",
       "type": "bought",
     },
     {
@@ -3769,6 +4531,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Depths:2",
+      "note": "Bought a scroll of magic mapping for 38 gold pieces",
+      "turn": "49418",
       "type": "bought",
     },
     {
@@ -3779,6 +4543,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Depths:2",
+      "note": "Reached skill level 14 in Fighting",
+      "turn": "49464",
       "type": "skill-level",
     },
     {
@@ -3788,6 +4554,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Depths:2",
+      "note": "Found a one-way gate to the infinite horrors of the Abyss.",
+      "turn": "50087",
       "type": "portal",
     },
     {
@@ -3797,6 +4565,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Depths:2",
+      "note": "Found a one-way gate leading to the halls of Pandemonium.",
+      "turn": "50112",
       "type": "portal",
     },
     {
@@ -3807,6 +4577,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Depths:2",
+      "note": "Reached skill level 14 in Dodging",
+      "turn": "50146",
       "type": "skill-level",
     },
     {
@@ -3816,6 +4588,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Depths:2",
+      "note": "Identified the +6 lajatang "Tuaps" {flame, +Blink rElec rF- Int-2}",
+      "turn": "50150",
       "type": "ident",
     },
     {
@@ -3825,6 +4599,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Depths:2",
+      "note": "Identified the +6 lajatang "Tuaps" {flame, +Blink rElec rF- Int-2}",
+      "turn": "50150",
       "type": "item",
     },
     {
@@ -3835,6 +4611,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       },
       "level": "2",
       "location": "Depths:2",
+      "note": "Reached skill level 15 in Throwing",
+      "turn": "50739",
       "type": "skill-level",
     },
     {
@@ -3842,6 +4620,8 @@ exports[`http://crawl.akrasiac.org/rawdata/xoxohorses/morgue-xoxohorses-20210917
       "data": "Mangled by a vampire knight",
       "level": "2",
       "location": "Depths:2",
+      "note": "Mangled by a vampire knight",
+      "turn": "50758",
       "type": "last-event",
     },
   ],

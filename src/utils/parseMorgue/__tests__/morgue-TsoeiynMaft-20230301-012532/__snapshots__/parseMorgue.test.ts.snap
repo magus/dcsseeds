@@ -12,6 +12,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       "data": "TsoeiynMaft the Robot Fighter began the quest for the Orb.",
       "level": "1",
       "location": "Dungeon:1",
+      "note": "TsoeiynMaft the Robot Fighter began the quest for the Orb.",
+      "turn": "0",
       "type": "first-event",
     },
     {
@@ -23,6 +25,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "1",
       "location": "Dungeon:1",
+      "note": "Reached XP level 1. HP: 18/18 MP: 0/0",
+      "turn": "0",
       "type": "experience-level",
     },
     {
@@ -34,6 +38,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "1",
       "location": "Dungeon:1",
+      "note": "Reached XP level 2. HP: 24/24 MP: 1/1",
+      "turn": "126",
       "type": "experience-level",
     },
     {
@@ -45,6 +51,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "1",
       "location": "Dungeon:1",
+      "note": "Reached XP level 3. HP: 26/29 MP: 2/2",
+      "turn": "355",
       "type": "experience-level",
     },
     {
@@ -54,6 +62,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "2",
       "location": "Dungeon:2",
+      "note": "Noticed Sigmund",
+      "turn": "863",
       "type": "unique-noticed",
     },
     {
@@ -65,6 +75,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "1",
       "location": "Dungeon:1",
+      "note": "Reached XP level 4. HP: 22/35 MP: 3/3",
+      "turn": "939",
       "type": "experience-level",
     },
     {
@@ -75,6 +87,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "2",
       "location": "Dungeon:2",
+      "note": "Reached skill level 1 in Dodging",
+      "turn": "1072",
       "type": "skill-level",
     },
     {
@@ -87,6 +101,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Gained mutation: You can shoot a disintegration laser from your mouth. [Robot growth]",
+      "turn": "1482",
       "type": "mutation",
     },
     {
@@ -98,6 +114,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Reached XP level 5. HP: 41/41 MP: 4/4",
+      "turn": "1482",
       "type": "experience-level",
     },
     {
@@ -108,6 +126,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Reached skill level 1 in Stealth",
+      "turn": "1483",
       "type": "skill-level",
     },
     {
@@ -117,6 +137,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Found a glowing golden altar of the Shining One.",
+      "turn": "1650",
       "type": "altar",
     },
     {
@@ -126,6 +148,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Found a blossoming altar of Fedhas.",
+      "turn": "2211",
       "type": "altar",
     },
     {
@@ -137,6 +161,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "4",
       "location": "Dungeon:4",
+      "note": "Reached XP level 6. HP: 45/48 MP: 5/5",
+      "turn": "2491",
       "type": "experience-level",
     },
     {
@@ -146,6 +172,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "4",
       "location": "Dungeon:4",
+      "note": "Found the cursed +13 scythe of Curses {drain, *Curse}",
+      "turn": "2733",
       "type": "found",
     },
     {
@@ -155,6 +183,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "4",
       "location": "Dungeon:4",
+      "note": "Found the cursed +13 scythe of Curses {drain, *Curse}",
+      "turn": "2733",
       "type": "item",
     },
     {
@@ -164,6 +194,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "4",
       "location": "Dungeon:4",
+      "note": "Found a glowing silver altar of Zin.",
+      "turn": "2740",
       "type": "altar",
     },
     {
@@ -173,6 +205,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "4",
       "location": "Dungeon:4",
+      "note": "Found an ornate altar of the Wu Jian Council.",
+      "turn": "2782",
       "type": "altar",
     },
     {
@@ -182,6 +216,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "4",
       "location": "Dungeon:4",
+      "note": "Found a blossoming altar of Fedhas.",
+      "turn": "2782",
       "type": "altar",
     },
     {
@@ -193,6 +229,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "4",
       "location": "Dungeon:4",
+      "note": "Reached XP level 7. HP: 54/54 MP: 6/6",
+      "turn": "3363",
       "type": "experience-level",
     },
     {
@@ -204,6 +242,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "4",
       "location": "Dungeon:4",
+      "note": "Reached XP level 8. HP: 61/61 MP: 7/7",
+      "turn": "4085",
       "type": "experience-level",
     },
     {
@@ -213,6 +253,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "4",
       "location": "Dungeon:4",
+      "note": "Found a shadowy altar of Dithmenos.",
+      "turn": "4169",
       "type": "altar",
     },
     {
@@ -222,6 +264,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "4",
       "location": "Dungeon:4",
+      "note": "Found a sparkling altar of Nemelex Xobeh.",
+      "turn": "4282",
       "type": "altar",
     },
     {
@@ -232,6 +276,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Reached skill level 5 in Fighting",
+      "turn": "4719",
       "type": "skill-level",
     },
     {
@@ -242,6 +288,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Reached skill level 5 in Shields",
+      "turn": "4927",
       "type": "skill-level",
     },
     {
@@ -252,6 +300,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Reached skill level 5 in Armour",
+      "turn": "5046",
       "type": "skill-level",
     },
     {
@@ -261,6 +311,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": undefined,
       "location": "Temple",
+      "note": "Became a worshipper of Gozag Ym Sagoz the Greedy",
+      "turn": "5178",
       "type": "join-god",
     },
     {
@@ -272,6 +324,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Reached XP level 9. HP: 57/68 MP: 8/8",
+      "turn": "5564",
       "type": "experience-level",
     },
     {
@@ -281,6 +335,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Found a shimmering altar of Xom.",
+      "turn": "5619",
       "type": "altar",
     },
     {
@@ -290,6 +346,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Found a shimmering altar of Xom.",
+      "turn": "5620",
       "type": "altar",
     },
     {
@@ -299,6 +357,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Found a shimmering altar of Xom.",
+      "turn": "5620",
       "type": "altar",
     },
     {
@@ -308,6 +368,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Found a shimmering altar of Xom.",
+      "turn": "5623",
       "type": "altar",
     },
     {
@@ -317,6 +379,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Found a shimmering altar of Xom.",
+      "turn": "5623",
       "type": "altar",
     },
     {
@@ -326,6 +390,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Found a sacrificial altar of Ru.",
+      "turn": "5685",
       "type": "altar",
     },
     {
@@ -336,6 +402,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "6",
       "location": "Dungeon:6",
+      "note": "Reached skill level 5 in Long Blades",
+      "turn": "5973",
       "type": "skill-level",
     },
     {
@@ -346,6 +414,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "7",
       "location": "Dungeon:7",
+      "note": "Reached skill level 5 in Dodging",
+      "turn": "6945",
       "type": "skill-level",
     },
     {
@@ -357,6 +427,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "7",
       "location": "Dungeon:7",
+      "note": "Reached XP level 10. HP: 43/76 MP: 9/9",
+      "turn": "7156",
       "type": "experience-level",
     },
     {
@@ -366,6 +438,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Found a bloodstained altar of Trog.",
+      "turn": "8595",
       "type": "altar",
     },
     {
@@ -375,6 +449,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Found a shimmering blue altar of Sif Muna.",
+      "turn": "8781",
       "type": "altar",
     },
     {
@@ -384,6 +460,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Found an ancient bone altar of Kikubaaqudgha.",
+      "turn": "9001",
       "type": "altar",
     },
     {
@@ -393,6 +471,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Noticed Erica",
+      "turn": "9003",
       "type": "unique-noticed",
     },
     {
@@ -402,6 +482,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Killed Erica",
+      "turn": "9031",
       "type": "unique-killed",
     },
     {
@@ -411,6 +493,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Found a radiant altar of Vehumet.",
+      "turn": "9203",
       "type": "altar",
     },
     {
@@ -420,6 +504,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Noticed Gastronok",
+      "turn": "9273",
       "type": "unique-noticed",
     },
     {
@@ -431,6 +517,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "10",
       "location": "Dungeon:10",
+      "note": "Reached XP level 11. HP: 73/84 MP: 10/10",
+      "turn": "9725",
       "type": "experience-level",
     },
     {
@@ -441,6 +529,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "10",
       "location": "Dungeon:10",
+      "note": "Reached skill level 1 in Throwing",
+      "turn": "9781",
       "type": "skill-level",
     },
     {
@@ -450,6 +540,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "10",
       "location": "Dungeon:10",
+      "note": "Identified the +8 rapier of Moral Flaws {venom, rC++} (You found it on level 10 of the Dungeon)",
+      "turn": "9972",
       "type": "ident-loc",
     },
     {
@@ -459,6 +551,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "10",
       "location": "Dungeon:10",
+      "note": "Identified the +8 rapier of Moral Flaws {venom, rC++} (You found it on level 10 of the Dungeon)",
+      "turn": "9972",
       "type": "item",
     },
     {
@@ -468,6 +562,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "10",
       "location": "Dungeon:10",
+      "note": "Identified the +10 plate armour of Inaction {rCorr Slay+3}",
+      "turn": "10067",
       "type": "ident",
     },
     {
@@ -477,6 +573,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "10",
       "location": "Dungeon:10",
+      "note": "Identified the +10 plate armour of Inaction {rCorr Slay+3}",
+      "turn": "10067",
       "type": "item",
     },
     {
@@ -487,6 +585,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "10",
       "location": "Dungeon:10",
+      "note": "Reached skill level 5 in Stealth",
+      "turn": "10096",
       "type": "skill-level",
     },
     {
@@ -498,6 +598,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "10",
       "location": "Dungeon:10",
+      "note": "Bought a runed helmet for 225 gold pieces",
+      "turn": "10990",
       "type": "bought",
     },
     {
@@ -509,6 +611,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "10",
       "location": "Dungeon:10",
+      "note": "Bought a twisted cloak for 285 gold pieces",
+      "turn": "10990",
       "type": "bought",
     },
     {
@@ -519,6 +623,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "10",
       "location": "Dungeon:10",
+      "note": "Identified the +0 cloak of Lust {*Slow rC++} (You bought it in a shop on level 10 of the Dungeon)",
+      "turn": "11001",
       "type": "ident-bought-loc",
     },
     {
@@ -529,6 +635,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "10",
       "location": "Dungeon:10",
+      "note": "Identified the +0 cloak of Lust {*Slow rC++} (You bought it in a shop on level 10 of the Dungeon)",
+      "turn": "11001",
       "type": "item",
     },
     {
@@ -538,6 +646,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Killed Gastronok",
+      "turn": "11268",
       "type": "unique-killed",
     },
     {
@@ -549,6 +659,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Reached XP level 12. HP: 82/93 MP: 11/11",
+      "turn": "11586",
       "type": "experience-level",
     },
     {
@@ -558,6 +670,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "1",
       "location": "Lair:1",
+      "note": "Noticed Grum",
+      "turn": "11998",
       "type": "unique-noticed",
     },
     {
@@ -567,6 +681,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "1",
       "location": "Lair:1",
+      "note": "Killed Grum",
+      "turn": "12007",
       "type": "unique-killed",
     },
     {
@@ -576,6 +692,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "2",
       "location": "Lair:2",
+      "note": "Noticed Urug",
+      "turn": "14172",
       "type": "unique-noticed",
     },
     {
@@ -585,6 +703,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "2",
       "location": "Lair:2",
+      "note": "Killed Urug",
+      "turn": "14188",
       "type": "unique-killed",
     },
     {
@@ -596,6 +716,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "3",
       "location": "Lair:3",
+      "note": "Reached XP level 13. HP: 94/101 MP: 12/12",
+      "turn": "14672",
       "type": "experience-level",
     },
     {
@@ -606,6 +728,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "4",
       "location": "Lair:4",
+      "note": "Reached skill level 1 in Evocations",
+      "turn": "15976",
       "type": "skill-level",
     },
     {
@@ -616,6 +740,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "4",
       "location": "Lair:4",
+      "note": "Reached skill level 2 in Evocations",
+      "turn": "16207",
       "type": "skill-level",
     },
     {
@@ -625,6 +751,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "5",
       "location": "Lair:5",
+      "note": "Found a viscous altar of Jiyva.",
+      "turn": "17512",
       "type": "altar",
     },
     {
@@ -635,6 +763,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "5",
       "location": "Lair:5",
+      "note": "Reached skill level 3 in Evocations",
+      "turn": "17683",
       "type": "skill-level",
     },
     {
@@ -645,6 +775,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "5",
       "location": "Lair:5",
+      "note": "Reached skill level 10 in Fighting",
+      "turn": "17752",
       "type": "skill-level",
     },
     {
@@ -656,6 +788,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "6",
       "location": "Lair:6",
+      "note": "Reached XP level 14. HP: 110/110 MP: 15/15",
+      "turn": "17934",
       "type": "experience-level",
     },
     {
@@ -666,6 +800,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "6",
       "location": "Lair:6",
+      "note": "Reached skill level 10 in Armour",
+      "turn": "18481",
       "type": "skill-level",
     },
     {
@@ -676,6 +812,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "6",
       "location": "Lair:6",
+      "note": "Reached skill level 10 in Shields",
+      "turn": "18481",
       "type": "skill-level",
     },
     {
@@ -686,6 +824,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "6",
       "location": "Lair:6",
+      "note": "Reached skill level 4 in Evocations",
+      "turn": "18573",
       "type": "skill-level",
     },
     {
@@ -696,6 +836,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "6",
       "location": "Lair:6",
+      "note": "Reached skill level 10 in Long Blades",
+      "turn": "18605",
       "type": "skill-level",
     },
     {
@@ -706,6 +848,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "6",
       "location": "Lair:6",
+      "note": "Reached skill level 5 in Throwing",
+      "turn": "18605",
       "type": "skill-level",
     },
     {
@@ -716,6 +860,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "6",
       "location": "Lair:6",
+      "note": "Reached skill level 10 in Dodging",
+      "turn": "19555",
       "type": "skill-level",
     },
     {
@@ -726,6 +872,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "6",
       "location": "Lair:6",
+      "note": "Reached skill level 5 in Evocations",
+      "turn": "19745",
       "type": "skill-level",
     },
     {
@@ -737,6 +885,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "6",
       "location": "Lair:6",
+      "note": "Reached XP level 15. HP: 107/117 MP: 18/18",
+      "turn": "21208",
       "type": "experience-level",
     },
     {
@@ -747,6 +897,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "5",
       "location": "Lair:5",
+      "note": "Reached skill level 6 in Evocations",
+      "turn": "21785",
       "type": "skill-level",
     },
     {
@@ -756,6 +908,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "2",
       "location": "Dungeon:2",
+      "note": "Killed Sigmund",
+      "turn": "22504",
       "type": "unique-killed",
     },
     {
@@ -766,6 +920,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Reached skill level 7 in Evocations",
+      "turn": "24043",
       "type": "skill-level",
     },
     {
@@ -775,6 +931,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "1",
       "location": "Orc:1",
+      "note": "Found a roughly hewn altar of Beogh.",
+      "turn": "24518",
       "type": "altar",
     },
     {
@@ -784,6 +942,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Found Bixzaup's General Store.",
+      "turn": "25590",
       "type": "shop",
     },
     {
@@ -793,6 +953,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Found Suvvylam's Distillery.",
+      "turn": "25590",
       "type": "shop",
     },
     {
@@ -802,6 +964,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Found Keffuelu's Book Shop.",
+      "turn": "25592",
       "type": "shop",
     },
     {
@@ -811,6 +975,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Found Getro's Armour Shop.",
+      "turn": "25611",
       "type": "shop",
     },
     {
@@ -822,6 +988,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Bought a scroll of fear for 56 gold pieces",
+      "turn": "25714",
       "type": "bought",
     },
     {
@@ -833,6 +1001,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Bought a wand of disintegration (19) for 368 gold pieces",
+      "turn": "25714",
       "type": "bought",
     },
     {
@@ -844,6 +1014,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Bought a wand of disintegration (17) for 336 gold pieces",
+      "turn": "25714",
       "type": "bought",
     },
     {
@@ -855,6 +1027,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "11",
       "location": "Dungeon:11",
+      "note": "Reached XP level 16. HP: 126/126 MP: 20/20",
+      "turn": "26217",
       "type": "experience-level",
     },
     {
@@ -864,6 +1038,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "12",
       "location": "Dungeon:12",
+      "note": "Noticed Nergalle",
+      "turn": "27118",
       "type": "unique-noticed",
     },
     {
@@ -873,6 +1049,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "12",
       "location": "Dungeon:12",
+      "note": "Killed Nergalle",
+      "turn": "27127",
       "type": "unique-killed",
     },
     {
@@ -883,6 +1061,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "12",
       "location": "Dungeon:12",
+      "note": "Reached skill level 8 in Evocations",
+      "turn": "27289",
       "type": "skill-level",
     },
     {
@@ -892,6 +1072,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "13",
       "location": "Dungeon:13",
+      "note": "Identified Wizejaat's Catalogue of Supportive Orientation",
+      "turn": "27651",
       "type": "ident",
     },
     {
@@ -901,6 +1083,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "13",
       "location": "Dungeon:13",
+      "note": "Identified Wizejaat's Catalogue of Supportive Orientation",
+      "turn": "27651",
       "type": "item",
     },
     {
@@ -911,6 +1095,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "14",
       "location": "Dungeon:14",
+      "note": "Reached skill level 9 in Evocations",
+      "turn": "28859",
       "type": "skill-level",
     },
     {
@@ -920,6 +1106,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "14",
       "location": "Dungeon:14",
+      "note": "Found a gate to the Vaults.",
+      "turn": "29063",
       "type": "portal",
     },
     {
@@ -931,6 +1119,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "14",
       "location": "Dungeon:14",
+      "note": "Reached XP level 17. HP: 133/133 MP: 22/22",
+      "turn": "29899",
       "type": "experience-level",
     },
     {
@@ -940,6 +1130,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "15",
       "location": "Dungeon:15",
+      "note": "Noticed Kirke",
+      "turn": "30430",
       "type": "unique-noticed",
     },
     {
@@ -949,6 +1141,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "15",
       "location": "Dungeon:15",
+      "note": "Killed Kirke",
+      "turn": "30442",
       "type": "unique-killed",
     },
     {
@@ -960,6 +1154,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "1",
       "location": "Lair:1",
+      "note": "Bought a scroll of enchant armour for 105 gold pieces",
+      "turn": "31832",
       "type": "bought",
     },
     {
@@ -971,6 +1167,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "1",
       "location": "Lair:1",
+      "note": "Bought a scroll of fog for 28 gold pieces",
+      "turn": "31832",
       "type": "bought",
     },
     {
@@ -982,6 +1180,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "1",
       "location": "Lair:1",
+      "note": "Bought a scroll of acquirement for 728 gold pieces",
+      "turn": "31832",
       "type": "bought",
     },
     {
@@ -991,6 +1191,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "1",
       "location": "Lair:1",
+      "note": "Identified the +2 cloak of Muttered Phrases {-Cast rElec rF+} (You acquired it on level 1 of the Lair of Beasts)",
+      "turn": "31838",
       "type": "ident",
     },
     {
@@ -1000,6 +1202,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "1",
       "location": "Lair:1",
+      "note": "Identified the +2 cloak of Muttered Phrases {-Cast rElec rF+} (You acquired it on level 1 of the Lair of Beasts)",
+      "turn": "31838",
       "type": "item",
     },
     {
@@ -1010,6 +1214,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "2",
       "location": "Snake:2",
+      "note": "Reached skill level 10 in Evocations",
+      "turn": "33628",
       "type": "skill-level",
     },
     {
@@ -1019,6 +1225,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "2",
       "location": "Snake:2",
+      "note": "Found Nulefunn's Distillery.",
+      "turn": "33848",
       "type": "shop",
     },
     {
@@ -1028,6 +1236,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "2",
       "location": "Snake:2",
+      "note": "Found Voinep's Food Emporium.",
+      "turn": "33854",
       "type": "shop",
     },
     {
@@ -1037,6 +1247,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "2",
       "location": "Snake:2",
+      "note": "Noticed Roxanne",
+      "turn": "33885",
       "type": "unique-noticed",
     },
     {
@@ -1046,6 +1258,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "3",
       "location": "Snake:3",
+      "note": "Noticed Azrael",
+      "turn": "35652",
       "type": "unique-noticed",
     },
     {
@@ -1055,6 +1269,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "3",
       "location": "Snake:3",
+      "note": "Killed Azrael",
+      "turn": "35677",
       "type": "unique-killed",
     },
     {
@@ -1066,6 +1282,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "3",
       "location": "Snake:3",
+      "note": "Reached XP level 18. HP: 142/142 MP: 24/24",
+      "turn": "36231",
       "type": "experience-level",
     },
     {
@@ -1075,6 +1293,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "4",
       "location": "Snake:4",
+      "note": "Noticed Mara",
+      "turn": "36673",
       "type": "unique-noticed",
     },
     {
@@ -1085,6 +1305,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "2",
       "location": "Shoals:2",
+      "note": "Reached skill level 11 in Evocations",
+      "turn": "39059",
       "type": "skill-level",
     },
     {
@@ -1094,6 +1316,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "4",
       "location": "Shoals:4",
+      "note": "Found Wacunaop's Book Shop.",
+      "turn": "42445",
       "type": "shop",
     },
     {
@@ -1105,6 +1329,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "4",
       "location": "Shoals:4",
+      "note": "Reached XP level 19. HP: 140/149 MP: 26/26",
+      "turn": "42610",
       "type": "experience-level",
     },
     {
@@ -1114,6 +1340,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "1",
       "location": "Vaults:1",
+      "note": "Identified a +1 pair of boots of running (You found it on level 1 of the Vaults)",
+      "turn": "44070",
       "type": "ident-loc",
     },
     {
@@ -1123,6 +1351,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "1",
       "location": "Vaults:1",
+      "note": "Identified a +1 pair of boots of running (You found it on level 1 of the Vaults)",
+      "turn": "44070",
       "type": "item",
     },
     {
@@ -1133,6 +1363,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": undefined,
       "location": "WizLab",
+      "note": "Reached skill level 12 in Evocations",
+      "turn": "45128",
       "type": "skill-level",
     },
     {
@@ -1142,6 +1374,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": undefined,
       "location": "WizLab",
+      "note": "Found a burning altar of Makhleb.",
+      "turn": "45363",
       "type": "altar",
     },
     {
@@ -1151,6 +1385,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": undefined,
       "location": "WizLab",
+      "note": "Identified Sif Muna's Reference Book on the Entourage",
+      "turn": "45397",
       "type": "ident",
     },
     {
@@ -1160,6 +1396,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": undefined,
       "location": "WizLab",
+      "note": "Identified Sif Muna's Reference Book on the Entourage",
+      "turn": "45397",
       "type": "item",
     },
     {
@@ -1170,6 +1408,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "1",
       "location": "Vaults:1",
+      "note": "Reached skill level 10 in Stealth",
+      "turn": "46621",
       "type": "skill-level",
     },
     {
@@ -1181,6 +1421,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "1",
       "location": "Vaults:1",
+      "note": "Reached XP level 20. HP: 107/158 MP: 28/28",
+      "turn": "46631",
       "type": "experience-level",
     },
     {
@@ -1191,6 +1433,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "3",
       "location": "Vaults:3",
+      "note": "Reached skill level 13 in Evocations",
+      "turn": "50809",
       "type": "skill-level",
     },
     {
@@ -1200,6 +1444,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "3",
       "location": "Vaults:3",
+      "note": "Identified the +1 scale mail of the Hundredfold Ghosts {rPois} (You found it on level 3 of the Vaults)",
+      "turn": "51024",
       "type": "ident-loc",
     },
     {
@@ -1209,6 +1455,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "3",
       "location": "Vaults:3",
+      "note": "Identified the +1 scale mail of the Hundredfold Ghosts {rPois} (You found it on level 3 of the Vaults)",
+      "turn": "51024",
       "type": "item",
     },
     {
@@ -1220,6 +1468,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "3",
       "location": "Vaults:3",
+      "note": "Reached XP level 21. HP: 165/165 MP: 29/29",
+      "turn": "51500",
       "type": "experience-level",
     },
     {
@@ -1229,6 +1479,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "3",
       "location": "Vaults:3",
+      "note": "Noticed Mennas",
+      "turn": "52017",
       "type": "unique-noticed",
     },
     {
@@ -1238,6 +1490,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "3",
       "location": "Vaults:3",
+      "note": "Killed Mennas",
+      "turn": "52050",
       "type": "unique-killed",
     },
     {
@@ -1247,6 +1501,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "3",
       "location": "Vaults:3",
+      "note": "Found Ticevuy's Antique Weapon Boutique.",
+      "turn": "53971",
       "type": "shop",
     },
     {
@@ -1256,6 +1512,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "4",
       "location": "Vaults:4",
+      "note": "Found Xisim's General Store.",
+      "turn": "54577",
       "type": "shop",
     },
     {
@@ -1267,6 +1525,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "4",
       "location": "Vaults:4",
+      "note": "Bought a phial of floods for 560 gold pieces",
+      "turn": "54585",
       "type": "bought",
     },
     {
@@ -1278,6 +1538,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "1",
       "location": "Lair:1",
+      "note": "Bought a scroll of identify for 42 gold pieces",
+      "turn": "54898",
       "type": "bought",
     },
     {
@@ -1289,6 +1551,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "1",
       "location": "Lair:1",
+      "note": "Bought 3 scrolls of fear for 220 gold pieces",
+      "turn": "54898",
       "type": "bought",
     },
     {
@@ -1300,6 +1564,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "1",
       "location": "Lair:1",
+      "note": "Bought a scroll of identify for 42 gold pieces",
+      "turn": "54898",
       "type": "bought",
     },
     {
@@ -1309,6 +1575,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "4",
       "location": "Vaults:4",
+      "note": "Found Sid Vom's Armour Shoppe.",
+      "turn": "55789",
       "type": "shop",
     },
     {
@@ -1318,6 +1586,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "4",
       "location": "Vaults:4",
+      "note": "Found Eduvime's Gadget Shop.",
+      "turn": "55875",
       "type": "shop",
     },
     {
@@ -1329,6 +1599,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "4",
       "location": "Vaults:4",
+      "note": "Bought a box of beasts for 420 gold pieces",
+      "turn": "55880",
       "type": "bought",
     },
     {
@@ -1340,6 +1612,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "4",
       "location": "Vaults:4",
+      "note": "Reached XP level 22. HP: 145/173 MP: 31/31",
+      "turn": "55954",
       "type": "experience-level",
     },
     {
@@ -1350,6 +1624,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "4",
       "location": "Vaults:4",
+      "note": "Reached skill level 14 in Evocations",
+      "turn": "55973",
       "type": "skill-level",
     },
     {
@@ -1359,6 +1635,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "4",
       "location": "Vaults:4",
+      "note": "Found Ylaxeidgh's General Store.",
+      "turn": "56586",
       "type": "shop",
     },
     {
@@ -1370,6 +1648,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "4",
       "location": "Vaults:4",
+      "note": "Bought a wand of paralysis (8) for 170 gold pieces",
+      "turn": "56592",
       "type": "bought",
     },
     {
@@ -1381,6 +1661,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "4",
       "location": "Vaults:4",
+      "note": "Bought a wand of acid (7) for 374 gold pieces",
+      "turn": "56592",
       "type": "bought",
     },
     {
@@ -1392,6 +1674,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "4",
       "location": "Vaults:4",
+      "note": "Bought a wand of digging (7) for 374 gold pieces",
+      "turn": "56592",
       "type": "bought",
     },
     {
@@ -1401,6 +1685,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "4",
       "location": "Vaults:4",
+      "note": "Identified the cursed +0 chain mail "Niakh" {rPois rC- MP+9 Stlth+}",
+      "turn": "56960",
       "type": "ident",
     },
     {
@@ -1410,6 +1696,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "4",
       "location": "Vaults:4",
+      "note": "Identified the cursed +0 chain mail "Niakh" {rPois rC- MP+9 Stlth+}",
+      "turn": "56960",
       "type": "item",
     },
     {
@@ -1419,6 +1707,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "4",
       "location": "Vaults:4",
+      "note": "Found Dodut's Gadget Emporium.",
+      "turn": "57283",
       "type": "shop",
     },
     {
@@ -1430,6 +1720,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "4",
       "location": "Vaults:4",
+      "note": "Bought a wand of scattershot (7) for 759 gold pieces",
+      "turn": "57299",
       "type": "bought",
     },
     {
@@ -1439,6 +1731,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "1",
       "location": "Depths:1",
+      "note": "Found a gateway to Hell.",
+      "turn": "58107",
       "type": "portal",
     },
     {
@@ -1449,6 +1743,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "1",
       "location": "Depths:1",
+      "note": "Reached skill level 15 in Fighting",
+      "turn": "58416",
       "type": "skill-level",
     },
     {
@@ -1458,6 +1754,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "1",
       "location": "Depths:1",
+      "note": "Found a one-way gate to the infinite horrors of the Abyss.",
+      "turn": "58918",
       "type": "portal",
     },
     {
@@ -1468,6 +1766,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "1",
       "location": "Depths:1",
+      "note": "Reached skill level 10 in Throwing",
+      "turn": "59119",
       "type": "skill-level",
     },
     {
@@ -1478,6 +1778,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "1",
       "location": "Depths:1",
+      "note": "Reached skill level 15 in Shields",
+      "turn": "59198",
       "type": "skill-level",
     },
     {
@@ -1488,6 +1790,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "1",
       "location": "Depths:1",
+      "note": "Reached skill level 15 in Long Blades",
+      "turn": "59549",
       "type": "skill-level",
     },
     {
@@ -1498,6 +1802,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "1",
       "location": "Depths:1",
+      "note": "Reached skill level 15 in Armour",
+      "turn": "59734",
       "type": "skill-level",
     },
     {
@@ -1507,6 +1813,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "2",
       "location": "Depths:2",
+      "note": "Found Beogyoha's Assorted Antiques.",
+      "turn": "59859",
       "type": "shop",
     },
     {
@@ -1518,6 +1826,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "2",
       "location": "Depths:2",
+      "note": "Bought a serpentine glass ring for 185 gold pieces",
+      "turn": "59966",
       "type": "bought",
     },
     {
@@ -1528,6 +1838,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "2",
       "location": "Depths:2",
+      "note": "Identified the ring "Fues" {rPois rC+ rN+ Str-2 Int+4} (You bought it in a shop on level 2 of the Depths)",
+      "turn": "59966",
       "type": "ident-bought-loc",
     },
     {
@@ -1538,6 +1850,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "2",
       "location": "Depths:2",
+      "note": "Identified the ring "Fues" {rPois rC+ rN+ Str-2 Int+4} (You bought it in a shop on level 2 of the Depths)",
+      "turn": "59966",
       "type": "item",
     },
     {
@@ -1547,6 +1861,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "2",
       "location": "Depths:2",
+      "note": "Noticed the Enchantress",
+      "turn": "60566",
       "type": "unique-noticed",
     },
     {
@@ -1556,6 +1872,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "2",
       "location": "Depths:2",
+      "note": "Killed the Enchantress",
+      "turn": "60595",
       "type": "unique-killed",
     },
     {
@@ -1567,6 +1885,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "2",
       "location": "Depths:2",
+      "note": "Reached XP level 23. HP: 125/181 MP: 33/33",
+      "turn": "60595",
       "type": "experience-level",
     },
     {
@@ -1577,6 +1897,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "2",
       "location": "Depths:2",
+      "note": "Reached skill level 15 in Dodging",
+      "turn": "60693",
       "type": "skill-level",
     },
     {
@@ -1586,6 +1908,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "2",
       "location": "Depths:2",
+      "note": "Found Viedasob's Jewellery Shop.",
+      "turn": "61204",
       "type": "shop",
     },
     {
@@ -1595,6 +1919,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "2",
       "location": "Depths:2",
+      "note": "Found Nefan's Magic Scroll Shop.",
+      "turn": "61233",
       "type": "shop",
     },
     {
@@ -1606,6 +1932,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "2",
       "location": "Depths:2",
+      "note": "Bought a scroll of magic mapping for 52 gold pieces",
+      "turn": "61250",
       "type": "bought",
     },
     {
@@ -1617,6 +1945,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "2",
       "location": "Depths:2",
+      "note": "Bought a scroll of magic mapping for 52 gold pieces",
+      "turn": "61250",
       "type": "bought",
     },
     {
@@ -1628,6 +1958,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "2",
       "location": "Depths:2",
+      "note": "Bought a scroll of magic mapping for 52 gold pieces",
+      "turn": "61250",
       "type": "bought",
     },
     {
@@ -1638,6 +1970,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "2",
       "location": "Depths:2",
+      "note": "Reached skill level 15 in Evocations",
+      "turn": "61307",
       "type": "skill-level",
     },
     {
@@ -1647,6 +1981,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "2",
       "location": "Depths:2",
+      "note": "Found Cyhunoik's Food Shop.",
+      "turn": "61756",
       "type": "shop",
     },
     {
@@ -1656,6 +1992,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "2",
       "location": "Depths:2",
+      "note": "Found Unyighy's Food Boutique.",
+      "turn": "62141",
       "type": "shop",
     },
     {
@@ -1667,6 +2005,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "3",
       "location": "Depths:3",
+      "note": "Reached XP level 24. HP: 154/190 MP: 33/33",
+      "turn": "64218",
       "type": "experience-level",
     },
     {
@@ -1676,6 +2016,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "3",
       "location": "Depths:3",
+      "note": "Found a one-way gate leading to the halls of Pandemonium.",
+      "turn": "64566",
       "type": "portal",
     },
     {
@@ -1685,6 +2027,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "3",
       "location": "Depths:3",
+      "note": "Found a gateway to a ziggurat.",
+      "turn": "65137",
       "type": "portal",
     },
     {
@@ -1694,6 +2038,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "4",
       "location": "Depths:4",
+      "note": "Noticed Sojobo",
+      "turn": "65885",
       "type": "unique-noticed",
     },
     {
@@ -1703,6 +2049,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "4",
       "location": "Depths:4",
+      "note": "Noticed Margery",
+      "turn": "65906",
       "type": "unique-noticed",
     },
     {
@@ -1712,6 +2060,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "4",
       "location": "Depths:4",
+      "note": "Killed Sojobo",
+      "turn": "65923",
       "type": "unique-killed",
     },
     {
@@ -1721,6 +2071,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "4",
       "location": "Depths:4",
+      "note": "Killed Margery",
+      "turn": "65932",
       "type": "unique-killed",
     },
     {
@@ -1731,6 +2083,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "4",
       "location": "Depths:4",
+      "note": "Reached skill level 16 in Evocations",
+      "turn": "66417",
       "type": "skill-level",
     },
     {
@@ -1742,6 +2096,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "4",
       "location": "Depths:4",
+      "note": "Reached XP level 25. HP: 175/197 MP: 34/34",
+      "turn": "66941",
       "type": "experience-level",
     },
     {
@@ -1751,6 +2107,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "5",
       "location": "Depths:5",
+      "note": "Found a gate to the Realm of Zot.",
+      "turn": "69240",
       "type": "portal",
     },
     {
@@ -1760,6 +2118,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "5",
       "location": "Depths:5",
+      "note": "Found Doikh's Jewellery Shoppe.",
+      "turn": "69365",
       "type": "shop",
     },
     {
@@ -1769,6 +2129,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "5",
       "location": "Depths:5",
+      "note": "Found Inimin's Gadget Boutique.",
+      "turn": "69365",
       "type": "shop",
     },
     {
@@ -1778,6 +2140,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "5",
       "location": "Depths:5",
+      "note": "Found Vadghug's Gadget Boutique.",
+      "turn": "69366",
       "type": "shop",
     },
     {
@@ -1789,6 +2153,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "5",
       "location": "Depths:5",
+      "note": "Bought a wand of scattershot (4) for 480 gold pieces",
+      "turn": "69385",
       "type": "bought",
     },
     {
@@ -1800,6 +2166,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "5",
       "location": "Depths:5",
+      "note": "Bought a box of beasts for 400 gold pieces",
+      "turn": "69385",
       "type": "bought",
     },
     {
@@ -1811,6 +2179,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "5",
       "location": "Depths:5",
+      "note": "Bought a box of beasts for 400 gold pieces",
+      "turn": "69385",
       "type": "bought",
     },
     {
@@ -1822,6 +2192,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "5",
       "location": "Depths:5",
+      "note": "Bought a wand of acid (7) for 440 gold pieces",
+      "turn": "69385",
       "type": "bought",
     },
     {
@@ -1833,6 +2205,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "5",
       "location": "Depths:5",
+      "note": "Bought a box of beasts for 480 gold pieces",
+      "turn": "69389",
       "type": "bought",
     },
     {
@@ -1844,6 +2218,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "5",
       "location": "Depths:5",
+      "note": "Bought a wand of clouds (5) for 648 gold pieces",
+      "turn": "69389",
       "type": "bought",
     },
     {
@@ -1853,6 +2229,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "5",
       "location": "Depths:5",
+      "note": "Identified the -3 kite shield of the Snail {rElec Dex+3} (You acquired it on level 5 of the Depths)",
+      "turn": "69494",
       "type": "ident",
     },
     {
@@ -1862,6 +2240,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "5",
       "location": "Depths:5",
+      "note": "Identified the -3 kite shield of the Snail {rElec Dex+3} (You acquired it on level 5 of the Depths)",
+      "turn": "69494",
       "type": "item",
     },
     {
@@ -1873,6 +2253,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "1",
       "location": "Lair:1",
+      "note": "Bought a runed cloak for 300 gold pieces",
+      "turn": "69794",
       "type": "bought",
     },
     {
@@ -1884,6 +2266,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "5",
       "location": "Vaults:5",
+      "note": "Reached XP level 26. HP: 189/206 MP: 34/34",
+      "turn": "70070",
       "type": "experience-level",
     },
     {
@@ -1894,6 +2278,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "5",
       "location": "Vaults:5",
+      "note": "Reached skill level 17 in Evocations",
+      "turn": "70071",
       "type": "skill-level",
     },
     {
@@ -1903,6 +2289,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "5",
       "location": "Vaults:5",
+      "note": "Identified the cursed +2 falchion "Z" {vorpal, rPois rN+ Str-2 Dex+2}",
+      "turn": "70573",
       "type": "ident",
     },
     {
@@ -1912,6 +2300,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "5",
       "location": "Vaults:5",
+      "note": "Identified the cursed +2 falchion "Z" {vorpal, rPois rN+ Str-2 Dex+2}",
+      "turn": "70573",
       "type": "item",
     },
     {
@@ -1921,6 +2311,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "5",
       "location": "Vaults:5",
+      "note": "Identified the +1 battleaxe of Disaster {vamp, +Rage rPois rF- Stlth+}",
+      "turn": "72240",
       "type": "ident",
     },
     {
@@ -1930,6 +2322,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "5",
       "location": "Vaults:5",
+      "note": "Identified the +1 battleaxe of Disaster {vamp, +Rage rPois rF- Stlth+}",
+      "turn": "72240",
       "type": "item",
     },
     {
@@ -1941,6 +2335,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "5",
       "location": "Vaults:5",
+      "note": "Reached XP level 27. HP: 215/215 MP: 34/34",
+      "turn": "72471",
       "type": "experience-level",
     },
     {
@@ -1950,6 +2346,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "5",
       "location": "Vaults:5",
+      "note": "Identified Kegumy's Almanac of the Ageless People",
+      "turn": "72720",
       "type": "ident",
     },
     {
@@ -1959,6 +2357,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "5",
       "location": "Vaults:5",
+      "note": "Identified Kegumy's Almanac of the Ageless People",
+      "turn": "72720",
       "type": "item",
     },
     {
@@ -1968,6 +2368,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "5",
       "location": "Vaults:5",
+      "note": "Identified the +10 rapier of Bloody Death {drain, rPois rF- MR+++}",
+      "turn": "72937",
       "type": "ident",
     },
     {
@@ -1977,6 +2379,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "5",
       "location": "Vaults:5",
+      "note": "Identified the +10 rapier of Bloody Death {drain, rPois rF- MR+++}",
+      "turn": "72937",
       "type": "item",
     },
     {
@@ -1986,6 +2390,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "5",
       "location": "Vaults:5",
+      "note": "Identified the +5 morningstar of Hepuoto {vorpal, *Noise +Fly rElec Dex+5}",
+      "turn": "73865",
       "type": "ident",
     },
     {
@@ -1995,6 +2401,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "5",
       "location": "Vaults:5",
+      "note": "Identified the +5 morningstar of Hepuoto {vorpal, *Noise +Fly rElec Dex+5}",
+      "turn": "73865",
       "type": "item",
     },
     {
@@ -2004,6 +2412,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "5",
       "location": "Vaults:5",
+      "note": "Identified the +2 pair of boots "Dezamohu" {MR- Str+2 Int+2 Dex+4} (You found it on level 5 of the Vaults)",
+      "turn": "74107",
       "type": "ident-loc",
     },
     {
@@ -2013,6 +2423,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "5",
       "location": "Vaults:5",
+      "note": "Identified the +2 pair of boots "Dezamohu" {MR- Str+2 Int+2 Dex+4} (You found it on level 5 of the Vaults)",
+      "turn": "74107",
       "type": "item",
     },
     {
@@ -2023,6 +2435,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "2",
       "location": "Slime:2",
+      "note": "Reached skill level 18 in Evocations",
+      "turn": "76720",
       "type": "skill-level",
     },
     {
@@ -2032,6 +2446,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "4",
       "location": "Slime:4",
+      "note": "Noticed Dissolution",
+      "turn": "76844",
       "type": "unique-noticed",
     },
     {
@@ -2041,6 +2457,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "3",
       "location": "Slime:3",
+      "note": "Killed Dissolution",
+      "turn": "76853",
       "type": "unique-killed",
     },
     {
@@ -2050,6 +2468,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "5",
       "location": "Slime:5",
+      "note": "Found a viscous altar of Jiyva.",
+      "turn": "78292",
       "type": "altar",
     },
     {
@@ -2059,6 +2479,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "5",
       "location": "Slime:5",
+      "note": "Noticed the Royal Jelly",
+      "turn": "78293",
       "type": "unique-noticed",
     },
     {
@@ -2068,6 +2490,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "5",
       "location": "Slime:5",
+      "note": "Found the +18 shield of the Gong {rElec rN+ MR+ EV-5}",
+      "turn": "78296",
       "type": "found",
     },
     {
@@ -2077,6 +2501,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "5",
       "location": "Slime:5",
+      "note": "Found the +18 shield of the Gong {rElec rN+ MR+ EV-5}",
+      "turn": "78296",
       "type": "item",
     },
     {
@@ -2086,6 +2512,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "5",
       "location": "Slime:5",
+      "note": "Killed the Royal Jelly",
+      "turn": "78325",
       "type": "unique-killed",
     },
     {
@@ -2095,6 +2523,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "5",
       "location": "Slime:5",
+      "note": "Found the amulet of Vitality {Regen+ HP+15}",
+      "turn": "78384",
       "type": "found",
     },
     {
@@ -2104,6 +2534,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "5",
       "location": "Slime:5",
+      "note": "Found the amulet of Vitality {Regen+ HP+15}",
+      "turn": "78384",
       "type": "item",
     },
     {
@@ -2115,6 +2547,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "1",
       "location": "Lair:1",
+      "note": "Bought the ring of Ydafu {rC+ MR+ Str+3} for 790 gold pieces",
+      "turn": "78745",
       "type": "bought",
     },
     {
@@ -2124,6 +2558,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "2",
       "location": "Elf:2",
+      "note": "Found an ancient bone altar of Kikubaaqudgha.",
+      "turn": "80261",
       "type": "altar",
     },
     {
@@ -2133,6 +2569,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "3",
       "location": "Elf:3",
+      "note": "Identified the +1 rapier "Hydraslayer" {vorpal, rElec rC+}",
+      "turn": "82036",
       "type": "ident",
     },
     {
@@ -2142,6 +2580,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "3",
       "location": "Elf:3",
+      "note": "Identified the +1 rapier "Hydraslayer" {vorpal, rElec rC+}",
+      "turn": "82036",
       "type": "item",
     },
     {
@@ -2151,6 +2591,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "3",
       "location": "Elf:3",
+      "note": "Identified the +8 flail of Midwinter {freeze, *Corrode Str+8}",
+      "turn": "82058",
       "type": "ident",
     },
     {
@@ -2160,6 +2602,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "3",
       "location": "Elf:3",
+      "note": "Identified the +8 flail of Midwinter {freeze, *Corrode Str+8}",
+      "turn": "82058",
       "type": "item",
     },
     {
@@ -2169,6 +2613,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "3",
       "location": "Elf:3",
+      "note": "Identified the ring of Equilibrium {rF+++ rCorr Dex-3 Stlth+}",
+      "turn": "82058",
       "type": "ident",
     },
     {
@@ -2178,6 +2624,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "3",
       "location": "Elf:3",
+      "note": "Identified the ring of Equilibrium {rF+++ rCorr Dex-3 Stlth+}",
+      "turn": "82058",
       "type": "item",
     },
     {
@@ -2187,6 +2635,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "3",
       "location": "Elf:3",
+      "note": "Identified the cursed +1 glaive of Light {freeze, rN++}",
+      "turn": "82892",
       "type": "ident",
     },
     {
@@ -2196,6 +2646,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "3",
       "location": "Elf:3",
+      "note": "Identified the cursed +1 glaive of Light {freeze, rN++}",
+      "turn": "82892",
       "type": "item",
     },
     {
@@ -2205,6 +2657,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "3",
       "location": "Elf:3",
+      "note": "Identified the +5 short sword "Killer Klown's Regret" {vorpal, +Blink rC+ SInv}",
+      "turn": "82898",
       "type": "ident",
     },
     {
@@ -2214,6 +2668,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "3",
       "location": "Elf:3",
+      "note": "Identified the +5 short sword "Killer Klown's Regret" {vorpal, +Blink rC+ SInv}",
+      "turn": "82898",
       "type": "item",
     },
     {
@@ -2224,6 +2680,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "3",
       "location": "Elf:3",
+      "note": "Reached skill level 19 in Evocations",
+      "turn": "83458",
       "type": "skill-level",
     },
     {
@@ -2233,6 +2691,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "3",
       "location": "Elf:3",
+      "note": "Identified the ring "Icinogh" {Int+2 Slay+6} (You found it on level 3 of the Elven Halls)",
+      "turn": "83678",
       "type": "ident-loc",
     },
     {
@@ -2242,6 +2702,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "3",
       "location": "Elf:3",
+      "note": "Identified the ring "Icinogh" {Int+2 Slay+6} (You found it on level 3 of the Elven Halls)",
+      "turn": "83678",
       "type": "item",
     },
     {
@@ -2253,6 +2715,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "1",
       "location": "Lair:1",
+      "note": "Bought a +2 demon blade of freezing for 624 gold pieces",
+      "turn": "84040",
       "type": "bought",
     },
     {
@@ -2264,6 +2728,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "10",
       "location": "Dungeon:10",
+      "note": "Bought a pair of embroidered gloves for 225 gold pieces",
+      "turn": "84170",
       "type": "bought",
     },
     {
@@ -2273,6 +2739,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "1",
       "location": "Zot:1",
+      "note": "Found a shimmering altar of Xom.",
+      "turn": "86193",
       "type": "altar",
     },
     {
@@ -2283,6 +2751,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "3",
       "location": "Zot:3",
+      "note": "Reached skill level 20 in Evocations",
+      "turn": "90366",
       "type": "skill-level",
     },
     {
@@ -2293,6 +2763,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "4",
       "location": "Zot:4",
+      "note": "Reached skill level 15 in Stealth",
+      "turn": "92283",
       "type": "skill-level",
     },
     {
@@ -2302,6 +2774,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "4",
       "location": "Ziggurat:4",
+      "note": "Identified the cursed ring "Harosaeh" {rElec rPois MP+9 EV-4 Int-2} (You found it on level 4 of a ziggurat)",
+      "turn": "94656",
       "type": "ident-loc",
     },
     {
@@ -2311,6 +2785,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "4",
       "location": "Ziggurat:4",
+      "note": "Identified the cursed ring "Harosaeh" {rElec rPois MP+9 EV-4 Int-2} (You found it on level 4 of a ziggurat)",
+      "turn": "94656",
       "type": "item",
     },
     {
@@ -2320,6 +2796,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "5",
       "location": "Ziggurat:5",
+      "note": "Identified the ring "Lainwuga" {*Tele rPois rF+++ Str-4 Stlth-} (You found it on level 5 of a ziggurat)",
+      "turn": "94762",
       "type": "ident-loc",
     },
     {
@@ -2329,6 +2807,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "5",
       "location": "Ziggurat:5",
+      "note": "Identified the ring "Lainwuga" {*Tele rPois rF+++ Str-4 Stlth-} (You found it on level 5 of a ziggurat)",
+      "turn": "94762",
       "type": "item",
     },
     {
@@ -2338,6 +2818,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "8",
       "location": "Ziggurat:8",
+      "note": "Found the +0 staff of Battle",
+      "turn": "95524",
       "type": "found",
     },
     {
@@ -2347,6 +2829,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "8",
       "location": "Ziggurat:8",
+      "note": "Found the +0 staff of Battle",
+      "turn": "95524",
       "type": "item",
     },
     {
@@ -2356,6 +2840,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "8",
       "location": "Ziggurat:8",
+      "note": "Identified the +1 plate armour "Ehiogol" {Dex+4} (You found it on level 8 of a ziggurat)",
+      "turn": "95543",
       "type": "ident-loc",
     },
     {
@@ -2365,6 +2851,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       },
       "level": "8",
       "location": "Ziggurat:8",
+      "note": "Identified the +1 plate armour "Ehiogol" {Dex+4} (You found it on level 8 of a ziggurat)",
+      "turn": "95543",
       "type": "item",
     },
     {
@@ -2372,6 +2860,8 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       "data": "Annihilated by an Orb Guardian",
       "level": "5",
       "location": "Zot:5",
+      "note": "Annihilated by an Orb Guardian",
+      "turn": "96603",
       "type": "last-event",
     },
   ],

@@ -12,6 +12,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       "data": "TheSexyCheese the Minotaur Fighter began the quest for the Orb.",
       "level": "1",
       "location": "Dungeon:1",
+      "note": "TheSexyCheese the Minotaur Fighter began the quest for the Orb.",
+      "turn": "0",
       "type": "first-event",
     },
     {
@@ -23,6 +25,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "1",
       "location": "Dungeon:1",
+      "note": "Reached XP level 1. HP: 19/19 MP: 0/0",
+      "turn": "0",
       "type": "experience-level",
     },
     {
@@ -34,6 +38,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "1",
       "location": "Dungeon:1",
+      "note": "Reached XP level 2. HP: 26/27 MP: 1/1",
+      "turn": "424",
       "type": "experience-level",
     },
     {
@@ -44,6 +50,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "2",
       "location": "Dungeon:2",
+      "note": "Reached skill level 1 in Throwing",
+      "turn": "1613",
       "type": "skill-level",
     },
     {
@@ -55,6 +63,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "2",
       "location": "Dungeon:2",
+      "note": "Reached XP level 3. HP: 33/33 MP: 2/2",
+      "turn": "1615",
       "type": "experience-level",
     },
     {
@@ -65,6 +75,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "2",
       "location": "Dungeon:2",
+      "note": "Reached skill level 1 in Evocations",
+      "turn": "1724",
       "type": "skill-level",
     },
     {
@@ -74,6 +86,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "2",
       "location": "Dungeon:2",
+      "note": "Found a faded altar of an unknown god.",
+      "turn": "1814",
       "type": "altar",
     },
     {
@@ -83,6 +97,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "2",
       "location": "Dungeon:2",
+      "note": "Identified a scroll of acquirement",
+      "turn": "2304",
       "type": "ident",
     },
     {
@@ -92,6 +108,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "2",
       "location": "Dungeon:2",
+      "note": "Identified a scroll of acquirement",
+      "turn": "2304",
       "type": "item",
     },
     {
@@ -101,6 +119,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "2",
       "location": "Dungeon:2",
+      "note": "Acquired the +10 executioner's axe of Forel {antimagic, rElec rCorr Dex+2}",
+      "turn": "2304",
       "type": "acquirement",
     },
     {
@@ -110,6 +130,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Noticed Jessica",
+      "turn": "2349",
       "type": "unique-noticed",
     },
     {
@@ -119,6 +141,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Killed Jessica",
+      "turn": "2356",
       "type": "unique-killed",
     },
     {
@@ -130,6 +154,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Reached XP level 4. HP: 28/40 MP: 1/3",
+      "turn": "2357",
       "type": "experience-level",
     },
     {
@@ -139,6 +165,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Noticed Grinder",
+      "turn": "2587",
       "type": "unique-noticed",
     },
     {
@@ -148,6 +176,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Killed Grinder",
+      "turn": "2594",
       "type": "unique-killed",
     },
     {
@@ -159,6 +189,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Reached XP level 5. HP: 31/47 MP: 1/4",
+      "turn": "2595",
       "type": "experience-level",
     },
     {
@@ -170,6 +202,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Reached XP level 6. HP: 36/55 MP: 1/5",
+      "turn": "2595",
       "type": "experience-level",
     },
     {
@@ -179,6 +213,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Found a burning altar of Makhleb.",
+      "turn": "2811",
       "type": "altar",
     },
     {
@@ -189,6 +225,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Reached skill level 5 in Fighting",
+      "turn": "2926",
       "type": "skill-level",
     },
     {
@@ -199,6 +237,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Reached skill level 5 in Armour",
+      "turn": "2926",
       "type": "skill-level",
     },
     {
@@ -208,6 +248,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Found a glowing golden altar of the Shining One.",
+      "turn": "3053",
       "type": "altar",
     },
     {
@@ -217,6 +259,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Found a radiant altar of Vehumet.",
+      "turn": "3272",
       "type": "altar",
     },
     {
@@ -226,6 +270,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Noticed Terence",
+      "turn": "3309",
       "type": "unique-noticed",
     },
     {
@@ -235,6 +281,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Killed Terence",
+      "turn": "3313",
       "type": "unique-killed",
     },
     {
@@ -244,6 +292,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "3",
       "location": "Dungeon:3",
+      "note": "Found a hazy altar of Hepliaklqana.",
+      "turn": "3360",
       "type": "altar",
     },
     {
@@ -255,6 +305,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "4",
       "location": "Dungeon:4",
+      "note": "Reached XP level 7. HP: 61/61 MP: 2/6",
+      "turn": "3909",
       "type": "experience-level",
     },
     {
@@ -264,6 +316,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Noticed Blork the orc",
+      "turn": "4298",
       "type": "unique-noticed",
     },
     {
@@ -273,6 +327,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Killed Blork the orc",
+      "turn": "4303",
       "type": "unique-killed",
     },
     {
@@ -283,6 +339,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Reached skill level 5 in Axes",
+      "turn": "4304",
       "type": "skill-level",
     },
     {
@@ -294,6 +352,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Reached XP level 8. HP: 38/70 MP: 2/7",
+      "turn": "4809",
       "type": "experience-level",
     },
     {
@@ -303,6 +363,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Found an iron altar of Okawaru.",
+      "turn": "4810",
       "type": "altar",
     },
     {
@@ -312,6 +374,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Found a basalt altar of Yredelemnul.",
+      "turn": "5182",
       "type": "altar",
     },
     {
@@ -321,6 +385,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Found a blossoming altar of Fedhas.",
+      "turn": "5654",
       "type": "altar",
     },
     {
@@ -330,6 +396,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Identified the +1 scale mail "Ymosh" {Will+ Dex+4}",
+      "turn": "5684",
       "type": "ident",
     },
     {
@@ -339,6 +407,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "5",
       "location": "Dungeon:5",
+      "note": "Identified the +1 scale mail "Ymosh" {Will+ Dex+4}",
+      "turn": "5684",
       "type": "item",
     },
     {
@@ -348,6 +418,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "6",
       "location": "Dungeon:6",
+      "note": "Found a shadowy altar of Dithmenos.",
+      "turn": "5812",
       "type": "altar",
     },
     {
@@ -357,6 +429,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "6",
       "location": "Dungeon:6",
+      "note": "Found a sacrificial altar of Ru.",
+      "turn": "5992",
       "type": "altar",
     },
     {
@@ -366,6 +440,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "6",
       "location": "Dungeon:6",
+      "note": "Noticed Menkaure",
+      "turn": "6229",
       "type": "unique-noticed",
     },
     {
@@ -375,6 +451,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "6",
       "location": "Dungeon:6",
+      "note": "Killed Menkaure",
+      "turn": "6232",
       "type": "unique-killed",
     },
     {
@@ -384,6 +462,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "6",
       "location": "Dungeon:6",
+      "note": "Found Weciph's Distillery.",
+      "turn": "6411",
       "type": "shop",
     },
     {
@@ -394,6 +474,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "6",
       "location": "Dungeon:6",
+      "note": "Reached skill level 5 in Throwing",
+      "turn": "6426",
       "type": "skill-level",
     },
     {
@@ -405,6 +487,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "6",
       "location": "Dungeon:6",
+      "note": "Bought a potion of curing for 42 gold pieces",
+      "turn": "6517",
       "type": "bought",
     },
     {
@@ -416,6 +500,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "6",
       "location": "Dungeon:6",
+      "note": "Bought a potion of heal wounds for 70 gold pieces",
+      "turn": "6517",
       "type": "bought",
     },
     {
@@ -427,6 +513,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "6",
       "location": "Dungeon:6",
+      "note": "Bought a potion of ambrosia for 112 gold pieces",
+      "turn": "6517",
       "type": "bought",
     },
     {
@@ -436,6 +524,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "6",
       "location": "Dungeon:6",
+      "note": "Found a snail-covered altar of Cheibriados.",
+      "turn": "6652",
       "type": "altar",
     },
     {
@@ -447,6 +537,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "6",
       "location": "Dungeon:6",
+      "note": "Reached XP level 9. HP: 79/79 MP: 2/8",
+      "turn": "6661",
       "type": "experience-level",
     },
     {
@@ -456,6 +548,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "7",
       "location": "Dungeon:7",
+      "note": "Found a shimmering altar of Xom.",
+      "turn": "6756",
       "type": "altar",
     },
     {
@@ -466,6 +560,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "7",
       "location": "Dungeon:7",
+      "note": "Reached skill level 5 in Evocations",
+      "turn": "7218",
       "type": "skill-level",
     },
     {
@@ -477,6 +573,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Reached XP level 10. HP: 59/90 MP: 1/9",
+      "turn": "8269",
       "type": "experience-level",
     },
     {
@@ -486,6 +584,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "8",
       "location": "Dungeon:8",
+      "note": "Found a broken altar of Ashenzari.",
+      "turn": "9187",
       "type": "altar",
     },
     {
@@ -497,6 +597,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "1",
       "location": "Lair:1",
+      "note": "Reached XP level 11. HP: 66/99 MP: 3/10",
+      "turn": "10932",
       "type": "experience-level",
     },
     {
@@ -507,6 +609,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Reached skill level 10 in Armour",
+      "turn": "11344",
       "type": "skill-level",
     },
     {
@@ -517,6 +621,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Reached skill level 10 in Fighting",
+      "turn": "11387",
       "type": "skill-level",
     },
     {
@@ -526,6 +632,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Noticed Prince Ribbit",
+      "turn": "11601",
       "type": "unique-noticed",
     },
     {
@@ -535,6 +643,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Killed Prince Ribbit",
+      "turn": "11615",
       "type": "unique-killed",
     },
     {
@@ -544,6 +654,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Found a glowing silver altar of Zin.",
+      "turn": "12141",
       "type": "altar",
     },
     {
@@ -553,6 +665,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Found an opulent altar of Gozag.",
+      "turn": "12142",
       "type": "altar",
     },
     {
@@ -562,6 +676,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "9",
       "location": "Dungeon:9",
+      "note": "Became a worshipper of Gozag Ym Sagoz the Greedy",
+      "turn": "12467",
       "type": "join-god",
     },
     {
@@ -572,6 +688,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "10",
       "location": "Dungeon:10",
+      "note": "Reached skill level 10 in Axes",
+      "turn": "12753",
       "type": "skill-level",
     },
     {
@@ -581,6 +699,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "10",
       "location": "Dungeon:10",
+      "note": "Found a white marble altar of Elyvilon.",
+      "turn": "13319",
       "type": "altar",
     },
     {
@@ -590,6 +710,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "10",
       "location": "Dungeon:10",
+      "note": "Found an ornate altar of the Wu Jian Council.",
+      "turn": "14057",
       "type": "altar",
     },
     {
@@ -599,6 +721,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Found Lufor's Assorted Antiques.",
+      "turn": "15568",
       "type": "shop",
     },
     {
@@ -609,6 +733,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Found Lufor's Assorted Antiques.",
+      "turn": "15568",
       "type": "item",
     },
     {
@@ -620,6 +746,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Reached XP level 12. HP: 71/110 MP: 2/11",
+      "turn": "15611",
       "type": "experience-level",
     },
     {
@@ -629,6 +757,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Noticed Sonja",
+      "turn": "15870",
       "type": "unique-noticed",
     },
     {
@@ -638,6 +768,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Killed Sonja",
+      "turn": "16218",
       "type": "unique-killed",
     },
     {
@@ -647,6 +779,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Found Uppahen's Magic Scroll Boutique.",
+      "turn": "17144",
       "type": "shop",
     },
     {
@@ -656,6 +790,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "1",
       "location": "Orc:1",
+      "note": "Found Kaomiw's Assorted Antiques.",
+      "turn": "17926",
       "type": "shop",
     },
     {
@@ -665,6 +801,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Found Fogeibin's Weapon Emporium.",
+      "turn": "18816",
       "type": "shop",
     },
     {
@@ -674,6 +812,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Found Zipab's Assorted Antiques.",
+      "turn": "18816",
       "type": "shop",
     },
     {
@@ -683,6 +823,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Found Weawegru's Antique Weapon Shoppe.",
+      "turn": "18818",
       "type": "shop",
     },
     {
@@ -693,6 +835,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Found Weawegru's Antique Weapon Shoppe.",
+      "turn": "18818",
       "type": "item",
     },
     {
@@ -702,6 +846,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Found Uklasiach's Distillery.",
+      "turn": "18826",
       "type": "shop",
     },
     {
@@ -713,6 +859,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Bought a potion of curing for 48 gold pieces",
+      "turn": "18830",
       "type": "bought",
     },
     {
@@ -724,6 +872,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Bought a potion of curing for 48 gold pieces",
+      "turn": "18830",
       "type": "bought",
     },
     {
@@ -735,6 +885,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Bought 2 potions of curing for 96 gold pieces",
+      "turn": "18830",
       "type": "bought",
     },
     {
@@ -746,6 +898,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Bought a scroll of fear for 116 gold pieces",
+      "turn": "18836",
       "type": "bought",
     },
     {
@@ -757,6 +911,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Bought a scroll of teleportation for 87 gold pieces",
+      "turn": "18836",
       "type": "bought",
     },
     {
@@ -766,6 +922,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Found Giawao's Distillery.",
+      "turn": "19164",
       "type": "shop",
     },
     {
@@ -777,6 +935,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Bought a potion of berserk rage for 85 gold pieces",
+      "turn": "19174",
       "type": "bought",
     },
     {
@@ -788,6 +948,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Bought a potion of ambrosia for 136 gold pieces",
+      "turn": "19174",
       "type": "bought",
     },
     {
@@ -799,6 +961,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Bought a potion of resistance for 170 gold pieces",
+      "turn": "19174",
       "type": "bought",
     },
     {
@@ -808,6 +972,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Found Cogenom's Book Emporium.",
+      "turn": "19379",
       "type": "shop",
     },
     {
@@ -817,6 +983,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "2",
       "location": "Orc:2",
+      "note": "Found Piorus's Book Emporium.",
+      "turn": "19412",
       "type": "shop",
     },
     {
@@ -828,6 +996,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "1",
       "location": "Lair:1",
+      "note": "Bought the +9 battleaxe of Premature Burial {flame, rCorr Dex+4} for 1087 gold pieces",
+      "turn": "20102",
       "type": "bought",
     },
     {
@@ -838,6 +1008,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "1",
       "location": "Lair:1",
+      "note": "Reached skill level 10 in Throwing",
+      "turn": "21191",
       "type": "skill-level",
     },
     {
@@ -849,6 +1021,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "1",
       "location": "Lair:1",
+      "note": "Reached XP level 13. HP: 98/119 MP: 10/12",
+      "turn": "21314",
       "type": "experience-level",
     },
     {
@@ -858,6 +1032,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "2",
       "location": "Lair:2",
+      "note": "Identified the +0 ring mail of Xuipsa Sopi {*Corrode rElec rF++ rC+}",
+      "turn": "22616",
       "type": "ident",
     },
     {
@@ -867,6 +1043,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "2",
       "location": "Lair:2",
+      "note": "Identified the +0 ring mail of Xuipsa Sopi {*Corrode rElec rF++ rC+}",
+      "turn": "22616",
       "type": "item",
     },
     {
@@ -877,6 +1055,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "4",
       "location": "Lair:4",
+      "note": "Reached skill level 10 in Evocations",
+      "turn": "24504",
       "type": "skill-level",
     },
     {
@@ -886,6 +1066,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "4",
       "location": "Lair:4",
+      "note": "Acquired the +3 pair of mountain boots {steadfast, rC+}",
+      "turn": "25317",
       "type": "acquirement",
     },
     {
@@ -897,6 +1079,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "5",
       "location": "Lair:5",
+      "note": "Reached XP level 14. HP: 67/130 MP: 6/13",
+      "turn": "25567",
       "type": "experience-level",
     },
     {
@@ -906,6 +1090,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "5",
       "location": "Lair:5",
+      "note": "Identified the amulet "Zirixtufaumn" {Spirit Harm}",
+      "turn": "26235",
       "type": "ident",
     },
     {
@@ -915,6 +1101,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "5",
       "location": "Lair:5",
+      "note": "Identified the amulet "Zirixtufaumn" {Spirit Harm}",
+      "turn": "26235",
       "type": "item",
     },
     {
@@ -925,6 +1113,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "11",
       "location": "Dungeon:11",
+      "note": "Reached skill level 1 in Dodging",
+      "turn": "29434",
       "type": "skill-level",
     },
     {
@@ -934,6 +1124,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "12",
       "location": "Dungeon:12",
+      "note": "Noticed Frances",
+      "turn": "30085",
       "type": "unique-noticed",
     },
     {
@@ -945,6 +1137,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "2",
       "location": "Swamp:2",
+      "note": "Reached XP level 15. HP: 131/139 MP: 12/14",
+      "turn": "33009",
       "type": "experience-level",
     },
     {
@@ -954,6 +1148,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "3",
       "location": "Swamp:3",
+      "note": "Noticed Kirke",
+      "turn": "33358",
       "type": "unique-noticed",
     },
     {
@@ -963,6 +1159,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "3",
       "location": "Swamp:3",
+      "note": "Killed Kirke",
+      "turn": "33382",
       "type": "unique-killed",
     },
     {
@@ -973,6 +1171,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "3",
       "location": "Swamp:3",
+      "note": "Reached skill level 15 in Fighting",
+      "turn": "33386",
       "type": "skill-level",
     },
     {
@@ -983,6 +1183,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "3",
       "location": "Swamp:3",
+      "note": "Reached skill level 5 in Dodging",
+      "turn": "34138",
       "type": "skill-level",
     },
     {
@@ -993,6 +1195,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "3",
       "location": "Swamp:3",
+      "note": "Reached skill level 15 in Axes",
+      "turn": "34517",
       "type": "skill-level",
     },
     {
@@ -1002,6 +1206,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "3",
       "location": "Swamp:3",
+      "note": "Identified the +1 scale mail of Xaon {Fly Will- Regen+ Stlth-}",
+      "turn": "35113",
       "type": "ident",
     },
     {
@@ -1011,6 +1217,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "3",
       "location": "Swamp:3",
+      "note": "Identified the +1 scale mail of Xaon {Fly Will- Regen+ Stlth-}",
+      "turn": "35113",
       "type": "item",
     },
     {
@@ -1022,6 +1230,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "3",
       "location": "Swamp:3",
+      "note": "Bought the +1 pair of gloves of the Gate {rF+ Dex+3} for 417 gold pieces",
+      "turn": "37751",
       "type": "bought",
     },
     {
@@ -1033,6 +1243,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "3",
       "location": "Swamp:3",
+      "note": "Bought the +4 plate armour "Luaxae" {rElec rPois rF++ Dex-5} for 954 gold pieces",
+      "turn": "37751",
       "type": "bought",
     },
     {
@@ -1044,6 +1256,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "3",
       "location": "Swamp:3",
+      "note": "Bought a potion of heal wounds for 210 gold pieces",
+      "turn": "37791",
       "type": "bought",
     },
     {
@@ -1055,6 +1269,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "3",
       "location": "Swamp:3",
+      "note": "Bought a potion of curing for 126 gold pieces",
+      "turn": "37791",
       "type": "bought",
     },
     {
@@ -1064,6 +1280,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "4",
       "location": "Swamp:4",
+      "note": "Noticed Mara",
+      "turn": "37903",
       "type": "unique-noticed",
     },
     {
@@ -1073,6 +1291,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "4",
       "location": "Swamp:4",
+      "note": "Killed Mara",
+      "turn": "37927",
       "type": "unique-killed",
     },
     {
@@ -1084,6 +1304,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "4",
       "location": "Swamp:4",
+      "note": "Reached XP level 16. HP: 133/151 MP: 13/15",
+      "turn": "39503",
       "type": "experience-level",
     },
     {
@@ -1093,6 +1315,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "12",
       "location": "Dungeon:12",
+      "note": "Killed Frances",
+      "turn": "42794",
       "type": "unique-killed",
     },
     {
@@ -1102,6 +1326,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "12",
       "location": "Dungeon:12",
+      "note": "Found a bloodstained altar of Trog.",
+      "turn": "43175",
       "type": "altar",
     },
     {
@@ -1111,6 +1337,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "14",
       "location": "Dungeon:14",
+      "note": "Found a gate to the Vaults.",
+      "turn": "46700",
       "type": "portal",
     },
     {
@@ -1122,6 +1350,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "15",
       "location": "Dungeon:15",
+      "note": "Reached XP level 17. HP: 159/161 MP: 16/16",
+      "turn": "47875",
       "type": "experience-level",
     },
     {
@@ -1131,6 +1361,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "15",
       "location": "Dungeon:15",
+      "note": "Found a one-way gate to the infinite horrors of the Abyss.",
+      "turn": "48601",
       "type": "portal",
     },
     {
@@ -1140,6 +1372,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "5",
       "location": "Lair:5",
+      "note": "Found a burning altar of Makhleb.",
+      "turn": "49357",
       "type": "altar",
     },
     {
@@ -1149,6 +1383,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "5",
       "location": "Lair:5",
+      "note": "Found a gateway to Hell.",
+      "turn": "49704",
       "type": "portal",
     },
     {
@@ -1159,6 +1395,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "1",
       "location": "Snake:1",
+      "note": "Reached skill level 10 in Dodging",
+      "turn": "50733",
       "type": "skill-level",
     },
     {
@@ -1168,6 +1406,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "1",
       "location": "Snake:1",
+      "note": "Noticed Asterion",
+      "turn": "51114",
       "type": "unique-noticed",
     },
     {
@@ -1180,6 +1420,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "1",
       "location": "Snake:1",
+      "note": "Gained mutation: Armour fits poorly on your strangely shaped body. [a cacodemon]",
+      "turn": "51125",
       "type": "mutation",
     },
     {
@@ -1189,6 +1431,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "1",
       "location": "Snake:1",
+      "note": "Killed Asterion",
+      "turn": "51134",
       "type": "unique-killed",
     },
     {
@@ -1198,6 +1442,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "1",
       "location": "Snake:1",
+      "note": "Identified the +7 chain mail "Symydorph" {Slay+2}",
+      "turn": "51734",
       "type": "ident",
     },
     {
@@ -1207,6 +1453,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "1",
       "location": "Snake:1",
+      "note": "Identified the +7 chain mail "Symydorph" {Slay+2}",
+      "turn": "51734",
       "type": "item",
     },
     {
@@ -1216,6 +1464,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "1",
       "location": "Snake:1",
+      "note": "Noticed Rupert",
+      "turn": "52816",
       "type": "unique-noticed",
     },
     {
@@ -1225,6 +1475,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "1",
       "location": "Snake:1",
+      "note": "Killed Rupert",
+      "turn": "52827",
       "type": "unique-killed",
     },
     {
@@ -1234,6 +1486,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "1",
       "location": "Snake:1",
+      "note": "Noticed Aizul",
+      "turn": "53514",
       "type": "unique-noticed",
     },
     {
@@ -1243,6 +1497,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "1",
       "location": "Snake:1",
+      "note": "Killed Aizul",
+      "turn": "53524",
       "type": "unique-killed",
     },
     {
@@ -1252,6 +1508,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "2",
       "location": "Snake:2",
+      "note": "Found Feummi's Assorted Antiques.",
+      "turn": "54661",
       "type": "shop",
     },
     {
@@ -1263,6 +1521,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "2",
       "location": "Snake:2",
+      "note": "Bought a scroll of teleportation for 90 gold pieces",
+      "turn": "54670",
       "type": "bought",
     },
     {
@@ -1274,6 +1534,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "2",
       "location": "Snake:2",
+      "note": "Bought a potion of heal wounds for 150 gold pieces",
+      "turn": "54670",
       "type": "bought",
     },
     {
@@ -1283,6 +1545,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "3",
       "location": "Snake:3",
+      "note": "Found Saatz's Antique Armour Emporium.",
+      "turn": "57176",
       "type": "shop",
     },
     {
@@ -1293,6 +1557,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "3",
       "location": "Snake:3",
+      "note": "Reached skill level 15 in Throwing",
+      "turn": "57970",
       "type": "skill-level",
     },
     {
@@ -1304,6 +1570,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "4",
       "location": "Snake:4",
+      "note": "Reached XP level 18. HP: 137/172 MP: 5/17",
+      "turn": "59385",
       "type": "experience-level",
     },
     {
@@ -1313,6 +1581,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "4",
       "location": "Snake:4",
+      "note": "Found Qiroikeg's Jewellery Shoppe.",
+      "turn": "59587",
       "type": "shop",
     },
     {
@@ -1323,6 +1593,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "4",
       "location": "Snake:4",
+      "note": "Found Qiroikeg's Jewellery Shoppe.",
+      "turn": "59587",
       "type": "item",
     },
     {
@@ -1332,6 +1604,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "4",
       "location": "Snake:4",
+      "note": "Found Ituoffaq's Book Shop.",
+      "turn": "59587",
       "type": "shop",
     },
     {
@@ -1341,6 +1615,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "4",
       "location": "Snake:4",
+      "note": "Found Qinaosooci's Jewellery Shoppe.",
+      "turn": "59588",
       "type": "shop",
     },
     {
@@ -1350,6 +1626,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "4",
       "location": "Snake:4",
+      "note": "Found an opulent altar of Gozag.",
+      "turn": "59708",
       "type": "altar",
     },
     {
@@ -1359,6 +1637,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "4",
       "location": "Snake:4",
+      "note": "Noticed Vashnia",
+      "turn": "60004",
       "type": "unique-noticed",
     },
     {
@@ -1368,6 +1648,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "4",
       "location": "Snake:4",
+      "note": "Killed Vashnia",
+      "turn": "61083",
       "type": "unique-killed",
     },
     {
@@ -1380,6 +1662,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "1",
       "location": "Slime:1",
+      "note": "Gained mutation: Your body sometimes deteriorates upon taking damage. [a shining eye]",
+      "turn": "64930",
       "type": "mutation",
     },
     {
@@ -1392,6 +1676,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "2",
       "location": "Slime:2",
+      "note": "Gained mutation: Your muscles are strong. (Str +4, Int/Dex -1) [a shining eye]",
+      "turn": "66779",
       "type": "mutation",
     },
     {
@@ -1404,6 +1690,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "2",
       "location": "Slime:2",
+      "note": "Lost mutation: Your muscles are strong. (Str +4, Int/Dex -1) [a shining eye]",
+      "turn": "66782",
       "type": "mutation",
     },
     {
@@ -1416,6 +1704,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "2",
       "location": "Slime:2",
+      "note": "Gained mutation: You are clumsy. (Dex -2) [a shining eye]",
+      "turn": "66783",
       "type": "mutation",
     },
     {
@@ -1428,6 +1718,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "2",
       "location": "Slime:2",
+      "note": "Gained mutation: You have hidden genetic defects. [a shining eye]",
+      "turn": "66789",
       "type": "mutation",
     },
     {
@@ -1440,6 +1732,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "2",
       "location": "Slime:2",
+      "note": "Gained mutation: You occasionally lose the ability to read scrolls when taking damage. [a shining eye]",
+      "turn": "66790",
       "type": "mutation",
     },
     {
@@ -1452,6 +1746,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "2",
       "location": "Slime:2",
+      "note": "Gained mutation: Your spells are a little easier to cast, but a little less powerful. [a shining eye]",
+      "turn": "66802",
       "type": "mutation",
     },
     {
@@ -1462,6 +1758,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "2",
       "location": "Slime:2",
+      "note": "Reached skill level 15 in Armour",
+      "turn": "67442",
       "type": "skill-level",
     },
     {
@@ -1474,6 +1772,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "3",
       "location": "Slime:3",
+      "note": "Gained mutation: You occasionally lose the ability to drink potions when taking damage. [a shining eye]",
+      "turn": "68619",
       "type": "mutation",
     },
     {
@@ -1486,6 +1786,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "3",
       "location": "Slime:3",
+      "note": "Lost mutation: Your spells are a little easier to cast, but a little less powerful. [a shining eye]",
+      "turn": "68622",
       "type": "mutation",
     },
     {
@@ -1498,6 +1800,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "2",
       "location": "Slime:2",
+      "note": "Gained mutation: You are weak. (Str -2) [a shining eye]",
+      "turn": "68770",
       "type": "mutation",
     },
     {
@@ -1510,6 +1814,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "3",
       "location": "Slime:3",
+      "note": "Gained mutation: You sometimes lose the ability to read scrolls when taking damage. [a shining eye]",
+      "turn": "69360",
       "type": "mutation",
     },
     {
@@ -1521,6 +1827,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "4",
       "location": "Slime:4",
+      "note": "Bought a scroll of immolation for 72 gold pieces",
+      "turn": "70456",
       "type": "bought",
     },
     {
@@ -1532,6 +1840,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "4",
       "location": "Slime:4",
+      "note": "Bought 3 scrolls of fear for 216 gold pieces",
+      "turn": "70456",
       "type": "bought",
     },
     {
@@ -1543,6 +1853,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "4",
       "location": "Slime:4",
+      "note": "Bought the ring of Syveosotz {+Blink rF++ Will++ Str+6 Dex-2} for 850 gold pieces",
+      "turn": "70459",
       "type": "bought",
     },
     {
@@ -1553,6 +1865,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "5",
       "location": "Slime:5",
+      "note": "Reached skill level 15 in Evocations",
+      "turn": "70576",
       "type": "skill-level",
     },
     {
@@ -1564,6 +1878,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "5",
       "location": "Slime:5",
+      "note": "Reached XP level 19. HP: 131/182 MP: 4/18",
+      "turn": "70586",
       "type": "experience-level",
     },
     {
@@ -1576,6 +1892,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "5",
       "location": "Slime:5",
+      "note": "Gained mutation: You occasionally shout uncontrollably at your foes. [hidden defects]",
+      "turn": "70601",
       "type": "mutation",
     },
     {
@@ -1585,6 +1903,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "5",
       "location": "Slime:5",
+      "note": "Found a viscous altar of Jiyva.",
+      "turn": "71180",
       "type": "altar",
     },
     {
@@ -1594,6 +1914,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "5",
       "location": "Slime:5",
+      "note": "Found the +3 crown of Dyrovepreva {rElec Int+2 SInv}",
+      "turn": "71183",
       "type": "found",
     },
     {
@@ -1603,6 +1925,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "5",
       "location": "Slime:5",
+      "note": "Found the +3 crown of Dyrovepreva {rElec Int+2 SInv}",
+      "turn": "71183",
       "type": "item",
     },
     {
@@ -1612,6 +1936,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       },
       "level": "5",
       "location": "Slime:5",
+      "note": "Noticed the Royal Jelly",
+      "turn": "71535",
       "type": "unique-noticed",
     },
     {
@@ -1619,6 +1945,8 @@ exports[`https://cbro.berotato.org/morgue/TheSexyCheese/morgue-TheSexyCheese-202
       "data": "Slain by an azure jelly",
       "level": "4",
       "location": "Slime:4",
+      "note": "Slain by an azure jelly",
+      "turn": "72231",
       "type": "last-event",
     },
   ],

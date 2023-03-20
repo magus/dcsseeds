@@ -372,8 +372,7 @@ function getAllMorgueNoteEvents({ morgueNotes, stash }) {
 
     function addEvent(type, morgue_note, data) {
       const { turn, branch, level, note } = morgue_note;
-      // const event = new MorgueEvent({ type, turn, branch, level, note, data });
-      const event = new MorgueEvent({ type, branch, level, data });
+      const event = new MorgueEvent({ type, turn, branch, level, note, data });
       validate_event(event);
       events.push(event);
     }
