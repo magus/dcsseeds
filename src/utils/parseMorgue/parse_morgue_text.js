@@ -455,7 +455,10 @@ function post_process_events(event_list) {
           const is_close_turn = Math.abs(event.turn - other_event.turn) <= turn_threshold;
 
           if (!is_close_turn) {
-            return;
+            // console.debug('NOT CLOSE TURN', { event, other_event });
+            // must return a value here to exit!
+            // undefined will continue since we assume undefined means it was unhandled
+            return true;
           }
 
           if (is_close_turn && other_event.type === 'item') {
