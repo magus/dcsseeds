@@ -39,7 +39,9 @@ export function parse_note({ morgueNote, addEvent, events, stash }) {
   );
 
   // normal ident
-  const ident = morgueNote.note.match(/Identified (?:the |a |an )?(.*)/);
+  // https://regex101.com/r/1kZ1h2/1
+  const ident = morgueNote.note.match(/Identified (?:(?<article>the|a|an) )?(?<item>.*?)(?:(?: \((?<parens>.*)\))|$)/);
+
   // use randbook details to match generated book names
   // https://github.com/crawl/crawl/tree/master/crawl-ref/source/dat/database/randbook.txt
   // Examples
@@ -347,14 +349,16 @@ export function parse_note({ morgueNote, addEvent, events, stash }) {
     // const [, item] = identIgnore;
     // console.warn('ident-ignore', morgueNote, { item });
   } else if (ident) {
-    const [, item] = ident;
+    const { item, parens } = ident.groups;
 
     if (is_ashenzari_curse(item)) {
       return;
     }
 
-    addEvent('ident', morgueNote, { item });
-    addEvent('item', morgueNote, { item });
+    const data = { item, parens };
+
+    addEvent('ident', morgueNote, data);
+    addEvent('item', morgueNote, data);
   }
 }
 
