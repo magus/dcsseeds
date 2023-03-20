@@ -422,6 +422,16 @@ function getAllMorgueNoteEvents({ morgueNotes, stash }) {
   return { events, eventErrors };
 }
 
+function visit_obj_fields(obj, visit) {
+  for (const field of Object.keys(obj)) {
+    if (typeof obj[field] === 'object') {
+      visit_obj_fields(obj[field], visit);
+    } else {
+      visit(obj, field);
+    }
+  }
+}
+
 function post_process_events(event_list) {
   for (let i = 0; i < event_list.length; i++) {
     const event = event_list[i];
@@ -431,11 +441,11 @@ function post_process_events(event_list) {
     event.location = get_location(event.branch, event.level);
 
     // remove undefined fields
-    for (const field of Object.keys(event)) {
-      if (event[field] === undefined) {
-        delete event[field];
+    visit_obj_fields(event, (obj, field) => {
+      if (obj[field] === undefined) {
+        delete obj[field];
       }
-    }
+    });
 
     switch (true) {
       case event.type === 'god-gift': {

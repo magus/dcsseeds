@@ -96,7 +96,6 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
         "desc": "You can shoot a disintegration laser from your mouth.",
         "kind": "Gained",
         "source": "Robot growth",
-        "stat": undefined,
       },
       "level": "3",
       "location": "Dungeon:3",
