@@ -25,9 +25,9 @@ export function parse_note({ morgueNote, addEvent, events, stash }) {
   );
 
   // idents
-  const identPortal = morgueNote.note.match(/Identified (?:the |a |an )(.*) \(You found it in (?:the |a |an )?(.*)\)/);
+  const identPortal = morgueNote.note.match(/Identified (?:the |a |an )?(.*) \(You found it in (?:the |a |an )?(.*)\)/);
   const identWithLoc = morgueNote.note.match(
-    /Identified (?:the |a |an )(.*) \(You found it on level (\d{1,2}) of (?:the |a |an )?(.*)\)/,
+    /Identified (?:the |a |an )?(.*) \(You found it on level (\d{1,2}) of (?:the |a |an )?(.*)\)/,
   );
 
   // boughts
