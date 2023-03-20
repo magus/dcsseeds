@@ -1,0 +1,854 @@
+ Dungeon Crawl Stone Soup version 0.27.1-3-gb3d3a73c9e (webtiles) character file.
+
+Game seed: 4165034476934736449
+
+257178 Garym the Hoplite (level 19, -2/166 HPs)
+             Began as a Minotaur Fighter on Oct 22, 2021.
+             Was the Champion of Okawaru.
+             Slain by an azure jelly (3 damage)
+             ... created by the Royal Jelly
+             ... on level 4 of the Pits of Slime on Oct 25, 2021.
+             The game lasted 02:59:34 (39958 turns).
+
+Garym the Hoplite (Minotaur Fighter)               Turns: 39958, Time: 02:59:34
+
+Health: -2/166     AC: 19    Str: 31    XL:     19   Next: 9%
+Magic:  0/16       EV: 14    Int:  7    God:    Okawaru [******]
+Gold:   3280       SH: 21    Dex: 10    Spells: 18/18 levels left
+
+rFire    + + +     SeeInvis .   Y - +5 double sword of Moral Flaws {protect, rPois Will+ Str+3}
+rCold    + + .     Faith    .   c - +2 shield of Resistance {rF++ rC++ Will++}
+rNeg     + . .     Spirit   +   W - +14 plate armour "Zaogiska" {rCorr}
+rPois    +         Reflect  .   a - +2 hat of the Bear Spirit {Spirit, +Rage rN+ Will++}
+rElec    .         Harm     .   H - +2 cloak {Stlth+}
+rCorr    +         Rampage  +   y - +2 pair of gloves {Str+3}
+Will     +++++     Rnd*Rage +   s - +2 pair of boots {rampage}
+Stlth    ..........             u - amulet of regeneration
+HPRegen  1.37/turn              D - ring "Buatetsi" {rF+ Will+ rCorr}
+MPRegen  0.15/turn              v - +4 ring of evasion
+
+@: heroic, corroded, unable to read, on berserk cooldown
+A: horns 2, retaliatory headbutt, berserk 1, clever 1, clumsy 1, deformed body,
+frail 1, low mp 1, weak 1, inability to read while threatened
+}: 2/15 runes: barnacled, gossamer
+a: Renounce Religion, Evoke Berserk Rage, Heroism, Finesse
+
+
+You were on level 4 of the Pits of Slime.
+You worshipped Okawaru.
+Okawaru was exalted by your worship.
+You visited 7 branches of the dungeon, and saw 37 of its levels.
+You also visited: Sewer, Bailey and Ice Cave.
+
+You collected 4426 gold pieces.
+You spent 1146 gold pieces at shops.
+
+Inventory:
+
+Hand Weapons
+ Q - the +11 long sword of Honesty {vorpal, rElec rF+}
+   (You found it on level 2 of the Lair of Beasts)
+
+   It inflicts extra damage upon your enemies.
+
+   rF:        It protects you from fire.
+   rElec:     It insulates you from electricity.
+ Y - the +5 double sword of Moral Flaws (weapon) {protect, rPois Will+ Str+3}
+   (Okawaru gifted it to you on level 2 of the Orcish Mines)
+
+   It grants its wielder temporary protection when it strikes (+7 to AC).
+
+   Str:       It affects your strength (+3).
+   rPois:     It protects you from poison.
+   Will:      It increases your willpower.
+Missiles
+ o - 178 poisoned darts
+ x - 7 silver boomerangs (quivered)
+ F - 31 silver javelins
+Armour
+ a - the +2 hat of the Bear Spirit (worn) {Spirit, +Rage rN+ Will++}
+   (You acquired it on level 6 of the Dungeon)
+
+   rN:        It protects you from negative energy.
+   +Rage:     It lets you go berserk.
+   Will:      It greatly increases your willpower.
+ c - the +2 shield of Resistance (worn) {rF++ rC++ Will++}
+   (Okawaru gifted it to you on level 3 of the Pits of Slime)
+
+   rF:        It greatly protects you from fire.
+   rC:        It greatly protects you from cold.
+   Will:      It greatly increases your willpower.
+ q - a scarf of resistance
+ s - a +2 pair of boots of rampaging (worn)
+ y - a +2 pair of gloves of strength (worn)
+ H - a +2 cloak of stealth (worn)
+ R - the +10 plate armour of Tenacity {rN+}
+   (Okawaru gifted it to you on level 4 of the Spider Nest)
+
+   rN:        It protects you from negative energy.
+ W - the +14 plate armour "Zaogiska" (worn) {rCorr}
+   (You found it on level 3 of the Lair of Beasts)
+
+   rCorr:     It protects you from acid and corrosion.
+Jewellery
+ u - an amulet of regeneration (around neck)
+ v - a +4 ring of evasion (right hand)
+ D - the ring "Buatetsi" (left hand) {rF+ Will+ rCorr}
+   (You acquired it on level 6 of the Dungeon)
+
+   [ring of protection from fire]
+
+   rF:        It protects you from fire.
+   rCorr:     It protects you from acid and corrosion.
+   Will:      It increases your willpower.
+ J - an amulet of reflection
+ L - a ring of flight
+ N - the brooch of Shielding {Spirit SH+8}
+   (You found it on level 8 of the Dungeon)
+
+   [amulet of guardian spirit]
+
+   It causes incoming damage to be divided between your reserves of health and
+   magic.
+   SH:        It affects your SH (+8).
+Wands
+ h - a wand of polymorph (14)
+ j - a wand of flame (31)
+ k - a wand of iceblast (31)
+ p - a wand of paralysis (29)
+ G - a wand of mindburst (27)
+ I - a wand of acid (9)
+Scrolls
+ b - 10 scrolls of teleportation
+ e - a scroll of summoning
+ f - 2 scrolls of fog
+ n - 2 scrolls of holy word
+ t - 5 scrolls of fear
+ w - 3 scrolls of blinking
+ B - a scroll of enchant weapon
+ E - 5 scrolls of identify
+ O - 2 scrolls of brand weapon
+ V - a scroll of silence
+ X - 2 scrolls of magic mapping
+Potions
+ d - 7 potions of might
+ g - 3 potions of cancellation
+ l - 10 potions of heal wounds
+ m - 11 potions of ambrosia
+ r - 11 potions of curing
+ z - 4 potions of resistance
+ A - 3 potions of invisibility
+ C - 5 potions of haste
+ M - 5 potions of flight
+ S - a potion of berserk rage
+Miscellaneous
+ i - a lightning rod (4/4)
+ P - a box of beasts
+ T - a phantom mirror
+ Z - a piece from Xom's chessboard (15/15)
+
+
+   Skills:
+ + Level 20.2(25.2) Fighting
+ + Level 17.5(22.5) Long Blades
+ + Level 14.8(19.8) Throwing
+ + Level 17.6(22.6) Armour
+ + Level 21.8(26.8) Shields
+ + Level 9.8 Evocations
+
+
+You had 18 spell levels left.
+You didn't know any spells.
+Your spell library contained the following spells:
+
+ Spells                   Type           Power      Damage    Failure   Level
+ Animate Skeleton         Necr           0%         N/A       83%         1
+ Beastly Appendage        Tmut           0%         N/A       83%         1
+ Pain                     Necr           0%         1d4       83%         1
+ Sandblast                Erth           0%         2d4       83%         1
+ Summon Small Mammal      Summ           0%         N/A       83%         1
+ Passwall                 Tmut/Erth      0%         N/A       93%         2
+ Slow                     Hex            0%         N/A       93%         2
+ Wereblood                Tmut           0%         N/A       93%         2
+ Call Canine Familiar     Summ           0%         N/A       99%         3
+ Confusing Touch          Hex            0%         N/A       99%         3
+ Ignite Poison            Fire/Tmut/Pois 0%         N/A       99%         3
+ Mephitic Cloud           Conj/Pois/Air  0%         N/A       99%         3
+ Ozocubu's Armour         Ice            0%         N/A       99%         3
+ Portal Projectile        Hex/Tloc       0%         N/A       99%         3
+ Spider Form              Tmut/Pois      0%         N/A       99%         3
+ Stone Arrow              Conj/Erth      0%         3d7       99%         3
+ Summon Guardian Golem    Hex/Summ       0%         N/A       99%         3
+ Swiftness                Air            0%         N/A       99%         3
+ Vampiric Draining        Necr           0%         2d6       99%         3
+ Animate Armour           Summ/Erth      0%         N/A       100%        4
+ Cause Fear               Hex            0%         N/A       100%        4
+ Passage of Golubria      Tloc           N/A        N/A       100%        4
+ Petrify                  Tmut/Erth      0%         N/A       100%        4
+ Blade Hands              Tmut           0%         N/A       100%        5
+ Bolt of Magma            Conj/Fire/Erth 0%         4d4       100%        5
+ Excruciating Wounds      Necr           0%         N/A       100%        5
+ Lee's Rapid Deconstruct  Erth           0%         3d5*      100%        5
+ Metabolic Englaciation   Hex/Ice        0%         N/A       100%        5
+ Silence                  Hex/Air        0%         N/A       100%        5
+ Summon Forest            Summ/Tloc      0%         N/A       100%        5
+ Summon Mana Viper        Hex/Summ       0%         N/A       100%        5
+ Yara's Violent Unravell  Hex/Tmut       0%         3d3       100%        5
+ Invisibility             Hex            0%         N/A       100%        6
+ Shadow Creatures         Summ           N/A        N/A       100%        6
+ Statue Form              Tmut/Erth      0%         N/A       100%        6
+ Dragon Form              Tmut           0%         N/A       100%        7
+ Ozocubu's Refrigeration  Ice            0%         4d5       100%        7
+ Lehudib's Crystal Spear  Conj/Erth      0%         10d2      100%        8
+ Dragon's Call            Summ           0%         N/A       100%        9
+ Shatter                  Erth           0%         3d5*      100%        9
+
+
+Dungeon Overview and Level Annotations
+
+Branches:
+Dungeon (15/15)            Temple (1/1) D:5            Lair (6/6) D:9
+ Shoals (4/4) Lair:4       Spider (4/4) Lair:2        Slime (5/5) Lair:5
+    Orc (2/2) D:11            Elf (0/3) Orc:2        Vaults (0/5) D:13
+ Depths (0/5) D:15          Sewer (visited)          Bailey (visited)
+  IceCv (visited)
+
+Altars:
+Ashenzari
+Cheibriados
+Dithmenos
+Elyvilon
+Fedhas
+Gozag
+Hepliaklqana
+Kikubaaqudgha
+Makhleb
+Okawaru
+Qazlal
+Ru
+Trog
+Uskayaw
+Vehumet
+Wu Jian
+Xom
+Yredelemnul
+The Shining One
+Beogh
+Jiyva
+
+Shops:
+D:6 *   D:8 =   D:14 :([(   D:15 [   Orc:2 =[*[   Shoals:3 !
+
+Annotations:
+Slime:5 Royal Jelly
+
+
+Innate Abilities, Weirdness & Mutations
+
+You have a pair of horns on your head.
+You reflexively headbutt those who attack you in melee.
+You tend to lose your temper in combat.
+Your mind is acute. (Int +2)
+You are clumsy. (Dex -2)
+Armour fits poorly on your strangely shaped body.
+You are frail. (-10% HP)
+Your magical capacity is low. (-10% MP)
+You are weak. (Str -2)
+You sometimes lose the ability to read scrolls when taking damage.
+
+Message History
+
+You resist. The azure jelly barely misses you. x2
+You block the azure jelly's attack. You block the acid blob's attack.
+The acid blob spits acid at you.
+The splash of acid hits you but does no damage.
+The acid corrodes you! You are splashed with acid. You resist.
+The slime creature hits you but does no damage.
+You block the azure jelly's attack. x3; The azure jelly closely misses you.
+The acid blob spits acid at you.
+The splash of acid hits you. You resist.
+* * * LOW HITPOINT WARNING * * *
+You are splashed with acid. You resist.
+* * * LOW HITPOINT WARNING * * *
+The acid blob spits acid at you.
+The splash of acid misses you.
+The acid blob spits acid at you.
+The splash of acid hits you but does no damage.
+The acid corrodes you! You are splashed with acid! You resist.
+* * * LOW HITPOINT WARNING * * *
+The azure jelly completely misses you. The azure jelly hits you.
+* * * LOW HITPOINT WARNING * * *
+The azure jelly freezes you. You resist.
+* * * LOW HITPOINT WARNING * * *
+The azure jelly hits you but does no damage.
+You block the azure jelly's attack.
+The acid blob spits acid at you.
+You block the splash of acid.
+The acid blob spits acid at you.
+The splash of acid hits you but does no damage.
+You are splashed with acid. You resist.
+* * * LOW HITPOINT WARNING * * *
+There is a stone staircase leading up here.
+The acid blob hits you!!
+You feel threatened and lose the ability to read scrolls!
+* * * LOW HITPOINT WARNING * * *
+The acid corrodes you! You are splashed with acid. You resist.
+* * * LOW HITPOINT WARNING * * *
+You block the azure jelly's attack.
+The azure jelly hits you but does no damage.
+You block the azure jelly's attack. The azure jelly hits you.
+You die...
+
+     ##...###............##
+    ##....#..............#
+    #.................#.####
+   ###.#..^.......#..#..#..#
+  ##.##...#.........#.......
+  #...##................#..#
+  ##.#.#.......J......#.####
+ ##............J.........#
+##.^.........>JJ@.....#.##
+.#.....................######
+..........................#.##
+.........#...........#.......#
+#....<....####........#......#
+...........# #...............#
+..#...#.#.## #..............##
+.....######  ##...........###
+.##.##        #..#......###
+
+
+You could see 2 acid blobs, an azure jelly and a slime creature (corroded).
+
+Vanquished Creatures
+  Arachne (Spider:2)
+  Gastronok (D:11)
+  4 acid blobs
+  2 krakens
+  2 sphinxes (Shoals:4)
+  Kirke (D:11)
+  Frances (D:12)
+  2 azure jellies
+  3 rockslimes
+  2 orc warlords
+  3 ghost moths
+  5 emperor scorpions
+  2 very ugly things (IceCv)
+  4 quicksilver oozes
+  The ghost of contendunt the Nimble, a journeyman MiFi of Okawaru (Orc:1)
+  2 minotaurs (Shoals:4)
+  2 spark wasps (Spider:4)
+  A dire elephant (Lair:6)
+  Snorg (D:11)
+  2 merfolk javelineers
+  5 merfolk impalers
+  A fire dragon (D:14)
+  5 boulder beetles
+  2 great orbs of eyes (D:15)
+  Fannar (D:11)
+  3 caustic shrike simulacra (IceCv)
+  A rakshasa (D:15)
+  8 vault guards (D:13)
+  7 hydras
+  6 centaur warriors
+  An alligator snapping turtle (Shoals:2)
+  2 catoblepae
+  7 satyrs
+  3 merfolk avatars
+  4 two-headed ogres
+  Erica (Lair:1)
+  A deep troll shaman (Lair:6)
+  A death knight (D:13)
+  20 death yaks
+  8 orc high priests (Orc:2)
+  The ghost of Sirial the Grappler, a novice TrFi of Okawaru (D:7)
+  Urug (D:12)
+  Sonja (Lair:5)
+  6 skeletal warriors (D:13)
+  12 sea snakes
+  2 orange crystal statues (IceCv)
+  2 orc knights
+  21 harpies
+  16 orb spiders
+  2 orc sorcerers (Orc:2)
+  9 ugly things
+  2 deep elf pyromancers
+  17 wolf spiders
+  14 manticores
+  15 fauns
+  4 oklob plants (Lair:3)
+  3 shining eyes
+  8 cyclopes
+  A moth of wrath (Spider:4)
+  16 elephants
+  An ice statue (D:15)
+  11 merfolk sirens
+  3 water nymphs
+  19 cane toads
+  A torpor snail (Spider:3)
+  2 eyes of devastation
+  An unseen horror (D:11)
+  A gargoyle (D:10)
+  A torpor snail (shapeshifter) (D:15)
+  Psyche (D:11)
+  2 rime drakes
+  2 efreet
+  7 freezing wraiths
+  6 komodo dragons
+  9 demonic crawlers
+  An anaconda simulacrum (IceCv)
+  3 golden dragon simulacra (IceCv)
+  A queen bee (D:12)
+  9 wind drakes
+  38 jumping spiders
+  7 trolls
+  22 merfolk
+  3 meliai
+  4 polar bears
+  A jumping spider (shapeshifter) (D:14)
+  7 hornets
+  Grinder (D:3)
+  17 blink frogs
+  4 dream sheep (Shoals:2)
+  12 snapping turtles
+  65 slime creatures
+  23 tarantellas
+  56 redbacks
+  6 water elementals
+  3 wyverns
+  A wraith (D:13)
+  2 dire elephant simulacra (IceCv)
+  49 yaks
+  2 steam dragons (Lair:4)
+  5 golden eyes (Slime:1)
+  4 vampire mosquitoes
+  2 basilisks
+  4 hogs
+  8 wargs
+  2 harpy simulacra (IceCv)
+  3 acid dragons
+  A hydra simulacrum (IceCv)
+  19 water moccasins
+  A black bear (Lair:2)
+  33 orc warriors
+  A sky beast (D:7)
+  An ice beast (D:5)
+  A necrophage (D:7)
+  17 ogres
+  2 alligator simulacra (IceCv)
+  2 ettin simulacra (IceCv)
+  14 wolves
+  13 centaurs
+  14 kobold brigands
+  10 bullfrogs
+  2 scorpions
+  4 gnoll sergeants (D:11)
+  28 killer bees
+  A hornet simulacrum (D:14)
+  13 wights
+  3 howler monkeys
+  6 electric eels
+  A bullfrog zombie (D:5)
+  A centaur skeleton (D:4)
+  A centaur zombie (D:10)
+  4 hounds
+  3 jellies
+  39 orc priests
+  3 gnoll shamans
+  2 bullfrog skeletons
+  Terence (D:2)
+  23 orc wizards
+  3 howler monkey zombies
+  2 howler monkey skeletons
+  10 adders
+  24 gnolls
+  A river rat (Sewer)
+  A white imp (D:6)
+  A dart slug (D:4)
+  2 worms
+  122 orcs
+  5 endoplasms
+  2 giant cockroaches
+  8 goblins
+  4 hobgoblins
+  28 kobolds
+  5 quokkas
+  7 ball pythons
+  7 bats
+  13 rats
+  5 tentacles
+1228 creatures vanquished.
+
+Vanquished Creatures (others)
+  A jumping spider (Spider:3)
+  25 fungi
+  48 plants
+  21 tentacles
+95 creatures vanquished.
+
+Grand Total: 1323 creatures vanquished
+
+Notes
+Turn   | Place    | Note
+-------+----------+-------------------------------------------
+     0 | D:1      | Garym the Minotaur Fighter began the quest for the Orb.
+     0 | D:1      | Reached XP level 1. HP: 19/19 MP: 0/0
+   225 | D:1      | Found a faded altar of an unknown god.
+   238 | D:1      | Got Plato's Tome of Darkness
+   660 | D:1      | Reached XP level 2. HP: 27/27 MP: 1/1
+   883 | D:2      | Noticed Terence
+   894 | D:2      | Killed Terence
+   895 | D:2      | Reached skill level 4 in Shields
+   895 | D:2      | Reached XP level 3. HP: 33/33 MP: 2/2
+  2118 | D:3      | Reached XP level 4. HP: 35/41 MP: 3/3
+  2441 | D:3      | Noticed Grinder
+  2451 | D:3      | Killed Grinder
+  2452 | D:3      | Reached skill level 5 in Fighting
+  2452 | D:3      | Reached skill level 1 in Throwing
+  2452 | D:3      | Reached skill level 5 in Armour
+  2452 | D:3      | Reached skill level 5 in Shields
+  2452 | D:3      | Reached XP level 5. HP: 21/48 MP: 4/4
+  2452 | D:3      | Reached XP level 6. HP: 24/56 MP: 5/5
+  2964 | D:4      | Found a bloodstained altar of Trog.
+  4313 | D:5      | Entered Level 5 of the Dungeon
+  4365 | D:6      | Reached XP level 7. HP: 10/61 MP: 6/6
+  4425 | D:6      | Identified the +2 robe of Lucw {rCorr Str+4 Int+3}
+  4453 | D:5      | Reached skill level 5 in Long Blades
+  4487 | D:5      | Found a shadowy altar of Dithmenos.
+  4498 | D:5      | Found a staircase to the Ecumenical Temple.
+  4502 | Temple   | Entered the Ecumenical Temple
+  4559 | Temple   | Became a worshipper of Warmaster Okawaru
+  4592 | D:5      | Found a glowing drain.
+  4610 | Sewer    | Entered a sewer
+  5131 | D:5      | Reached skill level 6 in Shields
+  5166 | D:5      | Reached * piety under Okawaru
+  5292 | D:5      | Identified the +0 plate armour of Idealism {rC+ Dex+7}
+  5328 | D:5      | Reached XP level 8. HP: 71/71 MP: 7/7
+  5557 | D:5      | Identified the +5 hand axe of the New World {protect,
+                  | Stlth+}
+  5881 | D:6      | Found Okhi's Assorted Antiques.
+  5891 | D:6      | Bought a pair of runed gloves for 195 gold pieces
+  6119 | D:6      | Found a basalt altar of Yredelemnul.
+  6201 | D:6      | Reached ** piety under Okawaru
+  6408 | D:6      | Identified 4 scrolls of acquirement
+  6409 | D:6      | Acquired 765 gold pieces
+  6410 | D:6      | Acquired a manual of Shields
+  6417 | D:6      | Acquired the ring "Buatetsi" {rF+ Will+ rCorr}
+  6424 | D:6      | Acquired the +2 hat of the Bear Spirit {Spirit, +Rage rN+
+                  | Will++}
+  6424 | D:6      | Found the +2 hat of the Bear Spirit {Spirit, +Rage rN+
+                  | Will++}
+  6441 | D:7      | Reached skill level 7 in Shields
+  6756 | D:7      | Identified the +1 ring mail of Gozag's Generosity {rElec}
+  6787 | D:7      | Found a hide-covered altar of Uskayaw.
+  6913 | D:7      | Reached XP level 9. HP: 79/79 MP: 8/8
+  6999 | D:7      | Found a runed translucent gate.
+  7000 | D:7      | Found a runed translucent gate.
+  7001 | D:7      | Found a runed translucent gate.
+  7004 | D:7      | Noticed Sirial's ghost (novice TrFi)
+  7005 | D:7      | Found the +7 great mace "Firestarter" {inner flame, rF++}
+  7074 | D:7      | Reached skill level 8 in Shields
+  7194 | D:7      | Reached *** piety under Okawaru
+  7195 | D:7      | Reached skill level 5 in Throwing
+  7405 | D:8      | Noticed a troll
+  7421 | D:7      | Killed a troll
+  7506 | D:8      | Identified the +3 mace of Nonu {freeze, Str+7 Int-2}
+  7509 | D:8      | Noticed a red ugly thing
+  7518 | D:8      | Killed a red ugly thing
+  7519 | D:8      | Reached skill level 9 in Shields
+  7856 | D:8      | Found Biqoxal's Jewellery Shop.
+  7959 | D:8      | Received a gift from Okawaru
+  8261 | D:8      | Found an ancient bone altar of Kikubaaqudgha.
+  8261 | D:8      | Found a white marble altar of Elyvilon.
+  8355 | D:8      | Found the brooch of Shielding {Spirit SH+8}
+  8441 | D:9      | Found a broken altar of Ashenzari.
+  8476 | D:9      | Found a burning altar of Makhleb.
+  8658 | D:9      | Found a staircase to the Lair.
+  8692 | D:9      | Reached **** piety under Okawaru
+  8693 | D:9      | Reached XP level 10. HP: 86/90 MP: 9/9
+  8695 | D:9      | Reached skill level 10 in Shields
+  8992 | D:9      | Found an ornate altar of the Wu Jian Council.
+  9267 | D:9      | Identified the +1 helmet "Ileteluw" {Contam Dex+5}
+  9488 | D:10     | Entered Level 10 of the Dungeon
+  9523 | D:10     | Found a stormy altar of Qazlal.
+  9560 | D:10     | Found a flagged portal.
+  9582 | Bailey   | Entered a bailey
+  9877 | Bailey   | Reached skill level 11 in Shields
+  9883 | Bailey   | Received a gift from Okawaru
+ 10519 | D:10     | Noticed a gargoyle
+ 10519 | D:10     | Noticed a two-headed ogre
+ 10520 | D:10     | Noticed a two-headed ogre
+ 10530 | D:10     | Killed a two-headed ogre
+ 10530 | D:10     | Reached ***** piety under Okawaru
+ 10530 | D:10     | Received a gift from Okawaru
+ 10531 | D:10     | Reached skill level 10 in Fighting
+ 10533 | D:10     | Killed a two-headed ogre
+ 10533 | D:10     | Identified the +7 quarterstaff of Crusades {vorpal, rElec
+                  | rPois Dex+5 Stlth-} (Okawaru gifted it to you on level 10
+                  | of the Dungeon)
+ 10533 | D:10     | Received a gift from Okawaru
+ 10534 | D:10     | Reached XP level 11. HP: 89/101 MP: 8/10
+ 10538 | D:10     | Reached skill level 10 in Armour
+ 10538 | D:10     | Reached skill level 12 in Shields
+ 10627 | D:10     | Found an opulent altar of Gozag.
+ 10858 | D:11     | Noticed a red ugly thing
+ 10872 | D:10     | Killed a red ugly thing
+ 10928 | D:11     | Noticed a two-headed ogre
+ 10935 | D:11     | Killed a two-headed ogre
+ 10936 | D:11     | Reached skill level 10 in Long Blades
+ 10955 | D:11     | Noticed Psyche
+ 10963 | D:11     | Killed Psyche
+ 11002 | D:11     | Noticed Gastronok
+ 11002 | D:11     | Noticed a boulder beetle
+ 11092 | D:11     | Killed Gastronok
+ 11092 | D:11     | Received a gift from Okawaru
+ 11092 | D:11     | Received a gift from Okawaru
+ 11092 | D:11     | Reached ****** piety under Okawaru
+ 11093 | D:11     | Reached skill level 13 in Shields
+ 11111 | D:11     | Killed a boulder beetle
+ 11450 | D:11     | Found a staircase to the Orcish Mines.
+ 11501 | D:11     | Reached XP level 12. HP: 107/113 MP: 9/11
+ 11583 | D:11     | Noticed Snorg
+ 11592 | D:11     | Killed Snorg
+ 11665 | D:11     | Noticed Fannar
+ 11744 | D:11     | Killed Fannar
+ 12027 | D:12     | Noticed an eight-headed hydra
+ 12041 | D:11     | Killed a 13-headed hydra
+ 12042 | D:11     | Reached skill level 14 in Shields
+ 12256 | D:11     | Received a gift from Okawaru
+ 12655 | D:12     | Noticed a two-headed ogre
+ 12668 | D:12     | Killed a two-headed ogre
+ 12686 | D:12     | Received a gift from Okawaru
+ 12720 | D:12     | Noticed Frances
+ 12757 | D:12     | Killed Frances
+ 12758 | D:12     | Reached skill level 15 in Shields
+ 12933 | D:12     | Noticed Urug
+ 12950 | D:11     | Reached XP level 13. HP: 118/124 MP: 12/12
+ 12965 | D:12     | Killed Urug
+ 13053 | D:12     | Noticed Kirke
+ 13085 | D:11     | Killed Kirke
+ 13086 | D:11     | Reached skill level 10 in Throwing
+ 13956 | D:7      | Killed Sirial's ghost
+ 14254 | D:13     | Received a gift from Okawaru
+ 14330 | D:13     | Reached skill level 15 in Fighting
+ 14362 | D:13     | Reached skill level 16 in Shields
+ 14555 | D:13     | Found a gate to the Vaults.
+ 15039 | D:13     | Received a gift from Okawaru
+ 15522 | D:14     | Noticed a fire dragon
+ 15549 | D:14     | Reached XP level 14. HP: 131/137 MP: 11/13
+ 15765 | D:14     | Reached skill level 17 in Shields
+ 16098 | D:14     | Found Fousch Noll's Antique Armour Shop.
+ 16098 | D:14     | Found Cuasiesung's Weapon Shop.
+ 16101 | D:14     | Found Nedud's Book Shop.
+ 16104 | D:14     | Found Riyluabb's Antique Weapon Shop.
+ 16663 | Lair:1   | Entered Level 1 of the Lair of Beasts
+ 16855 | Lair:1   | Found a broken altar of Ashenzari.
+ 17009 | Lair:1   | Noticed Erica
+ 17022 | Lair:1   | Killed Erica
+ 18014 | Lair:2   | Reached skill level 1 in Evocations
+ 18043 | Lair:2   | Found a hole to the Spider Nest.
+ 18309 | Lair:2   | Identified the +11 long sword of Honesty {vorpal, rElec
+                  | rF+}
+ 18665 | Lair:3   | Received a gift from Okawaru
+ 19437 | Lair:3   | Identified the +14 plate armour "Zaogiska" {rCorr}
+ 19838 | Lair:4   | Received a gift from Okawaru
+ 19910 | Lair:4   | Identified the +2 flail "Deode" {vorpal, Int+3}
+ 20003 | Lair:4   | Reached skill level 18 in Shields
+ 20192 | Lair:4   | Identified the +3 leather armour of the Unstoppable Orbs
+                  | {rC- Regen+ SInv}
+ 20335 | Lair:4   | Found a staircase to the Shoals.
+ 20624 | Lair:4   | Reached XP level 15. HP: 147/147 MP: 14/14
+ 21130 | Lair:5   | Noticed Sonja
+ 21136 | Lair:5   | Killed Sonja
+ 21686 | Lair:5   | Found a viscous altar of Jiyva.
+ 21686 | Lair:5   | Found a staircase to the Slime Pits.
+ 21830 | Lair:6   | Entered Level 6 of the Lair of Beasts
+ 22217 | Lair:6   | Received a gift from Okawaru
+ 22264 | Lair:6   | Received a gift from Okawaru
+ 22303 | Lair:6   | Identified the +1 robe of the Hills {rElec Regen+ Int+3}
+ 22536 | Lair:6   | Reached skill level 19 in Shields
+ 23468 | Orc:1    | Entered Level 1 of the Orcish Mines
+ 23479 | Orc:1    | Reached skill level 5 in Evocations
+ 23839 | Orc:1    | Found a runed translucent gate.
+ 23839 | Orc:1    | Noticed an orc warlord
+ 23839 | Orc:1    | Noticed contendunt's ghost (journeyman MiFi)
+ 23857 | Orc:1    | Found a runed translucent gate.
+ 23857 | Orc:1    | Found a runed translucent gate.
+ 23993 | Orc:1    | Killed an orc warlord
+ 24027 | Orc:1    | Killed contendunt's ghost
+ 24028 | Orc:1    | Reached skill level 15 in Armour
+ 24095 | Orc:2    | Entered Level 2 of the Orcish Mines
+ 24113 | Orc:2    | Noticed an orc warlord
+ 24135 | Orc:2    | Killed an orc warlord
+ 24732 | Orc:2    | Found Motepin's Assorted Antiques.
+ 24751 | Orc:2    | Bought a scroll of identify for 74 gold pieces
+ 24752 | Orc:2    | Bought a glowing cloak for 277 gold pieces
+ 24768 | Orc:2    | Found Hofuxkep's Armour Shoppe.
+ 24772 | Orc:2    | Reached skill level 15 in Long Blades
+ 24862 | Orc:2    | Found Jeahesou's Antique Armour Shoppe.
+ 24862 | Orc:2    | Found Qeaciung's Jewellery Shop.
+ 24869 | Orc:2    | Bought a glowing cloak for 240 gold pieces
+ 24937 | Orc:2    | Identified the +5 double sword of Moral Flaws {protect,
+                  | rPois Will+ Str+3} (Okawaru gifted it to you on level 2 of
+                  | the Orcish Mines)
+ 24937 | Orc:2    | Received a gift from Okawaru
+ 24938 | Orc:2    | Reached XP level 16. HP: 147/156 MP: 13/15
+ 24987 | Orc:2    | Found a staircase to the Elven Halls.
+ 25621 | D:15     | Entered Level 15 of the Dungeon
+ 25651 | D:15     | Found Sienyul's Antique Armour Boutique.
+ 25718 | D:15     | Found a frozen archway.
+ 25790 | IceCv    | Entered an ice cave
+ 25898 | IceCv    | Received a gift from Okawaru
+ 25977 | IceCv    | Identified the +6 war axe "Ipaopn" {holy, Will+ Str-3
+                  | Dex+2}
+ 26337 | D:15     | Received a gift from Okawaru
+ 26500 | D:15     | Reached skill level 20 in Shields
+ 26610 | D:15     | Found a staircase to the Depths.
+ 26974 | Spider:1 | Entered Level 1 of the Spider Nest
+ 28812 | Spider:2 | Noticed Arachne
+ 28831 | Spider:2 | Killed Arachne
+ 30088 | Spider:3 | Identified the +6 long sword of Veum {venom, rC- Int+5}
+                  | (Okawaru gifted it to you on level 3 of the Spider Nest)
+ 30088 | Spider:3 | Received a gift from Okawaru
+ 30406 | Spider:3 | Reached XP level 17. HP: 166/166 MP: 16/16
+ 31393 | Spider:4 | Entered Level 4 of the Spider Nest
+ 31697 | Spider:4 | Identified the +10 plate armour of Tenacity {rN+} (Okawaru
+                  | gifted it to you on level 4 of the Spider Nest)
+ 31697 | Spider:4 | Received a gift from Okawaru
+ 32221 | Spider:4 | Reached skill level 21 in Shields
+ 32531 | Spider:4 | Got a gossamer rune of Zot
+ 32885 | Shoals:1 | Entered Level 1 of the Shoals
+ 33315 | Shoals:1 | Received a gift from Okawaru
+ 33634 | Shoals:1 | Found a burning altar of Makhleb.
+ 33639 | Shoals:1 | Noticed a kraken
+ 33736 | Shoals:1 | Killed a kraken
+ 33897 | Shoals:2 | Received a gift from Okawaru
+ 34276 | Shoals:2 | Received a gift from Okawaru
+ 34734 | Shoals:2 | Reached XP level 18. HP: 176/176 MP: 17/17
+ 35606 | Shoals:3 | Found Icok's Distillery.
+ 35619 | Shoals:3 | Bought a potion of haste for 180 gold pieces
+ 35619 | Shoals:3 | Bought a potion of resistance for 180 gold pieces
+ 36338 | Shoals:4 | Entered Level 4 of the Shoals
+ 36540 | Shoals:4 | Identified the +1 dire flail "Jellybane" {venom, rCorr
+                  | Dex+3} (Okawaru gifted it to you on level 4 of the Shoals)
+ 36540 | Shoals:4 | Received a gift from Okawaru
+ 37204 | Shoals:4 | Got a barnacled rune of Zot
+ 37294 | Shoals:4 | Received a gift from Okawaru
+ 37335 | Shoals:4 | Identified the +5 great sword of Annihilation {elec, *Rage
+                  | rF+ SInv Stlth+}
+ 37778 | Slime:1  | Entered Level 1 of the Pits of Slime
+ 38588 | Slime:2  | Gained mutation: You sometimes lose the ability to read
+                  | scrolls when taking damage. [a shining eye]
+ 38589 | Slime:2  | Gained mutation: You are frail. (-10% HP) [a shining eye]
+ 38597 | Slime:2  | Gained mutation: You are clumsy. (Dex -2) [a shining eye]
+ 38600 | Slime:2  | Gained mutation: Your mind is acute. (Int +2) [a shining
+                  | eye]
+ 38602 | Slime:2  | Gained mutation: Your magical capacity is low. (-10% MP) [a
+                  | shining eye]
+ 39209 | Slime:3  | Gained mutation: Armour fits poorly on your strangely
+                  | shaped body. [a shining eye]
+ 39297 | Slime:3  | Gained mutation: You are weak. (Str -2) [a shining eye]
+ 39298 | Slime:3  | Gained mutation: You tend to lose your temper in combat. [a
+                  | shining eye]
+ 39531 | Slime:3  | Received a gift from Okawaru
+ 39532 | Slime:3  | Found the +2 shield of Resistance {rF++ rC++ Will++}
+ 39802 | Slime:5  | Entered Level 5 of the Pits of Slime
+ 39830 | Slime:4  | Reached XP level 19. HP: 146/166 MP: 13/16
+ 39884 | Slime:5  | Noticed the Royal Jelly
+ 39958 | Slime:4  | HP: 4/166 [acid blob (20)]
+ 39958 | Slime:4  | HP: 1/166 [acid (3)]
+ 39958 | Slime:4  | Slain by an azure jelly
+
+Illustrated notes
+
+Levels and vault maps discovered:
+D:1:      dpeg_arrival_three_bigger_balls, layout_basic,
+          shapermc_ecumenical_altar_rom_forum, minmay_misc_feat_columns,
+          minmay_pentomino_p2
+D:2:      layout_basic, uniq_terence
+D:3:      layout_rooms, minmay_statues_item, lemuel_old_faithful, uniq_grinder
+D:4:      layout_loops_corners, mainiacjoe_overflow_brackets, abandoned_shop
+D:5:      layout_cave_pools, kennysheep_mini, minmay_temple_entry_glassed_door,
+          serial_glass, glass_columns_b, glass_columns_c, portal_sewer_entry_a,
+          minivault_24
+D:6:      layout_rooms, lemuel_crystal_altar, serial_shops,
+          nicolae_diamond_shop, due_unseen_surprise
+D:7:      layout_gridville, nicolae_uskayaw_murder_on_the_dancefloor,
+          gammafunk_ghost_nasty_kobolds
+D:8:      layout_basic, jmf_multi_god_temple, serial_shops, shop,
+          small_chamber_with_monster
+D:9:      layout_gridville, mainiacjoe_overflow_small_starburst,
+          mainiacjoe_overflow_catwalk, mainiacjoe_overflow_alcove_2,
+          dpeg_oklobed_lair, kennysheep_generic_room_16
+D:10:     layout_cross, grunt_gozag_breadcrumbs, mainiacjoe_overflow_boulevard,
+          enter_bailey_3, minmay_misc_feat_cross, minmay_chambers_of_fives
+D:11:     layout_small_grid, kennysheep_orc_monster_closet_entryway,
+          uniq_psyche, uniq_snorg, uniq_fannar, uniq_gastronok
+D:12:     layout_cave_pools, special_room [special_room_bee], uniq_urug,
+          uniq_kirke, uniq_frances
+D:13:     layout_irregular_city, erik_vaults_2
+D:14:     layout_layer_cave, minmay_door_square, minmay_shop_grid_forest,
+          fungi_pond_lemuel
+D:15:     gammafunk_enter_depths_forms, layout_rooms, serial_shops, shop,
+          minmay_misc_feat_ornament, portal_ice_cave_entry_ice_statue_one
+Temple:   jpeg_temple_clearing
+Lair:1:   layout_small_grid, serial_bayou, serial_bayou_pond_a,
+          serial_bayou_ford_a, serial_bayou_lake_a, serial_bayou_pond_e,
+          basic_altar, special_room, minmay_stone_trees_medium,
+          serial_bayou_shore_a, uniq_erica
+Lair:2:   layout_gridlike, dummy_spider_entry, chequers_serial_rivers_room_a,
+          grunt_megastairs_2, lemuel_fruit_tree
+Lair:3:   layout_regular_city, beast_lair_carwin_9, lemuel_fruit_fields,
+          minmay_lair_oklob_chamber
+Lair:4:   layout_small_grid, minmay_shoals_entry_beasts
+Lair:5:   layout_regular_city, dpeg_slime_entry_enclosed_altar, uniq_sonja
+Lair:6:   grunt_lair_end_beastmaster, layout_regular_city
+Shoals:1: layout_shoals, wheals_shoals_ruined_temple
+Shoals:2: cheibrodos_shoals_oceanic_diplomacy, layout_shoals
+Shoals:3: layout_shoals, serial_shops, shop
+Shoals:4: shoals_end_hellmonk_lost_city
+Spider:1: layout_chambers, hangedman_spider_tarantella_strand
+Spider:2: layout_chambers, uniq_arachne
+Spider:3: layout_chambers
+Spider:4: spider_rune_water, drop_trap
+Slime:1:  layout_caves
+Slime:2:  layout_caves, nicolae_slime_barrier,
+          cheibrodos_slime_lost_civilization_6
+Slime:3:  layout_caves
+Slime:4:  layout_caves
+Slime:5
+Orc:1:    layout_diamond_mine, gammafunk_ghost_split
+Orc:2:    st_orc_town, layout_diamond_mine, minmay_orc_keep
+
+Skill      XL: |  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 |
+---------------+-------------------------------------------------------+-----
+Fighting       |     4     5        6  7  8 10 12 14 16 17 18    19 20 | 20.2
+Long Blades    |     3     4        5  6  8  9 10 12 13 14 15    16 17 | 17.5
+Armour         |     4     5        6  7  8  9 11 12 13 14 15 16    17 | 17.6
+Shields        |     4     5        6  7  9 11 13 15 16 18 19 20 21    | 21.8
+Throwing       |           1     2  3  4  6  7  8  9 10 11 12 13 14    | 14.8
+Evocations     |                                         3  5  7  8  9 |  9.8
+
+Action                   |  1- 3 |  4- 6 |  7- 9 | 10-12 | 13-15 | 16-18 | 19-21 || total
+-------------------------+-------+-------+-------+-------+-------+-------+-------++-------
+Melee: Long sword        |    68 |    83 |    43 |       |   791 |    48 |       ||  1033
+       Headbutt          |     8 |    17 |    75 |   102 |   367 |   521 |    15 ||  1105
+       Unarmed           |     9 |       |       |       |       |       |       ||     9
+       Falchion          |       |       |   306 |   408 |   445 |       |       ||  1159
+       Double sword      |       |       |       |       |       |  1506 |    21 ||  1527
+Throw: Boomerang         |     2 |    10 |    65 |   262 |     5 |   191 |     7 ||   542
+       Javelin           |       |       |     4 |     9 |    11 |       |       ||    24
+       Dart              |       |       |       |    31 |    99 |       |       ||   130
+Invok: Heroism           |       |       |     1 |     2 |     6 |     2 |     1 ||    12
+Evoke: Wand              |       |       |       |     1 |     4 |       |       ||     5
+  Use: Scroll            |       |     2 |    11 |    12 |    16 |     7 |       ||    48
+       Potion            |       |       |     1 |       |     1 |       |     1 ||     3
+ Stab: Petrified         |       |       |       |       |     1 |       |       ||     1
+Armor: Scale mail        |    36 |    14 |       |       |       |       |       ||    50
+       Chain mail        |       |    39 |    85 |       |       |       |       ||   124
+       Plate armour      |       |       |    79 |   213 |   447 |   927 |    37 ||  1703
+Dodge: Dodged            |    33 |    49 |   125 |   173 |   320 |   448 |    24 ||  1172
+Block: Kite shield       |    35 |    53 |   215 |   330 |   768 |  1335 |    39 ||  2775
+Rpst.: Long sword        |     6 |    13 |     4 |       |    61 |     3 |       ||    87
+       Falchion          |       |       |    20 |    39 |    15 |       |       ||    74
+       Double sword      |       |       |       |       |       |    95 |     4 ||    99

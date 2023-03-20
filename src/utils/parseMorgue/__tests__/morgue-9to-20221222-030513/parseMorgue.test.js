@@ -21,7 +21,6 @@ import { test_parseMorgue } from '../test_parseMorgue';
 //                   | {spect, Elem, Cun} (You found it on level 3 of the Dungeon)
 const morgue_url = 'http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt';
 
-// TODO fix parseMorgue to skip items with ashenzari curses parsed from god-abil.cc
 test(morgue_url, async () => {
   const result = await test_parseMorgue(morgue_url);
   expect(result).toMatchSnapshot();

@@ -4,7 +4,7 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
 {
   "background": "Fighter",
   "datetime": 2022-08-10T03:44:03.000Z,
-  "eventCount": 424,
+  "eventCount": 422,
   "eventErrors": [],
   "events": [
     {
@@ -2932,17 +2932,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
     {
       "branch": "Snake",
       "data": {
-        "item": "+7 Kryia's mail coat {PotionHeal*2 rC+}",
-      },
-      "level": "4",
-      "location": "Snake:4",
-      "note": "Found the +7 Kryia's mail coat {PotionHeal*2 rC+}",
-      "turn": "35867",
-      "type": "item",
-    },
-    {
-      "branch": "Snake",
-      "data": {
         "item": "+7 fustibalus "Fisov" {speed, Int+4}",
       },
       "level": "4",
@@ -3721,17 +3710,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "note": "Identified the +9 plate armour of the Clam {rPois Regen+}",
       "turn": "52074",
       "type": "ident",
-    },
-    {
-      "branch": "Elf",
-      "data": {
-        "item": "+9 plate armour of the Clam {rPois Regen+}",
-      },
-      "level": "3",
-      "location": "Elf:3",
-      "note": "Identified the +9 plate armour of the Clam {rPois Regen+}",
-      "turn": "52074",
-      "type": "item",
     },
     {
       "branch": "Elf",

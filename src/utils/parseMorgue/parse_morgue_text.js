@@ -2,7 +2,7 @@ import { uniqBy } from 'lodash';
 
 import keyMirror from 'src/utils/keyMirror';
 import { toNumber } from 'src/utils/toNumber';
-import { find_list_backwards } from 'src/utils/find_list_backwards';
+import { find_list_backwards, iterate_backward, iterate_forward } from 'src/utils/find_list_backwards';
 import { runRegex } from 'src/utils/runRegex';
 import Backgrounds from 'src/utils/Backgrounds';
 import Species from 'src/utils/Species';
@@ -425,8 +425,6 @@ function getAllMorgueNoteEvents({ morgueNotes, stash }) {
 function post_process_events(event_list) {
   for (let i = 0; i < event_list.length; i++) {
     const event = event_list[i];
-    // const prev_event = event_list[i - 1];
-    // const next_event = event_list[i + 1];
 
     // write location to even backwards compatability
     // we should remove if we update the database schema since branch/level is sufficient
@@ -440,6 +438,29 @@ function post_process_events(event_list) {
     }
 
     switch (true) {
+      case event.type === 'god-gift': {
+        const turn_threshold = 1;
+
+        const delete_nearby_item_event = (other_event, i) => {
+          const is_close_turn = Math.abs(event.turn - other_event.turn) <= turn_threshold;
+
+          if (!is_close_turn) {
+            return;
+          }
+
+          if (is_close_turn && other_event.type === 'item') {
+            // console.debug('DELETING ITEM EVENT NEAR GOD GIFT EVENT', { other_event, event });
+            event_list.splice(i, 1);
+            return i;
+          }
+        };
+
+        iterate_backward(event_list, i, delete_nearby_item_event);
+        iterate_forward(event_list, i, delete_nearby_item_event);
+
+        break;
+      }
+
       default:
       // noop
     }
