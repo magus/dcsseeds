@@ -100,61 +100,61 @@ export function parse_note({ morgueNote, addEvent, events, stash }) {
     // Parse uniques encountered and defeated (if defeated or avoided if not)
     const [, who] = noticed;
     if (Uniques.Lookup[who]) {
-      addEvent('unique-noticed', morgueNote.loc, { who });
+      addEvent('unique-noticed', morgueNote, { who });
     }
   } else if (killed) {
     const [, who] = killed;
     if (Uniques.Lookup[who]) {
-      addEvent('unique-killed', morgueNote.loc, { who });
+      addEvent('unique-killed', morgueNote, { who });
     }
   } else if (joinGod) {
     const god = Gods.parse_god(joinGod.groups.god);
-    addEvent('join-god', morgueNote.loc, { god });
+    addEvent('join-god', morgueNote, { god });
   } else if (leaveGod) {
     const god = Gods.parse_god(leaveGod.groups.god);
-    addEvent('leave-god', morgueNote.loc, { god });
+    addEvent('leave-god', morgueNote, { god });
   } else if (pietyLevel) {
-    addEvent('piety-god', morgueNote.loc, { ...pietyLevel.groups });
+    addEvent('piety-god', morgueNote, { ...pietyLevel.groups });
   } else if (god_gift) {
     const { god } = god_gift.groups;
-    addEvent('god-gift', morgueNote.loc, { god });
+    addEvent('god-gift', morgueNote, { god });
   } else if (identGift) {
     const { item } = identGift.groups;
     const god = Gods.parse_god(identGift.groups.god);
-    addEvent('god-gift', morgueNote.loc, { item, god });
+    addEvent('god-gift', morgueNote, { item, god });
   } else if (spellGift) {
-    addEvent('god-gift', morgueNote.loc, { ...spellGift.groups });
+    addEvent('god-gift', morgueNote, { ...spellGift.groups });
   } else if (experienceLevel) {
     const [, level, hp, mp] = experienceLevel;
-    addEvent('experience-level', morgueNote.loc, { level, hp, mp });
+    addEvent('experience-level', morgueNote, { level, hp, mp });
   } else if (skillLevel) {
-    addEvent('skill-level', morgueNote.loc, { ...skillLevel.groups });
+    addEvent('skill-level', morgueNote, { ...skillLevel.groups });
   } else if (manual) {
-    addEvent('manual', morgueNote.loc, { ...manual.groups });
+    addEvent('manual', morgueNote, { ...manual.groups });
   } else if (mutation) {
-    addEvent('mutation', morgueNote.loc, { ...mutation.groups });
+    addEvent('mutation', morgueNote, { ...mutation.groups });
   } else if (gateway) {
     const branch = Branch.getBranch(gateway.groups.branch);
-    addEvent('portal', morgueNote.loc, { branch });
+    addEvent('portal', morgueNote, { branch });
   } else if (playerNotes) {
     const [, note] = playerNotes;
-    addEvent('player-note', morgueNote.loc, { note });
+    addEvent('player-note', morgueNote, { note });
   } else if (pietyTrove) {
     const kind = 'piety';
-    addEvent('trove', morgueNote.loc, { kind });
+    addEvent('trove', morgueNote, { kind });
   } else if (trove) {
     const [, item] = trove;
     const kind = 'item';
-    addEvent('trove', morgueNote.loc, { kind, item });
+    addEvent('trove', morgueNote, { kind, item });
   } else if (spells) {
     // Parse out the spells into individual parseMorgue entries
     // https://regexr.com/5p55t
     const [, spellList] = spells;
     const [, commaSpells, lastSpell] = spellList.match(/(?:(.*) and )?(.*?)$/);
     commaSpells.split(', ').forEach((spell) => {
-      addEvent('spell', morgueNote.loc, { spell });
+      addEvent('spell', morgueNote, { spell });
     });
-    addEvent('spell', morgueNote.loc, { spell: lastSpell });
+    addEvent('spell', morgueNote, { spell: lastSpell });
   } else if (weildingWearing) {
     // What https://regexr.com/5e13q
     // Who  https://regexr.com/5e14f
@@ -175,8 +175,8 @@ export function parse_note({ morgueNote, addEvent, events, stash }) {
       let match = reWieldingWearing.exec(morgueNote.note);
       while (match) {
         const [, , item] = match;
-        addEvent('wearing-who', morgueNote.loc, { who, item });
-        addEvent('item', morgueNote.loc, { item });
+        addEvent('wearing-who', morgueNote, { who, item });
+        addEvent('item', morgueNote, { item });
 
         // next match
         match = reWieldingWearing.exec(morgueNote.note);
@@ -198,21 +198,21 @@ export function parse_note({ morgueNote, addEvent, events, stash }) {
     const is_valid_shop = Boolean(shop_event);
 
     // always log bought items
-    addEvent('bought', morgueNote.loc, { item, gold, is_valid_shop });
+    addEvent('bought', morgueNote, { item, gold, is_valid_shop });
 
     // log item event if artefact and valid shop purchase
     const is_artefact = /{[^{^}]*?}/.test(item);
     if (is_valid_shop && is_artefact) {
-      addEvent('item', morgueNote.loc, { item, gold });
+      addEvent('item', morgueNote, { item, gold });
     }
   } else if (acquirement) {
     const [, item] = acquirement;
-    addEvent('acquirement', morgueNote.loc, { item });
+    addEvent('acquirement', morgueNote, { item });
   } else if (found_shop) {
     const [, name] = found_shop;
 
     // always log the shop event
-    addEvent('shop', morgueNote.loc, { name });
+    addEvent('shop', morgueNote, { name });
 
     // find matching shop in stash and parse out artefacts
     // this does not include gozag shops which is nice because they are random
@@ -232,25 +232,17 @@ export function parse_note({ morgueNote, addEvent, events, stash }) {
           if (shop_item.type === 'artefact') {
             // console.debug('FOUND ARTEFACT IN SHOP', { shop_item });
 
-            let location;
-
-            if (shop_item.location.level) {
-              location = `${shop_item.location.branch}:${shop_item.location.level}`;
-            } else {
-              location = shop_item.location.branch;
-            }
-
             const item = shop_item.name;
             const gold = shop_item.gold;
 
-            addEvent('item', location, { item, gold });
+            addEvent('item', morgueNote, { item, gold });
           }
         }
       }
     }
   } else if (found_altar) {
     const god = Gods.parse_god(found_altar.groups.god);
-    addEvent('altar', morgueNote.loc, { god });
+    addEvent('altar', morgueNote, { god });
   } else if (found) {
     const [, item] = found;
 
@@ -271,7 +263,7 @@ export function parse_note({ morgueNote, addEvent, events, stash }) {
       } else {
         const { gold } = last_event.data;
         // console.debug('FOUND PREVIOUS BOUGHT', { morgueNote, last_event });
-        addEvent('item', morgueNote.loc, { item, gold });
+        addEvent('item', morgueNote, { item, gold });
       }
 
       return;
@@ -295,49 +287,65 @@ export function parse_note({ morgueNote, addEvent, events, stash }) {
       return;
     }
 
-    addEvent('found', morgueNote.loc, { item });
-    addEvent('item', morgueNote.loc, { item });
+    addEvent('found', morgueNote, { item });
+    addEvent('item', morgueNote, { item });
   } else if (identPortal) {
     const [, item, loc] = identPortal;
-
     if (is_ashenzari_curse(item)) {
       return;
     }
 
-    addEvent('ident-portal', loc, { item });
-    addEvent('item', loc, { item });
+    // clone morgue note and update location for accurate item log
+    const modified_morgueNote = { ...morgueNote };
+    modified_morgueNote.branch = Branch.getBranch(loc);
+    delete modified_morgueNote.level;
+
+    addEvent('ident-portal', modified_morgueNote, { item });
+    addEvent('item', modified_morgueNote, { item });
   } else if (identWithLoc) {
     const [, item, level, loc] = identWithLoc;
-
     if (is_ashenzari_curse(item)) {
       return;
     }
 
-    addEvent('ident-loc', `${loc}:${level}`, { item });
-    addEvent('item', `${loc}:${level}`, { item });
+    // clone morgue note and update location for accurate item log
+    const modified_morgueNote = { ...morgueNote };
+    modified_morgueNote.branch = Branch.getBranch(loc);
+    modified_morgueNote.level = level;
+
+    addEvent('ident-loc', modified_morgueNote, { item });
+    addEvent('item', modified_morgueNote, { item });
   } else if (identBoughtPortal) {
     const [, item, loc] = identBoughtPortal;
-
     if (is_ashenzari_curse(item)) {
       return;
     }
 
+    // clone morgue note and update location for accurate item log
+    const modified_morgueNote = { ...morgueNote };
+    modified_morgueNote.branch = Branch.getBranch(loc);
+    delete modified_morgueNote.level;
+
     const gold = find_previous_bought_price(events, item);
-    addEvent('ident-bought-portal', loc, { item, gold });
-    addEvent('item', loc, { item, gold });
+    addEvent('ident-bought-portal', modified_morgueNote, { item, gold });
+    addEvent('item', modified_morgueNote, { item, gold });
   } else if (identBoughtWithLoc) {
     const [, item, level, loc] = identBoughtWithLoc;
-
     if (is_ashenzari_curse(item)) {
       return;
     }
 
+    // clone morgue note and update location for accurate item log
+    const modified_morgueNote = { ...morgueNote };
+    modified_morgueNote.branch = Branch.getBranch(loc);
+    modified_morgueNote.level = level;
+
     const gold = find_previous_bought_price(events, item);
-    addEvent('ident-bought-loc', `${loc}:${level}`, { item, gold });
-    addEvent('item', `${loc}:${level}`, { item, gold });
+    addEvent('ident-bought-loc', modified_morgueNote, { item, gold });
+    addEvent('item', modified_morgueNote, { item, gold });
   } else if (identIgnore) {
     // const [, item] = identIgnore;
-    // console.warn('ident-ignore', morgueNote.loc, { item });
+    // console.warn('ident-ignore', morgueNote, { item });
   } else if (ident) {
     const [, item] = ident;
 
@@ -345,8 +353,8 @@ export function parse_note({ morgueNote, addEvent, events, stash }) {
       return;
     }
 
-    addEvent('ident', morgueNote.loc, { item });
-    addEvent('item', morgueNote.loc, { item });
+    addEvent('ident', morgueNote, { item });
+    addEvent('item', morgueNote, { item });
   }
 }
 

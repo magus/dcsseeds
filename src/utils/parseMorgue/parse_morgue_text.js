@@ -356,11 +356,11 @@ function getAllMorgueNoteEvents({ morgueNotes, stash }) {
 
       // first note
       if (note_index === 0) {
-        addEvent('first-event', morgueNote.loc, morgueNote.note);
+        addEvent('first-event', morgueNote, morgueNote.note);
       }
       // last note
       if (note_index === morgueNotes.length - 1) {
-        addEvent('last-event', morgueNote.loc, morgueNote.note);
+        addEvent('last-event', morgueNote, morgueNote.note);
       }
     } catch (error) {
       if (process.env.NODE_ENV !== 'production') {
@@ -370,8 +370,10 @@ function getAllMorgueNoteEvents({ morgueNotes, stash }) {
       eventErrors.push({ error: error.message, morgueNote });
     }
 
-    function addEvent(type, location, data) {
-      const event = new MorgueEvent(type, location, data);
+    function addEvent(type, morgue_note, data) {
+      const { turn, branch, level, note } = morgue_note;
+      // const event = new MorgueEvent({ type, turn, branch, level, note, data });
+      const event = new MorgueEvent({ type, branch, level, data });
       validate_event(event);
       events.push(event);
     }
@@ -391,11 +393,11 @@ function getAllMorgueNoteEvents({ morgueNotes, stash }) {
           // effort way to do this, although it can be wrong
           // http://crawl.chaosforge.org/Okawaru
           find_list_backwards(morgueNotes.slice(0, note_index), (morgue_note) => {
-            const location_data = get_location_data(morgue_note.loc);
-            if (location_data.branch !== 'Arena') {
+            const { branch, level } = morgue_note;
+            if (branch !== 'Arena') {
               // found most recent non Arena branch
               // mutate event data to this location
-              Object.assign(event, location_data);
+              Object.assign(event, { branch, level });
 
               // console.debug('lookback', { morgue_note, location_data, event });
               return true;
@@ -414,7 +416,7 @@ function getAllMorgueNoteEvents({ morgueNotes, stash }) {
   // for example `noticed` (uniques noticed) can be registered multiple times
   // e.g. Mennas in the morgue below
   //      http://crawl.akrasiac.org/rawdata/KarmaDistortion/morgue-KarmaDistortion-20220206-104358.txt
-  uniqBy(events, (i) => [i.type, i?.data?.name, i.location].join('-'));
+  uniqBy(events, (i) => [i.type, i?.data?.item, i.branch, i.level].join('-'));
 
   post_process_events(events);
 
@@ -423,9 +425,13 @@ function getAllMorgueNoteEvents({ morgueNotes, stash }) {
 
 function post_process_events(event_list) {
   for (let i = 0; i < event_list.length; i++) {
-    // const event = event_list[i];
+    const event = event_list[i];
     // const prev_event = event_list[i - 1];
     // const next_event = event_list[i + 1];
+
+    // write location to even backwards compatability
+    // we should remove if we update the database schema since branch/level is sufficient
+    event.location = get_location(event.branch, event.level);
 
     switch (true) {
       default:
@@ -434,25 +440,29 @@ function post_process_events(event_list) {
   }
 }
 
-function MorgueEvent(type, raw_location, data) {
-  return {
-    type,
-    ...get_location_data(raw_location),
-    data,
-  };
+function MorgueEvent(field_obj) {
+  // remove undefined fields
+  // for (const field of Object.keys(field_obj)) {
+  //   if (field_obj[field] === undefined) {
+  //     delete field_obj[field];
+  //   }
+  // }
+
+  return field_obj;
 }
 
 function get_location_data(raw_location) {
   const [rawBranch, level] = raw_location.split(':');
   const branch = Branch.getBranch(rawBranch);
 
-  let location;
+  const location_data = { branch, level };
+  return location_data;
+}
+
+function get_location(branch, level) {
   if (level) {
-    location = `${branch}:${level}`;
-  } else {
-    location = branch;
+    return `${branch}:${level}`;
   }
 
-  const location_data = { location, branch, level };
-  return location_data;
+  return branch;
 }
