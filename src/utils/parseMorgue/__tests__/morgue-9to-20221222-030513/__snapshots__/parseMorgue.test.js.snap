@@ -354,7 +354,6 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       "data": {
         "god": "Ashenzari",
       },
-      "level": undefined,
       "location": "Temple",
       "note": "Became a worshipper of Ashenzari the Shackled",
       "turn": "7975",
@@ -885,7 +884,6 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
         "level": "10",
         "skill": "Spellcasting",
       },
-      "level": undefined,
       "location": "IceCave",
       "note": "Reached skill level 10 in Spellcasting",
       "turn": "24866",
@@ -898,7 +896,6 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
         "level": "14",
         "mp": "32",
       },
-      "level": undefined,
       "location": "IceCave",
       "note": "Reached XP level 14. HP: 30/92 MP: 28/32",
       "turn": "25731",
@@ -910,7 +907,6 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
         "level": "5",
         "skill": "Fire Magic",
       },
-      "level": undefined,
       "location": "IceCave",
       "note": "Reached skill level 5 in Fire Magic",
       "turn": "26354",
@@ -921,7 +917,6 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       "data": {
         "god": "Jiyva",
       },
-      "level": undefined,
       "location": "IceCave",
       "note": "Found a viscous altar of Jiyva.",
       "turn": "26632",
@@ -932,7 +927,6 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       "data": {
         "item": "ring of Plog {Ice rN+}",
       },
-      "level": undefined,
       "location": "IceCave",
       "note": "Identified the ring of Plog {Ice rN+}",
       "turn": "26640",
@@ -943,7 +937,6 @@ exports[`http://crawl.akrasiac.org/rawdata/9to/morgue-9to-20221222-030513.txt 1`
       "data": {
         "item": "ring of Plog {Ice rN+}",
       },
-      "level": undefined,
       "location": "IceCave",
       "note": "Identified the ring of Plog {Ice rN+}",
       "turn": "26640",

@@ -208,7 +208,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "data": {
         "god": "Elyvilon",
       },
-      "level": undefined,
       "location": "Temple",
       "note": "Became a worshipper of Elyvilon the Healer",
       "turn": "2869",
@@ -1423,7 +1422,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "data": {
         "item": "+2 hat of the Meadowlark {rC+++ Str-5 Slay+3}",
       },
-      "level": undefined,
       "location": "IceCave",
       "note": "Identified the +2 hat of the Meadowlark {rC+++ Str-5 Slay+3}",
       "turn": "41435",
@@ -1434,7 +1432,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "data": {
         "item": "+2 hat of the Meadowlark {rC+++ Str-5 Slay+3}",
       },
-      "level": undefined,
       "location": "IceCave",
       "note": "Identified the +2 hat of the Meadowlark {rC+++ Str-5 Slay+3}",
       "turn": "41435",
@@ -1445,7 +1442,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "data": {
         "item": "ring "Rukhloqosk" {rC+ Int+4}",
       },
-      "level": undefined,
       "location": "IceCave",
       "note": "Identified the ring "Rukhloqosk" {rC+ Int+4}",
       "turn": "41448",
@@ -1456,7 +1452,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "data": {
         "item": "ring "Rukhloqosk" {rC+ Int+4}",
       },
-      "level": undefined,
       "location": "IceCave",
       "note": "Identified the ring "Rukhloqosk" {rC+ Int+4}",
       "turn": "41448",
@@ -1467,7 +1462,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "data": {
         "item": "ring of the Middle {rF+ Int+4 Dex+2}",
       },
-      "level": undefined,
       "location": "IceCave",
       "note": "Identified the ring of the Middle {rF+ Int+4 Dex+2}",
       "turn": "41453",
@@ -1478,7 +1472,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "data": {
         "item": "ring of the Middle {rF+ Int+4 Dex+2}",
       },
-      "level": undefined,
       "location": "IceCave",
       "note": "Identified the ring of the Middle {rF+ Int+4 Dex+2}",
       "turn": "41453",
@@ -1843,7 +1836,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "data": {
         "name": "Idism's Weapon Shoppe",
       },
-      "level": undefined,
       "location": "Bazaar",
       "note": "Found Idism's Weapon Shoppe.",
       "turn": "54689",
@@ -1854,7 +1846,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "data": {
         "name": "Tynemefeik's Antique Armour Shop",
       },
-      "level": undefined,
       "location": "Bazaar",
       "note": "Found Tynemefeik's Antique Armour Shop.",
       "turn": "54689",
@@ -1865,7 +1856,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "data": {
         "name": "Qikli Keuf's Antique Weapon Boutique",
       },
-      "level": undefined,
       "location": "Bazaar",
       "note": "Found Qikli Keuf's Antique Weapon Boutique.",
       "turn": "54689",
@@ -1876,7 +1866,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "data": {
         "name": "Hieng's General Store",
       },
-      "level": undefined,
       "location": "Bazaar",
       "note": "Found Hieng's General Store.",
       "turn": "54799",
@@ -1889,7 +1878,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
         "is_valid_shop": true,
         "item": "pair of runed boots",
       },
-      "level": undefined,
       "location": "Bazaar",
       "note": "Bought a pair of runed boots for 165 gold pieces",
       "turn": "54844",
@@ -1902,7 +1890,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
         "is_valid_shop": true,
         "item": "glowing plate armour",
       },
-      "level": undefined,
       "location": "Bazaar",
       "note": "Bought a glowing plate armour for 572 gold pieces",
       "turn": "54844",
@@ -2643,7 +2630,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "data": {
         "item": "+8 spear "Oboi" {speed, Str+4}",
       },
-      "level": undefined,
       "location": "Trove",
       "note": "Identified the +8 spear "Oboi" {speed, Str+4}",
       "turn": "91805",
@@ -2654,7 +2640,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "data": {
         "item": "+8 spear "Oboi" {speed, Str+4}",
       },
-      "level": undefined,
       "location": "Trove",
       "note": "Identified the +8 spear "Oboi" {speed, Str+4}",
       "turn": "91805",
@@ -2665,7 +2650,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "data": {
         "item": "+1 ring mail of Limited Liability {Str+3}",
       },
-      "level": undefined,
       "location": "Trove",
       "note": "Identified the +1 ring mail of Limited Liability {Str+3}",
       "turn": "91808",
@@ -2676,7 +2660,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "data": {
         "item": "+1 ring mail of Limited Liability {Str+3}",
       },
-      "level": undefined,
       "location": "Trove",
       "note": "Identified the +1 ring mail of Limited Liability {Str+3}",
       "turn": "91808",
@@ -2687,7 +2670,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "data": {
         "item": "amulet "Beulayn" {RegenMP rElec Int+4 Dex+6}",
       },
-      "level": undefined,
       "location": "Trove",
       "note": "Identified the amulet "Beulayn" {RegenMP rElec Int+4 Dex+6}",
       "turn": "91809",
@@ -2698,7 +2680,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "data": {
         "item": "amulet "Beulayn" {RegenMP rElec Int+4 Dex+6}",
       },
-      "level": undefined,
       "location": "Trove",
       "note": "Identified the amulet "Beulayn" {RegenMP rElec Int+4 Dex+6}",
       "turn": "91809",
@@ -2709,7 +2690,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "data": {
         "item": "amulet "Koashrem" {Spirit Str+4}",
       },
-      "level": undefined,
       "location": "Trove",
       "note": "Identified the amulet "Koashrem" {Spirit Str+4}",
       "turn": "91813",
@@ -2720,7 +2700,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "data": {
         "item": "amulet "Koashrem" {Spirit Str+4}",
       },
-      "level": undefined,
       "location": "Trove",
       "note": "Identified the amulet "Koashrem" {Spirit Str+4}",
       "turn": "91813",
@@ -2731,7 +2710,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "data": {
         "item": "+0 pair of gloves of Modesty {Regen+ rCorr}",
       },
-      "level": undefined,
       "location": "Trove",
       "note": "Identified the +0 pair of gloves of Modesty {Regen+ rCorr}",
       "turn": "91816",
@@ -2742,7 +2720,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "data": {
         "item": "+0 pair of gloves of Modesty {Regen+ rCorr}",
       },
-      "level": undefined,
       "location": "Trove",
       "note": "Identified the +0 pair of gloves of Modesty {Regen+ rCorr}",
       "turn": "91816",

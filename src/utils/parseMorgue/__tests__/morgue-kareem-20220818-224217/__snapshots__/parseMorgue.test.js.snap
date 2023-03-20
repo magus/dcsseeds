@@ -382,7 +382,6 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
         "level": "5",
         "skill": "Fighting",
       },
-      "level": undefined,
       "location": "Ossuary",
       "note": "Reached skill level 5 in Fighting",
       "turn": "4598",
@@ -582,7 +581,6 @@ exports[`https://crawl.kelbi.org/crawl/morgue/kareem/morgue-kareem-20220818-2242
       "data": {
         "god": "Wu Jian",
       },
-      "level": undefined,
       "location": "Temple",
       "note": "Became a worshipper of the Wu Jian Council",
       "turn": "9837",

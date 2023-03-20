@@ -4192,7 +4192,6 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
       "data": {
         "item": "+0 pearl dragon scales {rare} (You found it on level 5 of the Lair of Beasts)",
       },
-      "level": undefined,
       "location": "Volcano",
       "note": "Identified +0 pearl dragon scales {rare} (You found it on level 5 of the Lair of Beasts)",
       "turn": "27310",
@@ -4203,7 +4202,6 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
       "data": {
         "item": "+0 pearl dragon scales {rare} (You found it on level 5 of the Lair of Beasts)",
       },
-      "level": undefined,
       "location": "Volcano",
       "note": "Identified +0 pearl dragon scales {rare} (You found it on level 5 of the Lair of Beasts)",
       "turn": "27310",
@@ -4214,7 +4212,6 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
       "data": {
         "god": "Okawaru",
       },
-      "level": undefined,
       "location": "Volcano",
       "note": "Received a gift from Okawaru",
       "turn": "27520",
@@ -4225,7 +4222,6 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
       "data": {
         "god": "Vehumet",
       },
-      "level": undefined,
       "location": "Volcano",
       "note": "Found a radiant altar of Vehumet.",
       "turn": "27647",
@@ -4238,7 +4234,6 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
         "level": "15",
         "mp": "25",
       },
-      "level": undefined,
       "location": "Volcano",
       "note": "Reached XP level 15. HP: 119/119 MP: 25/25",
       "turn": "27810",
@@ -5807,7 +5802,6 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
       "data": {
         "item": "potion of experience",
       },
-      "level": undefined,
       "location": "Bailey",
       "note": "Identified a potion of experience",
       "turn": "47493",
@@ -5818,7 +5812,6 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
       "data": {
         "item": "potion of experience",
       },
-      "level": undefined,
       "location": "Bailey",
       "note": "Identified a potion of experience",
       "turn": "47493",
@@ -5830,7 +5823,6 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
         "level": "14",
         "skill": "Fighting",
       },
-      "level": undefined,
       "location": "Bailey",
       "note": "Reached skill level 14 in Fighting",
       "turn": "47493",
@@ -5842,7 +5834,6 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
         "level": "14",
         "skill": "Armour",
       },
-      "level": undefined,
       "location": "Bailey",
       "note": "Reached skill level 14 in Armour",
       "turn": "47493",
@@ -5854,7 +5845,6 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
         "level": "14",
         "skill": "Shields",
       },
-      "level": undefined,
       "location": "Bailey",
       "note": "Reached skill level 14 in Shields",
       "turn": "47493",
@@ -5867,7 +5857,6 @@ exports[`http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210405-05213
         "level": "20",
         "mp": "36",
       },
-      "level": undefined,
       "location": "Bailey",
       "note": "Reached XP level 20. HP: 174/174 MP: 36/36",
       "turn": "47493",

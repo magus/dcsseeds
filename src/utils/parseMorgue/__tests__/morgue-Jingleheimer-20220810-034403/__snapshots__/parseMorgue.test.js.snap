@@ -1580,7 +1580,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "data": {
         "who": "Sonja",
       },
-      "level": undefined,
       "location": "Arena",
       "note": "Killed Sonja",
       "turn": "16334",
@@ -2299,7 +2298,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "data": {
         "who": "Azrael",
       },
-      "level": undefined,
       "location": "Arena",
       "note": "Killed Azrael",
       "turn": "26668",
@@ -2473,7 +2471,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "data": {
         "who": "Aizul",
       },
-      "level": undefined,
       "location": "Arena",
       "note": "Killed Aizul",
       "turn": "30542",
@@ -2495,7 +2492,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "data": {
         "who": "Louise",
       },
-      "level": undefined,
       "location": "Arena",
       "note": "Killed Louise",
       "turn": "31036",
@@ -2624,7 +2620,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "data": {
         "who": "Vashnia",
       },
-      "level": undefined,
       "location": "Arena",
       "note": "Killed Vashnia",
       "turn": "33521",
@@ -2909,7 +2904,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "data": {
         "who": "Mara",
       },
-      "level": undefined,
       "location": "Arena",
       "note": "Killed Mara",
       "turn": "35867",
@@ -2920,7 +2914,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "data": {
         "god": "Okawaru",
       },
-      "level": undefined,
       "location": "Arena",
       "note": "Received a gift from Okawaru",
       "turn": "35867",
@@ -2931,7 +2924,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "data": {
         "item": "+7 Kryia's mail coat {PotionHeal*2 rC+}",
       },
-      "level": undefined,
       "location": "Arena",
       "note": "Found the +7 Kryia's mail coat {PotionHeal*2 rC+}",
       "turn": "35867",
@@ -3044,7 +3036,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "data": {
         "who": "Polyphemus",
       },
-      "level": undefined,
       "location": "Arena",
       "note": "Killed Polyphemus",
       "turn": "38688",
@@ -3981,7 +3972,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "data": {
         "who": "Bai Suzhen",
       },
-      "level": undefined,
       "location": "Arena",
       "note": "Killed Bai Suzhen",
       "turn": "53658",
@@ -4263,7 +4253,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "data": {
         "name": "Misorioj's Weapon Emporium",
       },
-      "level": undefined,
       "location": "Bazaar",
       "note": "Found Misorioj's Weapon Emporium.",
       "turn": "58213",
@@ -4274,7 +4263,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "data": {
         "name": "Loelyr's Armour Shoppe",
       },
-      "level": undefined,
       "location": "Bazaar",
       "note": "Found Loelyr's Armour Shoppe.",
       "turn": "58213",
@@ -4285,7 +4273,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "data": {
         "name": "Ofus's Antique Armour Emporium",
       },
-      "level": undefined,
       "location": "Bazaar",
       "note": "Found Ofus's Antique Armour Emporium.",
       "turn": "58235",
@@ -4296,7 +4283,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "data": {
         "name": "Pasoddoth's General Store",
       },
-      "level": undefined,
       "location": "Bazaar",
       "note": "Found Pasoddoth's General Store.",
       "turn": "58235",
@@ -4307,7 +4293,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "data": {
         "name": "Qaiha's Magic Scroll Shoppe",
       },
-      "level": undefined,
       "location": "Bazaar",
       "note": "Found Qaiha's Magic Scroll Shoppe.",
       "turn": "58257",
@@ -4318,7 +4303,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "data": {
         "name": "Ruare's General Store",
       },
-      "level": undefined,
       "location": "Bazaar",
       "note": "Found Ruare's General Store.",
       "turn": "58273",
@@ -4331,7 +4315,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
         "is_valid_shop": true,
         "item": "scroll of teleportation",
       },
-      "level": undefined,
       "location": "Bazaar",
       "note": "Bought a scroll of teleportation for 18 gold pieces",
       "turn": "58329",
@@ -4344,7 +4327,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
         "is_valid_shop": true,
         "item": "scroll of blinking",
       },
-      "level": undefined,
       "location": "Bazaar",
       "note": "Bought a scroll of blinking for 45 gold pieces",
       "turn": "58329",
@@ -4357,7 +4339,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
         "is_valid_shop": true,
         "item": "scroll of silence",
       },
-      "level": undefined,
       "location": "Bazaar",
       "note": "Bought a scroll of silence for 45 gold pieces",
       "turn": "58329",
@@ -4370,7 +4351,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
         "is_valid_shop": true,
         "item": "potion of might",
       },
-      "level": undefined,
       "location": "Bazaar",
       "note": "Bought a potion of might for 60 gold pieces",
       "turn": "58349",
@@ -4383,7 +4363,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
         "is_valid_shop": true,
         "item": "scroll of silence",
       },
-      "level": undefined,
       "location": "Bazaar",
       "note": "Bought a scroll of silence for 112 gold pieces",
       "turn": "58349",
@@ -4396,7 +4375,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
         "is_valid_shop": true,
         "item": "heavily runed plate armour",
       },
-      "level": undefined,
       "location": "Bazaar",
       "note": "Bought a heavily runed plate armour for 784 gold pieces",
       "turn": "58389",
@@ -4408,7 +4386,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
         "gold": "784",
         "item": "+10 plate armour of the Blizzard {rPois Str+4 Stlth+}",
       },
-      "level": undefined,
       "location": "Bazaar",
       "note": "Identified the +10 plate armour of the Blizzard {rPois Str+4 Stlth+} (You bought it in a shop in a bazaar)",
       "turn": "58389",
@@ -4420,7 +4397,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
         "gold": "784",
         "item": "+10 plate armour of the Blizzard {rPois Str+4 Stlth+}",
       },
-      "level": undefined,
       "location": "Bazaar",
       "note": "Identified the +10 plate armour of the Blizzard {rPois Str+4 Stlth+} (You bought it in a shop in a bazaar)",
       "turn": "58389",
@@ -4433,7 +4409,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
         "is_valid_shop": true,
         "item": "faintly humming plate armour",
       },
-      "level": undefined,
       "location": "Bazaar",
       "note": "Bought a faintly humming plate armour for 784 gold pieces",
       "turn": "58389",
@@ -4445,7 +4420,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
         "gold": "784",
         "item": "+1 plate armour of Seracan {-Tele rF+ Str+4}",
       },
-      "level": undefined,
       "location": "Bazaar",
       "note": "Identified the +1 plate armour of Seracan {-Tele rF+ Str+4} (You bought it in a shop in a bazaar)",
       "turn": "58389",
@@ -4457,7 +4431,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
         "gold": "784",
         "item": "+1 plate armour of Seracan {-Tele rF+ Str+4}",
       },
-      "level": undefined,
       "location": "Bazaar",
       "note": "Identified the +1 plate armour of Seracan {-Tele rF+ Str+4} (You bought it in a shop in a bazaar)",
       "turn": "58389",
@@ -4513,7 +4486,6 @@ exports[`https://cbro.berotato.org/morgue/Jingleheimer/morgue-Jingleheimer-20220
       "data": {
         "who": "Xtahua",
       },
-      "level": undefined,
       "location": "Arena",
       "note": "Killed Xtahua",
       "turn": "59183",

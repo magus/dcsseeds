@@ -309,7 +309,6 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       "data": {
         "god": "Gozag",
       },
-      "level": undefined,
       "location": "Temple",
       "note": "Became a worshipper of Gozag Ym Sagoz the Greedy",
       "turn": "5178",
@@ -1361,7 +1360,6 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
         "level": "12",
         "skill": "Evocations",
       },
-      "level": undefined,
       "location": "WizLab",
       "note": "Reached skill level 12 in Evocations",
       "turn": "45128",
@@ -1372,7 +1370,6 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       "data": {
         "god": "Makhleb",
       },
-      "level": undefined,
       "location": "WizLab",
       "note": "Found a burning altar of Makhleb.",
       "turn": "45363",
@@ -1383,7 +1380,6 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       "data": {
         "item": "Sif Muna's Reference Book on the Entourage",
       },
-      "level": undefined,
       "location": "WizLab",
       "note": "Identified Sif Muna's Reference Book on the Entourage",
       "turn": "45397",
@@ -1394,7 +1390,6 @@ exports[`https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-202
       "data": {
         "item": "Sif Muna's Reference Book on the Entourage",
       },
-      "level": undefined,
       "location": "WizLab",
       "note": "Identified Sif Muna's Reference Book on the Entourage",
       "turn": "45397",

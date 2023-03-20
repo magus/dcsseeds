@@ -432,6 +432,13 @@ function post_process_events(event_list) {
     // we should remove if we update the database schema since branch/level is sufficient
     event.location = get_location(event.branch, event.level);
 
+    // remove undefined fields
+    for (const field of Object.keys(event)) {
+      if (event[field] === undefined) {
+        delete event[field];
+      }
+    }
+
     switch (true) {
       default:
       // noop
@@ -440,13 +447,6 @@ function post_process_events(event_list) {
 }
 
 function MorgueEvent(field_obj) {
-  // remove undefined fields
-  // for (const field of Object.keys(field_obj)) {
-  //   if (field_obj[field] === undefined) {
-  //     delete field_obj[field];
-  //   }
-  // }
-
   return field_obj;
 }
 
