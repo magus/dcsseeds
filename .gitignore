@@ -46,6 +46,3 @@ scripts/.cache
 
 # Sentry
 .sentryclirc
-
-# ignore crawl to avoid CMD+F searching it
-crawl/
