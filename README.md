@@ -11,6 +11,24 @@ track random seeds in dcss
 
 
 
+## using crawl to generate full item list
+
+could we use the actual crawl code to generate full item list
+stash is a convenient format, output entire itemlist to stash file format?
+what about other things such as monsters which might be holding items
+god altars, etc.
+runtime performance, is it fast? parsing morgue files is very fast, few hundred milliseconds tops
+if we did use crawl we might need to find a way to have a built binary that takes in seed/version and spits out the stash file etc?
+
+sourcegraph is good for searching around codebase
+> https://sourcegraph.com/search?q=context%3Aglobal+repo%3A%5Egithub%5C.com%2Fcrawl%2Fcrawl%24+register_itemlist&patternType=standard&sm=1&groupBy=path
+
+`debug_item_scan` seems useful as a reference for logging items on a level
+> https://sourcegraph.com/github.com/crawl/crawl@b1aff02ba65c83ed325c6641adf377dba14a172d/-/blob/crawl-ref/source/dbg-scan.cc
+
+
+
+
 ## alternative graphql nested artifact query approach
 ### `useArtifactFilter`
 
