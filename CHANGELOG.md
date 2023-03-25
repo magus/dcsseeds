@@ -1,5 +1,20 @@
 # CHANGELOG
 
+
+## 2023-03-25
+
+built game locally successfully
+
+aliased python3 and pip3 to python/pip in zsh aliases
+ran `make -j4 TILES=y` (build game with 4 parallel jobs with TILES enabled)
+ran `make -j4` (build game with 4 parallel jobs in console mode)
+
+console mode builds faster, maybe that's ideal since we don't need TILES for binary
+
+next step: execute binary via endpoint and return stdout is to try
+next step: ship the binary with vercel deploy and see if it runs in vercel instance
+
+
 ## 2023-03-18
 
 Cleaning up Ashenzari items in database
