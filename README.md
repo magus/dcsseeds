@@ -11,6 +11,11 @@ track random seeds in dcss
 
 
 
+## ignore items in spots where items should not exist
+
+slime 1-4
+hells 1-6
+
 ## using crawl to generate full item list
 
 could we use the actual crawl code to generate full item list

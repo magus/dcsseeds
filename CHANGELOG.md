@@ -11,6 +11,7 @@ ran `make -j4` (build game with 4 parallel jobs in console mode)
 
 console mode builds faster, maybe that's ideal since we don't need TILES for binary
 
+requires data files to run apparently, need to figure that out too
 next step: execute binary via endpoint and return stdout is to try
 next step: ship the binary with vercel deploy and see if it runs in vercel instance
 
