@@ -436,6 +436,14 @@ function post_process_events(event_list) {
   for (let i = 0; i < event_list.length; i++) {
     const event = event_list[i];
 
+    function delete_event(event_index) {
+      // console.debug('DELETING ITEM EVENT', { event, event_index });
+      event_list.splice(event_index, 1);
+      // always take a step back just in case we deleted i + 1 index
+      // since we would shift the next item into the current i slot, skipping it
+      i--;
+    }
+
     // write location to even backwards compatability
     // we should remove if we update the database schema since branch/level is sufficient
     event.location = get_location(event.branch, event.level);
@@ -451,7 +459,7 @@ function post_process_events(event_list) {
       case event.type === 'god-gift': {
         const turn_threshold = 1;
 
-        const delete_nearby_item_event = (other_event, i) => {
+        const delete_nearby_item_event = (other_event, other_event_index) => {
           const is_close_turn = Math.abs(event.turn - other_event.turn) <= turn_threshold;
 
           if (!is_close_turn) {
@@ -462,9 +470,10 @@ function post_process_events(event_list) {
           }
 
           if (is_close_turn && other_event.type === 'item') {
-            // console.debug('DELETING ITEM EVENT NEAR GOD GIFT EVENT', { other_event, event });
-            event_list.splice(i, 1);
-            return i;
+            // console.debug('DELETING ITEM EVENT NEAR GOD GIFT EVENT', { event, other_event, other_event_index });
+            delete_event(other_event_index);
+
+            return other_event_index;
           }
         };
 
@@ -473,6 +482,31 @@ function post_process_events(event_list) {
 
         break;
       }
+
+      // 🚨 IMPORTANT
+      // leave invalid branch items in for now since they
+      // are a great source of edge cases and useful for testing
+      // when we see an invalid item in database, we can use it
+      // to write a new test case and verify we handle it
+
+      // case event.type === 'item': {
+      //   // do not record seed items for areas where items do not generate
+      //   // e.g. Hell 1-6, Slime 1-4
+      //   switch (true) {
+      //     case event.branch === 'Slime' && event.level < 5:
+      //     case event.branch === 'Cocytus' && event.level < 7:
+      //     case event.branch === 'Gehenna' && event.level < 7:
+      //     case event.branch === 'Tartarus' && event.level < 7:
+      //     case event.branch === 'Dis' && event.level < 7:
+      //       console.debug('DELETING ITEM IN KNOWN EMPTY LOCATION', { event });
+      //       delete_event(i);
+      //       break;
+
+      //     default:
+      //     // continue
+      //   }
+      //   break;
+      // }
 
       default:
       // noop

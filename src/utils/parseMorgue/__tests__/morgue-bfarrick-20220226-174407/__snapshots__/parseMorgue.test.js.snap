@@ -3307,6 +3307,7 @@ exports[`http://crawl.akrasiac.org/rawdata/bfarrick/morgue-bfarrick-20220226-174
         "skill": "Shields",
       },
       "level": "4",
+      "location": "Dis:4",
       "note": "Reached skill level 27 in Shields",
       "turn": "70965",
       "type": "skill-level",
