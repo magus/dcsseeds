@@ -1,6 +1,29 @@
 # CHANGELOG
 
 
+## 2023-03-29
+
+### using crawl to generate full item list
+
+- we absolutely can build crawl and use it to generate a full item list for a seed
+- requires a debug build (profile is debug and smaller than debug)
+
+> crawl-dir/0.28.0/crawl-ref/source/scripts/seed_explorer.lua
+
+```sh
+cd crawl-dir/0.28.0/crawl-ref/source
+make -j4 profile
+make util/fake_pty
+time util/fake_pty ./crawl -script seed_explorer.lua -depth all -seed 11144789937400634826 > seed-11144789937400634826.txt 2>&1
+```
+
+- running this takes about 7s, it's ... very slow but the most accurate item list possible
+- results match exactly the results we parsed via `parseMorgue`
+- temple altars are not noted in morgue so seed explorer list does show them
+
+> src/utils/parseMorgue/__tests__/morgue-Jingleheimer-20220810-034403/__snapshots__/parseMorgue.test.js.snap
+
+
 ## 2023-03-25
 
 built game locally successfully

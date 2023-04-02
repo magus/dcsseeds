@@ -1,0 +1,4 @@
+# ignore things under major version
+# allow only the zip file bundling all other files
+0.*/*
+!0.*/*.zip
