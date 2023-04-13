@@ -1,6 +1,68 @@
 # CHANGELOG
 
 
+## 2023-04-12
+
+SSL certificate expired on magic-iamnoah.graph
+
+Looked at setup `README.md` for `magic.iamnoah.com`
+
+>
+
+SSH into the box and cat the letsencrypt log file which appears to run but not timestamped
+
+```sh
+ssh root@104.236.34.97
+
+❯ cat /var/log/dokku/letsencrypt.log
+=====> Auto-renewing all apps...
+       hasura still has 15d, 23h, 13s days left before renewal
+=====> Finished auto-renewal
+=====> Auto-renewing all apps...
+       hasura still has 14d, 23h, 13s days left before renewal
+=====> Finished auto-renewal
+=====> Auto-renewing all apps...
+       hasura still has 13d, 23h, 13s days left before renewal
+=====> Finished auto-renewal
+
+❯ ls -lsah /var/log/dokku/letsencrypt.log
+132K -rw-rw-r-- 1 syslog dokku 127K Feb 27 00:00 /var/log/dokku/letsencrypt.log
+```
+
+The file does not appear to have been edited since **Feb 27** which lines up
+letsencrypt certificates are **valid for 90 days** and **auto renew at 60 days**.
+The log says **13 days** away from rewnew on **Feb 27**, which puts us at roughly **March 12**,
+then add 30 more days for 90 days (actual expiration), giving us **April 12**.
+
+> Feb 27 + 13d + 30 ~= Apr 12
+
+So seems like the auto renewal cron job was not running, we manually refresh the certificate
+with the commands below, and confirm the auto renew reports 60 days
+
+```sh
+❯ dokku letsencrypt hasura
+❯ dokku ps:scale hasura web=1
+❯ dokku letsencrypt:auto-renew
+=====> Auto-renewing all apps...
+       hasura still has 59d, 22h, 39m, 17s days left before renewal
+=====> Finished auto-renewal
+```
+
+So why was the auto renew cron job nto running? Well looking at changelog below on
+**2023-02-27** we did some dokku related stuff, such as updating, nuking a lot of our setup
+and even rebuilding some apps, it's highly likely we broke the cron job during this.
+
+Setting it up again, confirm it actually runs by setting to 2 minute interval
+
+```sh
+❯ dokku letsencrypt:cron-job --add
+❯ crontab -e -u dokku
+*/2 * * * * /var/lib/dokku/plugins/available/letsencrypt/cron-job
+tail /var/log/dokku/letsencrypt.log
+```
+
+
+
 ## 2023-03-29
 
 ### using crawl to generate full item list
