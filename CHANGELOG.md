@@ -1,6 +1,27 @@
 # CHANGELOG
 
 
+## 2023-04-23
+
+Followup, noticed the cron entry is wiped and hasn't been running. Seems related to below
+
+> https://github.com/dokku/dokku-letsencrypt/issues/215
+
+Going to update letsencrypt and rerun cron add.
+
+Had local changes to `cron-job` so I had to `git reset --hard` to run update.
+
+> https://github.com/dokku/dokku-letsencrypt/issues/194
+
+```sh
+cd /var/lib/dokku/plugins/enabled/letsencrypt
+git reset --hard
+dokku plugin:update letsencrypt
+dokku report
+# letsencrypt 0.20.0
+dokku letsencrypt:cron-job --add
+```
+
 ## 2023-04-12
 
 SSL certificate expired on magic-iamnoah.graph
