@@ -22,6 +22,13 @@ dokku report
 dokku letsencrypt:cron-job --add
 ```
 
+Also deploy failed due to Sentry auth errors
+
+> https://github.com/orgs/vercel/discussions/583
+> https://github.com/getsentry/sentry-javascript/issues/4383
+
+Setup Vercel integration again for dcsseeds and redeployed, successfully
+
 ## 2023-04-12
 
 SSL certificate expired on magic-iamnoah.graph
