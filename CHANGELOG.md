@@ -1,6 +1,223 @@
 # CHANGELOG
 
 
+## 2023-05-01
+
+Service hasn't been running for 5 days, cron stopped running 2 days after [below entry](###2023-04-23)
+
+Machine is totally out of disk space, trying to track down culprit, maybe docker images?
+
+Shows many images that are not being used, trying to remove gives error
+
+```sh
+root@magic-auth:/usr# docker image ls
+REPOSITORY                        TAG             IMAGE ID       CREATED         SIZE
+<none>                            <none>          b41db6c4cf2c   2 months ago    528MB
+<none>                            <none>          d728f49dc171   2 months ago    528MB
+<none>                            <none>          2932e3c5aba8   2 months ago    528MB
+dokku/hasura                      latest          44ddb2b1197a   2 months ago    528MB
+goacme/lego                       v4.9.1          143f7e37a942   5 months ago    104MB
+gliderlabs/herokuish              latest-22       58cf7cef5293   5 months ago    1.02GB
+gliderlabs/herokuish              v0.5.40-22      58cf7cef5293   5 months ago    1.02GB
+gliderlabs/herokuish              latest-20       597323a1ba3a   5 months ago    1.45GB
+gliderlabs/herokuish              v0.5.40-20      597323a1ba3a   5 months ago    1.45GB
+gliderlabs/herokuish              latest          686c154e24a2   5 months ago    1.22GB
+gliderlabs/herokuish              v0.5.40-18      686c154e24a2   5 months ago    1.22GB
+traefik                           v2.8            248ba48e3e90   7 months ago    106MB
+timberio/vector                   0.23.X-debian   d782e6717139   8 months ago    199MB
+lucaslorentz/caddy-docker-proxy   2.7             59d425d1195e   11 months ago   39.7MB
+gliderlabs/herokuish              v0.5.21         56f5e86cd8d7   2 years ago     1.35GB
+busybox                           1.31.1-uclibc   1c35c4412082   2 years ago     1.22MB
+dokku/wait                        0.4.3           69a95ac9f29b   3 years ago     8.43MB
+dokku/s3backup                    0.10.3          840171bc3c78   3 years ago     126MB
+dokku/ambassador                  0.3.3           af72d908a0e2   3 years ago     6.97MB
+postgres                          11.6            2c963c0eb8c6   3 years ago     332MB
+dokku/letsencrypt                 0.1.0           dfdea2d8f7de   3 years ago     86.4MB
+
+root@magic-auth:/usr# docker image rm gliderlabs/herokuish
+Error response from daemon: write /var/lib/docker/image/overlay2/.tmp-repositories.json1211884520: no space left on device
+
+root@magic-auth:/usr# du -sh /var/lib/docker
+20G	/var/lib/docker
+```
+
+Ran below to reclaim ~5GB of space, not enough but its a start
+
+```sh
+root@magic-auth:/usr# docker system prune --all
+...
+Total reclaimed space: 5.844GB
+```
+
+```sh
+root@magic-auth:/usr# dokku ps:scale hasura web=1
+```
+
+Restarting not working... everything is broken probably because I ran the system prune above
+
+Trying to discover what is using so much disk
+
+```sh
+cd /var
+du -h --max-depth=1 .
+cd /var/lib
+du -h --max-depth=1 .
+cd /var/lib/docker
+du -h --max-depth=1 .
+cd /var/lib/docker/containers
+du -h --max-depth=1 .
+
+root@magic-auth:/var/lib/docker/containers/829c57a27e2972fe37aab2cd24f12627aa118f938303692dd7bbbb2f02840520# ls -lsah
+total 12G
+4.0K drwx--x--- 4 root root 4.0K Mar 17 06:52 .
+4.0K drwx--x--- 4 root root 4.0K May  1 09:47 ..
+ 12G -rw-r----- 1 root root  12G May  1 09:56 829c57a27e2972fe37aab2cd24f12627aa118f938303692dd7bbbb2f02840520-json.log
+4.0K drwx------ 2 root root 4.0K Feb 27 22:55 checkpoints
+4.0K -rw------- 1 root root 3.9K Mar 17 06:52 config.v2.json
+4.0K -rw------- 1 root root 1.6K Mar 17 06:52 hostconfig.json
+4.0K -rw-r--r-- 1 root root   13 Mar 17 06:52 hostname
+4.0K -rw-r--r-- 1 root root  174 Mar 17 06:52 hosts
+4.0K drwx--x--- 2 root root 4.0K Feb 27 22:55 mounts
+4.0K -rw-r--r-- 1 root root  611 Mar 17 06:52 resolv.conf
+4.0K -rw-r--r-- 1 root root   71 Mar 17 06:52 resolv.conf.hash
+```
+
+There it is `12G` large `829c57a27e2972fe37aab2cd24f12627aa118f938303692dd7bbbb2f02840520-json.log` log file
+
+```sh
+root@magic-auth:/var/lib/docker/containers# docker container ls
+CONTAINER ID   IMAGE                           COMMAND                   CREATED        STATUS                  PORTS     NAMES
+60f33a2f0b19   dokku/hasura:latest             "/bin/sh -c '\"${HGE_…"   5 days ago     Up 5 days (unhealthy)             hasura.web.1
+829c57a27e29   timberio/vector:0.23.X-debian   "/usr/bin/vector --c…"    2 months ago   Up 6 weeks                        vector
+```
+
+We can see above that `829c57a27e29` corresponds to the vector logging I setup awhile back (approx 2 months ago)
+
+It didn't see to have a file size limit
+
+```sh
+root@magic-auth:/var/lib/docker/containers# docker container ls
+CONTAINER ID   IMAGE                           COMMAND                  CREATED        STATUS       PORTS     NAMES
+829c57a27e29   timberio/vector:0.23.X-debian   "/usr/bin/vector --c…"   2 months ago   Up 6 weeks             vector
+root@magic-auth:/var/lib/docker/containers# dokku logs:vector-stop
+=====> Stopping and removing vector container
+root@magic-auth:/var/lib/docker/containers# docker container ls
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+```
+
+Container is stopped and removed, disk usage on digitial ocean graphs dashboard dropped to 25%
+
+Ok going to try to setup the hasura service again now
+
+```sh
+root@magic-auth:~# dokku postgres:stop hasura-db
+ !     Service is already stopped
+root@magic-auth:~# dokku postgres:start hasura-db
+=====> Starting container
+       Neither container nor valid configuration exists for hasura-db
+root@magic-auth:~# dokku postgres:destroy hasura-db
+ !     Cannot delete linked service
+```
+
+Seems the postgres container was deleted when I cleared images etc above, going to unlink and destroy it, then recreate it.
+
+> [Instructions are over in magic.iamnoah.com README](https://github.com/magus/mono/blob/master/sites/magic.iamnoah.com/README.md#postgres-database)
+
+```sh
+root@magic-auth:~# dokku postgres:unlink hasura-db hasura
+ !     Invalid key name: 'DATABASE_URL HASURA_GRAPHQL_DATABASE_URL'
+root@magic-auth:~# dokku postgres:destroy hasura-db
+ !     WARNING: Potentially Destructive Action
+ !     This command will destroy hasura-db Postgres service.
+ !     To proceed, type "hasura-db"
+
+> hasura-db
+=====> Deleting hasura-db
+ !     Service is already stopped
+       Removing data
+Unable to find image 'busybox:1.31.1-uclibc' locally
+1.31.1-uclibc: Pulling from library/busybox
+76df9210b28c: Pull complete
+Digest: sha256:cd421f41ebaab52ae1ac91a8391ddbd094595264c6e689954b79b3d24ea52f88
+Status: Downloaded newer image for busybox:1.31.1-uclibc
+=====> Postgres container deleted: hasura-db
+root@magic-auth:~# dokku postgres:create hasura-db
+root@magic-auth:~# dokku postgres:link hasura-db hasura
+-----> Setting config vars
+       DOKKU_POSTGRES_AQUA_URL:  postgres://postgres:<PG_PASSWORD>@dokku-postgres-hasura-db:5432/hasura_db
+root@magic-auth:~# dokku config:set hasura HASURA_GRAPHQL_DATABASE_URL="postgres://postgres:<PG_PASSWORD>@dokku-postgres-hasura-db:5432/hasura_db"
+root@magic-auth:~# dokku config:set hasura HASURA_GRAPHQL_ENABLE_CONSOLE="true"
+root@magic-auth:~# dokku ps:scale hasura web=1
+```
+
+Visited https://magic-graphql.iamnoah.com/ successfully, now to restore from backups
+
+Last good backup was April 24
+
+Copying `data.sql` and `schema.sql` over to remote machine and install `psql`
+
+```sh
+scp data.sql root@104.236.34.97:/root
+scp schema.sql root@104.236.34.97:/root
+ssh root@104.236.34.97
+root@magic-auth:~# dokku postgres:info hasura-db
+root@magic-auth:~# psql -h 172.17.0.2 -p 5432 -U root db
+
+Command 'psql' not found, but can be installed with:
+
+apt install postgresql-client-common
+
+root@magic-auth:~# apt install postgresql-client-common
+root@magic-auth:~# sudo apt-get install postgresql-client
+```
+
+Get the IP address from `docker inspect` below under `NetworkSettings.Networks.bridge.IPAddress`
+
+> https://github.com/dokku/dokku-postgres/issues/80#issuecomment-239265718
+
+```sh
+root@magic-auth:~# docker container ls
+CONTAINER ID   IMAGE                 COMMAND                   CREATED          STATUS                    PORTS      NAMES
+ccadf94d5f46   dokku/hasura:latest   "/bin/sh -c '\"${HGE_…"   32 minutes ago   Up 32 minutes (healthy)              hasura.web.1
+37d9d9879e52   postgres:11.6         "docker-entrypoint.s…"    38 minutes ago   Up 38 minutes             5432/tcp   dokku.postgres.hasura-db
+root@magic-auth:~# docker inspect dokku.postgres.hasura-db | jq ".[0].NetworkSettings.Networks.bridge.IPAddress"
+"172.17.0.2"
+```
+
+Replace `dokku-postgres-hasura-db` with IP address from above
+
+```sh
+psql -Atx postgres://postgres:<PG_PASSWORD>@172.17.0.2:5432/hasura_db
+```
+
+Finally run `psql` commands to restore database
+
+
+```sh
+cat schema.sql | psql -Atx postgres://postgres:<PG_PASSWORD>@172.17.0.2:5432/hasura_db
+cat data.sql | psql -Atx postgres://postgres:<PG_PASSWORD>@172.17.0.2:5432/hasura_db
+```
+
+Import Metadata under https://magic-graphql.iamnoah.com/console/settings/metadata-actions
+
+Run scrape players and confirm it's working
+
+> https://dcss.vercel.app/api/scrapePlayers
+
+All good!
+
+Run databse backup action but `data.sql` is empty (`0 bytes`) due to postgres password being outdated now
+
+> https://github.com/magus/mono/actions/workflows/magic.iamnoah.com.yml
+
+Need to update `MAGIC_AUTH_DATABASE_URL` secret in github with output from command above
+
+> https://github.com/magus/mono/settings/secrets/actions
+
+```sh
+dokku postgres:info hasura-db
+```
+
 ## 2023-04-23
 
 Followup, noticed the cron entry is wiped and hasn't been running. Seems related to below
