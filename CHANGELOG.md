@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## 2023-05-27
+
+> https://www.reddit.com/r/dcss/comments/13aen1l/dcss_search_0300_update/jj6kyuw/
+
+New server `develz`
+
+Had to update `ServerConfig` and also create a new row in `dcsseeds_scrapePlayers_server`
+
+Then called api below via postman successfully which created entries
+
+> http://localhost:3000/api/scrapePlayers/scrapeMorgue?morgue=http://crawl.develz.org/morgues/git/svalbard/morgue-svalbard-20161108-120329.txt
+
 
 ## 2023-05-06
 

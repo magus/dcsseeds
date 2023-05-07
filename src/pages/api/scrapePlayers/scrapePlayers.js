@@ -32,7 +32,7 @@ export default async function scrapePlayers(req, res) {
     const stopwatch = new Stopwatch();
 
     // prettier-ignore
-    // const player_list = await stopwatch.time(GQL_SCRAPEPLAYERS_BY_NAME.run({ name: 'Lemuel' })).record('fetch player list');
+    // const player_list = await stopwatch.time(GQL_SCRAPEPLAYERS_BY_NAME.run({ name: 'svalbard' })).record('fetch player list');
     const player_list = await stopwatch.time(GQL_SCRAPEPLAYERS.run()).record('fetch player list');
 
     const promise_result_list = player_list.map((player) => {

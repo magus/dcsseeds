@@ -24,8 +24,13 @@ const Server = Object.freeze({
   'berotato': 'berotato',
   'underhound': 'underhound',
   'webzook': 'webzook',
+
   // kelbi has really long response times
   'kelbi': 'kelbi',
+
+  // console players
+  // https://www.reddit.com/r/dcss/comments/13aen1l/dcss_search_0300_update/jj6kyuw/
+  'develz': 'develz',
 });
 
 export const SERVER_CONFIG = {};
@@ -66,9 +71,11 @@ function ServerConfig(server) {
         return 'https://crawl.kelbi.org/crawl/morgue';
       case Server.webzook:
         return 'https://webzook.net/soup/morgue';
+      case Server.develz:
+        return 'https://crawl.develz.org/morgues/git';
 
       default:
-        throw new Error(`unrecognized server name [${server}]`);
+        throw new Error(`ServerConfig base url missing for [${server}]`);
     }
   })();
 
@@ -89,9 +96,11 @@ function ServerConfig(server) {
           return '^https://crawl.kelbi.org/crawl/morgue';
         case Server.webzook:
           return '^https://webzook.net/soup/morgue';
+        case Server.develz:
+          return '^https://crawl.develz.org/morgues/git';
 
         default:
-          throw new Error(`unrecognized server name [${server}]`);
+          throw new Error(`ServerConfig origin regex missing for [${server}]`);
       }
     })(),
   );

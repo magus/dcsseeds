@@ -25,6 +25,9 @@ test.each`
   ${''}                                                                                           | ${null}
   ${'http://crawl.kelbi.org/crawl/morgue/RoGGa/morgue-RoGGa-20230306-191854.txt'}                 | ${null}
   ${'https://crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-20230301-012532.txt.gz'} | ${'kelbi'}
+  ${''}                                                                                           | ${null}
+  ${'http://crawl.develz.org/morgues/git/svalbard/morgue-svalbard-20161108-120329.txt'}           | ${null}
+  ${'https://crawl.develz.org/morgues/git/svalbard/morgue-svalbard-20161108-120329.txt'}          | ${'develz'}
 `('SERVER_CONFIG.morgue_server($url) = $expected', (test_case) => {
   expect(SERVER_CONFIG.morgue_server(test_case.url)).toEqual(test_case.expected);
 });
