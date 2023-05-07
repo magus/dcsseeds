@@ -143,11 +143,16 @@ function ArtifactFilters(props) {
     filter_unrand_key_list = active_key_list.concat(inactive_key_list);
   }
 
+  const is_filtering = props.version_set.size || props.filter_set.size;
+
   for (const unrand_key of filter_unrand_key_list) {
     const name = Unrands.List[unrand_key];
     const active = props.filter_set.has(unrand_key);
     const count = props.artifact_count[unrand_key];
     const metadata = Unrands.Metadata[unrand_key];
+
+    const hide = is_filtering && count === 0;
+    const disabled = props.loading || count === 0;
 
     const button = (
       <FilterButton
@@ -157,9 +162,9 @@ function ArtifactFilters(props) {
         count={count}
         handleAdd={() => props.add_filter(unrand_key)}
         handleRemove={() => props.remove_filter(unrand_key)}
-        disabled={props.loading || count === 0}
+        disabled={disabled}
         active={active}
-        hide={count === 0}
+        hide={hide}
       />
     );
 
