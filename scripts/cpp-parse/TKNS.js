@@ -55,12 +55,14 @@ exports.TKNS = buildTokenKinds({
   Assignment: { value: '=' },
   Plus: { value: '+' },
   BitwiseOr: { value: '|' },
+  Colon: { value: ':' },
 
   // special multiple character operators
   BooleanEquals: { value: '==' },
   SingleLineComment: { value: '//' },
   MultiLineComment: { value: '/*' },
   MultiLineCommentEnd: { value: '*/' },
+  ScopeResolution: { value: '::' },
 });
 
 function buildTokenKinds(object) {

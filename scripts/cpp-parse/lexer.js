@@ -247,7 +247,44 @@ exports.lexer = function lexer(code, options = {}) {
         addToken(TKNS.AngleBracketEnd);
         break;
 
+      case TKNS.Colon.value:
+        if (isTokenNext(TKNS.ScopeResolution)) {
+          const last_token = TKNS[currentToken().type];
+
+          switch (last_token.type) {
+            case TKNS.Identifier.type:
+              // ok, to proceeed
+              break;
+            default:
+              console.error('TKNS.ScopeResolution', 'currentToken', currentToken());
+              throw new Error('unexpected token before scope resolution token (::)');
+          }
+
+          // read scope resolution character into current token
+          for (let i = 0; i < TKNS.ScopeResolution.value?.length || 0; i++) {
+            continueToken(last_token);
+          }
+
+          // swallow spaces after a scope resolution
+          // e.g. :: poison (see spl-data.h in crawl/crawl@0.30.0)
+          let done = false;
+          while (!done) {
+            switch (peek()) {
+              case TKNS.Space.value:
+                next();
+                break;
+
+              // break out
+              default:
+                done = true;
+            }
+          }
+
+          break;
+        }
+
       // process ongoing currentToken
+      // eslint-disable-next-line no-fallthrough
       default: {
         continueToken(TKNS.Identifier);
       }

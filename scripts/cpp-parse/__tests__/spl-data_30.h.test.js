@@ -5,12 +5,12 @@ const path = require('path');
 const { CPPCompiler } = require('../CPPCompiler');
 
 test('parses spl-data.h without errors', async () => {
-  const spl_data_h = await readFile(path.join(__dirname, '..', '__fixtures__', 'spl-data.h'));
+  const spl_data_h = await readFile(path.join(__dirname, '..', '__fixtures__', 'spl-data_30.h'));
 
   const parsed = new CPPCompiler(spl_data_h);
 
   expect(parsed.ast.body.length).toBe(1);
-  expect(parsed.tokens.length).toBe(12900);
+  expect(parsed.tokens.length).toBe(12535);
 });
 
 async function readFile(filename) {
