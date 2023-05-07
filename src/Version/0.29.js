@@ -1,6 +1,8 @@
 const Species = require('../utils/Species');
 const Jobs = require('../utils/Backgrounds');
 
+exports.Name = '0.29';
+
 // + Meteoran
 // - DeepDwarves
 exports.Species = [
@@ -124,6 +126,8 @@ exports.RecommendedSpecies = {
 exports.BannedCombos = {
   [Species.Fe]: { [Jobs.Gl]: true, [Jobs.Br]: true, [Jobs.Hu]: true, [Jobs.AM]: true },
   [Species.Dg]: { [Jobs.Be]: true, [Jobs.CA]: true, [Jobs.CK]: true, [Jobs.AK]: true, [Jobs.Mo]: true },
+  [Species.Mu]: { [Jobs.Tm]: true },
+  [Species.Gh]: { [Jobs.Tm]: true },
 };
 
 // prettier-ignore

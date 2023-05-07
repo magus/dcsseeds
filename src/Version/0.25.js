@@ -1,6 +1,8 @@
 const Species = require('../utils/Species');
 const Jobs = require('../utils/Backgrounds');
 
+exports.Name = '0.25';
+
 exports.Species = [
   Species.Ba,
   Species.Ce,
@@ -118,6 +120,8 @@ exports.RecommendedSpecies = {
 exports.BannedCombos = {
   [Species.Fe]: { [Jobs.Gl]: true, [Jobs.As]: true, [Jobs.Hu]: true, [Jobs.AM]: true },
   [Species.Dg]: { [Jobs.Be]: true, [Jobs.CK]: true, [Jobs.AK]: true, [Jobs.Mo]: true },
+  [Species.Mu]: { [Jobs.Tm]: true },
+  [Species.Gh]: { [Jobs.Tm]: true },
 };
 
 // prettier-ignore

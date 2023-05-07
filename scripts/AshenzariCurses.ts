@@ -14,6 +14,7 @@ import * as crawl_dir from './crawl_dir';
     parse_curse_list('0.27.1'),
     parse_curse_list('0.28.0'),
     parse_curse_list('0.29.1'),
+    parse_curse_list('0.30.0'),
   ]);
 
   // ensure all version outputs are the same

@@ -7,10 +7,12 @@ import Version from 'src/Version';
 // Example API Request
 // http://localhost:3000/api/rollSeed
 
+const [LATEST_VERSION] = Object.keys(Version.Enum);
+
 export default async function roll_seed(req, res) {
   try {
     const seed = generateSeed();
-    const version = req.query.version || Version.v29;
+    const version = req.query.version || LATEST_VERSION;
 
     let species = req.query.species;
     let background = req.query.background;

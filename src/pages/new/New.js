@@ -330,12 +330,23 @@ const LockInput = styled.input`
   height: 24px;
 `;
 
+// <Select> options
 const VERSION_CHOICES = [
-  // <Select> options
-  { value: Version.v29, name: '0.29' },
-  { value: Version.v28, name: '0.28' },
-  { value: Version.v27, name: '0.27' },
-  { value: Version.v26, name: '0.26' },
-  { value: Version.v25, name: '0.25' },
-  { value: Version.v24, name: '0.24' },
+  // { value: Version.v30, name: '0.30' },
+  // { value: Version.v29, name: '0.29' },
+  // { value: Version.v28, name: '0.28' },
+  // { value: Version.v27, name: '0.27' },
+  // { value: Version.v26, name: '0.26' },
+  // { value: Version.v25, name: '0.25' },
+  // { value: Version.v24, name: '0.24' },
 ];
+
+// generate version options from version metadata
+for (const version of Object.keys(Version.Enum)) {
+  const metadata = Version.get_metadata(version);
+
+  const value = version;
+  const name = metadata.Name;
+
+  VERSION_CHOICES.push({ value, name });
+}

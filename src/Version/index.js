@@ -1,6 +1,7 @@
 const keyMirror = require('../utils/keyMirror');
 
 const Version = keyMirror({
+  v30: true,
   v29: true,
   v28: true,
   v27: true,
@@ -17,6 +18,7 @@ const Version = keyMirror({
 //
 // Consider using parser to programmatically get jobs, species, recommended etc.
 const Metadata = {
+  [Version.v30]: require('./0.30'),
   [Version.v29]: require('./0.29'),
   [Version.v28]: require('./0.28'),
   [Version.v27]: require('./0.27'),
@@ -66,7 +68,15 @@ for (const version of Object.keys(Version)) {
 }
 
 function get_version_key(version) {
+  // allow literal version key
+  // e.g. Version.Enum.v29
+  if (Version[version]) {
+    return version;
+  }
+
   switch (true) {
+    case version.startsWith('0.30'):
+      return Version.v30;
     case version.startsWith('0.29'):
       return Version.v29;
     case version.startsWith('0.28'):

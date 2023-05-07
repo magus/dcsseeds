@@ -8,6 +8,8 @@ export async function getStaticProps() {
 
   const props = await GQL_SearchStaticProps.run();
 
+  // console.debug({ props });
+
   return {
     props,
     // https://nextjs.org/docs/api-reference/data-fetching/get-static-props#revalidate
@@ -91,6 +93,18 @@ const GQL_SearchStaticProps = serverQuery(GQL_SEARCH_STATIC_PROPS, (data) => {
     }
 
     artifact_list[unrand.i] = cache_entry.result_list;
+  }
+
+  // ensure empty slots are filled with empty array
+  // this happens when unrand_cache has no results for an item
+  // common when updating versions, this was added during 0.30.0 update
+  for (let i = 0; i < Unrands.List.length; i++) {
+    const unrand = Unrands.Metadata[i];
+
+    if (!artifact_list[i]) {
+      console.error('Missing', { i, unrand });
+      artifact_list[i] = [];
+    }
   }
 
   return {

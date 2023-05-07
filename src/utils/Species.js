@@ -1,6 +1,7 @@
 const keyMirror = require('./keyMirror');
 
 const Species = keyMirror({
+  At: true,
   Ba: true,
   Ce: true,
   DD: true,
@@ -34,6 +35,7 @@ const Species = keyMirror({
 });
 
 const Names = {
+  [Species.At]: 'Armataur',
   [Species.Ba]: 'Barachi',
   [Species.Ce]: 'Centaur',
   [Species.DD]: 'Deep Dwarf',

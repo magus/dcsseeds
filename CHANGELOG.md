@@ -1,6 +1,42 @@
 # CHANGELOG
 
 
+## 2023-05-06
+
+`0.30.0` released on May 5th, going to update with new spells, et al.
+
+> https://crawl.develz.org/wordpress/0-30-the-reavers-return
+
+```sh
+# create new 0.30.0 crawl-dir
+git clone -b 0.30.0 --depth 1 git@github.com:crawl/crawl.git 0.30.0
+git reset 0.30.0
+git submodule add -f git@github.com:crawl/crawl.git 0.30.0
+
+# run scripts
+yarn tsx ./scripts/AshenzariCurses.ts
+
+# general species files in 0.30.0
+cd crawl-dir/0.30.0/crawl-ref/source
+util/species-gen.py dat/species/ util/species-gen/ species-data.h aptitudes.h species-groups.h species-type.h
+# see species-data.h
+# oops realized ghouls + mummy cannot be transmuter
+# fixing all versions
+
+# generate unrands for 0.30.0
+yarn tsx ./scripts/get_unrands.ts 0.30.0
+yarn tsx ./scripts/build_unrand_list 0.27 0.28 0.29 0.30
+```
+
+After updating everything, ran local dev to confirm things worked but the `unrand_cache` static props query was failing
+
+Needed to fix so it falls back to handle until the cache eventually updates in production
+
+Updated `rollSeed` api endpoint to roll for latest version by default
+
+Updated `New` page to generate version options dynamically from `Version` metadata
+
+
 ## 2023-05-01
 
 Service hasn't been running for 5 days, cron stopped running 2 days after [below entry](###2023-04-23)
