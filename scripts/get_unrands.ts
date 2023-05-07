@@ -117,7 +117,7 @@ IGNORE_UNRAND.add('UNRAND_WOE');
   });
 
   // console.dir(unrand_list, { depth: null });
-  console.debug('unrand_list', unrand_list.length);
+  // console.debug('unrand_list', unrand_list.length);
 
   const art_enum = CPPCompiler(await read_file(crawl_dir.dir(VERSION, 'crawl-ref/source/art-enum.h')));
   const [num_unrandarts_token] = art_enum.defines.NUM_UNRANDARTS.tokens;
@@ -201,6 +201,7 @@ IGNORE_UNRAND.add('UNRAND_WOE');
   output_lines.push('];');
 
   pbcopy(output_lines.join('\n'));
+  console.debug('unrand_list', filtered_unrand_list.length);
   console.info('📋 Copied `UnrandList` export to clipboard.');
 
   crawl_dir.reset();
