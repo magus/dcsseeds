@@ -66,11 +66,11 @@ export default class MyDocument extends Document {
             nonce={this.props.nonce}
             dangerouslySetInnerHTML={{
               __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
 
-            gtag('config', '${process.env.GOOGLE_ANALYTICS_UA}');
+              gtag('config', '${process.env.GOOGLE_ANALYTICS_UA}');
           `,
             }}
           />

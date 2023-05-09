@@ -3,7 +3,7 @@ const EnvConfig = {
   APP_NAME: 'DCSS Search',
   PROTOCOL: 'https',
   HOSTNAME: 'dcss.vercel.app',
-  GOOGLE_ANALYTICS_UA: 'UA-106090287-2',
+  GOOGLE_ANALYTICS_UA: 'G-LPJN02KFN1',
 };
 
 if (EnvConfig.DEV) {
