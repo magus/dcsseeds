@@ -106,7 +106,13 @@ function FilterButton(props) {
       transition={spring_config}
       active={props.active}
     >
-      <Button image={props.image} active={props.active} disabled={props.disabled} onClick={handle_click}>
+      <Button
+        image={props.image}
+        new={props.new}
+        active={props.active}
+        disabled={props.disabled}
+        onClick={handle_click}
+      >
         {!props.image ? null : (
           <React.Fragment>
             <Image alt={props.name} src={props.image} width={24} height={24} />
@@ -146,18 +152,20 @@ function ArtifactFilters(props) {
   const is_filtering = props.version_set.size || props.filter_set.size;
 
   for (const unrand_key of filter_unrand_key_list) {
-    const name = Unrands.List[unrand_key];
+    const metadata = Unrands.Metadata[unrand_key];
+    const name = metadata.name;
     const active = props.filter_set.has(unrand_key);
     const count = props.artifact_count[unrand_key];
-    const metadata = Unrands.Metadata[unrand_key];
 
     const hide = is_filtering && count === 0;
     const disabled = props.loading || count === 0;
+    const is_new = NEW_UNRAND_SET.has(metadata.id);
 
     const button = (
       <FilterButton
         key={unrand_key}
         name={name}
+        new={is_new}
         image={metadata.image_url}
         count={count}
         handleAdd={() => props.add_filter(unrand_key)}
@@ -280,16 +288,28 @@ const Button = styled.button`
   ${(props) => {
     switch (true) {
       case props.active:
+        // tailwind green [100, 700, 500]
         return css`
           --button-text: rgb(220, 252, 231);
           --button-bg: rgb(21, 128, 61);
           --button-border: rgb(21, 128, 61);
           --button-hover-border: rgb(34 197 94);
         `;
+
+      case props.new:
+        // tailwind amber [100, 700, 500]
+        return css`
+          --button-text: rgb(254 243 199);
+          --button-bg: rgb(180 83 9);
+          --button-border: rgb(180 83 9);
+          --button-hover-border: rgb(245 158 11);
+        `;
+
       case props.disabled:
         return css`
           opacity: 0.4;
         `;
+
       default:
         return '';
     }
@@ -307,3 +327,12 @@ const spring_config = {
   stiffness: 290,
   damping: 25,
 };
+
+const NEW_UNRAND_SET = new Set([
+  'UNRAND_HOLY_AXE',
+  'UNRAND_FORCE_LANCE',
+  'UNRAND_HERMITS_PENDANT',
+  'UNRAND_SLICK_SLIPPERS',
+  'UNRAND_STORM_QUEEN',
+  'UNRAND_VICTORY',
+]);
