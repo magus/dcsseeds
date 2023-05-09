@@ -11,6 +11,7 @@ import { Stopwatch } from 'src/server/Stopwatch';
 export default async function handler(req, res) {
   const stopwatch = new Stopwatch();
   const window_size = Number(req.query.window_size);
+  const report = {};
 
   try {
     if (isNaN(window_size)) {
@@ -18,12 +19,25 @@ export default async function handler(req, res) {
     }
 
     // perform queries for set of oldest (stale) cache entries
-    const stale_unrand_list = await GQL_CacheUnrandOldest.run({ window_size });
+    report.stale_cache_entry = await GQL_CacheUnrandOldest.run({ window_size: 1 });
+
     stopwatch.record('fetch stale cache rows');
+
+    // build window from most stale unrand cache entry
+    report.update_list = [];
+    const stale_unrand = Unrands.ById[report.stale_cache_entry.unrand_key];
+    for (let i = 0; i < window_size; i++) {
+      const wrapped_index = (i + stale_unrand.i) % Unrands.List.length;
+      const unrand = Unrands.Metadata[wrapped_index];
+      report.update_list.push(unrand.id);
+    }
 
     const GQL_UnrandQueryResults = serverQuery(gql`
       query UnrandQueryRange {
-        ${stale_unrand_list.map((unrand) => SeedVersionFilter(unrand))}
+        ${report.update_list.map((unrand_key) => {
+          const unrand = Unrands.ById[unrand_key];
+          return SeedVersionFilter(unrand);
+        })}
       }
 
       fragment UnrandResult on dcsseeds_scrapePlayers_item {
@@ -49,7 +63,7 @@ export default async function handler(req, res) {
       .record('write results to cache');
 
     const times = stopwatch.list();
-    const data = { times, cache_result };
+    const data = { times, cache_result, report };
     return send(res, 200, data, { prettyPrint: true });
   } catch (err) {
     return send(res, 500, err, { prettyPrint: true });
@@ -61,13 +75,14 @@ const GQL_CacheUnrandOldest = serverQuery(
     query CacheUnrandOldest($window_size: Int!) {
       dcsseeds_scrapePlayers_unrand_cache(limit: $window_size, order_by: { updated_at: asc }) {
         unrand_key
+        updated_at
       }
     }
   `,
   (data) => {
     const cache_list = data.dcsseeds_scrapePlayers_unrand_cache;
-    const unrand_list = cache_list.map((entry) => Unrands.ById[entry.unrand_key]);
-    return unrand_list;
+    const [oldest_entry] = cache_list;
+    return oldest_entry;
   },
 );
 
