@@ -102,6 +102,7 @@ function get_metadata(version) {
 module.exports = {
   ...Version,
   get_metadata,
+  get_version_key,
   Enum: Version,
   Recommended,
   getSpecies: ({ version, background }) => getType('Species', version, background),
