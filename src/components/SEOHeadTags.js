@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Head from 'next/head';
 
-import MetaImage from 'public/images/dcss-search-artifacts.original.png';
+import MetaImage from 'public/images/dcss-search-artifacts.seo.png';
 import Favicon from 'public/images/dcss-search-icon.png';
 
 export default function SEOHeadTags(props) {
@@ -21,8 +21,12 @@ export default function SEOHeadTags(props) {
       <meta property="og:type" content="website" />
       <meta property="og:url" content={path} />
       <meta property="og:image" content={image_path} />
-      <meta property="og:image:width" content="1911" />
-      <meta property="og:image:height" content="1075" />
+      <meta property="og:image:url" content={image_path} />
+      <meta property="og:image:secure_url" content={image_path} />
+
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:creator" content="@magusnn" />
+      <meta name="twitter:image" content={image_path} />
 
       {/* <meta property="twitter:maxage" content="300" />
       <meta property="twitter:card" content="summary_large_image" />
