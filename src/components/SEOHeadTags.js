@@ -14,21 +14,24 @@ export default function SEOHeadTags(props) {
 
   return (
     <Head>
-      {/* seo & open graph tags */}
       <link rel="shortcut icon" href={favicon} />
+
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={path} />
       <meta property="og:image" content={image_path} />
-      <meta name="twitter:maxage" content="300" />
+      <meta property="og:image:width" content="1911" />
+      <meta property="og:image:height" content="1075" />
+
+      <meta property="twitter:maxage" content="300" />
       <meta property="twitter:card" content="summary_large_image" />
       <meta property="twitter:creator" content="magusnn" />
       <meta property="twitter:creator:id" content="23604692" />
       <meta property="twitter:url" content={path} />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={image_path} />
+      <meta property="twitter:title" content={title} />
+      <meta property="twitter:description" content={description} />
+      <meta property="twitter:image:src" content={image_path} />
 
       <meta property="og:locale" content="en_US" />
       <meta name="description" content={description} />
