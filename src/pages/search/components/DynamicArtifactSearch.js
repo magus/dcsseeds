@@ -1,5 +1,6 @@
 import dynamic from 'next/dynamic';
-import { Loading } from './Loading';
+
+import { Loading } from 'src/components/Loading';
 
 export const DynamicArtifactSearch = dynamic(
   async () => {

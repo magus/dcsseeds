@@ -3,8 +3,8 @@ import { useRouter } from 'next/router';
 import styled from 'styled-components';
 
 import { IconMessage } from 'src/components/IconMessage';
+import { Loading } from 'src/components/Loading';
 
-import { Loading } from './Loading';
 import { SearchResult } from './SearchResult';
 
 // search results animation
