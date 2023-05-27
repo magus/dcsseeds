@@ -4,7 +4,8 @@ import { serverQuery } from 'src/graphql/serverQuery';
 import * as Unrands from 'src/utils/Unrands';
 
 export default async function cahce_unrand_list(req, res) {
-  res.setHeader('Cache-Control', 'public, s-maxage=900, stale-while-revalidate=5400');
+  // https://vercel.com/docs/concepts/functions/serverless-functions/edge-caching#recommended-cache-control
+  res.setHeader('Cache-Control', 'public, max-age=0, s-maxage=900, stale-while-revalidate=5400');
 
   const result = await GQL_SearchStaticProps.run();
 
