@@ -12,7 +12,7 @@ export default async function cahce_unrand_list(req, res) {
 
   return res.status(200).json(result);
 
-  // next 13+
+  // next 13+ edge runtime?
 
   // return new Response(JSON.stringify(result), {
   //   status: 200,

@@ -1,6 +1,14 @@
 # CHANGELOG
 
+
 ## 2023-05-27
+
+Finally hit **413 Content Too Large** on the `/` serverless function (`getStaticProps`)
+
+Migrating `cache_unrand_list` to an async call after the page has loaded
+
+
+## 2023-05-07
 
 > https://www.reddit.com/r/dcss/comments/13aen1l/dcss_search_0300_update/jj6kyuw/
 

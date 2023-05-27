@@ -3,16 +3,63 @@ import styled, { css } from 'styled-components';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import useSWR from 'swr';
 
 import * as Unrands from 'src/utils/Unrands';
 import * as Spacer from 'src/components/Spacer';
 import * as Scroller from 'src/modules/Scroller';
+import { Loading } from 'src/components/Loading';
+import { IconMessage } from 'src/components/IconMessage';
 
 import { ArtifactSearchResult } from './ArtifactSearchResult';
 import { useArtifactFilter } from '../hooks/useArtifactFilter';
 import * as QueryParams from '../hooks/QueryParams';
 
 export function ArtifactSearch(props) {
+  const { data, error } = useSWR('/api/cache_unrand_list', fetcher);
+
+  if (error) {
+    function handle_reload(event) {
+      event.preventDefault();
+      location.reload(true);
+    }
+
+    return (
+      <IconMessage
+        icon="🙊"
+        message={
+          <div>
+            Something went wrong getting the artifact list. Try{' '}
+            <a href="#" onClick={handle_reload}>
+              refreshing the page
+            </a>
+            , if that does not work please{' '}
+            <a href="https://github.com/magus/dcsseeds/issues" target="_blank">
+              file an issue
+            </a>
+            !
+          </div>
+        }
+      />
+    );
+  }
+
+  let artifact_list = null;
+
+  if (Array.isArray(data?.artifact_list)) {
+    artifact_list = data.artifact_list;
+  }
+
+  // console.debug({ cache_unrand_query: { data, isLoading, error }, artifact_list });
+
+  if (artifact_list) {
+    return <InternalArtifactSearch {...props} artifact_list={artifact_list} />;
+  }
+
+  return <Loading />;
+}
+
+function InternalArtifactSearch(props) {
   const artifact_filter = useArtifactFilter(props);
 
   function handle_query(query) {
@@ -339,3 +386,5 @@ const NEW_UNRAND_SET = new Set([
   'UNRAND_DISPATER',
   'UNRAND_BATTLE',
 ]);
+
+const fetcher = (url) => fetch(url).then((res) => res.json());
