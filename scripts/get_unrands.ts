@@ -1,5 +1,7 @@
 #!/usr/bin/env node
+
 import { CPPCompiler } from 'scripts/cpp-parse/CPPCompiler';
+
 import { pbcopy } from './pbcopy';
 import { get_tile_map } from './get_tile_map';
 import { read_file } from './read_file';

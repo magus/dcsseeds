@@ -3,6 +3,7 @@
 import { CPPCompiler } from 'scripts/cpp-parse/CPPCompiler';
 import * as semver from 'src/utils/semver';
 
+import { pbcopy } from './pbcopy';
 import * as crawl_dir from './crawl_dir';
 import { read_file } from './read_file';
 import { get_tile_map } from './get_tile_map';
@@ -58,14 +59,27 @@ if (!VERSION) {
   });
 
   console.debug('SPELL NAMES\n\n');
+
   const spellNames: Set<string> = new Set();
+
   Object.values(spells).forEach((spell: any) => {
     spellNames.add(spell.name);
   });
-  const spellNamesAlpha = Array.from(spellNames).sort();
-  spellNamesAlpha.forEach((spellName: string) => {
-    console.debug(`"${capitalize(spellName)}",`);
-  });
+
+  const spell_list = Array.from(spellNames).sort();
+
+  // console.debug(`"${capitalize(spellName)}",`);
+
+  const output_lines = ['', '// prettier-ignore'];
+  output_lines.push('exports.SpellList = [');
+  for (const spell of spell_list) {
+    output_lines.push(`  "${spell}",`);
+  }
+  output_lines.push('];');
+
+  pbcopy(output_lines.join('\n'));
+  console.debug('spell_list', spell_list.length);
+  console.info('📋 Copied `spell_list` export to clipboard.');
 })();
 
 async function getPlayerAvailableSpells() {
@@ -185,11 +199,6 @@ async function getSpellData() {
   return spellData;
 }
 
-function capitalize(input: string) {
-  const firstChar = input.charAt(0);
-  return firstChar.toUpperCase() + input.toLowerCase().substring(1, input.length);
-}
-
 function re(input: string, regex: RegExp) {
   const match = input.match(regex);
   if (match) {
@@ -206,9 +215,10 @@ const RE = {
 };
 
 // enum class spschool
-// See crawl/crawl-ref/source/spl-util.cc
+// See crawl/crawl-ref/source/spl-util.h
 const SPSCHOOL: any = Object.freeze(
   [
+    { name: 'Charms', id: 'charms' },
     { name: 'Conjuration', id: 'conjuration' },
     { name: 'Hexes', id: 'hexes' },
     { name: 'Fire', id: 'fire' },
