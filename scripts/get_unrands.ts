@@ -11,6 +11,12 @@ if (!VERSION) {
   throw new Error(['Must specify VERSION', '  Example', '  > get_unrands 0.27.1', ''].join('\n'));
 }
 
+export type Unrand = {
+  image_url: string;
+  name: string;
+  id: string;
+};
+
 // ignore sprint-only artifacts
 // http://crawl.chaosforge.org/Axe_of_Woe
 const IGNORE_UNRAND: Set<string> = new Set();
@@ -196,7 +202,8 @@ IGNORE_UNRAND.add('UNRAND_WOE');
   for (const unrand of filtered_unrand_list) {
     // console.debug(unrand);
     const { image_url, name, id } = unrand;
-    output_lines.push(`  ${JSON.stringify({ image_url, name, id })},`);
+    const output_unrand: Unrand = { image_url, name, id };
+    output_lines.push(`  ${JSON.stringify(output_unrand)},`);
   }
   output_lines.push('];');
 

@@ -1,6 +1,8 @@
 #!/usr/bin/env node
-const Version = require('../src/Version');
-const { pbcopy } = require('./pbcopy');
+import Version from 'src/Version';
+import { pbcopy } from 'scripts/pbcopy';
+
+import { Unrand } from './get_unrands';
 
 const [, , ...VERSION_LIST] = process.argv;
 
@@ -8,7 +10,9 @@ if (!VERSION_LIST.length) {
   throw new Error(['Must specify VERSION list', '  Example', '  > build_unrand_list 0.27 0.28 0.29', ''].join('\n'));
 }
 
-const get_name_key = (unrand) => unrand.name.toLowerCase();
+function get_name_key(unrand: Unrand) {
+  return unrand.name.toLowerCase();
+}
 
 const unrand_map = new Map();
 
