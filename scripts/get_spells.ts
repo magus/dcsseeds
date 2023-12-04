@@ -1,15 +1,17 @@
 #!/usr/bin/env node
 
 import { CPPCompiler } from 'scripts/cpp-parse/CPPCompiler';
+import * as semver from 'src/utils/semver';
 
 import * as crawl_dir from './crawl_dir';
 import { read_file } from './read_file';
 import { get_tile_map } from './get_tile_map';
 
-const VERSION = '0.27.1';
+const [, , VERSION] = process.argv;
 
-// cd projRoot/crawl
-// git checkout <version>
+if (!VERSION) {
+  throw new Error(['Must specify VERSION', '  Example', '  > get_spells 0.30.0', ''].join('\n'));
+}
 
 (async function run() {
   // await getSpellUtils();
@@ -95,31 +97,56 @@ async function getPlayerAvailableSpells() {
 }
 
 // See `struct spell_desc` in crawl/crawl-ref/source/spl-util.cc
-const SPELL_DESC_FIELD = [
-  'id',
-  'name',
-  'schools',
-  'flags',
-  'level',
-  'powerCap',
-  'minRange',
-  'maxRange',
-  'noise',
-  'effectNoise',
-  'tileId',
-];
+// before version 0.30.0 this included effectNoise
+function getSpellDescFieldList(version: string) {
+  if (semver.compare(version, '0.30.0') < 0) {
+    // spell list before 0.30.0
+    return [
+      'id',
+      'name',
+      'schools',
+      'flags',
+      'level',
+      'powerCap',
+      'minRange',
+      'maxRange',
+      'noise',
+      'effectNoise',
+      'tileId',
+    ];
+  }
+  return [
+    // spell list after 0.30.0 where effectNoise was removed
+    'id',
+    'name',
+    'schools',
+    'flags',
+    'level',
+    'powerCap',
+    'minRange',
+    'maxRange',
+    'noise',
+    'tileId',
+  ];
+}
 
 async function getSpellData() {
   const spellData: any = {};
 
   const crawlSpellData = CPPCompiler(await read_file(crawl_dir.dir(VERSION, 'crawl-ref/source/spl-data.h')));
 
+  const SPELL_DESC_FIELD = getSpellDescFieldList(VERSION);
+
   crawlSpellData.traverse({
     Assignment: {
       enter(node: any) {
         let isSpellDataArray = node.name.value === 'spelldata[]';
         let isObject = node.value.type === CPPCompiler.AST.Object.type;
+
         if (isSpellDataArray && isObject) {
+          // console.dir(node.value.fields, { depth: null });
+          // throw new Error('stop');
+
           // each field of this array is a a `spell_desc` struct
           node.value.fields.forEach((spell_desc: any) => {
             // create spell

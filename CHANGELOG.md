@@ -1,6 +1,10 @@
 # CHANGELOG
 
 
+## 2023-12-03
+
+- Refactor `./scripts/get_spells.js` to take version and handle pre-`0.30.0` format which included effect noise
+
 ## 2023-05-27
 
 Finally hit **413 Content Too Large** on the `/` serverless function (`getStaticProps`)
