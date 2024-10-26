@@ -6,7 +6,6 @@ import { execSync } from 'child_process';
 const PROJ_ROOT = execSync('git rev-parse --show-toplevel').toString().trim();
 
 export function reset() {
-  // forcefully reset crawl submodule back to init state
   execSync(`git submodule update --force`);
 }
 
@@ -29,6 +28,10 @@ export function prepare(version: string) {
 
   // move to crawl-dir at version
   process.chdir(dir(version));
+
+  // forcefully reset crawl submodule back to init state
+  execSync(`git reset --hard`);
+  execSync(`git clean -df`);
 
   // run tasks to prepare files for processing (e.g. remove development items tagged with TAG_MAJOR_VERSION)
   // see crawl/.github/workflows/ci.yml
