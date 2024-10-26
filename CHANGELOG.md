@@ -1,6 +1,5 @@
 # CHANGELOG
 
-
 ## 2023-12-03
 
 - Refactor `./scripts/get_spells.js` to take version and handle pre-`0.30.0` format which included effect noise
@@ -10,7 +9,6 @@
 Finally hit **413 Content Too Large** on the `/` serverless function (`getStaticProps`)
 
 Migrating `cache_unrand_list` to an async call after the page has loaded
-
 
 ## 2023-05-07
 
@@ -23,7 +21,6 @@ Had to update `ServerConfig` and also create a new row in `dcsseeds_scrapePlayer
 Then called api below via postman successfully which created entries
 
 > http://localhost:3000/api/scrapePlayers/scrapeMorgue?morgue=http://crawl.develz.org/morgues/git/svalbard/morgue-svalbard-20161108-120329.txt
-
 
 ## 2023-05-06
 
@@ -59,7 +56,6 @@ Needed to fix so it falls back to handle until the cache eventually updates in p
 Updated `rollSeed` api endpoint to roll for latest version by default
 
 Updated `New` page to generate version options dynamically from `Version` metadata
-
 
 ## 2023-05-01
 
@@ -252,7 +248,6 @@ psql -Atx postgres://postgres:<PG_PASSWORD>@172.17.0.2:5432/hasura_db
 
 Finally run `psql` commands to restore database
 
-
 ```sh
 cat schema.sql | psql -Atx postgres://postgres:<PG_PASSWORD>@172.17.0.2:5432/hasura_db
 cat data.sql | psql -Atx postgres://postgres:<PG_PASSWORD>@172.17.0.2:5432/hasura_db
@@ -302,6 +297,7 @@ dokku letsencrypt:cron-job --add
 Also deploy failed due to Sentry auth errors
 
 > https://github.com/orgs/vercel/discussions/583
+
 > https://github.com/getsentry/sentry-javascript/issues/4383
 
 Setup Vercel integration again for dcsseeds and redeployed, successfully
@@ -366,8 +362,6 @@ Setting it up again, confirm it actually runs by setting to 2 minute interval
 tail /var/log/dokku/letsencrypt.log
 ```
 
-
-
 ## 2023-03-29
 
 ### using crawl to generate full item list
@@ -388,8 +382,7 @@ time util/fake_pty ./crawl -script seed_explorer.lua -depth all -seed 1114478993
 - results match exactly the results we parsed via `parseMorgue`
 - temple altars are not noted in morgue so seed explorer list does show them
 
-> src/utils/parseMorgue/__tests__/morgue-Jingleheimer-20220810-034403/__snapshots__/parseMorgue.test.js.snap
-
+> `src/utils/parseMorgue/__tests__/morgue-Jingleheimer-20220810-034403/__snapshots__/parseMorgue.test.js.snap`
 
 ## 2023-03-25
 
@@ -405,20 +398,23 @@ requires data files to run apparently, need to figure that out too
 next step: execute binary via endpoint and return stdout is to try
 next step: ship the binary with vercel deploy and see if it runs in vercel instance
 
-
 ## 2023-03-18
 
 Cleaning up Ashenzari items in database
 
 ```graphql
 query FindInvalidAshenzariItems {
-  dcsseeds_scrapePlayers_item(where: {name: {_iregex: "(Melee|Range|Elem|Alch|Comp|Bglg|Self|Fort|Cun|Evo)(,|})"}}) {
+  dcsseeds_scrapePlayers_item(
+    where: { name: { _iregex: "(Melee|Range|Elem|Alch|Comp|Bglg|Self|Fort|Cun|Evo)(,|})" } }
+  ) {
     name
   }
 }
 
 mutation DeleteInvalidAshenzariItems {
-  delete_dcsseeds_scrapePlayers_item(where: {name: {_iregex: "(Melee|Range|Elem|Alch|Comp|Bglg|Self|Fort|Cun|Evo)(,|})"}}) {
+  delete_dcsseeds_scrapePlayers_item(
+    where: { name: { _iregex: "(Melee|Range|Elem|Alch|Comp|Bglg|Self|Fort|Cun|Evo)(,|})" } }
+  ) {
     affected_rows
   }
 }
@@ -442,7 +438,6 @@ root@459974224faf:/> ls -lsah data.sql
 
 now it's a matter of getting it setup so we can run this `pg_dump` remotely from github actions
 one idea is to expose the ports to run `pg_dump` remotely, but maybe we could try ssh and redirect to local machine stdout?
-
 
 ```sh
 ❯ ssh -T root@104.236.34.97 "dokku run hasura pg_dump postgres://postgres:96b2bda121c09c36d9db62ddf8bad5e3@dokku-postgres-hasura-db:5432/hasura_db --no-owner --no-acl --data-only --schema public" > data.sql
@@ -487,14 +482,11 @@ root@magic-auth:~# vim ~/.ssh/authorized_keys
 # save and quit
 ```
 
-
-
-
 ## 2023-03-11
 
 need to migrate all previous `NULL` level values to zero
 `NULL` is ignored for primary key which causes duplicate rows and cannot be sorted properly by `branch_level` table
-first, discover all duplicate rows where  `NULL` in them
+first, discover all duplicate rows where `NULL` in them
 
 ```sql
 select id from "public"."dcsseeds_scrapePlayers_item" outer_table
@@ -531,7 +523,7 @@ finally, now that duplicates are removed we can update all `NULL` values to `0` 
 
 ```graphql
 mutation ConvertLevelNullZero {
-  update_dcsseeds_scrapePlayers_item(where: {level: {_is_null: true}}, _set: {level: 0}) {
+  update_dcsseeds_scrapePlayers_item(where: { level: { _is_null: true } }, _set: { level: 0 }) {
     affected_rows
   }
 }
@@ -542,13 +534,13 @@ mutation ConvertLevelNullZero {
 - setting up foreign keys to control how updates and deletes impact related tables
   trying to setup so deleting seedVersion will delete associated items
 
-  dcsseeds_scrapePlayers_item . branchName        → dcsseeds_scrapePlayers_branch . name
-      update restrict
-      delete restrict
+  dcsseeds_scrapePlayers_item . branchName → dcsseeds_scrapePlayers_branch . name
+  update restrict
+  delete restrict
 
   dcsseeds_scrapePlayers_item . ( version, seed ) → dcsseeds_scrapePlayers_seedVersion . ( version, seed )
-    update restrict
-    delete cascade
+  update restrict
+  delete cascade
 
 - testing on seed with single item first
   v0.29.0, seed 13228964911619526999 (1 item)
@@ -562,10 +554,9 @@ mutation ConvertLevelNullZero {
 
 - the foreign keys are working as expected
 
-
 ## 2023-02-28
 
-- syntax error near $ when creating postgres function
+- syntax error near \$ when creating postgres function
 - look at migrations for actual function sql, the version in admin console has whitespace errors
 
 ```sql
@@ -591,166 +582,165 @@ AS $function$
 
 - immediate fix was to restart the dokku hasura deploy
 
-    ```sh
-    ssh root@104.236.34.97
-    dokku tags:deploy hasura
-    ```
+  ```sh
+  ssh root@104.236.34.97
+  dokku tags:deploy hasura
+  ```
 
 - using a curl cron to restart instance when it enters this 502 state could be useful as health check
 - dokku added crons in 0.23 but we are on 0.22, need to update to unblock dokku crons
 - after update above the 502 error reappeared so debugged it a bit but didn't find anything useful
 - command logs below
 
-    ```sh
-    ssh root@104.236.34.97
+  ```sh
+  ssh root@104.236.34.97
 
-    dokku-update
-    # this took awhile and also updated system
-    # 502 error reappeared after update
+  dokku-update
+  # this took awhile and also updated system
+  # 502 error reappeared after update
 
-    # try to debug a bit
-    dokku logs hasura
-    # shows failing requests, nothing new learned
-    dokku ps:report hasura
-    dokku ps:inspect hasura
-    # shows process is still running
+  # try to debug a bit
+  dokku logs hasura
+  # shows failing requests, nothing new learned
+  dokku ps:report hasura
+  dokku ps:inspect hasura
+  # shows process is still running
 
-    curl https://magic-graphql.iamnoah.com/v1/graphql
-    # success returns a short json error
-    # error returns 502 page
+  curl https://magic-graphql.iamnoah.com/v1/graphql
+  # success returns a short json error
+  # error returns 502 page
 
-    dokku ps:rebuild --all
-    # failed to rebuild hasura, going to try deploying with new git:from-image
-    dokku git:from-image hasura hasura/graphql-engine
-    dokku ps:rebuild --all
-    # still failing, so trying to restart
-    dokku ps:restart hasura
-        -----> Running post-deploy
-        panic: runtime error: index out of range [1] with length 1
+  dokku ps:rebuild --all
+  # failed to rebuild hasura, going to try deploying with new git:from-image
+  dokku git:from-image hasura hasura/graphql-engine
+  dokku ps:rebuild --all
+  # still failing, so trying to restart
+  dokku ps:restart hasura
+      -----> Running post-deploy
+      panic: runtime error: index out of range [1] with length 1
 
-        goroutine 1 [running]:
-        github.com/dokku/dokku/plugins/common.ParseScaleOutput({0xc0000aa400, 0x0, 0xc0000506e0?})
-          /go/src/github.com/dokku/dokku/plugins/common/common.go:399 +0x154
-        github.com/dokku/dokku/plugins/network.BuildConfig({0x7ffcaf79d231, 0x6})
-          /go/src/github.com/dokku/dokku/plugins/network/network.go:55 +0x116
-        main.main()
-          /go/src/github.com/dokku/dokku/plugins/network/src/triggers/triggers.go:34 +0x534
-        !     exit status 2
-    # also fails, same error
-    # https://serverfault.com/questions/1123094/after-upgrading-dokku-cant-start-applications
-    dokku ps:scale hasura web=1
-    # instance successfully restarted now and working
-    ```
+      goroutine 1 [running]:
+      github.com/dokku/dokku/plugins/common.ParseScaleOutput({0xc0000aa400, 0x0, 0xc0000506e0?})
+        /go/src/github.com/dokku/dokku/plugins/common/common.go:399 +0x154
+      github.com/dokku/dokku/plugins/network.BuildConfig({0x7ffcaf79d231, 0x6})
+        /go/src/github.com/dokku/dokku/plugins/network/network.go:55 +0x116
+      main.main()
+        /go/src/github.com/dokku/dokku/plugins/network/src/triggers/triggers.go:34 +0x534
+      !     exit status 2
+  # also fails, same error
+  # https://serverfault.com/questions/1123094/after-upgrading-dokku-cant-start-applications
+  dokku ps:scale hasura web=1
+  # instance successfully restarted now and working
+  ```
 
 - can we setup a report policy for dokku hasura app to recover from this failure state?
 - updating dokku on DigitalOcean droplet with cron health check
 - https://dokku.com/docs/advanced-usage/deployment-tasks/
 - https://dokku.com/docs/processes/scheduled-cron-tasks/#using-run-for-cron-tasks
 
+  ```sh
+  # can we use dokku checks for health monitoring?
+  # we could manually invoke them to see if they restart instance
+  # https://dokku.com/docs/deployment/zero-downtime-deploys/#check-instructions
+  dokku checks:run hasura
+  # runs nothing just waits 10s (default)
+  # need to create a CHECKS file in app dir
+  dokku apps:report hasura
+  # discover app dir /home/dokku/hasura
+  cd /home/dokku/hasura
+  vim CHECKS
 
-    ```sh
-    # can we use dokku checks for health monitoring?
-    # we could manually invoke them to see if they restart instance
-    # https://dokku.com/docs/deployment/zero-downtime-deploys/#check-instructions
-    dokku checks:run hasura
-    # runs nothing just waits 10s (default)
-    # need to create a CHECKS file in app dir
-    dokku apps:report hasura
-    # discover app dir /home/dokku/hasura
-    cd /home/dokku/hasura
-    vim CHECKS
+      WAIT=5      # wait 5s before starting checks
+      TIMEOUT=30  # timeout after 30s
+      ATTEMPTS=5  # retry 5 times
 
-        WAIT=5      # wait 5s before starting checks
-        TIMEOUT=30  # timeout after 30s
-        ATTEMPTS=5  # retry 5 times
+      //magic-graphql.iamnoah.com/v1/graphql {{"{"}}"code":"not-found","error":"resource does not exist","path":"$"{{"}"}}
 
-        //magic-graphql.iamnoah.com/v1/graphql {{"{"}}"code":"not-found","error":"resource does not exist","path":"$"{{"}"}}
+  # run checks again
+  dokku checks:run hasura
+  # still defaults, might be in wrong location?
+  dokku enter hasura
+  # had to be added to dockerfile via below
+  vim Dockerfile
 
-    # run checks again
-    dokku checks:run hasura
-    # still defaults, might be in wrong location?
-    dokku enter hasura
-    # had to be added to dockerfile via below
-    vim Dockerfile
+      FROM hasura/graphql-engine
+      ADD CHECKS /
 
-        FROM hasura/graphql-engine
-        ADD CHECKS /
+  docker build -t="dokku/hasura/graphql-engine" .
+  dokku git:from-image hasura dokku/hasura/graphql-engine
+  # edit dockerfile and retry via
+  docker build -t="dokku/hasura/graphql-engine" .
+  dokku ps:rebuild hasura
+  # checks failing due to variables at top
+  # removed variables so just the single check line
+  # curl now fails after 5 attempts
 
-    docker build -t="dokku/hasura/graphql-engine" .
-    dokku git:from-image hasura dokku/hasura/graphql-engine
-    # edit dockerfile and retry via
-    docker build -t="dokku/hasura/graphql-engine" .
-    dokku ps:rebuild hasura
-    # checks failing due to variables at top
-    # removed variables so just the single check line
-    # curl now fails after 5 attempts
+      =====> Processing deployment checks
+      -----> Deploying hasura via the docker-local scheduler...
+      -----> Deploying web (count=1)
+            Attempting pre-flight checks (web.1)
+            CHECKS expected result: http://localhost/v1/graphql => "{"code":"not-found","error":"resource does not exist","path":"$"}" (web.1)
+            Attempt 1/5. Waiting for 5 seconds (web.1)
+      !     curl: (7) Failed to connect to 172.17.0.4 port 5000: Connection refused
+      !     Check attempt 1/5 failed (web.1)
+            Attempt 2/5. Waiting for 5 seconds (web.1)
+      !     curl: (7) Failed to connect to 172.17.0.4 port 5000: Connection refused
+      !     Check attempt 2/5 failed (web.1)
+            Attempt 3/5. Waiting for 5 seconds (web.1)
+      !     curl: (7) Failed to connect to 172.17.0.4 port 5000: Connection refused
+      !     Check attempt 3/5 failed (web.1)
+            Attempt 4/5. Waiting for 5 seconds (web.1)
+      !     curl: (7) Failed to connect to 172.17.0.4 port 5000: Connection refused
+      !     Check attempt 4/5 failed (web.1)
+            Attempt 5/5. Waiting for 5 seconds (web.1)
+      !     curl: (7) Failed to connect to 172.17.0.4 port 5000: Connection refused
+      !     Check attempt 5/5 failed (web.1)
+      !     Could not start due to 1 failed checks (web.1)
 
-        =====> Processing deployment checks
-        -----> Deploying hasura via the docker-local scheduler...
-        -----> Deploying web (count=1)
-              Attempting pre-flight checks (web.1)
-              CHECKS expected result: http://localhost/v1/graphql => "{"code":"not-found","error":"resource does not exist","path":"$"}" (web.1)
-              Attempt 1/5. Waiting for 5 seconds (web.1)
-        !     curl: (7) Failed to connect to 172.17.0.4 port 5000: Connection refused
-        !     Check attempt 1/5 failed (web.1)
-              Attempt 2/5. Waiting for 5 seconds (web.1)
-        !     curl: (7) Failed to connect to 172.17.0.4 port 5000: Connection refused
-        !     Check attempt 2/5 failed (web.1)
-              Attempt 3/5. Waiting for 5 seconds (web.1)
-        !     curl: (7) Failed to connect to 172.17.0.4 port 5000: Connection refused
-        !     Check attempt 3/5 failed (web.1)
-              Attempt 4/5. Waiting for 5 seconds (web.1)
-        !     curl: (7) Failed to connect to 172.17.0.4 port 5000: Connection refused
-        !     Check attempt 4/5 failed (web.1)
-              Attempt 5/5. Waiting for 5 seconds (web.1)
-        !     curl: (7) Failed to connect to 172.17.0.4 port 5000: Connection refused
-        !     Check attempt 5/5 failed (web.1)
-        !     Could not start due to 1 failed checks (web.1)
+  # trying app.json instead
+  # https://dokku.com/docs/advanced-usage/deployment-tasks/
+  vim Dockerfile
+  vim app.json
+  vim health-check.sh
+  chmod +x health-check.sh
+  docker build -t="dokku/hasura/graphql-engine" .
+  dokku ps:rebuild hasura
 
-    # trying app.json instead
-    # https://dokku.com/docs/advanced-usage/deployment-tasks/
-    vim Dockerfile
-    vim app.json
-    vim health-check.sh
-    chmod +x health-check.sh
-    docker build -t="dokku/hasura/graphql-engine" .
-    dokku ps:rebuild hasura
+  # ok the health-check.sh script runs post deploy
+  # going to try to setup cron now
+  # https://dokku.com/docs/processes/scheduled-cron-tasks/#using-run-for-cron-tasks
+  # ok same as above but with the versions checked into magic.iamnoah.com repo
+  dokku cron:list hasura
+  dokku cron:report hasura
 
-    # ok the health-check.sh script runs post deploy
-    # going to try to setup cron now
-    # https://dokku.com/docs/processes/scheduled-cron-tasks/#using-run-for-cron-tasks
-    # ok same as above but with the versions checked into magic.iamnoah.com repo
-    dokku cron:list hasura
-    dokku cron:report hasura
+  # cron is running but no logs so setup vector logging
+  dokku logs:vector-start
+  dokku logs:set hasura vector-sink "console://?encoding[codec]=json"
+  dokku logs:vector-logs --tail
+  # confirmed cron is running successfully
 
-    # cron is running but no logs so setup vector logging
-    dokku logs:vector-start
-    dokku logs:set hasura vector-sink "console://?encoding[codec]=json"
-    dokku logs:vector-logs --tail
-    # confirmed cron is running successfully
+  # turns out this is useless because the dokku command
+  # is not found inside container, so cannot restart in health-check.sh
+  # instead will setup a cron inside host machine
+  # https://www.digitalocean.com/community/tutorials/how-to-use-cron-to-automate-tasks-ubuntu-1804
+  crontab -e
+  # paste in line below
+  */5 * * * * /home/dokku/hasura/health-check.sh 5 "https://magic-graphql.iamnoah.com/v1/graphql" '{"code":"not-found","error":"resource does not exist","path":"$"}' > /var/log/cronlog 2>&1
 
-    # turns out this is useless because the dokku command
-    # is not found inside container, so cannot restart in health-check.sh
-    # instead will setup a cron inside host machine
-    # https://www.digitalocean.com/community/tutorials/how-to-use-cron-to-automate-tasks-ubuntu-1804
-    crontab -e
-    # paste in line below
-    */5 * * * * /home/dokku/hasura/health-check.sh 5 "https://magic-graphql.iamnoah.com/v1/graphql" '{"code":"not-found","error":"resource does not exist","path":"$"}' > /var/log/cronlog 2>&1
+  # tail logs for cron, without stdout from process
+  journalctl -u cron.service -f
+  # confirmed it's running but need to redirect output
+  vim /etc/logrotate.d/cronlog
 
-    # tail logs for cron, without stdout from process
-    journalctl -u cron.service -f
-    # confirmed it's running but need to redirect output
-    vim /etc/logrotate.d/cronlog
+  # since we are no longer modifying dockerfile we can revert the image back to hasura base
+  dokku git:from-image hasura hasura/graphql-engine
+  dokku ps:rebuild hasura
 
-    # since we are no longer modifying dockerfile we can revert the image back to hasura base
-    dokku git:from-image hasura hasura/graphql-engine
-    dokku ps:rebuild hasura
-
-    # updating instructions in mono/sites/magic.iamnoah.com/README.md
-    ```
-
+  # updating instructions in mono/sites/magic.iamnoah.com/README.md
+  ```
 
 ### query performance
+
 - unrand query for artifact filters was hitting `10s` vercel timeout
 - create `/api/cache_unrand_query` to update `window_size` unrand result lists every `1min`
 - now `getStaticProps` can query the `unrand_cache` table which is only `106` rows or JSON blobs, very fast
@@ -777,28 +767,43 @@ AS $function$
 - in order to implement this constraint i have to cleanup all rows that break the constraint
 - if we try to add the constraint hasura admin shows us an error which tells us which items to delete
 
-
 ```json
-{ "code": "postgres-error", "error": "query execution failed", "internal": { "arguments": [], "error": { "description": "Key (version, \"branchName\", level, seed, name)=(0.28.0, Dungeon, 9, 10077074884737061911, +0 scale mail of Jipp {Str+2 Dex+3}) is duplicated.", "exec_status": "FatalError", "hint": null, "message": "could not create unique index \"dcsseeds_scrapePlayers_item_version_branchName_level_seed_name_\"", "status_code": "23505" }, "prepared": false, "statement": "alter table \"public\".\"dcsseeds_scrapePlayers_item\" add constraint \"dcsseeds_scrapePlayers_item_version_branchName_level_seed_name_key\" unique (\"version\", \"branchName\", \"level\", \"seed\", \"name\");" }, "path": "$[1]" }
+{
+  "code": "postgres-error",
+  "error": "query execution failed",
+  "internal": {
+    "arguments": [],
+    "error": {
+      "description": "Key (version, \"branchName\", level, seed, name)=(0.28.0, Dungeon, 9, 10077074884737061911, +0 scale mail of Jipp {Str+2 Dex+3}) is duplicated.",
+      "exec_status": "FatalError",
+      "hint": null,
+      "message": "could not create unique index \"dcsseeds_scrapePlayers_item_version_branchName_level_seed_name_\"",
+      "status_code": "23505"
+    },
+    "prepared": false,
+    "statement": "alter table \"public\".\"dcsseeds_scrapePlayers_item\" add constraint \"dcsseeds_scrapePlayers_item_version_branchName_level_seed_name_key\" unique (\"version\", \"branchName\", \"level\", \"seed\", \"name\");"
+  },
+  "path": "$[1]"
+}
 ```
 
 ```json
 {
-    "code": "postgres-error",
-    "error": "query execution failed",
-    "internal": {
-        "arguments": [],
-        "error": {
-            "description": "Key (version, \"branchName\", level, seed, name)=(0.28.0, Dungeon, 9, 10077074884737061911, +0 scale mail of Jipp {Str+2 Dex+3}) is duplicated.",
-            "exec_status": "FatalError",
-            "hint": null,
-            "message": "could not create unique index \"dcsseeds_scrapePlayers_item_version_branchName_level_seed_name_\"",
-            "status_code": "23505"
-        },
-        "prepared": false,
-        "statement": "alter table \"public\".\"dcsseeds_scrapePlayers_item\" add constraint \"dcsseeds_scrapePlayers_item_version_branchName_level_seed_name_key\" unique (\"version\", \"branchName\", \"level\", \"seed\", \"name\");"
+  "code": "postgres-error",
+  "error": "query execution failed",
+  "internal": {
+    "arguments": [],
+    "error": {
+      "description": "Key (version, \"branchName\", level, seed, name)=(0.28.0, Dungeon, 9, 10077074884737061911, +0 scale mail of Jipp {Str+2 Dex+3}) is duplicated.",
+      "exec_status": "FatalError",
+      "hint": null,
+      "message": "could not create unique index \"dcsseeds_scrapePlayers_item_version_branchName_level_seed_name_\"",
+      "status_code": "23505"
     },
-    "path": "$[1]"
+    "prepared": false,
+    "statement": "alter table \"public\".\"dcsseeds_scrapePlayers_item\" add constraint \"dcsseeds_scrapePlayers_item_version_branchName_level_seed_name_key\" unique (\"version\", \"branchName\", \"level\", \"seed\", \"name\");"
+  },
+  "path": "$[1]"
 }
 ```
 
@@ -827,6 +832,7 @@ query MyQuery {
   }
 }
 ```
+
 - deleting the duplicates
 
 ```graphql
@@ -857,7 +863,7 @@ mutation MyMutation {
 
 ```graphql
 mutation MyMutation {
-  delete_dcsseeds_scrapePlayers_item(where: {morgue: {_ilike: "http%"}}) {
+  delete_dcsseeds_scrapePlayers_item(where: { morgue: { _ilike: "http%" } }) {
     affected_rows
   }
 }
@@ -871,6 +877,7 @@ mutation MyMutation {
 - followed documentation for fuzzy text search with hasura
 
   > https://hasura.io/docs/latest/schema/postgres/custom-functions/#example-fuzzy-match-search-functions
+
   > https://hasura.io/blog/full-text-search-with-hasura-graphql-api-postgres/
 
 - ran sql below directly, creating index which improved query performance
@@ -884,7 +891,6 @@ mutation MyMutation {
   USING GIN ((name) gin_trgm_ops);
   ```
 
-
 ## 2022-12-23 migrate tables to magic hasura db
 
 - heroku free database is deleted
@@ -892,12 +898,11 @@ mutation MyMutation {
 - setup `dcsseeds_scrapePlayers` tables in `magic-graphql.iamnoah.com` DB (`magus/mono`)
 - updated hasura engine in `magic-auth` droplet
 
-    ```sh
-    docker pull hasura/graphql-engine
-    docker tag hasura/graphql-engine dokku/hasura
-    dokku tags:deploy hasura
-    ```
-
+  ```sh
+  docker pull hasura/graphql-engine
+  docker tag hasura/graphql-engine dokku/hasura
+  dokku tags:deploy hasura
+  ```
 
 ## 2022-08-13 how to update DCSS version
 
