@@ -19,3 +19,6 @@
 [submodule "crawl-dir/0.24.1"]
 	path = crawl-dir/0.24.1
 	url = git@github.com:crawl/crawl.git
+[submodule "crawl-dir/0.31.0"]
+	path = crawl-dir/0.31.0
+	url = git@github.com:crawl/crawl.git
