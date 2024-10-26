@@ -44,6 +44,11 @@ export function prepare(version: string) {
   // now we can generate `source/art-data.h`
   execSync('perl util/art-data.pl');
 
+  // generate crawl-ref/source/species-data.h
+  execSync(
+    '~/.pyenv/dcsseeds/bin/python util/species-gen.py dat/species/ util/species-gen/ species-data.h aptitudes.h species-groups.h species-type.h',
+  );
+
   // return to PROJ_ROOT
   process.chdir(PROJ_ROOT);
 }
