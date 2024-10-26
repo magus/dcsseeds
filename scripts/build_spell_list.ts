@@ -2,8 +2,6 @@
 import Version from 'src/Version';
 import { pbcopy } from 'scripts/pbcopy';
 
-import { Unrand } from './get_unrands';
-
 const [, , ...VERSION_LIST] = process.argv;
 
 if (!VERSION_LIST.length) {
