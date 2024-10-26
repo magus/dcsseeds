@@ -9,19 +9,7 @@ we could explore going back to a single submodule and using `git checkout $versi
 ## Setting up a new version
 
 ```sh
-git clone -b 0.27.1 --depth 1 git@github.com:crawl/crawl.git 0.27.1
-git reset 0.27.1
-git submodule add -f git@github.com:crawl/crawl.git 0.27.1
-```
-
-## Legacy Github Actions
-
-```yml
-  - name: Sync crawl submodule
-    run: |
-      cd crawl
-      ls -lsah
-      git fetch --tags
-      git log --since="2021-08-01" --tags --decorate --simplify-by-decoration --oneline
-      cd ..
+VERSION="0.31.0";
+git clone -b "$VERSION" --depth 1 git@github.com:crawl/crawl.git "crawl-dir/$VERSION";
+git submodule add -f git@github.com:crawl/crawl.git "crawl-dir/$VERSION";
 ```
