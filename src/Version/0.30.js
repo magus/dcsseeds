@@ -123,6 +123,8 @@ exports.RecommendedSpecies = {
   [Jobs.Wr]: [Species.Fe, Species.Me, Species.Sp, Species.At, Species.Dr],
 };
 
+// crawl-dir/0.30.0/crawl-ref/source/ng-restr.cc
+// see logic in _banned_combination function
 exports.BannedCombos = {
   [Species.Fe]: { [Jobs.Gl]: true, [Jobs.Br]: true, [Jobs.Hu]: true, [Jobs.Hs]: true },
   [Species.Dg]: { [Jobs.Be]: true, [Jobs.CA]: true, [Jobs.CK]: true, [Jobs.Mo]: true },
