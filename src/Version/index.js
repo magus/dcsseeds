@@ -1,6 +1,9 @@
 const keyMirror = require('../utils/keyMirror');
+const uniq = require('lodash/uniq');
 
 const Version = keyMirror({
+  v32: true,
+  v31: true,
   v30: true,
   v29: true,
   v28: true,
@@ -18,6 +21,8 @@ const Version = keyMirror({
 //
 // Consider using parser to programmatically get jobs, species, recommended etc.
 const Metadata = {
+  [Version.v32]: require('./0.32'),
+  [Version.v31]: require('./0.31'),
   [Version.v30]: require('./0.30'),
   [Version.v29]: require('./0.29'),
   [Version.v28]: require('./0.28'),
@@ -45,13 +50,26 @@ const BannedCombos = {
 for (const version of Object.keys(Version)) {
   const version_meta = Metadata[version];
 
-  SpeciesBackgrounds.Species[version] = version_meta.Species;
-  SpeciesBackgrounds.Backgrounds[version] = version_meta.Backgrounds;
+  const SpeciesList = Object.values(version_meta.Species);
+  const BackgroundList = Object.values(version_meta.Jobs);
 
-  Recommended.Species[version] = buildConvertedLookup(version_meta.RecommendedSpecies);
-  Recommended.Backgrounds[version] = buildConvertedLookup(version_meta.RecommendedBackgrounds);
+  SpeciesBackgrounds.Species[version] = SpeciesList;
+  SpeciesBackgrounds.Backgrounds[version] = BackgroundList;
 
-  BannedCombos.Backgrounds[version] = version_meta.BannedCombos;
+  const RecommendedBackgrounds = {};
+  for (const species of SpeciesList) {
+    RecommendedBackgrounds[species.id] = species.recommended_jobs;
+  }
+
+  const RecommendedSpecies = {};
+  for (const background of BackgroundList) {
+    RecommendedSpecies[background.id] = background.recommended_species;
+  }
+
+  Recommended.Species[version] = buildConvertedLookup(RecommendedSpecies);
+  Recommended.Backgrounds[version] = buildConvertedLookup(RecommendedBackgrounds);
+
+  BannedCombos.Backgrounds[version] = buildConvertedLookup(version_meta.BannedCombos);
 
   // reverse into Background to Species lookup (BannedCombos.Species)
   BannedCombos.Species[version] = {};
@@ -75,6 +93,10 @@ function get_version_key(version) {
   }
 
   switch (true) {
+    case version.startsWith('0.32'):
+      return Version.v32;
+    case version.startsWith('0.31'):
+      return Version.v31;
     case version.startsWith('0.30'):
       return Version.v30;
     case version.startsWith('0.29'):
@@ -99,12 +121,38 @@ function get_metadata(version) {
   return Metadata[get_version_key(version)];
 }
 
+// build regex of all unique species and background names
+//
+// Examples
+// Kobold Hedge Wizard
+// Minotaur Fighter
+// Gnoll Wanderer
+//
+const SpeciesBackgroundRegex = (function build_SpeciesBackgroundRegex() {
+  let species_list = [];
+  let job_list = [];
+  for (const [, version_meta] of Object.entries(Metadata)) {
+    species_list.push(...Object.values(version_meta.Species).map((s) => s.name));
+    job_list.push(...Object.values(version_meta.Jobs).map((j) => j.name));
+  }
+
+  species_list = uniq(species_list);
+  job_list = uniq(job_list);
+
+  const re_species = species_list.join('|');
+  const re_background = job_list.join('|');
+  const regex = new RegExp(`(?<species>${re_species}) (?<background>${re_background})`, 'i');
+
+  return regex;
+})();
+
 module.exports = {
   ...Version,
   get_metadata,
   get_version_key,
   Enum: Version,
   Recommended,
+  SpeciesBackgroundRegex,
   getSpecies: ({ version, background }) => getType('Species', version, background),
   getBackgrounds: ({ version, species }) => getType('Backgrounds', version, species),
 };
@@ -118,7 +166,10 @@ function getType(type, version, other) {
 
   const values = Object.values(speciesBackgroundsVersion);
 
-  return values.map((value) => {
+  return values.map((data) => {
+    const value = data.id;
+    const name = data.name;
+
     let banned;
 
     if (other) {
@@ -134,7 +185,7 @@ function getType(type, version, other) {
       }
     }
 
-    return { value, banned };
+    return { value, name, banned };
   });
 }
 

@@ -5,8 +5,6 @@ import { AnimateSharedLayout, motion } from 'framer-motion';
 import StyledLink from 'src/components/StyledLink';
 import CopyButton from 'src/components/CopyButton';
 
-import Species from 'src/utils/Species';
-import Backgrounds from 'src/utils/Backgrounds';
 import Version from 'src/Version';
 
 import { getInitialProps } from './getInitialProps';
@@ -83,7 +81,7 @@ export default function New(props) {
 
     return {
       value: sp.value,
-      name: Species.Names[sp.value],
+      name: sp.name,
       tier,
       disabled: sp.banned,
     };
@@ -119,7 +117,7 @@ export default function New(props) {
 
     return {
       value: bg.value,
-      name: Backgrounds.Names[bg.value],
+      name: bg.name,
       tier,
       disabled: bg.banned,
     };

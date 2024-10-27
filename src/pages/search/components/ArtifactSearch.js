@@ -376,15 +376,15 @@ const spring_config = {
 };
 
 const NEW_UNRAND_SET = new Set([
-  'UNRAND_HOLY_AXE',
-  'UNRAND_FORCE_LANCE',
-  'UNRAND_HERMITS_PENDANT',
-  'UNRAND_SLICK_SLIPPERS',
-  'UNRAND_STORM_QUEEN',
-  'UNRAND_VICTORY',
-  'UNRAND_WUCAD_MU',
-  'UNRAND_DISPATER',
-  'UNRAND_BATTLE',
+  // force line break for readability
+  'UNRAND_AMULET_INVISIBILITY',
+  'UNRAND_CHARLATANS_ORB',
+  'UNRAND_DREAMDUST_NECKLACE',
+  'UNRAND_BRILLIANCE',
+  'UNRAND_GADGETEER',
+  'UNRAND_MULE',
+  'UNRAND_SCARF_INVISIBILITY',
+  'UNRAND_DOOM_KNIGHT',
 ]);
 
 const fetcher = (url) => fetch(url).then((res) => res.json());

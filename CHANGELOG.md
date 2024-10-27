@@ -1,5 +1,81 @@
 # CHANGELOG
 
+## 2024-10-26
+
+- Referencing [2023-05-06](#2023-05-06) entry below for changes to add new version
+- Added new `crawl-dir` for `0.31.0` and `0.32.1`
+- Update `scripts/AshenzariCurses.ts` with new versions
+
+  ```bash
+  yarn tsx ./scripts/AshenzariCurses.ts
+  ```
+
+- Copy `scripts/__output__/AshenzariCurses.ts` to `src/utils/AshenzariCurses.ts`
+- Create python virtual environment for interacting with dcsseeds crawl source
+
+  ```bash
+  python3 -m venv ~/.pyenv/dcsseeds
+  source ~/.pyenv/dcsseeds/bin/activate
+  pip install pyyaml
+  cd crawl-dir/0.31.0/crawl-ref/source
+  util/species-gen.py dat/species/ util/species-gen/ species-data.h aptitudes.h species-groups.h species-type.h
+  ```
+
+- Reference `crawl-ref/source/species-data.h` and `crawl-ref/source/job-data.h` to update files
+- Created `scripts/SpeciesJobData.ts` to programmatically pull all version species and job data
+- Required setting up python virtual environment on older version of python for compatability with older crawl version
+- Used `~/.pyenv/dcsseeds-3.9` for `0.24.1`
+
+  ```bash
+  python3.9 -m venv ~/.pyenv/dcsseeds-3.9
+  ```
+
+- **BannedCombos**
+
+  - `0.27.1` and up changed banned combo logic to use starting `MUT_` mutations, no longer hardcoded races
+  - `0.24.1` and up used `US_UNDEAD` flag for disabling `JOB_TRANSMUTER`, so double checked that for each version
+  - double checked banned combos all versions up to `0.32.1`
+
+- Updated **`NEW_UNRAND_SET`** unrand list in **`src/pages/search/components/ArtifactSearch.js`**
+- Manually ran unrand cache query against local server to test with `curl` below
+
+  > https://magic-graphql.iamnoah.com/console/events/cron/dcsseeds_scrapePlayers_unrand_cache/modify
+
+  ```bash
+  curl -v "http://localhost:3000/api/cache_unrand_query?window_size=5"
+  ```
+
+- `scripts/get_spells` was broken by `0.31.0`
+
+Final result is running scripts below to gather all game updates
+
+```bash
+# add new crawl-dir for 0.31.0 + 0.32.1
+# update versions to include new 0.31 and 0.32
+
+yarn tsx scripts/AshenzariCurses.ts
+# update `src/utils/AshenzariCurses.ts`
+
+yarn tsx scripts/SpeciesJobData.ts
+# update species and background variables in `src/Version` files
+
+yarn tsx scripts/get_unrands.ts 0.31.0
+yarn tsx scripts/get_unrands.ts 0.32.1
+# update unrands variables in `src/Version` files
+
+yarn tsx scripts/build_unrand_list 0.27 0.28 0.29 0.30 0.31 0.32
+# update `src/utils/Unrands.js`
+
+# update `NEW_UNRAND_SET` in `src/pages/search/components/ArtifactSearch.js`
+
+yarn tsx scripts/get_spells 0.31.0
+yarn tsx scripts/get_spells 0.32.1
+# update unrands variables in `src/Version` files
+
+yarn tsx scripts/build_spell_list 0.27 0.28 0.29 0.30 0.31 0.32
+# update `src/utils/Spells.js`
+```
+
 ## 2023-12-03
 
 - Refactor `./scripts/get_spells.js` to take version and handle pre-`0.30.0` format which included effect noise

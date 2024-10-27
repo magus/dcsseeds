@@ -4,8 +4,7 @@ import keyMirror from 'src/utils/keyMirror';
 import { toNumber } from 'src/utils/toNumber';
 import { find_list_backwards, iterate_backward, iterate_forward } from 'src/utils/find_list_backwards';
 import { runRegex } from 'src/utils/runRegex';
-import Backgrounds from 'src/utils/Backgrounds';
-import Species from 'src/utils/Species';
+import Version from 'src/Version';
 import Gods from 'src/utils/Gods';
 import Branch from 'src/utils/Branch';
 
@@ -178,15 +177,14 @@ const MORGUE_REGEX = {
   },
 
   [MORGUE_FIELD.SpeciesBackground]: async ({ name, morgueText }) => {
-    async function parseSpeciesBackground(speciesBackground) {
-      const [, species] = await runRegex('species', speciesBackground, Species.Regex);
-      const [, background] = await runRegex('background', speciesBackground, Backgrounds.Regex);
-      return { species, background };
+    async function parse_species_background(content) {
+      const match = await runRegex('parse_species_background', content, Version.SpeciesBackgroundRegex);
+      return match.groups;
     }
 
     try {
       const [, speciesBackground] = await runRegex(MORGUE_FIELD.SpeciesBackground, morgueText, /Began as an? (.*?) on/);
-      return await parseSpeciesBackground(speciesBackground);
+      return await parse_species_background(speciesBackground);
     } catch (err) {
       try {
         // try alternate format
@@ -195,7 +193,7 @@ const MORGUE_REGEX = {
           morgueText,
           new RegExp(`${name}.*?\\((.*?)\\)`),
         );
-        return await parseSpeciesBackground(speciesBackground);
+        return await parse_species_background(speciesBackground);
       } catch (alternateErr) {
         return { species: null, background: null };
       }
