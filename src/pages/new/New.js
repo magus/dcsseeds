@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { AnimateSharedLayout, motion } from 'framer-motion';
 
 import StyledLink from 'src/components/StyledLink';
+import CopyButton from 'src/components/CopyButton';
 
 import Species from 'src/utils/Species';
 import Backgrounds from 'src/utils/Backgrounds';
@@ -52,10 +53,6 @@ export default function New(props) {
         return newLocks;
       });
     };
-  }
-
-  function handleInputChange(event) {
-    set_value(event.target.value);
   }
 
   const speciesOptions = Version.getSpecies({ version, background }).map((sp) => {
@@ -135,6 +132,12 @@ export default function New(props) {
         <button onClick={handleReroll}> Reroll</button>
         <Instructions>Here, have this random seed.</Instructions>
 
+        <CopyButton tooltip copy={value} title="Click to copy seed" copyMessage="Seed copied!">
+          <SeedDisplay>{value}</SeedDisplay>
+        </CopyButton>
+
+        <Select title="Version" onChange={handleVersion} options={VERSION_CHOICES} selected={version} />
+
         <Select
           title="Species"
           animated
@@ -154,12 +157,6 @@ export default function New(props) {
           onLock={handleLockChange('background')}
           locked={!!locks.background}
         />
-
-        <Select title="Version" onChange={handleVersion} options={VERSION_CHOICES} selected={version} />
-
-        <GroupTitle>Seed</GroupTitle>
-
-        <input value={value} onChange={handleInputChange} />
       </FlexColumns>
     </Container>
   );
@@ -328,6 +325,12 @@ const LockInput = styled.input`
   margin: 0;
   width: 24px;
   height: 24px;
+`;
+
+const SeedDisplay = styled.div`
+  font-size: 24px;
+  width: 100%;
+  text-align: center;
 `;
 
 // <Select> options
