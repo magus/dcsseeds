@@ -199,7 +199,12 @@ IGNORE_UNRAND.add('UNRAND_WOE');
     filtered_unrand_list.push(unrand);
   }
 
-  const output_lines = ['', '// prettier-ignore'];
+  const output_lines = [
+    // force line break for readability
+    '',
+    `// Generated from \`scripts/get_unrands ${VERSION}\``,
+    '// prettier-ignore',
+  ];
   output_lines.push('exports.UnrandList = [');
   for (const unrand of filtered_unrand_list) {
     // console.debug(unrand);
