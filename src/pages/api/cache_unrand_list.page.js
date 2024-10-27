@@ -3,6 +3,13 @@ import { gql } from '@apollo/client';
 import { serverQuery } from 'src/graphql/serverQuery';
 import * as Unrands from 'src/utils/Unrands';
 
+// https://nextjs.org/docs/messages/api-routes-response-size-limit
+export const config = {
+  api: {
+    responseLimit: false,
+  },
+};
+
 export default async function cahce_unrand_list(req, res) {
   // https://vercel.com/docs/concepts/functions/serverless-functions/edge-caching#recommended-cache-control
   res.setHeader('Cache-Control', 'public, max-age=0, s-maxage=900, stale-while-revalidate=5400');
