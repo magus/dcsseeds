@@ -5,9 +5,15 @@ import send from 'src/server/zeitSend';
 import * as Unrands from 'src/utils/Unrands';
 import { Stopwatch } from 'src/server/Stopwatch';
 
+//
+// API endpoint for updating the cache of unrand query results
+//
 // Example API Request
-// http://localhost:3000/api/cache_unrand_query?window_size=25
-
+//
+//   curl -v "http://localhost:3000/api/cache_unrand_query?window_size=5"
+//
+// Increase window_size to 25 for very long request which will update the more entries at once
+//
 export default async function handler(req, res) {
   const stopwatch = new Stopwatch();
   const window_size = Number(req.query.window_size);
