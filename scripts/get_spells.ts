@@ -70,7 +70,13 @@ if (!VERSION) {
 
   // console.debug(`"${capitalize(spellName)}",`);
 
-  const output_lines = ['', '// prettier-ignore'];
+  const output_lines = [
+    // force line break for readability
+    '',
+    `// Generated from \`scripts/get_spells ${VERSION}\``,
+    '// prettier-ignore',
+  ];
+
   output_lines.push('exports.SpellList = [');
   for (const spell of spell_list) {
     output_lines.push(`  "${spell}",`);
@@ -183,7 +189,16 @@ async function getSpellData() {
             ensureArrayField(spell, 'flags');
 
             // parse spell schools
-            spell.schools = spell.schools.map((school: any) => SPSCHOOL[school].name);
+            spell.schools = spell.schools.map((school: any) => {
+              const maybe_school = SPSCHOOL[school];
+
+              if (!maybe_school) {
+                console.error({ school });
+                throw new Error('missing-school');
+              }
+
+              return maybe_school.name;
+            });
 
             // correct tile id
             spell.tileId = re(spell.tileId, RE.tileId);
@@ -215,9 +230,10 @@ const RE = {
 };
 
 // enum class spschool
-// See crawl/crawl-ref/source/spl-util.h
+// see crawl-dir/0.30.0/crawl-ref/source/spl-util.h
 const SPSCHOOL: any = Object.freeze(
   [
+    { name: 'Alchemy', id: 'alchemy' },
     { name: 'Charms', id: 'charms' },
     { name: 'Conjuration', id: 'conjuration' },
     { name: 'Hexes', id: 'hexes' },
