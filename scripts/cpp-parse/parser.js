@@ -155,6 +155,7 @@ exports.parser = function parser(tokens) {
         case TKNS.ParenStart.type:
         case TKNS.ParenEnd.type:
         case TKNS.Const.type:
+        case TKNS.Comma.type:
         case TKNS.Function.type:
         case TKNS.TypeVoid.type:
         case TKNS.TypeBool.type:
