@@ -44,11 +44,23 @@ export function prepare(version: string) {
   // now we can generate `source/art-data.h`
   execSync('perl util/art-data.pl');
 
+  const pyenv_bin = get_pyenv_bin(version);
+
   // generate crawl-ref/source/species-data.h
+  execSync(`${pyenv_bin}/pip install pyyaml`);
   execSync(
-    '~/.pyenv/dcsseeds/bin/python util/species-gen.py dat/species/ util/species-gen/ species-data.h aptitudes.h species-groups.h species-type.h',
+    `${pyenv_bin}/python util/species-gen.py dat/species/ util/species-gen/ species-data.h aptitudes.h species-groups.h species-type.h`,
   );
 
   // return to PROJ_ROOT
   process.chdir(PROJ_ROOT);
+}
+
+function get_pyenv_bin(version: string) {
+  switch (version) {
+    case '0.24.1':
+      return '~/.pyenv/dcsseeds-3.9/bin';
+    default:
+      return '~/.pyenv/dcsseeds/bin';
+  }
 }
