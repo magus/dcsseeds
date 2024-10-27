@@ -24,18 +24,35 @@ export default async function handler(req, res) {
       throw new Error('Must provide [window_size]');
     }
 
-    // perform queries for set of oldest (stale) cache entries
-    report.stale_cache_entry = await GQL_CacheUnrandOldest.run({ window_size: 1 });
+    // check for missing unrand cache keys first
+    const all_cache_set = await stopwatch.time(GQL_AllCacheKeySet.run()).record('all unrand cache keys');
 
-    stopwatch.record('fetch stale cache rows');
-
-    // build window from most stale unrand cache entry
     report.update_list = [];
-    const stale_unrand = Unrands.ById[report.stale_cache_entry.unrand_key];
-    for (let i = 0; i < window_size; i++) {
-      const wrapped_index = (i + stale_unrand.i) % Unrands.List.length;
-      const unrand = Unrands.Metadata[wrapped_index];
-      report.update_list.push(unrand.id);
+
+    // find values in `Unrands.Metadata` that are not in `all_cache_keys` by `id`
+    const missing_keys = Unrands.Metadata.filter((unrand) => !all_cache_set.has(unrand.id));
+    report.missing_keys = missing_keys.map((unrand) => unrand.id);
+
+    if (missing_keys.length) {
+      // build window from missing keys
+      // add missing keys to report.update_list up to window_size
+      const include_count = Math.min(window_size, missing_keys.length);
+      for (let i = 0; i < include_count; i++) {
+        report.update_list.push(missing_keys[i].id);
+      }
+    } else {
+      // perform queries for set of oldest (stale) cache entries
+      report.stale_cache_entry = await GQL_CacheUnrandOldest.run({ window_size: 1 });
+
+      stopwatch.record('fetch stale cache rows');
+
+      // build window from most stale unrand cache entry
+      const stale_unrand = Unrands.ById[report.stale_cache_entry.unrand_key];
+      for (let i = 0; i < window_size; i++) {
+        const wrapped_index = (i + stale_unrand.i) % Unrands.List.length;
+        const unrand = Unrands.Metadata[wrapped_index];
+        report.update_list.push(unrand.id);
+      }
     }
 
     const GQL_UnrandQueryResults = serverQuery(gql`
@@ -72,9 +89,26 @@ export default async function handler(req, res) {
     const data = { times, cache_result, report };
     return send(res, 200, data, { prettyPrint: true });
   } catch (err) {
-    return send(res, 500, err, { prettyPrint: true });
+    const times = stopwatch.list();
+    const data = { times, err, report };
+    return send(res, 500, data, { prettyPrint: true });
   }
 }
+
+const GQL_AllCacheKeySet = serverQuery(
+  gql`
+    query AllUnrandCacheKeys {
+      keys: dcsseeds_scrapePlayers_unrand_cache {
+        unrand_key
+      }
+    }
+  `,
+  (data) => {
+    const key_entry_list = data.keys;
+    const key_list = key_entry_list.map((entry) => entry.unrand_key);
+    return new Set(key_list);
+  },
+);
 
 const GQL_CacheUnrandOldest = serverQuery(
   gql`
