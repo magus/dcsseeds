@@ -67,6 +67,7 @@ for (const [, unrand] of sorted_unrand_list) {
 }
 output_lines.push('];');
 output_lines.push('');
+output_lines.push('//prettier-ignore');
 output_lines.push('export const Metadata = [');
 for (const [, unrand] of sorted_unrand_list) {
   output_lines.push(`  ${JSON.stringify(unrand)},`);
