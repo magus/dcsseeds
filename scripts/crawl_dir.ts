@@ -52,6 +52,10 @@ export function prepare(version: string) {
     `${pyenv_bin}/python util/species-gen.py dat/species/ util/species-gen/ species-data.h aptitudes.h species-groups.h species-type.h`,
   );
 
+  if (fs.existsSync('util/job-gen.py')) {
+    execSync(`${pyenv_bin}/python util/job-gen.py dat/jobs/ util/job-gen/ job-data.h job-groups.h job-type.h`);
+  }
+
   // return to PROJ_ROOT
   process.chdir(PROJ_ROOT);
 }
