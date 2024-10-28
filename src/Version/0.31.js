@@ -89,12 +89,7 @@ exports.UnrandList = [
   {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.31.0/crawl-ref/source/rltiles/item/weapon/artefact/spwpn_scythe_of_curses.png","name":"scythe of Curses","id":"UNRAND_CURSES"},
   {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.31.0/crawl-ref/source/rltiles/item/weapon/artefact/spwpn_sceptre_of_torment.png","name":"sceptre of Torment","id":"UNRAND_TORMENT"},
   {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.31.0/crawl-ref/source/rltiles/item/weapon/artefact/spwpn_sword_of_zonguldrok.png","name":"sword of Zonguldrok","id":"UNRAND_ZONGULDROK"},
-  {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.31.0/crawl-ref/source/rltiles/item/weapon/artefact/spwpn_sword_of_cerebov.png","name":"sword of Cerebov","id":"UNRAND_CEREBOV"},
-  {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.31.0/crawl-ref/source/rltiles/item/armour/artefact/urand_dispater.png","name":"orb of Dispater","id":"UNRAND_DISPATER"},
-  {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.31.0/crawl-ref/source/rltiles/item/weapon/artefact/spwpn_sceptre_of_asmodeus.png","name":"sceptre of Asmodeus","id":"UNRAND_ASMODEUS"},
-  {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.31.0/crawl-ref/source/rltiles/item/armour/artefact/urand_faerie.png","name":"faerie dragon scales","id":"UNRAND_FAERIE"},
   {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.31.0/crawl-ref/source/rltiles/item/weapon/artefact/urand_leech.png","name":"demon blade \"Leech\"","id":"UNRAND_LEECH"},
-  {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.31.0/crawl-ref/source/rltiles/item/weapon/artefact/urand_morg.png","name":"dagger \"Morg\"","id":"UNRAND_MORG"},
   {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.31.0/crawl-ref/source/rltiles/item/weapon/artefact/urand_finisher.png","name":"scythe \"Finisher\"","id":"UNRAND_FINISHER"},
   {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.31.0/crawl-ref/source/rltiles/item/weapon/artefact/urand_punk.png","name":"greatsling \"Punk\"","id":"UNRAND_PUNK"},
   {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.31.0/crawl-ref/source/rltiles/item/weapon/artefact/urand_zephyr.png","name":"longbow \"Zephyr\"","id":"UNRAND_ZEPHYR"},
@@ -152,7 +147,6 @@ exports.UnrandList = [
   {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.31.0/crawl-ref/source/rltiles/item/amulet/artefact/urand_vitality.png","name":"amulet of Vitality","id":"UNRAND_VITALITY"},
   {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.31.0/crawl-ref/source/rltiles/item/weapon/artefact/urand_katana.png","name":"autumn katana","id":"UNRAND_AUTUMN_KATANA"},
   {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.31.0/crawl-ref/source/rltiles/item/weapon/artefact/urand_shillelagh.png","name":"shillelagh \"Devastator\"","id":"UNRAND_DEVASTATOR"},
-  {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.31.0/crawl-ref/source/rltiles/item/armour/artefact/urand_dragonskin.png","name":"dragonskin cloak","id":"UNRAND_DRAGONSKIN"},
   {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.31.0/crawl-ref/source/rltiles/item/ring/artefact/urand_octoring.png","name":"ring of the Octopus King","id":"UNRAND_OCTOPUS_KING_RING"},
   {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.31.0/crawl-ref/source/rltiles/item/armour/artefact/urand_moon_troll_leather_armour.png","name":"moon troll leather armour","id":"UNRAND_MOON_TROLL_LEATHER_ARMOUR"},
   {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.31.0/crawl-ref/source/rltiles/item/amulet/artefact/urand_finger.png","name":"macabre finger necklace","id":"UNRAND_FINGER_AMULET"},
@@ -189,7 +183,6 @@ exports.UnrandList = [
   {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.31.0/crawl-ref/source/rltiles/item/weapon/artefact/spwpn_holy_axe.png","name":"consecrated labrys","id":"UNRAND_HOLY_AXE"},
   {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.31.0/crawl-ref/source/rltiles/item/armour/artefact/urand_victor.png","name":"toga \"Victory\"","id":"UNRAND_VICTORY"},
   {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.31.0/crawl-ref/source/rltiles/item/armour/artefact/urand_storm_queen.png","name":"Storm Queen's Shield","id":"UNRAND_STORM_QUEEN"},
-  {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.31.0/crawl-ref/source/rltiles/item/amulet/artefact/urand_dreamdust.png","name":"dreamdust necklace","id":"UNRAND_DREAMDUST_NECKLACE"},
   {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.31.0/crawl-ref/source/rltiles/item/weapon/artefact/spwpn_mule.png","name":"hand cannon \"Mule\"","id":"UNRAND_MULE"},
 ];
 
