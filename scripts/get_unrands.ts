@@ -19,12 +19,6 @@ export type Unrand = {
   id: string;
 };
 
-// ignore sprint-only artifacts
-// http://crawl.chaosforge.org/Axe_of_Woe
-const IGNORE_UNRAND: Set<string> = new Set();
-IGNORE_UNRAND.add('UNRAND_INVISIBILITY');
-IGNORE_UNRAND.add('UNRAND_WOE');
-
 (async function run() {
   crawl_dir.prepare(VERSION);
 
@@ -58,66 +52,14 @@ IGNORE_UNRAND.add('UNRAND_WOE');
     flat_object_list.push(fields);
   }
 
-  const unrand_list = flat_object_list.map((field_list) => {
-    // `unrandart_entry` defines the artefact shape (crawl-ref/source/artefact.h)
-    const field_names = [
-      // const char *name;        // true name of unrandart
-      'name',
-      // const char *unid_name;   // un-id'd name of unrandart
-      'unid_name',
-      // const char *type_name;   // custom item type
-      'type_name',
-      // const char *inscrip;     // extra inscription
-      'inscrip',
-      // const char *dbrand;      // description of extra brand
-      'dbrand',
-      // const char *descrip;     // description of extra power
-      'descrip',
-      // object_class_type base_type;
-      'base_type',
-      // uint8_t           sub_type;
-      'sub_type',
-      // object_class_type fallback_base_type;
-      'fallback_base_type',
-      // uint8_t           fallback_sub_type;
-      'fallback_sub_type',
-      // int               fallback_brand;
-      'fallback_brand',
-      // short             plus;
-      'plus',
-      // short             plus2;
-      'plus2',
-      // colour_t          colour;
-      'colour',
-      // short         value;
-      'value',
-      // uint16_t      flags;
-      'flags',
-      // short prpty[ART_PROPERTIES];
-      'prpty',
-      // void (*equip_func)(item_def* item, bool* show_msgs, bool unmeld);
-      'equip_func',
-      // void (*unequip_func)(item_def* item, bool* show_msgs);
-      'unequip_func',
-      // void (*world_reacts_func)(item_def* item);
-      'world_reacts_func',
-      // void (*melee_effects)(item_def* item, actor* attacker,
-      //                       actor* defender, bool mondied, int damage);
-      'melee_effects',
-      // setup_missile_type (*launch)(item_def* item, bolt* beam,
-      //                               string* ammo_name, bool* returning);
-      'launch',
-      // bool (*evoke_func)(item_def *item, bool* did_work, bool* unevokable);
-      'evoke_func',
-      // bool (*targeted_evoke_func)(item_def *item, bool* did_work, bool* unevokable, dist* target);
-      'targeted_evoke_func',
-    ];
+  const struct_entry_names = struct_unrandart_entry(VERSION);
 
+  const unrand_list = flat_object_list.map((field_list) => {
     const unrand: any = {};
 
     for (let i = 0; i < field_list.length; i++) {
       const value = field_list[i];
-      const name = field_names[i];
+      const name = struct_entry_names[i];
       unrand[name] = value;
     }
 
@@ -180,12 +122,21 @@ IGNORE_UNRAND.add('UNRAND_WOE');
       continue;
     }
 
-    if (IGNORE_UNRAND.has(unrand.id)) {
+    // skip artefacts with `UNRAND_FLAG_NOGEN` flag
+    const flags = (function () {
+      let result = unrand.flags;
+      result = Array.isArray(result) ? result : [result];
+      result = result.filter((v: any) => v !== '|');
+      result = new Set(result);
+      return result;
+    })();
+
+    if (flags.has('UNRAND_FLAG_NOGEN')) {
+      console.debug(`⚠️ SKIP UNRAND_FLAG_NOGEN [${unrand.id} (${unrand.name})]`);
       continue;
     }
 
     // validation for unfiltered unrands
-
     if (!Array.isArray(unrand.tile_path) || !unrand.tile_path.length) {
       console.error({ unrand });
       throw new Error('missing tile');
@@ -230,11 +181,301 @@ function extract_object_field(field: any) {
     case 'Expression':
     default: {
       const value_list = field.params.map((p: any) => p.value);
+
       if (value_list.length === 1) {
         const [first_value] = value_list;
         return first_value;
       }
+
       return value_list;
     }
+  }
+}
+
+function struct_unrandart_entry(version: string) {
+  switch (version) {
+    case '0.24.1':
+    case '0.25.1':
+      // crawl-dir/0.24.1/crawl-ref/source/artefact.h#L46
+      return [
+        // const char *name;        // true name of unrandart
+        'name',
+        // const char *unid_name;   // un-id'd name of unrandart
+        'unid_name',
+        // const char *type_name;   // custom item type
+        'type_name',
+        // const char *inscrip;     // extra inscription
+        'inscrip',
+
+        // object_class_type base_type;
+        'base_type',
+        // uint8_t           sub_type;
+        'sub_type',
+        // object_class_type fallback_base_type;
+        'fallback_base_type',
+        // uint8_t           fallback_sub_type;
+        'fallback_sub_type',
+        // int               fallback_brand;
+        'fallback_brand',
+        // short             plus;
+        'plus',
+        // short             plus2;
+        'plus2',
+        // colour_t          colour;
+        'colour',
+        // short         value;
+        'value',
+        // uint16_t      flags;
+        'flags',
+
+        // short prpty[ART_PROPERTIES];
+        'prpty',
+
+        // void (*equip_func)(item_def* item, bool* show_msgs, bool unmeld);
+        'equip_func',
+        // void (*unequip_func)(item_def* item, bool* show_msgs);
+        'unequip_func',
+        // void (*world_reacts_func)(item_def* item);
+        'world_reacts_func',
+        // void (*melee_effects)(item_def* item, actor* attacker,
+        //                       actor* defender, bool mondied, int damage);
+        'melee_effects',
+        // setup_missile_type (*launch)(item_def* item, bolt* beam,
+        //                               string* ammo_name, bool* returning);
+        'launch',
+        // bool (*evoke_func)(item_def *item, bool* did_work, bool* unevokable);
+        'evoke_func',
+      ];
+
+    case '0.26.1':
+      // crawl-dir/0.26.1/crawl-ref/source/artefact.h#L47
+      return [
+        // const char *name;        // true name of unrandart
+        'name',
+        // const char *unid_name;   // un-id'd name of unrandart
+        'unid_name',
+        // const char *type_name;   // custom item type
+        'type_name',
+        // const char *inscrip;     // extra inscription
+        'inscrip',
+
+        // object_class_type base_type;
+        'base_type',
+        // uint8_t           sub_type;
+        'sub_type',
+        // object_class_type fallback_base_type;
+        'fallback_base_type',
+        // uint8_t           fallback_sub_type;
+        'fallback_sub_type',
+        // int               fallback_brand;
+        'fallback_brand',
+        // short             plus;
+        'plus',
+        // short             plus2;
+        'plus2',
+        // colour_t          colour;
+        'colour',
+        // short         value;
+        'value',
+        // uint16_t      flags;
+        'flags',
+
+        // short prpty[ART_PROPERTIES];
+        'prpty',
+
+        // void (*equip_func)(item_def* item, bool* show_msgs, bool unmeld);
+        'equip_func',
+        // void (*unequip_func)(item_def* item, bool* show_msgs);
+        'unequip_func',
+        // void (*world_reacts_func)(item_def* item);
+        'world_reacts_func',
+        // void (*melee_effects)(item_def* item, actor* attacker,
+        //                       actor* defender, bool mondied, int damage);
+        'melee_effects',
+        // setup_missile_type (*launch)(item_def* item, bolt* beam,
+        //                               string* ammo_name, bool* returning);
+        'launch',
+        // bool (*evoke_func)(item_def *item, bool* did_work, bool* unevokable);
+        'evoke_func',
+        // bool (*targeted_evoke_func)(item_def *item, bool* did_work, bool* unevokable, dist* target);
+        'targeted_evoke_func',
+      ];
+
+    case '0.27.1':
+      // crawl-dir/0.27.1/crawl-ref/source/artefact.h#L46
+      return [
+        // const char *name;        // true name of unrandart
+        'name',
+        // const char *unid_name;   // un-id'd name of unrandart
+        'unid_name',
+        // const char *type_name;   // custom item type
+        'type_name',
+        // const char *inscrip;     // extra inscription
+        'inscrip',
+        // const char *dbrand;      // description of extra brand
+        'dbrand',
+        // const char *descrip;     // description of extra power
+        'descrip',
+
+        // object_class_type base_type;
+        'base_type',
+        // uint8_t           sub_type;
+        'sub_type',
+        // object_class_type fallback_base_type;
+        'fallback_base_type',
+        // uint8_t           fallback_sub_type;
+        'fallback_sub_type',
+        // int               fallback_brand;
+        'fallback_brand',
+        // short             plus;
+        'plus',
+        // short             plus2;
+        'plus2',
+        // colour_t          colour;
+        'colour',
+
+        // short         value;
+        'value',
+        // uint16_t      flags;
+        'flags',
+
+        // short prpty[ART_PROPERTIES];
+        'prpty',
+
+        // void (*equip_func)(item_def* item, bool* show_msgs, bool unmeld);
+        'equip_func',
+        // void (*unequip_func)(item_def* item, bool* show_msgs);
+        'unequip_func',
+        // void (*world_reacts_func)(item_def* item);
+        'world_reacts_func',
+        // void (*melee_effects)(item_def* item, actor* attacker,
+        //                       actor* defender, bool mondied, int damage);
+        'melee_effects',
+        // setup_missile_type (*launch)(item_def* item, bolt* beam,
+        //                               string* ammo_name, bool* returning);
+        'launch',
+        // bool (*evoke_func)(item_def *item, bool* did_work, bool* unevokable);
+        'evoke_func',
+        // bool (*targeted_evoke_func)(item_def *item, bool* did_work, bool* unevokable, dist* target);
+        'targeted_evoke_func',
+      ];
+
+    case '0.28.0':
+    case '0.29.1':
+      // crawl-dir/0.28.0/crawl-ref/source/artefact.h#L46
+      return [
+        // const char *name;        // true name of unrandart
+        'name',
+        // const char *unid_name;   // un-id'd name of unrandart
+        'unid_name',
+        // const char *type_name;   // custom item type
+        'type_name',
+        // const char *inscrip;     // extra inscription
+        'inscrip',
+        // const char *dbrand;      // description of extra brand
+        'dbrand',
+        // const char *descrip;     // description of extra power
+        'descrip',
+
+        // object_class_type base_type;
+        'base_type',
+        // uint8_t           sub_type;
+        'sub_type',
+        // object_class_type fallback_base_type;
+        'fallback_base_type',
+        // uint8_t           fallback_sub_type;
+        'fallback_sub_type',
+        // int               fallback_brand;
+        'fallback_brand',
+        // short             plus;
+        'plus',
+        // short             plus2;
+        'plus2',
+        // colour_t          colour;
+        'colour',
+
+        // short         value;
+        'value',
+        // uint16_t      flags;
+        'flags',
+
+        // short prpty[ART_PROPERTIES];
+        'prpty',
+
+        // void (*equip_func)(item_def* item, bool* show_msgs, bool unmeld);
+        'equip_func',
+        // void (*unequip_func)(item_def* item, bool* show_msgs);
+        'unequip_func',
+        // void (*world_reacts_func)(item_def* item);
+        'world_reacts_func',
+        // void (*melee_effects)(item_def* item, actor* attacker,
+        //                       actor* defender, bool mondied, int damage);
+        'melee_effects',
+        // setup_missile_type (*launch)(item_def* item, bolt* beam,
+        //                               string* ammo_name, bool* returning);
+        'launch',
+      ];
+
+    case '0.30.0':
+    case '0.31.0':
+    case '0.32.1':
+      // crawl-dir/0.30.0/crawl-ref/source/artefact.h#L46
+      return [
+        // const char *name;        // true name of unrandart
+        'name',
+        // const char *unid_name;   // un-id'd name of unrandart
+        'unid_name',
+        // const char *type_name;   // custom item type
+        'type_name',
+        // const char *inscrip;     // extra inscription
+        'inscrip',
+        // const char *dbrand;      // description of extra brand
+        'dbrand',
+        // const char *descrip;     // description of extra power
+        'descrip',
+
+        // object_class_type base_type;
+        'base_type',
+        // uint8_t           sub_type;
+        'sub_type',
+        // object_class_type fallback_base_type;
+        'fallback_base_type',
+        // uint8_t           fallback_sub_type;
+        'fallback_sub_type',
+        // int               fallback_brand;
+        'fallback_brand',
+        // short             plus;
+        'plus',
+        // short             plus2;
+        'plus2',
+        // colour_t          colour;
+        'colour',
+
+        // short         value;
+        'value',
+        // uint16_t      flags;
+        'flags',
+
+        // short prpty[ART_PROPERTIES];
+        'prpty',
+
+        // void (*equip_func)(item_def* item, bool* show_msgs, bool unmeld);
+        'equip_func',
+        // void (*unequip_func)(item_def* item, bool* show_msgs);
+        'unequip_func',
+        // void (*world_reacts_func)(item_def* item);
+        'world_reacts_func',
+        // void (*melee_effects)(item_def* item, actor* attacker,
+        //                       actor* defender, bool mondied, int damage);
+        'melee_effects',
+        // setup_missile_type (*launch)(item_def* item, bolt* beam,
+        //                               string* ammo_name, bool* returning);
+        'launch',
+        // void (*death_effects)(item_def* item, monster* mons, killer_type killer);
+        'death_effects',
+      ];
+
+    default:
+      throw new Error('struct_unrandart_entry-unsupported-version');
   }
 }

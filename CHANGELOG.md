@@ -47,6 +47,9 @@
 
 - `scripts/get_spells` was broken by `0.31.0`
 
+- update `scripts/get_unrands` to use `UNRAND_FLAG_NOGEN` flag to ignore unrands
+- update `scripts/get_unrands` to handle changing artefact format `struct unrandart_entry` in `crawl-dir/0.26.1/crawl-ref/source/artefact.h`
+
 Final result is running scripts below to gather all game updates
 
 ```bash
@@ -59,6 +62,7 @@ yarn tsx scripts/AshenzariCurses.ts
 yarn tsx scripts/SpeciesJobData.ts
 # update species and background variables in `src/Version` files
 
+# update scripts/get_unrands `struct_unrandart_entry` for new version
 yarn tsx scripts/get_unrands.ts 0.31.0
 yarn tsx scripts/get_unrands.ts 0.32.1
 # update unrands variables in `src/Version` files
