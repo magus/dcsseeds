@@ -50,6 +50,22 @@
 - update `scripts/get_unrands` to use `UNRAND_FLAG_NOGEN` flag to ignore unrands
 - update `scripts/get_unrands` to handle changing artefact format `struct unrandart_entry` in `crawl-dir/0.26.1/crawl-ref/source/artefact.h`
 
+- After updating unrand list to remove `UNRAND_FLAG_NOGEN` started seeing errors in api endpoint
+- `Cached unrand missing from local Unrands list`
+- Need to remove unrand cache rows from database after deploying to production
+
+  ```log
+  unrand_key: 'UNRAND_CEREBOV'
+  unrand_key: 'UNRAND_DREAMDUST_NECKLACE'
+  unrand_key: 'UNRAND_AMULET_INVISIBILITY'
+  unrand_key: 'UNRAND_ASMODEUS'
+  unrand_key: 'UNRAND_DISPATER_v27'
+  unrand_key: 'UNRAND_SCARF_INVISIBILITY'
+  unrand_key: 'UNRAND_DRAGONSKIN'
+  unrand_key: 'UNRAND_DISPATER'
+  unrand_key: 'UNRAND_FAERIE'
+  ```
+
 Final result is running scripts below to gather all game updates
 
 ```bash
