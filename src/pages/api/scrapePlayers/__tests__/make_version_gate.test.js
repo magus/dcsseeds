@@ -24,3 +24,8 @@ test('greater than minor patched versions', () => {
   expect(version_gate('0.29.2')).toBe(false);
   expect(version_gate('0.30.0')).toBe(false);
 });
+
+test('future versions', () => {
+  expect(version_gate('0.30.2')).toBe(false);
+  expect(version_gate('0.32.1')).toBe(false);
+});
