@@ -1,3 +1,5 @@
+import { expect, test } from 'bun:test';
+
 import { setup_test_parseMorgue } from '../test_parseMorgue';
 
 test('failure fetching .lst file throws stash error', async () => {
@@ -6,7 +8,7 @@ test('failure fetching .lst file throws stash error', async () => {
 
   tester.mocks.fetch.lst = { ok: false, status: 500 };
 
-  await expect(() => tester.run()).rejects.toThrow('stash status code [500]');
+  await expect(tester.run()).rejects.toThrow('stash status code [500]');
 });
 
 test('failure parsing .lst file throws error', async () => {
@@ -21,7 +23,7 @@ test('failure parsing .lst file throws error', async () => {
     },
   };
 
-  await expect(() => tester.run()).rejects.toThrow('ERROR response.arrayBuffer()');
+  await expect(tester.run()).rejects.toThrow('ERROR response.arrayBuffer()');
 });
 
 test('empty response for both morgue and lst', async () => {
@@ -45,5 +47,5 @@ test('empty response for both morgue and lst', async () => {
     },
   };
 
-  await expect(() => tester.run()).rejects.toThrow('invalid morgue text when parsing version');
+  await expect(tester.run()).rejects.toThrow('invalid morgue text when parsing version');
 });

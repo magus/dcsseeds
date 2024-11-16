@@ -1,4 +1,4 @@
-/* global jest */
+import { spyOn } from 'bun:test';
 import fs from 'fs';
 import path from 'path';
 
@@ -37,17 +37,13 @@ export function setup_test_parseMorgue(morgue_url) {
     status: 200,
     arrayBuffer: async function arrayBuffer() {
       const lst_filepath = path.join(__dirname, morgue.basename, lst_filename);
-      const lst_buffer = fs.readFileSync(lst_filepath);
-      const lst_arraybuffer = lst_buffer.buffer.slice(
-        lst_buffer.byteOffset,
-        lst_buffer.byteOffset + lst_buffer.byteLength,
-      );
-
-      return lst_arraybuffer;
+      let lst_buffer = fs.readFileSync(lst_filepath);
+      lst_buffer = lst_buffer.buffer.slice(lst_buffer.byteOffset, lst_buffer.byteOffset + lst_buffer.byteLength);
+      return lst_buffer;
     },
   };
 
-  jest.spyOn(global, 'fetch').mockImplementation(async (url) => {
+  spyOn(global, 'fetch').mockImplementation(async (url) => {
     if (url.includes(morgue.filename)) {
       return mocks.fetch.morgue;
     } else if (url.includes(lst_filename)) {

@@ -1,4 +1,5 @@
-import { expect, test } from '@jest/globals';
+import { expect, test } from 'bun:test';
+
 import { test_parseMorgue } from '../test_parseMorgue';
 
 // detect bloatware crawl versions
