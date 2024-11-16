@@ -22,11 +22,13 @@ export async function addMorgue(args) {
   async function skip(reason) {
     // used for errors and empty runs (no items)
     // create a morgue entry in scrapePlayers for this player morgue, so we do not search it again
-    await GQL_ADD_MORGUE.run({
-      playerId,
-      data: { [morgue.timestamp]: true },
-      morgue_url: morgue.url,
-    });
+    if (!args.dry) {
+      await GQL_ADD_MORGUE.run({
+        playerId,
+        data: { [morgue.timestamp]: true },
+        morgue_url: morgue.url,
+      });
+    }
 
     return response(`skip (${reason})`);
   }
@@ -75,7 +77,9 @@ export async function addMorgue(args) {
       }
 
       // write error into db
-      await GQL_ADD_PARSE_ERROR.run({ errors });
+      if (!args.dry) {
+        await GQL_ADD_PARSE_ERROR.run({ errors });
+      }
 
       // exit this morgue marking it locally only
       return response('error', errors);
@@ -126,26 +130,36 @@ export async function addMorgue(args) {
         fullVersion,
       };
 
+      if (event.data.gold) {
+        insertItem.gold = parseInt(event.data.gold, 10);
+      }
+
       items.push(insertItem);
     }
 
     if (items.length) {
-      const result = await GQL_ADD_ITEM.run({
-        items,
-        playerId,
-        // remote (server) mark morgue as visited
-        data: { [morgue.timestamp]: true },
-        morgue_url: morgue.url,
-      });
+      if (!args.dry) {
+        const result = await GQL_ADD_ITEM.run({
+          items,
+          playerId,
+          // remote (server) mark morgue as visited
+          data: { [morgue.timestamp]: true },
+          morgue_url: morgue.url,
+        });
 
-      return response('done (items)', result);
+        return response('done (items)', result);
+      }
+
+      return response('done (dry run skip items)');
     }
 
     return skip('empty');
   } catch (error) {
     // write error into db
-    const errors = [{ morgue: morgue.url, error: error.message }];
-    GQL_ADD_PARSE_ERROR.run({ errors });
+    if (!args.dry) {
+      const errors = [{ morgue: morgue.url, error: error.message }];
+      GQL_ADD_PARSE_ERROR.run({ errors });
+    }
 
     // bubble error
     return response('error', error_json(error));
