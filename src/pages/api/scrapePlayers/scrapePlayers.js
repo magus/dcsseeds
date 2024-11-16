@@ -3,6 +3,7 @@ import send from 'src/server/zeitSend';
 import { gql } from '@apollo/client';
 import { serverQuery } from 'src/graphql/serverQuery';
 import { Stopwatch } from 'src/server/Stopwatch';
+import { error_json } from 'src/utils/error_json';
 
 import { addMorgue } from './addMorgue';
 import { fetch_morgue_list } from './fetch_morgue_list';
@@ -123,7 +124,7 @@ async function scrape_morgue_list({ player, stopwatch }) {
       }
 
       default: {
-        result.error = err.stack.split('\n');
+        result.error = error_json(err);
 
         const error = `scrape_morgue_list(${player.name}) [${err.message}]`;
         const errors = [{ error }];

@@ -1,6 +1,7 @@
 import { gql } from '@apollo/client';
 import { serverQuery } from 'src/graphql/serverQuery';
 import { parseMorgue } from 'src/utils/parseMorgue';
+import { error_json } from 'src/utils/error_json';
 
 import * as constants from './constants';
 
@@ -147,8 +148,7 @@ export async function addMorgue(args) {
     GQL_ADD_PARSE_ERROR.run({ errors });
 
     // bubble error
-    const error_data = { message: error.message, extra: error.extra, stack: error.stack.split('\n') };
-    return response('error', error_data);
+    return response('error', error_json(error));
   }
 }
 

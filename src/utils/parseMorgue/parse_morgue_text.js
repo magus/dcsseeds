@@ -7,6 +7,7 @@ import { runRegex } from 'src/utils/runRegex';
 import Version from 'src/Version';
 import Gods from 'src/utils/Gods';
 import Branch from 'src/utils/Branch';
+import { error_json } from 'src/utils/error_json';
 
 import { parse_note } from './parse_note';
 
@@ -243,7 +244,8 @@ const MORGUE_REGEX = {
     } catch (err) {
       console.error('MORGUE_FIELD.Notes', err);
       // return empty
-      return { eventCount: 0, events: [], eventErrors: [{ error: err.message, stack: err.stack }] };
+
+      return { eventCount: 0, events: [], eventErrors: [error_json(err)] };
     }
   },
 };
@@ -360,12 +362,13 @@ function getAllMorgueNoteEvents({ morgueNotes, stash }) {
       if (note_index === morgueNotes.length - 1) {
         addEvent('last-event', morgueNote);
       }
-    } catch (error) {
+    } catch (err) {
       if (process.env.NODE_ENV !== 'production') {
-        console.error(error);
+        console.error(err);
       }
 
-      eventErrors.push({ error: error.message, morgueNote });
+      const error = error_json(err);
+      eventErrors.push({ error, morgueNote });
     }
 
     function addEvent(type, morgue_note, data) {

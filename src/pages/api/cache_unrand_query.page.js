@@ -4,6 +4,7 @@ import { serverQuery } from 'src/graphql/serverQuery';
 import send from 'src/server/zeitSend';
 import * as Unrands from 'src/utils/Unrands';
 import { Stopwatch } from 'src/server/Stopwatch';
+import { error_json } from 'src/utils/error_json';
 
 //
 // API endpoint for updating the cache of unrand query results
@@ -90,7 +91,8 @@ export default async function handler(req, res) {
     return send(res, 200, data, { prettyPrint: true });
   } catch (err) {
     const times = stopwatch.list();
-    const data = { times, err, report };
+    const error = error_json(err);
+    const data = { times, error, report };
     return send(res, 500, data, { prettyPrint: true });
   }
 }
