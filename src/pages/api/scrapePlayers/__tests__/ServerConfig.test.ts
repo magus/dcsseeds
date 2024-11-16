@@ -27,6 +27,9 @@ const test_case_list = [
   ['', null],
   ['http://crawl.develz.org/morgues/git/svalbard/morgue-svalbard-20161108-120329.txt', null],
   ['https://crawl.develz.org/morgues/git/svalbard/morgue-svalbard-20161108-120329.txt', 'develz'],
+  ['', null],
+  ['http://crawl.dcss.io/crawl/morgue/Booper/morgue-Booper-20241015-181159.txt', null],
+  ['https://crawl.dcss.io/crawl/morgue/Booper/morgue-Booper-20241015-181159.txt', 'crawldcssio'],
 ];
 
 for (const test_case of test_case_list) {
