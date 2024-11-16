@@ -84,13 +84,13 @@ export async function addMorgue(args) {
     // collect items to send in a single mutation call
     const items = [];
 
-    data.events.forEach((event) => {
+    for (const event of data.events) {
       // only allow parseMorgue 'item' `type` (first string arg to createItem)
-      if (event.type !== 'item') return;
+      if (event.type !== 'item') continue;
 
       // do not record seed items for areas with non-deterministic drops
       // e.g. Abyss, Pandemonium, Trove etc.
-      if ({ Abyss: 1, Pandemonium: 1, Trove: 1 }[event.branch]) return;
+      if ({ Abyss: 1, Pandemonium: 1, Trove: 1 }[event.branch]) continue;
 
       // creates and associate event.branch if needed
       const branch = {
@@ -127,7 +127,7 @@ export async function addMorgue(args) {
       };
 
       items.push(insertItem);
-    });
+    }
 
     if (items.length) {
       const result = await GQL_ADD_ITEM.run({
