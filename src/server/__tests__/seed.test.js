@@ -48,13 +48,19 @@ test('sanitizeIntegerString throws an error when invalid seed string', () => {
 
 // doing 1000 iterations should ensure max digits and sanitize are respected
 const MAX_DIGITS = 5;
-for (let i = 0; i < 1000; i++) {
+for (let i = 0; i < 100000; i++) {
   const num = generateNum(MAX_DIGITS);
+
+  // skip zero since it's valid
+  if (num === '0') continue;
+
   // console.debug(`generateNum #${i}`, num);
   if (num.length > MAX_DIGITS) {
+    console.error({ num, MAX_DIGITS });
     throw new Error(`generateNum #${i}: number of digits <= ${MAX_DIGITS}`);
   }
   if (num.match(/^0+/)) {
+    console.error({ num });
     throw new Error(`generateNum #${i}: leading zeroes`);
   }
 }
