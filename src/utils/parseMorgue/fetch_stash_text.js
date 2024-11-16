@@ -26,7 +26,7 @@ export async function fetch_stash_text({ morgue }) {
     // convert stream into string
     const result = await new Stopwatch()
       .time(promise_stream_string(decompressed_bz2))
-      .timeout(4 * 1000)
+      .timeout(500)
       .record('promise_stream_string');
 
     return result;
