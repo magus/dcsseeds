@@ -25,7 +25,7 @@ export function Stopwatch() {
   return { elapsed_ms, start, list, reset, record, time };
 
   function elapsed_ms() {
-    const [ms] = time_record(init_time, 'ms');
+    const ms = time_record(init_time);
     return ms;
   }
 
@@ -43,8 +43,8 @@ export function Stopwatch() {
     start();
   }
 
-  function record(label, unit) {
-    const entry = [label, time_record(start_time, unit)];
+  function record(label) {
+    const entry = [label, time_record(start_time)];
     record_list.push(entry);
 
     // reset start_time for next record() call
@@ -79,9 +79,9 @@ export function Stopwatch() {
         entry.push('TIMEOUT');
       }
 
-      const [label, unit] = record_args;
+      const [label] = record_args;
       entry.push(label);
-      entry.push(time_record(start_time, unit));
+      entry.push(time_record(start_time));
 
       record_list.push(entry);
     }
@@ -131,10 +131,10 @@ Stopwatch.Error = class StopwatchError extends Error {
   }
 };
 
-function time_record(start_time, unit = 'ms') {
+function time_record(start_time) {
   // capture delta hrtime since last start_time
   const delta_hrtime = process.hrtime(start_time);
-  return [hrtime_unit(delta_hrtime, unit), unit];
+  return hrtime_unit(delta_hrtime, 'ms');
 }
 
 function hrtime_unit(hrtime, unit = 'ms') {
