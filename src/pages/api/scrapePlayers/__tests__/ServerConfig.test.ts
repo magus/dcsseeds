@@ -12,11 +12,17 @@ const test_case_list = [
   ['webzook.net/soup/morgue/trunk/dubedul/morgue-dubedul-20230220-122518.txt', 'webzook'],
   ['crawl.kelbi.org/crawl/morgue/TsoeiynMaft/morgue-TsoeiynMaft-20230301-012532.txt.gz', 'kelbi'],
   ['crawl.develz.org/morgues/git/svalbard/morgue-svalbard-20161108-120329.txt', 'develz'],
+  ['crawl.develz.org/morgues/trunk/goupaloupa/morgue-goupaloupa-20240830-153100.txt', 'develztrunk'],
   ['crawl.dcss.io/crawl/morgue/Booper/morgue-Booper-20241015-181159.txt', 'crawldcssio'],
 ];
 
 for (const test_case of test_case_list) {
   const [base_url, expected] = test_case;
+
+  test(`SERVER_CONFIG.morgue_server(${base_url}) = ${expected}`, () => {
+    const result = SERVER_CONFIG.morgue_server(base_url);
+    expect(result).toBe(expected);
+  });
 
   for (const scheme of ['http', 'https']) {
     const url = `${scheme}://${base_url}`;

@@ -36,6 +36,7 @@ const Server = Object.freeze({
   // console players
   // https://www.reddit.com/r/dcss/comments/13aen1l/dcss_search_0300_update/jj6kyuw/
   'develz': 'develz',
+  'develztrunk': 'develztrunk',
 
   'crawldcssio': 'crawldcssio',
 });
@@ -80,6 +81,8 @@ function ServerConfig(server) {
         return 'webzook.net/soup/morgue';
       case Server.develz:
         return 'crawl.develz.org/morgues/git';
+      case Server.develztrunk:
+        return 'crawl.develz.org/morgues/trunk';
       case Server.crawldcssio:
         return 'crawl.dcss.io/crawl/morgue';
 
@@ -99,8 +102,9 @@ function ServerConfig(server) {
         case Server.kelbi:
         case Server.webzook:
         case Server.develz:
+        case Server.develztrunk:
         case Server.crawldcssio:
-          return `^https?://${url_base}`;
+          return `^(https?://)?${url_base}`;
 
         default:
           throw new Error(`ServerConfig origin regex missing for [${server}]`);

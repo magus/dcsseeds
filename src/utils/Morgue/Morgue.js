@@ -3,7 +3,13 @@ export function Morgue(url) {
   return metadata;
 }
 
-function morgue_meta(url) {
+function morgue_meta(unsafe_url) {
+  let url = unsafe_url;
+
+  if (!RE.url_scheme.test(url)) {
+    url = `https://${unsafe_url}`;
+  }
+
   const filename_match = url.match(RE.filename);
 
   if (!filename_match) throw new Error('Morgue URL must match filename pattern');
@@ -30,4 +36,7 @@ const RE = {
   timestamp: /(\d{4})(\d{2})(\d{2})-(\d{2})(\d{2})(\d{2})?/,
   // https://regex101.com/r/m45jSY/1
   filename: /\/(?<filename>(?<basename>(?:morgue-)?(?<player>[^/^-]+)-?(?<timestamp>[^/]+)?)\.txt(?:\.gz)?)$/,
+
+  // starts with protocol
+  url_scheme: /^([^\:^\/]+):\/\//,
 };
