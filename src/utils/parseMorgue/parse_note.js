@@ -153,9 +153,12 @@ export function parse_note({ morgueNote, addEvent, events, stash }) {
     // https://regexr.com/5p55t
     const [, spellList] = spells;
     const [, commaSpells, lastSpell] = spellList.match(/(?:(.*) and )?(.*?)$/);
-    commaSpells.split(', ').forEach((spell) => {
-      addEvent('spell', morgueNote, { spell });
-    });
+    if (commaSpells) {
+      const spell_list = commaSpells.split(', ');
+      for (const spell of spell_list) {
+        addEvent('spell', morgueNote, { spell });
+      }
+    }
     addEvent('spell', morgueNote, { spell: lastSpell });
   } else if (weildingWearing) {
     // What https://regexr.com/5e13q
