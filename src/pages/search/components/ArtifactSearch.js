@@ -5,6 +5,8 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import useSWR from 'swr';
 
+import { Popover } from '~/components/ui/Popover';
+
 import * as Unrands from 'src/utils/Unrands';
 import * as Spacer from 'src/components/Spacer';
 import * as Scroller from 'src/modules/Scroller';
@@ -161,6 +163,7 @@ function FilterButton(props) {
     <ButtonGroup
       key={props.name}
       layout="position"
+      className={props.className}
       // layout
       // initial={{ opacity: 0 }}
       // animate={{ opacity: 1 }}
@@ -190,8 +193,6 @@ function FilterButton(props) {
 function ArtifactFilters(props) {
   const router = useRouter();
 
-  let button_list = [];
-
   const search = router.query.q;
 
   const active_key_list = Array.from(props.filter_set);
@@ -213,14 +214,17 @@ function ArtifactFilters(props) {
 
   const is_filtering = props.version_set.size || props.filter_set.size;
 
+  let active_button_list = [];
+  let filter_button_list = [];
+
   for (const unrand_key of filter_unrand_key_list) {
     const metadata = Unrands.Metadata[unrand_key];
     const name = metadata.name;
     const active = props.filter_set.has(unrand_key);
     const count = props.artifact_count[unrand_key];
 
-    const hide = is_filtering && !active;
-    // const hide = is_filtering && count === 0;
+    // const hide = is_filtering && !active;
+    const hide = is_filtering && count === 0;
     const disabled = props.loading || count === 0;
     const is_new = NEW_UNRAND_SET.has(metadata.id);
 
@@ -240,24 +244,42 @@ function ArtifactFilters(props) {
     );
 
     if (active) {
-      button_list.push(button);
+      active_button_list.push(button);
     } else {
       // skip filters that do not match active search
       if (search && !name.toLowerCase().includes(search.toLowerCase())) {
         continue;
       }
 
-      button_list.push(button);
+      filter_button_list.push(button);
     }
   }
 
+  const has_buttons = filter_button_list.length || active_button_list.length;
+  const has_active = active_button_list.length;
+  const visible_buttons = has_active ? active_button_list : filter_button_list;
+
   return (
     <React.Fragment>
-      {!button_list.length ? null : <VersionFilters {...props} />}
+      {!has_buttons ? null : <VersionFilters {...props} />}
 
       <Spacer.Vertical size="3" />
 
-      <Filters>{button_list}</Filters>
+      <Filters>
+        {visible_buttons}
+
+        {!filter_button_list.length ? null : (
+          <Popover.Root>
+            <Popover.Trigger asChild>
+              <Button className="!opacity-40">{'+ Add artefact'}</Button>
+            </Popover.Trigger>
+
+            <Popover.Content className="w-full max-w-[100vw]">
+              <Filters>{filter_button_list}</Filters>
+            </Popover.Content>
+          </Popover.Root>
+        )}
+      </Filters>
     </React.Fragment>
   );
 }
@@ -273,6 +295,7 @@ function VersionFilters(props) {
 
         return (
           <FilterButton
+            className="min-w-32"
             key={version}
             name={version}
             count={count}
