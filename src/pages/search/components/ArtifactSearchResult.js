@@ -139,8 +139,20 @@ function Item(props) {
             <span className="image">
               <Image alt={props.name} src={metadata.image_url} {...image_size} />
             </span>
+
             <Spacer.Horizontal size="1" />
+
             <span className="name">{props.name}</span>
+
+            <Spacer.Horizontal size="1" />
+
+            {!props.gold ? null : (
+              <span>
+                <span>(</span>
+                <span className="gold">{props.gold} gold</span>
+                <span>)</span>
+              </span>
+            )}
           </ItemsSeedVersionLink>
         </Name>
       </ItemRight>
@@ -237,6 +249,11 @@ const Name = styled.div`
   */
   a {
     display: flex;
+    align-items: center;
+
+    .gold {
+      color: gold;
+    }
   }
 
   span.image {
