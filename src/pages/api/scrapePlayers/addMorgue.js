@@ -136,8 +136,8 @@ export async function addMorgue(args) {
       if (event.type !== 'item') continue;
 
       // do not record seed items for areas with non-deterministic drops
-      // e.g. Abyss, Pandemonium, Trove etc.
-      if ({ Abyss: 1, Pandemonium: 1, Trove: 1 }[event.branch]) continue;
+      // e.g. Abyss, Pandemonium, Trove, Ziggurat, etc.
+      if ({ Abyss: 1, Pandemonium: 1, Trove: 1, Ziggurat: 1 }[event.branch]) continue;
 
       items.push(
         create_insert_item({
