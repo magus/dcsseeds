@@ -13,11 +13,10 @@ module.exports = async function zeitSend(res, statusCode, data, { prettyPrint } 
   const log_data = isError ? data : JSON.stringify({ data });
   console.info('[zeitSend]', statusCode, log_data);
 
-  const responseJson = {};
+  const responseJson = { data };
 
   if (!isError) {
     responseJson.error = false;
-    responseJson.data = data;
   } else {
     responseJson.error = true;
 
