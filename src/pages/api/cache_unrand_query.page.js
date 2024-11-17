@@ -12,13 +12,24 @@ import { error_json } from 'src/utils/error_json';
 // Example API Request
 //
 //   curl -v "http://localhost:3000/api/cache_unrand_query?window_size=5"
+//   curl -v "http://localhost:3000/api/cache_unrand_query?window_size=20&unrand=UNRAND_THIEF&unrand=UNRAND_GYRE"
 //
 // Increase window_size to 25 for very long request which will update the more entries at once
 //
 export default async function handler(req, res) {
   const stopwatch = new Stopwatch();
+
   const window_size = Number(req.query.window_size);
-  const report = {};
+
+  let param_unrand = req.query.unrand;
+  if (!Array.isArray(param_unrand)) {
+    param_unrand = [param_unrand];
+  }
+
+  const report = {
+    window_size,
+    param_unrand,
+  };
 
   try {
     if (isNaN(window_size)) {
@@ -31,15 +42,19 @@ export default async function handler(req, res) {
     report.update_list = [];
 
     // find values in `Unrands.Metadata` that are not in `all_cache_keys` by `id`
-    const missing_keys = Unrands.Metadata.filter((unrand) => !all_cache_set.has(unrand.id));
-    report.missing_keys = missing_keys.map((unrand) => unrand.id);
+    const missing_keys = Unrands.Metadata.filter((unrand) => !all_cache_set.has(unrand.id)).map((unrand) => unrand.id);
+    report.missing_keys = missing_keys;
 
-    if (missing_keys.length) {
+    if (param_unrand) {
+      for (const unrand_key of param_unrand) {
+        report.update_list.push(unrand_key);
+      }
+    } else if (missing_keys.length) {
       // build window from missing keys
       // add missing keys to report.update_list up to window_size
       const include_count = Math.min(window_size, missing_keys.length);
       for (let i = 0; i < include_count; i++) {
-        report.update_list.push(missing_keys[i].id);
+        report.update_list.push(missing_keys[i]);
       }
     } else {
       // perform queries for set of oldest (stale) cache entries
