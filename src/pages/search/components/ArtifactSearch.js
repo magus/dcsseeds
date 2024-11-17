@@ -237,24 +237,24 @@ function ArtifactFilters(props) {
 
   return (
     <React.Fragment>
+      {props.filter_set.size === 0 ? null : (
+        <ClearButton
+          key="clear"
+          layout="position"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={spring_config}
+        >
+          <Button onClick={props.reset}>{'❌ Clear filters'}</Button>
+        </ClearButton>
+      )}
+
       {!button_list.length ? null : <VersionFilters {...props} />}
 
-      <Filters>
-        {props.filter_set.size === 0 ? null : (
-          <ClearButton
-            key="clear"
-            layout="position"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={spring_config}
-          >
-            <Button onClick={props.reset}>❌ Clear</Button>
-          </ClearButton>
-        )}
+      <Spacer.Vertical size="3" />
 
-        {button_list}
-      </Filters>
+      <Filters>{button_list}</Filters>
     </React.Fragment>
   );
 }
@@ -365,7 +365,7 @@ const Button = styled.button`
 
 const ClearButton = styled(ButtonGroup)`
   flex: initial;
-  width: var(--spacer-14);
+  width: 100%;
 `;
 
 const spring_config = {
