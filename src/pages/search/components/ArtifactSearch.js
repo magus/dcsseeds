@@ -285,7 +285,19 @@ function ArtifactFilters(props) {
             </Drawer.Trigger>
 
             <Drawer.Content className="max-h-[80vh]">
-              <Filters className="overflow-scroll pb-1 ps-2 pe-1">{filter_button_list}</Filters>
+              <div className="ps-2 pe-1 pb-1">
+                <Drawer.Title>Add artefact</Drawer.Title>
+                <Drawer.Description>
+                  Include another artifact in your search, results will contain <b>all</b> artefacts
+                </Drawer.Description>
+              </div>
+
+              <div className="overflow-scroll ps-2 pe-1 pb-1">
+                <div className="min-h-2" />
+                <div className="flex flex-1 overflow-scroll">
+                  <Filters className="">{filter_button_list}</Filters>
+                </div>
+              </div>
             </Drawer.Content>
           </Drawer.Root>
         )}
