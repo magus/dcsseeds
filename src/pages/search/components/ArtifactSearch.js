@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import useSWR from 'swr';
 
-import { Popover } from '~/components/ui/Popover';
+import { Drawer } from '~/components/ui/Drawer';
 
 import * as Unrands from 'src/utils/Unrands';
 import * as Spacer from 'src/components/Spacer';
@@ -269,17 +269,17 @@ function ArtifactFilters(props) {
         {visible_buttons}
 
         {!filter_button_list.length ? null : (
-          <Popover.Root>
-            <Popover.Trigger asChild>
+          <Drawer.Root>
+            <Drawer.Trigger asChild>
               <ButtonGroup>
                 <Button className="!opacity-40">{'+ Add artefact'}</Button>
               </ButtonGroup>
-            </Popover.Trigger>
+            </Drawer.Trigger>
 
-            <Popover.Content className="w-full max-w-[100vw] max-h-[50vh] overflow-scroll drop-shadow !px-2 !py-3">
-              <Filters>{filter_button_list}</Filters>
-            </Popover.Content>
-          </Popover.Root>
+            <Drawer.Content className="max-h-[80vh]">
+              <Filters className="overflow-scroll pb-1 ps-2 pe-1">{filter_button_list}</Filters>
+            </Drawer.Content>
+          </Drawer.Root>
         )}
       </Filters>
     </React.Fragment>
