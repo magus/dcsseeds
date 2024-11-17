@@ -6,6 +6,11 @@ import { fetch_stash_text } from './fetch_stash_text';
 
 async function fetch_morgue_text(url) {
   const response = await fetch(url);
+
+  if (!response.ok) {
+    throw new Error(`failed to fetch morgue [${response.status}]`);
+  }
+
   return await response.text();
 }
 

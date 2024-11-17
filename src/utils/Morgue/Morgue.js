@@ -6,7 +6,17 @@ export function Morgue(url) {
 function morgue_meta(unsafe_url) {
   let url = unsafe_url;
 
-  if (!RE.url_scheme.test(url)) {
+  if (RE.alternate_extensions.test(url)) {
+    url = url.replace(RE.alternate_extensions, '.txt');
+  }
+
+  const scheme_match = url.match(RE.url_scheme);
+
+  if (scheme_match?.groups) {
+    if (!VALID_SCHEMES.has(scheme_match.groups.scheme)) {
+      throw new Error('Morgue URL must use http or https');
+    }
+  } else {
     url = `https://${unsafe_url}`;
   }
 
@@ -39,9 +49,14 @@ const RE = {
 
   // https://regex101.com/r/MW4gT5/1
   timestamp: /(\d{4})(\d{2})(\d{2})-(\d{2})(\d{2})(\d{2})?/,
-  // https://regex101.com/r/m45jSY/1
-  filename: /\/(?<filename>(?<basename>(?:morgue-)?(?<player>[^/^-]+)-?(?<timestamp>[^/]+)?)\.txt(?:\.gz)?)$/,
+
+  // https://regex101.com/r/m45jSY/2
+  filename: /\/(?<filename>(?<basename>(?:morgue-)?(?<player>[^\/^-]+)-?(?<timestamp>[0-9-]+)?)(\.txt)?(?:\.gz)?)?$/,
+
+  alternate_extensions: /\.(lst|ts|map)$/,
 
   // starts with protocol
-  url_scheme: /^([^\:^\/]+):\/\//,
+  url_scheme: /^(?<scheme>[^\:^\/]+):\/\//,
 };
+
+const VALID_SCHEMES = new Set(['http', 'https']);

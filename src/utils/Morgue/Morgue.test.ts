@@ -3,7 +3,12 @@ import { expect, test } from 'bun:test';
 import { Morgue } from './Morgue';
 
 test('invalid url throws clear error', () => {
-  expect(() => Morgue('https://crawl.com')).toThrow(new Error('Morgue URL must match filename pattern'));
+  expect(() => Morgue('ftp://crawl.akrasiac.org/rawdata/Lemuel/morgue-Lemuel-2007-12.txt')).toThrow(
+    new Error('Morgue URL must use http or https'),
+  );
+});
+test('url missing timestamp throws clear error', () => {
+  expect(() => Morgue('https://crawl.com')).toThrow(new Error('Morgue URL must contain timestamp'));
 });
 
 test('invalid timestamp throws clear error', () => {
@@ -22,6 +27,50 @@ test.each([
       'player': 'Lemuel',
       'timestamp': '1172764320000',
       'url': 'http://crawl.akrasiac.org/rawdata/Lemuel/morgue-Lemuel-20070301-1552.txt',
+    },
+  ],
+  [
+    'http://crawl.akrasiac.org/rawdata/Lemuel/morgue-Lemuel-20070301-1552.lst',
+    {
+      'date': new Date('2007-03-01T15:52:00.000Z'),
+      'basename': 'morgue-Lemuel-20070301-1552',
+      'filename': 'morgue-Lemuel-20070301-1552.txt',
+      'player': 'Lemuel',
+      'timestamp': '1172764320000',
+      'url': 'http://crawl.akrasiac.org/rawdata/Lemuel/morgue-Lemuel-20070301-1552.txt',
+    },
+  ],
+  [
+    'http://crawl.akrasiac.org/rawdata/Lemuel/morgue-Lemuel-20070301-1552.ts',
+    {
+      'date': new Date('2007-03-01T15:52:00.000Z'),
+      'basename': 'morgue-Lemuel-20070301-1552',
+      'filename': 'morgue-Lemuel-20070301-1552.txt',
+      'player': 'Lemuel',
+      'timestamp': '1172764320000',
+      'url': 'http://crawl.akrasiac.org/rawdata/Lemuel/morgue-Lemuel-20070301-1552.txt',
+    },
+  ],
+  [
+    'http://crawl.akrasiac.org/rawdata/Lemuel/morgue-Lemuel-20070301-1552.map',
+    {
+      'date': new Date('2007-03-01T15:52:00.000Z'),
+      'basename': 'morgue-Lemuel-20070301-1552',
+      'filename': 'morgue-Lemuel-20070301-1552.txt',
+      'player': 'Lemuel',
+      'timestamp': '1172764320000',
+      'url': 'http://crawl.akrasiac.org/rawdata/Lemuel/morgue-Lemuel-20070301-1552.txt',
+    },
+  ],
+  [
+    'http://crawl.akrasiac.org/rawdata/Lemuel/morgue-Lemuel-20070301-1552',
+    {
+      'date': new Date('2007-03-01T15:52:00.000Z'),
+      'basename': 'morgue-Lemuel-20070301-1552',
+      'filename': 'morgue-Lemuel-20070301-1552',
+      'player': 'Lemuel',
+      'timestamp': '1172764320000',
+      'url': 'http://crawl.akrasiac.org/rawdata/Lemuel/morgue-Lemuel-20070301-1552',
     },
   ],
   [
