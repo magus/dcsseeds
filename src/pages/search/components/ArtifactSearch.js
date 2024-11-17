@@ -373,11 +373,13 @@ const ClearButton = styled(ButtonGroup)`
 // https://motion.dev/docs/react-transitions#spring
 const spring_config = {
   type: 'spring',
-  mass: 0.5,
-  damping: 12,
-
-  // type: 'tween',
+  mass: 0.1,
+  damping: 6,
+  // duration: 0.1,
   // duration: 0.2,
+  //
+  // type: 'tween',
+  // duration: 0.4,
 };
 
 const NEW_UNRAND_SET = new Set([
