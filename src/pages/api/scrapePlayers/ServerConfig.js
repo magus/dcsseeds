@@ -57,26 +57,26 @@ SERVER_CONFIG.morgue_server = function morgue_server(morgue_url) {
 Object.freeze(SERVER_CONFIG);
 
 function ServerConfig(server) {
-  const rawdata_base = (function () {
+  const url_base = (function () {
     switch (server) {
       case Server.akrasiac:
-        return 'http://crawl.akrasiac.org/rawdata';
+        return 'crawl.akrasiac.org/rawdata';
       case Server.xtahua:
-        return 'https://crawl.xtahua.com/crawl/morgue';
+        return 'crawl.xtahua.com/crawl/morgue';
       case Server.project357:
-        return 'https://crawl.project357.org/morgue';
+        return 'crawl.project357.org/morgue';
       case Server.berotato:
-        return 'https://cbro.berotato.org/morgue';
+        return 'cbro.berotato.org/morgue';
       case Server.underhound:
-        return 'https://underhound.eu/crawl/morgue';
+        return 'underhound.eu/crawl/morgue';
       case Server.kelbi:
-        return 'https://crawl.kelbi.org/crawl/morgue';
+        return 'crawl.kelbi.org/crawl/morgue';
       case Server.webzook:
-        return 'https://webzook.net/soup/morgue';
+        return 'webzook.net/soup/morgue';
       case Server.develz:
-        return 'https://crawl.develz.org/morgues/git';
+        return 'crawl.develz.org/morgues/git';
       case Server.crawldcssio:
-        return 'https://crawl.dcss.io/crawl/morgue';
+        return 'crawl.dcss.io/crawl/morgue';
 
       default:
         throw new Error(`ServerConfig base url missing for [${server}]`);
@@ -95,7 +95,7 @@ function ServerConfig(server) {
         case Server.webzook:
         case Server.develz:
         case Server.crawldcssio:
-          return `^${rawdata_base}`;
+          return `^https?://${url_base}`;
 
         default:
           throw new Error(`ServerConfig origin regex missing for [${server}]`);
@@ -117,10 +117,10 @@ function ServerConfig(server) {
     // webzook has version specific morgue listing
     if (server === Server.webzook) {
       // e.g. https://webzook.net/soup/morgue/0.29/Coo1/
-      return `${rawdata_base}/${version}/${player_name}/`;
+      return `https://${url_base}/${version}/${player_name}/`;
     }
 
-    return `${rawdata_base}/${player_name}/`;
+    return `https://${url_base}/${player_name}/`;
   }
 
   function player_morgue_regex(player_name) {
@@ -133,7 +133,7 @@ function ServerConfig(server) {
   return {
     server,
     origin_re,
-    rawdata_base,
+    url_base,
     morgue_list_url_list,
     player_morgue_regex,
   };
