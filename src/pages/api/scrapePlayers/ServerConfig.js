@@ -17,6 +17,11 @@
 // this avoids the issue of handling each server and instead goes back
 // to handling just morgue files, a player name is unique identifier across servers
 
+//
+// 🚨 IMPORTANT
+// Must be kept in sync with database
+// https://magic-graphql.iamnoah.com/console/data/default/schema/public/tables/dcsseeds_scrapePlayers_server/browse
+//
 const Server = Object.freeze({
   'akrasiac': 'akrasiac',
   'xtahua': 'xtahua',
