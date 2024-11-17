@@ -1,7 +1,7 @@
 const { send } = require('micro');
 const prettier = require('prettier');
 
-module.exports = function zeitSend(res, statusCode, data, { prettyPrint } = {}) {
+module.exports = async function zeitSend(res, statusCode, data, { prettyPrint } = {}) {
   const isError = statusCode === 500 || data instanceof Error;
 
   // JIT ERROR is created if error and data is missing
@@ -36,7 +36,7 @@ module.exports = function zeitSend(res, statusCode, data, { prettyPrint } = {}) 
   let formattedResponseJson;
   if (prettyPrint) {
     // formattedResponseJson = JSON.stringify(responseJson, null, 2);
-    formattedResponseJson = prettier.format(JSON.stringify(responseJson), { semi: false, parser: 'json' });
+    formattedResponseJson = await prettier.format(JSON.stringify(responseJson), { semi: false, parser: 'json' });
   } else {
     formattedResponseJson = responseJson;
   }

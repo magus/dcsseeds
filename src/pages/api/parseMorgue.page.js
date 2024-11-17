@@ -10,7 +10,7 @@ export default async function handler(req, res) {
     const { morgue } = req.query;
 
     if (!morgue) {
-      return send(res, 500, new Error('Must provide [morgue]'));
+      return await send(res, 500, new Error('Must provide [morgue]'));
     }
 
     const hrStartTime = process.hrtime();
@@ -19,9 +19,9 @@ export default async function handler(req, res) {
 
     const data = { timeMs, morgueParsed };
     // console.debug({ morgueParsed });
-    return send(res, 200, data, { prettyPrint: true });
+    return await send(res, 200, data, { prettyPrint: true });
   } catch (err) {
-    return send(res, 500, err, { prettyPrint: true });
+    return await send(res, 500, err, { prettyPrint: true });
   }
 }
 

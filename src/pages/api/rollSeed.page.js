@@ -33,8 +33,8 @@ export default async function roll_seed(req, res) {
     }
 
     // api response used by getInitialProps of pages/New
-    return send(res, 200, { background, species, version, seed });
+    return await send(res, 200, { background, species, version, seed });
   } catch (err) {
-    return send(res, 500, err);
+    return await send(res, 500, err);
   }
 }

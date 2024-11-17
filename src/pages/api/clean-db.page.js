@@ -28,12 +28,12 @@ export default async function clean_db(req, res) {
 
     const json = await resp.json();
     try {
-      return send(res, 200, json.result, { prettyPrint: true });
+      return await send(res, 200, json.result, { prettyPrint: true });
     } catch (err) {
-      return send(res, 200, { json, err }, { prettyPrint: true });
+      return await send(res, 200, { json, err }, { prettyPrint: true });
     }
   } catch (err) {
-    return send(res, 500, err, { prettyPrint: true });
+    return await send(res, 500, err, { prettyPrint: true });
   }
 }
 

@@ -53,7 +53,7 @@ export default async function scrapePlayers(req, res) {
 
       stopwatch.record('total time');
       const times = stopwatch.list();
-      return send(res, 200, { param_morgue, server, morgue, times, result }, { prettyPrint: true });
+      return await send(res, 200, { param_morgue, server, morgue, times, result }, { prettyPrint: true });
     }
 
     // prettier-ignore
@@ -71,9 +71,9 @@ export default async function scrapePlayers(req, res) {
     stopwatch.record('total time');
     const times = stopwatch.list();
     const data = { times, total_morgues, result_list };
-    return send(res, 200, data, { prettyPrint: true });
+    return await send(res, 200, data, { prettyPrint: true });
   } catch (err) {
-    return send(res, 500, err, { prettyPrint: true });
+    return await send(res, 500, err, { prettyPrint: true });
   }
 }
 

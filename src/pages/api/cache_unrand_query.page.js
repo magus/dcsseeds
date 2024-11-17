@@ -88,12 +88,12 @@ export default async function handler(req, res) {
 
     const times = stopwatch.list();
     const data = { times, cache_result, report };
-    return send(res, 200, data, { prettyPrint: true });
+    return await send(res, 200, data, { prettyPrint: true });
   } catch (err) {
     const times = stopwatch.list();
     const error = error_json(err);
     const data = { times, error, report };
-    return send(res, 500, data, { prettyPrint: true });
+    return await send(res, 500, data, { prettyPrint: true });
   }
 }
 

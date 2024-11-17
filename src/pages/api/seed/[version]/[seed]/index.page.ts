@@ -42,9 +42,9 @@ export default async function seed_explorer(req: NextApiRequest, res: NextApiRes
     const stderr = String(crawl.stderr);
 
     const json = { seed, stdout, stderr, debug };
-    return send(res, 200, json, { prettyPrint: true });
+    return await send(res, 200, json, { prettyPrint: true });
   } catch (err) {
     const json = { debug, err };
-    return send(res, 500, json, { prettyPrint: true });
+    return await send(res, 500, json, { prettyPrint: true });
   }
 }
