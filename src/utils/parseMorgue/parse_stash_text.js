@@ -1,7 +1,7 @@
 import Branch from 'src/utils/Branch';
 import { toNumber } from 'src/utils/toNumber';
 
-// yarn test src/utils/parseMorgue/__tests__/morgue-magusnn-20210623-085146.txt.test.js
+// pnpm test src/utils/parseMorgue/__tests__/morgue-magusnn-20210623-085146/parseMorgue.test.js
 
 export function parse_stash_text(stash_text) {
   const stash_line_list = stash_text.split('\n');

@@ -41,11 +41,11 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-        cache: 'yarn'
+        cache: 'pnpm'
 
-    - run: yarn install --immutable
+    - run: pnpm install --frozen-lockfile
 
-    - run: yarn test:ci
+    - run: pnpm test:ci
       env:
         HASURA_ADMIN_SECRET: '${{ secrets.HASURA_ADMIN_SECRET }}'
         GRAPHQL_ENDPOINT: '${{ vars.GRAPHQL_ENDPOINT }}'

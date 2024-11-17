@@ -75,7 +75,7 @@ import * as crawl_dir from './crawl_dir';
 
   const output_path = path.join(__dirname, '__output__', 'AshenzariCurses.ts');
   fs.writeFileSync(output_path, output_lines.join('\n'));
-  execSync(`yarn prettier --write "${output_path}"`);
+  execSync(`pnpm prettier --write "${output_path}"`);
 
   console.info('📋 Generated `AshenzariCurses.ts`');
   console.info(output_path);

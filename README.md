@@ -3,6 +3,14 @@
 # dcss-seeds
 track random seeds in dcss
 
+# setup
+
+```bash
+corepack enable pnpm
+pnpm i
+pnpm dev
+```
+
 # TODO
 
 ## [events-refactor](docs/events-refactor.md)
