@@ -193,6 +193,8 @@ function FilterButton(props) {
 function ArtifactFilters(props) {
   const router = useRouter();
 
+  const [drawer_open, set_drawer_open] = React.useState(false);
+
   const search = router.query.q;
 
   const active_key_list = Array.from(props.filter_set);
@@ -235,8 +237,14 @@ function ArtifactFilters(props) {
         new={is_new}
         image={metadata.image_url}
         count={count}
-        handleAdd={() => props.add_filter(unrand_key)}
-        handleRemove={() => props.remove_filter(unrand_key)}
+        handleAdd={() => {
+          set_drawer_open(false);
+          props.add_filter(unrand_key);
+        }}
+        handleRemove={() => {
+          set_drawer_open(false);
+          props.remove_filter(unrand_key);
+        }}
         disabled={disabled}
         active={active}
         hide={hide}
@@ -269,7 +277,7 @@ function ArtifactFilters(props) {
         {visible_buttons}
 
         {!filter_button_list.length ? null : (
-          <Drawer.Root>
+          <Drawer.Root open={drawer_open} onOpenChange={set_drawer_open}>
             <Drawer.Trigger asChild>
               <ButtonGroup>
                 <Button className="!opacity-40">{'+ Add artefact'}</Button>
