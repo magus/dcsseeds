@@ -14,7 +14,10 @@ function morgue_meta(unsafe_url) {
 
   if (!filename_match) throw new Error('Morgue URL must match filename pattern');
 
-  const { player, basename, filename } = filename_match.groups;
+  if (!filename_match.groups.player) throw new Error('Morgue URL must contain player');
+  if (!filename_match.groups.basename) throw new Error('Morgue URL must contain basename');
+  if (!filename_match.groups.timestamp) throw new Error('Morgue URL must contain timestamp');
+  if (!filename_match.groups.filename) throw new Error('Morgue URL must contain filename');
 
   const timestamp_match = filename_match.groups.timestamp.match(RE.timestamp);
 
@@ -24,6 +27,8 @@ function morgue_meta(unsafe_url) {
   const s = maybe_sec || '00';
   const date = new Date(`${Y}-${M}-${D}T${h}:${m}:${s}.000Z`);
   const timestamp = String(date.getTime());
+
+  const { player, basename, filename } = filename_match.groups;
 
   return { date, timestamp, player, url, filename, basename };
 }

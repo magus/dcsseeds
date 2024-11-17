@@ -48,11 +48,13 @@ export default async function handler(req, res) {
     stopwatch.record('add morgue items');
 
     // ensure error response treated as error
-    const status_code = response.status === 'error' ? 500 : 200;
+    if (response.status === 'error') {
+      throw new Error(response.extra.message);
+    }
 
     const times = stopwatch.list();
     const data = { times, morgue, cleared_items, response };
-    return await send(res, status_code, data, { prettyPrint: true });
+    return await send(res, 200, data, { prettyPrint: true });
   } catch (error) {
     // immediate response
     send(res, 500, error, { prettyPrint: true });
