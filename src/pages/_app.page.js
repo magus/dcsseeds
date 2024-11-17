@@ -2,6 +2,8 @@ import * as React from 'react';
 import Head from 'next/head';
 import { createGlobalStyle } from 'styled-components';
 
+import '~/styles/globals.css';
+
 const TITLE = process.env.APP_NAME || '';
 
 // Will be called once for every metric that has to be reported.
