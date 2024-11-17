@@ -79,6 +79,19 @@ function InternalArtifactSearch(props) {
         }}
       />
 
+      {artifact_filter.filter_set.size === 0 ? null : (
+        <ClearButton
+          key="clear"
+          layout="position"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={spring_config}
+        >
+          <Button onClick={artifact_filter.reset}>{'❌ Clear filters'}</Button>
+        </ClearButton>
+      )}
+
       <ArtifactFilters {...artifact_filter} />
 
       <Spacer.Vertical size="2" />
@@ -239,19 +252,6 @@ function ArtifactFilters(props) {
 
   return (
     <React.Fragment>
-      {
-        <ClearButton
-          key="clear"
-          // layout="position"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: props.filter_set.size === 0 ? 0 : 1 }}
-          exit={{ opacity: 0 }}
-          transition={spring_config}
-        >
-          <Button onClick={props.reset}>{'❌ Clear filters'}</Button>
-        </ClearButton>
-      }
-
       {!button_list.length ? null : <VersionFilters {...props} />}
 
       <Spacer.Vertical size="3" />
