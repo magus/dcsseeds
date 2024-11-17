@@ -219,7 +219,8 @@ function ArtifactFilters(props) {
     const active = props.filter_set.has(unrand_key);
     const count = props.artifact_count[unrand_key];
 
-    const hide = is_filtering && count === 0;
+    const hide = is_filtering && !active;
+    // const hide = is_filtering && count === 0;
     const disabled = props.loading || count === 0;
     const is_new = NEW_UNRAND_SET.has(metadata.id);
 
