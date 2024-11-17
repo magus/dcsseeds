@@ -280,7 +280,7 @@ function ArtifactFilters(props) {
           <Drawer.Root open={drawer_open} onOpenChange={set_drawer_open}>
             <Drawer.Trigger asChild>
               <ButtonGroup>
-                <Button className="!opacity-40">{'+ Add artefact'}</Button>
+                <Button className="">{'+ Add artefact'}</Button>
               </ButtonGroup>
             </Drawer.Trigger>
 
