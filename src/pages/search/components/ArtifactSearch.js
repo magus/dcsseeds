@@ -6,6 +6,8 @@ import { motion } from 'framer-motion';
 import useSWR from 'swr';
 
 import { Drawer } from '~/components/ui/Drawer';
+import { Dialog } from '~/components/ui/Dialog';
+import { useDimensions } from '~/hooks/useDimensions';
 
 import * as Unrands from 'src/utils/Unrands';
 import * as Spacer from 'src/components/Spacer';
@@ -269,6 +271,66 @@ function ArtifactFilters(props) {
   const has_active = active_button_list.length;
   const visible_buttons = has_active ? active_button_list : filter_button_list;
 
+  const is_wide = useDimensions((dimensions) => {
+    return dimensions.width > 640;
+  });
+
+  const modal_description = (
+    <span>
+      Include another artifact in your search, results will contain <b>all</b> artefacts you selected.
+    </span>
+  );
+
+  const modal_title = <span>Add artefact</span>;
+
+  const modal_trigger = (
+    <ButtonGroup>
+      <Button className="">+&nbsp;{modal_title}</Button>
+    </ButtonGroup>
+  );
+
+  let artefact_modal = null;
+
+  if (!filter_button_list.length) {
+    artefact_modal = null;
+  } else if (is_wide) {
+    artefact_modal = (
+      <Dialog.Root open={drawer_open} onOpenChange={set_drawer_open}>
+        <Dialog.Trigger asChild>{modal_trigger}</Dialog.Trigger>
+
+        <Dialog.Content className="max-h-[80vh] max-w-[80vw] overflow-hidden flex flex-col p-0">
+          <div className="ps-4 pe-3 pt-6">
+            <Dialog.Title>{modal_title}</Dialog.Title>
+            <Dialog.Description className="pe-16">{modal_description}</Dialog.Description>
+          </div>
+
+          <div className="overflow-scroll ps-4 pe-3 pb-2">
+            <Filters className="">{filter_button_list}</Filters>
+          </div>
+        </Dialog.Content>
+      </Dialog.Root>
+    );
+  } else {
+    artefact_modal = (
+      <Drawer.Root open={drawer_open} onOpenChange={set_drawer_open}>
+        <Drawer.Trigger asChild>{modal_trigger}</Drawer.Trigger>
+
+        <Drawer.Content className="max-h-[80vh]">
+          <div className="ps-2 pe-1 pb-1">
+            <Drawer.Title>{modal_title}</Drawer.Title>
+            <Drawer.Description>{modal_description}</Drawer.Description>
+          </div>
+
+          <div className="min-h-2" />
+
+          <div className="overflow-scroll ps-2 pe-1 pb-1">
+            <Filters className="">{filter_button_list}</Filters>
+          </div>
+        </Drawer.Content>
+      </Drawer.Root>
+    );
+  }
+
   return (
     <React.Fragment>
       {!has_buttons ? null : <VersionFilters {...props} />}
@@ -278,31 +340,7 @@ function ArtifactFilters(props) {
       <Filters>
         {visible_buttons}
 
-        {!filter_button_list.length ? null : (
-          <Drawer.Root open={drawer_open} onOpenChange={set_drawer_open}>
-            <Drawer.Trigger asChild>
-              <ButtonGroup>
-                <Button className="">{'+ Add artefact'}</Button>
-              </ButtonGroup>
-            </Drawer.Trigger>
-
-            <Drawer.Content className="max-h-[80vh]">
-              <div className="ps-2 pe-1 pb-1">
-                <Drawer.Title>Add artefact</Drawer.Title>
-                <Drawer.Description>
-                  Include another artifact in your search, results will contain <b>all</b> artefacts
-                </Drawer.Description>
-              </div>
-
-              <div className="overflow-scroll ps-2 pe-1 pb-1">
-                <div className="min-h-2" />
-                <div className="flex flex-1 overflow-scroll">
-                  <Filters className="">{filter_button_list}</Filters>
-                </div>
-              </div>
-            </Drawer.Content>
-          </Drawer.Root>
-        )}
+        {artefact_modal}
       </Filters>
     </React.Fragment>
   );
