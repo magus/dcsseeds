@@ -271,10 +271,12 @@ function ArtifactFilters(props) {
         {!filter_button_list.length ? null : (
           <Popover.Root>
             <Popover.Trigger asChild>
-              <Button className="!opacity-40">{'+ Add artefact'}</Button>
+              <ButtonGroup>
+                <Button className="!opacity-40">{'+ Add artefact'}</Button>
+              </ButtonGroup>
             </Popover.Trigger>
 
-            <Popover.Content className="w-full max-w-[100vw]">
+            <Popover.Content className="w-full max-w-[100vw] max-h-[50vh] overflow-scroll drop-shadow !px-2 !py-3">
               <Filters>{filter_button_list}</Filters>
             </Popover.Content>
           </Popover.Root>
