@@ -70,6 +70,7 @@ export default async function handler(req, res) {
         level
         seed
         version
+        gold
       }
     `);
 
