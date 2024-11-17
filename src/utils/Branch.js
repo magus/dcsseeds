@@ -43,6 +43,10 @@ const Branch = keyMirror({
   Volcano: true,
   WizLab: true,
   Ziggurat: true,
+
+  // 0.32 Makhleb post-transformation zone
+  // https://crawl.akrasiac.org/rawdata/kohrah/morgue-kohrah-20241008-203123.txt
+  CrucibleFlesh: true,
 });
 
 const BRANCH_ALIASES = {
@@ -111,6 +115,7 @@ const BRANCH_ALIASES = {
   "wizard's laboratory": Branch.WizLab,
   zig: Branch.Ziggurat,
   ziggurat: Branch.Ziggurat,
+  crucible: Branch.CrucibleFlesh,
 };
 
 const BRANCH_NAME_ALIAS_REGEX = new RegExp(`(${Object.keys(BRANCH_ALIASES).join('|')})`, 'i');

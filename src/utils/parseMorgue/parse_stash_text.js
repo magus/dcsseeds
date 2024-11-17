@@ -83,6 +83,11 @@ export function parse_stash_text(stash_text) {
         case check('location'):
           break;
 
+        // 0.32 Makhleb post-transformation zone
+        // https://crawl.akrasiac.org/rawdata/kohrah/morgue-kohrah-20241008-203123.txt
+        case check('crucible_flesh'):
+          break;
+
         default:
           throw new Error('unrecognized line in stash');
       }
@@ -234,6 +239,10 @@ const PARSE = {
   no_stash: function no_stash() {
     return true;
   },
+
+  crucible_flesh: function crucible_flesh() {
+    return true;
+  },
 };
 
 const RE = {
@@ -252,6 +261,10 @@ const RE = {
 
   unseen: / {2}\(unseen\)/,
   no_stash: / {2}You have no stashes\./,
+
+  // 0.32 Makhleb post-transformation zone
+  // https://crawl.akrasiac.org/rawdata/kohrah/morgue-kohrah-20241008-203123.txt
+  crucible_flesh: /the Crucible of Flesh/,
 
   // https://github.com/crawl/crawl/blob/master/crawl-ref/source/dat/database/randbook.txt
   spellbook:
