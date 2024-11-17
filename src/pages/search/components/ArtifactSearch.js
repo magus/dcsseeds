@@ -109,10 +109,11 @@ function ArtifactResults(props) {
           <motion.div
             // force line break
             key={key}
-            layout="position"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            // layout="position"
+            layout
+            // initial={{ opacity: 0 }}
+            // animate={{ opacity: 1 }}
+            // exit={{ opacity: 0 }}
             transition={spring_config}
           >
             <ArtifactSearchResult {...result} />
@@ -147,9 +148,10 @@ function FilterButton(props) {
     <ButtonGroup
       key={props.name}
       layout="position"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
+      // layout
+      // initial={{ opacity: 0 }}
+      // animate={{ opacity: 1 }}
+      // exit={{ opacity: 0 }}
       transition={spring_config}
       active={props.active}
     >
@@ -237,18 +239,18 @@ function ArtifactFilters(props) {
 
   return (
     <React.Fragment>
-      {props.filter_set.size === 0 ? null : (
+      {
         <ClearButton
           key="clear"
-          layout="position"
+          // layout="position"
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          animate={{ opacity: props.filter_set.size === 0 ? 0 : 1 }}
           exit={{ opacity: 0 }}
           transition={spring_config}
         >
           <Button onClick={props.reset}>{'❌ Clear filters'}</Button>
         </ClearButton>
-      )}
+      }
 
       {!button_list.length ? null : <VersionFilters {...props} />}
 
@@ -368,11 +370,14 @@ const ClearButton = styled(ButtonGroup)`
   width: 100%;
 `;
 
+// https://motion.dev/docs/react-transitions#spring
 const spring_config = {
   type: 'spring',
-  mass: 0.25,
-  stiffness: 290,
-  damping: 25,
+  mass: 0.5,
+  damping: 12,
+
+  // type: 'tween',
+  // duration: 0.2,
 };
 
 const NEW_UNRAND_SET = new Set([
