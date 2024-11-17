@@ -1,6 +1,7 @@
 [![Test](https://github.com/magus/dcsseeds/actions/workflows/test.yml/badge.svg)](https://github.com/magus/dcsseeds/actions/workflows/test.yml)
 
 # dcss-seeds
+
 track random seeds in dcss
 
 # setup
@@ -14,13 +15,13 @@ pnpm dev
 # TODO
 
 ## [events-refactor](docs/events-refactor.md)
+
 ## [item-search](docs/item-search.md)
+
 ## [item-parsing](docs/item-parsing.md)
 
-
-
-
 ## alternative graphql nested artifact query approach
+
 ### `useArtifactFilter`
 
 with the sorting done above, we should see better results within each result
@@ -171,14 +172,12 @@ query {
 }
 ```
 
-
 ## prices
 
-include gold price in item if  exists
+include gold price in item if exists
 store `event.data.gold` in `item.gold` column for easy display with results
 
 > +7 Spriggan's Knife {stab, EV+4 Stlth+} (1482 gold)
-
 
 ## feedback
 
@@ -186,14 +185,14 @@ store `event.data.gold` in `item.gold` column for easy display with results
 - link to feedback form page on search (small link below search input?)
 - allow inputting arbitrary text
 - optional contact field that accepts email (validate it client-side)
- - write to database (text, email, created_at)
+- write to database (text, email, created_at)
 
-
- ## auto equip
+## auto equip
 
 instructions: SHIFT+3 (#) to dump character file
 copy link and paste into input
 parse lst file and morgue to get current
+
 - floor stash items (lst)
 - current equipment (omrgue)
 - inventory equipment (morgue)
@@ -211,13 +210,11 @@ allow changing selection and show relative difference versus suggested/optimal s
 - we don't need to always have a player
 - just store a `submission` row and set morgue url to point to an internal link
 - e.g. `https://dcss.vercel.app/morgue/:submission_id`
-- `submission.id`           guid identifying this unique submission event
-- `submission.text`         literal morgue string pasted into input box
-- `submission.created_at`   timestamp of submission
-- `submission.ip_address`   store so we can find and remove submissions from bad actors if we notice them
+- `submission.id` guid identifying this unique submission event
+- `submission.text` literal morgue string pasted into input box
+- `submission.created_at` timestamp of submission
+- `submission.ip_address` store so we can find and remove submissions from bad actors if we notice them
 - submit `submission` and `items` in one transaction to ensure atomic
-
-
 
 ## parse morgue visualization
 
@@ -252,7 +249,6 @@ Randarts found (can include tile image for type)
   Use this to wear random set of armors for certain backgrounds
   e.g. random robes for casters, random dragon scales for stabbers, random plate/leather/etc for melee classes, etc.
 
-
 ## scrapePlayers
 
 - strategy to make scraping more fair across players
@@ -263,6 +259,7 @@ Randarts found (can include tile image for type)
   - parse first morgue file only
   - store rest in a lookup / array
 - if we still have leftover requests, proceed ...
+
   - loop below until we fill our MAX_REQUESTS quota array of request items
   - track total morgues for each loop
   - we can exit when we add no items (all morgues are completed)
@@ -279,11 +276,10 @@ Randarts found (can include tile image for type)
 - scrapePlayers.morgueLookup column which contains JSON object to quickly mark morgues
   should be able to set keys on the JSON object with mutations (instead of sending entire object)
 
-
-
 ## seed_players
 
 - api/reparseMorgue
+
   - other fields? God, Death location, XL, Health, Magic, Gold, AC, EV, etc.
 
 - Query for all unique players to populate two selects on Compare page
@@ -291,8 +287,6 @@ Randarts found (can include tile image for type)
   Select the users from the compare url if available
   Use same Compare page component on both compare/index and compare/compareSyntax
   both /compare and compare/playerA..playerB should work fine, the first will select two random players
-
-
 
 # Setup
 
@@ -318,6 +312,7 @@ Run local development server from root directory
 yarn dev
 open http://localhost:3000
 ```
+
 Navigate to [http://localhost:3000](http://localhost:3000) in your browser.
 
 Production is deployed automatically when merging to master, alternatively you can manually deploy to production with the command below

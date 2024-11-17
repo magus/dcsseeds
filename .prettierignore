@@ -1,0 +1,6 @@
+
+crawl-dir/*
+public/*
+static/*
+
+pnpm-lock.yaml

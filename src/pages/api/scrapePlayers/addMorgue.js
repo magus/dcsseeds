@@ -221,23 +221,21 @@ const GQL_ADD_ITEM = serverQuery(
   },
 );
 
-const GQL_ADD_MORGUE = serverQuery(
-  gql`
-    mutation AddMorgue($playerId: uuid!, $data: jsonb!, $morgue_url: String!) {
-      update_dcsseeds_scrapePlayers(
-        _append: { morgues: $data }
-        where: { id: { _eq: $playerId } }
-        _set: { lastRun: "now()" }
-      ) {
-        affected_rows
-      }
-
-      delete_dcsseeds_scrapePlayers_errors(where: { morgue: { _eq: $morgue_url } }) {
-        affected_rows
-      }
+const GQL_ADD_MORGUE = serverQuery(gql`
+  mutation AddMorgue($playerId: uuid!, $data: jsonb!, $morgue_url: String!) {
+    update_dcsseeds_scrapePlayers(
+      _append: { morgues: $data }
+      where: { id: { _eq: $playerId } }
+      _set: { lastRun: "now()" }
+    ) {
+      affected_rows
     }
-  `,
-);
+
+    delete_dcsseeds_scrapePlayers_errors(where: { morgue: { _eq: $morgue_url } }) {
+      affected_rows
+    }
+  }
+`);
 
 const GQL_ADD_PARSE_ERROR = serverQuery(gql`
   mutation AddParseError($errors: [dcsseeds_scrapePlayers_errors_insert_input!]!) {

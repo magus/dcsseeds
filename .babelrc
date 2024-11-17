@@ -11,16 +11,11 @@
     ]
   ],
 
-  "plugins": [
-    ["styled-components", { "ssr": true, "displayName": true }]
-  ],
+  "plugins": [["styled-components", { "ssr": true, "displayName": true }]],
 
   "env": {
     "production": {
-      "plugins": [
-        ["styled-components", { "ssr": true, "displayName": false }],
-        ["transform-remove-console"]
-      ]
+      "plugins": [["styled-components", { "ssr": true, "displayName": false }], ["transform-remove-console"]]
     }
   }
 }

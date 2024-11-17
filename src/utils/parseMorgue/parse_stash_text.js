@@ -254,5 +254,6 @@ const RE = {
   no_stash: / {2}You have no stashes\./,
 
   // https://github.com/crawl/crawl/blob/master/crawl-ref/source/dat/database/randbook.txt
-  spellbook: /^(book of |Almanac|Annotations|Anthology|Atlas|Book|Catalogue|Codex|Collected Works|Commentary|Compendium|Compilation|Cyclopedia|Directory|Discourse|Discursus|Disquisition|Dissertation|Elucidation|Enchiridion|Encyclopedia|Essays|Excursus|Exposition|Folio|Grimoire|Guide|Guidebook|Handbook|Incunable|Incunabulum|Information|Lectures|Lessons|Meditations|Monograph|Notes|Octavo|Omnibus|Opusculum|Papyrus|Parchment|Precepts|Quarto|Reference Book|Secrets|Spellbook|Teachings|Textbook|Thoughts|Tome|Tractate|Treatise|Vademecum|Vellum|Verses|Volume|Writings)/,
+  spellbook:
+    /^(book of |Almanac|Annotations|Anthology|Atlas|Book|Catalogue|Codex|Collected Works|Commentary|Compendium|Compilation|Cyclopedia|Directory|Discourse|Discursus|Disquisition|Dissertation|Elucidation|Enchiridion|Encyclopedia|Essays|Excursus|Exposition|Folio|Grimoire|Guide|Guidebook|Handbook|Incunable|Incunabulum|Information|Lectures|Lessons|Meditations|Monograph|Notes|Octavo|Omnibus|Opusculum|Papyrus|Parchment|Precepts|Quarto|Reference Book|Secrets|Spellbook|Teachings|Textbook|Thoughts|Tome|Tractate|Treatise|Vademecum|Vellum|Verses|Volume|Writings)/,
 };

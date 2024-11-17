@@ -4,19 +4,17 @@ open ended item search needs more structure, right now it's a very simple text m
 but doesn't support using AND/OR to combine clauses, we should come up with a better strategy
 for example it'd be much better if we could filter items by
 
-  - type (e.g. shield, axe, staff, body, feet, barding, ring, etc.)
-  - brand (e.g. drain, venom, flame, pain, vorpal, vamp, etc.)
-  - property (e.g. Slay, Int, Str, rElec, rF, Contam, *Corrode, Drain etc.)
+- type (e.g. shield, axe, staff, body, feet, barding, ring, etc.)
+- brand (e.g. drain, venom, flame, pain, vorpal, vamp, etc.)
+- property (e.g. Slay, Int, Str, rElec, rF, Contam, \*Corrode, Drain etc.)
 
 imagine queries such as
-  (amulet reflect)       -- amulet with reflect
-  (body ac)              -- body armor with any amount of ac
-  (head will+ ac+4)      -- head with exactly Will+ and AC+4
-  (axe vamp slay>2)      -- axe with at least slay+2 and vamp brand
-  (ring !int<0 str>4)    -- ring with at least str+4 and no negative int
-  (gold<1000)            -- any item with a cost less then 1000 (including free)
-
-
+(amulet reflect) -- amulet with reflect
+(body ac) -- body armor with any amount of ac
+(head will+ ac+4) -- head with exactly Will+ and AC+4
+(axe vamp slay>2) -- axe with at least slay+2 and vamp brand
+(ring !int<0 str>4) -- ring with at least str+4 and no negative int
+(gold<1000) -- any item with a cost less then 1000 (including free)
 
 ## displaying results
 
@@ -48,7 +46,6 @@ for (const result of record_list) {
 }
 ```
 
-
 ## approaches
 
 ### graphql regexes
@@ -60,10 +57,9 @@ at least for now regex seems fast enough and avoids setting up more services/tas
 translate input into series of regex clauses for query
 we can get really close using regex where clauses, see below
 only support `>` (not `>=` for simplicity)
-  why? `>` and `>=` communicate the same thing
-  `plus >  6`  `min_plus = 7 = 6 + 1`
-  `plus >= 7`  `min_plus = 7`
-
+why? `>` and `>=` communicate the same thing
+`plus >  6` `min_plus = 7 = 6 + 1`
+`plus >= 7` `min_plus = 7`
 
 ```graphql
 query {
@@ -123,7 +119,6 @@ little more direct, avoids regex converting in favor of more readable where clau
   { property_list: { property: { type: { _eq: "brand" } name: { _eq: "vamp" } } } }
 ```
 
-
 ### using elasticsearch records to search all items
 
 > requisite see [item-parsing](./item-parsing.md)
@@ -132,8 +127,8 @@ same as above, we create records but instead upload to elasticsearch provider (s
 
 must be flat because arrays are not easy to combine boolean queries in elasticsearch since
 records are filtered at the top level if any filter matches a property
-e.g.  `plus > 6 AND EV > 3` would return both records below, but you might expect only the first
-      this is because the top record matches the first boolean and the bottom matches the second
+e.g. `plus > 6 AND EV > 3` would return both records below, but you might expect only the first
+this is because the top record matches the first boolean and the bottom matches the second
 
 you can nest fields and query them but it is a little more complicated
 keeping it flat seems good for our case since we don't require many fields just a name and value
@@ -153,7 +148,7 @@ https://opensearch.org/docs/1.3/opensearch/supported-field-types/nested/
     "rPois": 1,
     "rC": 1,
     "rN": 3,
-    "Dex": -5,
+    "Dex": -5
   },
   {
     "id": "5678",
@@ -166,11 +161,10 @@ https://opensearch.org/docs/1.3/opensearch/supported-field-types/nested/
     "stab": true,
     "plus": 7,
     "EV": 4,
-    "Stlth": 1,
-  },
+    "Stlth": 1
+  }
 ]
 ```
-
 
 ```graphql
 query ItemRecordDemo {
@@ -211,19 +205,18 @@ the React hooks look good too, seems like a very well written library
 
 > https://www.algolia.com/doc/guides/building-search-ui/what-is-instantsearch/react-hooks/
 
-
 ##### opensearch
+
 free tier on aws could probably get us far for now
 https://opensearch.org/docs
 the docs are pretty good, shows some examples like range queries etc which
 we would use to implement above
 https://opensearch.org/docs/2.4/opensearch/query-dsl/term/#range
 
-
 #### typesense
+
 https://github.com/dokku/dokku-typesense
 https://typesense.org/docs/guide/install-typesense.html#option-1-typesense-cloud
-
 
 ## inspo
 

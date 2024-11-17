@@ -12,14 +12,12 @@ jobs:
         node-version: [18.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     steps:
-    - run: |
-        HASURA_ADMIN_SECRET_LENGTH=${#HASURA_ADMIN_SECRET}
-        echo $HASURA_ADMIN_SECRET_LENGTH
-        echo $GRAPHQL_ENDPOINT
-        echo $SQL_ENDPOINT
-      env:
-        HASURA_ADMIN_SECRET: '${{ secrets.HASURA_ADMIN_SECRET }}'
-        GRAPHQL_ENDPOINT: '${{ vars.GRAPHQL_ENDPOINT }}'
-        SQL_ENDPOINT: '${{ vars.SQL_ENDPOINT }}'
-
-
+      - run: |
+          HASURA_ADMIN_SECRET_LENGTH=${#HASURA_ADMIN_SECRET}
+          echo $HASURA_ADMIN_SECRET_LENGTH
+          echo $GRAPHQL_ENDPOINT
+          echo $SQL_ENDPOINT
+        env:
+          HASURA_ADMIN_SECRET: '${{ secrets.HASURA_ADMIN_SECRET }}'
+          GRAPHQL_ENDPOINT: '${{ vars.GRAPHQL_ENDPOINT }}'
+          SQL_ENDPOINT: '${{ vars.SQL_ENDPOINT }}'

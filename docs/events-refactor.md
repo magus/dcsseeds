@@ -8,9 +8,9 @@ some items are duplicated, this is not ideal
 items should be unique on (name, branch, level, seed, version)
 we took a shortcut by putting everything in a single table including (morgue, timestamp)
 that means each unique morgue / run for the same seed version creates duplicate entries
-  e.g.  https://dcss.vercel.app/?q=%2B13+crystal
-        seed  3467139861098030199
-        v     0.29.1
+e.g. https://dcss.vercel.app/?q=%2B13+crystal
+seed 3467139861098030199
+v 0.29.1
 
 ### clearing morgues, seeds or versions for reparsing
 
@@ -23,20 +23,20 @@ allow clearing all seed version items for reparsing etc.
 how can we store these so that we can query these combinations without regex?
 https://hasura.io/docs/latest/schema/common-patterns/data-modeling/many-to-many/
 
-
-
 **NOTE**: `id` column is for example readability, use `Integer (auto-increment)` in real database
-  better performance than `uuid` and we aren't distributed so no need for `uuid`
-  > uuids needed when multiple processes generate unique IDs independently
-  > https://news.ycombinator.com/item?id=11863492
+better performance than `uuid` and we aren't distributed so no need for `uuid`
+
+> uuids needed when multiple processes generate unique IDs independently
+> https://news.ycombinator.com/item?id=11863492
 
 `dcss_seed_version` table, asssociate unique seed version combinations
-  Primary Key `id Integer (auto-increment)`
-  Unique Key  `(version, seed)`
-  - also easy remove / invalidate entries for reparsing
-  - e.g. delete all rows `WHERE version='0.30.0'`
-  - ensure when deleting a `seed_version` we should delete all associated `event` and `morgue` entries
-  - this will cause the players morgue map to remove entries and trigger reparsing those morgue files
+Primary Key `id Integer (auto-increment)`
+Unique Key `(version, seed)`
+
+- also easy remove / invalidate entries for reparsing
+- e.g. delete all rows `WHERE version='0.30.0'`
+- ensure when deleting a `seed_version` we should delete all associated `event` and `morgue` entries
+- this will cause the players morgue map to remove entries and trigger reparsing those morgue files
 
 | id  | version | seed                |
 | --- | ------- | ------------------- |
@@ -44,12 +44,13 @@ https://hasura.io/docs/latest/schema/common-patterns/data-modeling/many-to-many/
 |     |         |                     |
 
 `dcss_search_morgue` table, asssociate a specific run to a player
-  Primary Key `id Integer (auto-increment)`
-  Unique Key  `url`
-  - allow us to build current `morgues` json map dynamically
-  - query all rows for a player and then , use `url` to construct the json object for fast lookup in `scrapePlayers`
-  - instead of timestamp, use the `url` as the key in the map for lookup
-  - more readable and avoids the timestamp calculation
+Primary Key `id Integer (auto-increment)`
+Unique Key `url`
+
+- allow us to build current `morgues` json map dynamically
+- query all rows for a player and then , use `url` to construct the json object for fast lookup in `scrapePlayers`
+- instead of timestamp, use the `url` as the key in the map for lookup
+- more readable and avoids the timestamp calculation
 
 | id  | timestamp                | version | seed                | url (PK)                                                                     | player_id |
 | --- | ------------------------ | ------- | ------------------- | ---------------------------------------------------------------------------- | --------- |
@@ -57,11 +58,12 @@ https://hasura.io/docs/latest/schema/common-patterns/data-modeling/many-to-many/
 |     |                          |         |                     |                                                                              |           |
 
 `dcss_search_morgue_event` table, asssociate an event with a specific run from a player (morgue)
-  Primary Key `id Integer (auto-increment)`
-  Unique Key  `(morgue_id, event_id)`
-  - allow us see which players found which items and on which runs
-  - useful for recent run link, which shows the items a player found
-  - this would look at most recent `morgue` row, then do `event_list_aggregate` with a where clause to count items
+Primary Key `id Integer (auto-increment)`
+Unique Key `(morgue_id, event_id)`
+
+- allow us see which players found which items and on which runs
+- useful for recent run link, which shows the items a player found
+- this would look at most recent `morgue` row, then do `event_list_aggregate` with a where clause to count items
 
 | id  | morgue_id | event_id |
 | --- | --------- | -------- |
@@ -69,23 +71,24 @@ https://hasura.io/docs/latest/schema/common-patterns/data-modeling/many-to-many/
 |     |           |          |
 
 `dcss_search_event` table, might look like
-  Primary Key `id Integer (auto-increment)`
-  Unique Key  `(type, name, branch, level, version, seed)`
-  - `type`, `name`, `branch`, `level`, `version` and `seed` for a unique key to prevent duplicates
-  - `on_conflict` update `[type, name]` value (basically a noop)
-  - must store `order` which is the branch order inline as column
-    - `order` allows top-level `distinct_on` and `order_by` with `[order, level, seed, version]`
-  - `branch` is literal name (associated column can be `branch_ref`)
-  - allows for long term query flexibility
-  - `type`: artefact | unrand | item | unique | altar | portal | spell
-    - artefact (randarts)
-    - unrand (known artefacts e.g. wyrmbane, hat of the alchemist, etc.)
+Primary Key `id Integer (auto-increment)`
+Unique Key `(type, name, branch, level, version, seed)`
+
+- `type`, `name`, `branch`, `level`, `version` and `seed` for a unique key to prevent duplicates
+- `on_conflict` update `[type, name]` value (basically a noop)
+- must store `order` which is the branch order inline as column
+  - `order` allows top-level `distinct_on` and `order_by` with `[order, level, seed, version]`
+- `branch` is literal name (associated column can be `branch_ref`)
+- allows for long term query flexibility
+- `type`: artefact | unrand | item | unique | altar | portal | spell
+  - artefact (randarts)
+  - unrand (known artefacts e.g. wyrmbane, hat of the alchemist, etc.)
     ----------- MVP cut line -----------
-    - item (e.g. acquirement scrolls, see below)
-    - uniques
-    - god altars (e.g. `Found a radiant altar of Vehumet.`)
-    - Portals (eg abyss, ice cave, wizlab, etc)
-    - spells (requires magus.rc `note_messages += You add the spell`)
+  - item (e.g. acquirement scrolls, see below)
+  - uniques
+  - god altars (e.g. `Found a radiant altar of Vehumet.`)
+  - Portals (eg abyss, ice cave, wizlab, etc)
+  - spells (requires magus.rc `note_messages += You add the spell`)
 
 | type     | id  | name                                                                 | branch  | order | level | version | seed                 | created_at               | updated_at               |
 | -------- | --- | -------------------------------------------------------------------- | ------- | ----- | ----- | ------- | -------------------- | ------------------------ | ------------------------ |
@@ -94,15 +97,15 @@ https://hasura.io/docs/latest/schema/common-patterns/data-modeling/many-to-many/
 |          |     |                                                                      |         |       |       |         |                      |                          |                          |
 
 `dcss_search_property` table, store optional data with event
-  Primary Key `id Integer (auto-increment)`
-  Unique Key  `(type, name, value)`
-  - with this flexible property table it becomes clear we could store more information here
-    e.g. `unrand` property for marking unique unrand items for indexing and quick lookup
-  - properties would be created on insert and automatically associated
-    https://hasura.io/docs/latest/schema/common-patterns/data-modeling/many-to-many/#insert-using-many-to-many-relationships
-  - requires parsing properties from item `name` field
-    see [item-parsing](./item-parsing.md)
+Primary Key `id Integer (auto-increment)`
+Unique Key `(type, name, value)`
 
+- with this flexible property table it becomes clear we could store more information here
+  e.g. `unrand` property for marking unique unrand items for indexing and quick lookup
+- properties would be created on insert and automatically associated
+  https://hasura.io/docs/latest/schema/common-patterns/data-modeling/many-to-many/#insert-using-many-to-many-relationships
+- requires parsing properties from item `name` field
+  see [item-parsing](./item-parsing.md)
 
 | type     | name                   | value | id   |
 | -------- | ---------------------- | ----- | ---- |
@@ -131,22 +134,23 @@ https://hasura.io/docs/latest/schema/common-patterns/data-modeling/many-to-many/
 | property | rPois                  | 1     | RPO  |
 | property | Dex                    | -5    | DEX  |
 | property | EV                     | 4     | EV   |
-| property | *Corrode               |       |      |
+| property | \*Corrode              |       |      |
 | property | stab                   |       | STAB |
 | property | Stlth                  | 1     | STLT |
 |          |                        |       |      |
 
 `dcss_search_event_property` table, bridges `property` and `event`
-  Primary Key `id Integer (auto-increment)`
-  Unique Key  `(event_id, property_id)`
-  - many-to-many relationship between `event` and `property`
-    this table        Object relationship `event: event_id -> event.id`
-    this table        Object relationship `property: property_id -> property.id`
-    `event` table     Array relationship  `property_list: event_property.event_id -> id`
-    `property` table  Array relationship  `event_list: event_property.property_id -> id`
+Primary Key `id Integer (auto-increment)`
+Unique Key `(event_id, property_id)`
 
-  - `value` column in `event_property` for situations with many possible values (e.g. `gold`)
-    e.g. `gold` value is stored in the bridging table to avoid thousands of `property` rows
+- many-to-many relationship between `event` and `property`
+  this table Object relationship `event: event_id -> event.id`
+  this table Object relationship `property: property_id -> property.id`
+  `event` table Array relationship `property_list: event_property.event_id -> id`
+  `property` table Array relationship `event_list: event_property.property_id -> id`
+
+- `value` column in `event_property` for situations with many possible values (e.g. `gold`)
+  e.g. `gold` value is stored in the bridging table to avoid thousands of `property` rows
 
 | event_id | property_id | value |
 | -------- | ----------- | ----- |
@@ -163,7 +167,6 @@ https://hasura.io/docs/latest/schema/common-patterns/data-modeling/many-to-many/
 | 19       | EV          |       |
 | 19       | STLT        |       |
 |          |             |       |
-
 
 iterate + test by parsing and storying a 15 rune win with lots of events, unrands, etc.
 then try out queries etc. to ensure things work, if not, blow it away and try again
@@ -190,15 +193,15 @@ query {
         {
           _or: [
             # plus>4 OR brand=vamp
-            { property_list: { property: { name: { _eq: "plus" } value: { _gt: 4 } } } }
-            { property_list: { property: { type: { _eq: "brand" } name: { _eq: "vamp" } } } }
+            { property_list: { property: { name: { _eq: "plus" }, value: { _gt: 4 } } } }
+            { property_list: { property: { type: { _eq: "brand" }, name: { _eq: "vamp" } } } }
           ]
         }
         {
           _and: [
             # rC>=1 rF>=1 (rC>=1 AND rF>=1)
-            { property_list: { property: { name: { _eq: "rC" } value: { _gte: 1 } } } }
-            { property_list: { property: { name: { _eq: "rF" } value: { _gte: 1 } } } }
+            { property_list: { property: { name: { _eq: "rC" }, value: { _gte: 1 } } } }
+            { property_list: { property: { name: { _eq: "rF" }, value: { _gte: 1 } } } }
           ]
         }
       ]
@@ -219,10 +222,10 @@ on `/items/[version]/[seed]` display 3 columns to clearly distinguish between ev
 because events are stored in the same table we can order them by branch showing them collated together in branch order
 
 maybe color code the rows slightly
-  - items (orange)
-  - altars (white/yellow)
-  - uniques (red), etc.
 
+- items (orange)
+- altars (white/yellow)
+- uniques (red), etc.
 
 | location  | type     | name                                    |
 | --------- | -------- | --------------------------------------- |
@@ -237,10 +240,10 @@ by default we can have artefacts enabled
 e.g. (✅ Artefacts) (❌ Altars) (❌ Uniques) (❌ Portals) (❌ Spells)
 
 by toggling on an event type you opt into a few things
-  1. showing the full list of filter buttons for that event type
-  2. showing that event type in the result cards
-  3. showing that event type on item pages (above)
 
+1. showing the full list of filter buttons for that event type
+2. showing that event type in the result cards
+3. showing that event type on item pages (above)
 
 ## acquirement scrolls
 
@@ -261,7 +264,6 @@ by toggling on an event type you opt into a few things
 - if higher, we must send a delete mutation followed by an insert mutation with the new acquirement events
 - MUST do this before writing items since writing items is atomic and also marks morgue as visited/read
 
-
 ## combining item search, filters and other event types
 
 currently item search and artefact search are separate
@@ -269,10 +271,10 @@ this is ideal because it keeps things focused and simple
 
 there are two approaches we can take to querying
 
-  1.  fully client-side, just like artifacts we can know the full set
-      of uniques, god altars, spells, portal etc.
-      since we know them all we could cache and query them just like artifact filters
+1.  fully client-side, just like artifacts we can know the full set
+    of uniques, god altars, spells, portal etc.
+    since we know them all we could cache and query them just like artifact filters
 
-  2.  graphql request on each query, downside is this is slower
+2.  graphql request on each query, downside is this is slower
 
-  3.  collate results from item search with filter searches (messy/confusing)
+3.  collate results from item search with filter searches (messy/confusing)

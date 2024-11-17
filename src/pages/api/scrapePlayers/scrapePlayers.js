@@ -251,19 +251,17 @@ const GQL_FINDPLAYER = serverQuery(
   (data) => data.dcsseeds_scrapePlayers[0],
 );
 
-const GQL_PLAYER_MORGUES = serverQuery(
-  gql`
-    mutation AddMorgue($player_id: uuid!, $morgue_map: jsonb!) {
-      update_dcsseeds_scrapePlayers(
-        _append: { morgues: $morgue_map }
-        where: { id: { _eq: $player_id } }
-        _set: { lastRun: "now()" }
-      ) {
-        affected_rows
-      }
+const GQL_PLAYER_MORGUES = serverQuery(gql`
+  mutation AddMorgue($player_id: uuid!, $morgue_map: jsonb!) {
+    update_dcsseeds_scrapePlayers(
+      _append: { morgues: $morgue_map }
+      where: { id: { _eq: $player_id } }
+      _set: { lastRun: "now()" }
+    ) {
+      affected_rows
     }
-  `,
-);
+  }
+`);
 
 const GQL_ADD_PARSE_ERROR = serverQuery(gql`
   mutation AddParseError($errors: [dcsseeds_scrapePlayers_errors_insert_input!]!) {

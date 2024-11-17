@@ -4,7 +4,6 @@
 name: Test
 
 on:
-
   push:
     # push to master directly
     branches:
@@ -31,24 +30,22 @@ jobs:
         node-version: [18.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     steps:
-    - uses: actions/checkout@v3
-      with:
-        submodules: true
-        # fetch-depth: 0
-        token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v3
+        with:
+          submodules: true
+          # fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'pnpm'
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
 
-    - run: pnpm install --frozen-lockfile
+      - run: pnpm install --frozen-lockfile
 
-    - run: pnpm test:ci
-      env:
-        HASURA_ADMIN_SECRET: '${{ secrets.HASURA_ADMIN_SECRET }}'
-        GRAPHQL_ENDPOINT: '${{ vars.GRAPHQL_ENDPOINT }}'
-        SQL_ENDPOINT: '${{ vars.SQL_ENDPOINT }}'
-
-
+      - run: pnpm test:ci
+        env:
+          HASURA_ADMIN_SECRET: '${{ secrets.HASURA_ADMIN_SECRET }}'
+          GRAPHQL_ENDPOINT: '${{ vars.GRAPHQL_ENDPOINT }}'
+          SQL_ENDPOINT: '${{ vars.SQL_ENDPOINT }}'
