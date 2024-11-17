@@ -16,9 +16,10 @@
     "lint": "next lint --dir .",
     "types": "tsc",
     "test": "bun test",
-    "prettier": "prettier --write .",
+    "prettier": "prettier . --write",
+    "prettier:ci": "pnpm prettier --check",
     "test:debug": "bun test --inspect-brk",
-    "test:ci": "pnpm types && pnpm lint && pnpm test",
+    "test:ci": "pnpm prettier:ci && pnpm types && pnpm lint && pnpm test",
     "deploy": "vercel",
     "deploy:prod": "vercel --prod",
     "deploy:purge": "vercel rm dcsseeds --safe"
