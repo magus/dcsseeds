@@ -364,7 +364,7 @@ function getAllMorgueNoteEvents({ morgueNotes, stash }) {
       }
     } catch (err) {
       if (process.env.NODE_ENV !== 'production') {
-        console.error(err);
+        console.error({ morgueNote, err });
       }
 
       const error = error_json(err);

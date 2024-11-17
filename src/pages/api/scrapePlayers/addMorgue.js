@@ -72,7 +72,8 @@ export async function addMorgue(args) {
       for (const eventError of data.eventErrors) {
         if (eventError.morgueNote) {
           const { morgue, turn, note, loc } = eventError.morgueNote;
-          errors.push({ morgue, turn, loc, note, error: eventError.error });
+          const error = eventError.error.message;
+          errors.push({ morgue, turn, loc, note, error });
         }
       }
 
@@ -82,7 +83,7 @@ export async function addMorgue(args) {
       }
 
       // exit this morgue marking it locally only
-      return response('error', errors);
+      return response('error', new Error('unable to parse morgue events'));
     }
 
     // collect items to send in a single mutation call

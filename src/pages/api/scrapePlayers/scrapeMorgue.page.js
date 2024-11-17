@@ -49,6 +49,8 @@ export default async function handler(req, res) {
 
     // ensure error response treated as error
     if (response.status === 'error') {
+      console.error(response);
+      const message = response.extra.message || 'unknown error';
       throw new Error(response.extra.message);
     }
 
