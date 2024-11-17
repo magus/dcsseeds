@@ -11,6 +11,22 @@ test('failure fetching .lst file throws stash error', async () => {
   await expect(tester.run()).rejects.toThrow('stash status code [500]');
 });
 
+test('missing .lst file is skipped', async () => {
+  const morgue_url = 'http://crawl.akrasiac.org/rawdata/errors/morgue-errors-20230306-010905.txt';
+  const tester = setup_test_parseMorgue(morgue_url);
+
+  tester.mocks.fetch.lst = { ok: false, status: 404 };
+
+  const result = await tester.run();
+  expect(result.value).toEqual('13998099872284306217');
+  expect(result.events.length).toEqual(118);
+  expect(result.stash).toEqual({
+    artefact_list: [],
+    branch: {},
+    shop_list: [],
+  });
+});
+
 test('failure parsing .lst file throws error', async () => {
   const morgue_url = 'http://crawl.akrasiac.org/rawdata/errors/morgue-errors-20230306-010905.txt';
   const tester = setup_test_parseMorgue(morgue_url);

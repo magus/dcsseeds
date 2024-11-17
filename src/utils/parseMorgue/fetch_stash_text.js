@@ -8,8 +8,13 @@ export async function fetch_stash_text({ morgue }) {
 
   const stash_resp = await fetch(stash_url);
 
+  if (stash_resp.status === 404) {
+    console.error(`stash status code [${stash_resp.status}] for [${stash_url}]`);
+    return '';
+  }
+
   if (!stash_resp.ok) {
-    throw new Error(`stash status code [${stash_resp.status}]`);
+    throw new Error(`stash status code [${stash_resp.status}] for [${stash_url}]`);
   }
 
   // convert ArrayBuffer into Buffer
