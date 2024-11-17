@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.7.7",
+    "@radix-ui/react-dialog": "^1.1.2",
     "@radix-ui/react-popover": "^1.1.2",
     "@radix-ui/react-slot": "^1.1.0",
     "@sentry/nextjs": "^7.38.0",
@@ -51,7 +52,8 @@
     "swr": "^2.1.5",
     "tailwind-merge": "^2.5.4",
     "tailwindcss-animate": "^1.0.7",
-    "unbzip2-stream": "^1.4.3"
+    "unbzip2-stream": "^1.4.3",
+    "vaul": "^1.1.1"
   },
   "devDependencies": {
     "@magusn/eslint-config-magusn": "^0.5.0",

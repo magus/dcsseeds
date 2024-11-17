@@ -11,6 +11,9 @@ importers:
       '@apollo/client':
         specifier: ^3.7.7
         version: 3.11.10(@types/react@18.0.28)(graphql-ws@5.12.1(graphql@15.9.0))(graphql@15.9.0)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(subscriptions-transport-ws@0.9.19(graphql@15.9.0))
+      '@radix-ui/react-dialog':
+        specifier: ^1.1.2
+        version: 1.1.2(@types/react-dom@18.0.11)(@types/react@18.0.28)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
       '@radix-ui/react-popover':
         specifier: ^1.1.2
         version: 1.1.2(@types/react-dom@18.0.11)(@types/react@18.0.28)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
@@ -89,6 +92,9 @@ importers:
       unbzip2-stream:
         specifier: ^1.4.3
         version: 1.4.3
+      vaul:
+        specifier: ^1.1.1
+        version: 1.1.1(@types/react-dom@18.0.11)(@types/react@18.0.28)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
     devDependencies:
       '@magusn/eslint-config-magusn':
         specifier: ^0.5.0
@@ -957,6 +963,19 @@ packages:
       react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
     peerDependenciesMeta:
       '@types/react':
+        optional: true
+
+  '@radix-ui/react-dialog@1.1.2':
+    resolution: {integrity: sha512-Yj4dZtqa2o+kG61fzB0H2qUvmwBA2oyQroGLyNtBj1beo1khoQ3q1a2AO8rrQYjd8256CO9+N8L9tvsS+bnIyA==, tarball: https://registry.npmjs.org/@radix-ui/react-dialog/-/react-dialog-1.1.2.tgz}
+    peerDependencies:
+      '@types/react': '*'
+      '@types/react-dom': '*'
+      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+      react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      '@types/react-dom':
         optional: true
 
   '@radix-ui/react-dismissable-layer@1.1.1':
@@ -4362,6 +4381,12 @@ packages:
     resolution: {integrity: sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==, tarball: https://registry.npmjs.org/vary/-/vary-1.1.2.tgz}
     engines: {node: '>= 0.8'}
 
+  vaul@1.1.1:
+    resolution: {integrity: sha512-+ejzF6ffQKPcfgS7uOrGn017g39F8SO4yLPXbBhpC7a0H+oPqPna8f1BUfXaz8eU4+pxbQcmjxW+jWBSbxjaFg==, tarball: https://registry.npmjs.org/vaul/-/vaul-1.1.1.tgz}
+    peerDependencies:
+      react: ^16.8 || ^17.0 || ^18.0 || ^19.0
+      react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0
+
   vscode-languageserver-types@3.17.5:
     resolution: {integrity: sha512-Ld1VelNuX9pdF39h2Hgaeb5hEZM2Z3jUrrMgWQAu82jMtZp7p3vJT3BzToKtZI7NgQssZje5o0zryOrhQvzQAg==, tarball: https://registry.npmjs.org/vscode-languageserver-types/-/vscode-languageserver-types-3.17.5.tgz}
 
@@ -5507,6 +5532,28 @@ snapshots:
       react: 17.0.2
     optionalDependencies:
       '@types/react': 18.0.28
+
+  '@radix-ui/react-dialog@1.1.2(@types/react-dom@18.0.11)(@types/react@18.0.28)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)':
+    dependencies:
+      '@radix-ui/primitive': 1.1.0
+      '@radix-ui/react-compose-refs': 1.1.0(@types/react@18.0.28)(react@17.0.2)
+      '@radix-ui/react-context': 1.1.1(@types/react@18.0.28)(react@17.0.2)
+      '@radix-ui/react-dismissable-layer': 1.1.1(@types/react-dom@18.0.11)(@types/react@18.0.28)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
+      '@radix-ui/react-focus-guards': 1.1.1(@types/react@18.0.28)(react@17.0.2)
+      '@radix-ui/react-focus-scope': 1.1.0(@types/react-dom@18.0.11)(@types/react@18.0.28)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
+      '@radix-ui/react-id': 1.1.0(@types/react@18.0.28)(react@17.0.2)
+      '@radix-ui/react-portal': 1.1.2(@types/react-dom@18.0.11)(@types/react@18.0.28)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
+      '@radix-ui/react-presence': 1.1.1(@types/react-dom@18.0.11)(@types/react@18.0.28)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
+      '@radix-ui/react-primitive': 2.0.0(@types/react-dom@18.0.11)(@types/react@18.0.28)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
+      '@radix-ui/react-slot': 1.1.0(@types/react@18.0.28)(react@17.0.2)
+      '@radix-ui/react-use-controllable-state': 1.1.0(@types/react@18.0.28)(react@17.0.2)
+      aria-hidden: 1.2.4
+      react: 17.0.2
+      react-dom: 17.0.2(react@17.0.2)
+      react-remove-scroll: 2.6.0(@types/react@18.0.28)(react@17.0.2)
+    optionalDependencies:
+      '@types/react': 18.0.28
+      '@types/react-dom': 18.0.11
 
   '@radix-ui/react-dismissable-layer@1.1.1(@types/react-dom@18.0.11)(@types/react@18.0.28)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)':
     dependencies:
@@ -9515,6 +9562,15 @@ snapshots:
   value-or-promise@1.0.12: {}
 
   vary@1.1.2: {}
+
+  vaul@1.1.1(@types/react-dom@18.0.11)(@types/react@18.0.28)(react-dom@17.0.2(react@17.0.2))(react@17.0.2):
+    dependencies:
+      '@radix-ui/react-dialog': 1.1.2(@types/react-dom@18.0.11)(@types/react@18.0.28)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
+      react: 17.0.2
+      react-dom: 17.0.2(react@17.0.2)
+    transitivePeerDependencies:
+      - '@types/react'
+      - '@types/react-dom'
 
   vscode-languageserver-types@3.17.5: {}
 
