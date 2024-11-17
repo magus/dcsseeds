@@ -2,6 +2,8 @@ import * as React from 'react';
 import Head from 'next/head';
 import { createGlobalStyle } from 'styled-components';
 
+import { ThemeProvider } from '~/components/ThemeProvider';
+
 import '~/styles/globals.css';
 
 const TITLE = process.env.APP_NAME || '';
@@ -47,7 +49,15 @@ export default function App(props) {
         <title>{TITLE}</title>
       </Head>
 
-      <props.Component {...props.pageProps} />
+      <ThemeProvider
+        // force line break
+        attribute="class"
+        defaultTheme="system"
+        enableSystem
+        disableTransitionOnChange
+      >
+        <props.Component {...props.pageProps} />
+      </ThemeProvider>
     </>
   );
 }
