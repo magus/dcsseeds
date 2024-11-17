@@ -88,6 +88,49 @@ export async function addMorgue(args) {
     // collect items to send in a single mutation call
     const items = [];
 
+    // { name, location, branch, level, gold }
+    function create_insert_item(item) {
+      // creates and associate branch if needed
+      const branch = {
+        data: { name: item.branch },
+        on_conflict: { constraint: 'dcsseeds_scrapePlayers_branch_pkey', update_columns: 'name' },
+      };
+
+      const branch_level = {
+        data: { name: item.branch },
+        on_conflict: { constraint: 'dcsseeds_scrapePlayers_branch_level_pkey', update_columns: 'name' },
+      };
+
+      // optionally include level
+      if (item.level) {
+        branch_level.data.level = parseInt(item.level, 10);
+      }
+
+      // creates and associate seed+version if needed
+      const seedVersion = {
+        data: { seed, version },
+        on_conflict: { constraint: 'dcsseeds_scrapePlayers_seedVersion_pkey', update_columns: 'seed' },
+      };
+
+      const insert_item = {
+        name: item.name,
+        branch,
+        branch_level,
+        location: item.location,
+        morgue: morgue.url,
+        playerId,
+        timestamp: morgue.date,
+        seedVersion,
+        fullVersion,
+      };
+
+      if (item.gold) {
+        insert_item.gold = parseInt(item.gold, 10);
+      }
+
+      return insert_item;
+    }
+
     for (const event of data.events) {
       // only allow parseMorgue 'item' `type` (first string arg to createItem)
       if (event.type !== 'item') continue;
@@ -96,45 +139,15 @@ export async function addMorgue(args) {
       // e.g. Abyss, Pandemonium, Trove etc.
       if ({ Abyss: 1, Pandemonium: 1, Trove: 1 }[event.branch]) continue;
 
-      // creates and associate event.branch if needed
-      const branch = {
-        data: { name: event.branch },
-        on_conflict: { constraint: 'dcsseeds_scrapePlayers_branch_pkey', update_columns: 'name' },
-      };
-
-      // creates and associate seed+version if needed
-      const seedVersion = {
-        data: { seed, version },
-        on_conflict: { constraint: 'dcsseeds_scrapePlayers_seedVersion_pkey', update_columns: 'seed' },
-      };
-
-      const branch_level = {
-        data: { name: event.branch },
-        on_conflict: { constraint: 'dcsseeds_scrapePlayers_branch_level_pkey', update_columns: 'name' },
-      };
-
-      // optionally include event.level
-      if (event.level) {
-        branch_level.data.level = parseInt(event.level, 10);
-      }
-
-      const insertItem = {
-        name: event.data.item,
-        branch,
-        branch_level,
-        location: event.location,
-        morgue: morgue.url,
-        playerId,
-        timestamp: morgue.date,
-        seedVersion,
-        fullVersion,
-      };
-
-      if (event.data.gold) {
-        insertItem.gold = parseInt(event.data.gold, 10);
-      }
-
-      items.push(insertItem);
+      items.push(
+        create_insert_item({
+          name: event.data.item,
+          location: event.location,
+          branch: event.branch,
+          level: event.level,
+          gold: event.data.gold,
+        }),
+      );
     }
 
     if (items.length) {
@@ -150,7 +163,7 @@ export async function addMorgue(args) {
         return response('done (items)', result);
       }
 
-      return response('done (dry run skip items)');
+      return response('done (dry run skip items)', items);
     }
 
     return skip('empty');

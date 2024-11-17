@@ -4,9 +4,11 @@ import { gql } from '@apollo/client';
 import { serverQuery } from 'src/graphql/serverQuery';
 import { Stopwatch } from 'src/server/Stopwatch';
 import { error_json } from 'src/utils/error_json';
+import { Morgue } from 'src/utils/Morgue';
 
 import { addMorgue } from './addMorgue';
 import { fetch_morgue_list } from './fetch_morgue_list';
+import { SERVER_CONFIG } from './ServerConfig';
 
 // DCSS score overview with player morgues
 // http://crawl.akrasiac.org/scoring/overview.html
@@ -31,6 +33,28 @@ const ms_budget = (stopwatch) => TIMEOUT_MS - stopwatch.elapsed_ms();
 export default async function scrapePlayers(req, res) {
   try {
     const stopwatch = new Stopwatch();
+
+    const param_morgue = req.query.morgue;
+
+    if (param_morgue) {
+      // extract player name and server from morgue url
+      const morgue = new Morgue(param_morgue);
+      const name = morgue.player;
+      const server = SERVER_CONFIG.morgue_server(param_morgue);
+
+      const player = await stopwatch.time(GQL_FINDPLAYER.run({ name, server })).record('fetch player');
+
+      const dry = true;
+
+      const result = await stopwatch
+        .time(maybe_addMorgue({ player, morgue, dry }))
+        .timeout(ms_budget(stopwatch))
+        .record(morgue.filename);
+
+      stopwatch.record('total time');
+      const times = stopwatch.list();
+      return send(res, 200, { param_morgue, server, morgue, times, result }, { prettyPrint: true });
+    }
 
     // prettier-ignore
     // const player_list = await stopwatch.time(GQL_SCRAPEPLAYERS_BY_NAME.run({ name: 'svalbard' })).record('fetch player list');
@@ -152,13 +176,13 @@ async function scrape_morgue_list({ player, stopwatch }) {
 
 const fake_ms = (at_least, delta) => at_least + Math.random() * delta;
 
-async function maybe_addMorgue({ player, morgue }) {
+async function maybe_addMorgue({ player, morgue, dry = false }) {
   if (DEBUG) {
     await sleep_ms(fake_ms(2000, 3000));
     return [player.name, morgue.url];
   }
 
-  return addMorgue({ player, morgue });
+  return addMorgue({ player, morgue, dry });
 }
 
 async function maybe_player_morgues(variables) {
@@ -211,6 +235,20 @@ const GQL_SCRAPEPLAYERS = serverQuery(
     }
   `,
   (data) => data.dcsseeds_scrapePlayers,
+);
+
+const GQL_FINDPLAYER = serverQuery(
+  gql`
+    query FindPlayerByNameServer($name: String!, $server: String!) {
+      dcsseeds_scrapePlayers(where: { name: { _eq: $name }, server: { _eq: $server } }) {
+        id
+        name
+        server
+        morgues
+      }
+    }
+  `,
+  (data) => data.dcsseeds_scrapePlayers[0],
 );
 
 const GQL_PLAYER_MORGUES = serverQuery(
