@@ -1,5 +1,6 @@
 const { send } = require('micro');
 const prettier = require('prettier');
+const { error_json } = require('src/utils/error_json');
 
 module.exports = async function zeitSend(res, statusCode, data, { prettyPrint } = {}) {
   const isError = statusCode === 500 || data instanceof Error;
@@ -20,14 +21,8 @@ module.exports = async function zeitSend(res, statusCode, data, { prettyPrint } 
   } else {
     responseJson.error = true;
 
-    // save error data into err
-    const err = data;
-
-    // add stack if available, etc.
-    if (err.stack) {
-      responseJson.stack = err.stack.split('\n');
-    } else {
-      responseJson.rawError = data;
+    if (data instanceof Error) {
+      responseJson.data = error_json(data);
     }
   }
 
