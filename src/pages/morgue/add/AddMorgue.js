@@ -28,10 +28,10 @@ export default function AddMorgue() {
       const resp = await fetch(api_url);
       const json = await resp.json();
       if (json.error) {
-        console.error({ json });
-        throw new Error('api error');
+        console.error(json);
+        patch_state({ loading: false, error: true, result: `❌ ${json.data.message}` });
       } else {
-        const morgue_data = json.data.response.extra;
+        const morgue_data = json.data.response;
         patch_state({ loading: false, error: false, result: '✅ Success', morgue_data });
       }
     } catch (error) {
@@ -55,6 +55,9 @@ export default function AddMorgue() {
           placeholder="http://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-085146.txt"
           onSubmit={handle_submit}
         />
+        <ExampleMorgueUrl>
+          <span>{'e.g. https://crawl.akrasiac.org/rawdata/magusnn/morgue-magusnn-20210623-085146.txt'}</span>
+        </ExampleMorgueUrl>
 
         <Spacer.Vertical size="2" />
 
@@ -75,11 +78,11 @@ function MaybeItemsLink(props) {
     return props.children;
   }
 
-  if (!props.morgue_data) {
-    return `${props.children}, found 0 items`;
+  if (!props.morgue_data.extra) {
+    return props.morgue_data.status;
   }
 
-  const { seed, version } = props.morgue_data;
+  const { seed, version } = props.morgue_data.extra;
 
   const items_link = {
     pathname: '/items/[version]/[seed]',
@@ -89,7 +92,7 @@ function MaybeItemsLink(props) {
   return (
     <Link passHref href={items_link}>
       <a rel="noopener noreferrer">
-        {props.children}, found <b>{format_number.format(props.morgue_data.item_count)}</b> items
+        {props.children}, found <b>{format_number.format(props.morgue_data.extra.item_count)}</b> items
       </a>
     </Link>
   );
@@ -117,6 +120,12 @@ const Container = styled.div`
 const InputContainer = styled.div`
   max-width: 720px;
   width: 100%;
+`;
+
+const ExampleMorgueUrl = styled.div`
+  width: 100%;
+  opacity: 0.4;
+  font-size: 0.9rem;
 `;
 
 const Result = styled.div`

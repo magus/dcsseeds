@@ -53,9 +53,9 @@ export default async function handler(req, res) {
     const times = stopwatch.list();
     const data = { times, morgue, cleared_items, response };
     return await send(res, status_code, data, { prettyPrint: true });
-  } catch (err) {
+  } catch (error) {
     // immediate response
-    send(res, 500, err, { prettyPrint: true });
+    send(res, 500, error, { prettyPrint: true });
 
     // track this error remotely
     if (!__DEV__) {
