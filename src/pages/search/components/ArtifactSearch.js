@@ -94,6 +94,8 @@ function InternalArtifactSearch(props) {
         </ClearButton>
       )}
 
+      <Spacer.Vertical size="1" />
+
       <ArtifactFilters {...artifact_filter} />
 
       <Spacer.Vertical size="2" />
@@ -346,6 +348,7 @@ const Filters = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  gap: var(--spacer-d2);
 `;
 
 const Container = styled.div`
@@ -357,7 +360,6 @@ const Container = styled.div`
 const ButtonGroup = styled(motion.div)`
   display: flex;
   flex-grow: 1;
-  margin: 0 var(--spacer-d2) var(--spacer-d2) 0;
 
   z-index: ${(props) => (props.active ? 1 : 'initial')};
 `;
