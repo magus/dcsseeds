@@ -1,5 +1,9 @@
 module.exports = {
-  extends: ['next/core-web-vitals'],
+  extends: ['next/core-web-vitals', 'eslint:recommended', 'plugin:import/recommended'],
+
+  env: {
+    es6: true,
+  },
 
   parserOptions: {
     sourceType: 'module',
@@ -25,12 +29,12 @@ module.exports = {
     // e.g. allow console
     'no-console': ['warn', { 'allow': ['dir', 'info', 'warn', 'error'] }],
 
-    // this is really useless in ecma2020
-    // https://github.com/eslint/eslint/issues/15576
-    'no-inner-declarations': 'off',
+    'import/no-unresolved': 'error',
 
     'jest/valid-title': 'off',
 
-    'prettier/prettier': 'off',
+    // this is really useless in ecma2020
+    // https://github.com/eslint/eslint/issues/15576
+    'no-inner-declarations': 'off',
   },
 };
