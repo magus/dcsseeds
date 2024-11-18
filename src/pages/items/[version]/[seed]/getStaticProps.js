@@ -31,6 +31,7 @@ const GQL_ItemsSeedVersion = serverQuery(
       branchName
       level
       morgue
+      gold
     }
   `,
   (data) => data.item_list,

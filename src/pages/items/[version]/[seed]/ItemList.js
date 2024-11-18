@@ -3,6 +3,7 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
+import { Item } from 'src/pages/search/components/Item';
 import CopyButton from 'src/components/CopyButton';
 import * as Spacer from 'src/components/Spacer';
 
@@ -38,14 +39,27 @@ function ItemListRows(props) {
 
     return (
       <React.Fragment key={[item.name, item.branchName, item.level].join('-')}>
-        <Item {...props} {...item} />
+        <MorgueItem {...props} {...item} />
         {is_last ? null : vertical_pad}
       </React.Fragment>
     );
   });
 }
 
-function Item(props) {
+function MorgueItem(props) {
+  const highlight = props.highlight.has(props.name);
+
+  return (
+    <Item
+      // force line break
+      {...props}
+      highlight={highlight}
+      SlotNameWrapper={MorgueLink}
+    />
+  );
+}
+
+function MorgueLink(props) {
   const { morgue } = props;
 
   const morgue_link = {
@@ -53,50 +67,12 @@ function Item(props) {
     query: { morgue },
   };
 
-  const class_list = [];
-
-  if (props.highlight.has(props.name)) {
-    class_list.push('highlight');
-  }
-
   return (
-    <ItemRow className={class_list.join(' ')}>
-      <td>
-        <Branch>{props.branchName}</Branch>
-        {!props.level ? null : (
-          <React.Fragment>
-            &nbsp;<Level>{props.level}</Level>
-          </React.Fragment>
-        )}
-      </td>
-
-      <td>
-        <Spacer.Horizontal size="1" />
-      </td>
-
-      <ItemRight>
-        <Name>
-          <Link href={morgue_link}>
-            <a rel="noopener noreferrer">{props.name}</a>
-          </Link>
-        </Name>
-        <Spacer.Vertical size="1" />
-      </ItemRight>
-    </ItemRow>
+    <Link href={morgue_link}>
+      <a rel="noopener noreferrer">{props.children}</a>
+    </Link>
   );
 }
-
-const ItemRow = styled.tr`
-  vertical-align: top;
-
-  &.highlight {
-    font-weight: var(--font-bold);
-  }
-`;
-
-const ItemRight = styled.td`
-  text-align: left;
-`;
 
 const BottomRow = styled.div`
   display: flex;
@@ -123,25 +99,7 @@ const Container = styled(motion.div)`
   flex-direction: column;
 `;
 
-const Level = styled.span`
-  font-size: var(--font-normal);
-`;
-
-const Branch = styled.span`
-  font-size: var(--font-medium);
-  font-weight: var(--font-bold);
-`;
-
 const Version = styled.span`
   font-size: var(--font-small);
   font-weight: var(--font-bold);
-`;
-
-const Name = styled.div`
-  font-size: var(--font-small);
-  /*
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  */
 `;

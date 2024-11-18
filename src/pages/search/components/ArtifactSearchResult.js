@@ -1,10 +1,9 @@
 import * as React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
-import * as Unrands from 'src/utils/Unrands';
+import { Item } from 'src/pages/search/components/Item';
 import CopyButton from 'src/components/CopyButton';
 import * as Spacer from 'src/components/Spacer';
 
@@ -30,7 +29,13 @@ function ItemListRows(props) {
 
         return (
           <React.Fragment key={[item.name, item.branchName, item.level].join('-')}>
-            <Item {...props} {...item} />
+            <Item
+              // force line break
+              {...props}
+              {...item}
+              SlotNameWrapper={ItemsSeedVersionLink}
+            />
+
             {is_last ? null : vertical_pad}
           </React.Fragment>
         );
@@ -115,53 +120,6 @@ function ItemsSeedVersionLink(props) {
   );
 }
 
-function Item(props) {
-  const metadata = Unrands.Metadata[props.unrand_key];
-
-  return (
-    <ItemRow>
-      <td className="location">
-        <Branch>{props.branchName}</Branch>
-        {!props.level ? null : (
-          <React.Fragment>
-            &nbsp;<Level>{props.level}</Level>
-          </React.Fragment>
-        )}
-      </td>
-
-      <td>
-        <Spacer.Horizontal size="2" />
-      </td>
-
-      <ItemRight>
-        <Name>
-          <ItemsSeedVersionLink {...props}>
-            <span className="image">
-              <Image alt={props.name} src={metadata.image_url} {...image_size} />
-            </span>
-
-            <Spacer.Horizontal size="1" />
-
-            <span className="name">{props.name}</span>
-
-            <Spacer.Horizontal size="1" />
-
-            {!props.gold ? null : (
-              <span>
-                <span>(</span>
-                <span className="gold">{props.gold} gold</span>
-                <span>)</span>
-              </span>
-            )}
-          </ItemsSeedVersionLink>
-        </Name>
-      </ItemRight>
-    </ItemRow>
-  );
-}
-
-const image_size = { width: 32, height: 32 };
-
 const ItemTable = styled.table`
   border-spacing: 0;
   border-collapse: collapse;
@@ -182,21 +140,6 @@ const MoreItemsRow = styled.tr`
     align-items: flex-end;
     padding-left: var(--spacer-4);
   }
-`;
-
-const ItemRow = styled.tr`
-  .location {
-    display: inline-block;
-    width: var(--spacer-11);
-    text-overflow: ellipsis;
-    overflow: hidden;
-  }
-`;
-
-const ItemRight = styled.td`
-  width: 100%;
-  text-align: left;
-  vertical-align: middle;
 `;
 
 const BottomRow = styled.div`
@@ -224,47 +167,12 @@ const Container = styled(motion.div)`
   flex-direction: column;
 `;
 
-const Level = styled.span``;
-
 const ItemDivider = styled.div`
   background-color: var(--divider-color);
   height: 1px;
   width: 100%;
 `;
 
-const Branch = styled.span`
-  font-weight: var(--font-bold);
-`;
-
 const Version = styled.span`
   font-weight: var(--font-bold);
-`;
-
-const Name = styled.div`
-  line-height: var(--spacer-2);
-  /*
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  */
-  a {
-    display: flex;
-    align-items: center;
-
-    .gold {
-      color: gold;
-    }
-  }
-
-  span.image {
-    min-width: var(--spacer-4);
-    max-width: var(--spacer-4);
-    min-height: var(--spacer-4);
-    max-height: var(--spacer-4);
-  }
-
-  .name {
-    display: flex;
-    align-items: center;
-  }
 `;
