@@ -1,3 +1,5 @@
+import { expect, test } from 'bun:test';
+
 import { test_parseMorgue } from '../test_parseMorgue';
 
 // Gozag Call Merchant generated shops are ignored

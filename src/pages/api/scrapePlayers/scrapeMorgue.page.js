@@ -51,7 +51,7 @@ export default async function handler(req, res) {
     if (response.status === 'error') {
       console.error(response);
       const message = response.extra.message || 'unknown error';
-      throw new Error(response.extra.message);
+      throw new Error(message);
     }
 
     const times = stopwatch.list();
@@ -63,7 +63,7 @@ export default async function handler(req, res) {
 
     // track this error remotely
     if (!__DEV__) {
-      const error_message = err.message || '__unknown__';
+      const error_message = error.message || '__unknown__';
       GQL_TrackError.run({ error_message, morgue_url });
     }
   }

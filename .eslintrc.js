@@ -29,6 +29,18 @@ module.exports = {
     // e.g. allow console
     'no-console': ['warn', { 'allow': ['dir', 'info', 'warn', 'error'] }],
 
+    'no-unused-vars': [
+      'error',
+      {
+        'vars': 'all',
+        'args': 'after-used',
+        'caughtErrors': 'all',
+        'ignoreRestSiblings': true,
+        argsIgnorePattern: '^_',
+        varsIgnorePattern: '^_',
+      },
+    ],
+
     'import/no-unresolved': 'error',
 
     'jest/valid-title': 'off',

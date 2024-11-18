@@ -1,3 +1,5 @@
+import { expect, test } from 'bun:test';
+
 import * as semver from 'src/utils/semver';
 
 const test_case_list = [

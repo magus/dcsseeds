@@ -1,3 +1,5 @@
+import { expect, test } from 'bun:test';
+
 import { test_parseMorgue } from '../test_parseMorgue';
 
 // 15 rune win, over 1400 events

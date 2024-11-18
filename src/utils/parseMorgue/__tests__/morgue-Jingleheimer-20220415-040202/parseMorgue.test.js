@@ -1,3 +1,5 @@
+import { expect, test } from 'bun:test';
+
 import { test_parseMorgue } from '../test_parseMorgue';
 
 // Bought items automatically identify artefacts

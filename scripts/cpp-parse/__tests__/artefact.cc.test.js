@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+import { expect, test } from 'bun:test';
+
 const fs_promises = require('fs').promises;
 const path = require('path');
 

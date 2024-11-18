@@ -1,8 +1,7 @@
-import { get } from 'lodash';
 import * as React from 'react';
 
 type Dimensions = { width: number; height: number };
-type Selector<T> = (dimensions: Dimensions) => T;
+type Selector<T> = (_dimensions: Dimensions) => T;
 
 export function useDimensions<T>(selector: Selector<T>): T {
   const selector_ref = React.useRef(selector);
@@ -20,7 +19,7 @@ export function useDimensions<T>(selector: Selector<T>): T {
       window.removeEventListener('resize', handler);
     };
 
-    function handler(event: Event) {
+    function handler(_event: Event) {
       const next_state = selector_ref.current(get_dimensions());
       set_state(next_state);
     }

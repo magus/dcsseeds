@@ -39,6 +39,7 @@ async function run() {
     morgueFilenames = await getMorgueFilenames(username, spinner);
     // console.debug(morgueFilenames.length, 'morgueFilenames');
   } catch (err) {
+    console.error(err);
     spinner.fail(`[${chalk.cyan(username)}] not found. Are you sure you spelled it correctly?`);
     console.error(chalk.dim(`${RAWDATA_PATH}/${username}/?C=M;O=D`));
     process.exit(1);

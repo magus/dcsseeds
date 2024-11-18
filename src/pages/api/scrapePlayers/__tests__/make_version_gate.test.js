@@ -1,3 +1,5 @@
+import { expect, test } from 'bun:test';
+
 import { make_version_gate } from '../make_version_gate';
 
 const version_gate = make_version_gate(['0.27.1', '0.28.0', '0.29.1']);

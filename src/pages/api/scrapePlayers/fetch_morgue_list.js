@@ -29,6 +29,7 @@ export async function fetch_morgue_list(player) {
 
       html = await resp.text();
     } catch (error) {
+      console.error(error);
       continue;
     }
 

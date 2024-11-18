@@ -114,7 +114,7 @@ const PARSE = {
 
     try {
       branch = Branch.getBranch(match.groups.branch);
-    } catch (error) {
+    } catch (_error) {
       return false;
     }
 

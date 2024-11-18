@@ -24,8 +24,6 @@ export function Item(props) {
 
   const SlotNameWrapper = props.SlotNameWrapper || React.Fragment;
 
-  console.debug('[Item]', { props, metadata });
-
   return (
     <ItemRow className={cn(props.highlight && 'highlight')}>
       <td className="location">

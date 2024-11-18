@@ -1,3 +1,5 @@
+import { expect, test } from 'bun:test';
+
 import { test_parseMorgue } from '../test_parseMorgue';
 
 // incorrectly parsed 0.30-a0 as non-trunk

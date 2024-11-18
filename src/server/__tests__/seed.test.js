@@ -1,3 +1,5 @@
+import { expect, test } from 'bun:test';
+
 // How to run these tests?
 // NODE_PATH=. node src/utils/__tests__/seed.test.js
 

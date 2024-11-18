@@ -51,11 +51,13 @@ const RE = {
   timestamp: /(\d{4})(\d{2})(\d{2})-(\d{2})(\d{2})(\d{2})?/,
 
   // https://regex101.com/r/m45jSY/2
+  // eslint-disable-next-line no-useless-escape
   filename: /\/(?<filename>(?<basename>(?:morgue-)?(?<player>[^\/^-]+)-?(?<timestamp>[0-9-]+)?)(\.txt)?(?:\.gz)?)?$/,
 
   alternate_extensions: /\.(lst|ts|map)$/,
 
   // starts with protocol
+  // eslint-disable-next-line no-useless-escape
   url_scheme: /^(?<scheme>[^\:^\/]+):\/\//,
 };
 

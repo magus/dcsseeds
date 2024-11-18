@@ -1,3 +1,5 @@
+import { expect, test } from 'bun:test';
+
 import { test_parseMorgue } from '../test_parseMorgue';
 
 // do not log artefacts items without a valid shop (e.g. gozag call merchant shop)

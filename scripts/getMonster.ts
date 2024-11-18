@@ -156,6 +156,7 @@ async function getMonstersWithTiles() {
       try {
         await fs.promises.stat(localTilePath);
       } catch (err) {
+        console.error(err);
         throw new Error(`[${monster.id}] missing localTilePath [${localTilePath}]`);
       }
     }
