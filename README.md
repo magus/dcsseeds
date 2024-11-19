@@ -7,7 +7,7 @@ track random seeds in dcss
 # setup
 
 ```bash
-corepack enable pnpm
+corepack prepare pnpm
 pnpm i
 pnpm dev
 ```
