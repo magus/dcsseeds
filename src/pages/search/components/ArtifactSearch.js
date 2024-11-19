@@ -409,12 +409,7 @@ const Button = styled.button`
   flex-grow: 1;
   font-size: var(--font-small);
   white-space: nowrap;
-  padding: ${(props) => {
-    if (props.image) {
-      return css`0 var(--spacer-d2)`;
-    }
-    return css`var(--spacer-d2) var(--spacer-d2)`;
-  }};
+  padding: var(--spacer-d2);
 
   height: auto;
 
