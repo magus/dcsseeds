@@ -12,8 +12,6 @@ pnpm i
 pnpm dev
 ```
 
-a
-
 # TODO
 
 ## [events-refactor](docs/events-refactor.md)
