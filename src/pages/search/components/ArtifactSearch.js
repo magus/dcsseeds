@@ -283,7 +283,7 @@ function ArtifactFilters(props) {
 
   const modal_title = <span>Add artefact</span>;
 
-  const modal_trigger = (
+  const modal_trigger = !has_active ? null : (
     <ButtonGroup>
       <Button className="">+&nbsp;{modal_title}</Button>
     </ButtonGroup>
