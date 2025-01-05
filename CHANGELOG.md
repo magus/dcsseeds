@@ -1,5 +1,55 @@
 # CHANGELOG
 
+## 2025-01-05
+
+magic.iamnoah.com database backup action was failing for 3 days
+
+https://github.com/magus/mono/actions/workflows/magic.iamnoah.com.yml
+
+dcss.vercel.app was down as well as hasura admin panel
+
+Machine looks fine in DigitalOcean, ssh into machine
+
+```bash
+ssh root@104.236.34.97
+
+dokku apps:list
+dokku ps:report hasura
+
+# hasura app is not running
+
+# rebuild hasura image
+dokku git:from-image hasura hasura/graphql-engine
+dokku ps:rebuild --all
+```
+
+After above things were working fine again, not entirely sure why things were broken though.
+
+Tried to find logs but nothing seems obvious. Something odd is the dangling 9 day old `hasura.web.1.upcoming-19469`
+
+```bash
+docker ps
+
+CONTAINER ID   IMAGE                 COMMAND                   CREATED          STATUS                    PORTS      NAMES
+30ea31e6ed0b   dokku/hasura:latest   "/bin/sh -c '\"${HGE_…"   18 minutes ago   Up 18 minutes (healthy)              hasura.web.1
+33853f9bf088   44ddb2b1197a          "/bin/sh -c '\"${HGE_…"   9 days ago       Up 8 days (healthy)                  hasura.web.1.upcoming-19469
+37d9d9879e52   postgres:11.6         "docker-entrypoint.s…"    20 months ago    Up 22 minutes             5432/tcp   dokku.postgres.hasura-db
+```
+
+Deleting it manually
+
+```bash
+root@magic-auth:~# docker stop 33853f9bf088
+33853f9bf088
+root@magic-auth:~# docker rm 33853f9bf088
+33853f9bf088
+root@magic-auth:~# docker ps
+CONTAINER ID   IMAGE                 COMMAND                   CREATED          STATUS                        PORTS      NAMES
+30ea31e6ed0b   dokku/hasura:latest   "/bin/sh -c '\"${HGE_…"   23 minutes ago   Up About a minute (healthy)              hasura.web.1
+37d9d9879e52   postgres:11.6         "docker-entrypoint.s…"    20 months ago    Up 27 minutes                 5432/tcp   dokku.postgres.hasura-db
+root@magic-auth:~#
+```
+
 ## 2024-10-26
 
 - Referencing [2023-05-06](#2023-05-06) entry below for changes to add new version
