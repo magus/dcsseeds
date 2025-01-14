@@ -4,6 +4,9 @@ import path from 'path';
 import fs from 'fs';
 import { execSync, spawnSync } from 'child_process';
 
+// see public/crawl/README.md
+// this is hosted crawl dir to run below commands
+
 // ./crawl -script seed_explorer.lua -depth all -seed 11144789937400634826 > seed-11144789937400634826.txt 2>&1
 
 export default async function seed_explorer(req: NextApiRequest, res: NextApiResponse) {
