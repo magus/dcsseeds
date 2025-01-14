@@ -22,7 +22,7 @@ export default async function handler(req, res) {
   const window_size = Number(req.query.window_size);
 
   let param_unrand = req.query.unrand;
-  if (!Array.isArray(param_unrand)) {
+  if (param_unrand && !Array.isArray(param_unrand)) {
     param_unrand = [param_unrand];
   }
 
