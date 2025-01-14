@@ -1,5 +1,342 @@
 # CHANGELOG
 
+## 2025-01-14
+
+Down again as of two days ago, database backup job failing
+
+https://github.com/magus/mono/actions/runs/12765918013/job/35581146888
+
+```log
+dokku run hasura pg_dump *** --no-owner --no-acl --data-only --schema public > data.sql
+ls -lsah
+
+======END======
+err:  !     App image (dokku/hasura:latest) not found
+err: Error: No such image:
+err:  !     Invalid image stage detected: expected 'release', got ''
+err:  !     Successfully deploy your app to fix dokku run calls
+```
+
+ssh into the box and manually run below, fixes the issue immediately
+
+```bash
+dokku ps:rebuild hasura
+```
+
+Digging into root cause.
+cron restart seems to be failing, and in the logs I noticed the unrand cache query failing with 500
+
+```bash
+cat /var/log/cronlog
+
+
+parallel: This job failed:
+/var/lib/dokku/plugins/available/scheduler-docker-local/bin/scheduler-deploy-process-container hasura dockerfile dokku/hasura:latest latest web 1 1
+ !     exit status 1
+[2025-01-11T20:42:01][/home/dokku/hasura/restart.sh] Restarting instance
+-----> Deploying web (count=1)
+       Attempting pre-flight checks (web.1)
+       Waiting for 10 seconds (web.1)
+3e7321a8542624d3dde1c73e083c91362fb3a3604c18a27b2b9358210e287ccc
+ !     App container failed to start (web.1)
+=====> Start of hasura container output (web.1)
+       {"detail":{"info":{"admin_secret_set":true,"auth_hook":null,"auth_hook_mode":null,"console_assets_dir":null,"console_sentry_dsn":null,"cors_config":{"allowed_origins":"*","disabled":false,"ws_read_cookie":null},"enable_allowlist":false,"enable_console":true,"enable_maintenance_mode":false,"enable_metadata_query_logging":false,"enable_telemetry":true,"enabled_apis":["metadata","pgdump","graphql"],"enabled_log_types":["startup","http-log","jwk-refresh-log","webhook-log","websocket-log"],"events_fetch_batch_size":100,"experimental_features":[],"graceful_shutdown_timeout":60,"http_log_query_only_on_error":false,"infer_function_permissions":true,"jwt_secret":[{"audience":null,"claims_format":"json","claims_namespace":"https://hasura.io/jwt/claims","header":null,"issuer":null,"key":"<JWK REDACTED>","type":"<TYPE REDACTED>"}],"live_query_options":{"batch_size":100,"refetch_delay":1},"log_level":"info","port":8080,"remote_schema_permissions":false,"server_host":"HostAny","stringify_numeric_types":false,"transaction_isolation":"ISOLATION LEVEL READ COMMITTED","unauth_role":"anonymous","use_prepared_statements":true,"v1-boolean-null-collapse":false,"websocket_compression_options":"NoCompression","websocket_connection_init_timeout":"Refined (Seconds {seconds = 3s})","websocket_keep_alive":"KeepAliveDelay {unKeepAliveDelay = Refined (Seconds {seconds = 5s})}"},"kind":"server_configuration"},"level":"info","timestamp":"2025-01-11T20:42:12.272+0000","type":"startup"}
+       {"detail":{"info":{"database_url":"postgres://postgres:...@dokku-postgres-hasura-db:5432/hasura_db","retries":1},"kind":"postgres_connection"},"level":"info","timestamp":"2025-01-11T20:42:12.272+0000","type":"startup"}
+       {"detail":{"info":"Already at the latest catalog version (48); nothing to do.","kind":"catalog_migrate"},"level":"info","timestamp":"2025-01-11T20:42:12.272+0000","type":"startup"}
+       {"detail":{"info":"Schema sync enabled. Polling at Refined (Milliseconds {milliseconds = 1s})","kind":"schema-sync"},"level":"info","timestamp":"2025-01-11T20:42:13.305+0000","type":"startup"}
+       {"detail":{"info":{"instance_id":"664b9216-49f9-4ac8-8a31-33dfa52e0b53","message":"listener thread started","thread_id":"ThreadId 24"},"kind":"schema-sync"},"level":"info","timestamp":"2025-01-11T20:42:13.305+0000","type":"startup"}
+       {"detail":"Thread SchemeUpdate.listener (re)started","level":"info","timestamp":"2025-01-11T20:42:13.305+0000","type":"unstructured"}
+       {"detail":"Thread ourIdleGC (re)started","level":"info","timestamp":"2025-01-11T20:42:13.305+0000","type":"unstructured"}
+       {"detail":{"info":"EE client credentials not present in the metadata database. Hasura EE features are disabled.","kind":"license_info"},"level":"warn","timestamp":"2025-01-11T20:42:13.305+0000","type":"startup"}
+       {"detail":{"info":{"message":"source \"default\" is already at the latest catalog version (3).","source":"default"},"kind":"source_catalog_migrate"},"level":"info","timestamp":"2025-01-11T20:42:15.332+0000","type":"startup"}
+       {"detail":"Thread SchemeUpdate.processor (re)started","level":"info","timestamp":"2025-01-11T20:42:16.350+0000","type":"unstructured"}
+       {"detail":{"info":{"instance_id":"664b9216-49f9-4ac8-8a31-33dfa52e0b53","message":"processor thread started","thread_id":"ThreadId 64"},"kind":"schema-sync"},"level":"info","timestamp":"2025-01-11T20:42:16.350+0000","type":"startup"}
+       {"detail":{"info":"Starting in eventing enabled mode","kind":"server"},"level":"info","timestamp":"2025-01-11T20:42:16.350+0000","type":"startup"}
+       {"detail":{"info":"Starting workers","kind":"event_triggers"},"level":"info","timestamp":"2025-01-11T20:42:16.350+0000","type":"startup"}
+       {"detail":"Thread processEventQueue (re)started","level":"info","timestamp":"2025-01-11T20:42:16.350+0000","type":"unstructured"}
+       {"detail":"Thread asyncActionsProcessor (re)started","level":"info","timestamp":"2025-01-11T20:42:16.350+0000","type":"unstructured"}
+       {"detail":"Thread asyncActionSubscriptionsProcessor (re)started","level":"info","timestamp":"2025-01-11T20:42:16.350+0000","type":"unstructured"}
+       {"detail":"Thread runCronEventsGenerator (re)started","level":"info","timestamp":"2025-01-11T20:42:16.350+0000","type":"unstructured"}
+       {"detail":"Thread processScheduledTriggers (re)started","level":"info","timestamp":"2025-01-11T20:42:16.350+0000","type":"unstructured"}
+       {"detail":{"info":"Unlocking all locked scheduled events on `hdb_scheduled_events` and `hdb_cron_events` tables","kind":"scheduled_triggers"},"level":"info","timestamp":"2025-01-11T20:42:16.350+0000","type":"startup"}
+       {"detail":"Thread checkForUpdates (re)started","level":"info","timestamp":"2025-01-11T20:42:16.350+0000","type":"unstructured"}
+       {"detail":"Thread sourcePingPoller (re)started","level":"info","timestamp":"2025-01-11T20:42:16.350+0000","type":"unstructured"}
+       {"detail":"Thread websocketConnectionReaper (re)started","level":"info","timestamp":"2025-01-11T20:42:16.350+0000","type":"unstructured"}
+       {"detail":{"info":"Help us improve Hasura! The graphql-engine server collects anonymized usage stats which allows us to keep improving Hasura at warp speed. To read more or opt-out, visit https://hasura.io/docs/latest/graphql/core/guides/telemetry.html","kind":"telemetry"},"level":"info","timestamp":"2025-01-11T20:42:16.350+0000","type":"startup"}
+       {"detail":"Thread runTelemetry (re)started","level":"info","timestamp":"2025-01-11T20:42:16.350+0000","type":"unstructured"}
+       {"detail":"Thread updateJWK (re)started","level":"info","timestamp":"2025-01-11T20:42:16.350+0000","type":"unstructured"}
+       {"detail":{"info":{"message":"Starting API server","time_taken":4.829965874},"kind":"server"},"level":"info","timestamp":"2025-01-11T20:42:16.350+0000","type":"startup"}
+       {"detail":{"http_error":{"http_exception":null,"response":"{\"error\":\"invalid_payload\"}","status_code":400,"url":"https://telemetry.hasura.io/v1/http"},"message":"failed to post telemetry","type":"http_error"},"level":"info","timestamp":"2025-01-11T20:42:16.350+0000","type":"telemetry-log"}
+       {"detail":{"http_info":{"content_encoding":null,"http_version":"HTTP/1.1","ip":"127.0.0.1","method":"GET","status":200,"url":"/healthz"},"operation":{"query":{"type":null},"request_id":"ddefc199-2d9c-49b4-abc0-52b24099e160","request_mode":"non-graphql","response_size":2,"uncompressed_response_size":2},"request_id":"ddefc199-2d9c-49b4-abc0-52b24099e160"},"level":"info","timestamp":"2025-01-11T20:42:52.656+0000","type":"http-log"}
+       {"detail":{"event_id":"9e61c47e-ee59-42af-bbe2-0a98239dabcc","event_name":"dcsseeds_scrapePlayers_unrand_cache","request":{"original_request":{"body":"{\"comment\":\"\",\"id\":\"9e61c47e-ee59-42af-bbe2-0a98239dabcc\",\"name\":\"dcsseeds_scrapePlayers_unrand_cache\",\"payload\":{},\"scheduled_time\":\"2025-01-11T20:45:00Z\"}","headers":{"Content-Type":"application/json","User-Agent":"hasura-graphql-engine/v2.45.1"},"method":"POST","query_string":"?window_size=5","response_timeout":"60000000","url":"https://dcss.vercel.app/api/cache_unrand_query?window_size=5"},"original_size":156,"req_transform_ctx":null,"session_vars":null,"transformed_request":null,"transformed_size":null},"response":{"detail":{"body":"{\n  \"data\": {\n    \"times\": [[\"all unrand cache keys\", 6794.774927]],\n    \"error\": {\n      \"message\": \"Cannot read properties of undefined (reading 'name')\",\n      \"stack\": [\n        \"TypeError: Cannot read properties of undefined (reading 'name')\",\n        \"    at SeedVersionFilter (/var/task/.next/server/pages/api/cache_unrand_query.js:225:43)\",\n        \"    at /var/task/.next/server/pages/api/cache_unrand_query.js:139:14\",\n        \"    at Array.map (<anonymous>)\",\n        \"    at handler (/var/task/.next/server/pages/api/cache_unrand_query.js:137:30)\",\n        \"    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\",\n        \"    at async /var/task/node_modules/.pnpm/@sentry+nextjs@7.120.0_next@12.3.4_@babel+core@7.26.0_react-dom@17.0.2_react@17.0.2__react@17.0.2__react@17.0.2/node_modules/@sentry/nextjs/cjs/common/wrapApiHandlerWithSentry.js:136:41\",\n        \"    at async Object.apiResolver (/var/task/node_modules/.pnpm/next@12.3.4_@babel+core@7.26.0_react-dom@17.0.2_react@17.0.2__react@17.0.2/node_modules/next/dist/server/api-utils/node.js:366:9)\",\n        \"    at async NextNodeServer.runApi (/var/task/node_modules/.pnpm/next@12.3.4_@babel+core@7.26.0_react-dom@17.0.2_react@17.0.2__react@17.0.2/node_modules/next/dist/server/next-server.js:481:9)\",\n        \"    at async Object.fn (/var/task/node_modules/.pnpm/next@12.3.4_@babel+core@7.26.0_react-dom@17.0.2_react@17.0.2__react@17.0.2/node_modules/next/dist/server/next-server.js:741:37)\",\n        \"    at async Router.execute (/var/task/node_modules/.pnpm/next@12.3.4_@babel+core@7.26.0_react-dom@17.0.2_react@17.0.2__react@17.0.2/node_modules/next/dist/server/router.js:252:36)\"\n      ]\n    },\n    \"report\": {\n      \"window_size\": 5,\n      \"param_unrand\": [null],\n      \"update_list\": [null],\n      \"missing_keys\": []\n    }\n  },\n  \"error\": true\n}\n","headers":[{"name":"Access-Control-Allow-Origin","value":"https://dcss.vercel.app"},{"name":"Cache-Control","value":"public, max-age=0, must-revalidate"},{"name":"Content-Length","value":"1850"},{"name":"Content-Type","value":"application/json"},{"name":"Date","value":"Sat, 11 Jan 2025 20:45:18 GMT"},{"name":"Permissions-Policy","value":"camera=(), microphone=(), geolocation=()"},{"name":"Referrer-Policy","value":"strict-origin-when-cross-origin"},{"name":"Server","value":"Vercel"},{"name":"Strict-Transport-Security","value":"max-age=31536000; includeSubDomains; preload"},{"name":"X-Content-Type-Options","value":"nosniff"},{"name":"X-Dns-Prefetch-Control","value":"on"},{"name":"X-Frame-Options","value":"DENY"},{"name":"X-Matched-Path","value":"/api/cache_unrand_query"},{"name":"X-Vercel-Cache","value":"MISS"},{"name":"X-Vercel-Id","value":"iad1::sfo1::5gdjw-1736628311697-92afc3ae6c54"}],"size":1850,"status":500},"type":"status"}},"level":"info","span_id":"90f29dda9ba2d595","timestamp":"2025-01-11T20:45:17.766+0000","trace_id":"9a53ee7e36c36ae8cecb82d21fb3d4b2","type":"scheduled-trigger"}
+       Killed
+       {"detail":{"info":{"admin_secret_set":true,"auth_hook":null,"auth_hook_mode":null,"console_assets_dir":null,"console_sentry_dsn":null,"cors_config":{"allowed_origins":"*","disabled":false,"ws_read_cookie":null},"enable_allowlist":false,"enable_console":true,"enable_maintenance_mode":false,"enable_metadata_query_logging":false,"enable_telemetry":true,"enabled_apis":["metadata","pgdump","graphql"],"enabled_log_types":["startup","http-log","jwk-refresh-log","webhook-log","websocket-log"],"events_fetch_batch_size":100,"experimental_features":[],"graceful_shutdown_timeout":60,"http_log_query_only_on_error":false,"infer_function_permissions":true,"jwt_secret":[{"audience":null,"claims_format":"json","claims_namespace":"https://hasura.io/jwt/claims","header":null,"issuer":null,"key":"<JWK REDACTED>","type":"<TYPE REDACTED>"}],"live_query_options":{"batch_size":100,"refetch_delay":1},"log_level":"info","port":8080,"remote_schema_permissions":false,"server_host":"HostAny","stringify_numeric_types":false,"transaction_isolation":"ISOLATION LEVEL READ COMMITTED","unauth_role":"anonymous","use_prepared_statements":true,"v1-boolean-null-collapse":false,"websocket_compression_options":"NoCompression","websocket_connection_init_timeout":"Refined (Seconds {seconds = 3s})","websocket_keep_alive":"KeepAliveDelay {unKeepAliveDelay = Refined (Seconds {seconds = 5s})}"},"kind":"server_configuration"},"level":"info","timestamp":"2025-01-11T20:47:00.340+0000","type":"startup"}
+       {"detail":{"info":{"database_url":"postgres://postgres:...@dokku-postgres-hasura-db:5432/hasura_db","retries":1},"kind":"postgres_connection"},"level":"info","timestamp":"2025-01-11T20:47:00.340+0000","type":"startup"}
+       {"detail":{"info":"Already at the latest catalog version (48); nothing to do.","kind":"catalog_migrate"},"level":"info","timestamp":"2025-01-11T20:47:00.340+0000","type":"startup"}
+       {"detail":{"info":"Schema sync enabled. Polling at Refined (Milliseconds {milliseconds = 1s})","kind":"schema-sync"},"level":"info","timestamp":"2025-01-11T20:47:03.501+0000","type":"startup"}
+       {"detail":{"info":{"instance_id":"40b44a04-7bfd-4ae8-b56d-95bc1746097f","message":"listener thread started","thread_id":"ThreadId 24"},"kind":"schema-sync"},"level":"info","timestamp":"2025-01-11T20:47:03.501+0000","type":"startup"}
+       {"detail":"Thread SchemeUpdate.listener (re)started","level":"info","timestamp":"2025-01-11T20:47:03.501+0000","type":"unstructured"}
+       {"detail":{"info":"EE client credentials not present in the metadata database. Hasura EE features are disabled.","kind":"license_info"},"level":"warn","timestamp":"2025-01-11T20:47:03.501+0000","type":"startup"}
+       {"detail":"Thread ourIdleGC (re)started","level":"info","timestamp":"2025-01-11T20:47:03.501+0000","type":"unstructured"}
+       {"detail":{"info":{"message":"source \"default\" is already at the latest catalog version (3).","source":"default"},"kind":"source_catalog_migrate"},"level":"info","timestamp":"2025-01-11T20:47:13.637+0000","type":"startup"}
+       {"detail":"Thread SchemeUpdate.processor (re)started","level":"info","timestamp":"2025-01-11T20:47:14.649+0000","type":"unstructured"}
+       {"detail":{"info":{"instance_id":"40b44a04-7bfd-4ae8-b56d-95bc1746097f","message":"processor thread started","thread_id":"ThreadId 79"},"kind":"schema-sync"},"level":"info","timestamp":"2025-01-11T20:47:14.649+0000","type":"startup"}
+       {"detail":{"info":"Starting in eventing enabled mode","kind":"server"},"level":"info","timestamp":"2025-01-11T20:47:14.649+0000","type":"startup"}
+       {"detail":{"info":"Starting workers","kind":"event_triggers"},"level":"info","timestamp":"2025-01-11T20:47:14.649+0000","type":"startup"}
+       {"detail":"Thread processEventQueue (re)started","level":"info","timestamp":"2025-01-11T20:47:14.649+0000","type":"unstructured"}
+       {"detail":"Thread asyncActionsProcessor (re)started","level":"info","timestamp":"2025-01-11T20:47:14.649+0000","type":"unstructured"}
+       {"detail":"Thread asyncActionSubscriptionsProcessor (re)started","level":"info","timestamp":"2025-01-11T20:47:14.649+0000","type":"unstructured"}
+       {"detail":"Thread runCronEventsGenerator (re)started","level":"info","timestamp":"2025-01-11T20:47:14.649+0000","type":"unstructured"}
+       {"detail":"Thread processScheduledTriggers (re)started","level":"info","timestamp":"2025-01-11T20:47:14.649+0000","type":"unstructured"}
+       {"detail":"Thread checkForUpdates (re)started","level":"info","timestamp":"2025-01-11T20:47:14.649+0000","type":"unstructured"}
+       {"detail":{"info":"Unlocking all locked scheduled events on `hdb_scheduled_events` and `hdb_cron_events` tables","kind":"scheduled_triggers"},"level":"info","timestamp":"2025-01-11T20:47:14.649+0000","type":"startup"}
+       {"detail":"Thread websocketConnectionReaper (re)started","level":"info","timestamp":"2025-01-11T20:47:14.649+0000","type":"unstructured"}
+       {"detail":"Thread sourcePingPoller (re)started","level":"info","timestamp":"2025-01-11T20:47:14.649+0000","type":"unstructured"}
+       {"detail":{"info":"Help us improve Hasura! The graphql-engine server collects anonymized usage stats which allows us to keep improving Hasura at warp speed. To read more or opt-out, visit https://hasura.io/docs/latest/graphql/core/guides/telemetry.html","kind":"telemetry"},"level":"info","timestamp":"2025-01-11T20:47:21.001+0000","type":"startup"}
+       {"detail":"Thread runTelemetry (re)started","level":"info","timestamp":"2025-01-11T20:47:21.001+0000","type":"unstructured"}
+       {"detail":{"info":{"message":"Starting API server","time_taken":22.262227916},"kind":"server"},"level":"info","timestamp":"2025-01-11T20:47:22.074+0000","type":"startup"}
+       {"detail":"Thread updateJWK (re)started","level":"info","timestamp":"2025-01-11T20:47:22.074+0000","type":"unstructured"}
+       {"detail":{"http_error":{"http_exception":null,"response":"{\"error\":\"invalid_payload\"}","status_code":400,"url":"https://telemetry.hasura.io/v1/http"},"message":"failed to post telemetry","type":"http_error"},"level":"info","timestamp":"2025-01-11T20:47:22.074+0000","type":"telemetry-log"}
+=====> End of hasura container output (web.1)
+parallel: This job failed:
+/var/lib/dokku/plugins/available/scheduler-docker-local/bin/scheduler-deploy-process-container hasura dockerfile dokku/hasura:latest latest web 1 1
+ !     exit status 1
+[2025-01-12T00:42:01][/home/dokku/hasura/restart.sh] Restarting instance
+ !     App image (dokku/hasura:latest) not found
+ !     exit status 1
+[2025-01-12T04:42:01][/home/dokku/hasura/restart.sh] Restarting instance
+ !     App image (dokku/hasura:latest) not found
+ !     exit status 1
+[2025-01-12T08:42:01][/home/dokku/hasura/restart.sh] Restarting instance
+ !     App image (dokku/hasura:latest) not found
+ !     exit status 1
+[2025-01-12T12:42:01][/home/dokku/hasura/restart.sh] Restarting instance
+ !     App image (dokku/hasura:latest) not found
+ !     exit status 1
+```
+
+So it seems like the job fails to restart and then eventually crashes entirely and is not found.
+This is the root cause of why the app seems to be crashing because if it isn't restarted periodically it eventually crashes entirely.
+
+In the output above the command below is failing so I ran it manually and reproduced
+
+```bash
+dokku ps:restart hasura
+
+-----> Deploying web (count=1)
+       Attempting pre-flight checks (web.1)
+       Waiting for 10 seconds (web.1)
+84e01f4ba269a119b43fb5b2c77b4eaf37911c837ec9881d7f7b7ea381fecb35
+ !     App container failed to start (web.1)
+=====> Start of hasura container output (web.1)
+       {"detail":{"info":{"admin_secret_set":true,"auth_hook":null,"auth_hook_mode":null,"console_assets_dir":null,"console_sentry_dsn":null,"cors_config":{"allowed_origins":"*","disabled":false,"ws_read_cookie":null},"enable_allowlist":false,"enable_console":true,"enable_maintenance_mode":false,"enable_metadata_query_logging":false,"enable_telemetry":true,"enabled_apis":["metadata","pgdump","graphql"],"enabled_log_types":["startup","http-log","jwk-refresh-log","webhook-log","websocket-log"],"events_fetch_batch_size":100,"experimental_features":[],"graceful_shutdown_timeout":60,"http_log_query_only_on_error":false,"infer_function_permissions":true,"jwt_secret":[{"audience":null,"claims_format":"json","claims_namespace":"https://hasura.io/jwt/claims","header":null,"issuer":null,"key":"<JWK REDACTED>","type":"<TYPE REDACTED>"}],"live_query_options":{"batch_size":100,"refetch_delay":1},"log_level":"info","port":8080,"remote_schema_permissions":false,"server_host":"HostAny","stringify_numeric_types":false,"transaction_isolation":"ISOLATION LEVEL READ COMMITTED","unauth_role":"anonymous","use_prepared_statements":true,"v1-boolean-null-collapse":false,"websocket_compression_options":"NoCompression","websocket_connection_init_timeout":"Refined (Seconds {seconds = 3s})","websocket_keep_alive":"KeepAliveDelay {unKeepAliveDelay = Refined (Seconds {seconds = 5s})}"},"kind":"server_configuration"},"level":"info","timestamp":"2025-01-14T17:46:51.553+0000","type":"startup"}
+       {"detail":{"info":{"database_url":"postgres://postgres:...@dokku-postgres-hasura-db:5432/hasura_db","retries":1},"kind":"postgres_connection"},"level":"info","timestamp":"2025-01-14T17:46:51.553+0000","type":"startup"}
+       {"detail":{"info":"Already at the latest catalog version (48); nothing to do.","kind":"catalog_migrate"},"level":"info","timestamp":"2025-01-14T17:46:53.573+0000","type":"startup"}
+       {"detail":{"info":"Schema sync enabled. Polling at Refined (Milliseconds {milliseconds = 1s})","kind":"schema-sync"},"level":"info","timestamp":"2025-01-14T17:46:55.660+0000","type":"startup"}
+       {"detail":{"info":{"instance_id":"44a5cf9a-dd90-473d-8462-f52accb4c711","message":"listener thread started","thread_id":"ThreadId 24"},"kind":"schema-sync"},"level":"info","timestamp":"2025-01-14T17:46:55.660+0000","type":"startup"}
+       {"detail":"Thread SchemeUpdate.listener (re)started","level":"info","timestamp":"2025-01-14T17:46:55.660+0000","type":"unstructured"}
+       {"detail":{"info":"EE client credentials not present in the metadata database. Hasura EE features are disabled.","kind":"license_info"},"level":"warn","timestamp":"2025-01-14T17:46:55.660+0000","type":"startup"}
+       {"detail":"Thread ourIdleGC (re)started","level":"info","timestamp":"2025-01-14T17:46:55.660+0000","type":"unstructured"}
+       {"detail":{"info":{"message":"source \"default\" is already at the latest catalog version (3).","source":"default"},"kind":"source_catalog_migrate"},"level":"info","timestamp":"2025-01-14T17:47:05.559+0000","type":"startup"}
+       {"detail":{"info":{"instance_id":"44a5cf9a-dd90-473d-8462-f52accb4c711","message":"processor thread started","thread_id":"ThreadId 83"},"kind":"schema-sync"},"level":"info","timestamp":"2025-01-14T17:47:11.832+0000","type":"startup"}
+       {"detail":{"info":"Starting in eventing enabled mode","kind":"server"},"level":"info","timestamp":"2025-01-14T17:47:11.832+0000","type":"startup"}
+       {"detail":"Thread SchemeUpdate.processor (re)started","level":"info","timestamp":"2025-01-14T17:47:11.832+0000","type":"unstructured"}
+       {"detail":{"info":"Starting workers","kind":"event_triggers"},"level":"info","timestamp":"2025-01-14T17:47:11.832+0000","type":"startup"}
+       {"detail":"Thread processEventQueue (re)started","level":"info","timestamp":"2025-01-14T17:47:11.832+0000","type":"unstructured"}
+       {"detail":"Thread asyncActionSubscriptionsProcessor (re)started","level":"info","timestamp":"2025-01-14T17:47:11.832+0000","type":"unstructured"}
+       {"detail":"Thread asyncActionsProcessor (re)started","level":"info","timestamp":"2025-01-14T17:47:11.832+0000","type":"unstructured"}
+       {"detail":"Thread runCronEventsGenerator (re)started","level":"info","timestamp":"2025-01-14T17:47:11.832+0000","type":"unstructured"}
+       {"detail":"Thread processScheduledTriggers (re)started","level":"info","timestamp":"2025-01-14T17:47:11.832+0000","type":"unstructured"}
+       {"detail":{"info":"Unlocking all locked scheduled events on `hdb_scheduled_events` and `hdb_cron_events` tables","kind":"scheduled_triggers"},"level":"info","timestamp":"2025-01-14T17:47:11.832+0000","type":"startup"}
+       {"detail":"Thread checkForUpdates (re)started","level":"info","timestamp":"2025-01-14T17:47:11.832+0000","type":"unstructured"}
+       {"detail":"Thread websocketConnectionReaper (re)started","level":"info","timestamp":"2025-01-14T17:47:11.832+0000","type":"unstructured"}
+       {"detail":"Thread sourcePingPoller (re)started","level":"info","timestamp":"2025-01-14T17:47:11.832+0000","type":"unstructured"}
+       {"detail":{"info":"Help us improve Hasura! The graphql-engine server collects anonymized usage stats which allows us to keep improving Hasura at warp speed. To read more or opt-out, visit https://hasura.io/docs/latest/graphql/core/guides/telemetry.html","kind":"telemetry"},"level":"info","timestamp":"2025-01-14T17:47:15.817+0000","type":"startup"}
+       {"detail":"Thread runTelemetry (re)started","level":"info","timestamp":"2025-01-14T17:47:15.817+0000","type":"unstructured"}
+       {"detail":"Thread updateJWK (re)started","level":"info","timestamp":"2025-01-14T17:47:15.817+0000","type":"unstructured"}
+       {"detail":{"info":{"message":"Starting API server","time_taken":25.513117428},"kind":"server"},"level":"info","timestamp":"2025-01-14T17:47:15.817+0000","type":"startup"}
+       {"detail":{"http_error":{"http_exception":null,"response":"{\"error\":\"invalid_payload\"}","status_code":400,"url":"https://telemetry.hasura.io/v1/http"},"message":"failed to post telemetry","type":"http_error"},"level":"info","timestamp":"2025-01-14T17:47:15.817+0000","type":"telemetry-log"}
+       {"detail":{"http_info":{"content_encoding":null,"http_version":"HTTP/1.1","ip":"127.0.0.1","method":"GET","status":200,"url":"/healthz"},"operation":{"query":{"type":null},"request_id":"a042f680-59eb-4309-9b78-e3ec5b4bc368","request_mode":"non-graphql","response_size":2,"uncompressed_response_size":2},"request_id":"a042f680-59eb-4309-9b78-e3ec5b4bc368"},"level":"info","timestamp":"2025-01-14T17:47:18.827+0000","type":"http-log"}
+       Killed
+       {"detail":{"info":{"admin_secret_set":true,"auth_hook":null,"auth_hook_mode":null,"console_assets_dir":null,"console_sentry_dsn":null,"cors_config":{"allowed_origins":"*","disabled":false,"ws_read_cookie":null},"enable_allowlist":false,"enable_console":true,"enable_maintenance_mode":false,"enable_metadata_query_logging":false,"enable_telemetry":true,"enabled_apis":["metadata","pgdump","graphql"],"enabled_log_types":["startup","http-log","jwk-refresh-log","webhook-log","websocket-log"],"events_fetch_batch_size":100,"experimental_features":[],"graceful_shutdown_timeout":60,"http_log_query_only_on_error":false,"infer_function_permissions":true,"jwt_secret":[{"audience":null,"claims_format":"json","claims_namespace":"https://hasura.io/jwt/claims","header":null,"issuer":null,"key":"<JWK REDACTED>","type":"<TYPE REDACTED>"}],"live_query_options":{"batch_size":100,"refetch_delay":1},"log_level":"info","port":8080,"remote_schema_permissions":false,"server_host":"HostAny","stringify_numeric_types":false,"transaction_isolation":"ISOLATION LEVEL READ COMMITTED","unauth_role":"anonymous","use_prepared_statements":true,"v1-boolean-null-collapse":false,"websocket_compression_options":"NoCompression","websocket_connection_init_timeout":"Refined (Seconds {seconds = 3s})","websocket_keep_alive":"KeepAliveDelay {unKeepAliveDelay = Refined (Seconds {seconds = 5s})}"},"kind":"server_configuration"},"level":"info","timestamp":"2025-01-14T17:48:59.186+0000","type":"startup"}
+       {"detail":{"info":{"database_url":"postgres://postgres:...@dokku-postgres-hasura-db:5432/hasura_db","retries":1},"kind":"postgres_connection"},"level":"info","timestamp":"2025-01-14T17:48:59.186+0000","type":"startup"}
+       {"detail":{"info":"Already at the latest catalog version (48); nothing to do.","kind":"catalog_migrate"},"level":"info","timestamp":"2025-01-14T17:49:00.205+0000","type":"startup"}
+       {"detail":{"info":"Schema sync enabled. Polling at Refined (Milliseconds {milliseconds = 1s})","kind":"schema-sync"},"level":"info","timestamp":"2025-01-14T17:49:01.219+0000","type":"startup"}
+       {"detail":{"info":{"instance_id":"4c3961c7-dbc3-420a-b54f-d9f864672365","message":"listener thread started","thread_id":"ThreadId 24"},"kind":"schema-sync"},"level":"info","timestamp":"2025-01-14T17:49:01.219+0000","type":"startup"}
+       {"detail":"Thread SchemeUpdate.listener (re)started","level":"info","timestamp":"2025-01-14T17:49:01.219+0000","type":"unstructured"}
+       {"detail":"Thread ourIdleGC (re)started","level":"info","timestamp":"2025-01-14T17:49:01.219+0000","type":"unstructured"}
+       {"detail":{"info":"EE client credentials not present in the metadata database. Hasura EE features are disabled.","kind":"license_info"},"level":"warn","timestamp":"2025-01-14T17:49:01.219+0000","type":"startup"}
+       {"detail":{"info":{"message":"source \"default\" is already at the latest catalog version (3).","source":"default"},"kind":"source_catalog_migrate"},"level":"info","timestamp":"2025-01-14T17:49:22.527+0000","type":"startup"}
+       {"detail":{"info":{"instance_id":"4c3961c7-dbc3-420a-b54f-d9f864672365","message":"processor thread started","thread_id":"ThreadId 118"},"kind":"schema-sync"},"level":"info","timestamp":"2025-01-14T17:49:29.712+0000","type":"startup"}
+       {"detail":{"info":"Starting in eventing enabled mode","kind":"server"},"level":"info","timestamp":"2025-01-14T17:49:29.712+0000","type":"startup"}
+       {"detail":"Thread SchemeUpdate.processor (re)started","level":"info","timestamp":"2025-01-14T17:49:29.712+0000","type":"unstructured"}
+       {"detail":{"info":"Starting workers","kind":"event_triggers"},"level":"info","timestamp":"2025-01-14T17:49:29.712+0000","type":"startup"}
+       {"detail":"Thread processEventQueue (re)started","level":"info","timestamp":"2025-01-14T17:49:29.712+0000","type":"unstructured"}
+       {"detail":"Thread asyncActionsProcessor (re)started","level":"info","timestamp":"2025-01-14T17:49:29.712+0000","type":"unstructured"}
+       {"detail":"Thread asyncActionSubscriptionsProcessor (re)started","level":"info","timestamp":"2025-01-14T17:49:29.712+0000","type":"unstructured"}
+       {"detail":"Thread runCronEventsGenerator (re)started","level":"info","timestamp":"2025-01-14T17:49:29.712+0000","type":"unstructured"}
+       {"detail":"Thread processScheduledTriggers (re)started","level":"info","timestamp":"2025-01-14T17:49:29.712+0000","type":"unstructured"}
+       {"detail":{"info":"Unlocking all locked scheduled events on `hdb_scheduled_events` and `hdb_cron_events` tables","kind":"scheduled_triggers"},"level":"info","timestamp":"2025-01-14T17:49:29.712+0000","type":"startup"}
+       {"detail":"Thread checkForUpdates (re)started","level":"info","timestamp":"2025-01-14T17:49:29.712+0000","type":"unstructured"}
+       {"detail":"Thread sourcePingPoller (re)started","level":"info","timestamp":"2025-01-14T17:49:29.712+0000","type":"unstructured"}
+       {"detail":"Thread websocketConnectionReaper (re)started","level":"info","timestamp":"2025-01-14T17:49:29.712+0000","type":"unstructured"}
+       {"detail":{"info":"Help us improve Hasura! The graphql-engine server collects anonymized usage stats which allows us to keep improving Hasura at warp speed. To read more or opt-out, visit https://hasura.io/docs/latest/graphql/core/guides/telemetry.html","kind":"telemetry"},"level":"info","timestamp":"2025-01-14T17:49:32.014+0000","type":"startup"}
+       {"detail":"Thread runTelemetry (re)started","level":"info","timestamp":"2025-01-14T17:49:32.014+0000","type":"unstructured"}
+       {"detail":{"info":{"message":"Starting API server","time_taken":36.659100912},"kind":"server"},"level":"info","timestamp":"2025-01-14T17:49:32.014+0000","type":"startup"}
+       {"detail":"Thread updateJWK (re)started","level":"info","timestamp":"2025-01-14T17:49:32.014+0000","type":"unstructured"}
+       {"detail":{"http_error":{"http_exception":null,"response":"{\"error\":\"invalid_payload\"}","status_code":400,"url":"https://telemetry.hasura.io/v1/http"},"message":"failed to post telemetry","type":"http_error"},"level":"info","timestamp":"2025-01-14T17:49:33.025+0000","type":"telemetry-log"}
+       {"detail":{"http_info":{"content_encoding":null,"http_version":"HTTP/1.1","ip":"127.0.0.1","method":"GET","status":200,"url":"/healthz"},"operation":{"query":{"type":null},"request_id":"9d966b4e-ae55-46c5-9367-269417bcbf39","request_mode":"non-graphql","response_size":2,"uncompressed_response_size":2},"request_id":"9d966b4e-ae55-46c5-9367-269417bcbf39"},"level":"info","timestamp":"2025-01-14T17:49:33.025+0000","type":"http-log"}
+       Killed
+       {"detail":{"info":{"admin_secret_set":true,"auth_hook":null,"auth_hook_mode":null,"console_assets_dir":null,"console_sentry_dsn":null,"cors_config":{"allowed_origins":"*","disabled":false,"ws_read_cookie":null},"enable_allowlist":false,"enable_console":true,"enable_maintenance_mode":false,"enable_metadata_query_logging":false,"enable_telemetry":true,"enabled_apis":["metadata","pgdump","graphql"],"enabled_log_types":["startup","http-log","jwk-refresh-log","webhook-log","websocket-log"],"events_fetch_batch_size":100,"experimental_features":[],"graceful_shutdown_timeout":60,"http_log_query_only_on_error":false,"infer_function_permissions":true,"jwt_secret":[{"audience":null,"claims_format":"json","claims_namespace":"https://hasura.io/jwt/claims","header":null,"issuer":null,"key":"<JWK REDACTED>","type":"<TYPE REDACTED>"}],"live_query_options":{"batch_size":100,"refetch_delay":1},"log_level":"info","port":8080,"remote_schema_permissions":false,"server_host":"HostAny","stringify_numeric_types":false,"transaction_isolation":"ISOLATION LEVEL READ COMMITTED","unauth_role":"anonymous","use_prepared_statements":true,"v1-boolean-null-collapse":false,"websocket_compression_options":"NoCompression","websocket_connection_init_timeout":"Refined (Seconds {seconds = 3s})","websocket_keep_alive":"KeepAliveDelay {unKeepAliveDelay = Refined (Seconds {seconds = 5s})}"},"kind":"server_configuration"},"level":"info","timestamp":"2025-01-14T17:50:19.206+0000","type":"startup"}
+       {"detail":{"info":{"database_url":"postgres://postgres:...@dokku-postgres-hasura-db:5432/hasura_db","retries":1},"kind":"postgres_connection"},"level":"info","timestamp":"2025-01-14T17:50:19.206+0000","type":"startup"}
+       {"detail":{"info":"Already at the latest catalog version (48); nothing to do.","kind":"catalog_migrate"},"level":"info","timestamp":"2025-01-14T17:50:20.222+0000","type":"startup"}
+       {"detail":{"info":"Schema sync enabled. Polling at Refined (Milliseconds {milliseconds = 1s})","kind":"schema-sync"},"level":"info","timestamp":"2025-01-14T17:50:21.279+0000","type":"startup"}
+       {"detail":{"info":{"instance_id":"3ac7ccaf-96ae-4ab3-965d-c3b5883276d9","message":"listener thread started","thread_id":"ThreadId 24"},"kind":"schema-sync"},"level":"info","timestamp":"2025-01-14T17:50:21.279+0000","type":"startup"}
+       {"detail":"Thread SchemeUpdate.listener (re)started","level":"info","timestamp":"2025-01-14T17:50:21.279+0000","type":"unstructured"}
+       {"detail":"Thread ourIdleGC (re)started","level":"info","timestamp":"2025-01-14T17:50:21.279+0000","type":"unstructured"}
+       {"detail":{"info":"EE client credentials not present in the metadata database. Hasura EE features are disabled.","kind":"license_info"},"level":"warn","timestamp":"2025-01-14T17:50:21.279+0000","type":"startup"}
+       {"detail":{"info":{"message":"source \"default\" is already at the latest catalog version (3).","source":"default"},"kind":"source_catalog_migrate"},"level":"info","timestamp":"2025-01-14T17:50:35.516+0000","type":"startup"}
+       {"detail":{"info":{"instance_id":"3ac7ccaf-96ae-4ab3-965d-c3b5883276d9","message":"processor thread started","thread_id":"ThreadId 101"},"kind":"schema-sync"},"level":"info","timestamp":"2025-01-14T17:50:40.672+0000","type":"startup"}
+       {"detail":{"info":"Starting in eventing enabled mode","kind":"server"},"level":"info","timestamp":"2025-01-14T17:50:40.672+0000","type":"startup"}
+       {"detail":"Thread SchemeUpdate.processor (re)started","level":"info","timestamp":"2025-01-14T17:50:40.672+0000","type":"unstructured"}
+       {"detail":{"info":"Starting workers","kind":"event_triggers"},"level":"info","timestamp":"2025-01-14T17:50:40.672+0000","type":"startup"}
+       {"detail":"Thread processEventQueue (re)started","level":"info","timestamp":"2025-01-14T17:50:40.672+0000","type":"unstructured"}
+       {"detail":"Thread asyncActionsProcessor (re)started","level":"info","timestamp":"2025-01-14T17:50:40.672+0000","type":"unstructured"}
+       {"detail":"Thread asyncActionSubscriptionsProcessor (re)started","level":"info","timestamp":"2025-01-14T17:50:40.672+0000","type":"unstructured"}
+       {"detail":"Thread runCronEventsGenerator (re)started","level":"info","timestamp":"2025-01-14T17:50:40.672+0000","type":"unstructured"}
+       {"detail":"Thread processScheduledTriggers (re)started","level":"info","timestamp":"2025-01-14T17:50:40.672+0000","type":"unstructured"}
+       {"detail":{"info":"Unlocking all locked scheduled events on `hdb_scheduled_events` and `hdb_cron_events` tables","kind":"scheduled_triggers"},"level":"info","timestamp":"2025-01-14T17:50:40.672+0000","type":"startup"}
+       {"detail":"Thread checkForUpdates (re)started","level":"info","timestamp":"2025-01-14T17:50:40.672+0000","type":"unstructured"}
+       {"detail":"Thread sourcePingPoller (re)started","level":"info","timestamp":"2025-01-14T17:50:40.672+0000","type":"unstructured"}
+       {"detail":"Thread websocketConnectionReaper (re)started","level":"info","timestamp":"2025-01-14T17:50:40.672+0000","type":"unstructured"}
+=====> End of hasura container output (web.1)
+parallel: This job failed:
+/var/lib/dokku/plugins/available/scheduler-docker-local/bin/scheduler-deploy-process-container hasura dockerfile dokku/hasura:latest latest web 1 1
+ !     exit status 1
+```
+
+but output isn't identical, sometimes I notice below
+
+```
+{"detail":{"event_id":"9e61c47e-ee59-42af-bbe2-0a98239dabcc","event_name":"dcsseeds_scrapePlayers_unrand_cache","request":{"original_request":{"body":"{\"comment\":\"\",\"id\":\"9e61c47e-ee59-42af-bbe2-0a98239dabcc\",\"name\":\"dcsseeds_scrapePlayers_unrand_cache\",\"payload\":{},\"scheduled_time\":\"2025-01-11T20:45:00Z\"}","headers":{"Content-Type":"application/json","User-Agent":"hasura-graphql-engine/v2.45.1"},"method":"POST","query_string":"?window_size=5","response_timeout":"60000000","url":"https://dcss.vercel.app/api/cache_unrand_query?window_size=5"},"original_size":156,"req_transform_ctx":null,"session_vars":null,"transformed_request":null,"transformed_size":null},"response":{"detail":{"body":"{\n  \"data\": {\n    \"times\": [[\"all unrand cache keys\", 6794.774927]],\n    \"error\": {\n      \"message\": \"Cannot read properties of undefined (reading 'name')\",\n      \"stack\": [\n        \"TypeError: Cannot read properties of undefined (reading 'name')\",\n        \"    at SeedVersionFilter (/var/task/.next/server/pages/api/cache_unrand_query.js:225:43)\",\n        \"    at /var/task/.next/server/pages/api/cache_unrand_query.js:139:14\",\n        \"    at Array.map (<anonymous>)\",\n        \"    at handler (/var/task/.next/server/pages/api/cache_unrand_query.js:137:30)\",\n        \"    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\",\n        \"    at async /var/task/node_modules/.pnpm/@sentry+nextjs@7.120.0_next@12.3.4_@babel+core@7.26.0_react-dom@17.0.2_react@17.0.2__react@17.0.2__react@17.0.2/node_modules/@sentry/nextjs/cjs/common/wrapApiHandlerWithSentry.js:136:41\",\n        \"    at async Object.apiResolver (/var/task/node_modules/.pnpm/next@12.3.4_@babel+core@7.26.0_react-dom@17.0.2_react@17.0.2__react@17.0.2/node_modules/next/dist/server/api-utils/node.js:366:9)\",\n        \"    at async NextNodeServer.runApi (/var/task/node_modules/.pnpm/next@12.3.4_@babel+core@7.26.0_react-dom@17.0.2_react@17.0.2__react@17.0.2/node_modules/next/dist/server/next-server.js:481:9)\",\n        \"    at async Object.fn (/var/task/node_modules/.pnpm/next@12.3.4_@babel+core@7.26.0_react-dom@17.0.2_react@17.0.2__react@17.0.2/node_modules/next/dist/server/next-server.js:741:37)\",\n        \"    at async Router.execute (/var/task/node_modules/.pnpm/next@12.3.4_@babel+core@7.26.0_react-dom@17.0.2_react@17.0.2__react@17.0.2/node_modules/next/dist/server/router.js:252:36)\"\n      ]\n    },\n    \"report\": {\n      \"window_size\": 5,\n      \"param_unrand\": [null],\n      \"update_list\": [null],\n      \"missing_keys\": []\n    }\n  },\n  \"error\": true\n}\n","headers":[{"name":"Access-Control-Allow-Origin","value":"https://dcss.vercel.app"},{"name":"Cache-Control","value":"public, max-age=0, must-revalidate"},{"name":"Content-Length","value":"1850"},{"name":"Content-Type","value":"application/json"},{"name":"Date","value":"Sat, 11 Jan 2025 20:45:18 GMT"},{"name":"Permissions-Policy","value":"camera=(), microphone=(), geolocation=()"},{"name":"Referrer-Policy","value":"strict-origin-when-cross-origin"},{"name":"Server","value":"Vercel"},{"name":"Strict-Transport-Security","value":"max-age=31536000; includeSubDomains; preload"},{"name":"X-Content-Type-Options","value":"nosniff"},{"name":"X-Dns-Prefetch-Control","value":"on"},{"name":"X-Frame-Options","value":"DENY"},{"name":"X-Matched-Path","value":"/api/cache_unrand_query"},{"name":"X-Vercel-Cache","value":"MISS"},{"name":"X-Vercel-Id","value":"iad1::sfo1::5gdjw-1736628311697-92afc3ae6c54"}],"size":1850,"status":500},"type":"status"}},"level":"info","span_id":"90f29dda9ba2d595","timestamp":"2025-01-11T20:45:17.766+0000","trace_id":"9a53ee7e36c36ae8cecb82d21fb3d4b2","type":"scheduled-trigger"}
+Killed
+```
+
+https://dcss.vercel.app/api/cache_unrand_query?window_size=5
+
+```json
+{
+  "data": {
+    "times": [["all unrand cache keys", 238.097025]],
+    "error": {
+      "message": "Cannot read properties of undefined (reading 'name')",
+      "stack": [
+        "TypeError: Cannot read properties of undefined (reading 'name')",
+        "    at SeedVersionFilter (/var/task/.next/server/pages/api/cache_unrand_query.js:225:43)",
+        "    at /var/task/.next/server/pages/api/cache_unrand_query.js:139:14",
+        "    at Array.map (<anonymous>)",
+        "    at handler (/var/task/.next/server/pages/api/cache_unrand_query.js:137:30)",
+        "    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+        "    at async /var/task/node_modules/.pnpm/@sentry+nextjs@7.120.0_next@12.3.4_@babel+core@7.26.0_react-dom@17.0.2_react@17.0.2__react@17.0.2__react@17.0.2/node_modules/@sentry/nextjs/cjs/common/wrapApiHandlerWithSentry.js:136:41",
+        "    at async Object.apiResolver (/var/task/node_modules/.pnpm/next@12.3.4_@babel+core@7.26.0_react-dom@17.0.2_react@17.0.2__react@17.0.2/node_modules/next/dist/server/api-utils/node.js:366:9)",
+        "    at async NextNodeServer.runApi (/var/task/node_modules/.pnpm/next@12.3.4_@babel+core@7.26.0_react-dom@17.0.2_react@17.0.2__react@17.0.2/node_modules/next/dist/server/next-server.js:481:9)",
+        "    at async Object.fn (/var/task/node_modules/.pnpm/next@12.3.4_@babel+core@7.26.0_react-dom@17.0.2_react@17.0.2__react@17.0.2/node_modules/next/dist/server/next-server.js:741:37)",
+        "    at async Router.execute (/var/task/node_modules/.pnpm/next@12.3.4_@babel+core@7.26.0_react-dom@17.0.2_react@17.0.2__react@17.0.2/node_modules/next/dist/server/router.js:252:36)"
+      ]
+    },
+    "report": {
+      "window_size": 5,
+      "param_unrand": [null],
+      "update_list": [null],
+      "missing_keys": []
+    }
+  },
+  "error": true
+}
+```
+
+So debugging on prod we notice this query is failing consistently due to `param_unrand` being incorrectly set.
+`[null]` can be traced back to this line fixed in the commit below.
+
+https://github.com/magus/dcsseeds/commit/fd5e7ca6798331a6d1c853be56236bf92904b4f7
+
+Turning on dokku tracing to get more details during commands since `dokku ps:restart hasura` seems to be taking a very long time.
+Also noticed in a second ssh session running `htop` that the memory usage is maxing out
+
+Also seeing telemetry failures so trying to set this config to disable it below
+
+https://hasura.io/docs/2.0/policies/telemetry/#telemetry-optout
+
+```bash
+dokku config:set hasura HASURA_GRAPHQL_ENABLE_TELEMETRY="false"
+```
+
+Running dokku commands in general seems very slow, also even stopping the hasura app took a minute or two
+
+```bash
+dokku ps:stop hasura
+```
+
+hmmm I think the issue might be dangling graphql engine processes?
+when i run htop after running `dokku ps:stop hasura` I still see many `graphql-engine serve` processes.
+
+Trying to kill all graphql-engine process does seem to have freed about 200MB of memory
+
+```bash
+pkill -f graphql-engine
+```
+
+Trying to restart hasura now, seems much faster, even full stop and start cycle seems faster now.
+Not sure if killing graphql-engine manually or stopping in general was helpful.
+
+```bash
+dokku ps:start hasura
+
+dokku ps:stop hasura
+dokku ps:start hasura
+```
+
+Trying restart again
+
+```bash
+dokku ps:restart hasura
+```
+
+Ok restart still hangs also I suspect docker communication may be an issue.
+Even `dokku ps:stop hasura` hangs on the `++ get_app_running_container_ids hasura` log line (remember trace is enabled)
+Manually running `docker ps` also hangs
+
+```bash
+docker ps
+CONTAINER ID   IMAGE                 COMMAND                   CREATED         STATUS                   PORTS      NAMES
+105385847b6a   dokku/hasura:latest   "/bin/sh -c '\"${HGE_…"   3 minutes ago   Up 2 minutes (healthy)              hasura.web.1.upcoming-20964
+693cfb0f2b72   dokku/hasura:latest   "/bin/sh -c '\"${HGE_…"   4 minutes ago   Up 2 minutes (healthy)              hasura.web.1
+37d9d9879e52   postgres:11.6         "docker-entrypoint.s…"    20 months ago   Up 9 days                5432/tcp   dokku.postgres.hasura-db
+root@magic-auth:~#
+```
+
+And clearly there are two instances running which is exactly what we thought and it's not great that its dangling.
+Manually removing container for now.
+
+```bash
+docker rm -f 105385847b6a
+```
+
+Ok for now just going to change the `restart.sh` script to run stop then start instead of restart.
+
+Related commit below
+
+https://github.com/magus/mono/commit/f53ebe760945ad4596e6bef8cf2b24d6d7388b2b
+
+Manually editing the file on disk for now.
+
+```bash
+vim /home/dokku/hasura/restart.sh
+
+dokku ps:stop hasura
+dokku ps:start hasura
+```
+
 ## 2025-01-05
 
 magic.iamnoah.com database backup action was failing for 3 days
