@@ -46,10 +46,14 @@ export default async function handler(req, res) {
     report.missing_keys = missing_keys;
 
     if (param_unrand) {
+      stopwatch.record(`param_unrand`);
+
       for (const unrand_key of param_unrand) {
         report.update_list.push(unrand_key);
       }
     } else if (missing_keys.length) {
+      stopwatch.record('missing_keys');
+
       // build window from missing keys
       // add missing keys to report.update_list up to window_size
       const include_count = Math.min(window_size, missing_keys.length);
@@ -57,6 +61,8 @@ export default async function handler(req, res) {
         report.update_list.push(missing_keys[i]);
       }
     } else {
+      stopwatch.record('stale_cache_entry');
+
       // perform queries for set of oldest (stale) cache entries
       report.stale_cache_entry = await GQL_CacheUnrandOldest.run({ window_size: 1 });
 
