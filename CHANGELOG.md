@@ -1,5 +1,34 @@
 # CHANGELOG
 
+## 2025-01-19
+
+cron job to restart failed so the app was left in a stopped state.
+
+[we recently changed to a hard stop and start instead of restart due to memory maxing out and causing crashes](#2025-01-14)
+
+```
+-----> Configuring magic-graphql.iamnoah.com...(using built-in template)
+-----> Creating https nginx.conf
+       Enabling HSTS
+       Reloading nginx
+[2025-01-19T12:42:01][/home/dokku/hasura/restart.sh] Restarting instance
+Stopping hasura
+ !     App has been detected as not running, releasing
+-----> Releasing hasura...
+ !     exit status 127
+ !     exit status 127
+```
+
+Manually running start seemed to work and app is redeployed
+
+```bash
+dokku ps:start hasura
+```
+
+Updating `restart.sh` to be more resilient
+
+https://github.com/magus/mono/blob/c2924418e6fa6bbfeb8c364f54c7fd60ba0368fb/sites/magic.iamnoah.com/deploy/restart.sh#L26
+
 ## 2025-01-14
 
 Down again as of two days ago, database backup job failing
