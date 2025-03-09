@@ -26,6 +26,8 @@ module.exports = {
   },
 
   rules: {
+    '@next/next/no-img-element': 'off',
+
     // e.g. allow console
     'no-console': ['warn', { 'allow': ['dir', 'info', 'warn', 'error'] }],
 
