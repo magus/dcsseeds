@@ -1,7 +1,6 @@
 import * as React from 'react';
 import styled, { css } from 'styled-components';
 import { useRouter } from 'next/router';
-import Image from 'next/image';
 import { motion } from 'framer-motion';
 import useSWR from 'swr';
 
@@ -184,7 +183,7 @@ function FilterButton(props) {
       >
         {!props.image ? null : (
           <React.Fragment>
-            <Image alt={props.name} src={props.image} width={24} height={24} />
+            <img alt={props.name} src={props.image} width={24} height={24} />
             <Spacer.Horizontal size="1" />
           </React.Fragment>
         )}
