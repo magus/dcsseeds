@@ -57,6 +57,9 @@ const moduleExports = {
 
   images: {
     domains: ['raw.githubusercontent.com'],
+    // Need to update to next@>13 to use the unoptimized config for <Image /> (next/image)
+    // https://nextjs.org/docs/13/app/api-reference/components/image#unoptimized
+    unoptimized: true,
   },
 
   eslint: {
