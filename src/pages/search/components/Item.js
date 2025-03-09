@@ -1,7 +1,6 @@
 import * as React from 'react';
 
 import styled from 'styled-components';
-import Image from 'next/image';
 
 import { cn } from '~/core/cn';
 
@@ -43,7 +42,7 @@ export function Item(props) {
         <SlotNameWrapper {...props}>
           <Name highlight>
             <span className="image">
-              {!metadata ? null : <Image alt={props.name} src={metadata.image_url} {...image_size} />}
+              {!metadata ? null : <img alt={props.name} src={metadata.image_url} {...image_size} />}
             </span>
 
             <Spacer.Horizontal size="1" />
