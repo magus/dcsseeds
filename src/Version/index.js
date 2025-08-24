@@ -15,6 +15,17 @@ const Version = keyMirror({
   v24: true,
 });
 
+const ActiveList = [
+  // force line break
+  Version.v27,
+  Version.v28,
+  Version.v29,
+  Version.v30,
+  Version.v31,
+  Version.v32,
+  Version.v33,
+];
+
 // Lookup version specific species and background metadata in crawl/crawl repo
 // https://github.com/crawl/crawl/tree/0.29.0/crawl-ref/source/dat/species
 // https://github.com/crawl/crawl/tree/0.29.0/crawl-ref/source/job-data.h
@@ -152,6 +163,7 @@ const SpeciesBackgroundRegex = (function build_SpeciesBackgroundRegex() {
 module.exports = {
   ...Version,
   compare: semver.compare,
+  ActiveList,
   get_metadata,
   get_version_key,
   Enum: Version,
