@@ -80,6 +80,14 @@ Adding a new version, e.g. `0.33.1` can be done by following the steps below.
       pnpm tsx scripts/Unrands
       ```
 
+    - Ashenzari curses
+
+      Content is copied to clipboard, paste directly into [`src/utils/AshenzariCurses.ts`](../src/utils/AshenzariCurses.ts).
+
+      ```bash
+      pnpm tsx scripts/AshenzariCurses
+      ```
+
 1.  Run the `git diff` command below and copy the `id` fields for new unrands into the `NEW_UNRAND_SET` in `src/pages/search/components/ArtifactSearch.js`
 
 1.  Visit http://localhost:3000/new to validate any new species and/or jobs for the new version.
