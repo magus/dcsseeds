@@ -2,24 +2,17 @@
 import Version from 'src/Version';
 import { pbcopy } from 'scripts/pbcopy';
 
-const [, , ...VERSION_LIST] = process.argv;
-
-if (!VERSION_LIST.length) {
-  throw new Error(
-    ['Must specify VERSION list', '  Example', '  > build_spell_list 0.27 0.28 0.29 0.30', ''].join('\n'),
-  );
-}
-
 function get_name_key(name: string) {
   return name.toLowerCase();
 }
 
 const spell_map = new Map();
 
-for (const version of VERSION_LIST) {
-  const { SpellList } = Version.get_metadata(version);
+for (const version_enum of Version.ActiveList) {
+  const metadata = Version.get_metadata(version_enum);
+  const version = metadata.Name;
 
-  for (const name of SpellList) {
+  for (const name of metadata.SpellList) {
     // add version for tracking which version it was introduced
     const spell = { name, version };
 
@@ -44,13 +37,18 @@ const sorted_spell_list = Array.from(spell_map.entries()).sort(([a], [b]) => {
   return get_name_key(a).localeCompare(get_name_key(b));
 });
 
-const output_lines = ['', `// Generated from \`scripts/build_spell_list ${VERSION_LIST.join(' ')}\``, ''];
-output_lines.push('export const List = [');
+const output_lines = [
+  // force line break
+  '// Generated from `scripts/build_spell_list`',
+  '',
+  'export const List = [',
+];
+
 for (const [, spell] of sorted_spell_list) {
   output_lines.push(`  ${JSON.stringify(spell.name)},`);
 }
+
 output_lines.push('];');
-output_lines.push('');
 
 pbcopy(output_lines.join('\n'));
 console.info('📋 Copied `Spells.js` exports to clipboard.');
