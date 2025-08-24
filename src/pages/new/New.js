@@ -242,7 +242,7 @@ const SelectedBox = styled(motion.div)`
 const SelectOption = styled.button`
   position: relative;
   margin: 0 8px 8px 0;
-  border: 1px solid transparent;
+  border: 1px solid rgba(var(--gray-color-rgb), 0.4);
 
   ${({ tier }) =>
     tier === 0 &&
