@@ -72,8 +72,8 @@ exports.Jobs = Jobs;
 exports.BannedCombos = {
   [Species.SP_FELID]: [Jobs.JOB_GLADIATOR, Jobs.JOB_BRIGAND, Jobs.JOB_HUNTER, Jobs.JOB_HEXSLINGER],
   [Species.SP_DEMIGOD]: [Jobs.JOB_BERSERKER, Jobs.JOB_CINDER_ACOLYTE, Jobs.JOB_CHAOS_KNIGHT, Jobs.JOB_MONK],
-  [Species.SP_MUMMY]: [Jobs.JOB_TRANSMUTER],
-  [Species.SP_GHOUL]: [Jobs.JOB_TRANSMUTER],
+  [Species.SP_MUMMY]: [Jobs.JOB_SHAPESHIFTER],
+  [Species.SP_GHOUL]: [Jobs.JOB_SHAPESHIFTER],
 };
 
 // Generated from `scripts/get_unrands 0.32.1`
