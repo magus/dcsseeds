@@ -27,7 +27,7 @@ Adding a new version, e.g. `0.33.1` can be done by following the steps below.
       Copy output under [`scripts/__output__/SpeciesJobData/0.33.1`](../scripts/__output__/SpeciesJobData/0.33.1) into [`src/Version/0.33.js`](../src/Version/0.33.js).
 
       ```bash
-      pnpm tsx scripts/SpeciesJobData.ts
+      pnpm tsx scripts/SpeciesJobData
       ```
 
     - Banned combos
@@ -61,16 +61,16 @@ Adding a new version, e.g. `0.33.1` can be done by following the steps below.
       Content is copied to clipboard, paste directly into [`src/Version/0.33.js`](../src/Version/0.33.js).
 
       ```bash
-      pnpm tsx scripts/get_unrands.ts 0.33.1
+      pnpm tsx scripts/get_unrands 0.33.1
       ```
 
-1.  Build the full list of unrands for supported versions.
+    - Build the full list of unrands for supported versions.
 
-    Content is copied to clipboard, paste directly into [`src/utils/Unrands.js`](../src/utils/Unrands.js).
+      Content is copied to clipboard, paste directly into [`src/utils/Unrands.js`](../src/utils/Unrands.js).
 
-    ```bash
-    pnpm tsx scripts/build_unrand_list 0.27 0.28 0.29 0.30 0.31 0.32 0.33
-    ```
+      ```bash
+      pnpm tsx scripts/Unrands
+      ```
 
 1.  Run the `git diff` command below and copy the `id` fields for new unrands into the `NEW_UNRAND_SET` in `src/pages/search/components/ArtifactSearch.js`
 
