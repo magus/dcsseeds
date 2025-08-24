@@ -56,6 +56,14 @@ Adding a new version, e.g. `0.33.1` can be done by following the steps below.
       pnpm tsx scripts/get_spells 0.33.1
       ```
 
+    - Build the full list of spells for supported versions.
+
+      Content is copied to clipboard, paste directly into [`src/utils/Spells.js`](../src/utils/Spells.js).
+
+      ```bash
+      pnpm tsx scripts/Spells
+      ```
+
     - Unrand variables
 
       Content is copied to clipboard, paste directly into [`src/Version/0.33.js`](../src/Version/0.33.js).
