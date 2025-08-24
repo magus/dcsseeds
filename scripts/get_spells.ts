@@ -248,6 +248,8 @@ const SPSCHOOL: any = Object.freeze(
     { name: 'Air', id: 'air' },
     { name: 'Random', id: 'random' },
     { name: 'None', id: 'none' },
+    // 0.33
+    { name: 'Forgecraft', id: 'forgecraft' },
   ].reduce((spschools: any, data) => {
     const { name, id } = data;
     const codeEnum = `spschool::${id}`;

@@ -12,24 +12,30 @@ import * as crawl_dir from './crawl_dir';
 
 const NAME = 'SpeciesJobData';
 
+const VERSIONS = {
+  '0.27.1': '0.27.1',
+  '0.28.0': '0.28.0',
+  '0.29.1': '0.29.1',
+  '0.30.0': '0.30.0',
+  '0.31.0': '0.31.0',
+  '0.32.1': '0.32.1',
+  '0.33.1': '0.33.1',
+};
+
 (async function run() {
   // parallelize cpp file parsing
-  const version_result_list = await Promise.all([
-    parse_version('0.24.1'),
-    parse_version('0.25.1'),
-    parse_version('0.26.1'),
-    parse_version('0.27.1'),
-    parse_version('0.28.0'),
-    parse_version('0.29.1'),
-    parse_version('0.30.0'),
-    parse_version('0.31.0'),
-    parse_version('0.32.1'),
-  ]);
+  const version_list = Object.keys(VERSIONS);
+  const version_parse_list = version_list.map((version) => parse_version(version));
+  const version_result_list = await Promise.all(version_parse_list);
+
+  // const version_result_list = await Promise.all([parse_version('0.33.1')]);
 
   for (const version_result of version_result_list) {
     write_lines(version_result.version, [
       ...generate_data_lines('Species', version_result.species),
+      'exports.Species = Species;',
       ...generate_data_lines('Jobs', version_result.jobs),
+      'exports.Jobs = Jobs;',
     ]);
   }
 
@@ -75,6 +81,8 @@ async function write_lines(filename: string, lines: Array<string>) {
 }
 
 async function parse_version(version: string) {
+  crawl_dir.prepare(version);
+
   const [species, jobs] = await Promise.all([
     // parse species and job data in parallel
     parse_species_data(version),
@@ -85,8 +93,40 @@ async function parse_version(version: string) {
 }
 
 async function parse_species_data(version: string) {
-  crawl_dir.prepare(version);
+  let list = [];
 
+  switch (version) {
+    case '0.27.1':
+    case '0.28.0':
+    case '0.29.1':
+    case '0.30.0':
+    case '0.31.0':
+    case '0.32.1':
+      list = await parse_species_data_legacy(version);
+      break;
+    case '0.33.1':
+      list = await parse_species_data_0_33_1(version);
+      break;
+    default:
+      throw new Error(`parse_species_data unsupported version [${version}]`);
+  }
+
+  if (list.length === 0) {
+    throw new Error(`no species data found for version ${version}`);
+  }
+
+  // remove duplicate Draconian species
+  list = uniqBy(list, (s) => s.abbr);
+
+  // remove debug unknown species
+  list = list.filter((s) => s.abbr !== '??');
+
+  console.debug('parse_species_data', JSON.stringify({ version, list }, null, 2));
+
+  return list;
+}
+
+async function parse_species_data_legacy(version: string) {
   const species_data_h = CPPCompiler(await read_file(crawl_dir.dir(version, 'crawl-ref/source/species-data.h')));
   // console.dir(species_data_h);
 
@@ -109,115 +149,30 @@ async function parse_species_data(version: string) {
     list.push(species_data);
   }
 
-  // remove duplicate Draconian species
-  list = uniqBy(list, (s) => s.abbr);
-
-  // remove debug unknown species
-  list = list.filter((s) => s.abbr !== '??');
-
-  console.debug(version, list);
-
   return list;
-}
 
-async function parse_job_data(version: string) {
-  crawl_dir.prepare(version);
-
-  const job_data_h = CPPCompiler(await read_file(crawl_dir.dir(version, 'crawl-ref/source/job-data.h')));
-  // console.dir(job_data_h);
-
-  let data_fields: Array<CPPNode> = [];
-
-  job_data_h.traverse({
-    Assignment: {
-      enter(node: CPPNode) {
-        if (node.name.value === 'job_data') {
-          data_fields = node.value.fields;
-        }
-      },
-    },
-  });
-
-  let list = [];
-
-  for (const entry of data_fields) {
-    const job_data = parse_job_entry(version, entry);
-    list.push(job_data);
-  }
-
-  // remove duplicate Draconian species
-  list = uniqBy(list, (s) => s.abbr);
-
-  // remove debug unknown species
-  list = list.filter((s) => s.abbr !== '??');
-
-  console.debug(version, list);
-
-  return list;
-}
-
-function parse_species_entry(object: CPPNode) {
-  const [id_node, data_object] = object.fields;
-
-  const [
-    abbr_node,
-    name_node,
-    name_adj_node,
-    genus_node,
-    flags_node,
-    xp_node,
-    hp_node,
-    mp_node,
-    wl_node,
-    monster_node,
-    habitat_node,
-    undead_node,
-    size_node,
-    str_node,
-    int_node,
-    dex_node,
-    level_up_node,
-    level_stat_inc_node,
-    level_mutation_node,
-    fake_mutation_a_node,
-    fake_mutation_b_node,
-    recommended_jobs_node,
-    recommended_weapons_node,
-    walk_action_node,
-    pray_action_node,
-    child_name_node,
-  ] = data_object.fields;
-
-  const id: string = id_node.params[0].value;
-  const abbr: string = abbr_node.params[0].value;
-  const name: string = name_node.params[0].value;
-
-  const recommended_jobs: Array<string> = [];
-  for (const job_node of recommended_jobs_node.fields) {
-    recommended_jobs.push(job_node.params[0].value);
-  }
-
-  return { id, abbr, name, recommended_jobs };
-
-  // *
-  // * Entry format:
-  // *   row  0: species enum
-  // *   row  1: two-letter abbreviation
-  // *   row  2: name noun, name adjective, genus (null to use name)
-  // *   row  3: flags (SPF_*)
-  // *   row  4: XP "aptitude", HP mod (in tenths), MP mod, WL per XL
-  // *   row  5: corresponding monster
-  // *   row  6: habitat, undead state, size
-  // *   row  7: starting strength, intelligence, dexterity  // sum
-  // *   row  8: { level-up stats }, level for stat increase
-  // *   row  9: { { mutation, mutation level, XP level }, ... }
-  // *   row 10: { fake mutation messages for A screen }
-  // *   row 11: { fake mutation names for % screen }
-  // *   row 12: recommended jobs for character selection
-  // *   row 13: recommended weapons for character selection
-  // *   row 14: custom walking action, or nullptr
-  // *   row 15: custom prayer action, or nullptr
-  // */
+  // /*
+  //  * This file is autogenerated, see util/species-gen.py and dat/species/ for
+  //  * more info.
+  //  *
+  //  * Entry format:
+  //  *   row  0: species enum
+  //  *   row  1: two-letter abbreviation
+  //  *   row  2: name noun, name adjective, genus (null to use name)
+  //  *   row  3: flags (SPF_*)
+  //  *   row  4: XP "aptitude", HP mod (in tenths), MP mod, WL per XL
+  //  *   row  5: corresponding monster
+  //  *   row  6: habitat, undead state, size
+  //  *   row  7: starting strength, intelligence, dexterity  // sum
+  //  *   row  8: { level-up stats }, level for stat increase
+  //  *   row  9: { { mutation, mutation level, XP level }, ... }
+  //  *   row 10: { fake mutation messages for A screen }
+  //  *   row 11: { fake mutation names for % screen }
+  //  *   row 12: recommended jobs for character selection
+  //  *   row 13: recommended weapons for character selection
+  //  *   row 14: custom walking action, or nullptr
+  //  *   row 15: custom prayer action, or nullptr
+  //  */
   //
   // static const map<species_type, species_def> species_data =
   // {
@@ -240,44 +195,224 @@ function parse_species_entry(object: CPPNode) {
   //     "curl up in front of",
   //     "Pup",
   // } },
+  function parse_species_entry(object: CPPNode) {
+    const [id_node, data_object] = object.fields;
+
+    const [
+      abbr_node,
+      name_node,
+      name_adj_node,
+      genus_node,
+      flags_node,
+      xp_node,
+      hp_node,
+      mp_node,
+      wl_node,
+      monster_node,
+      habitat_node,
+      undead_node,
+      size_node,
+      str_node,
+      int_node,
+      dex_node,
+      level_up_node,
+      level_stat_inc_node,
+      level_mutation_node,
+      fake_mutation_a_node,
+      fake_mutation_b_node,
+      recommended_jobs_node,
+      recommended_weapons_node,
+      walk_action_node,
+      pray_action_node,
+      child_name_node,
+    ] = data_object.fields;
+
+    const id: string = id_node.params[0].value;
+    const abbr: string = abbr_node.params[0].value;
+    const name: string = name_node.params[0].value;
+
+    const recommended_jobs: Array<string> = [];
+    for (const job_node of recommended_jobs_node.fields) {
+      recommended_jobs.push(job_node.params[0].value);
+    }
+
+    return { id, abbr, name, recommended_jobs };
+  }
 }
 
-function parse_job_entry(version: string, object: CPPNode) {
-  const [id_node, data_object] = object.fields;
+async function parse_species_data_0_33_1(version: string) {
+  const species_data_h = CPPCompiler(await read_file(crawl_dir.dir(version, 'crawl-ref/source/species-data.h')));
+  console.dir(species_data_h);
 
-  const [
-    abbr_node,
-    name_node,
-    str_node,
-    dex_node,
-    int_node,
-    recommended_species_node,
-    equipment_node,
-    weapon_choice_node,
-    skills_node,
-  ] = data_object.fields;
+  let data_fields: Array<CPPNode> = [];
 
-  const id: string = id_node.params[0].value;
-  const abbr: string = abbr_node.params[0].value;
-  const name: string = name_node.params[0].value;
+  species_data_h.traverse({
+    Assignment: {
+      enter(node: CPPNode) {
+        if (node.name.value === 'species_data[]') {
+          data_fields = node.value.fields;
+        }
+      },
+    },
+  });
 
-  console.debug(recommended_species_node.fields);
+  let list = [];
 
-  const species_node_list = (function () {
-    switch (version) {
-      case '0.32.1':
-        return recommended_species_node.fields[0].fields;
-      default:
-        return recommended_species_node.fields;
-    }
-  })();
-
-  const recommended_species: Array<string> = [];
-  for (const species_node of species_node_list) {
-    recommended_species.push(species_node.params[0].value);
+  for (const entry of data_fields) {
+    console.debug(JSON.stringify({ entry }, null, 2));
+    const species_data = parse_species_entry(entry);
+    list.push(species_data);
   }
 
-  return { id, abbr, name, recommended_species };
+  return list;
+
+  // /*
+  //  * This file is autogenerated, see util/species-gen.py and dat/species/ for
+  //  * more info.
+  //  *
+  //  * Entry format:
+  //  *   row  0: species enum
+  //  *   row  1: two-letter abbreviation
+  //  *   row  2: name noun, name adjective, genus (null to use name)
+  //  *   row  3: flags (SPF_*)
+  //  *   row  4: XP "aptitude", HP mod (in tenths), MP mod, WL per XL
+  //  *   row  5: corresponding monster
+  //  *   row  6: habitat, undead state, size
+  //  *   row  7: starting strength, intelligence, dexterity  // sum
+  //  *   row  8: { level-up stats }, level for stat increase
+  //  *   row  9: { { mutation, mutation level, XP level }, ... }
+  //  *   row 10: { fake mutation messages for A screen }
+  //  *   row 11: { fake mutation names for % screen }
+  //  *   row 12: recommended jobs for character selection
+  //  *   row 13: recommended weapons for character selection
+  //  *   row 14: custom walking action, or nullptr
+  //  *   row 15: custom prayer action, or nullptr
+  //  */
+  //
+  // static const species_def species_data[] =
+  // {
+  //
+  // {  SP_HUMAN,
+  //     "Hu",
+  //     "Human", nullptr, nullptr,
+  //     SPF_NONE,
+  //     0, 0, 0, 3,
+  //     MONS_HUMAN,
+  //     HT_LAND, US_ALIVE, SIZE_MEDIUM,
+  //     8, 8, 8,
+  //     { STAT_STR, STAT_INT, STAT_DEX }, 4,
+  //     { { MUT_EXPLORE_REGEN, 1, 1 } },
+  //     {},
+  //     {},
+  //     { JOB_BERSERKER, JOB_CINDER_ACOLYTE, JOB_CONJURER, JOB_NECROMANCER, JOB_ICE_ELEMENTALIST },
+  //     { SK_LONG_BLADES, SK_AXES, SK_MACES_FLAILS, SK_POLEARMS, SK_STAVES },
+  //     nullptr,
+  //     nullptr,
+  //     nullptr,
+  //     nullptr,
+  // },
+  function parse_species_entry(object: CPPNode) {
+    const [
+      id_node,
+      abbr_node,
+      name_node,
+      name_adj_node,
+      genus_node,
+      flags_node,
+      xp_node,
+      hp_node,
+      mp_node,
+      wl_node,
+      monster_node,
+      habitat_node,
+      undead_node,
+      size_node,
+      str_node,
+      int_node,
+      dex_node,
+      level_up_node,
+      level_stat_inc_node,
+      level_mutation_node,
+      fake_mutation_a_node,
+      fake_mutation_b_node,
+      recommended_jobs_node,
+      recommended_weapons_node,
+      walk_action_node,
+      pray_action_node,
+      child_name_node,
+    ] = object.fields;
+
+    const id: string = id_node.params[0].value;
+    const abbr: string = abbr_node.params[0].value;
+    const name: string = name_node.params[0].value;
+
+    const recommended_jobs: Array<string> = [];
+    for (const job_node of recommended_jobs_node.fields) {
+      recommended_jobs.push(job_node.params[0].value);
+    }
+
+    return { id, abbr, name, recommended_jobs };
+  }
+}
+
+async function parse_job_data(version: string) {
+  let list = [];
+
+  switch (version) {
+    case '0.27.1':
+    case '0.28.0':
+    case '0.29.1':
+    case '0.30.0':
+    case '0.31.0':
+      list = await parse_job_data_legacy(version);
+      break;
+    case '0.32.1':
+    case '0.33.1':
+      list = await parse_job_data_0_32_1(version);
+      break;
+    default:
+      throw new Error(`parse_job_data unsupported version [${version}]`);
+  }
+
+  if (list.length === 0) {
+    throw new Error(`no job data found for version ${version}`);
+  }
+
+  // remove duplicate Draconian species
+  list = uniqBy(list, (s) => s.abbr);
+
+  // remove debug unknown species
+  list = list.filter((s) => s.abbr !== '??');
+
+  // console.debug('parse_job_data', JSON.stringify({ version, list }, null, 2));
+
+  return list;
+}
+
+async function parse_job_data_legacy(version: string) {
+  const job_data_h = CPPCompiler(await read_file(crawl_dir.dir(version, 'crawl-ref/source/job-data.h')));
+  // console.dir(job_data_h);
+
+  let data_fields: Array<CPPNode> = [];
+
+  job_data_h.traverse({
+    Assignment: {
+      enter(node: CPPNode) {
+        if (node.name.value === 'job_data') {
+          data_fields = node.value.fields;
+        }
+      },
+    },
+  });
+
+  let list = [];
+
+  for (const entry of data_fields) {
+    const job_data = parse_job_entry(version, entry);
+    list.push(job_data);
+  }
+
+  return list;
 
   // struct job_def
   // {
@@ -307,6 +442,137 @@ function parse_job_entry(version: string, object: CPPNode) {
   //     { { SK_FIGHTING, 3 }, { SK_ARMOUR, 1 }, { SK_DODGING, 1 },
   //       { SK_INVOCATIONS, 2 }, { SK_WEAPON, 2 }, },
   // } },
+  function parse_job_entry(version: string, object: CPPNode) {
+    // console.debug(JSON.stringify({ object }, null, 2));
+
+    const [id_node, data_object] = object.fields;
+
+    const [
+      abbr_node,
+      name_node,
+      str_node,
+      dex_node,
+      int_node,
+      recommended_species_node,
+      equipment_node,
+      weapon_choice_node,
+      skills_node,
+    ] = data_object.fields;
+
+    const id: string = id_node.params[0].value;
+    const abbr: string = abbr_node.params[0].value;
+    const name: string = name_node.params[0].value;
+
+    // console.debug(recommended_species_node.fields);
+
+    const species_node_list = recommended_species_node.fields;
+
+    const recommended_species: Array<string> = [];
+    for (const species_node of species_node_list) {
+      // console.debug(JSON.stringify({ species_node }, null, 2));
+      recommended_species.push(species_node.params[0].value);
+    }
+
+    return { id, abbr, name, recommended_species };
+  }
+}
+
+async function parse_job_data_0_32_1(version: string) {
+  const job_data_h = CPPCompiler(await read_file(crawl_dir.dir(version, 'crawl-ref/source/job-data.h')));
+  // console.dir(job_data_h);
+
+  let data_fields: Array<CPPNode> = [];
+
+  job_data_h.traverse({
+    Assignment: {
+      enter(node: CPPNode) {
+        if (node.name.value === 'job_data') {
+          data_fields = node.value.fields;
+        }
+      },
+    },
+  });
+
+  let list = [];
+
+  for (const entry of data_fields) {
+    const job_data = parse_job_entry(version, entry);
+    list.push(job_data);
+  }
+
+  return list;
+
+  // struct job_def
+  // {
+  //     const char* abbrev; ///< Two-letter abbreviation
+  //     const char* name; ///< Long name
+  //     int s, i, d; ///< Starting Str, Int, and Dex
+  //     /// Which species are good at it
+  //     /// No recommended species = job is disabled
+  //     vector<species_type> recommended_species;
+  //     /// What spells start out in their library?
+  //     /// The first spell in the list will be memorised at the start of the game,
+  //     /// if it's level 1 and not useless.
+  //     vector<spell_type> library;
+  //     /// Guaranteed starting equipment. Uses vault spec syntax, with the plus:,
+  //     /// charges:, q:, and ego: tags supported.
+  //     vector<string> equipment;
+  //     weapon_choice wchoice; ///< how the weapon is chosen, if any
+  //     vector<pair<skill_type, int>> skills; ///< starting skills
+  // };
+  //
+  // static const map<job_type, job_def> job_data =
+  // {
+  //
+  // { JOB_AIR_ELEMENTALIST, {
+  //     "AE", "Air Elementalist",
+  //     0, 7, 5,
+  //     { SP_DEEP_ELF, SP_TENGU, SP_BASE_DRACONIAN, SP_NAGA, SP_VINE_STALKER,
+  //       SP_DJINNI, },
+  //     {
+  //         SPELL_SHOCK,
+  //         SPELL_DISCHARGE,
+  //         SPELL_SWIFTNESS,
+  //         SPELL_AIRSTRIKE,
+  //     },
+  //     { "robe", "potion of magic" },
+  //     WCHOICE_NONE,
+  //     { { SK_CONJURATIONS, 1 }, { SK_AIR_MAGIC, 3 }, { SK_SPELLCASTING, 2 },
+  //       { SK_DODGING, 2 }, { SK_STEALTH, 2 }, },
+  // } },
+  function parse_job_entry(version: string, object: CPPNode) {
+    // console.debug(JSON.stringify({ object }, null, 2));
+
+    const [id_node, data_object] = object.fields;
+
+    const [
+      abbr_node,
+      name_node,
+      str_node,
+      dex_node,
+      int_node,
+      recommended_species_node,
+      equipment_node,
+      weapon_choice_node,
+      skills_node,
+    ] = data_object.fields;
+
+    const id: string = id_node.params[0].value;
+    const abbr: string = abbr_node.params[0].value;
+    const name: string = name_node.params[0].value;
+
+    // console.debug(recommended_species_node.fields);
+
+    const species_node_list = recommended_species_node.fields[0].fields;
+
+    const recommended_species: Array<string> = [];
+    for (const species_node of species_node_list) {
+      // console.debug(JSON.stringify({ species_node }, null, 2));
+      recommended_species.push(species_node.params[0].value);
+    }
+
+    return { id, abbr, name, recommended_species };
+  }
 }
 
 type CPPNode = {
