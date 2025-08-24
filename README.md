@@ -4,13 +4,26 @@
 
 track random seeds in dcss
 
-# setup
+# Setup
 
 ```bash
 corepack prepare pnpm
 pnpm i
 pnpm dev
 ```
+
+# Docs
+
+- [Adding a new version](./docs/adding-new-version.md)
+
+# Resources
+
+- [Zeit Dashboard](https://vercel.com/noah/dcsseeds)
+- [Google Analytics](https://analytics.google.com/analytics/web/#/a106090287w244212901p227276709/admin)
+- [Sentry Issues](https://sentry.io/organizations/dcss/issues/?project=5403737&statsPeriod=14d)
+- [Hasura GraphQL database](https://hasura.io/)
+- [magic-graphql.iamnoah.com](https://github.com/magus/mono/tree/master/databases/magic-graphql.iamnoah.com) hosted Hasura instance
+- [StatusCake](https://app.statuscake.com/); monitor availability and simultaneously keep the Hasura Heroku dyno warm with a periodic query (every 5 min)
 
 # TODO
 
@@ -288,15 +301,6 @@ Randarts found (can include tile image for type)
   Use same Compare page component on both compare/index and compare/compareSyntax
   both /compare and compare/playerA..playerB should work fine, the first will select two random players
 
-# Setup
-
-Install `now` CLI
-
-```bash
-> yarn global add now
-> now login
-```
-
 ## Commands
 
 Remove unaliased deployments
@@ -328,12 +332,3 @@ https://zeit.co/docs/v2/environment-variables-and-secrets
 ```sh
 now secrets add <secret-name> <secret-value>
 ```
-
-# Resources
-
-- [Zeit Dashboard](https://vercel.com/noah/dcsseeds)
-- [Google Analytics](https://analytics.google.com/analytics/web/#/a106090287w244212901p227276709/admin)
-- [Sentry Issues](https://sentry.io/organizations/dcss/issues/?project=5403737&statsPeriod=14d)
-- [Hasura GraphQL database](https://hasura.io/)
-- [magic-graphql.iamnoah.com](https://github.com/magus/mono/tree/master/databases/magic-graphql.iamnoah.com) hosted Hasura instance
-- [StatusCake](https://app.statuscake.com/); monitor availability and simultaneously keep the Hasura Heroku dyno warm with a periodic query (every 5 min)
