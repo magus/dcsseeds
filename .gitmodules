@@ -1,3 +1,15 @@
+[submodule "crawl-dir/0.24.1"]
+	path = crawl-dir/0.24.1
+	url = git@github.com:crawl/crawl.git
+	update = none
+[submodule "crawl-dir/0.25.1"]
+	path = crawl-dir/0.25.1
+	url = git@github.com:crawl/crawl.git
+	update = none
+[submodule "crawl-dir/0.26.1"]
+	path = crawl-dir/0.26.1
+	url = git@github.com:crawl/crawl.git
+	update = none
 [submodule "crawl-dir/0.27.1"]
 	path = crawl-dir/0.27.1
 	url = git@github.com:crawl/crawl.git
@@ -14,18 +26,6 @@
 	path = crawl-dir/0.30.0
 	url = git@github.com:crawl/crawl.git
 	shallow = true
-[submodule "crawl-dir/0.26.1"]
-	path = crawl-dir/0.26.1
-	url = git@github.com:crawl/crawl.git
-	update = none
-[submodule "crawl-dir/0.25.1"]
-	path = crawl-dir/0.25.1
-	url = git@github.com:crawl/crawl.git
-	update = none
-[submodule "crawl-dir/0.24.1"]
-	path = crawl-dir/0.24.1
-	url = git@github.com:crawl/crawl.git
-	update = none
 [submodule "crawl-dir/0.31.0"]
 	path = crawl-dir/0.31.0
 	url = git@github.com:crawl/crawl.git
@@ -35,4 +35,6 @@
 	url = git@github.com:crawl/crawl.git
 	shallow = true
 [submodule "crawl-dir/0.33.1"]
+	path = crawl-dir/0.33.1
+	url = git@github.com:crawl/crawl.git
 	shallow = true
