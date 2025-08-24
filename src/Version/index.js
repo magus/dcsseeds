@@ -2,6 +2,7 @@ const keyMirror = require('../utils/keyMirror');
 const uniq = require('lodash/uniq');
 
 const Version = keyMirror({
+  v33: true,
   v32: true,
   v31: true,
   v30: true,
@@ -21,6 +22,7 @@ const Version = keyMirror({
 //
 // Consider using parser to programmatically get jobs, species, recommended etc.
 const Metadata = {
+  [Version.v33]: require('./0.33'),
   [Version.v32]: require('./0.32'),
   [Version.v31]: require('./0.31'),
   [Version.v30]: require('./0.30'),
@@ -93,6 +95,8 @@ function get_version_key(version) {
   }
 
   switch (true) {
+    case version.startsWith('0.33'):
+      return Version.v33;
     case version.startsWith('0.32'):
       return Version.v32;
     case version.startsWith('0.31'):
