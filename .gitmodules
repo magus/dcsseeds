@@ -13,12 +13,15 @@
 [submodule "crawl-dir/0.26.1"]
 	path = crawl-dir/0.26.1
 	url = git@github.com:crawl/crawl.git
+	update = none
 [submodule "crawl-dir/0.25.1"]
 	path = crawl-dir/0.25.1
 	url = git@github.com:crawl/crawl.git
+	update = none
 [submodule "crawl-dir/0.24.1"]
 	path = crawl-dir/0.24.1
 	url = git@github.com:crawl/crawl.git
+	update = none
 [submodule "crawl-dir/0.31.0"]
 	path = crawl-dir/0.31.0
 	url = git@github.com:crawl/crawl.git
