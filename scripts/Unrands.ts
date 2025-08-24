@@ -2,7 +2,6 @@
 import Version from 'src/Version';
 import { pbcopy } from 'scripts/pbcopy';
 import { Unrand as BaseUnrand } from 'scripts/get_unrands';
-import { VERSIONS } from 'scripts/versions';
 
 type Unrand = BaseUnrand & { version: string; i: number };
 
@@ -15,10 +14,11 @@ function get_name_key(unrand: BaseUnrand) {
 
 const unrand_map: Map<string, Unrand> = new Map();
 
-for (const version of VERSIONS) {
-  const unrand_list = Version.get_metadata(version).UnrandList;
+for (const version_enum of Version.ActiveList) {
+  const metadata = Version.get_metadata(version_enum);
+  const version = metadata.Name;
 
-  for (const unrand_base of unrand_list) {
+  for (const unrand_base of metadata.UnrandList) {
     // add version for tracking which version introduced this unrand
     const unrand = { ...unrand_base, version, i: -1 };
 
