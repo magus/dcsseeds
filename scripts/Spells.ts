@@ -39,7 +39,7 @@ const sorted_spell_list = Array.from(spell_map.entries()).sort(([a], [b]) => {
 
 const output_lines = [
   // force line break
-  '// Generated from `scripts/build_spell_list`',
+  '// Generated from `pnpm tsx scripts/Spells`',
   '',
   'export const List = [',
 ];

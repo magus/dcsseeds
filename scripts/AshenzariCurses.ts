@@ -5,26 +5,21 @@ import { execSync } from 'child_process';
 import isEqual from 'lodash/isEqual';
 import cloneDeep from 'lodash/cloneDeep';
 
+import Version from 'src/Version';
 import { CPPCompiler } from 'scripts/cpp-parse/CPPCompiler';
-
-import { read_file } from './read_file';
-import * as crawl_dir from './crawl_dir';
+import { read_file } from 'scripts/read_file';
+import * as crawl_dir from 'scripts/crawl_dir';
 
 (async function run() {
-  const curse_result_list = await Promise.all([
-    // parallelize cpp file parsing
-    parse_curse_list('0.27.1'),
-    parse_curse_list('0.28.0'),
-    parse_curse_list('0.29.1'),
-    parse_curse_list('0.30.0'),
-    parse_curse_list('0.31.0'),
-    parse_curse_list('0.32.1'),
-  ]);
+  // parallelize cpp file parsing
+  const version_list = Version.ActiveList.map(Version.get_name);
+  const promise_list = version_list.map((version) => parse_curse_list(version));
+  const result_list = await Promise.all(promise_list);
 
   // gather all curses by id
   const curse_by_id: Record<string, Curse> = {};
 
-  for (const curse_result of curse_result_list) {
+  for (const curse_result of result_list) {
     const version = curse_result.version;
 
     for (const curse of curse_result.list) {
@@ -57,21 +52,32 @@ import * as crawl_dir from './crawl_dir';
 
   console.debug({ curse_by_id });
 
-  const curse_list = Object.values(curse_by_id);
-
   // output
-  const output_lines = ['// GENERATED'];
+  const output_lines = [
+    // force line break
+    '// Generated from `pnpm tsx scripts/AshenzariCurses`',
+    '',
+    '// prettier-ignore',
+    'export const List = [',
+  ];
 
-  output_lines.push('');
-  output_lines.push(`export const List = ${JSON.stringify(curse_list)};`);
-
-  const abbr_map: Record<string, Curse> = {};
-  for (const curse of curse_list) {
-    abbr_map[curse.abbr] = curse;
+  for (const curse of Object.values(curse_by_id)) {
+    output_lines.push(`  ${JSON.stringify(curse)},`);
   }
 
-  output_lines.push('');
-  output_lines.push(`export const ByAbbr = ${JSON.stringify(abbr_map)};`);
+  output_lines.push(
+    // force line break
+    '] as const;',
+    '',
+    'type Curse = (typeof List)[number];',
+    "type Abbr = Curse['abbr'];",
+    '',
+    '// @ts-expect-error for loop assignment',
+    'export const ByAbbr: Record<Abbr, Curse> = {};',
+    'for (const curse of List) {',
+    '  ByAbbr[curse.abbr] = curse;',
+    '}',
+  );
 
   const output_path = path.join(__dirname, '__output__', 'AshenzariCurses.ts');
   fs.writeFileSync(output_path, output_lines.join('\n'));

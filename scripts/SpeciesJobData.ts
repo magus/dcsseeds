@@ -1,32 +1,22 @@
 #!/usr/bin/env node
 /* eslint-disable no-unused-vars */
 import fs from 'node:fs/promises';
-import path, { parse } from 'node:path';
+import path from 'node:path';
 import child_process from 'node:child_process';
 import uniqBy from 'lodash/uniqBy';
 
+import Version from 'src/Version';
 import { CPPCompiler } from 'scripts/cpp-parse/CPPCompiler';
-
-import { read_file } from './read_file';
-import * as crawl_dir from './crawl_dir';
+import { read_file } from 'scripts/read_file';
+import * as crawl_dir from 'scripts/crawl_dir';
 
 const NAME = 'SpeciesJobData';
 
-const VERSIONS = {
-  '0.27.1': '0.27.1',
-  '0.28.0': '0.28.0',
-  '0.29.1': '0.29.1',
-  '0.30.0': '0.30.0',
-  '0.31.0': '0.31.0',
-  '0.32.1': '0.32.1',
-  '0.33.1': '0.33.1',
-};
-
 (async function run() {
   // parallelize cpp file parsing
-  const version_list = Object.keys(VERSIONS);
-  const version_parse_list = version_list.map((version) => parse_version(version));
-  const version_result_list = await Promise.all(version_parse_list);
+  const version_list = Version.ActiveList.map(Version.get_name);
+  const promise_list = version_list.map((version) => parse_version(version));
+  const version_result_list = await Promise.all(promise_list);
 
   // const version_result_list = await Promise.all([parse_version('0.33.1')]);
 
@@ -96,16 +86,16 @@ async function parse_species_data(version: string) {
   let list = [];
 
   switch (version) {
-    case '0.27.1':
-    case '0.28.0':
-    case '0.29.1':
-    case '0.30.0':
-    case '0.31.0':
-    case '0.32.1':
+    case '0.27':
+    case '0.28':
+    case '0.29':
+    case '0.30':
+    case '0.31':
+    case '0.32':
       list = await parse_species_data_legacy(version);
       break;
-    case '0.33.1':
-      list = await parse_species_data_0_33_1(version);
+    case '0.33':
+      list = await parse_species_data_0_33(version);
       break;
     default:
       throw new Error(`parse_species_data unsupported version [${version}]`);
@@ -240,7 +230,7 @@ async function parse_species_data_legacy(version: string) {
   }
 }
 
-async function parse_species_data_0_33_1(version: string) {
+async function parse_species_data_0_33(version: string) {
   const species_data_h = CPPCompiler(await read_file(crawl_dir.dir(version, 'crawl-ref/source/species-data.h')));
   console.dir(species_data_h);
 
@@ -359,16 +349,16 @@ async function parse_job_data(version: string) {
   let list = [];
 
   switch (version) {
-    case '0.27.1':
-    case '0.28.0':
-    case '0.29.1':
-    case '0.30.0':
-    case '0.31.0':
+    case '0.27':
+    case '0.28':
+    case '0.29':
+    case '0.30':
+    case '0.31':
       list = await parse_job_data_legacy(version);
       break;
-    case '0.32.1':
-    case '0.33.1':
-      list = await parse_job_data_0_32_1(version);
+    case '0.32':
+    case '0.33':
+      list = await parse_job_data_0_32(version);
       break;
     default:
       throw new Error(`parse_job_data unsupported version [${version}]`);
@@ -477,7 +467,7 @@ async function parse_job_data_legacy(version: string) {
   }
 }
 
-async function parse_job_data_0_32_1(version: string) {
+async function parse_job_data_0_32(version: string) {
   const job_data_h = CPPCompiler(await read_file(crawl_dir.dir(version, 'crawl-ref/source/job-data.h')));
   // console.dir(job_data_h);
 

@@ -135,6 +135,10 @@ function get_metadata(version) {
   return Metadata[get_version_key(version)];
 }
 
+function get_name(version) {
+  return get_metadata(version).Name;
+}
+
 // build regex of all unique species and background names
 //
 // Examples
@@ -165,6 +169,7 @@ module.exports = {
   compare: semver.compare,
   ActiveList,
   get_metadata,
+  get_name,
   get_version_key,
   Enum: Version,
   Recommended,
