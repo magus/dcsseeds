@@ -1,40 +1,40 @@
-[submodule "crawl-dir/0.24.1"]
-	path = crawl-dir/0.24.1
+[submodule "crawl-dir/0.24"]
+	path = crawl-dir/0.24
 	url = git@github.com:crawl/crawl.git
 	update = none
-[submodule "crawl-dir/0.25.1"]
-	path = crawl-dir/0.25.1
+[submodule "crawl-dir/0.25"]
+	path = crawl-dir/0.25
 	url = git@github.com:crawl/crawl.git
 	update = none
-[submodule "crawl-dir/0.26.1"]
-	path = crawl-dir/0.26.1
+[submodule "crawl-dir/0.26"]
+	path = crawl-dir/0.26
 	url = git@github.com:crawl/crawl.git
 	update = none
-[submodule "crawl-dir/0.27.1"]
-	path = crawl-dir/0.27.1
+[submodule "crawl-dir/0.27"]
+	path = crawl-dir/0.27
 	url = git@github.com:crawl/crawl.git
 	shallow = true
-[submodule "crawl-dir/0.28.0"]
-	path = crawl-dir/0.28.0
+[submodule "crawl-dir/0.28"]
+	path = crawl-dir/0.28
 	url = git@github.com:crawl/crawl.git
 	shallow = true
-[submodule "crawl-dir/0.29.1"]
-	path = crawl-dir/0.29.1
+[submodule "crawl-dir/0.29"]
+	path = crawl-dir/0.29
 	url = git@github.com:crawl/crawl.git
 	shallow = true
-[submodule "crawl-dir/0.30.0"]
-	path = crawl-dir/0.30.0
+[submodule "crawl-dir/0.30"]
+	path = crawl-dir/0.30
 	url = git@github.com:crawl/crawl.git
 	shallow = true
-[submodule "crawl-dir/0.31.0"]
-	path = crawl-dir/0.31.0
+[submodule "crawl-dir/0.31"]
+	path = crawl-dir/0.31
 	url = git@github.com:crawl/crawl.git
 	shallow = true
-[submodule "crawl-dir/0.32.1"]
-	path = crawl-dir/0.32.1
+[submodule "crawl-dir/0.32"]
+	path = crawl-dir/0.32
 	url = git@github.com:crawl/crawl.git
 	shallow = true
-[submodule "crawl-dir/0.33.1"]
-	path = crawl-dir/0.33.1
+[submodule "crawl-dir/0.33"]
+	path = crawl-dir/0.33
 	url = git@github.com:crawl/crawl.git
 	shallow = true
