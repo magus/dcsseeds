@@ -419,6 +419,7 @@ function struct_unrandart_entry(version: string) {
     case '0.30.0':
     case '0.31.0':
     case '0.32.1':
+    case '0.33.1':
       // crawl-dir/0.30.0/crawl-ref/source/artefact.h#L46
       return [
         // const char *name;        // true name of unrandart
