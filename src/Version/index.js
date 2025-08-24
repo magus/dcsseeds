@@ -1,5 +1,6 @@
 const keyMirror = require('../utils/keyMirror');
 const uniq = require('lodash/uniq');
+const semver = require('src/utils/semver');
 
 const Version = keyMirror({
   v33: true,
@@ -150,6 +151,7 @@ const SpeciesBackgroundRegex = (function build_SpeciesBackgroundRegex() {
 
 module.exports = {
   ...Version,
+  compare: semver.compare,
   get_metadata,
   get_version_key,
   Enum: Version,
