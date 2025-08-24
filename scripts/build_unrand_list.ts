@@ -1,27 +1,26 @@
 #!/usr/bin/env node
 import Version from 'src/Version';
 import { pbcopy } from 'scripts/pbcopy';
+import { Unrand as BaseUnrand } from 'scripts/get_unrands';
+import { VERSIONS } from 'scripts/versions';
 
-import { Unrand } from './get_unrands';
+type Unrand = BaseUnrand & { version: string; i: number };
 
-const [, , ...VERSION_LIST] = process.argv;
-
-if (!VERSION_LIST.length) {
-  throw new Error(['Must specify VERSION list', '  Example', '  > build_unrand_list 0.27 0.28 0.29', ''].join('\n'));
-}
-
-function get_name_key(unrand: Unrand) {
+// 🚨 IMPORTANT
+// This is intentionally using name to catch duplicates across versions
+// e.g. sling "Punk" (0.27) vs greatsling "Punk" (0.29.1)
+function get_name_key(unrand: BaseUnrand) {
   return unrand.name.toLowerCase();
 }
 
-const unrand_map = new Map();
+const unrand_map: Map<string, Unrand> = new Map();
 
-for (const version of VERSION_LIST) {
+for (const version of VERSIONS) {
   const unrand_list = Version.get_metadata(version).UnrandList;
 
   for (const unrand_base of unrand_list) {
     // add version for tracking which version introduced this unrand
-    const unrand = Object.assign({}, unrand_base, { version });
+    const unrand = { ...unrand_base, version, i: -1 };
 
     const unrand_name_key = get_name_key(unrand);
     const duplicate = unrand_map.get(unrand_name_key);
@@ -38,10 +37,6 @@ for (const version of VERSION_LIST) {
 }
 
 console.debug('unique unrands', unrand_map.size);
-
-const sorted_unrand_list = Array.from(unrand_map.entries()).sort(([, a], [, b]) => {
-  return get_name_key(a).localeCompare(get_name_key(b));
-});
 
 const unrand_id_map = new Map();
 
@@ -60,19 +55,54 @@ for (const [, unrand] of Array.from(unrand_map.entries())) {
   }
 }
 
-const output_lines = ['', `// Generated from \`scripts/build_unrand_list ${VERSION_LIST.join(' ')}\``, ''];
-output_lines.push('export const List = [');
-for (const [, unrand] of sorted_unrand_list) {
-  output_lines.push(`  ${JSON.stringify(unrand.name)},`);
+const output_lines = [
+  // force line break
+  '// Generated from `pnpm tsx scripts/Unrands`',
+  '',
+  '//prettier-ignore',
+  'export const ById = {',
+];
+
+// sort by name and assign i for alphabetical ordering
+let unrand_list: Array<Unrand> = Array.from(unrand_map.values());
+unrand_list = unrand_list.sort((a, b) => get_name_key(a).localeCompare(get_name_key(b)));
+for (let i = 0; i < unrand_list.length; i++) {
+  const unrand = unrand_list[i];
+  const entry = { ...unrand, i };
+  unrand_list[i] = entry;
 }
-output_lines.push('];');
-output_lines.push('');
-output_lines.push('//prettier-ignore');
-output_lines.push('export const Metadata = [');
-for (const [, unrand] of sorted_unrand_list) {
-  output_lines.push(`  ${JSON.stringify(unrand)},`);
+
+const by_version: { [version: string]: Array<Unrand> } = {};
+for (const unrand of unrand_list) {
+  if (!by_version[unrand.version]) {
+    by_version[unrand.version] = [];
+  }
+  by_version[unrand.version].push(unrand);
 }
-output_lines.push('];');
+
+for (const version of Object.keys(by_version).sort(Version.compare)) {
+  output_lines.push(`  // ${version}`);
+
+  let unrand_list = by_version[version];
+  unrand_list = unrand_list.sort((a, b) => get_name_key(a).localeCompare(get_name_key(b)));
+  for (const unrand of unrand_list) {
+    output_lines.push(`  '${unrand.id}': ${JSON.stringify(unrand)},`);
+  }
+}
+
+output_lines.push(
+  '};',
+  '',
+  'export const List = [];',
+  'export const Metadata = [];',
+  'export const NameIndex = {};',
+  '',
+  'for (const unrand of Object.values(ById).sort((a, b) => a.i - b.i)) {',
+  '  List.push(unrand.name);',
+  '  Metadata.push(unrand);',
+  '  NameIndex[unrand.name] = unrand.i;',
+  '}',
+);
 
 pbcopy(output_lines.join('\n'));
 console.info('📋 Copied `Unrands.js` exports to clipboard.');
