@@ -65,15 +65,12 @@ const Jobs = {
 exports.Species = Species;
 exports.Jobs = Jobs;
 
-// crawl-dir/0.29.1/crawl-ref/source/ng-restr.cc
-// crawl-dir/0.29.1/crawl-ref/source/species-data.h
-// see logic in _banned_combination function
 // prettier-ignore
 exports.BannedCombos = {
-  [Species.SP_FELID]: [Jobs.JOB_GLADIATOR, Jobs.JOB_BRIGAND, Jobs.JOB_HUNTER, Jobs.JOB_ARCANE_MARKSMAN],
-  [Species.SP_DEMIGOD]: [Jobs.JOB_BERSERKER, Jobs.JOB_CINDER_ACOLYTE, Jobs.JOB_CHAOS_KNIGHT, Jobs.JOB_ABYSSAL_KNIGHT, Jobs.JOB_MONK],
-  [Species.SP_MUMMY]: [Jobs.JOB_TRANSMUTER],
-  [Species.SP_GHOUL]: [Jobs.JOB_TRANSMUTER],
+  [Species.SP_FELID.id]: [Jobs.JOB_GLADIATOR.id, Jobs.JOB_BRIGAND.id, Jobs.JOB_HUNTER.id, Jobs.JOB_ARCANE_MARKSMAN.id],
+  [Species.SP_DEMIGOD.id]: [Jobs.JOB_BERSERKER.id, Jobs.JOB_CINDER_ACOLYTE.id, Jobs.JOB_CHAOS_KNIGHT.id, Jobs.JOB_ABYSSAL_KNIGHT.id, Jobs.JOB_MONK.id],
+  [Species.SP_MUMMY.id]: [Jobs.JOB_TRANSMUTER.id],
+  [Species.SP_GHOUL.id]: [Jobs.JOB_TRANSMUTER.id],
 };
 
 // Generated from `scripts/get_unrands 0.29.1`

@@ -69,12 +69,11 @@ exports.Jobs = Jobs;
 
 // prettier-ignore
 exports.BannedCombos = {
-  [Species.SP_FELID]: [Jobs.JOB_GLADIATOR, Jobs.JOB_BRIGAND, Jobs.JOB_HUNTER, Jobs.OB_HEXSLINGER],
-  [Species.SP_DEMIGOD]: [Jobs.JOB_BERSERKER, Jobs.JOB_CINDER_ACOLYTE, Jobs.OB_CHAOS_KNIGHT, Jobs.JOB_MONK],
-  [Species.SP_GHOUL]: [Jobs.JOB_SHAPESHIFTER],
-  [Species.SP_MUMMY]: [Jobs.JOB_SHAPESHIFTER],
-  [Species.SP_POLTERGEIST]: [Jobs.JOB_SHAPESHIFTER],
-  [Species.SP_REVENANT]: [Jobs.JOB_SHAPESHIFTER],
+  [Species.SP_FELID.id]: [Jobs.JOB_GLADIATOR.id, Jobs.JOB_BRIGAND.id, Jobs.JOB_HUNTER.id, Jobs.JOB_HEXSLINGER.id],
+  [Species.SP_DEMIGOD.id]: [Jobs.JOB_BERSERKER.id, Jobs.JOB_CINDER_ACOLYTE.id, Jobs.JOB_CHAOS_KNIGHT.id, Jobs.JOB_MONK.id],
+  [Species.SP_MUMMY.id]: [Jobs.JOB_SHAPESHIFTER.id],
+  [Species.SP_POLTERGEIST.id]: [Jobs.JOB_SHAPESHIFTER.id],
+  [Species.SP_REVENANT.id]: [Jobs.JOB_SHAPESHIFTER.id],
 };
 
 // Generated from `scripts/get_spells 0.33.1`

@@ -72,10 +72,8 @@ for (const version of Object.keys(Version)) {
   Recommended.Backgrounds[version] = buildConvertedLookup(RecommendedBackgrounds);
 
   BannedCombos.Backgrounds[version] = buildConvertedLookup(version_meta.BannedCombos);
-
   // reverse into Background to Species lookup (BannedCombos.Species)
   BannedCombos.Species[version] = {};
-
   for (const species of Object.keys(BannedCombos.Backgrounds[version])) {
     for (const background of Object.keys(BannedCombos.Backgrounds[version][species])) {
       if (!BannedCombos.Species[version][background]) {
