@@ -1,0 +1,11 @@
+import { expect, test } from 'bun:test';
+
+import { test_parseMorgue } from '../test_parseMorgue';
+
+// Necropolis branch in morgue notes is parsed correctly
+const morgue_url = 'http://crawl.akrasiac.org/rawdata/Adeiron/morgue-Adeiron-20250815-125830.txt';
+
+test(morgue_url, async () => {
+  const result = await test_parseMorgue(morgue_url);
+  expect(result).toMatchSnapshot();
+});

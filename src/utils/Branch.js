@@ -25,6 +25,8 @@ const Branch = keyMirror({
   IceCave: true,
   Labyrinth: true,
   Lair: true,
+  // https://github.com/crawl/crawl/commit/72caabbf62b69e8ace7d022fee61988b55e88f2c#diff-d4fa5f64a5ed79cb0cf82d041f932e5eecc454bf4acedd93e9547dad13e72e5c
+  Necropolis: true,
   Orc: true,
   Ossuary: true,
   Pandemonium: true,
@@ -84,6 +86,8 @@ const BRANCH_ALIASES = {
   labyrinth: Branch.Labyrinth,
   lair: Branch.Lair,
   'lair of beasts': Branch.Lair,
+  'necropolis': Branch.Necropolis,
+  'the necropolis': Branch.Necropolis,
   orc: Branch.Orc,
   'orcish mines': Branch.Orc,
   ossuary: Branch.Ossuary,
@@ -118,6 +122,14 @@ const BRANCH_ALIASES = {
   crucible: Branch.CrucibleFlesh,
 };
 
+// add 8 character max alias, e.g. Necropolis → Necropol
+// https://crawl.akrasiac.org/rawdata/Adeiron/morgue-Adeiron-20250815-125830.txt
+for (const branchName of Object.values(Branch)) {
+  const shortName = branchName.slice(0, 8).toLowerCase();
+  if (!BRANCH_ALIASES[shortName]) {
+    BRANCH_ALIASES[shortName] = branchName;
+  }
+}
 const BRANCH_NAME_ALIAS_REGEX = new RegExp(`(${Object.keys(BRANCH_ALIASES).join('|')})`, 'i');
 
 const normalizeBranchName = (branch) => BRANCH_ALIASES[branch.toLowerCase()] || branch;

@@ -1,0 +1,862 @@
+ Dungeon Crawl Stone Soup version 0.34-a0-935-g04fd3a2 (webtiles) character file.
+
+Game seed: 13969787417664694522
+
+67302 geewiz the Grappler (level 14, -1/121 HPs)
+             Began as a Revenant Brigand on Oct 11, 2025.
+             Was a High Priest of Vehumet.
+             Slain by an 11-headed hydra (4 damage)
+             ... in the Necropolis on Oct 12, 2025.
+             The game lasted 02:20:23 (26104 turns).
+
+geewiz the Grappler (Revenant Brigand)             Turns: 26104, Time: 02:20:24
+
+Health: -1/121     AC: 16    Str: 28    XL:     14   Next: 82%
+Magic:  23/30      EV: 12    Int: 18    God:    Vehumet [*****.]
+Gold:   749        SH:  0    Dex: 16    Spells: 13/37 levels left
+
+rFire   . . .  (100%)     - Claws
+rCold   + + .  (33%)    J - orb "Jucetish" {Stardust, rElec Ice}
+rNeg    + + +  (0%)     d - +3 ring mail "Jytun" {Will+ Str+5 Int+3}
+rPois   ∞      (0%)     u - +1 helmet of the Snail {rN+ Regen+}
+rElec   +      (33%)    E - +1 cloak "Rucon" {rC+ MP+5}
+rCorr   .      (100%)   (no gloves)
+SInv    .               K - +2 pair of boots {Earth}
+Will    +++..           i - amulet of alchemy
+Stlth   ++              C - ring of willpower
+HPRegen 1.20/turn       N - ring "Ratse" {*Slow rPois Str+8 Dex+6}
+MPRegen 0.22/turn
+
+%: slow self (1%)
+@: on blink cooldown, on stardust cooldown
+A: claws 1, cold resistance 1, low MP 2, negative energy resistance 3, torment
+resistance 2, mnemnophage, spellclaws, accursed
+a: Enkindle, Renounce Religion
+
+
+You were in the Necropolis.
+You worshipped Vehumet.
+Vehumet was extremely pleased with you.
+You visited 3 branches of the dungeon, and saw 17 of its levels.
+You visited the chambers of the Necropolis 1 time.
+You also visited: Gauntlet and Ice Cave.
+
+You collected 1424 gold pieces.
+You spent 675 gold pieces at shops.
+
+Inventory:
+
+Hand Weapons
+ b - a +3 dagger of venom
+ f - a +2 dagger
+ g - a +1 dagger of speed
+ p - a +1 short sword of electrocution
+ s - a +1 short sword of draining
+ D - a +4 short sword
+ H - the +8 sling "Fish" {antimagic, rF+ Str-4 SInv}
+   (You took it off a minotaur in a Gauntlet)
+
+   rF+:        It protects you from fire.
+   Str-4:      It affects your strength (-4).
+   SInv:       It lets you see invisible.
+Missiles
+ e - 4 curare-tipped darts
+ k - 5 boomerangs
+ m - 28 stones
+ o - 2 throwing nets
+ t - 40 poisoned darts (quivered)
+ A - 6 atropa-tipped darts
+ F - 7 javelins
+Armour
+ a - +0 steam dragon scales
+ d - the +3 ring mail "Jytun" (worn) {Will+ Str+5 Int+3}
+   (You found it on level 8 of the Dungeon)
+
+   Will+:      It increases your willpower.
+   Str+5:      It affects your strength (+5).
+   Int+3:      It affects your intelligence (+3).
+ h - a +0 helmet of sniping
+ q - a +0 kite shield
+ r - a +1 helmet of ice
+ u - the +1 helmet of the Snail (worn) {rN+ Regen+}
+   (You found it on level 9 of the Dungeon)
+
+   rN+:        It protects you from negative energy.
+   Regen+:     It increases your rate of health regeneration.
+ v - +0 acid dragon scales
+ w - the +1 hat of Levity {Str+3 Int-2}
+   (You found it on level 10 of the Dungeon)
+
+   Str+3:      It affects your strength (+3).
+   Int-2:      It affects your intelligence (-2).
+ x - a +0 pair of gloves
+ E - the +1 cloak "Rucon" (worn) {rC+ MP+5}
+   (You found it in a Gauntlet)
+
+   rC+:        It protects you from cold.
+   MP+5:       It affects your magic capacity (+5).
+ J - the orb "Jucetish" (worn) {Stardust, rElec Ice}
+   (You found it in a Gauntlet)
+
+   rElec:      It insulates you from electricity.
+   Ice:        It increases the power of your Ice spells.
+ K - a +2 pair of boots of earth (worn)
+ O - a +0 buckler
+Magical Staves
+ l - a staff of cold
+ n - a staff of earth
+ y - a staff of alchemy
+ I - a staff of fire
+Jewellery
+ c - the amulet of Igoigeke {Faith +Blink Dex+5}
+   (You found it on level 14 of the Dungeon)
+
+   [amulet of faith]
+
+   Faith:      It allows you to gain divine favour quickly.
+   +Blink:     It lets you blink.
+   Dex+5:      It affects your dexterity (+5).
+ i - an amulet of alchemy (worn)
+ j - a ring of resist corrosion
+ B - the ring "Looq" {*Corrode rPois rF+ rC+ Str+3}
+   (You found it in an ice cave)
+
+   [ring of protection from cold]
+
+   *Corrode:   It may corrode you when you take damage.
+   rPois:      It protects you from poison.
+   rF+:        It protects you from fire.
+   rC+:        It protects you from cold.
+   Str+3:      It affects your strength (+3).
+ C - a ring of willpower (worn)
+ G - a ring of see invisible
+ L - the ring of Levuyf {rF+++ Str+3 Int-5 Dex-2 SInv}
+   (You took it off a yaktaur on level 12 of the Dungeon)
+
+   [ring of see invisible]
+
+   rF+++:      It renders you almost immune to fire.
+   Str+3:      It affects your strength (+3).
+   Int-5:      It affects your intelligence (-5).
+   Dex-2:      It affects your dexterity (-2).
+   SInv:       It lets you see invisible.
+ M - the ring of Ewokhlus {rPois rC++}
+   (You took it off a centaur warrior on level 12 of the Dungeon)
+
+   [ring of protection from cold]
+
+   rPois:      It protects you from poison.
+   rC++:       It greatly protects you from cold.
+ N - the ring "Ratse" (worn) {*Slow rPois Str+8 Dex+6}
+   (You took it off an ogre mage on level 12 of the Dungeon)
+
+   [ring of strength]
+
+   *Slow:      It may slow you when you take damage.
+   rPois:      It protects you from poison.
+   Str+8:      It affects your strength (+8).
+   Dex+6:      It affects your dexterity (+6).
+ P - the ring "Rifenole" {rElec Str+3 Int+5 Dex-5 SInv}
+   (You found it on level 12 of the Dungeon)
+
+   [ring of see invisible]
+
+   rElec:      It insulates you from electricity.
+   Str+3:      It affects your strength (+3).
+   Int+5:      It affects your intelligence (+5).
+   Dex-5:      It affects your dexterity (-5).
+   SInv:       It lets you see invisible.
+Wands
+ e - a wand of charming (18)
+ p - a wand of polymorph (25)
+ d - a wand of digging (6)
+ a - a wand of flame (18)
+ b - a wand of light (9)
+ c - a wand of warping (15)
+ f - a wand of mindburst (17)
+Scrolls
+ a - a scroll of enchant armour
+ x - 4 scrolls of amnesia
+ p - 3 scrolls of poison
+ N - a scroll of noise
+ c - a scroll of blinking {unknown}
+ W - 2 scrolls of brand weapon
+ T - a scroll of torment
+ t - 5 scrolls of teleportation
+ g - 2 scrolls of fog
+ V - 5 scrolls of vulnerability
+ f - 3 scrolls of fear
+ I - 3 scrolls of immolation
+ S - a scroll of silence
+ r - a scroll of revelation
+ w - a scroll of enchant weapon
+Potions
+ j - 2 potions of magic {unknown}
+ r - 2 potions of resistance
+ m - 3 potions of might
+ w - 2 potions of heal wounds
+ p - a potion of cancellation {unknown}
+ s - a potion of ambrosia {unknown}
+ t - 2 potions of enlightenment {unknown}
+ A - 4 potions of attraction
+ f - a potion of invisibility {unknown}
+ k - a potion of experience {unknown}
+ c - 3 potions of curing
+ h - 2 potions of haste
+
+
+   Skills:
+ - Level 10.0 Fighting
+ - Level 1.7 Short Blades
+ - Level 1.7 Throwing
+ - Level 4.0 Armour
+ - Level 4.0 Dodging
+ - Level 4.3 Stealth
+ - Level 14.0 Unarmed Combat
+ - Level 12.0 Spellcasting
+ - Level 8.0 Conjurations
+ - Level 3.0 Necromancy
+ - Level 3.0 Translocations
+ * Level 10.2 Ice Magic
+ - Level 2.0 Air Magic
+ - Level 6.0 Earth Magic
+ - Level 6.0 Alchemy
+ - Level 2.0 Evocations
+
+
+You had 13 spell levels left.
+You knew the following spells:
+
+ Your Spells              Type           Power      Damage    Failure   Level
+a - Stone Arrow           Conj/Erth      100%       3d13      1%          3
+b - Blink                 Tloc           42%        N/A       4%          2
+d - Magic Dart            Conj           100%       1d8       1%          1
+g - Grave Claw            Necr           42%        2d10      4%          2
+h - Hailstorm             Conj/Ice       60%        3d11      1%          3
+i - Irradiate             Conj/Alch      26%        3d20      4%          5
+k - Kiss of Death         Conj/Necr      100%       2d13      1%          1
+m - Mephitic Cloud        Conj/Alch/Air  44%        N/A       1%          3
+w - Passwall              Erth           48%        N/A       2%          3
+A - Apportation           Tloc           42%        N/A       2%          1
+
+Your spell library contained the following spells:
+
+ Spells                   Type           Power      Damage    Failure   Level
+ Bombard                  Conj/Erth      26%        9d5       21%         6
+ Freeze                   Ice            100%       1d10      1%          1
+ Sandblast                Erth           96%        2d20      1%          1
+ Ensorcelled Hibernation  Hex/Ice        86%        N/A       1%          2
+ Momentum Strike          Conj/Tloc      60%        3d9       1%          2
+ Searing Ray              Conj           78%        2d7       1%          2
+ Frozen Ramparts          Ice            100%       1d16      1%          3
+ Ozocubu's Armour         Ice            64%        N/A       1%          3
+ Fulminant Prism          Conj/Alch      26%        3d14      1%          4
+ Kinetic Grapnel          Frge           40%        1d5       2%          1
+ Olgreb's Toxic Radiance  Alch           48%        N/A       2%          4
+ Summon Ice Beast         Ice/Summ       43%        N/A       3%          3
+ Lesser Beckoning         Tloc           42%        N/A       4%          2
+ Rending Blade            Conj/Frge      25%        2d(8+1*)  4%          4
+ Sticky Flame             Fire/Alch      32%        2d7       7%          4
+ Maxwell's Portable Pile  Tloc           21%        (3-9)d4   8%          3
+ Teleport Other           Tloc           21%        N/A       8%          3
+ Swiftness                Air            18%        N/A       12%         3
+ Gloom                    Hex/Necr       32%        N/A       14%         3
+ Yara's Violent Unravell  Hex/Alch       16%        3d8       19%         5
+ Call Canine Familiar     Summ           10%        N/A       26%         3
+ Passage of Golubria      Tloc           21%        N/A       26%         4
+ Summon Seismosaurus Egg  Summ/Erth      32%        N/A       26%         4
+ Nazja's Percussive Temp  Frge           5%         4d4       50%         5
+ Curse of Agony           Necr           21%        N/A       58%         5
+ Forge Blazeheart Golem   Fire/Frge      10%        N/A       65%         4
+ Summon Forest            Summ/Tloc      8%         N/A       80%         5
+ Silence                  Hex/Air        7%         N/A       86%         5
+
+
+Dungeon Overview and Level Annotations
+
+Branches:
+Dungeon (15/15)            Temple (1/1) D:5            Lair (1/5) D:9
+    Orc (0/2) D:9          Vaults (0/5) D:13         Depths (0/4) D:15
+  IceCv (visited)         Gauntlet (visited)
+
+The Realm of Zot is guarded by orbs of entropy.
+
+Altars:
+Ashenzari
+Cheibriados
+Dithmenos
+Fedhas
+Gozag
+Hepliaklqana
+Kikubaaqudgha
+Makhleb
+Nemelex Xobeh
+Okawaru
+Qazlal
+Ru
+Sif Muna
+Trog
+Uskayaw
+Vehumet
+Wu Jian
+Xom
+Yredelemnul
+
+Shops:
+D:2 (   D:6 **:!
+
+Annotations:
+D:8 4 transporters
+Necropolis ARandomKyack's ghost, journeyman TrFi
+
+
+Innate Abilities, Weirdness & Mutations
+
+You are immune to poison.
+You have sharp fingernails.
+You are cold resistant. (rC+)
+Your magical capacity is very low. (-20% MP)
+You are immune to negative energy. (rN+++)
+You are immune to unholy pain and torment.
+You can enhance your damage-dealing spells by burning harvested memories.
+You perform a melee attack whenever you cast damage-dealing spells.
+You recover more slowly from Doom and Banes.
+
+Message History
+
+The 11-headed hydra is blasted with magical radiation!!
+The 11-headed hydra is heavily wounded.
+ARandomKyack's ghost is blasted with magical radiation!!
+ARandomKyack's ghost is lightly damaged.
+The plant is blasted with magical radiation!!
+The plant begins to die.
+The plant is lightly damaged.
+The plant twists and deforms. You claw ARandomKyack's ghost!
+ARandomKyack's ghost is moderately damaged.
+Your orb unleashes a flurry of shooting stars!
+ARandomKyack's ghost hits you but does no damage.
+The 11-headed hydra bites you! The 11-headed hydra barely misses you.
+The 11-headed hydra bites you but does no damage. x2
+The 11-headed hydra bites you. The 11-headed hydra bites you!
+The 11-headed hydra misses you. The 11-headed hydra bites you! x3
+* * * LOW HITPOINT WARNING * * *
+The 11-headed hydra bites you but does no damage.
+You take 42 damage, and have 52/121 hp. You now have 25/30 mp.
+Unknown command.
+Unknown command.
+Your shooting star dissipates!
+The shooting star hits the 11-headed hydra!
+The 11-headed hydra is heavily wounded.
+The 11-headed hydra is knocked back.
+ARandomKyack's ghost attacks as it pursues you!
+ARandomKyack's ghost hits you!!
+* * * LOW HITPOINT WARNING * * *
+You take 28 damage, and have 24/121 hp.
+Unknown command.
+Unknown command.
+Okay, then.
+Casting: Irradiate (dangerous; 4% risk of failure)
+Confirm with . or Enter, or press ? or * to list all spells.
+You blink. The 11-headed hydra bites you!
+* * * LOW HITPOINT WARNING * * *
+The 11-headed hydra bites you!
+* * * LOW HITPOINT WARNING * * *
+The 11-headed hydra bites you but does no damage. x3
+The 11-headed hydra bites you.
+You die...
+
+▓#......##~♣P♣##......#.....P..P.
+▓#.....##♣...[♣##.....#..........
+▓#.....#♣!...$:P#.....#....♣...♣.
+▓#.....#~:..)..♣#.....#....♣♣♣♣.♣
+▓#.....#.......♣#.....#..........
+▓#..#..##......##..#..#..........
+▓#......##''''##..°...#..........
+▓#...#.........D.°#...##.........
+▓#..............@W§...###........
+▓#...##PP##..##PP##...#⌠##.......
+▓#..##....####....##..#..###''###
+▓#..#≈....♣  ♣....♣#..'..........
+▓#..##♣..≈####≈..♣##..'..........
+▓#...##♣≈##..##♣♣##...#..........
+▓#....####....####....#..........
+▓#....................###########
+▓#....................#▓▓▓▓▓▓▓▓▓▓
+
+
+You could see a 11-headed hydra and ARandomKyack's ghost.
+
+Vanquished Creatures
+  An azure jelly (IceCv)
+  4 void oozes
+  Nessos (D:14)
+  A minotaur (Gauntlet)
+  4 vault guards
+  2 ice dragons (D:15)
+  2 hydras
+  2 ogre magi
+  7 centaur warriors
+  5 boulder beetles
+  2 tengu warriors (D:14)
+  A death yak (Lair:1)
+  11 two-headed ogres
+  Nergalle (D:12)
+  2 orc knights (D:12)
+  2 deep elf pyromancers
+  A wolf spider (D:15)
+  9 ugly things
+  12 cyclopes
+  2 manticores
+  A moth of wrath (Gauntlet)
+  2 ice statues (IceCv)
+  Joseph (D:7)
+  2 black mambas (Lair:1)
+  A rust devil (Gauntlet)
+  3 gargoyles
+  4 unseen horrors
+  2 rime drakes (D:13)
+  4 kobold demonologists
+  3 komodo dragons
+  An efreet (D:14)
+  2 yaktaurs (D:12)
+  2 tengu conjurers (D:12)
+  3 trolls
+  A hornet (D:9)
+  7 blink frogs (Lair:1)
+  18 slime creatures
+  4 great orb of eyes simulacra (IceCv)
+  A ynoxinul (Gauntlet)
+  A shadowghast (D:11)
+  2 vampires (D:10)
+  A raven (shapeshifter) (D:14)
+  5 wraiths
+  A centaur simulacrum (D:14)
+  3 wyverns
+  14 yaks
+  A wyvern (shapeshifter) (D:15)
+  A hog (shapeshifter) (D:15)
+  7 humans (D:13)
+  2 basilisks
+  2 steam dragons
+  11 vampire mosquitoes
+  Menkaure (D:6)
+  3 acid dragons
+  5 water moccasins
+  3 orc warriors
+  A black bear (D:5)
+  2 sky beasts (D:8)
+  4 glowing shapeshifter simulacra (IceCv)
+  2 laughing skulls (D:15)
+  5 ogres
+  7 wolves
+  5 boggarts (D:15)
+  10 centaurs
+  A phantom (D:7)
+  3 kobold brigands
+  7 bullfrogs
+  3 gnoll sergeants
+  6 scorpions
+  A rock fish (D:8)
+  3 shapeshifter simulacra (IceCv)
+  3 wights (D:9)
+  A marrowcuda (D:6)
+  4 killer bees (D:9)
+  4 slime creature simulacra (IceCv)
+  A howler monkey (D:9)
+  3 bombardier beetles
+  7 hounds
+  3 jellies
+  13 orc priests
+  Crazy Yiuf (D:2)
+  3 iron imps (Gauntlet)
+  A drude (D:5)
+  2 sleepcaps
+  2 iguanas
+  Jessica (D:3)
+  Natasha (twice) (D:2)
+  17 orc wizards
+  Robin (D:1)
+  19 gnolls
+  9 adders
+  A shadow imp (D:6)
+  3 white imps
+  2 ufetubi (D:5)
+  3 dart slugs
+  A ribbon worm (D:3)
+  41 orcs
+  10 endoplasms
+  11 hobgoblins
+  2 jackals (D:5)
+  4 quokkas
+  6 ball pythons
+  A bat (D:1)
+  2 frilled lizards
+  23 goblins
+  24 kobolds
+  6 rats
+494 creatures vanquished.
+
+Vanquished Creatures (others)
+  An orc wizard (D:9)
+1 creature vanquished.
+
+Grand Total: 495 creatures vanquished
+
+Notes
+Turn   | Place    | Note
+-------+----------+-------------------------------------------
+     0 | D:1      | geewiz the Revenant Brigand began the quest for the Orb.
+     0 | D:1      | Reached XP level 1. HP: 17/17 MP: 1/1
+   126 | D:1      | Found a faded altar of an unknown god.
+   210 | D:1      | Reached XP level 2. HP: 25/26 MP: 2/2
+   734 | D:2      | Learned a level 1 spell: Magic Dart
+   734 | D:2      | Gained mutation: You can enhance your damage-dealing spells
+                  | by burning harvested memories. [Revenant growth]
+   734 | D:2      | Reached XP level 3. HP: 33/33 MP: 3/3
+  1152 | D:2      | Reached XP level 4. HP: 32/41 MP: 4/4
+  1442 | D:2      | Noticed Robin
+  1609 | D:2      | Reached skill level 5 in Fighting
+  1679 | D:1      | Killed Robin
+  1804 | D:2      | Found Jotua's Weapon Shoppe.
+  1834 | D:2      | Noticed Natasha
+  2016 | D:2      | Reached XP level 5. HP: 40/50 MP: 5/5
+  2506 | D:3      | Noticed an ogre
+  2519 | D:3      | Killed an ogre
+  2758 | D:3      | Reached XP level 6. HP: 60/60 MP: 5/5
+  2778 | D:3      | Noticed Jessica
+  3481 | D:4      | Reached skill level 1 in Evocations
+  3910 | D:5      | Entered Level 5 of the Dungeon
+  3951 | D:5      | Reached XP level 7. HP: 68/68 MP: 6/6
+  4198 | D:5      | Found a statue of an orb of entropy.
+  4200 | D:5      | Found a staircase to the Ecumenical Temple.
+  4201 | D:5      | Found a statue of an orb of entropy.
+  4207 | Temple   | Entered the Ecumenical Temple
+  4262 | Temple   | Became a worshipper of Vehumet
+  4262 | Temple   | Offered knowledge of Kiss of Death by Vehumet.
+  4265 | Temple   | Learned a level 1 spell: Kiss of Death
+  4409 | D:5      | Reached skill level 1 in Conjurations
+  4409 | D:5      | Reached skill level 1 in Necromancy
+  4618 | D:5      | Reached skill level 1 in Spellcasting
+  5443 | D:5      | Reached XP level 8. HP: 62/75 MP: 9/9
+  6115 | D:6      | Noticed a manticore
+  6230 | D:6      | Found Gotoug's Distillery.
+  6230 | D:6      | Found Hebuom's Book Shop.
+  6238 | D:6      | Found Ismics's Assorted Antiques.
+  6253 | D:6      | Bought a shiny helmet for 210 gold pieces
+  6266 | D:6      | Found Wymakh's Overcharged Wands.
+  6447 | D:6      | Learned a level 2 spell: Grave Claw
+  6453 | D:6      | Noticed Menkaure
+  6497 | D:6      | Killed Menkaure
+  6770 | D:6      | Noticed a two-headed ogre
+  6840 | D:6      | Reached * piety under Vehumet
+  7053 | D:6      | Learned a level 2 spell: Blink
+  7181 | D:6      | Reached skill level 1 in Translocations
+  8335 | D:7      | Reached XP level 9. HP: 75/84 MP: 13/13
+  8648 | D:7      | Noticed Joseph
+  8664 | D:7      | Killed Joseph
+  8665 | D:7      | Reached skill level 10 in Fighting
+  9015 | D:8      | Reached skill level 5 in Spellcasting
+  9101 | D:8      | Found a transporter.
+  9107 | D:8      | Found a transporter.
+  9109 | D:8      | Found a transporter.
+  9241 | D:8      | Found a transporter.
+  9519 | D:8      | Noticed a two-headed ogre
+  9638 | D:8      | Identified the +3 ring mail "Jytun" {Will+ Str+5 Int+3}
+  9713 | D:8      | Reached ** piety under Vehumet
+  9713 | D:8      | Offered knowledge of Stone Arrow by Vehumet.
+  9720 | D:8      | Learned a level 3 spell: Stone Arrow
+ 10128 | D:8      | Noticed a cyclops
+ 10129 | D:8      | Noticed a kobold demonologist
+ 10189 | D:8      | Noticed a smoke demon
+ 10194 | D:7      | Killed a kobold demonologist
+ 10195 | D:7      | Reached skill level 1 in Earth Magic
+ 10223 | D:8      | Killed a cyclops
+ 10436 | D:8      | Noticed a two-headed ogre
+ 10452 | D:8      | Killed a two-headed ogre
+ 10453 | D:8      | Reached XP level 10. HP: 63/93 MP: 6/17
+ 10707 | D:8      | Killed a two-headed ogre
+ 10972 | D:9      | Learned a level 3 spell: Passwall
+ 10976 | D:9      | Learned a level 3 spell: Mephitic Cloud
+ 11063 | D:9      | Reached skill level 1 in Unarmed Combat
+ 11076 | D:9      | Reached skill level 2 in Unarmed Combat
+ 11143 | D:9      | Reached skill level 3 in Unarmed Combat
+ 11442 | D:9      | Reached skill level 4 in Unarmed Combat
+ 11613 | D:9      | Found Hioguaje's Distillery.
+ 11732 | D:9      | Identified the +1 helmet of the Snail {rN+ Regen+}
+ 11838 | D:8      | Reached skill level 5 in Unarmed Combat
+ 12175 | D:9      | Reached skill level 6 in Unarmed Combat
+ 12334 | D:9      | Found a staircase to the Orcish Mines.
+ 12368 | D:9      | Reached skill level 7 in Unarmed Combat
+ 12377 | D:9      | Offered knowledge of Hailstorm by Vehumet.
+ 12388 | D:9      | Learned a level 3 spell: Hailstorm
+ 12394 | D:9      | Learned a level 5 spell: Irradiate
+ 12431 | D:9      | Found a staircase to the Lair.
+ 12585 | D:8      | Reached skill level 1 in Air Magic
+ 12585 | D:8      | Reached skill level 1 in Alchemy
+ 12853 | D:7      | Reached *** piety under Vehumet
+ 13007 | D:6      | Killed a two-headed ogre
+ 13008 | D:6      | Reached XP level 11. HP: 99/99 MP: 9/19
+ 13286 | D:6      | Reached skill level 8 in Unarmed Combat
+ 13585 | D:3      | Offered knowledge of Fulminant Prism by Vehumet.
+ 13590 | D:3      | Killed Jessica
+ 13758 | D:2      | Noticed Crazy Yiuf
+ 13766 | D:2      | Killed Crazy Yiuf
+ 13962 | D:2      | Killed Natasha
+ 13986 | D:2      | Noticed Natasha
+ 13990 | D:2      | Killed Natasha
+ 14147 | D:6      | Bought a blackened wooden wand for 112 gold pieces
+ 14147 | D:6      | Bought a scroll of identify for 56 gold pieces
+ 14151 | D:6      | Bought a potion of heal wounds for 132 gold pieces
+ 14266 | D:10     | Entered Level 10 of the Dungeon
+ 14272 | D:10     | Found a blossoming altar of Fedhas.
+ 14769 | D:10     | Identified the +1 hat of Levity {Str+3 Int-2}
+ 14960 | D:10     | Reached skill level 9 in Unarmed Combat
+ 15327 | D:10     | Found a bloodstained altar of Trog.
+ 15388 | D:10     | Noticed a two-headed ogre
+ 15397 | D:10     | Killed a two-headed ogre
+ 15398 | D:10     | Reached skill level 5 in Earth Magic
+ 15501 | D:10     | Reached **** piety under Vehumet
+ 15735 | D:11     | Noticed a boulder beetle
+ 15830 | D:11     | Killed a boulder beetle
+ 16365 | D:11     | You fall into a shaft and drop 2 floors!
+ 16374 | D:13     | Found a frozen archway.
+ 16382 | D:13     | Noticed a centaur warrior
+ 16384 | D:13     | Reached skill level 10 in Unarmed Combat
+ 16389 | D:13     | Killed a centaur warrior
+ 16454 | D:13     | Offered knowledge of Yara's Violent Unravelling by Vehumet.
+ 16482 | IceCv    | Entered an ice cave
+ 16771 | IceCv    | Reached XP level 12. HP: 88/106 MP: 19/21
+ 16889 | IceCv    | Noticed a void ooze
+ 17079 | IceCv    | Killed a void ooze
+ 17080 | IceCv    | Reached skill level 5 in Conjurations
+ 17515 | IceCv    | Reached skill level 10 in Spellcasting
+ 17638 | IceCv    | Noticed a void ooze
+ 17649 | IceCv    | Killed a void ooze
+ 17700 | IceCv    | Noticed a void ooze
+ 17709 | IceCv    | Killed a void ooze
+ 17710 | IceCv    | Reached skill level 5 in Alchemy
+ 17903 | IceCv    | Found a viscous altar of Jiyva.
+ 17903 | IceCv    | Noticed an azure jelly
+ 17920 | IceCv    | Killed an azure jelly
+ 18088 | IceCv    | Got the ring "Looq" {*Corrode rPois rF+ rC+ Str+3}
+ 18191 | D:14     | Noticed Nessos
+ 18230 | D:14     | Killed Nessos
+ 18230 | D:14     | Reached ***** piety under Vehumet
+ 18230 | D:14     | Offered knowledge of Orb of Destruction by Vehumet.
+ 18405 | D:14     | Noticed a centaur warrior
+ 18408 | D:14     | Noticed a tengu warrior
+ 18414 | D:14     | Killed a centaur warrior
+ 18417 | D:14     | Killed a tengu warrior
+ 18418 | D:14     | Found a gate leading to a gauntlet.
+ 18502 | Gauntlet | Found a transporter.
+ 18502 | Gauntlet | Found a transporter.
+ 18502 | Gauntlet | Found a transporter.
+ 18502 | Gauntlet | Found a transporter.
+ 18502 | Gauntlet | Found a transporter.
+ 18502 | Gauntlet | Found a transporter.
+ 18502 | Gauntlet | Found a transporter.
+ 18502 | Gauntlet | Found a transporter.
+ 18502 | Gauntlet | Found a transporter.
+ 18502 | Gauntlet | Found a transporter.
+ 18502 | Gauntlet | Found a transporter.
+ 18502 | Gauntlet | Found a transporter.
+ 18502 | Gauntlet | Found a transporter.
+ 18502 | Gauntlet | Found a transporter.
+ 18502 | Gauntlet | Found a transporter.
+ 18502 | Gauntlet | Found a transporter.
+ 18502 | Gauntlet | Found a transporter.
+ 18502 | Gauntlet | Found a transporter.
+ 18502 | Gauntlet | Entered a Gauntlet
+ 18547 | Gauntlet | Noticed a sin beast
+ 18622 | Gauntlet | Noticed a void ooze
+ 18637 | Gauntlet | Killed a void ooze
+ 18638 | Gauntlet | Reached XP level 13. HP: 38/113 MP: 4/23
+ 18706 | Gauntlet | Identified the +1 cloak "Rucon" {rC+ MP+5}
+ 18772 | Gauntlet | Identified the +8 sling "Fish" {antimagic, rF+ Str-4 SInv}
+ 18772 | Gauntlet | Noticed a minotaur
+ 18779 | Gauntlet | Killed a minotaur
+ 18786 | Gauntlet | Identified the orb "Jucetish" {Stardust, rElec Ice}
+ 19049 | D:12     | Noticed Nergalle
+ 19355 | D:12     | Found a transporter.
+ 19535 | D:11     | Learned a level 1 spell: Apportation
+ 19741 | D:12     | Reached skill level 1 in Armour
+ 19741 | D:12     | Reached skill level 1 in Dodging
+ 19975 | D:6      | Bought a potion of haste for 165 gold pieces
+ 20237 | D:12     | Found a transporter.
+ 20602 | D:12     | Killed Nergalle
+ 21341 | D:12     | Reached skill level 11 in Unarmed Combat
+ 21574 | D:12     | Identified the ring "Ratse" {*Slow rPois Str+8 Dex+6}
+ 21586 | D:12     | Offered knowledge of Fireball by Vehumet.
+ 21587 | D:12     | Reached skill level 12 in Unarmed Combat
+ 21941 | D:12     | Identified the ring of Ewokhlus {rPois rC++}
+ 21993 | D:12     | Identified the ring of Levuyf {rF+++ Str+3 Int-5 Dex-2
+                  | SInv}
+ 22128 | D:12     | Identified the ring "Rifenole" {rElec Str+3 Int+5 Dex-5
+                  | SInv}
+ 22550 | D:13     | Reached XP level 14. HP: 121/121 MP: 25/25
+ 22775 | D:13     | Reached skill level 5 in Ice Magic
+ 22869 | D:13     | Found a gate to the Vaults.
+ 23183 | D:14     | Reached skill level 13 in Unarmed Combat
+ 23248 | D:14     | Identified the amulet of Igoigeke {Faith +Blink Dex+5}
+ 23834 | D:15     | Entered Level 15 of the Dungeon
+ 23934 | D:15     | Found a stormy altar of Qazlal.
+ 25453 | D:15     | Found a staircase to the Depths.
+ 25768 | Lair:1   | Entered Level 1 of the Lair of Beasts
+ 25779 | Lair:1   | Found a phantasmal passage.
+ 25873 | Lair:1   | Reached skill level 14 in Unarmed Combat
+ 26007 | Lair:1   | Reached skill level 10 in Ice Magic
+ 26014 | Lair:1   | Offered knowledge of Bombard by Vehumet.
+ 26058 | Necropol | Found a bloodstained altar of Trog.
+ 26058 | Necropol | Found a transporter.
+ 26058 | Necropol | Found a transporter.
+ 26058 | Necropol | Found a transporter.
+ 26058 | Necropol | Found a transporter.
+ 26058 | Necropol | Entered the Necropolis
+ 26059 | Necropol | Upgraded the game from 0.34-a0-930-g08d3286 to
+                  | 0.34-a0-935-g04fd3a2
+ 26093 | Necropol | Noticed ARandomKyack's ghost (journeyman TrFi)
+ 26104 | Necropol | HP: 3/121 [11-headed hydra (11)]
+ 26104 | Necropol | Slain by an 11-headed hydra
+
+Illustrated notes
+
+Levels and vault maps discovered:
+D:1:      noname_arrival_rooms_in_the_neighbourhood, layout_basic,
+          dreamdust_ecumenical_altar_hidden_monk_grotto, serial_forest,
+          infiniplex_forest_straight_5, infiniplex_forest_pool,
+          infiniplex_forest_lined_4_way, infiniplex_forest_lined_corner,
+          infiniplex_forest_diagonal, infiniplex_forest_corner_2,
+          infiniplex_forest_lined_corner
+D:2:      layout_basic, serial_shops, nicolae_shop_bloodbath_and_beyond,
+          serial_park_tiny_2, chequers_serial_rivers_small_b,
+          uniq_crazy_yiuf_cottage, uniq_robin, uniq_natasha
+D:3:      layout_loops_ring, amcnicky_mini_pool_small, minmay_ogre_servants,
+          uniq_jessica
+D:4:      layout_loops_ring, minmay_misc_feat_x
+D:5:      layout_loops_corners, minmay_temple_entry_gardened_gates
+D:6:      minmay_opposing_rooms, layout_loops_ring,
+          nicolae_shops_little_town_plaza, corexii_leaking_fountain,
+          nicolae_shop_overcharged_wands, uniq_menkaure
+D:7:      layout_loops_ring, uniq_joseph
+D:8:      minmay_chambers_of_sixes, layout_loops_ring,
+          nicolae_diode_intersection
+D:9:      layout_basic, grunt_lair_entry_orc_guard_hut, serial_shops, shop
+D:10:     layout_irregular_city, fedhas_altar_3, corexii_hall_statues_i,
+          david_defended_altar_orc
+D:11:     layout_roguey, minivault_16
+D:12:     minmay_the_grid_triangle_9x9_rhombus_full
+          [minmay_the_grid_triangle_9x9_checkered,
+          minmay_the_grid_triangle_9x9_alien,
+          minmay_the_grid_triangle_9x9_dagger,
+          minmay_the_grid_triangle_9x9_shrine,
+          minmay_the_grid_triangle_9x9_flanged_cone,
+          minmay_the_grid_triangle_9x9_steps,
+          minmay_the_grid_triangle_9x9_warning,
+          minmay_the_grid_triangle_9x9_prize_special], layout_irregular_city,
+          elyvilon_altar_4, uniq_nergalle
+D:13:     layout_cave_pools, ximxim_vaults_locker_room, portal_ice_cave_rime
+D:14:     layout_grid_maze, kennysheep_cluttered_room, gauntlet_entry_generic,
+          minmay_checkerbox, uniq_nessos
+D:15:     grunt_enter_depths_hoard, layout_stronghold,
+          nicolae_qazlal_general_emergency, serial_glass, glass_columns_c,
+          glass_columns_b, chequers_serial_rivers_micro_d
+Temple:   mainiacjoe_temple_starburst
+Lair:1:   layout_hall_layers, index_necropolis_entry_repeat_visits
+Necropolis: regret_index_necropolis_ark
+          [gammafunk_necropolis_ghost_wrathful_warriors,
+          gammafunk_necropolis_ghost_hydra_chop,
+          gammafunk_necropolis_ghost_berserking_beasts]
+
+Skill      XL: |  1  2  3  4  5  6  7  8  9 10 11 12 13 14 |
+---------------+-------------------------------------------+-----
+Fighting       |  3     4  5  7  8     9 10                | 10.0
+Evocations     |                 1  2                      |  2.0
+Conjurations   |                    2     4        8       |  8.0
+Necromancy     |                    2  3                   |  3.0
+Spellcasting   |                    1  4  7  8  9 11 12    | 12.0
+Ice Magic      |                       4                10 | 10.2
+Translocations |                       2        3          |  3.0
+Earth Magic    |                          4     5        6 |  6.0
+Unarmed Combat |                             7 10    12 14 | 14.0
+Air Magic      |                             2             |  2.0
+Alchemy        |                             2  4  6       |  6.0
+Armour         |                                      4    |  4.0
+Dodging        |                                      4    |  4.0
+Short Blades   |                                           |  1.7
+Throwing       |                                           |  1.7
+Stealth        |                                           |  4.3
+
+Action                     |  1- 3 |  4- 6 |  7- 9 | 10-12 | 13-15 || total
+---------------------------+-------+-------+-------+-------+-------++-------
+ Attack: Normal            |    98 |   222 |   420 |   341 |   292 ||  1373
+         Spellclaws        |       |       |     6 |   116 |    86 ||   208
+  Melee: Dagger            |    98 |   222 |   401 |   102 |       ||   823
+         Short sword       |       |       |    25 |     4 |       ||    29
+         Unarmed           |       |       |       |   351 |   378 ||   729
+         Punch             |       |       |       |    23 |       ||    23
+  Throw: Dart              |    11 |    23 |    55 |    14 |       ||   103
+         Boomerang         |       |       |     2 |       |       ||     2
+   Cast: Magic Dart        |     1 |       |     4 |       |       ||     5
+         Stone Arrow       |       |       |     7 |   198 |   133 ||   338
+         Grave Claw        |       |       |     2 |     3 |       ||     5
+         Kiss of Death     |       |       |     1 |       |       ||     1
+         Irradiate         |       |       |       |    22 |    49 ||    71
+         Hailstorm         |       |       |       |     4 |       ||     4
+         Passwall          |       |       |       |     2 |       ||     2
+         Mephitic Cloud    |       |       |       |     2 |     1 ||     3
+         Apportation       |       |       |       |       |     1 ||     1
+         Blink             |       |       |       |       |     1 ||     1
+Ability: Enkindle          |     1 |       |     1 |     2 |       ||     4
+  Evoke: Wand of warping   |       |       |     4 |     2 |       ||     6
+  Drink: Curing            |       |       |       |     1 |     1 ||     2
+         Might             |       |       |       |     1 |       ||     1
+         Mutation          |       |       |       |     1 |       ||     1
+         Resistance        |       |       |       |     1 |       ||     1
+   Read: Identify          |       |     2 |       |     8 |     4 ||    14
+         Enchant weapon    |       |     1 |     2 |       |       ||     3
+         Torment           |       |     1 |       |       |     1 ||     2
+         Enchant armour    |       |       |       |     1 |     1 ||     2
+         Teleportation     |       |       |       |     1 |     1 ||     2
+         Fear              |       |       |       |       |     1 ||     1
+         Revelation        |       |       |       |       |     1 ||     1
+   Stab: Sleeping          |     6 |    13 |     3 |       |     6 ||    28
+         Distracted        |       |     1 |       |       |       ||     1
+ Armour: Robe              |    49 |   113 |   243 |   157 |       ||   562
+         Ring mail         |       |       |       |   327 |   330 ||   657
+  Dodge: Dodged            |    49 |    85 |   169 |   250 |   191 ||   744
+
+Table legend: (Time is in decaauts)
+ A = Elapsed time spent in this place.
+ B = Non-inter-level travel time spent in this place.
+ C = Inter-level travel time spent in this place.
+ D = Time resting spent in this place.
+ E = Time spent auto-exploring this place.
+ F = Levels seen in this place.
+ G = Mean time per level.
+                   A        B        C        D        E      F       G
+               +--------+--------+--------+--------+--------+-----+--------+
+         Total |  25933 |  23508 |   2425 |   8600 |   7264 |  20 | 1296.7 |
+       Dungeon |  23503 |  21203 |   2300 |   7484 |   7230 |  15 | 1566.9 |
+        Temple |    110 |      6 |    104 |      0 |      0 |   1 |  110.0 |
+          Lair |    274 |    254 |     20 |      0 |     21 |   1 |  274.0 |
+      Ice Cave |   1681 |   1681 |      0 |    946 |     13 |   1 | 1681.0 |
+      Gauntlet |    318 |    318 |      0 |    170 |      0 |   1 |  318.0 |
+    Necropolis |     45 |     45 |      0 |      0 |      0 |   1 |   45.0 |
+               +--------+--------+--------+--------+--------+-----+--------+
+
+Top non-repeatable levels by time:
+    D:12: 2662 daAuts
+     D:8: 2290 daAuts
+     D:6: 2274 daAuts
+     D:5: 2045 daAuts
+     D:9: 1749 daAuts
+    D:15: 1700 daAuts
+   IceCv: 1681 daAuts
+     D:7: 1584 daAuts
+    D:10: 1444 daAuts
+    D:14: 1282 daAuts
+     D:2: 1234 daAuts
+     D:1: 1104 daAuts
+    D:11: 1097 daAuts
+     D:4: 1029 daAuts
+     D:3: 1023 daAuts
