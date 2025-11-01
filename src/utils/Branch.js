@@ -54,6 +54,7 @@ const Branch = keyMirror({
 const BRANCH_ALIASES = {
   abyss: Branch.Abyss,
   arena: Branch.Arena,
+  "okawaru's arena": Branch.Arena,
   bailey: Branch.Bailey,
   bazaar: Branch.Bazaar,
   blade: Branch.Blade,
@@ -120,6 +121,8 @@ const BRANCH_ALIASES = {
   zig: Branch.Ziggurat,
   ziggurat: Branch.Ziggurat,
   crucible: Branch.CrucibleFlesh,
+  'crucible of flesh': Branch.CrucibleFlesh,
+  'the crucible of flesh': Branch.CrucibleFlesh,
 };
 
 // add 8 character max alias, e.g. Necropolis → Necropol
