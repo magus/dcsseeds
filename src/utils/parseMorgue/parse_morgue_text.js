@@ -243,10 +243,10 @@ const MORGUE_REGEX = {
 
       return { eventCount, events, eventErrors };
     } catch (err) {
-      console.error('MORGUE_FIELD.Notes', err);
+      const debug_err = error_json(err);
+      console.error('MORGUE_FIELD.Notes', { err, debug_err });
       // return empty
-
-      return { eventCount: 0, events: [], eventErrors: [error_json(err)] };
+      return { eventCount: 0, events: [], eventErrors: [debug_err] };
     }
   },
 };
@@ -310,29 +310,34 @@ function getAllMorgueNotes({ morgueText, morgue }) {
     const thisLine = morgueLines[i];
     // console.warn('checking', i, thisLine);
 
-    const countSeparators = thisLine.match(new RegExp(`\\${NOTE_SEPARATOR}`, 'g')).length;
-    switch (countSeparators) {
-      case 1:
-        {
-          // continue currentNote, append to note field
-          const [, note] = parseNoteLine(thisLine);
-          // console.warn('continue note', { currentNote, note });
-          currentNote.note = `${currentNote.note} ${note}`;
+    try {
+      const countSeparators = thisLine.match(new RegExp(`\\${NOTE_SEPARATOR}`, 'g')).length;
+      switch (countSeparators) {
+        case 1:
+          {
+            // continue currentNote, append to note field
+            const [, note] = parseNoteLine(thisLine);
+            // console.warn('continue note', { currentNote, note });
+            currentNote.note = `${currentNote.note} ${note}`;
+          }
+          break;
+        case 2:
+        default: {
+          // new note found
+          // if there is a currentNote, its finished
+          // push it onto notes
+          if (currentNote) {
+            notes.push(currentNote);
+          }
+          // start new note for thisLine
+          const [turn, loc, note] = parseNoteLine(thisLine);
+          const location_data = get_location_data(loc);
+          currentNote = { morgue, turn, loc, note, ...location_data };
         }
-        break;
-      case 2:
-      default: {
-        // new note found
-        // if there is a currentNote, its finished
-        // push it onto notes
-        if (currentNote) {
-          notes.push(currentNote);
-        }
-        // start new note for thisLine
-        const [turn, loc, note] = parseNoteLine(thisLine);
-        const location_data = get_location_data(loc);
-        currentNote = { morgue, turn, loc, note, ...location_data };
       }
+    } catch (error) {
+      console.error('getAllMorgueNotes', { thisLine, error });
+      throw new MorgueEventError('getAllMorgueNotes', { thisLine, error });
     }
 
     // console.warn({ thisLine, countSeparators, currentNote });
@@ -365,7 +370,7 @@ function getAllMorgueNoteEvents({ morgueNotes, stash }) {
       }
     } catch (err) {
       if (process.env.NODE_ENV !== 'production') {
-        console.error({ morgueNote, err });
+        console.error('getAllMorgueNoteEvents', { morgueNote, err });
       }
 
       const error = error_json(err);
@@ -534,4 +539,12 @@ function get_location(branch, level) {
   }
 
   return branch;
+}
+
+class MorgueEventError extends Error {
+  constructor(message, extra) {
+    super(message);
+    this.name = `MorgueEventError`;
+    this.extra = extra;
+  }
 }

@@ -83,7 +83,7 @@ export async function addMorgue(args) {
       }
 
       // exit this morgue marking it locally only
-      return response('error', new Error('unable to parse morgue events'));
+      return response('error (parseMorgue eventErrors)', { errors });
     }
 
     // collect items to send in a single mutation call
@@ -176,7 +176,7 @@ export async function addMorgue(args) {
     }
 
     // bubble error
-    return response('error', error_json(error));
+    return response('error', { morgue, error: error_json(error) });
   }
 }
 
