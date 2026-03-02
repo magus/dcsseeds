@@ -83,6 +83,8 @@ async function parse_version(version: string) {
 }
 
 async function parse_species_data(version: string) {
+  // console.debug('parse_species_data', { version });
+
   let list = [];
 
   switch (version) {
@@ -95,6 +97,7 @@ async function parse_species_data(version: string) {
       list = await parse_species_data_legacy(version);
       break;
     case '0.33':
+    case '0.34':
       list = await parse_species_data_0_33(version);
       break;
     default:
@@ -111,7 +114,7 @@ async function parse_species_data(version: string) {
   // remove debug unknown species
   list = list.filter((s) => s.abbr !== '??');
 
-  console.debug('parse_species_data', JSON.stringify({ version, list }, null, 2));
+  // console.debug('parse_species_data', JSON.stringify({ version, list }, null, 2));
 
   return list;
 }
@@ -346,6 +349,8 @@ async function parse_species_data_0_33(version: string) {
 }
 
 async function parse_job_data(version: string) {
+  // console.debug('parse_job_data', { version });
+
   let list = [];
 
   switch (version) {
@@ -358,6 +363,7 @@ async function parse_job_data(version: string) {
       break;
     case '0.32':
     case '0.33':
+    case '0.34':
       list = await parse_job_data_0_32(version);
       break;
     default:

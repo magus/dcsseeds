@@ -1,6 +1,6 @@
 # Adding a new version
 
-Adding a new version, e.g. `0.33.1` can be done by following the steps below.
+Adding a new version, e.g. `0.34.0` can be done by following the steps below.
 
 1.  [Follow the instructions to setup a new submodule in `crawl-dir`](../crawl-dir/README.md)
 
@@ -14,17 +14,17 @@ Adding a new version, e.g. `0.33.1` can be done by following the steps below.
 
 1.  Update [`src/Version/index.js`](../src/Version/index.js) with the new version.
 
-1.  Create a new version file under `src/Version`, e.g. [`src/Version/0.33.js`](../src/Version/0.33.js)
+1.  Create a new version file under `src/Version`, e.g. [`src/Version/0.34.js`](../src/Version/0.34.js)
 
     ```js
-    exports.Name = '0.33';
+    exports.Name = '0.34';
     ```
 
-1.  Run the scripts below to generate the contents of the [`src/Version/0.33.js`](../src/Version/0.33.js).
+1.  Run the scripts below to generate the contents of the [`src/Version/0.34.js`](../src/Version/0.34.js).
 
     - Species and Background variables
 
-      Copy output under [`scripts/__output__/SpeciesJobData/0.33.1`](../scripts/__output__/SpeciesJobData/0.33.1) into [`src/Version/0.33.js`](../src/Version/0.33.js).
+      Copy output under [`scripts/__output__/SpeciesJobData/0.34`](../scripts/__output__/SpeciesJobData/0.34) into [`src/Version/0.34.js`](../src/Version/0.34.js).
 
       ```bash
       pnpm tsx scripts/SpeciesJobData
@@ -32,7 +32,10 @@ Adding a new version, e.g. `0.33.1` can be done by following the steps below.
 
     - Banned combos
 
-      This is a little manual for now, check the logic, check the `_banned_combination` function in `crawl-dir/0.32.1/crawl-ref/source/ng-restr.cc` and cross reference with the species data in `crawl-dir/0.32.1/crawl-ref/source/species-data.h`.
+      This is a little manual for now, check the logic, check the `_banned_combination` function
+      in [`crawl-dir/0.34/crawl-ref/source/ng-restr.cc`](../crawl-dir/0.34/crawl-ref/source/ng-restr.cc)
+      and cross reference with the species data
+      in [`crawl-dir/0.34/crawl-ref/source/species-data.h`](../crawl-dir/0.34/crawl-ref/source/species-data.h).
 
       Pay careful attention to job names changing, race mutation changes, new races, etc.
 
@@ -50,10 +53,10 @@ Adding a new version, e.g. `0.33.1` can be done by following the steps below.
 
     - Spell variables
 
-      Content is copied to clipboard, paste directly into [`src/Version/0.33.js`](../src/Version/0.33.js).
+      Content is copied to clipboard, paste directly into [`src/Version/0.34.js`](../src/Version/0.34.js).
 
       ```bash
-      pnpm tsx scripts/get_spells 0.33.1
+      pnpm tsx scripts/get_spells 0.34.0
       ```
 
     - Build the full list of spells for supported versions.
@@ -66,10 +69,10 @@ Adding a new version, e.g. `0.33.1` can be done by following the steps below.
 
     - Unrand variables
 
-      Content is copied to clipboard, paste directly into [`src/Version/0.33.js`](../src/Version/0.33.js).
+      Content is copied to clipboard, paste directly into [`src/Version/0.34.js`](../src/Version/0.34.js).
 
       ```bash
-      pnpm tsx scripts/get_unrands 0.33.1
+      pnpm tsx scripts/get_unrands 0.34.0
       ```
 
     - Build the full list of unrands for supported versions.
@@ -82,13 +85,18 @@ Adding a new version, e.g. `0.33.1` can be done by following the steps below.
 
     - Ashenzari curses
 
-      Content is copied to clipboard, paste directly into [`src/utils/AshenzariCurses.ts`](../src/utils/AshenzariCurses.ts).
+      Copy output under [`scripts/__output__/AshenzariCurses.ts`](../scripts/__output__/AshenzariCurses.ts) into [`src/utils/AshenzariCurses.ts`](../src/utils/AshenzariCurses.ts).
 
       ```bash
       pnpm tsx scripts/AshenzariCurses
       ```
 
-1.  Run the `git diff` command below and copy the `id` fields for new unrands into the `NEW_UNRAND_SET` in `src/pages/search/components/ArtifactSearch.js`
+1.  Copy newly introduced unrand ids into `NEW_UNRAND_SET` in [`src/pages/search/components/ArtifactSearch.js`](../src/pages/search/components/ArtifactSearch.js):
+
+    1. Open [`src/utils/Unrands.js`](../src/utils/Unrands.js).
+    1. In `ById`, find the section comment for the new version (e.g. `// 0.34`).
+    1. Copy each `id` from that section (e.g. `UNRAND_DREAD_KNIGHT`).
+    1. Add those ids to `NEW_UNRAND_SET` in [`src/pages/search/components/ArtifactSearch.js`](../src/pages/search/components/ArtifactSearch.js).
 
 1.  Visit http://localhost:3000/new to validate any new species and/or jobs for the new version.
 
@@ -129,6 +137,8 @@ Adding a new version, e.g. `0.33.1` can be done by following the steps below.
       "error": false
     }
     ```
+
+1.  Visit http://localhost:3000/ and confirm the new unrands are shown in the search list (maybe with some seeds now after update above).
 
 1.  Visit the url below and confirm the new unrands with matching `unrand_key` value have an initialized `result_list`.
 

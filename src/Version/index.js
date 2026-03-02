@@ -3,16 +3,17 @@ const uniq = require('lodash/uniq');
 const semver = require('src/utils/semver');
 
 const Version = keyMirror({
-  v33: true,
-  v32: true,
-  v31: true,
-  v30: true,
-  v29: true,
-  v28: true,
-  v27: true,
-  v26: true,
-  v25: true,
   v24: true,
+  v25: true,
+  v26: true,
+  v27: true,
+  v28: true,
+  v29: true,
+  v30: true,
+  v31: true,
+  v32: true,
+  v33: true,
+  v34: true,
 });
 
 const ActiveList = [
@@ -24,6 +25,7 @@ const ActiveList = [
   Version.v31,
   Version.v32,
   Version.v33,
+  Version.v34,
 ];
 
 // Lookup version specific species and background metadata in crawl/crawl repo
@@ -34,17 +36,54 @@ const ActiveList = [
 //
 // Consider using parser to programmatically get jobs, species, recommended etc.
 const Metadata = {
-  [Version.v33]: require('./0.33'),
-  [Version.v32]: require('./0.32'),
-  [Version.v31]: require('./0.31'),
-  [Version.v30]: require('./0.30'),
-  [Version.v29]: require('./0.29'),
-  [Version.v28]: require('./0.28'),
-  [Version.v27]: require('./0.27'),
-  [Version.v26]: require('./0.26'),
-  [Version.v25]: require('./0.25'),
   [Version.v24]: require('./0.24'),
+  [Version.v25]: require('./0.25'),
+  [Version.v26]: require('./0.26'),
+  [Version.v27]: require('./0.27'),
+  [Version.v28]: require('./0.28'),
+  [Version.v29]: require('./0.29'),
+  [Version.v30]: require('./0.30'),
+  [Version.v31]: require('./0.31'),
+  [Version.v32]: require('./0.32'),
+  [Version.v33]: require('./0.33'),
+  [Version.v34]: require('./0.34'),
 };
+
+function get_version_key(version) {
+  // allow literal version key
+  // e.g. Version.Enum.v29
+  if (Version[version]) {
+    return version;
+  }
+
+  switch (true) {
+    case version.startsWith('0.34'):
+      return Version.v34;
+    case version.startsWith('0.33'):
+      return Version.v33;
+    case version.startsWith('0.32'):
+      return Version.v32;
+    case version.startsWith('0.31'):
+      return Version.v31;
+    case version.startsWith('0.30'):
+      return Version.v30;
+    case version.startsWith('0.29'):
+      return Version.v29;
+    case version.startsWith('0.28'):
+      return Version.v28;
+    case version.startsWith('0.27'):
+      return Version.v27;
+    case version.startsWith('0.26'):
+      return Version.v26;
+    case version.startsWith('0.25'):
+      return Version.v25;
+    case version.startsWith('0.24'):
+      return Version.v24;
+
+    default:
+      throw new Error(`Unrecognized version [${version}]`);
+  }
+}
 
 const SpeciesBackgrounds = {
   Species: {},
@@ -94,40 +133,6 @@ for (const version of Object.keys(Version)) {
 
       BannedCombos.Species[version][background][species] = true;
     }
-  }
-}
-
-function get_version_key(version) {
-  // allow literal version key
-  // e.g. Version.Enum.v29
-  if (Version[version]) {
-    return version;
-  }
-
-  switch (true) {
-    case version.startsWith('0.33'):
-      return Version.v33;
-    case version.startsWith('0.32'):
-      return Version.v32;
-    case version.startsWith('0.31'):
-      return Version.v31;
-    case version.startsWith('0.30'):
-      return Version.v30;
-    case version.startsWith('0.29'):
-      return Version.v29;
-    case version.startsWith('0.28'):
-      return Version.v28;
-    case version.startsWith('0.27'):
-      return Version.v27;
-    case version.startsWith('0.26'):
-      return Version.v26;
-    case version.startsWith('0.25'):
-      return Version.v25;
-    case version.startsWith('0.24'):
-      return Version.v24;
-
-    default:
-      throw new Error(`Unrecognized version [${version}]`);
   }
 }
 

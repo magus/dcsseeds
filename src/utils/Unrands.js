@@ -85,27 +85,27 @@ export const ById = {
   'UNRAND_WUCAD_MU_v27': {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.27.1/crawl-ref/source/rltiles/item/weapon/artefact/spwpn_wucad_mu.png","name":"staff of Wucad Mu","id":"UNRAND_WUCAD_MU_v27","version":"0.27","i":101},
   'UNRAND_STORM_BOW': {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.27.1/crawl-ref/source/rltiles/item/weapon/artefact/urand_storm_bow.png","name":"storm bow","id":"UNRAND_STORM_BOW","version":"0.27","i":102},
   'UNRAND_POWER': {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.27.1/crawl-ref/source/rltiles/item/weapon/artefact/spwpn_sword_of_power.png","name":"sword of Power","id":"UNRAND_POWER","version":"0.27","i":104},
-  'UNRAND_ZONGULDROK': {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.27.1/crawl-ref/source/rltiles/item/weapon/artefact/spwpn_sword_of_zonguldrok.png","name":"sword of Zonguldrok","id":"UNRAND_ZONGULDROK","version":"0.27","i":106},
-  'UNRAND_IGNORANCE': {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.27.1/crawl-ref/source/rltiles/item/armour/artefact/urand_ignorance.png","name":"tower shield of Ignorance","id":"UNRAND_IGNORANCE","version":"0.27","i":109},
-  'UNRAND_OCTOPUS_KING': {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.27.1/crawl-ref/source/rltiles/item/weapon/artefact/urand_octopus_king.png","name":"trident of the Octopus King","id":"UNRAND_OCTOPUS_KING","version":"0.27","i":110},
-  'UNRAND_VAMPIRES_TOOTH': {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.27.1/crawl-ref/source/rltiles/item/weapon/artefact/spwpn_vampires_tooth.png","name":"Vampire's Tooth","id":"UNRAND_VAMPIRES_TOOTH","version":"0.27","i":112},
-  'UNRAND_WARLOCK_MIRROR': {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.27.1/crawl-ref/source/rltiles/item/armour/artefact/urand_warlock.png","name":"warlock's mirror","id":"UNRAND_WARLOCK_MIRROR","version":"0.27","i":113},
-  'UNRAND_SNAKEBITE': {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.27.1/crawl-ref/source/rltiles/item/weapon/artefact/urand_snakebite.png","name":"whip \"Snakebite\"","id":"UNRAND_SNAKEBITE","version":"0.27","i":114},
-  'UNRAND_TROG': {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.27.1/crawl-ref/source/rltiles/item/weapon/artefact/spwpn_wrath_of_trog.png","name":"Wrath of Trog","id":"UNRAND_TROG","version":"0.27","i":116},
-  'UNRAND_ZEALOT_SWORD': {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.27.1/crawl-ref/source/rltiles/item/weapon/artefact/unrand_zealot_sword.png","name":"zealot's sword","id":"UNRAND_ZEALOT_SWORD","version":"0.27","i":117},
+  'UNRAND_ZONGULDROK': {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.27.1/crawl-ref/source/rltiles/item/weapon/artefact/spwpn_sword_of_zonguldrok.png","name":"sword of Zonguldrok","id":"UNRAND_ZONGULDROK","version":"0.27","i":107},
+  'UNRAND_IGNORANCE': {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.27.1/crawl-ref/source/rltiles/item/armour/artefact/urand_ignorance.png","name":"tower shield of Ignorance","id":"UNRAND_IGNORANCE","version":"0.27","i":110},
+  'UNRAND_OCTOPUS_KING': {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.27.1/crawl-ref/source/rltiles/item/weapon/artefact/urand_octopus_king.png","name":"trident of the Octopus King","id":"UNRAND_OCTOPUS_KING","version":"0.27","i":111},
+  'UNRAND_VAMPIRES_TOOTH': {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.27.1/crawl-ref/source/rltiles/item/weapon/artefact/spwpn_vampires_tooth.png","name":"Vampire's Tooth","id":"UNRAND_VAMPIRES_TOOTH","version":"0.27","i":113},
+  'UNRAND_WARLOCK_MIRROR': {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.27.1/crawl-ref/source/rltiles/item/armour/artefact/urand_warlock.png","name":"warlock's mirror","id":"UNRAND_WARLOCK_MIRROR","version":"0.27","i":114},
+  'UNRAND_SNAKEBITE': {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.27.1/crawl-ref/source/rltiles/item/weapon/artefact/urand_snakebite.png","name":"whip \"Snakebite\"","id":"UNRAND_SNAKEBITE","version":"0.27","i":115},
+  'UNRAND_TROG': {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.27.1/crawl-ref/source/rltiles/item/weapon/artefact/spwpn_wrath_of_trog.png","name":"Wrath of Trog","id":"UNRAND_TROG","version":"0.27","i":117},
+  'UNRAND_ZEALOT_SWORD': {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.27.1/crawl-ref/source/rltiles/item/weapon/artefact/unrand_zealot_sword.png","name":"zealot's sword","id":"UNRAND_ZEALOT_SWORD","version":"0.27","i":118},
   // 0.28
   'UNRAND_DELATRAS_GLOVES': {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.28.0/crawl-ref/source/rltiles/item/armour/artefact/urand_delatra.png","name":"Delatra's gloves","id":"UNRAND_DELATRAS_GLOVES","version":"0.28","i":20},
   'UNRAND_DREAMSHARD_NECKLACE': {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.28.0/crawl-ref/source/rltiles/item/amulet/artefact/urand_dreamshard.png","name":"dreamshard necklace","id":"UNRAND_DREAMSHARD_NECKLACE","version":"0.28","i":24},
   'UNRAND_POWER_GLOVES': {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.28.0/crawl-ref/source/rltiles/item/armour/artefact/urand_power_gloves.png","name":"Mad Mage's Maulers","id":"UNRAND_POWER_GLOVES","version":"0.28","i":56},
   'UNRAND_MEEK': {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.28.0/crawl-ref/source/rltiles/item/weapon/artefact/urand_meek.png","name":"staff of the Meek","id":"UNRAND_MEEK","version":"0.28","i":100},
-  'UNRAND_THROATCUTTER': {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.28.0/crawl-ref/source/rltiles/item/weapon/artefact/urand_throatcutter.png","name":"Throatcutter","id":"UNRAND_THROATCUTTER","version":"0.28","i":107},
-  'UNRAND_WOODCUTTERS_AXE': {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.28.0/crawl-ref/source/rltiles/item/weapon/artefact/urand_woodcutters_axe.png","name":"woodcutter's axe","id":"UNRAND_WOODCUTTERS_AXE","version":"0.28","i":115},
+  'UNRAND_THROATCUTTER': {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.28.0/crawl-ref/source/rltiles/item/weapon/artefact/urand_throatcutter.png","name":"Throatcutter","id":"UNRAND_THROATCUTTER","version":"0.28","i":108},
+  'UNRAND_WOODCUTTERS_AXE': {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.28.0/crawl-ref/source/rltiles/item/weapon/artefact/urand_woodcutters_axe.png","name":"woodcutter's axe","id":"UNRAND_WOODCUTTERS_AXE","version":"0.28","i":116},
   // 0.29
   'UNRAND_ELEMENTAL_VULNERABILITY': {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.29.1/crawl-ref/source/rltiles/item/amulet/artefact/urand_elemental_vulnerability.png","name":"amulet of Elemental Vulnerability","id":"UNRAND_ELEMENTAL_VULNERABILITY","version":"0.29","i":0},
   'UNRAND_PUNK': {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.29.1/crawl-ref/source/rltiles/item/weapon/artefact/urand_punk.png","name":"greatsling \"Punk\"","id":"UNRAND_PUNK","version":"0.29","i":38},
   'UNRAND_LOCHABER_AXE': {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.29.1/crawl-ref/source/rltiles/item/weapon/artefact/urand_lochaber_axe.png","name":"Lochaber axe","id":"UNRAND_LOCHABER_AXE","version":"0.29","i":52},
   'UNRAND_MOUNTAIN_BOOTS': {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.29.1/crawl-ref/source/rltiles/item/armour/artefact/urand_mountain.png","name":"mountain boots","id":"UNRAND_MOUNTAIN_BOOTS","version":"0.29","i":64},
-  'UNRAND_CONDEMNATION': {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.29.1/crawl-ref/source/rltiles/item/weapon/artefact/urand_condemnation.png","name":"trishula \"Condemnation\"","id":"UNRAND_CONDEMNATION","version":"0.29","i":111},
+  'UNRAND_CONDEMNATION': {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.29.1/crawl-ref/source/rltiles/item/weapon/artefact/urand_condemnation.png","name":"trishula \"Condemnation\"","id":"UNRAND_CONDEMNATION","version":"0.29","i":112},
   // 0.30
   'UNRAND_HOLY_AXE': {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.30.0/crawl-ref/source/rltiles/item/weapon/artefact/spwpn_holy_axe.png","name":"consecrated labrys","id":"UNRAND_HOLY_AXE","version":"0.30","i":14},
   'UNRAND_WUCAD_MU': {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.30.0/crawl-ref/source/rltiles/item/armour/artefact/urand_wucad_mu.png","name":"crystal ball of Wucad Mu","id":"UNRAND_WUCAD_MU","version":"0.30","i":17},
@@ -114,7 +114,7 @@ export const ById = {
   'UNRAND_SLICK_SLIPPERS': {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.30.0/crawl-ref/source/rltiles/item/armour/artefact/urand_slippers.png","name":"slick slippers","id":"UNRAND_SLICK_SLIPPERS","version":"0.30","i":94},
   'UNRAND_BATTLE': {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.30.0/crawl-ref/source/rltiles/item/armour/artefact/urand_battle.png","name":"sphere of Battle","id":"UNRAND_BATTLE","version":"0.30","i":96},
   'UNRAND_STORM_QUEEN': {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.30.0/crawl-ref/source/rltiles/item/armour/artefact/urand_storm_queen.png","name":"Storm Queen's Shield","id":"UNRAND_STORM_QUEEN","version":"0.30","i":103},
-  'UNRAND_VICTORY': {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.30.0/crawl-ref/source/rltiles/item/armour/artefact/urand_victor.png","name":"toga \"Victory\"","id":"UNRAND_VICTORY","version":"0.30","i":108},
+  'UNRAND_VICTORY': {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.30.0/crawl-ref/source/rltiles/item/armour/artefact/urand_victor.png","name":"toga \"Victory\"","id":"UNRAND_VICTORY","version":"0.30","i":109},
   // 0.31
   'UNRAND_MULE': {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.31.0/crawl-ref/source/rltiles/item/weapon/artefact/spwpn_mule.png","name":"hand cannon \"Mule\"","id":"UNRAND_MULE","version":"0.31","i":39},
   // 0.32
@@ -127,6 +127,8 @@ export const ById = {
   'UNRAND_FISTICLOAK': {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.33.1/crawl-ref/source/rltiles/item/armour/artefact/urand_fungal_fisticloak.png","name":"fungal fisticloak","id":"UNRAND_FISTICLOAK","version":"0.33","i":30},
   'UNRAND_JUSTICARS_REGALIA': {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.33.1/crawl-ref/source/rltiles/item/armour/artefact/urand_justicars_regalia.png","name":"justicar's regalia","id":"UNRAND_JUSTICARS_REGALIA","version":"0.33","i":46},
   'UNRAND_SKULL_OF_ZONGULDROK': {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.33.1/crawl-ref/source/rltiles/item/armour/artefact/urand_skull_of_zonguldrok.png","name":"skull of Zonguldrok","id":"UNRAND_SKULL_OF_ZONGULDROK","version":"0.33","i":93},
+  // 0.34
+  'UNRAND_DREAD_KNIGHT': {"image_url":"https://raw.githubusercontent.com/crawl/crawl/0.34.0/crawl-ref/source/rltiles/item/weapon/artefact/urand_dread_knight.png","name":"sword of the Dread Knight","id":"UNRAND_DREAD_KNIGHT","version":"0.34","i":106},
 };
 
 export const List = [];

@@ -1,4 +1,4 @@
-// Generated from `scripts/build_spell_list`
+// Generated from `pnpm tsx scripts/Spells`
 
 export const List = [
   'Agony',
@@ -67,6 +67,7 @@ export const List = [
   'Fulsome Fusillade',
   "Gell's Gavotte",
   "Gell's Gravitas",
+  'Gloom',
   'Grave Claw',
   'Hailstorm',
   'Haunt',

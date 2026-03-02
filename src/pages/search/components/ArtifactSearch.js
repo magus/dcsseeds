@@ -477,6 +477,8 @@ const NEW_UNRAND_SET = new Set([
   'UNRAND_FISTICLOAK',
   'UNRAND_JUSTICARS_REGALIA',
   'UNRAND_SKULL_OF_ZONGULDROK',
+  // 0.34
+  'UNRAND_DREAD_KNIGHT',
 ]);
 
 const fetcher = (url) => fetch(url).then((res) => res.json());

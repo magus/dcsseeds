@@ -114,6 +114,7 @@ export type Unrand = {
 
   for (let i = 0; i < unrand_list.length; i++) {
     const unrand = unrand_list[i];
+
     unrand.id = unrand_enum_list[i];
     unrand.tile_path = tile_map.get(unrand.id);
 
@@ -419,6 +420,7 @@ function struct_unrandart_entry(version: string) {
     case '0.30.0':
     case '0.31.0':
     case '0.32.1':
+    case '0.33.0':
     case '0.33.1':
       // crawl-dir/0.30.0/crawl-ref/source/artefact.h#L46
       return [
@@ -471,6 +473,65 @@ function struct_unrandart_entry(version: string) {
         'melee_effects',
         // setup_missile_type (*launch)(item_def* item, bolt* beam,
         //                               string* ammo_name, bool* returning);
+        'launch',
+        // void (*death_effects)(item_def* item, monster* mons, killer_type killer);
+        'death_effects',
+      ];
+
+    case '0.34.0':
+      // crawl-dir/0.34/crawl-ref/source/artefact.h#L54
+      return [
+        // const char *name;        // true name of unrandart
+        'name',
+        // const char *unid_name;   // un-id'd name of unrandart
+        'unid_name',
+        // const char *type_name;   // custom item type
+        'type_name',
+        // const char *inscrip;     // extra inscription
+        'inscrip',
+        // const char *dbrand;      // description of extra brand
+        'dbrand',
+        // const char *descrip;     // description of extra power
+        'descrip',
+
+        // int pref_max_level;
+        'pref_max_level',
+
+        // object_class_type base_type;
+        'base_type',
+        // uint8_t           sub_type;
+        'sub_type',
+        // object_class_type fallback_base_type;
+        'fallback_base_type',
+        // uint8_t           fallback_sub_type;
+        'fallback_sub_type',
+        // int               fallback_brand;
+        'fallback_brand',
+        // short             plus;
+        'plus',
+        // short             plus2;
+        'plus2',
+        // colour_t          colour;
+        'colour',
+
+        // short         value;
+        'value',
+        // uint16_t      flags;
+        'flags',
+
+        // short prpty[ART_PROPERTIES];
+        'prpty',
+
+        // void (*equip_func)(item_def* item, bool* show_msgs, bool unmeld);
+        'equip_func',
+        // void (*unequip_func)(item_def* item, bool* show_msgs);
+        'unequip_func',
+        // void (*world_reacts_func)(item_def* item);
+        'world_reacts_func',
+        // void (*melee_effects)(item_def* item, actor* attacker,
+        //                       actor* defender, bool mondied, int damage);
+        'melee_effects',
+        // void (*launch)(bolt* beam);
         'launch',
         // void (*death_effects)(item_def* item, monster* mons, killer_type killer);
         'death_effects',
