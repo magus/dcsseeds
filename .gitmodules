@@ -38,3 +38,6 @@
 	path = crawl-dir/0.33
 	url = git@github.com:crawl/crawl.git
 	shallow = true
+[submodule "crawl-dir/0.34"]
+	path = crawl-dir/0.34
+	url = git@github.com:crawl/crawl.git
