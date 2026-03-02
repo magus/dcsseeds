@@ -2,6 +2,7 @@
 import fs from 'fs';
 import path from 'path';
 import { execSync } from 'child_process';
+import Version from 'src/Version';
 
 const PROJ_ROOT = execSync('git rev-parse --show-toplevel').toString().trim();
 
@@ -9,18 +10,20 @@ export function reset() {
   execSync(`git submodule update --force`);
 }
 
-export function root() {
-  return path.join(PROJ_ROOT, 'crawl-dir');
+function root(version: string) {
+  // remove minor version if present
+  // e.g. 0.33.1 ➔ 0.33
+  const version_name = Version.get_name(version);
+  return path.join(PROJ_ROOT, 'crawl-dir', version_name);
 }
 
 export function dir(version: string, ...path_parts: Array<string>) {
-  const crawl_dir = path.join(root(), version, ...path_parts);
-  return crawl_dir;
+  return path.join(root(version), ...path_parts);
 }
 
-export function github(filepath: string) {
-  const relative_path = path.relative(root(), filepath);
-  return `https://raw.githubusercontent.com/crawl/crawl/${relative_path}`;
+export function github(version: string, filepath: string) {
+  const relative_path = path.relative(root(version), filepath);
+  return `https://raw.githubusercontent.com/crawl/crawl/${version}/${relative_path}`;
 }
 
 export function prepare(version: string) {

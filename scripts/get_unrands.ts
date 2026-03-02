@@ -145,7 +145,7 @@ export type Unrand = {
     // normalize to first tile path
     const [first_tile_path] = unrand.tile_path;
     unrand.tile_path = first_tile_path;
-    unrand.image_url = crawl_dir.github(first_tile_path);
+    unrand.image_url = crawl_dir.github(VERSION, first_tile_path);
 
     filtered_unrand_list.push(unrand);
   }

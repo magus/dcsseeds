@@ -47,7 +47,7 @@ if (!VERSION) {
     spell = spells[id] = {
       ...spell,
       localTilePath: tilePath,
-      githubTilePath: tilePath.map((p) => crawl_dir.github(p)),
+      githubTilePath: tilePath.map((p) => crawl_dir.github(VERSION, p)),
     };
 
     if (!spell.localTilePath) {

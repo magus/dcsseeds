@@ -147,7 +147,7 @@ async function getMonstersWithTiles() {
     const monsterWithTile = {
       ...monster,
       localTilePaths: tilePaths,
-      githubTilePaths: tilePaths.map((tilePath: string) => crawl_dir.github(tilePath)),
+      githubTilePaths: tilePaths.map((tilePath: string) => crawl_dir.github(VERSION, tilePath)),
     };
 
     // ensure local tile paths exist (we have a valid tile)
