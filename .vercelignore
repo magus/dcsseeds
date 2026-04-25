@@ -2,3 +2,4 @@
 ./scripts
 ./static
 ./crawl-dir
+.env*
