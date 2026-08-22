@@ -1,0 +1,10 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/play",
+      "destination": "https://dcssweb.up.railway.app/",
+      "permanent": true
+    }
+  ]
+}
