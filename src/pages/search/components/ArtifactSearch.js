@@ -4,9 +4,7 @@ import { useRouter } from 'next/router';
 import { motion } from 'framer-motion';
 import useSWR from 'swr';
 
-import { Drawer } from '~/components/ui/Drawer';
-import { Dialog } from '~/components/ui/Dialog';
-import { useDimensions } from '~/hooks/useDimensions';
+import dynamic from 'next/dynamic';
 
 import * as Unrands from 'src/utils/Unrands';
 import * as Spacer from 'src/components/Spacer';
@@ -55,11 +53,7 @@ export function ArtifactSearch(props) {
 
   // console.debug({ cache_unrand_query: { data, isLoading, error }, artifact_list });
 
-  if (artifact_list) {
-    return <InternalArtifactSearch {...props} artifact_list={artifact_list} />;
-  }
-
-  return <Loading />;
+  return <InternalArtifactSearch {...props} artifact_list={artifact_list} />;
 }
 
 function InternalArtifactSearch(props) {
@@ -110,6 +104,12 @@ function InternalArtifactSearch(props) {
 
 function ArtifactResults(props) {
   const [display_count, set_display_count] = React.useState(10);
+
+  const waiting_for_results = props.loading && props.result_list.length === 0;
+
+  if (waiting_for_results) {
+    return <Loading />;
+  }
 
   const display_result_list = props.result_list.slice(0, display_count);
   const show_more_count = props.result_list.length - display_count;
@@ -270,16 +270,6 @@ function ArtifactFilters(props) {
   const has_active = active_button_list.length;
   const visible_buttons = has_active ? active_button_list : filter_button_list;
 
-  const is_wide = useDimensions((dimensions) => {
-    return dimensions.width > 640;
-  });
-
-  const modal_description = (
-    <span>
-      Include another artifact in your search, results will contain <b>all</b> artefacts you selected.
-    </span>
-  );
-
   const modal_title = <span>Add artefact</span>;
 
   const modal_trigger = !has_active ? null : (
@@ -290,43 +280,11 @@ function ArtifactFilters(props) {
 
   let artefact_modal = null;
 
-  if (!filter_button_list.length) {
-    artefact_modal = null;
-  } else if (is_wide) {
+  if (filter_button_list.length) {
     artefact_modal = (
-      <Dialog.Root open={drawer_open} onOpenChange={set_drawer_open}>
-        <Dialog.Trigger asChild>{modal_trigger}</Dialog.Trigger>
-
-        <Dialog.Content className="max-h-[80vh] max-w-[80vw] overflow-hidden flex flex-col p-0">
-          <div className="ps-4 pe-3 pt-6">
-            <Dialog.Title>{modal_title}</Dialog.Title>
-            <Dialog.Description className="pe-16">{modal_description}</Dialog.Description>
-          </div>
-
-          <div className="overflow-scroll ps-4 pe-3 pb-2">
-            <Filters className="">{filter_button_list}</Filters>
-          </div>
-        </Dialog.Content>
-      </Dialog.Root>
-    );
-  } else {
-    artefact_modal = (
-      <Drawer.Root open={drawer_open} onOpenChange={set_drawer_open}>
-        <Drawer.Trigger asChild>{modal_trigger}</Drawer.Trigger>
-
-        <Drawer.Content className="max-h-[80vh]">
-          <div className="ps-2 pe-1 pb-1">
-            <Drawer.Title>{modal_title}</Drawer.Title>
-            <Drawer.Description>{modal_description}</Drawer.Description>
-          </div>
-
-          <div className="min-h-2" />
-
-          <div className="overflow-scroll ps-2 pe-1 pb-1">
-            <Filters className="">{filter_button_list}</Filters>
-          </div>
-        </Drawer.Content>
-      </Drawer.Root>
+      <ArtifactModal open={drawer_open} onOpenChange={set_drawer_open} trigger={modal_trigger}>
+        <Filters className="">{filter_button_list}</Filters>
+      </ArtifactModal>
     );
   }
 
@@ -482,3 +440,5 @@ const NEW_UNRAND_SET = new Set([
 ]);
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
+
+const ArtifactModal = dynamic(() => import('./ArtifactModal'), { ssr: false });

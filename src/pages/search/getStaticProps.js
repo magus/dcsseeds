@@ -1,16 +1,22 @@
 import { gql } from '@apollo/client';
 
 import { serverQuery } from 'src/graphql/serverQuery';
+import { get_artifact_list } from 'src/server/get_artifact_list';
+import { summarize_artifact_list } from './summarize_artifact_list';
 
 export async function getStaticProps() {
   // context.res.setHeader('Cache-Control', 'public, s-maxage=300, stale-while-revalidate=1800');
 
-  const props = await GQL_SearchStaticProps.run();
+  const [props, data] = await Promise.all([GQL_SearchStaticProps.run(), get_artifact_list()]);
+  const artifact_summary = summarize_artifact_list({
+    artifact_list: data.artifact_list,
+    version_list: props.version_list,
+  });
 
   // console.debug({ props });
 
   return {
-    props,
+    props: { ...props, artifact_summary },
     // https://nextjs.org/docs/api-reference/data-fetching/get-static-props#revalidate
     revalidate: 60,
   };

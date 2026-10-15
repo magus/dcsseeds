@@ -85,7 +85,7 @@ export function useArtifactFilter(props) {
       // init artifact_list for this unrand
       filtered_artifact_list[i] = [];
 
-      const result_list = props.artifact_list[i];
+      const result_list = props.artifact_list?.[i] || [];
 
       const item_seedVersion_set = new Set();
 
@@ -179,6 +179,17 @@ export function useArtifactFilter(props) {
     const filter_list = [];
     const version_set = new Set();
 
+    if (!props.artifact_list) {
+      return {
+        loading: false,
+        version_set,
+        filter_list,
+        result_list: [],
+        artifact_count: props.artifact_summary.artifact_count,
+        version_count: new Map(props.artifact_summary.version_count),
+      };
+    }
+
     return {
       loading: false,
       version_set,
@@ -201,6 +212,54 @@ export function useArtifactFilter(props) {
     undefined,
     init_state,
   );
+
+  React.useEffect(() => {
+    if (!props.artifact_list) return;
+
+    let cancelled = false;
+
+    async function update_results() {
+      try {
+        const result = await run_query_filter({
+          client,
+          filter_list: state.filter_list,
+          version_set: state.version_set,
+          filtered_artifact_list,
+          seedVersion_set_list,
+          seedVersion_item_map,
+          version_seed_map,
+          version_item_map,
+          sort_item_list,
+        });
+
+        if (!cancelled) {
+          patch_state({ loading: false, ...result });
+        }
+      } catch (error) {
+        if (!cancelled) {
+          patch_state({ loading: false });
+          console.error(error);
+        }
+      }
+    }
+
+    update_results();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [
+    props.artifact_list,
+    client,
+    state.filter_list,
+    state.version_set,
+    filtered_artifact_list,
+    seedVersion_set_list,
+    seedVersion_item_map,
+    version_seed_map,
+    version_item_map,
+    sort_item_list,
+  ]);
 
   // generate unique set of filters from list
   // also calculate a unique key identifying this combination
@@ -284,30 +343,13 @@ export function useArtifactFilter(props) {
   }
 
   async function query_next_filter(args) {
-    patch_state({ loading: true });
-
     // pull both args from state to ensure the missing
     // arg is properly passed when it's missing from args
-    const { version_set, filter_list } = state;
-    const full_args = { version_set, filter_list, ...args };
+    const filter_list = args.filter_list || state.filter_list;
+    const version_set = args.version_set || state.version_set;
+    const has_selection = filter_list.length > 0 || version_set.size > 0;
 
-    try {
-      let query_result = await run_query_filter({
-        client,
-        ...full_args,
-        filtered_artifact_list,
-        seedVersion_set_list,
-        seedVersion_item_map,
-        version_seed_map,
-        version_item_map,
-        sort_item_list,
-      });
-
-      patch_state({ loading: false, ...args, ...query_result });
-    } catch (error) {
-      patch_state({ loading: false });
-      throw error;
-    }
+    patch_state({ ...args, loading: has_selection });
   }
 }
 

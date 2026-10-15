@@ -6,7 +6,7 @@ import * as Spacer from 'src/components/Spacer';
 import { Input } from 'src/components/Input';
 
 import * as QueryParams from '../hooks/QueryParams';
-import { DynamicArtifactSearch } from './DynamicArtifactSearch';
+import { ArtifactSearch } from './ArtifactSearch';
 import { SearchResults } from './SearchResults';
 import { RecentRunLink } from './RecentRunLink';
 import { RandomSearchCTA } from './RandomSearchCTA';
@@ -84,7 +84,7 @@ export function ItemSearch(props) {
 
       <Spacer.Vertical size="2" />
 
-      <DynamicArtifactSearch key="DynamicArtifactSearch" {...props} />
+      <ArtifactSearch {...props} />
 
       <Spacer.Vertical size="2" />
 
