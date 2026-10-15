@@ -80,6 +80,16 @@ const moduleExports = {
     hideSourceMaps: true,
   },
 
+  async redirects() {
+    return [
+      {
+        source: '/play',
+        destination: 'https://dcssweb.up.railway.app/?utm_source=dcss.vercel.app&utm_medium=referral',
+        permanent: true,
+      },
+    ];
+  },
+
   // https://securityheaders.com
   async headers() {
     return [

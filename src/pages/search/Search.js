@@ -3,16 +3,20 @@ import styled from 'styled-components';
 import { AnimatePresence } from 'framer-motion';
 
 import { ItemSearch } from './components/ItemSearch';
+import { PlayBanner } from './components/PlayBanner';
 import * as Spacer from 'src/components/Spacer';
 
 export default function Search(props) {
   return (
-    <Container>
-      <Spacer.Vertical size="2" />
-      <AnimatePresence>
-        <ItemSearch key="ItemSearch" {...props} />
-      </AnimatePresence>
-    </Container>
+    <>
+      <PlayBanner />
+      <Container>
+        <Spacer.Vertical size="2" />
+        <AnimatePresence>
+          <ItemSearch key="ItemSearch" {...props} />
+        </AnimatePresence>
+      </Container>
+    </>
   );
 }
 
